@@ -1,7 +1,16 @@
 import type { Task, TaskPack } from '../types/task';
-import raw from './tasks.json';
+import rawV1 from './tasks.json';
+import rawRc from './reading_comprehension.json';
 
-const pack = raw as TaskPack;
+const v1 = rawV1 as TaskPack;
+const rc = rawRc as TaskPack;
+
+/** Merged pack: keep v1 tasks + schema v2 reading_comprehension texts. */
+const pack: TaskPack = {
+  schemaVersion: Math.max(v1.schemaVersion, rc.schemaVersion),
+  title: v1.title,
+  tasks: [...v1.tasks, ...rc.tasks],
+};
 
 /** Easier → harder (used for home menu and “Sākt visus”). */
 export const TASK_TYPE_ORDER: Task['type'][] = [
@@ -9,6 +18,7 @@ export const TASK_TYPE_ORDER: Task['type'][] = [
   'image_word',
   'word_choice',
   'sentence_completion',
+  'reading_comprehension',
 ];
 
 export const TASK_TYPE_LABELS: Record<Task['type'], string> = {
@@ -16,7 +26,21 @@ export const TASK_TYPE_LABELS: Record<Task['type'], string> = {
   image_word: 'Vārdu atpazīšana',
   word_choice: 'Vārdu izvēle',
   sentence_completion: 'Teikumu papildināšana',
+  reading_comprehension: 'Izlasi un atbildi',
 };
+
+/** Lesson vs single-task unit label for list / done / review screens. */
+export function unitNoun(type: Task['type']): 'nodarbība' | 'uzdevums' {
+  return type === 'reading_comprehension' ? 'uzdevums' : 'nodarbība';
+}
+
+export function unitNounPlural(type: Task['type']): string {
+  return type === 'reading_comprehension' ? 'uzdevumi' : 'nodarbības';
+}
+
+export function unitTitle(type: Task['type'], lessonNumber: number): string {
+  return `${lessonNumber}. ${unitNoun(type)}`;
+}
 
 function typeRank(type: Task['type']): number {
   const i = TASK_TYPE_ORDER.indexOf(type);

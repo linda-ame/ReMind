@@ -49,7 +49,11 @@ export function TaskListScreen({
       ) : (
         <div className="stack">
           {list.map((task, index) => {
-            const status = bestStatusForTask(attempts, task.id);
+            const status = bestStatusForTask(
+              attempts,
+              task.id,
+              task.contentVersion,
+            );
             return (
               <Button
                 key={task.id}
@@ -78,5 +82,9 @@ function taskShortLabel(task: Task): string {
       return task.sentence;
     case 'word_choice':
       return task.prompt;
+    case 'reading_comprehension':
+      return task.passage.length > 48
+        ? `${task.passage.slice(0, 48)}…`
+        : task.passage;
   }
 }

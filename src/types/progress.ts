@@ -5,6 +5,24 @@ export type SelfAssessment = 'independent' | 'with_help' | 'difficult' | 'skippe
 
 export type TaskAttemptStatus = 'viewed' | 'attempted' | 'completed';
 
+/** Per-question progress inside a reading_comprehension attempt. */
+export interface ReadingQuestionProgress {
+  questionId: string;
+  enteredAnswer: string | null;
+  viewedAnswers: boolean;
+  /** How many times the passage was reopened on this question. */
+  rereadCount: number;
+  selfAssessment: SelfAssessment | null;
+  status: TaskAttemptStatus;
+  completedAt: string | null;
+}
+
+export interface ReadingComprehensionProgress {
+  phase: 'passage' | 'questions';
+  questionIndex: number;
+  questions: ReadingQuestionProgress[];
+}
+
 export interface TaskAttempt {
   id: string;
   taskId: string;
@@ -16,6 +34,8 @@ export interface TaskAttempt {
   usedHint: boolean;
   viewedAnswers: boolean;
   selfAssessment: SelfAssessment | null;
+  /** Present for reading_comprehension tasks. */
+  reading?: ReadingComprehensionProgress;
 }
 
 export type TextAlign = 'left' | 'center' | 'right';

@@ -927,3 +927,158 @@ input:focus-visible {
     font-size: 1.3em;
   }
 }
+
+/* —— Reading comprehension (5. sadaļa) —— */
+.rc-view {
+  width: 100%;
+  max-width: 100%;
+}
+
+.rc-passage {
+  margin: 0.75rem 0 1.25rem;
+  padding: 0.85rem 0.5rem;
+  font-size: 1.2em;
+  font-weight: 600;
+  line-height: 1.45;
+  text-align: var(--app-text-align);
+  white-space: pre-wrap;
+}
+
+.rc-question {
+  margin-top: 0.35rem;
+}
+
+.rc-q-progress {
+  margin: 0 0 0.5rem;
+}
+
+.rc-actions {
+  margin-top: 0.75rem;
+}
+
+.rc-actions-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.btn-rc-primary {
+  min-height: max(64px, calc(var(--btn-min-h) + 0.35rem));
+  font-size: 1.05em;
+  font-weight: 700;
+}
+
+.rc-assess-block {
+  margin-top: 1rem;
+}
+
+.rc-assessment-row {
+  gap: 0.5rem;
+}
+
+.btn-assess-rc {
+  min-height: 64px;
+  gap: 0.2rem;
+  padding: 0.55rem 0.3rem;
+}
+
+.btn-assess-rc .assess-label-text {
+  font-size: 0.72em;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.rc-nav-actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.rc-nav-actions .btn {
+  flex: 1 1 0;
+  min-height: max(56px, var(--btn-min-h));
+}
+
+.rc-passage-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.rc-passage-overlay-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-bottom: 2px solid var(--border);
+  flex-shrink: 0;
+}
+
+.rc-passage-overlay-title {
+  margin: 0;
+  font-size: 1.15em;
+  font-weight: 700;
+}
+
+.rc-passage-overlay-x {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--btn-secondary-bg);
+  font-size: 1.75rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rc-passage-overlay-body {
+  flex: 1 1 auto;
+  overflow: auto;
+  padding: 1.25rem 1rem 1.5rem;
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: var(--app-text-align);
+  white-space: pre-wrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rc-passage-overlay-footer {
+  flex-shrink: 0;
+  padding: 0.75rem 0.85rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
+  border-top: 2px solid var(--border);
+  background: var(--bg);
+}
+
+.rc-summary-passage {
+  font-size: 0.95em;
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.rc-summary-questions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 0.75rem 0;
+}
+
+.rc-summary-q {
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--border);
+}
+
+.rc-summary-q .summary-prompt {
+  margin-bottom: 0.35rem;
+}

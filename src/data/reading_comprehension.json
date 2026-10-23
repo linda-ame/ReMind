@@ -1,0 +1,1170 @@
+{
+  "schemaVersion": 2,
+  "title": "Izlasi un atbildi — 36 teksti",
+  "tasks": [
+    {
+      "id": "remind-rc-001",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Sestdien Ilze aizgāja uz tirgu. Viņa nopirka tomātus un ābolus. Mājās Ilze pagatavoja salātus.",
+      "questions": [
+        {
+          "id": "remind-rc-001-q1",
+          "question": "Kur Ilze iepirkās?",
+          "answers": [
+            "tirgū"
+          ]
+        },
+        {
+          "id": "remind-rc-001-q2",
+          "question": "Kādus dārzeņus Ilze nopirka?",
+          "answers": [
+            "tomātus"
+          ]
+        },
+        {
+          "id": "remind-rc-001-q3",
+          "question": "Ko Ilze pagatavoja mājās?",
+          "answers": [
+            "salātus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-002",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "No rīta Jānis devās uz bibliotēku. Viņš paņēma grāmatu par putniem. Mājās Jānis apsēdās pie loga un sāka lasīt.",
+      "questions": [
+        {
+          "id": "remind-rc-002-q1",
+          "question": "Kur Jānis paņēma grāmatu?",
+          "answers": [
+            "bibliotēkā"
+          ]
+        },
+        {
+          "id": "remind-rc-002-q2",
+          "question": "Par kādiem dzīvniekiem bija grāmata?",
+          "answers": [
+            "putniem"
+          ]
+        },
+        {
+          "id": "remind-rc-002-q3",
+          "question": "Pie kā Jānis apsēdās?",
+          "answers": [
+            "loga"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-003",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Piektdien Marta brauca ar autobusu uz pilsētu. Viņa satika māsu, un abas aizgāja uz kafejnīcu. Marta pasūtīja tēju, bet māsa — kafiju.",
+      "questions": [
+        {
+          "id": "remind-rc-003-q1",
+          "question": "Ar ko Marta brauca?",
+          "answers": [
+            "autobusu"
+          ]
+        },
+        {
+          "id": "remind-rc-003-q2",
+          "question": "Ko pasūtīja Marta?",
+          "answers": [
+            "tēju"
+          ]
+        },
+        {
+          "id": "remind-rc-003-q3",
+          "question": "Ko pasūtīja māsa?",
+          "answers": [
+            "kafiju"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-004",
+      "type": "reading_comprehension",
+      "contentVersion": 2,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Pēcpusdienā Andrejs devās uz dārzu. Viņš aplaistīja gurķus un noplūca zemenes. Zemenes Andrejs ielika bļodā un aiznesa uz virtuvi.",
+      "questions": [
+        {
+          "id": "remind-rc-004-q1",
+          "question": "Ko Andrejs aplaistīja?",
+          "answers": [
+            "gurķus"
+          ]
+        },
+        {
+          "id": "remind-rc-004-q2",
+          "question": "Ko Andrejs noplūca?",
+          "answers": [
+            "zemenes"
+          ]
+        },
+        {
+          "id": "remind-rc-004-q3",
+          "question": "Uz kuru telpu Andrejs aiznesa zemenes?",
+          "answers": [
+            "virtuvi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-005",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Vakarā ārā sākās lietus. Līga aizvēra logu un ieslēdza lampu. Pēc tam viņa uzvārīja tēju un apsēdās dīvānā.",
+      "questions": [
+        {
+          "id": "remind-rc-005-q1",
+          "question": "Kas vakarā sākās ārā?",
+          "answers": [
+            "lietus"
+          ]
+        },
+        {
+          "id": "remind-rc-005-q2",
+          "question": "Ko Līga aizvēra?",
+          "answers": [
+            "logu"
+          ]
+        },
+        {
+          "id": "remind-rc-005-q3",
+          "question": "Ko Līga uzvārīja?",
+          "answers": [
+            "tēju"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-006",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Svētdien Pēteris devās pastaigā uz parku. Pie dīķa viņš ieraudzīja pīles. Pēc pastaigas Pēteris nopirka maizi un atgriezās mājās.",
+      "questions": [
+        {
+          "id": "remind-rc-006-q1",
+          "question": "Kur Pēteris pastaigājās?",
+          "answers": [
+            "parkā"
+          ]
+        },
+        {
+          "id": "remind-rc-006-q2",
+          "question": "Kādus putnus viņš redzēja?",
+          "answers": [
+            "pīles"
+          ]
+        },
+        {
+          "id": "remind-rc-006-q3",
+          "question": "Ko Pēteris nopirka?",
+          "answers": [
+            "maizi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-007",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "No rīta Eva uzvārīja kafiju. Viņa atvēra logu un apsēdās virtuvē. Uz galda stāvēja avīze.",
+      "questions": [
+        {
+          "id": "remind-rc-007-q1",
+          "question": "Ko Eva uzvārīja?",
+          "answers": [
+            "kafiju"
+          ]
+        },
+        {
+          "id": "remind-rc-007-q2",
+          "question": "Ko Eva atvēra?",
+          "answers": [
+            "logu"
+          ]
+        },
+        {
+          "id": "remind-rc-007-q3",
+          "question": "Kas stāvēja uz galda?",
+          "answers": [
+            "avīze"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-008",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Otrdien Rihards aizgāja uz pastu. Viņš nosūtīja vēstuli māsai. Pēc tam Rihards nopirka aploksni.",
+      "questions": [
+        {
+          "id": "remind-rc-008-q1",
+          "question": "Kurā dienā Rihards aizgāja uz pastu?",
+          "answers": [
+            "otrdien"
+          ]
+        },
+        {
+          "id": "remind-rc-008-q2",
+          "question": "Kam Rihards nosūtīja vēstuli?",
+          "answers": [
+            "māsai"
+          ]
+        },
+        {
+          "id": "remind-rc-008-q3",
+          "question": "Ko viņš nopirka pēc tam?",
+          "answers": [
+            "aploksni"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-009",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Dace uz balkona iestādīja pelargonijas. Viņa tās aplēja ar lejkannu. Vakarā Dace aizvēra balkona durvis.",
+      "questions": [
+        {
+          "id": "remind-rc-009-q1",
+          "question": "Kādas puķes Dace iestādīja?",
+          "answers": [
+            "pelargonijas"
+          ]
+        },
+        {
+          "id": "remind-rc-009-q2",
+          "question": "Ar ko Dace aplēja puķes?",
+          "answers": [
+            "lejkannu"
+          ]
+        },
+        {
+          "id": "remind-rc-009-q3",
+          "question": "Ko Dace vakarā aizvēra?",
+          "answers": [
+            "durvis"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-010",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Svētdien Egils aizbrauca uz Liepāju. Viņš staigāja pa pludmali un fotografēja laivas. Mājās Egils parādīja fotogrāfijas.",
+      "questions": [
+        {
+          "id": "remind-rc-010-q1",
+          "question": "Kur Egils staigāja?",
+          "answers": [
+            "pludmalē"
+          ]
+        },
+        {
+          "id": "remind-rc-010-q2",
+          "question": "Ko Egils fotografēja?",
+          "answers": [
+            "laivas"
+          ]
+        },
+        {
+          "id": "remind-rc-010-q3",
+          "question": "Ko Egils parādīja mājās?",
+          "answers": [
+            "fotogrāfijas"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-011",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Aina vakarā klausījās radio. Viņa dzirdēja ziņas par laikapstākļiem. Pēc raidījuma Aina piezvanīja brālim.",
+      "questions": [
+        {
+          "id": "remind-rc-011-q1",
+          "question": "Ko Aina vakarā klausījās?",
+          "answers": [
+            "radio"
+          ]
+        },
+        {
+          "id": "remind-rc-011-q2",
+          "question": "Par ko bija ziņas?",
+          "answers": [
+            "laikapstākļiem"
+          ]
+        },
+        {
+          "id": "remind-rc-011-q3",
+          "question": "Kam Aina piezvanīja?",
+          "answers": [
+            "brālim"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-012",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Rūta virtuvē sajauca mīklu. Viņa izveidoja mazas maizītes un ievietoja tās krāsnī. Pēc pusstundas virtuvē smaržoja pēc kanēļa.",
+      "questions": [
+        {
+          "id": "remind-rc-012-q1",
+          "question": "Ko Rūta sajauca?",
+          "answers": [
+            "mīklu"
+          ]
+        },
+        {
+          "id": "remind-rc-012-q2",
+          "question": "Kur Rūta ievietoja maizītes?",
+          "answers": [
+            "krāsnī"
+          ]
+        },
+        {
+          "id": "remind-rc-012-q3",
+          "question": "Pēc kā virtuvē smaržoja?",
+          "answers": [
+            "kanēļa"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-013",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Piektdien Andris gaidīja autobusu pieturā. Viņam rokā bija zila soma. Autobuss pienāca pēc desmit minūtēm. Andris apsēdās pie loga.",
+      "questions": [
+        {
+          "id": "remind-rc-013-q1",
+          "question": "Ko Andris gaidīja?",
+          "answers": [
+            "autobusu"
+          ]
+        },
+        {
+          "id": "remind-rc-013-q2",
+          "question": "Kādā krāsā bija soma?",
+          "answers": [
+            "zilā"
+          ]
+        },
+        {
+          "id": "remind-rc-013-q3",
+          "question": "Pie kā Andris apsēdās?",
+          "answers": [
+            "loga"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-014",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Vasarā Gunta savāca gurķus siltumnīcā. Viņa izvēlējās lielākos un salika tos grozā. Mazākos gurķus Gunta atstāja vēl augt. Vakarā viņa pagatavoja salātus.",
+      "questions": [
+        {
+          "id": "remind-rc-014-q1",
+          "question": "Kur Gunta savāca gurķus?",
+          "answers": [
+            "siltumnīcā"
+          ]
+        },
+        {
+          "id": "remind-rc-014-q2",
+          "question": "Kādus gurķus Gunta atstāja augt?",
+          "answers": [
+            "mazākos"
+          ]
+        },
+        {
+          "id": "remind-rc-014-q3",
+          "question": "Ko Gunta pagatavoja vakarā?",
+          "answers": [
+            "salātus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-015",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Ilmārs sestdien apmeklēja muzeju. Viņš aplūkoja vecas fotogrāfijas un pulksteņus. Vienu stundu Ilmārs klausījās gida stāstījumu. Pēc tam viņš iegādājās pastkarti.",
+      "questions": [
+        {
+          "id": "remind-rc-015-q1",
+          "question": "Ko Ilmārs aplūkoja bez fotogrāfijām?",
+          "answers": [
+            "pulksteņus"
+          ]
+        },
+        {
+          "id": "remind-rc-015-q2",
+          "question": "Kura stāstījumu Ilmārs klausījās?",
+          "answers": [
+            "gida"
+          ]
+        },
+        {
+          "id": "remind-rc-015-q3",
+          "question": "Ko Ilmārs iegādājās pēc tam?",
+          "answers": [
+            "pastkarti"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-016",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Aprīlī Liene iegādājās bērzu sulas pudeli. Viņa ievietoja to ledusskapī. Pusdienās Liene sulas glāzi nolika uz galda. Vakarā pudele jau bija tukša.",
+      "questions": [
+        {
+          "id": "remind-rc-016-q1",
+          "question": "Kurā mēnesī Liene iegādājās sulu?",
+          "answers": [
+            "aprīlī"
+          ]
+        },
+        {
+          "id": "remind-rc-016-q2",
+          "question": "Kur Liene ievietoja pudeli?",
+          "answers": [
+            "ledusskapī"
+          ]
+        },
+        {
+          "id": "remind-rc-016-q3",
+          "question": "Kāda pudele bija vakarā?",
+          "answers": [
+            "tukša"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-017",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Oskars pamanīja, ka virtuvē nedeg lampa. Viņš paņēma jaunu spuldzi no skapja. Pirms maiņas Oskars izslēdza elektrību. Pēc tam lampa atkal dega.",
+      "questions": [
+        {
+          "id": "remind-rc-017-q1",
+          "question": "Kas virtuvē nedega?",
+          "answers": [
+            "lampa"
+          ]
+        },
+        {
+          "id": "remind-rc-017-q2",
+          "question": "No kā Oskars paņēma spuldzi?",
+          "answers": [
+            "skapja"
+          ]
+        },
+        {
+          "id": "remind-rc-017-q3",
+          "question": "Ko Oskars izslēdza pirms maiņas?",
+          "answers": [
+            "elektrību"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-018",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Rudenī Zaiga devās uz mežu ar grozu. Zem priedes viņa atrada baraviku. Grozā bija arī gailenes. Mājās Zaiga sēnes notīrīja.",
+      "questions": [
+        {
+          "id": "remind-rc-018-q1",
+          "question": "Ko Zaiga paņēma līdzi uz mežu?",
+          "answers": [
+            "grozu"
+          ]
+        },
+        {
+          "id": "remind-rc-018-q2",
+          "question": "Zem kā Zaiga atrada baraviku?",
+          "answers": [
+            "priedes"
+          ]
+        },
+        {
+          "id": "remind-rc-018-q3",
+          "question": "Kādu sēni Zaiga atrada?",
+          "answers": [
+            "baraviku"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-019",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Piektdien Normunds svinēja dzimšanas dienu. Draugi viņam uzdāvināja grāmatu. Uz galda bija ābolu kūka. Pēc vakariņām visi klausījās mūziku.",
+      "questions": [
+        {
+          "id": "remind-rc-019-q1",
+          "question": "Ko draugi uzdāvināja Normundam?",
+          "answers": [
+            "grāmatu"
+          ]
+        },
+        {
+          "id": "remind-rc-019-q2",
+          "question": "Kāda kūka bija uz galda?",
+          "answers": [
+            "ābolu"
+          ]
+        },
+        {
+          "id": "remind-rc-019-q3",
+          "question": "Ko visi klausījās pēc vakariņām?",
+          "answers": [
+            "mūziku"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-020",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Sanda no rīta devās uz staciju. Pie kases viņa nopirka biļeti uz Jelgavu. Vilciens atbrauca pēc piecām minūtēm. Sanda iekāpa otrajā vagonā.",
+      "questions": [
+        {
+          "id": "remind-rc-020-q1",
+          "question": "Pie kā Sanda nopirka biļeti?",
+          "answers": [
+            "kases"
+          ]
+        },
+        {
+          "id": "remind-rc-020-q2",
+          "question": "Uz kuru pilsētu bija biļete?",
+          "answers": [
+            "Jelgavu"
+          ]
+        },
+        {
+          "id": "remind-rc-020-q3",
+          "question": "Kurā vagonā Sanda iekāpa?",
+          "answers": [
+            "otrajā"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-021",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Spīdēja saule, bet pūta vējš. Ilze uzvilka sarkanu jaku. Parkā viņa fotografēja kļavu lapas. Mājās Ilze izdzēra siltu tēju.",
+      "questions": [
+        {
+          "id": "remind-rc-021-q1",
+          "question": "Kādā krāsā bija Ilzes jaka?",
+          "answers": [
+            "sarkanā"
+          ]
+        },
+        {
+          "id": "remind-rc-021-q2",
+          "question": "Kāda koka lapas Ilze fotografēja?",
+          "answers": [
+            "kļavas"
+          ]
+        },
+        {
+          "id": "remind-rc-021-q3",
+          "question": "Ko Ilze izdzēra mājās?",
+          "answers": [
+            "tēju"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-022",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Roberts pusdienlaikā iegāja kafejnīcā. Viņš pasūtīja zupu un minerālūdeni. Zupu atnesa siltā šķīvī. Pēc pusdienām Roberts samaksāja ar karti.",
+      "questions": [
+        {
+          "id": "remind-rc-022-q1",
+          "question": "Kur Roberts iegāja?",
+          "answers": [
+            "kafejnīcā"
+          ]
+        },
+        {
+          "id": "remind-rc-022-q2",
+          "question": "Ko Roberts pasūtīja līdzās zupai?",
+          "answers": [
+            "minerālūdeni"
+          ]
+        },
+        {
+          "id": "remind-rc-022-q3",
+          "question": "Ar ko Roberts samaksāja?",
+          "answers": [
+            "karti"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-023",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Vakar radio solīja sniegu. Tomēr no rīta lija lietus. Mārtiņš paņēma lietussargu un devās uz darbu. Pusdienlaikā debesis noskaidrojās.",
+      "questions": [
+        {
+          "id": "remind-rc-023-q1",
+          "question": "Ko radio solīja?",
+          "answers": [
+            "sniegu"
+          ]
+        },
+        {
+          "id": "remind-rc-023-q2",
+          "question": "Kas lija no rīta?",
+          "answers": [
+            "lietus"
+          ]
+        },
+        {
+          "id": "remind-rc-023-q3",
+          "question": "Ko Mārtiņš paņēma?",
+          "answers": [
+            "lietussargu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-024",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Pusdienlaikā Kristīnei pienāca ziņa no brāļa. Brālis jautāja par nedēļas nogales plāniem. Kristīne atbildēja, ka sestdien būs mājās. Pēc tam viņa nolika telefonu uz plaukta.",
+      "questions": [
+        {
+          "id": "remind-rc-024-q1",
+          "question": "No kā Kristīnei pienāca ziņa?",
+          "answers": [
+            "brāļa"
+          ]
+        },
+        {
+          "id": "remind-rc-024-q2",
+          "question": "Kur Kristīne būs sestdien?",
+          "answers": [
+            "mājās"
+          ]
+        },
+        {
+          "id": "remind-rc-024-q3",
+          "question": "Uz kā viņa nolika telefonu?",
+          "answers": [
+            "plaukta"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-025",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Ieva bija nolēmusi sestdien doties uz Siguldu. Piektdien vakarā viņa pārbaudīja vilcienu sarakstu. No rīta sākās stiprs lietus. Ieva nolēma braucienu atlikt. Tā vietā viņa mājās lasīja romānu.",
+      "questions": [
+        {
+          "id": "remind-rc-025-q1",
+          "question": "Uz kuru pilsētu Ieva plānoja doties?",
+          "answers": [
+            "Siguldu"
+          ]
+        },
+        {
+          "id": "remind-rc-025-q2",
+          "question": "Ko Ieva pārbaudīja piektdien?",
+          "answers": [
+            "sarakstu"
+          ]
+        },
+        {
+          "id": "remind-rc-025-q3",
+          "question": "Kādi nokrišņi sākās no rīta?",
+          "answers": [
+            "lietus"
+          ]
+        },
+        {
+          "id": "remind-rc-025-q4",
+          "question": "Ko Ieva lasīja mājās?",
+          "answers": [
+            "romānu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-026",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Māris uzaicināja pie sevis kaimiņus. Viņš pagatavoja dārzeņu zupu un izcepa maizi. Kaimiņi ieradās septiņos vakarā. Viņi atnesa ziedus. Pēc vakariņām visi spēlēja kārtis.",
+      "questions": [
+        {
+          "id": "remind-rc-026-q1",
+          "question": "Ko Māris pagatavoja?",
+          "answers": [
+            "zupu"
+          ]
+        },
+        {
+          "id": "remind-rc-026-q2",
+          "question": "Cikos kaimiņi ieradās?",
+          "answers": [
+            "septiņos"
+          ]
+        },
+        {
+          "id": "remind-rc-026-q3",
+          "question": "Ko kaimiņi atnesa?",
+          "answers": [
+            "ziedus"
+          ]
+        },
+        {
+          "id": "remind-rc-026-q4",
+          "question": "Ko visi spēlēja pēc vakariņām?",
+          "answers": [
+            "kārtis"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-027",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Juris svētdien gribēja apgriezt rožu krūmus. Viņš šķūnī meklēja dārza šķēres. Sākumā Juris atrada lāpstu. Šķēres atradās plauktā zem loga. Pēc darba viņš instrumentus nolika atpakaļ.",
+      "questions": [
+        {
+          "id": "remind-rc-027-q1",
+          "question": "Kādu instrumentu Juris meklēja?",
+          "answers": [
+            "šķēres"
+          ]
+        },
+        {
+          "id": "remind-rc-027-q2",
+          "question": "Ko Juris atrada sākumā?",
+          "answers": [
+            "lāpstu"
+          ]
+        },
+        {
+          "id": "remind-rc-027-q3",
+          "question": "Kur atradās šķēres?",
+          "answers": [
+            "plauktā"
+          ]
+        },
+        {
+          "id": "remind-rc-027-q4",
+          "question": "Ko Juris pēc darba nolika atpakaļ?",
+          "answers": [
+            "instrumentus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-028",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Pēc iepirkšanās Inese atgriezās mājās ar autobusu. Izkāpjot viņa pamanīja, ka soma palikusi sēdeklī. Inese uzreiz piezvanīja transporta uzņēmumam. Autobusa vadītājs somu atrada. Vakarā Inese to saņēma pieturā.",
+      "questions": [
+        {
+          "id": "remind-rc-028-q1",
+          "question": "Ko Inese aizmirsa autobusā?",
+          "answers": [
+            "somu"
+          ]
+        },
+        {
+          "id": "remind-rc-028-q2",
+          "question": "Kur bija palikusi soma?",
+          "answers": [
+            "sēdeklī"
+          ]
+        },
+        {
+          "id": "remind-rc-028-q3",
+          "question": "Kas atrada somu?",
+          "answers": [
+            "vadītājs"
+          ]
+        },
+        {
+          "id": "remind-rc-028-q4",
+          "question": "Kur Inese somu saņēma?",
+          "answers": [
+            "pieturā"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-029",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Trešdien no rīta bija saulains. Velta iznesa puķu podus uz terases. Pēcpusdienā sāka līt. Viņa ātri ienesa podus istabā. Vakarā Velta atvēra logu, lai ielaistu svaigu gaisu.",
+      "questions": [
+        {
+          "id": "remind-rc-029-q1",
+          "question": "Ko Velta iznesa ārā?",
+          "answers": [
+            "podus"
+          ]
+        },
+        {
+          "id": "remind-rc-029-q2",
+          "question": "Kad sāka līt?",
+          "answers": [
+            "pēcpusdienā"
+          ]
+        },
+        {
+          "id": "remind-rc-029-q3",
+          "question": "Kur Velta ienesa podus?",
+          "answers": [
+            "istabā"
+          ]
+        },
+        {
+          "id": "remind-rc-029-q4",
+          "question": "Ko Velta vakarā atvēra?",
+          "answers": [
+            "logu"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-030",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Ilze atrada avīzē kartupeļu sacepuma recepti. Pēc darba viņa nopirka sieru un kartupeļus. Mājās Ilze ieslēdza cepeškrāsni. Sacepums bija gatavs pēc stundas. Vakariņās viņa to pasniedza ar salātiem.",
+      "questions": [
+        {
+          "id": "remind-rc-030-q1",
+          "question": "Kur Ilze atrada recepti?",
+          "answers": [
+            "avīzē"
+          ]
+        },
+        {
+          "id": "remind-rc-030-q2",
+          "question": "Ko Ilze nopirka bez kartupeļiem?",
+          "answers": [
+            "sieru"
+          ]
+        },
+        {
+          "id": "remind-rc-030-q3",
+          "question": "Ko Ilze ieslēdza mājās?",
+          "answers": [
+            "cepeškrāsni"
+          ]
+        },
+        {
+          "id": "remind-rc-030-q4",
+          "question": "Ar ko Ilze pasniedza sacepumu?",
+          "answers": [
+            "salātiem"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-031",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Vasarā Rīga bija pilna ar tūristiem. Kāds viesis pie stacijas meklēja muzeju. Elza viņam parādīja ceļu kartē. Tūrists pateicās latviski. Pēc tam Elza turpināja ceļu uz darbu.",
+      "questions": [
+        {
+          "id": "remind-rc-031-q1",
+          "question": "Ko tūrists meklēja?",
+          "answers": [
+            "muzeju"
+          ]
+        },
+        {
+          "id": "remind-rc-031-q2",
+          "question": "Pie kā tūrists meklēja muzeju?",
+          "answers": [
+            "stacijas"
+          ]
+        },
+        {
+          "id": "remind-rc-031-q3",
+          "question": "Kur Elza parādīja ceļu?",
+          "answers": [
+            "kartē"
+          ]
+        },
+        {
+          "id": "remind-rc-031-q4",
+          "question": "Kādā valodā tūrists pateicās?",
+          "answers": [
+            "latviski"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-032",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Viesturs sestdien aizgāja uz tirgu pēc medus. Pie pirmā stenda pārdeva ābolus. Medu viņš atrada pie saimnieces zilā mētelī. Viesturs nopirka divas burkas. Vienu burku viņš uzdāvināja kaimiņienei.",
+      "questions": [
+        {
+          "id": "remind-rc-032-q1",
+          "question": "Pēc kā Viesturs devās uz tirgu?",
+          "answers": [
+            "medus"
+          ]
+        },
+        {
+          "id": "remind-rc-032-q2",
+          "question": "Kādā krāsā bija saimnieces mētelis?",
+          "answers": [
+            "zilā"
+          ]
+        },
+        {
+          "id": "remind-rc-032-q3",
+          "question": "Cik burkas Viesturs nopirka?",
+          "answers": [
+            "divas"
+          ]
+        },
+        {
+          "id": "remind-rc-032-q4",
+          "question": "Kam Viesturs uzdāvināja burku?",
+          "answers": [
+            "kaimiņienei"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-033",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Ivars agri no rīta pārbaudīja velosipēda riepas. Vienā riepā bija maz gaisa. Viņš to piepumpēja un uzlika ķiveri. Pa ceļam Ivars apstājās pie ezera. Mājās viņš atgriezās pirms pusdienām.",
+      "questions": [
+        {
+          "id": "remind-rc-033-q1",
+          "question": "Ko Ivars pārbaudīja?",
+          "answers": [
+            "riepas"
+          ]
+        },
+        {
+          "id": "remind-rc-033-q2",
+          "question": "Ko Ivars uzlika galvā?",
+          "answers": [
+            "ķiveri"
+          ]
+        },
+        {
+          "id": "remind-rc-033-q3",
+          "question": "Pie kā Ivars apstājās?",
+          "answers": [
+            "ezera"
+          ]
+        },
+        {
+          "id": "remind-rc-033-q4",
+          "question": "Pirms kā Ivars atgriezās mājās?",
+          "answers": [
+            "pusdienām"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-034",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Maija bija izslēgusi televizoru, jo gribēja mieru. Viņa apsēdās krēslā ar krustvārdu mīklu. Pēc brīža iezvanījās telefons. Zvanīja viņas meita. Sarunas beigās Maija nolika telefonu uz galda.",
+      "questions": [
+        {
+          "id": "remind-rc-034-q1",
+          "question": "Ko Maija izslēdza?",
+          "answers": [
+            "televizoru"
+          ]
+        },
+        {
+          "id": "remind-rc-034-q2",
+          "question": "Kādā mēbelē Maija apsēdās?",
+          "answers": [
+            "krēslā"
+          ]
+        },
+        {
+          "id": "remind-rc-034-q3",
+          "question": "Kas piezvanīja Maijai?",
+          "answers": [
+            "meita"
+          ]
+        },
+        {
+          "id": "remind-rc-034-q4",
+          "question": "Uz kā Maija nolika telefonu?",
+          "answers": [
+            "galda"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-035",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Anda pasūtīja pušķi mātes dzimšanas dienai. Floriste ieteica dzeltenas tulpes. Anda piekrita un palūdza pievienot apsveikuma kartīti. Pušķi piegādāja piektdien. Māte kartīti izlasīja vakarā.",
+      "questions": [
+        {
+          "id": "remind-rc-035-q1",
+          "question": "Kurai radiniecei bija domāts pušķis?",
+          "answers": [
+            "mātei"
+          ]
+        },
+        {
+          "id": "remind-rc-035-q2",
+          "question": "Kādas puķes ieteica floriste?",
+          "answers": [
+            "tulpes"
+          ]
+        },
+        {
+          "id": "remind-rc-035-q3",
+          "question": "Ko pievienoja pušķim?",
+          "answers": [
+            "kartīti"
+          ]
+        },
+        {
+          "id": "remind-rc-035-q4",
+          "question": "Kurā dienā pušķi piegādāja?",
+          "answers": [
+            "piektdien"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-036",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "passage": "Svētdien Baiba kopā ar brāli aizbrauca pie ezera. Viņi paņēma līdzi termosu ar tēju. Pie ūdens bija vēss, tāpēc Baiba uzvilka jaku. Brālis fotografēja gulbjus. Pirms braukšanas mājās viņi apsēdās uz soliņa.",
+      "questions": [
+        {
+          "id": "remind-rc-036-q1",
+          "question": "Ar ko Baiba aizbrauca pie ezera?",
+          "answers": [
+            "brāli"
+          ]
+        },
+        {
+          "id": "remind-rc-036-q2",
+          "question": "Ko viņi paņēma līdzi?",
+          "answers": [
+            "termosu"
+          ]
+        },
+        {
+          "id": "remind-rc-036-q3",
+          "question": "Ko Baiba uzvilka?",
+          "answers": [
+            "jaku"
+          ]
+        },
+        {
+          "id": "remind-rc-036-q4",
+          "question": "Ko brālis fotografēja?",
+          "answers": [
+            "gulbjus"
+          ]
+        }
+      ]
+    }
+  ]
+}

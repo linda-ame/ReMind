@@ -1,11 +1,12 @@
 /** Content schema version — bump when task JSON shape changes. */
-export const CONTENT_SCHEMA_VERSION = 1;
+export const CONTENT_SCHEMA_VERSION = 2;
 
 export type TaskType =
   | 'word_reading'
   | 'sentence_completion'
   | 'image_word'
-  | 'word_choice';
+  | 'word_choice'
+  | 'reading_comprehension';
 
 export interface BaseTask {
   /** Stable, immutable ID — never reuse or change. */
@@ -14,6 +15,12 @@ export interface BaseTask {
   /** Content version for this task; bump if wording/options change. */
   contentVersion: number;
   instruction: string;
+}
+
+export interface ReadingComprehensionQuestion {
+  id: string;
+  question: string;
+  answers: string[];
 }
 
 export interface WordReadingTask extends BaseTask {
@@ -51,11 +58,19 @@ export interface WordChoiceTask extends BaseTask {
   hint?: string;
 }
 
+/** Short text + comprehension questions (schemaVersion 2). */
+export interface ReadingComprehensionTask extends BaseTask {
+  type: 'reading_comprehension';
+  passage: string;
+  questions: ReadingComprehensionQuestion[];
+}
+
 export type Task =
   | WordReadingTask
   | SentenceCompletionTask
   | ImageWordTask
-  | WordChoiceTask;
+  | WordChoiceTask
+  | ReadingComprehensionTask;
 
 export interface TaskPack {
   schemaVersion: number;

@@ -1,7 +1,13 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
-import { getTasksByType, TASK_TYPE_LABELS } from '../data/loadTasks';
+import {
+  getTasksByType,
+  TASK_TYPE_LABELS,
+  unitNoun,
+  unitNounPlural,
+  unitTitle,
+} from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
 import {
   batchProgress,
@@ -29,12 +35,20 @@ export function BatchListScreen({
   const [selectMode, setSelectMode] = useState(false);
   const [selected, setSelected] = useState<Set<number>>(() => new Set());
   const tasks = getTasksByType(type);
+  const tasksById = useMemo(
+    () => new Map(tasks.map((t) => [t.id, t])),
+    [tasks],
+  );
   const allIds = tasks.map((t) => t.id);
   const batches = buildBatchesForType(allIds, type);
-  const continueBatch = firstIncompleteBatch(batches, attempts);
+  const continueBatch = firstIncompleteBatch(batches, attempts, tasksById);
   const anyWithProgress = batches.some(
-    (b) => batchProgress(b, attempts).done > 0,
+    (b) => batchProgress(b, attempts, tasksById).partial ||
+      batchProgress(b, attempts, tasksById).done > 0,
   );
+  const noun = unitNoun(type);
+  const nounPlural = unitNounPlural(type);
+  const singleUnit = type === 'reading_comprehension';
 
   /** word_reading has no self-assessment / summary review flow. */
   const supportsReview = type !== 'word_reading';
@@ -42,7 +56,7 @@ export function BatchListScreen({
   const startBatch = (batchIndex: number) => {
     const batch = batches[batchIndex];
     if (!batch) return;
-    const { complete } = batchProgress(batch, attempts);
+    const { complete } = batchProgress(batch, attempts, tasksById);
     if (complete && supportsReview) {
       onNavigate({
         name: 'lesson_review',
@@ -52,7 +66,8 @@ export function BatchListScreen({
       return;
     }
     const nextId =
-      firstIncompleteTaskId(batch.taskIds, attempts) ?? batch.taskIds[0];
+      firstIncompleteTaskId(batch.taskIds, attempts, tasksById) ??
+      batch.taskIds[0];
     onNavigate({
       name: 'task',
       taskId: nextId,
@@ -78,19 +93,22 @@ export function BatchListScreen({
 
   const selectedWithProgress = batches.filter((b) => {
     if (!selected.has(b.index)) return false;
-    return batchProgress(b, attempts).done > 0;
+    const p = batchProgress(b, attempts, tasksById);
+    return p.done > 0 || p.partial;
   });
 
   const markUnfinished = async () => {
     if (selectedWithProgress.length === 0) {
-      window.alert('Izvēlieties nodarbību, ko atzīmēt kā neizpildītu.');
+      window.alert(
+        `Izvēlieties ${noun}, ko atzīmēt kā neizpildītu.`,
+      );
       return;
     }
     const names = selectedWithProgress
-      .map((b) => `${b.lessonNumber}. nodarbība`)
+      .map((b) => unitTitle(type, b.lessonNumber))
       .join(', ');
     const ok = window.confirm(
-      `Atzīmēt kā neizpildītas: ${names}?\n\nŠīs nodarbības varēsiet izpildīt no jauna.`,
+      `Atzīmēt kā neizpildītas: ${names}?\n\nŠos varēsiet izpildīt no jauna.`,
     );
     if (!ok) return;
     const taskIds = selectedWithProgress.flatMap((b) => b.taskIds);
@@ -107,7 +125,7 @@ export function BatchListScreen({
       <div className="stack">
         {!selectMode && !continueBatch ? (
           <p className="muted settings-explain" role="status">
-            Visas nodarbības pabeigtas.
+            Visi {nounPlural} pabeigti.
           </p>
         ) : null}
 
@@ -120,7 +138,9 @@ export function BatchListScreen({
                 disabled={selectedWithProgress.length === 0}
                 onClick={() => void markUnfinished()}
               >
-                Atzīmēt izvēlētās kā neizpildītas
+                {singleUnit
+                  ? 'Atzīmēt izvēlētos kā neizpildītus'
+                  : 'Atzīmēt izvēlētās kā neizpildītas'}
                 {selectedWithProgress.length > 0
                   ? ` (${selectedWithProgress.length})`
                   : ''}
@@ -129,8 +149,8 @@ export function BatchListScreen({
                 Atcelt
               </Button>
               <p className="muted settings-explain" role="status">
-                Atzīmējiet ķeksītī nodarbības, ko vēlaties atzīmēt kā
-                neizpildītas.
+                Atzīmējiet ķeksītī {nounPlural}, ko vēlaties atzīmēt kā
+                {singleUnit ? ' neizpildītus' : ' neizpildītas'}.
               </p>
             </>
           ) : (
@@ -139,18 +159,30 @@ export function BatchListScreen({
               className="btn-clear-progress"
               onClick={() => setSelectMode(true)}
             >
-              Atzīmēt kā neizpildītas…
+              {singleUnit
+                ? 'Atzīmēt kā neizpildītus…'
+                : 'Atzīmēt kā neizpildītas…'}
             </Button>
           )
         ) : null}
 
         {batches.map((batch) => {
-          const { done, total, complete } = batchProgress(batch, attempts);
+          const { done, total, complete, partial } = batchProgress(
+            batch,
+            attempts,
+            tasksById,
+          );
           const isChecked = selected.has(batch.index);
           const checkId = `batch-check-${batch.index}`;
           const statusLabel = complete
-            ? 'Pabeigta'
-            : `${done} no ${total}`;
+            ? singleUnit
+              ? 'Pabeigts'
+              : 'Pabeigta'
+            : singleUnit
+              ? partial
+                ? 'Iesākts'
+                : 'Nesākts'
+              : `${done} no ${total}`;
 
           return (
             <div key={batch.index} className="batch-row">
@@ -161,9 +193,9 @@ export function BatchListScreen({
                     type="checkbox"
                     className="batch-check"
                     checked={isChecked}
-                    disabled={done === 0}
+                    disabled={done === 0 && !partial}
                     onChange={() => toggleSelect(batch.index)}
-                    aria-label={`Izvēlēties ${batch.lessonNumber}. nodarbību`}
+                    aria-label={`Izvēlēties ${unitTitle(type, batch.lessonNumber)}`}
                   />
                 </label>
               ) : null}
@@ -172,10 +204,10 @@ export function BatchListScreen({
                 type="button"
                 className={`btn btn-full batch-lesson-btn${
                   complete ? ' batch-lesson-done' : ''
-                }${done > 0 && !complete ? ' batch-lesson-partial' : ''}`}
+                }${partial && !complete ? ' batch-lesson-partial' : ''}`}
                 onClick={() => {
                   if (selectMode) {
-                    if (done > 0) toggleSelect(batch.index);
+                    if (done > 0 || partial) toggleSelect(batch.index);
                     return;
                   }
                   startBatch(batch.index);
@@ -187,9 +219,13 @@ export function BatchListScreen({
                   </span>
                 ) : null}
                 <span>
-                  {batch.lessonNumber}. nodarbība
-                  {' · '}
-                  {batch.from}–{batch.to}
+                  {unitTitle(type, batch.lessonNumber)}
+                  {singleUnit ? null : (
+                    <>
+                      {' · '}
+                      {batch.from}–{batch.to}
+                    </>
+                  )}
                   {' · '}
                   {statusLabel}
                 </span>

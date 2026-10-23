@@ -1,8 +1,14 @@
-import type { SelfAssessment, TaskAttempt, TaskAttemptStatus } from '../types/progress';
-import type { Task } from '../types/task';
+import type {
+  ReadingComprehensionProgress,
+  ReadingQuestionProgress,
+  SelfAssessment,
+  TaskAttempt,
+  TaskAttemptStatus,
+} from '../types/progress';
+import type { ReadingComprehensionTask, Task } from '../types/task';
 
 export function createAttempt(task: Task): TaskAttempt {
-  return {
+  const base: TaskAttempt = {
     id: crypto.randomUUID(),
     taskId: task.id,
     contentVersion: task.contentVersion,
@@ -14,19 +20,77 @@ export function createAttempt(task: Task): TaskAttempt {
     viewedAnswers: false,
     selfAssessment: null,
   };
+
+  if (task.type === 'reading_comprehension') {
+    base.reading = createReadingProgress(task);
+  }
+
+  return base;
 }
 
-/** Most recent attempt for a task (by startedAt). */
+export function createReadingProgress(
+  task: ReadingComprehensionTask,
+): ReadingComprehensionProgress {
+  return {
+    phase: 'passage',
+    questionIndex: 0,
+    questions: task.questions.map((q) => createReadingQuestionProgress(q.id)),
+  };
+}
+
+export function createReadingQuestionProgress(
+  questionId: string,
+): ReadingQuestionProgress {
+  return {
+    questionId,
+    enteredAnswer: null,
+    viewedAnswers: false,
+    rereadCount: 0,
+    selfAssessment: null,
+    status: 'viewed',
+    completedAt: null,
+  };
+}
+
+/**
+ * Most recent attempt for a task (by startedAt).
+ * When contentVersion is set, only matching-version attempts are considered
+ * (older versions stay in history but are not resumed).
+ */
 export function latestAttemptForTask(
   attempts: TaskAttempt[],
   taskId: string,
+  contentVersion?: number,
 ): TaskAttempt | null {
   let best: TaskAttempt | null = null;
   for (const a of attempts) {
     if (a.taskId !== taskId) continue;
+    if (contentVersion != null && a.contentVersion !== contentVersion) continue;
     if (!best || a.startedAt > best.startedAt) best = a;
   }
   return best;
+}
+
+export function isTaskCompletedCurrent(
+  attempts: TaskAttempt[],
+  task: Task,
+): boolean {
+  return attempts.some(
+    (a) =>
+      a.taskId === task.id &&
+      a.contentVersion === task.contentVersion &&
+      a.status === 'completed',
+  );
+}
+
+export function hasProgressForTask(
+  attempts: TaskAttempt[],
+  task: Task,
+): boolean {
+  return attempts.some(
+    (a) =>
+      a.taskId === task.id && a.contentVersion === task.contentVersion,
+  );
 }
 
 export function markAttempted(attempt: TaskAttempt, enteredAnswer?: string | null): TaskAttempt {
@@ -56,26 +120,45 @@ export function completeAttempt(
 export function firstIncompleteTaskId(
   taskIds: string[],
   attempts: TaskAttempt[],
+  tasksById?: Map<string, Task>,
 ): string | null {
   if (taskIds.length === 0) return null;
-  const done = completedTaskIds(attempts);
-  return taskIds.find((id) => !done.has(id)) ?? null;
+  return (
+    taskIds.find((id) => {
+      const task = tasksById?.get(id);
+      if (task) return !isTaskCompletedCurrent(attempts, task);
+      return !attempts.some(
+        (a) => a.taskId === id && a.status === 'completed',
+      );
+    }) ?? null
+  );
 }
 
 export function countCompletedInSet(
   taskIds: string[],
   attempts: TaskAttempt[],
+  tasksById?: Map<string, Task>,
 ): number {
-  const done = completedTaskIds(attempts);
-  return taskIds.filter((id) => done.has(id)).length;
+  return taskIds.filter((id) => {
+    const task = tasksById?.get(id);
+    if (task) return isTaskCompletedCurrent(attempts, task);
+    return attempts.some(
+      (a) => a.taskId === id && a.status === 'completed',
+    );
+  }).length;
 }
 
-/** Best status across all attempts for a task. */
+/** Best status across matching-version attempts for a task. */
 export function bestStatusForTask(
   attempts: TaskAttempt[],
   taskId: string,
+  contentVersion?: number,
 ): TaskAttemptStatus | null {
-  const forTask = attempts.filter((a) => a.taskId === taskId);
+  const forTask = attempts.filter(
+    (a) =>
+      a.taskId === taskId &&
+      (contentVersion == null || a.contentVersion === contentVersion),
+  );
   if (forTask.length === 0) return null;
   if (forTask.some((a) => a.status === 'completed')) return 'completed';
   if (forTask.some((a) => a.status === 'attempted')) return 'attempted';
@@ -95,6 +178,20 @@ export function completedTaskIds(attempts: TaskAttempt[]): Set<string> {
   );
 }
 
+/** Completed for the current content version of each task. */
+export function completedCurrentTaskIds(
+  tasks: Task[],
+  attempts: TaskAttempt[],
+): Set<string> {
+  return new Set(
+    tasks.filter((t) => isTaskCompletedCurrent(attempts, t)).map((t) => t.id),
+  );
+}
+
+function assessmentIsDifficult(a: SelfAssessment | null | undefined): boolean {
+  return a === 'difficult' || a === 'with_help';
+}
+
 /** Tasks where the latest completed attempt was "difficult" or "with_help". */
 export function difficultTaskIds(attempts: TaskAttempt[]): string[] {
   const latestByTask = new Map<string, TaskAttempt>();
@@ -106,10 +203,14 @@ export function difficultTaskIds(attempts: TaskAttempt[]): string[] {
     }
   }
   return [...latestByTask.entries()]
-    .filter(
-      ([, a]) =>
-        a.selfAssessment === 'difficult' || a.selfAssessment === 'with_help',
-    )
+    .filter(([, a]) => {
+      if (a.reading?.questions?.length) {
+        return a.reading.questions.some((q) =>
+          assessmentIsDifficult(q.selfAssessment),
+        );
+      }
+      return assessmentIsDifficult(a.selfAssessment);
+    })
     .map(([id]) => id);
 }
 

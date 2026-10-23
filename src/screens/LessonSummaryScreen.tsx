@@ -1,6 +1,11 @@
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
-import { getTaskById, getTasksByType, TASK_TYPE_LABELS } from '../data/loadTasks';
+import {
+  getTaskById,
+  getTasksByType,
+  TASK_TYPE_LABELS,
+  unitTitle,
+} from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
 import { buildBatchesForType } from '../utils/batches';
 import {
@@ -47,7 +52,7 @@ export function LessonSummaryScreen({
         onHome={onHome}
         onBack={onBack}
       >
-        <p className="lead">Nodarbība nav atrasta.</p>
+        <p className="lead">Nav atrasts.</p>
       </Layout>
     );
   }
@@ -65,7 +70,7 @@ export function LessonSummaryScreen({
 
   return (
     <Layout
-      subtitle={`${TASK_TYPE_LABELS[type]} · ${batch.lessonNumber}. nodarbība`}
+      subtitle={`${TASK_TYPE_LABELS[type]} · ${unitTitle(type, batch.lessonNumber)}`}
       onHome={onHome}
       onBack={onBack}
     >
@@ -75,7 +80,80 @@ export function LessonSummaryScreen({
         {batch.taskIds.map((taskId, i) => {
           const task = getTaskById(taskId);
           if (!task) return null;
-          const attempt = latestAttemptForTask(attempts, taskId);
+          const attempt = latestAttemptForTask(
+            attempts,
+            taskId,
+            task.contentVersion,
+          );
+
+          if (task.type === 'reading_comprehension') {
+            return (
+              <article
+                key={taskId}
+                className="summary-card"
+                role="listitem"
+              >
+                <header className="summary-card-head">
+                  <span className="summary-index">{i + 1}.</span>
+                </header>
+                <p className="summary-prompt rc-summary-passage" lang="lv">
+                  {task.passage}
+                </p>
+                <div className="rc-summary-questions">
+                  {task.questions.map((q, qi) => {
+                    const qp = attempt?.reading?.questions.find(
+                      (x) => x.questionId === q.id,
+                    );
+                    const assessment = qp?.selfAssessment ?? null;
+                    return (
+                      <div key={q.id} className="rc-summary-q">
+                        <p className="summary-prompt" lang="lv">
+                          {qi + 1}. {q.question}
+                        </p>
+                        {assessment ? (
+                          <span
+                            className={`summary-assess summary-assess-${assessment}`}
+                            title={SELF_ASSESSMENT_LABELS[assessment]}
+                          >
+                            <span aria-hidden="true">
+                              {SELF_ASSESSMENT_SYMBOLS[assessment]}
+                            </span>
+                            <span className="summary-assess-label">
+                              {SELF_ASSESSMENT_LABELS[assessment]}
+                            </span>
+                          </span>
+                        ) : null}
+                        <dl className="summary-dl">
+                          <div>
+                            <dt>Tava atbilde</dt>
+                            <dd>
+                              {formatAnswerList(
+                                qp?.enteredAnswer?.trim()
+                                  ? [qp.enteredAnswer]
+                                  : [],
+                              )}
+                            </dd>
+                          </div>
+                          <div>
+                            <dt>Pareizā atbilde</dt>
+                            <dd>{formatAnswerList(q.answers)}</dd>
+                          </div>
+                        </dl>
+                      </div>
+                    );
+                  })}
+                </div>
+                <Button
+                  variant="secondary"
+                  className="summary-open-btn"
+                  onClick={() => openView(taskId)}
+                >
+                  Skatīt uzdevumu
+                </Button>
+              </article>
+            );
+          }
+
           const assessment = attempt?.selfAssessment ?? null;
           const hasAssessment =
             task.type === 'sentence_completion' ||

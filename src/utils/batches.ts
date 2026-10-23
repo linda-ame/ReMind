@@ -1,6 +1,6 @@
 import type { TaskAttempt } from '../types/progress';
 import type { Task } from '../types/task';
-import { completedTaskIds } from './attempts';
+import { hasProgressForTask, isTaskCompletedCurrent } from './attempts';
 
 /** Words / tasks per lesson (nodarbība) by type. */
 export const BATCH_SIZE_BY_TYPE: Record<Task['type'], number> = {
@@ -8,6 +8,8 @@ export const BATCH_SIZE_BY_TYPE: Record<Task['type'], number> = {
   image_word: 5,
   word_choice: 5,
   sentence_completion: 5,
+  /** Each text is its own unit (not grouped into lessons). */
+  reading_comprehension: 1,
 };
 
 /** @deprecated Prefer batchSizeForType — kept for older call sites. */
@@ -56,13 +58,47 @@ export function buildBatchesForType(
 export function batchProgress(
   batch: TaskBatch,
   attempts: TaskAttempt[],
-): { done: number; total: number; complete: boolean } {
-  const completed = completedTaskIds(attempts);
-  const done = batch.taskIds.filter((id) => completed.has(id)).length;
+  tasksById?: Map<string, Task>,
+): {
+  done: number;
+  total: number;
+  complete: boolean;
+  /** Started but not finished (yellow state). */
+  partial: boolean;
+} {
+  const total = batch.taskIds.length;
+  let done = 0;
+  let anyProgress = false;
+
+  for (const id of batch.taskIds) {
+    const task = tasksById?.get(id);
+    if (task ? isTaskCompletedCurrent(attempts, task) : false) {
+      done += 1;
+      anyProgress = true;
+      continue;
+    }
+    if (task ? hasProgressForTask(attempts, task) : false) {
+      anyProgress = true;
+    } else if (!tasksById) {
+      // Fallback without task metadata (legacy call sites).
+      const completed = attempts.some(
+        (a) => a.taskId === id && a.status === 'completed',
+      );
+      if (completed) {
+        done += 1;
+        anyProgress = true;
+      } else if (attempts.some((a) => a.taskId === id)) {
+        anyProgress = true;
+      }
+    }
+  }
+
+  const complete = done === total && total > 0;
   return {
     done,
-    total: batch.taskIds.length,
-    complete: done === batch.taskIds.length,
+    total,
+    complete,
+    partial: !complete && anyProgress,
   };
 }
 
@@ -70,9 +106,10 @@ export function batchProgress(
 export function firstIncompleteBatch(
   batches: TaskBatch[],
   attempts: TaskAttempt[],
+  tasksById?: Map<string, Task>,
 ): TaskBatch | null {
   for (const batch of batches) {
-    const { complete } = batchProgress(batch, attempts);
+    const { complete } = batchProgress(batch, attempts, tasksById);
     if (!complete) return batch;
   }
   return null;

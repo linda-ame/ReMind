@@ -1,7 +1,11 @@
 import { useEffect, useState } from 'react';
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
-import { getTaskById, TASK_TYPE_LABELS } from '../data/loadTasks';
+import {
+  getTaskById,
+  TASK_TYPE_LABELS,
+  unitTitle,
+} from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
 import {
   completeAttempt,
@@ -17,6 +21,7 @@ import { WordReadingTaskView } from './task/WordReadingTaskView';
 import { SentenceCompletionTaskView } from './task/SentenceCompletionTaskView';
 import { ImageWordTaskView } from './task/ImageWordTaskView';
 import { WordChoiceTaskView } from './task/WordChoiceTaskView';
+import { ReadingComprehensionTaskView } from './task/ReadingComprehensionTaskView';
 
 interface TaskScreenProps {
   taskId: string;
@@ -46,7 +51,11 @@ export function TaskScreen({
 
   useEffect(() => {
     if (!task) return;
-    const previous = latestAttemptForTask(attempts, task.id);
+    const previous = latestAttemptForTask(
+      attempts,
+      task.id,
+      task.contentVersion,
+    );
     if (previous) {
       setAttempt(previous);
       return;
@@ -95,7 +104,8 @@ export function TaskScreen({
   const isLast = idx >= 0 && idx === queue.length - 1;
   const isWordReading = task.type === 'word_reading';
   const isWordChoice = task.type === 'word_choice';
-  const skipSelfAssessment = isWordReading || isWordChoice;
+  const isReading = task.type === 'reading_comprehension';
+  const skipSelfAssessment = isWordReading || isWordChoice || isReading;
   const inBatch = batchIndex !== undefined && batchType !== undefined;
   const alreadyAssessed =
     attempt.status === 'completed' && attempt.selfAssessment != null;
@@ -171,13 +181,14 @@ export function TaskScreen({
       : 'Tālāk';
 
   const subtitle = inBatch
-    ? `${TASK_TYPE_LABELS[task.type]} · ${batchIndex! + 1}. nodarbība${
-        isView ? ' · skatīt' : ''
-      }`
+    ? `${TASK_TYPE_LABELS[task.type]} · ${unitTitle(
+        task.type,
+        batchIndex! + 1,
+      )}${isView ? ' · skatīt' : ''}`
     : TASK_TYPE_LABELS[task.type];
 
   const queueProgressLabel =
-    queue.length > 0 && idx >= 0
+    queue.length > 0 && idx >= 0 && !isReading
       ? `${idx + 1}. no ${queue.length}`
       : null;
 
@@ -193,6 +204,35 @@ export function TaskScreen({
         <span>{SELF_ASSESSMENT_LABELS[attempt.selfAssessment]}</span>
       </div>
     ) : null;
+
+  if (isReading) {
+    return (
+      <Layout onHome={onHome} onBack={onBack} subtitle={subtitle}>
+        <ReadingComprehensionTaskView
+          key={`${task.id}-${mode}`}
+          task={task}
+          attempt={attempt}
+          onUpdate={(next) => {
+            setAttempt(next);
+            if (!isView) void saveAttempt(next);
+          }}
+          onFinished={() => {
+            if (isView) {
+              onBack();
+              return;
+            }
+            onNavigate({
+              name: 'lesson_done',
+              queue,
+              batchIndex,
+              batchType,
+            });
+          }}
+          readOnly={isView}
+        />
+      </Layout>
+    );
+  }
 
   if (isWordReading) {
     return (

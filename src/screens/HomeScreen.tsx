@@ -6,7 +6,7 @@ import {
   TASK_TYPE_ORDER,
 } from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
-import { completedTaskIds } from '../utils/attempts';
+import { completedCurrentTaskIds } from '../utils/attempts';
 import type { Screen } from '../navigation/types';
 import type { Task } from '../types/task';
 
@@ -16,7 +16,6 @@ interface HomeScreenProps {
 
 export function HomeScreen({ onNavigate }: HomeScreenProps) {
   const { attempts } = useApp();
-  const completed = completedTaskIds(attempts);
 
   const openType = (type: Task['type']) => {
     const ofType = getTasksByType(type);
@@ -30,6 +29,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
         {TASK_TYPE_ORDER.map((type) => {
           const ofType = getTasksByType(type);
           if (ofType.length === 0) return null;
+          const completed = completedCurrentTaskIds(ofType, attempts);
           const done = ofType.filter((t) => completed.has(t.id)).length;
           return (
             <Button

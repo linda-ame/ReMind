@@ -1,6 +1,10 @@
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
-import { getTasksByType, TASK_TYPE_LABELS } from '../data/loadTasks';
+import {
+  getTasksByType,
+  TASK_TYPE_LABELS,
+  unitTitle,
+} from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
 import { buildBatchesForType } from '../utils/batches';
 import type { Screen } from '../navigation/types';
@@ -15,7 +19,7 @@ interface Props {
 }
 
 /**
- * Actions for a completed lesson (not used for word_reading).
+ * Actions for a completed lesson / single RC task (not used for word_reading).
  * Kopsavilkums · Skatīt · Pildīt vēlreiz
  */
 export function LessonReviewScreen({
@@ -32,15 +36,16 @@ export function LessonReviewScreen({
     type,
   );
   const batch = batches[batchIndex];
+  const title = batch ? unitTitle(type, batch.lessonNumber) : null;
 
-  if (!batch) {
+  if (!batch || !title) {
     return (
       <Layout
         subtitle={TASK_TYPE_LABELS[type]}
         onHome={onHome}
         onBack={onBack}
       >
-        <p className="lead">Nodarbība nav atrasta.</p>
+        <p className="lead">Nav atrasts.</p>
       </Layout>
     );
   }
@@ -58,7 +63,7 @@ export function LessonReviewScreen({
 
   const retake = async () => {
     const ok = window.confirm(
-      `Pildīt ${batch.lessonNumber}. nodarbību no jauna?\n\nIepriekšējās atbildes un pašvērtējums tiks dzēsti.`,
+      `Pildīt ${title} no jauna?\n\nIepriekšējās atbildes un pašvērtējums tiks dzēsti.`,
     );
     if (!ok) return;
     await clearProgressForTasks(batch.taskIds);
@@ -72,7 +77,8 @@ export function LessonReviewScreen({
       onBack={onBack}
     >
       <p className="lead">
-        {batch.lessonNumber}. nodarbība · pabeigta
+        {title} ·{' '}
+        {type === 'reading_comprehension' ? 'pabeigts' : 'pabeigta'}
       </p>
       <div className="stack">
         <Button

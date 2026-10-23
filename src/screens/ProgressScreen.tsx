@@ -4,7 +4,7 @@ import { useApp } from '../context/AppContext';
 import { getAllTasks } from '../data/loadTasks';
 import {
   bestStatusForTask,
-  completedTaskIds,
+  completedCurrentTaskIds,
   difficultTaskIds,
   uniqueTrainingDays,
 } from '../utils/attempts';
@@ -19,7 +19,7 @@ interface ProgressScreenProps {
 export function ProgressScreen({ onNavigate, onBack, onHome }: ProgressScreenProps) {
   const { attempts, exportProgress, importProgress } = useApp();
   const tasks = getAllTasks();
-  const completed = completedTaskIds(attempts);
+  const completed = completedCurrentTaskIds(tasks, attempts);
   const days = uniqueTrainingDays(attempts);
   const hardIds = difficultTaskIds(attempts);
 
@@ -27,7 +27,7 @@ export function ProgressScreen({ onNavigate, onBack, onHome }: ProgressScreenPro
   let attempted = 0;
   let done = 0;
   for (const t of tasks) {
-    const s = bestStatusForTask(attempts, t.id);
+    const s = bestStatusForTask(attempts, t.id, t.contentVersion);
     if (s === 'completed') done += 1;
     else if (s === 'attempted') attempted += 1;
     else if (s === 'viewed') viewed += 1;
