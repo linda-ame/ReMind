@@ -57,6 +57,8 @@ export function WordChoiceTaskView({
   const correctOptions = new Set(
     task.correctIndices.map((i) => task.options[i]),
   );
+  /** One correct answer → exclusive single-select; two+ → multi-select. */
+  const singleSelect = correctOptions.size === 1;
 
   const patch = (partial: Partial<TaskAttempt>) => {
     if (readOnly) return;
@@ -71,9 +73,14 @@ export function WordChoiceTaskView({
 
   const toggleOption = (option: string) => {
     if (readOnly || revealed) return;
-    const next = new Set(selected);
-    if (next.has(option)) next.delete(option);
-    else next.add(option);
+    let next: Set<string>;
+    if (singleSelect) {
+      next = selected.has(option) ? new Set() : new Set([option]);
+    } else {
+      next = new Set(selected);
+      if (next.has(option)) next.delete(option);
+      else next.add(option);
+    }
     setSelected(next);
     patch({
       enteredAnswer: serializeSelected(next),

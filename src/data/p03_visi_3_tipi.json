@@ -1,0 +1,2316 @@
+{
+  "schemaVersion": 1,
+  "title": "ReMind — 3 sadaļu papildinājums Nr. 3",
+  "tasks": [
+    {
+      "id": "remind-sc-p03-001",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Virtuvē uz plīts lēni vārījās ___.",
+      "answers": [
+        "zupa",
+        "putra",
+        "ūdens"
+      ],
+      "hint": "Padomā par ēdienu, ko gatavo katlā."
+    },
+    {
+      "id": "remind-sc-p03-002",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms ciemiņu ierašanās viņa notīrīja ___.",
+      "answers": [
+        "galdu",
+        "spoguli",
+        "grīdu"
+      ],
+      "hint": "Padomā par to, ko mājās uzkopj."
+    },
+    {
+      "id": "remind-sc-p03-003",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc logu mazgāšanas stikli kļuva ___.",
+      "answers": [
+        "tīri",
+        "spodri"
+      ],
+      "hint": "Kādi izskatās labi nomazgāti stikli?"
+    },
+    {
+      "id": "remind-sc-p03-004",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "No skapja viņš izņēma tīru ___.",
+      "answers": [
+        "kreklu",
+        "džemperi",
+        "dvieli"
+      ],
+      "hint": "Padomā par lietu, ko glabā skapī."
+    },
+    {
+      "id": "remind-sc-p03-005",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc mazgāšanas drēbes viņa pakāra uz ___.",
+      "answers": [
+        "auklas",
+        "žāvētāja",
+        "pakaramā"
+      ],
+      "hint": "Kur var žāvēt vai pakārt drēbes?"
+    },
+    {
+      "id": "remind-sc-p03-006",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pie ārdurvīm viesi nolika savus ___.",
+      "answers": [
+        "apavus",
+        "zābakus",
+        "mēteļus"
+      ],
+      "hint": "Ko cilvēki parasti novelk ienākot?"
+    },
+    {
+      "id": "remind-sc-p03-007",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai telpā kļūtu siltāk, viņa ieslēdza ___.",
+      "answers": [
+        "radiatoru",
+        "sildītāju"
+      ],
+      "hint": "Kāda ierīce rada siltumu?"
+    },
+    {
+      "id": "remind-sc-p03-008",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Uz palodzes zaļoja neliels ___.",
+      "answers": [
+        "augs",
+        "kaktuss",
+        "zieds"
+      ],
+      "hint": "Kas var augt puķupodā?"
+    },
+    {
+      "id": "remind-sc-p03-009",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "No ledusskapja viņš izņēma pudeli ___.",
+      "answers": [
+        "piena",
+        "kefīra",
+        "ūdens"
+      ],
+      "hint": "Padomā par dzērienu pudelē."
+    },
+    {
+      "id": "remind-sc-p03-010",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms maltītes viņa uzklāja galdam tīru ___.",
+      "answers": [
+        "galdautu"
+      ],
+      "hint": "Kas var nosegt galda virsmu?"
+    },
+    {
+      "id": "remind-sc-p03-011",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Plauktā bija saliktas vairākas ___.",
+      "answers": [
+        "grāmatas",
+        "kastes",
+        "vāzes"
+      ],
+      "hint": "Kādas lietas var glabāt plauktā?"
+    },
+    {
+      "id": "remind-sc-p03-012",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai istabā būtu gaišāk, viņš atvilka ___.",
+      "answers": [
+        "aizkarus",
+        "žalūzijas"
+      ],
+      "hint": "Kas aizsedz logu?"
+    },
+    {
+      "id": "remind-sc-p03-013",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc ēdiena gatavošanas viņa izslēdza ___.",
+      "answers": [
+        "plīti",
+        "cepeškrāsni"
+      ],
+      "hint": "Kādu virtuves ierīci izslēdz?"
+    },
+    {
+      "id": "remind-sc-p03-014",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pie izlietnes viņš nolika tīru ___.",
+      "answers": [
+        "sūkli",
+        "dvieli",
+        "trauku"
+      ],
+      "hint": "Kas var atrasties pie izlietnes?"
+    },
+    {
+      "id": "remind-sc-p03-015",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad sāka pūst caurvējš, viņa aizvēra ___.",
+      "answers": [
+        "logu",
+        "durvis"
+      ],
+      "hint": "Kas mājās var palikt atvērts?"
+    },
+    {
+      "id": "remind-sc-p03-016",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Rudenī viņi pagrabā noglabāja ___.",
+      "answers": [
+        "kartupeļus",
+        "burkānus",
+        "ievārījumu"
+      ],
+      "hint": "Padomā par pārtikas krājumiem ziemai."
+    },
+    {
+      "id": "remind-sc-p03-017",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "No rīta guļamistabā noskanēja ___.",
+      "answers": [
+        "modinātājs",
+        "zvans"
+      ],
+      "hint": "Kas var pamodināt cilvēku?"
+    },
+    {
+      "id": "remind-sc-p03-018",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms darba viņš uzlādēja savu ___.",
+      "answers": [
+        "telefonu",
+        "datoru",
+        "pulksteni"
+      ],
+      "hint": "Kādai ierīcei nepieciešama baterija?"
+    },
+    {
+      "id": "remind-sc-p03-019",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Viesistabā pie dīvāna bija mīksts ___.",
+      "answers": [
+        "paklājs",
+        "spilvens"
+      ],
+      "hint": "Padomā par mīkstu mājas priekšmetu."
+    },
+    {
+      "id": "remind-sc-p03-020",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc vakariņām viņa pārpalikumus ielika ___.",
+      "answers": [
+        "ledusskapī",
+        "traukā",
+        "kastītē"
+      ],
+      "hint": "Kur uzglabāt atlikušos ēdienus?"
+    },
+    {
+      "id": "remind-sc-p03-021",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pie kases pārdevēja izsniedza pirkuma ___.",
+      "answers": [
+        "čeku"
+      ],
+      "hint": "Ko pircējs saņem pēc maksājuma?"
+    },
+    {
+      "id": "remind-sc-p03-022",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms pirkuma viņš salīdzināja preču ___.",
+      "answers": [
+        "cenas",
+        "izmērus"
+      ],
+      "hint": "Ko var salīdzināt, izvēloties preci?"
+    },
+    {
+      "id": "remind-sc-p03-023",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Bankomatā viņa izņēma skaidru ___.",
+      "answers": [
+        "naudu"
+      ],
+      "hint": "Ko iespējams izņemt no bankomāta?"
+    },
+    {
+      "id": "remind-sc-p03-024",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pasta nodaļā viņš nosūtīja nelielu ___.",
+      "answers": [
+        "paku",
+        "sūtījumu",
+        "vēstuli"
+      ],
+      "hint": "Ko var nosūtīt pa pastu?"
+    },
+    {
+      "id": "remind-sc-p03-025",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Autoostā viņa gaidīja pienākam ___.",
+      "answers": [
+        "autobusu"
+      ],
+      "hint": "Kāds transports pietur autoostā?"
+    },
+    {
+      "id": "remind-sc-p03-026",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Vilciena vagona logā bija redzama ___.",
+      "answers": [
+        "ainava",
+        "pļava",
+        "mežmala"
+      ],
+      "hint": "Ko ceļotājs var redzēt pa logu?"
+    },
+    {
+      "id": "remind-sc-p03-027",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms došanās ceļā viņš piepildīja automašīnas ___.",
+      "answers": [
+        "bāku"
+      ],
+      "hint": "Kur automašīnā iepilda degvielu?"
+    },
+    {
+      "id": "remind-sc-p03-028",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pie gājēju pārejas viņa sagaidīja zaļo ___.",
+      "answers": [
+        "signālu",
+        "gaismu"
+      ],
+      "hint": "Kas rāda, kad atļauts šķērsot ielu?"
+    },
+    {
+      "id": "remind-sc-p03-029",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pilsētas centrā viņi iegāja nelielā ___.",
+      "answers": [
+        "kafejnīcā",
+        "veikalā",
+        "grāmatnīcā"
+      ],
+      "hint": "Kādu vietu var apmeklēt pilsētas centrā?"
+    },
+    {
+      "id": "remind-sc-p03-030",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Tirgū pārdevējs nosvēra kilogramu ___.",
+      "answers": [
+        "ābolu",
+        "tomātu",
+        "burkānu"
+      ],
+      "hint": "Kādus produktus mēdz svērt?"
+    },
+    {
+      "id": "remind-sc-p03-031",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Veikalā viņa pielaikoja jaunu ___.",
+      "answers": [
+        "jaku",
+        "mēteli",
+        "kleitu"
+      ],
+      "hint": "Kādu apģērbu var pielaikot?"
+    },
+    {
+      "id": "remind-sc-p03-032",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc apmaksas viņš ielika bankas karti ___.",
+      "answers": [
+        "makā",
+        "kabatā",
+        "somā"
+      ],
+      "hint": "Kur mēdz glabāt karti?"
+    },
+    {
+      "id": "remind-sc-p03-033",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pieturā bija piestājis sarkans ___.",
+      "answers": [
+        "autobuss",
+        "trolejbuss"
+      ],
+      "hint": "Kāds sabiedriskais transports pietur?"
+    },
+    {
+      "id": "remind-sc-p03-034",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Braucot pa nezināmu vietu, viņa ieslēdza ___.",
+      "answers": [
+        "navigāciju",
+        "karti"
+      ],
+      "hint": "Kas palīdz atrast ceļu?"
+    },
+    {
+      "id": "remind-sc-p03-035",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Bibliotēkā viņš meklēja grāmatu par ___.",
+      "answers": [
+        "vēsturi",
+        "ceļojumiem",
+        "dabu"
+      ],
+      "hint": "Par kādu tēmu var būt grāmata?"
+    },
+    {
+      "id": "remind-sc-p03-036",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc remonta meistars izsniedza ___.",
+      "answers": [
+        "rēķinu",
+        "čeku",
+        "garantijas talonu"
+      ],
+      "hint": "Kādu dokumentu klientam var iedot?"
+    },
+    {
+      "id": "remind-sc-p03-037",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Aptiekā farmaceits paskaidroja zāļu lietošanas ___.",
+      "answers": [
+        "kārtību",
+        "noteikumus"
+      ],
+      "hint": "Kas jāzina pirms zāļu lietošanas?"
+    },
+    {
+      "id": "remind-sc-p03-038",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pie ieejas muzejā viņi nopirka ___.",
+      "answers": [
+        "biļetes"
+      ],
+      "hint": "Kas nepieciešams muzeja apmeklējumam?"
+    },
+    {
+      "id": "remind-sc-p03-039",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Uz stacijas tablo parādījās vilciena ___.",
+      "answers": [
+        "numurs",
+        "maršruts"
+      ],
+      "hint": "Kādu informāciju rāda tablo?"
+    },
+    {
+      "id": "remind-sc-p03-040",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc telefona sarunas viņa pierakstīja tikšanās ___.",
+      "answers": [
+        "laiku",
+        "vietu",
+        "datumu"
+      ],
+      "hint": "Kādu informāciju vajag atcerēties?"
+    },
+    {
+      "id": "remind-sc-p03-041",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Salātus viņa pārkaisīja ar ___.",
+      "answers": [
+        "dillēm",
+        "pētersīļiem"
+      ],
+      "hint": "Kādus zaļumus pievieno salātiem?"
+    },
+    {
+      "id": "remind-sc-p03-042",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms cepšanas viņš uzkarsēja ___.",
+      "answers": [
+        "pannu",
+        "cepeškrāsni"
+      ],
+      "hint": "Ko parasti uzkarsē pirms cepšanas?"
+    },
+    {
+      "id": "remind-sc-p03-043",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai mīkla kļūtu viendabīga, viņa to rūpīgi ___.",
+      "answers": [
+        "samaisīja",
+        "izmīcīja"
+      ],
+      "hint": "Ko dara, lai sastāvdaļas sajauktos?"
+    },
+    {
+      "id": "remind-sc-p03-044",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "No karstā katla pacēlās balti ___.",
+      "answers": [
+        "tvaiki"
+      ],
+      "hint": "Kas rodas no karsta ūdens?"
+    },
+    {
+      "id": "remind-sc-p03-045",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Svaigu maizi viņš nolika uz griešanas ___.",
+      "answers": [
+        "dēlīša"
+      ],
+      "hint": "Uz kā parasti griež produktus?"
+    },
+    {
+      "id": "remind-sc-p03-046",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms pievienošanas zupai burkānus viņa ___.",
+      "answers": [
+        "nomizoja",
+        "sagrieza",
+        "nomazgāja"
+      ],
+      "hint": "Kā sagatavo dārzeņus?"
+    },
+    {
+      "id": "remind-sc-p03-047",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Vasarā pie ezera viņi klausījās putnu ___.",
+      "answers": [
+        "dziesmās",
+        "balsīs"
+      ],
+      "hint": "Kādas skaņas dzird dabā?"
+    },
+    {
+      "id": "remind-sc-p03-048",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc vētras uz takas mētājās nolūzuši ___.",
+      "answers": [
+        "zari"
+      ],
+      "hint": "Kas vētrā var nolūzt kokiem?"
+    },
+    {
+      "id": "remind-sc-p03-049",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Agri no rīta pļavu klāja bieza ___.",
+      "answers": [
+        "migla",
+        "rasa"
+      ],
+      "hint": "Kas var parādīties virs pļavas?"
+    },
+    {
+      "id": "remind-sc-p03-050",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Siltā dienā viņa devās pastaigā gar ___.",
+      "answers": [
+        "jūru",
+        "upi",
+        "ezeru"
+      ],
+      "hint": "Gar kādu ūdenstilpi var pastaigāties?"
+    },
+    {
+      "id": "remind-sc-p03-051",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Rudenī mežā viņi salasīja grozu ___.",
+      "answers": [
+        "sēņu",
+        "gaileņu"
+      ],
+      "hint": "Ko mēdz lasīt mežā?"
+    },
+    {
+      "id": "remind-sc-p03-052",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc garas pastaigas viņš apsēdās uz ___.",
+      "answers": [
+        "soli",
+        "akmens",
+        "krēsla"
+      ],
+      "hint": "Kur var apsēsties atpūsties?"
+    },
+    {
+      "id": "remind-sc-p03-053",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Vakarā dārzā skanēja sienāžu ___.",
+      "answers": [
+        "cirpšana",
+        "čīgāšana"
+      ],
+      "hint": "Kādu skaņu rada sienāži?"
+    },
+    {
+      "id": "remind-sc-p03-054",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms došanās saulē viņa uzlika galvā ___.",
+      "answers": [
+        "cepuri",
+        "platmali"
+      ],
+      "hint": "Kas pasargā galvu no saules?"
+    },
+    {
+      "id": "remind-sc-p03-055",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Dārza dobē pēc lietus parādījās mazas ___.",
+      "answers": [
+        "peļķes",
+        "sliekas"
+      ],
+      "hint": "Kas var parādīties mitrā zemē?"
+    },
+    {
+      "id": "remind-sc-p03-056",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Vējainā laikā jūras krastā cēlās lieli ___.",
+      "answers": [
+        "viļņi"
+      ],
+      "hint": "Kas veidojas ūdenī stiprā vējā?"
+    },
+    {
+      "id": "remind-sc-p03-057",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms vingrošanas viņš izstaipīja roku ___.",
+      "answers": [
+        "muskuļus",
+        "pirkstus"
+      ],
+      "hint": "Ko var izvingrināt pirms kustībām?"
+    },
+    {
+      "id": "remind-sc-p03-058",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc pastaigas svaigā gaisā viņai uzlabojās ___.",
+      "answers": [
+        "garastāvoklis",
+        "pašsajūta"
+      ],
+      "hint": "Kā cilvēks var justies pēc atpūtas?"
+    },
+    {
+      "id": "remind-sc-p03-059",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad ārā kļuva tumšs, debesīs iemirdzējās ___.",
+      "answers": [
+        "zvaigznes"
+      ],
+      "hint": "Kas naktī redzams skaidrās debesīs?"
+    },
+    {
+      "id": "remind-sc-p03-060",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Dārzā nogatavojušās ogas viņa uzmanīgi ___.",
+      "answers": [
+        "nolasīja",
+        "salasīja"
+      ],
+      "hint": "Ko dara ar gatavām ogām?"
+    },
+    {
+      "id": "remind-sc-p03-061",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms sapulces viņa pārskatīja savas ___.",
+      "answers": [
+        "piezīmes",
+        "atgādnes"
+      ],
+      "hint": "Ko var pierakstīt pirms sapulces?"
+    },
+    {
+      "id": "remind-sc-p03-062",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Datora ekrānā viņš atvēra jaunu ___.",
+      "answers": [
+        "dokumentu",
+        "failu",
+        "logu"
+      ],
+      "hint": "Ko var atvērt datorā?"
+    },
+    {
+      "id": "remind-sc-p03-063",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai nepalaistu garām tikšanos, viņa iestatīja ___.",
+      "answers": [
+        "atgādinājumu",
+        "modinātāju"
+      ],
+      "hint": "Kas palīdz atcerēties svarīgu laiku?"
+    },
+    {
+      "id": "remind-sc-p03-064",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Telefona sarunas laikā viņš pierakstīja svarīgu ___.",
+      "answers": [
+        "numuru",
+        "adresi",
+        "informāciju"
+      ],
+      "hint": "Ko var pierakstīt sarunas laikā?"
+    },
+    {
+      "id": "remind-sc-p03-065",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc vēstules saņemšanas viņa nosūtīja īsu ___.",
+      "answers": [
+        "atbildi",
+        "pateicību"
+      ],
+      "hint": "Ko var nosūtīt pretī vēstulei?"
+    },
+    {
+      "id": "remind-sc-p03-066",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Ziņu raidījumā paziņoja rītdienas laika ___.",
+      "answers": [
+        "prognozi"
+      ],
+      "hint": "Kas paredz gaidāmos laikapstākļus?"
+    },
+    {
+      "id": "remind-sc-p03-067",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms ceļojuma viņa pārbaudīja pases derīguma ___.",
+      "answers": [
+        "termiņu"
+      ],
+      "hint": "Kādu datumu svarīgi pārbaudīt dokumentā?"
+    },
+    {
+      "id": "remind-sc-p03-068",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pie ārsta viņš pierakstījās uz nākamo ___.",
+      "answers": [
+        "nedēļu",
+        "otrdienu",
+        "piektdienu"
+      ],
+      "hint": "Uz kādu laiku var pieteikt vizīti?"
+    },
+    {
+      "id": "remind-sc-p03-069",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Atverot kalendāru, viņa pārbaudīja šodienas ___.",
+      "answers": [
+        "datumu",
+        "plānus"
+      ],
+      "hint": "Kādu informāciju rāda kalendārs?"
+    },
+    {
+      "id": "remind-sc-p03-070",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai uzzinātu jaunākās ziņas, viņš ieslēdza ___.",
+      "answers": [
+        "radio",
+        "televizoru",
+        "datoru"
+      ],
+      "hint": "Kur var klausīties vai skatīties ziņas?"
+    },
+    {
+      "id": "remind-sc-p03-071",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms koncerta publika ieņēma savas ___.",
+      "answers": [
+        "vietas",
+        "sēdvietas"
+      ],
+      "hint": "Kur skatītāji apsēžas?"
+    },
+    {
+      "id": "remind-sc-p03-072",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad izrāde beidzās, skatītāji sāka ___.",
+      "answers": [
+        "aplaudēt",
+        "piecelties"
+      ],
+      "hint": "Ko skatītāji dara pēc izrādes?"
+    },
+    {
+      "id": "remind-sc-p03-073",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Fotogrāfs pirms uzņemšanas noregulēja kameras ___.",
+      "answers": [
+        "fokusu",
+        "iestatījumus"
+      ],
+      "hint": "Kas jāpielāgo, uzņemot fotoattēlu?"
+    },
+    {
+      "id": "remind-sc-p03-074",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc garas darba dienas viņš devās mājās ___.",
+      "answers": [
+        "atpūsties",
+        "gulēt"
+      ],
+      "hint": "Ko cilvēks mēdz darīt pēc darba?"
+    },
+    {
+      "id": "remind-sc-p03-075",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Uz apsveikuma kartītes viņa uzrakstīja sirsnīgu ___.",
+      "answers": [
+        "novēlējumu",
+        "sveicienu"
+      ],
+      "hint": "Kādu tekstu mēdz rakstīt apsveikumā?"
+    },
+    {
+      "id": "remind-sc-p03-076",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Sarunas laikā viņš uzmanīgi ieklausījās otra cilvēka ___.",
+      "answers": [
+        "vārdos",
+        "teiktajā"
+      ],
+      "hint": "Kam sarunā pievērš uzmanību?"
+    },
+    {
+      "id": "remind-sc-p03-077",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Jaunajā telefonā viņa saglabāja drauga ___.",
+      "answers": [
+        "numuru",
+        "kontaktu"
+      ],
+      "hint": "Kādu informāciju saglabā kontaktos?"
+    },
+    {
+      "id": "remind-sc-p03-078",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms nosūtīšanas viņa pārlasīja savu ___.",
+      "answers": [
+        "ziņu",
+        "vēstuli",
+        "tekstu"
+      ],
+      "hint": "Ko vēlams pārbaudīt pirms nosūtīšanas?"
+    },
+    {
+      "id": "remind-sc-p03-079",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai atrastu pareizo māju, viņš pārbaudīja ___.",
+      "answers": [
+        "adresi",
+        "mājas numuru",
+        "ielas nosaukumu"
+      ],
+      "hint": "Kas palīdz noteikt adresi?"
+    },
+    {
+      "id": "remind-sc-p03-080",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc garām brīvdienām viņa atgriezās savā ___.",
+      "answers": [
+        "darbā",
+        "birojā"
+      ],
+      "hint": "Kur cilvēks atgriežas pēc atvaļinājuma?"
+    },
+    {
+      "id": "remind-sc-p03-081",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Tā kā vakarā kļuva vēss, viņi aizvēra terases ___.",
+      "answers": [
+        "durvis",
+        "logus"
+      ],
+      "hint": "Kas var būt atvērts terasē?"
+    },
+    {
+      "id": "remind-sc-p03-082",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai nezaudētu dokumentu, viņa izveidoja tā ___.",
+      "answers": [
+        "kopiju"
+      ],
+      "hint": "Ko var saglabāt rezerves variantā?"
+    },
+    {
+      "id": "remind-sc-p03-083",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai arī ārā bija apmācies, viņi devās ___.",
+      "answers": [
+        "pastaigā",
+        "ceļā",
+        "ekskursijā"
+      ],
+      "hint": "Kā var pavadīt laiku ārā?"
+    },
+    {
+      "id": "remind-sc-p03-084",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad vilciens kavējās, viņa paziņoja par to ___.",
+      "answers": [
+        "draugam",
+        "kolēģim",
+        "ģimenei"
+      ],
+      "hint": "Kam var ziņot par kavēšanos?"
+    },
+    {
+      "id": "remind-sc-p03-085",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms svarīga lēmuma pieņemšanas viņš uzklausīja drauga ___.",
+      "answers": [
+        "viedokli",
+        "padomu"
+      ],
+      "hint": "Ko var lūgt citam cilvēkam?"
+    },
+    {
+      "id": "remind-sc-p03-086",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Tiklīdz sākās lietus, viņi patvērās zem ___.",
+      "answers": [
+        "jumta",
+        "nojumes",
+        "koka"
+      ],
+      "hint": "Kur var paslēpties no lietus?"
+    },
+    {
+      "id": "remind-sc-p03-087",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai atcerētos recepti, viņa pierakstīja visas ___.",
+      "answers": [
+        "sastāvdaļas",
+        "darbības"
+      ],
+      "hint": "Ko ietver recepte?"
+    },
+    {
+      "id": "remind-sc-p03-088",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad pazuda elektrība, ledusskapis pārstāja ___.",
+      "answers": [
+        "darboties",
+        "rūkt",
+        "dzesēt"
+      ],
+      "hint": "Ko ierīce vairs nedarīja?"
+    },
+    {
+      "id": "remind-sc-p03-089",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc pusnakts satiksme pilsētā kļuva ___.",
+      "answers": [
+        "klusāka",
+        "retāka"
+      ],
+      "hint": "Kā naktī mainās satiksme?"
+    },
+    {
+      "id": "remind-sc-p03-090",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Ja biļete ir elektroniska, to var parādīt ___.",
+      "answers": [
+        "telefonā",
+        "ekrānā"
+      ],
+      "hint": "Kur var glabāt elektronisku biļeti?"
+    },
+    {
+      "id": "remind-sc-p03-091",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad dārzā iestājās sausums, augi sāka ___.",
+      "answers": [
+        "vīst",
+        "kalst"
+      ],
+      "hint": "Kas notiek augiem, kuri ilgstoši nesaņem ūdeni?"
+    },
+    {
+      "id": "remind-sc-p03-092",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc sirsnīgas sarunas viņa jutās daudz ___.",
+      "answers": [
+        "labāk",
+        "mierīgāk"
+      ],
+      "hint": "Kā var mainīties pašsajūta?"
+    },
+    {
+      "id": "remind-sc-p03-093",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad ceļš bija apledojis, autovadītājs samazināja ___.",
+      "answers": [
+        "ātrumu"
+      ],
+      "hint": "Kas jāsamazina uz slidena ceļa?"
+    },
+    {
+      "id": "remind-sc-p03-094",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms sākt remontu, viņš sagatavoja nepieciešamos ___.",
+      "answers": [
+        "instrumentus",
+        "materiālus"
+      ],
+      "hint": "Kas vajadzīgs remontam?"
+    },
+    {
+      "id": "remind-sc-p03-095",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad sūtījums kavējās, viņš pārbaudīja piegādes ___.",
+      "answers": [
+        "statusu",
+        "datumu"
+      ],
+      "hint": "Kādu informāciju var pārbaudīt par sūtījumu?"
+    },
+    {
+      "id": "remind-wc-p03-001",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš mēnesis seko martam?",
+      "options": [
+        "februāris",
+        "aprīlis",
+        "jūnijs",
+        "maijs"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Atcerieties mēnešu secību."
+    },
+    {
+      "id": "remind-wc-p03-002",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuri divi ir gadalaiki?",
+      "options": [
+        "trešdiena",
+        "vasara",
+        "ziema",
+        "februāris"
+      ],
+      "correctIndices": [
+        1,
+        2
+      ],
+      "hint": "Padomājiet par gada daļām."
+    },
+    {
+      "id": "remind-wc-p03-003",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir Latvijas pilsēta?",
+      "options": [
+        "Vidzeme",
+        "Valmiera",
+        "Kurzeme",
+        "Gauja"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Atšķiriet pilsētu no reģiona un upes."
+    },
+    {
+      "id": "remind-wc-p03-004",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir upe?",
+      "options": [
+        "Venta",
+        "Latgale",
+        "Sigulda",
+        "Rīga"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Padomājiet par tekošu ūdeni dabā."
+    },
+    {
+      "id": "remind-wc-p03-005",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuri divi ir dārzeņi ikdienas pārtikas iedalījumā?",
+      "options": [
+        "plūme",
+        "burkāns",
+        "bietes",
+        "banāns"
+      ],
+      "correctIndices": [
+        1,
+        2
+      ],
+      "hint": "Padomājiet par sakņu dārzu."
+    },
+    {
+      "id": "remind-wc-p03-006",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš priekšmets parasti atrodas uz rakstāmgalda?",
+      "options": [
+        "klaviatūra",
+        "katls",
+        "cepure",
+        "spilvens"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Kuru priekšmetu izmanto darbam pie datora?"
+    },
+    {
+      "id": "remind-wc-p03-007",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuri divi piederumi noder apģērba labošanai?",
+      "options": [
+        "krūze",
+        "adata",
+        "dakšiņa",
+        "poga"
+      ],
+      "correctIndices": [
+        1,
+        3
+      ],
+      "hint": "Domājiet par šūšanu."
+    },
+    {
+      "id": "remind-wc-p03-008",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir apģērba gabals?",
+      "options": [
+        "katliņš",
+        "paklājs",
+        "spogulis",
+        "džemperis"
+      ],
+      "correctIndices": [
+        3
+      ],
+      "hint": "Ko cilvēks var uzvilkt?"
+    },
+    {
+      "id": "remind-wc-p03-009",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuri divi ir virtuves trauki?",
+      "options": [
+        "bļoda",
+        "lineāls",
+        "šķīvis",
+        "ķemme"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "No kā ēd vai servē ēdienu?"
+    },
+    {
+      "id": "remind-wc-p03-010",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš priekšmets palīdz pārbaudīt, vai virsma ir taisna?",
+      "options": [
+        "līmeņrādis",
+        "termoss",
+        "metronoms",
+        "kompass"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Padomājiet par remontu."
+    },
+    {
+      "id": "remind-wc-p03-011",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas lietas izmanto dārza kopšanai?",
+      "options": [
+        "gludeklis",
+        "spilvens",
+        "lāpsta",
+        "grābeklis"
+      ],
+      "correctIndices": [
+        2,
+        3
+      ],
+      "hint": "Kādi rīki noder darbam ar augsni un lapām?"
+    },
+    {
+      "id": "remind-wc-p03-012",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir sadzīves elektroierīce?",
+      "options": [
+        "putekļsūcējs",
+        "spainis",
+        "grābeklis",
+        "slota"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Kuram priekšmetam vajadzīga elektrība?"
+    },
+    {
+      "id": "remind-wc-p03-013",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas ir mēbeles?",
+      "options": [
+        "tējkanna",
+        "kumode",
+        "dīvāns",
+        "mikseris"
+      ],
+      "correctIndices": [
+        1,
+        2
+      ],
+      "hint": "Mēbeles izmanto telpu iekārtošanai."
+    },
+    {
+      "id": "remind-wc-p03-014",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir mūzikas instruments?",
+      "options": [
+        "gludeklis",
+        "akordeons",
+        "pulkstenis",
+        "lietussargs"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Ar ko var spēlēt melodiju?"
+    },
+    {
+      "id": "remind-wc-p03-015",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuri divi ir mūzikas instrumenti?",
+      "options": [
+        "televizors",
+        "flauta",
+        "radio",
+        "vijole"
+      ],
+      "correctIndices": [
+        1,
+        3
+      ],
+      "hint": "Instrumenti rada mūziku, tos spēlējot."
+    },
+    {
+      "id": "remind-wc-p03-016",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir dokuments identitātes apliecināšanai?",
+      "options": [
+        "pase",
+        "biļete",
+        "recepte",
+        "ielūgums"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Padomājiet par dokumentiem ceļošanai."
+    },
+    {
+      "id": "remind-wc-p03-017",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas lietas izmanto vēstules rakstīšanai uz papīra?",
+      "options": [
+        "papīrs",
+        "dvielis",
+        "pildspalva",
+        "lāpsta"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Padomājiet par rakstīšanas piederumiem."
+    },
+    {
+      "id": "remind-wc-p03-018",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir mēneša nosaukums?",
+      "options": [
+        "vakars",
+        "oktobris",
+        "ceturtdiena",
+        "rudens"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Kurš vārds apzīmē gada mēnesi?"
+    },
+    {
+      "id": "remind-wc-p03-019",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas ir nedēļas nogales dienas?",
+      "options": [
+        "svētdiena",
+        "pirmdiena",
+        "sestdiena",
+        "otrdiena"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Kuras dienas parasti ir brīvdienas?"
+    },
+    {
+      "id": "remind-wc-p03-020",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem raksturo temperatūru?",
+      "options": [
+        "slapjš",
+        "silts",
+        "apaļš",
+        "skaļš"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Padomājiet par siltumu un aukstumu."
+    },
+    {
+      "id": "remind-wc-p03-021",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuri divi ir laikapstākļi?",
+      "options": [
+        "logs",
+        "grīda",
+        "lietus",
+        "migla"
+      ],
+      "correctIndices": [
+        2,
+        3
+      ],
+      "hint": "Kas notiek dabā, mainoties laikam?"
+    },
+    {
+      "id": "remind-wc-p03-022",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir koka daļa?",
+      "options": [
+        "glāze",
+        "atslēga",
+        "sakne",
+        "krīts"
+      ],
+      "correctIndices": [
+        2
+      ],
+      "hint": "Kas palīdz kokam uzņemt ūdeni no augsnes?"
+    },
+    {
+      "id": "remind-wc-p03-023",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuri divi ir putni?",
+      "options": [
+        "ezis",
+        "bezdelīga",
+        "vāvere",
+        "zīlīte"
+      ],
+      "correctIndices": [
+        1,
+        3
+      ],
+      "hint": "Kuri dzīvnieki ir putni?"
+    },
+    {
+      "id": "remind-wc-p03-024",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir zivs?",
+      "options": [
+        "līdaka",
+        "vāvere",
+        "zaķis",
+        "zvirbulis"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Kurš dzīvnieks dzīvo ūdenī un elpo ar žaunām?"
+    },
+    {
+      "id": "remind-wc-p03-025",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas vietas ir saistītas ar kultūras pasākumiem?",
+      "options": [
+        "koncertzāle",
+        "teātris",
+        "aptieka",
+        "autoserviss"
+      ],
+      "correctIndices": [
+        0,
+        1
+      ],
+      "hint": "Kur skatās izrādes un klausās koncertus?"
+    },
+    {
+      "id": "remind-wc-p03-026",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir sabiedriskā transporta veids?",
+      "options": [
+        "ledusskapis",
+        "skrejritenis",
+        "tramvajs",
+        "motorzāģis"
+      ],
+      "correctIndices": [
+        2
+      ],
+      "hint": "Kurā transportā parasti ir vietas vairākiem pasažieriem?"
+    },
+    {
+      "id": "remind-wc-p03-027",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas vietas ir transporta pieturas?",
+      "options": [
+        "autoosta",
+        "pastnodaļa",
+        "frizētava",
+        "dzelzceļa stacija"
+      ],
+      "correctIndices": [
+        0,
+        3
+      ],
+      "hint": "Kur pasažieri gaida transportu?"
+    },
+    {
+      "id": "remind-wc-p03-028",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir virtuves mērinstruments?",
+      "options": [
+        "putekļsūcējs",
+        "virtuves svari",
+        "fēns",
+        "gludeklis"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Ar ko nosaka produktu masu?"
+    },
+    {
+      "id": "remind-wc-p03-029",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas darbības parasti dara pirms gatavošanas?",
+      "options": [
+        "mazgā produktus",
+        "sagriež dārzeņus",
+        "iznes vēstuli",
+        "slauka putekļus"
+      ],
+      "correctIndices": [
+        0,
+        1
+      ],
+      "hint": "Kā sagatavo ēdiena sastāvdaļas?"
+    },
+    {
+      "id": "remind-wc-p03-030",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir garšaugs?",
+      "options": [
+        "kartupelis",
+        "dilles",
+        "burkāns",
+        "ķirbis"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Ko mēdz pievienot ēdienam nelielā daudzumā aromātam?"
+    },
+    {
+      "id": "remind-wc-p03-031",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kurus divus izmanto dokumentu glabāšanai?",
+      "options": [
+        "reģistrators",
+        "termometrs",
+        "katls",
+        "mape"
+      ],
+      "correctIndices": [
+        0,
+        3
+      ],
+      "hint": "Kas palīdz sakārtot papīrus?"
+    },
+    {
+      "id": "remind-wc-p03-032",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem palīdz atrast adresi nezināmā vietā?",
+      "options": [
+        "spogulis",
+        "karte",
+        "modinātājs",
+        "gludeklis"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Kā pārbaudīt maršrutu?"
+    },
+    {
+      "id": "remind-wc-p03-033",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuri divi saziņas veidi ir rakstiski?",
+      "options": [
+        "telefona zvans",
+        "īsziņa",
+        "klātienes saruna",
+        "e-pasts"
+      ],
+      "correctIndices": [
+        1,
+        3
+      ],
+      "hint": "Kur informācija tiek uzrakstīta?"
+    },
+    {
+      "id": "remind-wc-p03-034",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir putraims?",
+      "options": [
+        "griķi",
+        "piens",
+        "tomāts",
+        "siers"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Kurus produktus izmanto putras vai piedevu gatavošanai?"
+    },
+    {
+      "id": "remind-wc-p03-035",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuri divi ir piena produkti?",
+      "options": [
+        "gurķis",
+        "ābols",
+        "jogurts",
+        "biezpiens"
+      ],
+      "correctIndices": [
+        2,
+        3
+      ],
+      "hint": "Kurus gatavo no piena?"
+    },
+    {
+      "id": "remind-wc-p03-036",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš priekšmets pasargā acis no spilgtas saules?",
+      "options": [
+        "ķemme",
+        "saulesbrilles",
+        "pulkstenis",
+        "šalle"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Ko uzliek acu priekšā?"
+    },
+    {
+      "id": "remind-wc-p03-037",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas lietas palīdz redzēt tumsā?",
+      "options": [
+        "termometrs",
+        "spogulis",
+        "lampa",
+        "lukturītis"
+      ],
+      "correctIndices": [
+        2,
+        3
+      ],
+      "hint": "Kuras lietas dod gaismu?"
+    },
+    {
+      "id": "remind-wc-p03-038",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir telpas nosaukums mājās?",
+      "options": [
+        "parks",
+        "vannasistaba",
+        "stadions",
+        "gājēju pāreja"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Kura vieta atrodas mājoklī?"
+    },
+    {
+      "id": "remind-wc-p03-039",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas telpas var būt mājoklī?",
+      "options": [
+        "guļamistaba",
+        "autoosta",
+        "stadions",
+        "virtuve"
+      ],
+      "correctIndices": [
+        0,
+        3
+      ],
+      "hint": "Padomājiet par dzīvojamām telpām."
+    },
+    {
+      "id": "remind-wc-p03-040",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir sveiciena vārds?",
+      "options": [
+        "rīt",
+        "dienvidi",
+        "jūra",
+        "labdien"
+      ],
+      "correctIndices": [
+        3
+      ],
+      "hint": "Ko pasaka, satiekot cilvēku?"
+    },
+    {
+      "id": "remind-wc-p03-041",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas ir pieklājības frāzes?",
+      "options": [
+        "paldies",
+        "lūdzu",
+        "logs",
+        "augusts"
+      ],
+      "correctIndices": [
+        0,
+        1
+      ],
+      "hint": "Kā pieklājīgi uzrunā vai pateicas?"
+    },
+    {
+      "id": "remind-wc-p03-042",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir pretstats vārdam “plats”?",
+      "options": [
+        "smags",
+        "garš",
+        "augsts",
+        "šaurs"
+      ],
+      "correctIndices": [
+        3
+      ],
+      "hint": "Iedomājieties šauru ielu."
+    },
+    {
+      "id": "remind-wc-p03-043",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuri divi vārdi apzīmē kustību?",
+      "options": [
+        "guļ",
+        "iet",
+        "skrien",
+        "stāv"
+      ],
+      "correctIndices": [
+        1,
+        2
+      ],
+      "hint": "Kuri vārdi apraksta pārvietošanos?"
+    },
+    {
+      "id": "remind-wc-p03-044",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš vārds apzīmē pagātnes laiku?",
+      "options": [
+        "rīt",
+        "vēlāk",
+        "vakar",
+        "drīz"
+      ],
+      "correctIndices": [
+        2
+      ],
+      "hint": "Kas notika iepriekšējā dienā?"
+    },
+    {
+      "id": "remind-wc-p03-045",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuri divi vārdi apzīmē vietu, nevis laiku?",
+      "options": [
+        "tur",
+        "vakar",
+        "šeit",
+        "drīz"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Kuri vārdi atbild uz jautājumu “kur?”"
+    },
+    {
+      "id": "remind-wc-p03-046",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kāda informācija vajadzīga, lai nosūtītu vēstuli pa pastu?",
+      "options": [
+        "mīļākā krāsa",
+        "dzimšanas diena",
+        "apavu izmērs",
+        "saņēmēja adrese"
+      ],
+      "correctIndices": [
+        3
+      ],
+      "hint": "Padomājiet, kur vēstule jānogādā."
+    },
+    {
+      "id": "remind-wc-p03-047",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas lietas var norādīt kalendārā?",
+      "options": [
+        "ēdiena garša",
+        "apavu izmērs",
+        "nedēļas diena",
+        "datums"
+      ],
+      "correctIndices": [
+        2,
+        3
+      ],
+      "hint": "Kā kalendārs palīdz plānot laiku?"
+    },
+    {
+      "id": "remind-wc-p03-048",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš instruments palīdz noteikt virzienu dabā?",
+      "options": [
+        "mikseris",
+        "kompass",
+        "gludeklis",
+        "termometrs"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Padomājiet par debespusēm."
+    },
+    {
+      "id": "remind-iw-p03-001",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-cepure.svg",
+      "imageAlt": "Cepure ar nagu",
+      "sentence": "Aukstā dienā galvā uzvelk ___.",
+      "answers": [
+        "cepuri"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-002",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-cimdi.svg",
+      "imageAlt": "Cimdu pāris",
+      "sentence": "Kad ārā salst, rokās uzvelk ___.",
+      "answers": [
+        "cimdus"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-003",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-zabaki.svg",
+      "imageAlt": "Zābaku pāris",
+      "sentence": "Pēc pastaigas viņš pie durvīm novilka ___.",
+      "answers": [
+        "zābakus"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-004",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-burkans.svg",
+      "imageAlt": "Burkāns ar lapām",
+      "sentence": "Zupai viņa sagrieza ___.",
+      "answers": [
+        "burkānu"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-005",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-banans.svg",
+      "imageAlt": "Banāns",
+      "sentence": "Augļu salātiem pievienoja ___.",
+      "answers": [
+        "banānu"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-006",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-tomats.svg",
+      "imageAlt": "Tomāts ar kātiņu",
+      "sentence": "Uz dēlīša viņa sagrieza ___.",
+      "answers": [
+        "tomātu"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-007",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-kresls.svg",
+      "imageAlt": "Koka krēsls",
+      "sentence": "Pie rakstāmgalda atrodas ___.",
+      "answers": [
+        "krēsls"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-008",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-gulta.svg",
+      "imageAlt": "Gulta ar spilvenu",
+      "sentence": "Guļamistabā stāv plata ___.",
+      "answers": [
+        "gulta"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-009",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-lampa.svg",
+      "imageAlt": "Galda lampa",
+      "sentence": "Vakarā viņš ieslēdza galda ___.",
+      "answers": [
+        "lampu"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-010",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-gludeklis.svg",
+      "imageAlt": "Gludeklis",
+      "sentence": "Viņa izgludināja kreklu ar ___.",
+      "answers": [
+        "gludekli"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-011",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-tejkanna.svg",
+      "imageAlt": "Tējkanna ar snīpi",
+      "sentence": "Ūdeni tējai uzvārīja ___.",
+      "answers": [
+        "tējkannā"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-012",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-skivis.svg",
+      "imageAlt": "Šķīvis",
+      "sentence": "Uz galda nolika tukšu ___.",
+      "answers": [
+        "šķīvi"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-013",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-daksina.svg",
+      "imageAlt": "Dakšiņa ar četriem zariem",
+      "sentence": "Makaronus viņš ēda ar ___.",
+      "answers": [
+        "dakšiņu"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-014",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-mugursoma.svg",
+      "imageAlt": "Mugursoma",
+      "sentence": "Ceļojumam viņa sakrāmēja ___.",
+      "answers": [
+        "mugursomu"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-015",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-brilles.svg",
+      "imageAlt": "Briļļu rāmis",
+      "sentence": "Lasīšanai viņš uzlika ___.",
+      "answers": [
+        "brilles"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-016",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-kemme.svg",
+      "imageAlt": "Ķemme ar zobiem",
+      "sentence": "Viņa izķemmēja matus ar ___.",
+      "answers": [
+        "ķemmi"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-017",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-spainis.svg",
+      "imageAlt": "Spainis ar rokturi",
+      "sentence": "Grīdas mazgāšanai viņa paņēma ___.",
+      "answers": [
+        "spaini"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-018",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-kirbis.svg",
+      "imageAlt": "Apaļš ķirbis",
+      "sentence": "Rudenī dārzā izauga liels ___.",
+      "answers": [
+        "ķirbis"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-019",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-sene.svg",
+      "imageAlt": "Sēne ar cepurīti",
+      "sentence": "Mežā zem koka auga ___.",
+      "answers": [
+        "sēne"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-020",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-zivs.svg",
+      "imageAlt": "Zivs",
+      "sentence": "Upē peldēja ___.",
+      "answers": [
+        "zivs"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-021",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-puke.svg",
+      "imageAlt": "Puķe ar ziedlapām",
+      "sentence": "Vāzē viņa ielika ___.",
+      "answers": [
+        "puķi"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-022",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-pudele.svg",
+      "imageAlt": "Ūdens pudele",
+      "sentence": "Ceļojumā viņš paņēma ūdens ___.",
+      "answers": [
+        "pudeli"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-023",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-fotoaparats.svg",
+      "imageAlt": "Fotoaparāts ar objektīvu",
+      "sentence": "Fotogrāfs līdzi paņēma ___.",
+      "answers": [
+        "fotoaparātu"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    },
+    {
+      "id": "remind-iw-p03-024",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/remind-p03-laiva.svg",
+      "imageAlt": "Maza airu laiva",
+      "sentence": "Pie krasta pietauvoja ___.",
+      "answers": [
+        "laivu"
+      ],
+      "hint": "Aplūkojiet attēloto priekšmetu."
+    }
+  ]
+}

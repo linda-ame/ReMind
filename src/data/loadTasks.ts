@@ -1,15 +1,17 @@
 import type { Task, TaskPack } from '../types/task';
 import rawV1 from './tasks.json';
 import rawRc from './reading_comprehension.json';
+import rawP03 from './p03_visi_3_tipi.json';
 
 const v1 = rawV1 as TaskPack;
 const rc = rawRc as TaskPack;
+const p03 = rawP03 as TaskPack;
 
-/** Merged pack: keep v1 tasks + schema v2 reading_comprehension texts. */
+/** Merged pack: v1 + reading_comprehension + P03 (SC/WC/IW). Keep old IDs intact. */
 const pack: TaskPack = {
-  schemaVersion: Math.max(v1.schemaVersion, rc.schemaVersion),
+  schemaVersion: Math.max(v1.schemaVersion, rc.schemaVersion, p03.schemaVersion),
   title: v1.title,
-  tasks: [...v1.tasks, ...rc.tasks],
+  tasks: [...v1.tasks, ...rc.tasks, ...p03.tasks],
 };
 
 /** Easier → harder (used for home menu and “Sākt visus”). */
