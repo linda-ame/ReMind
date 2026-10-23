@@ -1154,6 +1154,64 @@ input:focus-visible {
   outline-offset: 2px;
 }
 
+.answer-field {
+  margin-bottom: 0.55rem;
+}
+
+.answer-field-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.answer-field-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.answer-dictate-btn {
+  flex: 0 0 auto;
+  align-self: stretch;
+  min-width: 6.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-weight: 700;
+}
+
+.answer-dictate-btn.is-listening {
+  animation: dictate-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes dictate-pulse {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .answer-dictate-btn.is-listening {
+    animation: none;
+  }
+}
+
+.answer-dictate-status {
+  min-height: 1.35em;
+  margin: 0.35rem 0 0;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: #3a5a56;
+}
+
+.app-shell.high-contrast .answer-dictate-status {
+  color: #000;
+}
+
+
 .hint-answers {
   margin-top: 0.45rem;
 }

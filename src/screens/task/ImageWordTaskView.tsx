@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
+import { AnswerField } from '../../components/AnswerField';
 import { HintAnswers } from '../../components/HintAnswers';
 import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { ImageWordTask } from '../../types/task';
@@ -23,15 +24,17 @@ export function ImageWordTaskView({
 }: Props) {
   const [answer, setAnswer] = useState(attempt.enteredAnswer ?? '');
   const answerRef = useRef(answer);
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    if (!readOnly) inputRef.current?.focus();
-  }, [task.id, readOnly]);
 
   const patch = (partial: Partial<TaskAttempt>) => {
     if (readOnly) return;
     onUpdate(buildAttemptUpdate(attempt, partial, answerRef.current));
+  };
+
+  const setAnswerAndPersist = (value: string) => {
+    if (readOnly) return;
+    answerRef.current = value;
+    setAnswer(value);
+    patch({ enteredAnswer: value, status: 'attempted' });
   };
 
   return (
@@ -48,28 +51,14 @@ export function ImageWordTaskView({
         {task.sentence}
       </p>
 
-      <label className="field-label" htmlFor="answer-input">
-        Atbilde
-      </label>
-      <input
-        ref={inputRef}
+      <AnswerField
         id="answer-input"
-        className="text-input text-input-answer"
-        type="text"
+        label="Atbilde"
         value={answer}
-        placeholder="Ierakstiet atbildi…"
-        autoComplete="off"
-        autoCorrect="off"
-        spellCheck={false}
+        placeholder="Ierakstiet vai ierunājiet atbildi…"
         readOnly={readOnly}
-        aria-readonly={readOnly || undefined}
-        onChange={(e) => {
-          if (readOnly) return;
-          const value = e.target.value;
-          answerRef.current = value;
-          setAnswer(value);
-          patch({ enteredAnswer: value, status: 'attempted' });
-        }}
+        autoFocus={!readOnly}
+        onChange={setAnswerAndPersist}
       />
 
       <HintAnswers

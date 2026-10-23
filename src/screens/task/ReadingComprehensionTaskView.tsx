@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState } from 'react';
+import { AnswerField } from '../../components/AnswerField';
 import { Button } from '../../components/Button';
 import {
   SELF_ASSESSMENT_LABELS,
@@ -299,25 +300,17 @@ export function ReadingComprehensionTaskView({
         {question.question}
       </p>
 
-      <label className="field-label" htmlFor="rc-answer-input">
-        Atbilde (nav obligāti)
-      </label>
-      <input
+      <AnswerField
         id="rc-answer-input"
-        ref={answerInputRef}
-        className="text-input text-input-answer"
-        type="text"
+        label="Atbilde (nav obligāti)"
         value={qProgress.enteredAnswer ?? ''}
-        placeholder="Ierakstiet atbildi…"
-        autoComplete="off"
-        autoCorrect="off"
-        spellCheck={false}
+        placeholder="Ierakstiet vai ierunājiet atbildi…"
         readOnly={readOnly}
-        aria-readonly={readOnly || undefined}
-        onChange={(e) => {
+        inputRef={answerInputRef}
+        onChange={(value) => {
           if (readOnly) return;
           patchQuestion(qIndex, {
-            enteredAnswer: e.target.value,
+            enteredAnswer: value,
             status: 'attempted',
           });
         }}

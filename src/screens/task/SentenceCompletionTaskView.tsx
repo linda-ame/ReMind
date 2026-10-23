@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { AnswerField } from '../../components/AnswerField';
 import { HintAnswers } from '../../components/HintAnswers';
 import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { SentenceCompletionTask } from '../../types/task';
@@ -26,6 +27,13 @@ export function SentenceCompletionTaskView({
     onUpdate(buildAttemptUpdate(attempt, partial, answerRef.current));
   };
 
+  const setAnswerAndPersist = (value: string) => {
+    if (readOnly) return;
+    answerRef.current = value;
+    setAnswer(value);
+    patch({ enteredAnswer: value, status: 'attempted' });
+  };
+
   return (
     <div className="task-view">
       <p className="instruction">{task.instruction}</p>
@@ -33,27 +41,13 @@ export function SentenceCompletionTaskView({
         {task.sentence}
       </p>
 
-      <label className="field-label" htmlFor="answer-input">
-        Atbilde
-      </label>
-      <input
+      <AnswerField
         id="answer-input"
-        className="text-input text-input-answer"
-        type="text"
+        label="Atbilde"
         value={answer}
-        placeholder="Ierakstiet atbildi…"
-        autoComplete="off"
-        autoCorrect="off"
-        spellCheck={false}
+        placeholder="Ierakstiet vai ierunājiet atbildi…"
         readOnly={readOnly}
-        aria-readonly={readOnly || undefined}
-        onChange={(e) => {
-          if (readOnly) return;
-          const value = e.target.value;
-          answerRef.current = value;
-          setAnswer(value);
-          patch({ enteredAnswer: value, status: 'attempted' });
-        }}
+        onChange={setAnswerAndPersist}
       />
 
       <HintAnswers

@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { AnswerField } from '../../components/AnswerField';
 import { HintAnswers } from '../../components/HintAnswers';
 import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { AntonymTask } from '../../types/task';
@@ -30,6 +31,13 @@ export function AntonymTaskView({
     onUpdate(buildAttemptUpdate(attempt, partial, answerRef.current));
   };
 
+  const setAnswerAndPersist = (value: string) => {
+    if (readOnly) return;
+    answerRef.current = value;
+    setAnswer(value);
+    patch({ enteredAnswer: value, status: 'attempted' });
+  };
+
   return (
     <div className="task-view">
       <p className="focus-word" lang="lv">
@@ -39,25 +47,13 @@ export function AntonymTaskView({
         Kāds ir pretstats?
       </p>
 
-      <input
+      <AnswerField
         id="answer-input"
-        className="text-input text-input-answer"
-        type="text"
         value={answer}
-        placeholder="Varat ierakstīt vai pateikt skaļi…"
-        aria-label="Atbilde"
-        autoComplete="off"
-        autoCorrect="off"
-        spellCheck={false}
+        placeholder="Ierakstiet vai ierunājiet…"
+        ariaLabel="Atbilde"
         readOnly={readOnly}
-        aria-readonly={readOnly || undefined}
-        onChange={(e) => {
-          if (readOnly) return;
-          const value = e.target.value;
-          answerRef.current = value;
-          setAnswer(value);
-          patch({ enteredAnswer: value, status: 'attempted' });
-        }}
+        onChange={setAnswerAndPersist}
       />
 
       <HintAnswers
