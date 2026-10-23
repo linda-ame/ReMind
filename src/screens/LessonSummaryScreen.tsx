@@ -17,6 +17,10 @@ import {
   enteredAnswerLabels,
   expectedAnswerLabels,
   formatAnswerList,
+  isAnswerCorrect,
+  isReadingQuestionCorrect,
+  taskHasObjectiveAnswer,
+  taskHasSelfAssessment,
   taskPromptText,
 } from '../utils/answers';
 import type { Screen } from '../navigation/types';
@@ -105,24 +109,41 @@ export function LessonSummaryScreen({
                       (x) => x.questionId === q.id,
                     );
                     const assessment = qp?.selfAssessment ?? null;
+                    const correct = isReadingQuestionCorrect(
+                      q.answers,
+                      qp?.enteredAnswer,
+                    );
                     return (
                       <div key={q.id} className="rc-summary-q">
                         <p className="summary-prompt" lang="lv">
                           {qi + 1}. {q.question}
                         </p>
-                        {assessment ? (
-                          <span
-                            className={`summary-assess summary-assess-${assessment}`}
-                            title={SELF_ASSESSMENT_LABELS[assessment]}
-                          >
-                            <span aria-hidden="true">
-                              {SELF_ASSESSMENT_SYMBOLS[assessment]}
+                        <div className="summary-card-head">
+                          {assessment ? (
+                            <span
+                              className={`summary-assess summary-assess-${assessment}`}
+                              title={SELF_ASSESSMENT_LABELS[assessment]}
+                            >
+                              <span aria-hidden="true">
+                                {SELF_ASSESSMENT_SYMBOLS[assessment]}
+                              </span>
+                              <span className="summary-assess-label">
+                                {SELF_ASSESSMENT_LABELS[assessment]}
+                              </span>
                             </span>
-                            <span className="summary-assess-label">
-                              {SELF_ASSESSMENT_LABELS[assessment]}
+                          ) : null}
+                          {correct != null ? (
+                            <span
+                              className={
+                                correct
+                                  ? 'progress-chip progress-chip-correct'
+                                  : 'progress-chip progress-chip-wrong'
+                              }
+                            >
+                              {correct ? 'Pareizi' : 'Nepareizi'}
                             </span>
-                          </span>
-                        ) : null}
+                          ) : null}
+                        </div>
                         <dl className="summary-dl">
                           <div>
                             <dt>Tava atbilde</dt>
@@ -155,12 +176,10 @@ export function LessonSummaryScreen({
           }
 
           const assessment = attempt?.selfAssessment ?? null;
-          const hasAssessment =
-            task.type === 'sentence_completion' ||
-            task.type === 'image_word' ||
-            task.type === 'sentence_order' ||
-            task.type === 'antonym' ||
-            task.type === 'definition_guess';
+          const showRating = taskHasSelfAssessment(task);
+          const correct = taskHasObjectiveAnswer(task)
+            ? isAnswerCorrect(task, attempt)
+            : null;
 
           return (
             <article
@@ -170,7 +189,7 @@ export function LessonSummaryScreen({
             >
               <header className="summary-card-head">
                 <span className="summary-index">{i + 1}.</span>
-                {assessment && hasAssessment ? (
+                {showRating && assessment && assessment !== 'skipped' ? (
                   <span
                     className={`summary-assess summary-assess-${assessment}`}
                     title={SELF_ASSESSMENT_LABELS[assessment]}
@@ -181,6 +200,17 @@ export function LessonSummaryScreen({
                     <span className="summary-assess-label">
                       {SELF_ASSESSMENT_LABELS[assessment]}
                     </span>
+                  </span>
+                ) : null}
+                {correct != null ? (
+                  <span
+                    className={
+                      correct
+                        ? 'progress-chip progress-chip-correct'
+                        : 'progress-chip progress-chip-wrong'
+                    }
+                  >
+                    {correct ? 'Pareizi' : 'Nepareizi'}
                   </span>
                 ) : null}
               </header>

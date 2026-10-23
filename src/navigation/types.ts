@@ -7,6 +7,7 @@ export type Screen =
   | { name: 'home' }
   | { name: 'settings' }
   | { name: 'progress' }
+  | { name: 'progress_detail'; type: Task['type'] }
   | { name: 'task_list'; filter?: 'all' | 'difficult'; type?: Task['type'] }
   | { name: 'batch_list'; type: Task['type'] }
   | {

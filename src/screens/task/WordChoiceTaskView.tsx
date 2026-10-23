@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Button } from '../../components/Button';
+import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { WordChoiceTask } from '../../types/task';
 import type { TaskAttempt } from '../../types/progress';
 
@@ -38,7 +39,8 @@ function serializeSelected(selected: Set<string>): string | null {
 
 /**
  * Choose option(s), then reveal: correct → green; wrong selected stay yellow.
- * No hints, no self-assessment (Next is in TaskScreen).
+ * No “Pareizi/Nepareizi” labels during practice — that belongs in progress/summary.
+ * No self-assessment (Next is in TaskScreen).
  */
 export function WordChoiceTaskView({
   task,
@@ -46,10 +48,10 @@ export function WordChoiceTaskView({
   onUpdate,
   readOnly = false,
 }: Props) {
-  const [local, setLocal] = useState(attempt);
   const [selected, setSelected] = useState<Set<string>>(() =>
     parseSelected(attempt.enteredAnswer, task.options),
   );
+  const selectedRef = useRef(selected);
   const [revealed, setRevealed] = useState(
     readOnly || attempt.viewedAnswers,
   );
@@ -62,13 +64,13 @@ export function WordChoiceTaskView({
 
   const patch = (partial: Partial<TaskAttempt>) => {
     if (readOnly) return;
-    const next: TaskAttempt = {
-      ...local,
-      ...partial,
-      status: partial.status ?? 'attempted',
-    };
-    setLocal(next);
-    onUpdate(next);
+    onUpdate(
+      buildAttemptUpdate(
+        attempt,
+        partial,
+        serializeSelected(selectedRef.current),
+      ),
+    );
   };
 
   const toggleOption = (option: string) => {
@@ -81,6 +83,7 @@ export function WordChoiceTaskView({
       if (next.has(option)) next.delete(option);
       else next.add(option);
     }
+    selectedRef.current = next;
     setSelected(next);
     patch({
       enteredAnswer: serializeSelected(next),
@@ -128,12 +131,19 @@ export function WordChoiceTaskView({
             <Button
               variant="secondary"
               className="btn-reveal-answer"
+              disabled={selected.size === 0}
               onClick={() => {
                 setRevealed(true);
-                patch({ viewedAnswers: true });
+                patch({
+                  viewedAnswers: true,
+                  enteredAnswer: serializeSelected(selectedRef.current),
+                  status: 'attempted',
+                });
               }}
             >
-              {correctOptions.size === 1 ? 'Parādīt atbildi' : 'Parādīt atbildes'}
+              {correctOptions.size === 1
+                ? 'Parādīt atbildi'
+                : 'Parādīt atbildes'}
             </Button>
           </div>
         </div>

@@ -358,8 +358,9 @@ input:focus-visible {
 .assessment-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 0.4rem;
+  gap: 0.65rem;
   width: 100%;
+  padding: 0.2rem 0.1rem;
 }
 
 .btn-assess {
@@ -367,17 +368,22 @@ input:focus-visible {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(var(--btn-min-h) + 0.5rem);
-  padding: 0.45rem 0.25rem;
+  min-height: calc(var(--btn-min-h) + 0.15rem);
+  padding: 0.35rem 0.2rem;
   width: 100%;
   color: #fff;
   border: 2px solid transparent;
   border-radius: var(--radius);
   box-shadow: var(--shadow-btn);
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    filter 0.15s ease;
 }
 
 .assess-symbol {
-  font-size: 1.75em;
+  font-size: 1.55em;
   font-weight: 700;
   line-height: 1;
 }
@@ -404,14 +410,52 @@ input:focus-visible {
   box-shadow: none;
 }
 
+/* Unselected fade once a choice is made — selected stays full strength */
+.assessment-row:has(.btn-assess-selected) .btn-assess:not(.btn-assess-selected) {
+  opacity: 0.42;
+  filter: saturate(0.55);
+  box-shadow: none;
+}
+
 .btn-assess-selected {
-  outline: 3px solid var(--accent-deep);
-  outline-offset: 2px;
-  box-shadow: inset 0 0 0 2px #fff;
+  position: relative;
+  z-index: 1;
+  transform: scale(1.06);
+  outline: none;
+  /* White gap + color-matched outer ring (not black / teal accent) */
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 7px var(--assess-ring, #1e5c3e),
+    var(--shadow-btn);
+}
+
+.btn-assess-ok.btn-assess-selected {
+  --assess-ring: #1a6b45;
+  border-color: #145236;
+}
+
+.btn-assess-help.btn-assess-selected {
+  --assess-ring: #8a6a1c;
+  border-color: #6e5514;
+}
+
+.btn-assess-hard.btn-assess-selected {
+  --assess-ring: #8a1515;
+  border-color: #5c0c0c;
 }
 
 .app-shell.high-contrast .btn-assess-selected {
-  outline-color: #000;
+  --assess-ring: #000;
+  box-shadow:
+    0 0 0 3px #fff,
+    0 0 0 8px #000;
+}
+
+.app-shell.high-contrast
+  .assessment-row:has(.btn-assess-selected)
+  .btn-assess:not(.btn-assess-selected) {
+  opacity: 0.35;
+  filter: none;
 }
 
 .assessment-saved {
@@ -1270,6 +1314,211 @@ input:focus-visible {
   font-size: 1.05em;
 }
 
+.progress-overview-stats {
+  margin-bottom: 0.75rem;
+}
+
+.progress-sections-lead {
+  margin-bottom: 0.5rem;
+}
+
+.progress-section-list {
+  margin-bottom: 1.25rem;
+}
+
+.progress-section-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.35rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.85rem 1rem;
+  border: 2px solid;
+  border-radius: var(--radius);
+  font: inherit;
+  cursor: pointer;
+  min-height: var(--btn-min-h);
+}
+
+.progress-section-card:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.progress-section-title {
+  font-weight: 700;
+  font-size: 1.05em;
+}
+
+.progress-section-done {
+  font-size: 0.95em;
+  opacity: 0.92;
+}
+
+.progress-section-hard-hint {
+  font-size: 0.88em;
+  font-weight: 600;
+  margin-top: 0.15rem;
+}
+
+.progress-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.progress-chip {
+  display: inline-block;
+  padding: 0.15rem 0.45rem;
+  border-radius: 0.35rem;
+  font-size: 0.85em;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.progress-chip-ok {
+  background: color-mix(in srgb, var(--mint) 22%, #fff);
+  border-color: var(--mint);
+  color: #1a4d35;
+}
+
+.progress-chip-help {
+  background: color-mix(in srgb, var(--sand) 35%, #fff);
+  border-color: var(--sand);
+  color: #4a320f;
+}
+
+.progress-chip-hard {
+  background: color-mix(in srgb, var(--coral) 28%, #fff);
+  border-color: var(--coral);
+  color: #6b2e1c;
+}
+
+.progress-chip-none {
+  background: #eee;
+  border-color: #bbb;
+  color: #444;
+}
+
+.progress-chip-correct {
+  background: color-mix(in srgb, var(--mint) 22%, #fff);
+  border-color: var(--mint);
+  color: #1a4d35;
+}
+
+.progress-chip-wrong {
+  background: color-mix(in srgb, var(--coral) 28%, #fff);
+  border-color: var(--coral);
+  color: #6b2e1c;
+}
+
+.progress-global-actions {
+  margin-top: 0.5rem;
+}
+
+.progress-legend {
+  margin-top: 1rem;
+  font-size: 0.88em;
+}
+
+.progress-detail-ratings {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.progress-filter-hint {
+  margin: 0.35rem 0 0.25rem;
+  font-size: 0.88em;
+}
+
+.progress-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.35rem 0 0.55rem;
+}
+
+.progress-filter-btn {
+  font: inherit;
+  font-size: 0.88em;
+  font-weight: 700;
+  padding: 0.4rem 0.65rem;
+  min-height: 2.5rem;
+  border: 2px solid #aaa;
+  border-radius: var(--radius);
+  background: #f3f3f3;
+  color: #222;
+  cursor: pointer;
+}
+
+.progress-filter-btn.is-active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent-deep);
+}
+
+.progress-filter-btn:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.progress-detail-actions {
+  margin-bottom: 1rem;
+}
+
+.summary-card-clickable {
+  padding: 0;
+  overflow: hidden;
+}
+
+.summary-card-hit {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+  padding: 0.85rem 1rem;
+  cursor: pointer;
+}
+
+.summary-card-hit:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: -3px;
+}
+
+.summary-open-hint {
+  display: block;
+  margin-top: 0.65rem;
+  font-weight: 700;
+  font-size: 0.92em;
+  color: var(--accent-deep);
+}
+
+.app-shell.high-contrast .progress-section-card {
+  border-width: 3px;
+  border-color: #000;
+}
+
+.app-shell.high-contrast .progress-chip {
+  border-width: 2px;
+  border-color: #000;
+}
+
+.app-shell.high-contrast .progress-filter-btn {
+  border-color: #000;
+  border-width: 2px;
+}
+
+.app-shell.high-contrast .progress-filter-btn.is-active {
+  background: #fff;
+  border-width: 3px;
+}
+
 .settings-block {
   margin-bottom: 1.25rem;
   text-align: var(--app-text-align);
@@ -1391,13 +1640,13 @@ input:focus-visible {
 }
 
 .rc-assessment-row {
-  gap: 0.5rem;
+  gap: 0.7rem;
 }
 
 .btn-assess-rc {
-  min-height: 64px;
-  gap: 0.2rem;
-  padding: 0.55rem 0.3rem;
+  min-height: 58px;
+  gap: 0.15rem;
+  padding: 0.4rem 0.25rem;
 }
 
 .btn-assess-rc .assess-label-text {

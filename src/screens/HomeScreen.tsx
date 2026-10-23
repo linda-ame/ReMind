@@ -51,7 +51,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
             className="home-nav-btn home-nav-progress"
             onClick={() => onNavigate({ name: 'progress' })}
           >
-            Progress
+            Mans progress
           </Button>
 
           <Button

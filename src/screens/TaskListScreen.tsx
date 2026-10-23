@@ -2,11 +2,8 @@ import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
 import { getAllTasks, TASK_TYPE_LABELS } from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
-import {
-  bestStatusForTask,
-  difficultTaskIds,
-  STATUS_LABELS,
-} from '../utils/attempts';
+import { bestStatusForTask, STATUS_LABELS } from '../utils/attempts';
+import { hardPracticeTaskIds } from '../utils/progressStats';
 import type { Screen } from '../navigation/types';
 import type { Task } from '../types/task';
 
@@ -27,7 +24,7 @@ export function TaskListScreen({
 }: TaskListScreenProps) {
   const { attempts, clearProgressForTasks } = useApp();
   const all = getAllTasks();
-  const hardIds = new Set(difficultTaskIds(attempts));
+  const hardIds = new Set(hardPracticeTaskIds(all, attempts));
 
   let list = all;
   if (type) list = list.filter((t) => t.type === type);

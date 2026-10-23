@@ -4,6 +4,7 @@ import type { Screen } from './navigation/types';
 import { HomeScreen } from './screens/HomeScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { ProgressScreen } from './screens/ProgressScreen';
+import { ProgressDetailScreen } from './screens/ProgressDetailScreen';
 import { TaskListScreen } from './screens/TaskListScreen';
 import { BatchListScreen } from './screens/BatchListScreen';
 import { TaskScreen } from './screens/TaskScreen';
@@ -36,6 +37,13 @@ function popToMatching(stack: Screen[], next: Screen): Screen[] | null {
       return stack.slice(0, i + 1);
     }
     if (next.name === 'progress' && cur.name === 'progress') {
+      return stack.slice(0, i + 1);
+    }
+    if (
+      next.name === 'progress_detail' &&
+      cur.name === 'progress_detail' &&
+      cur.type === next.type
+    ) {
       return stack.slice(0, i + 1);
     }
     if (next.name === 'settings' && cur.name === 'settings') {
@@ -118,6 +126,15 @@ function AppRouter() {
     case 'progress':
       return (
         <ProgressScreen
+          onNavigate={navigate}
+          onBack={goBack}
+          onHome={goHome}
+        />
+      );
+    case 'progress_detail':
+      return (
+        <ProgressDetailScreen
+          type={screen.type}
           onNavigate={navigate}
           onBack={goBack}
           onHome={goHome}

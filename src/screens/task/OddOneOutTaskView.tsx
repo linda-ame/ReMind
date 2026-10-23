@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Button } from '../../components/Button';
+import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { OddOneOutTask } from '../../types/task';
 import type { TaskAttempt } from '../../types/progress';
 
@@ -43,28 +44,27 @@ export function OddOneOutTaskView({
   onUpdate,
   readOnly = false,
 }: Props) {
-  const [local, setLocal] = useState(attempt);
   const [selected, setSelected] = useState<number | null>(() =>
     parseSelectedIndex(attempt.enteredAnswer, task.options.length),
   );
+  const selectedRef = useRef(selected);
   const [revealed, setRevealed] = useState(
     readOnly || attempt.viewedAnswers,
   );
 
   const patch = (partial: Partial<TaskAttempt>) => {
     if (readOnly) return;
-    const next: TaskAttempt = {
-      ...local,
-      ...partial,
-      status: partial.status ?? 'attempted',
-    };
-    setLocal(next);
-    onUpdate(next);
+    const entered =
+      selectedRef.current == null
+        ? null
+        : JSON.stringify(selectedRef.current);
+    onUpdate(buildAttemptUpdate(attempt, partial, entered));
   };
 
   const selectOption = (index: number) => {
     if (readOnly || revealed) return;
     const next = selected === index ? null : index;
+    selectedRef.current = next;
     setSelected(next);
     patch({
       enteredAnswer: next == null ? null : JSON.stringify(next),
@@ -75,6 +75,7 @@ export function OddOneOutTaskView({
   const retry = () => {
     if (readOnly) return;
     setRevealed(false);
+    selectedRef.current = null;
     setSelected(null);
     patch({
       enteredAnswer: null,
@@ -121,7 +122,14 @@ export function OddOneOutTaskView({
               disabled={selected == null}
               onClick={() => {
                 setRevealed(true);
-                patch({ viewedAnswers: true });
+                patch({
+                  viewedAnswers: true,
+                  enteredAnswer:
+                    selectedRef.current == null
+                      ? null
+                      : JSON.stringify(selectedRef.current),
+                  status: 'attempted',
+                });
               }}
             >
               Parādīt atbildi

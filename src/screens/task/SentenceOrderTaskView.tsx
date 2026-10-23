@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Button } from '../../components/Button';
+import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { SentenceOrderTask } from '../../types/task';
 import type { TaskAttempt } from '../../types/progress';
 
@@ -62,10 +63,10 @@ export function SentenceOrderTaskView({
   onUpdate,
   readOnly = false,
 }: Props) {
-  const [local, setLocal] = useState(attempt);
   const [order, setOrder] = useState<number[]>(() =>
     parseOrder(attempt.enteredAnswer, task.words.length),
   );
+  const orderRef = useRef(order);
   const [showModel, setShowModel] = useState(
     readOnly || attempt.viewedAnswers,
   );
@@ -78,16 +79,17 @@ export function SentenceOrderTaskView({
 
   const patch = (partial: Partial<TaskAttempt>) => {
     if (readOnly) return;
-    const next: TaskAttempt = {
-      ...local,
-      ...partial,
-      status: partial.status ?? 'attempted',
-    };
-    setLocal(next);
-    onUpdate(next);
+    onUpdate(
+      buildAttemptUpdate(
+        attempt,
+        partial,
+        serializeOrder(orderRef.current),
+      ),
+    );
   };
 
   const setOrderAndSave = (nextOrder: number[]) => {
+    orderRef.current = nextOrder;
     setOrder(nextOrder);
     patch({
       enteredAnswer: serializeOrder(nextOrder),
@@ -171,7 +173,10 @@ export function SentenceOrderTaskView({
               className="btn-reveal-answer"
               onClick={() => {
                 setShowModel(true);
-                patch({ viewedAnswers: true });
+                patch({
+                  viewedAnswers: true,
+                  enteredAnswer: serializeOrder(orderRef.current),
+                });
               }}
             >
               Parādīt teikumu

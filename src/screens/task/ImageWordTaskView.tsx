@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { HintAnswers } from '../../components/HintAnswers';
+import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { ImageWordTask } from '../../types/task';
 import type { TaskAttempt } from '../../types/progress';
 
@@ -20,8 +21,8 @@ export function ImageWordTaskView({
   onUpdate,
   readOnly = false,
 }: Props) {
-  const [local, setLocal] = useState(attempt);
   const [answer, setAnswer] = useState(attempt.enteredAnswer ?? '');
+  const answerRef = useRef(answer);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -30,13 +31,7 @@ export function ImageWordTaskView({
 
   const patch = (partial: Partial<TaskAttempt>) => {
     if (readOnly) return;
-    const next: TaskAttempt = {
-      ...local,
-      ...partial,
-      status: partial.status ?? 'attempted',
-    };
-    setLocal(next);
-    onUpdate(next);
+    onUpdate(buildAttemptUpdate(attempt, partial, answerRef.current));
   };
 
   return (
@@ -71,6 +66,7 @@ export function ImageWordTaskView({
         onChange={(e) => {
           if (readOnly) return;
           const value = e.target.value;
+          answerRef.current = value;
           setAnswer(value);
           patch({ enteredAnswer: value, status: 'attempted' });
         }}
@@ -80,7 +76,12 @@ export function ImageWordTaskView({
         answers={task.answers}
         readOnly={readOnly}
         initiallyShowAnswers={attempt.viewedAnswers}
-        onViewedAnswers={() => patch({ viewedAnswers: true })}
+        onViewedAnswers={() =>
+          patch({
+            viewedAnswers: true,
+            enteredAnswer: answerRef.current || null,
+          })
+        }
       />
     </div>
   );

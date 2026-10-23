@@ -3,6 +3,7 @@ import {
   useCallback,
   useContext,
   useEffect,
+  useRef,
   useState,
   type ReactNode,
 } from 'react';
@@ -30,10 +31,27 @@ interface AppContextValue {
 
 const AppContext = createContext<AppContextValue | null>(null);
 
+function applyAttemptToList(
+  list: TaskAttempt[],
+  attempt: TaskAttempt,
+): TaskAttempt[] {
+  const idx = list.findIndex((a) => a.id === attempt.id);
+  if (idx >= 0) {
+    const copy = [...list];
+    copy[idx] = attempt;
+    return copy;
+  }
+  return [...list, attempt];
+}
+
 export function AppProvider({ children }: { children: ReactNode }) {
   const [ready, setReady] = useState(false);
   const [settings, setSettings] = useState<UiSettings>(DEFAULT_UI_SETTINGS);
   const [attempts, setAttempts] = useState<TaskAttempt[]>([]);
+  /** Last intended snapshot per attempt id (so queued writes always flush newest). */
+  const latestByIdRef = useRef(new Map<string, TaskAttempt>());
+  /** Serialize IDB writes per attempt id. */
+  const chainByIdRef = useRef(new Map<string, Promise<void>>());
 
   useEffect(() => {
     let cancelled = false;
@@ -62,17 +80,49 @@ export function AppProvider({ children }: { children: ReactNode }) {
     await progressRepository.saveSettings(next);
   }, []);
 
-  const saveAttempt = useCallback(async (attempt: TaskAttempt) => {
-    await progressRepository.saveAttempt(attempt);
-    setAttempts((prev) => {
-      const idx = prev.findIndex((a) => a.id === attempt.id);
-      if (idx >= 0) {
-        const copy = [...prev];
-        copy[idx] = attempt;
-        return copy;
-      }
-      return [...prev, attempt];
-    });
+  const saveAttempt = useCallback((attempt: TaskAttempt) => {
+    const prevLatest = latestByIdRef.current.get(attempt.id);
+    // Never let a late keystroke/patch downgrade a completed attempt.
+    if (prevLatest?.status === 'completed' && attempt.status !== 'completed') {
+      return Promise.resolve();
+    }
+    latestByIdRef.current.set(attempt.id, attempt);
+
+    const prevChain =
+      chainByIdRef.current.get(attempt.id) ?? Promise.resolve();
+    const nextChain = prevChain
+      .catch(() => undefined)
+      .then(async () => {
+        const toWrite = latestByIdRef.current.get(attempt.id);
+        if (!toWrite) return;
+        if (toWrite.status === 'completed') {
+          // One completed row per task version — drop empty ghost attempts.
+          await progressRepository.replaceAttemptsForTaskVersion(toWrite);
+          setAttempts((list) => {
+            const withoutGhosts = list.filter(
+              (a) =>
+                !(
+                  a.taskId === toWrite.taskId &&
+                  a.contentVersion === toWrite.contentVersion &&
+                  a.id !== toWrite.id
+                ),
+            );
+            return applyAttemptToList(withoutGhosts, toWrite);
+          });
+        } else {
+          await progressRepository.saveAttempt(toWrite);
+          setAttempts((list) => applyAttemptToList(list, toWrite));
+        }
+      });
+
+    chainByIdRef.current.set(
+      attempt.id,
+      nextChain.then(
+        () => undefined,
+        () => undefined,
+      ),
+    );
+    return nextChain;
   }, []);
 
   const refreshAttempts = useCallback(async () => {
@@ -81,6 +131,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
 
   const clearProgressForTasks = useCallback(async (taskIds: string[]) => {
     await progressRepository.deleteAttemptsForTasks(taskIds);
+    for (const id of [...latestByIdRef.current.keys()]) {
+      const a = latestByIdRef.current.get(id);
+      if (a && taskIds.includes(a.taskId)) {
+        latestByIdRef.current.delete(id);
+        chainByIdRef.current.delete(id);
+      }
+    }
     setAttempts(await progressRepository.getAllAttempts());
   }, []);
 
@@ -95,6 +152,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
       ]);
       setSettings(s);
       setAttempts(a);
+      latestByIdRef.current.clear();
+      chainByIdRef.current.clear();
     },
     [],
   );

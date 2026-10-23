@@ -15,7 +15,8 @@ import type {
 interface Props {
   task: ReadingComprehensionTask;
   attempt: TaskAttempt;
-  onUpdate: (attempt: TaskAttempt) => void;
+  /** May return a Promise — finish waits so the last answer is on disk. */
+  onUpdate: (attempt: TaskAttempt) => void | Promise<void>;
   onFinished: () => void;
   readOnly?: boolean;
 }
@@ -102,9 +103,9 @@ export function ReadingComprehensionTaskView({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [showPassageOverlay]);
 
-  const persist = (next: TaskAttempt) => {
+  const persist = (next: TaskAttempt): void | Promise<void> => {
     if (readOnly) return;
-    onUpdate(next);
+    return onUpdate(next);
   };
 
   const patchReading = (
@@ -193,7 +194,7 @@ export function ReadingComprehensionTaskView({
     });
   };
 
-  const finishQuestionAndAdvance = (
+  const finishQuestionAndAdvance = async (
     assessment: SelfAssessment | null,
   ) => {
     if (readOnly) {
@@ -219,30 +220,34 @@ export function ReadingComprehensionTaskView({
     );
 
     if (qIndex >= task.questions.length - 1) {
-      persist({
-        ...attempt,
-        status: 'completed',
-        completedAt: now,
-        selfAssessment: assessment,
-        reading: {
-          phase: 'questions',
-          questionIndex: qIndex,
-          questions,
-        },
-      });
+      await Promise.resolve(
+        persist({
+          ...attempt,
+          status: 'completed',
+          completedAt: now,
+          selfAssessment: assessment,
+          reading: {
+            phase: 'questions',
+            questionIndex: qIndex,
+            questions,
+          },
+        }),
+      );
       onFinished();
       return;
     }
 
-    persist({
-      ...attempt,
-      status: 'attempted',
-      reading: {
-        phase: 'questions',
-        questionIndex: qIndex + 1,
-        questions,
-      },
-    });
+    await Promise.resolve(
+      persist({
+        ...attempt,
+        status: 'attempted',
+        reading: {
+          phase: 'questions',
+          questionIndex: qIndex + 1,
+          questions,
+        },
+      }),
+    );
     queueMicrotask(() => answerInputRef.current?.focus());
   };
 
@@ -416,7 +421,7 @@ export function ReadingComprehensionTaskView({
           variant="primary"
           fullWidth={false}
           onClick={() =>
-            finishQuestionAndAdvance(
+            void finishQuestionAndAdvance(
               readOnly ? null : qProgress.selfAssessment,
             )
           }

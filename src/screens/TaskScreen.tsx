@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
 import {
@@ -7,6 +7,7 @@ import {
   unitTitle,
 } from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
+import { progressRepository } from '../repositories/IndexedDBProgressRepository';
 import {
   completeAttempt,
   createAttempt,
@@ -54,35 +55,54 @@ export function TaskScreen({
   const { attempts, saveAttempt } = useApp();
   const task = getTaskById(taskId);
   const [attempt, setAttempt] = useState<TaskAttempt | null>(null);
+  const attemptRef = useRef<TaskAttempt | null>(null);
+  /** Blocks late child patches while complete+navigate is in flight. */
+  const finishingRef = useRef(false);
   const isView = mode === 'view';
+
+  const setAttemptBoth = (next: TaskAttempt) => {
+    attemptRef.current = next;
+    setAttempt(next);
+  };
 
   useEffect(() => {
     if (!task) return;
+    finishingRef.current = false;
+    let cancelled = false;
 
     // Forced empty start (progress was cleared for redo).
     if (fresh && !isView) {
       const a = createAttempt(task);
-      setAttempt(a);
-      void saveAttempt(a);
+      setAttemptBoth(a);
+      // Not persisted until the user answers / presses Tālāk.
       return;
     }
 
-    const previous = latestAttemptForTask(
-      attempts,
-      task.id,
-      task.contentVersion,
-    );
-    if (previous) {
-      setAttempt(previous);
-      return;
-    }
-    if (isView) {
-      setAttempt(createAttempt(task));
-      return;
-    }
-    const a = createAttempt(task);
-    setAttempt(a);
-    void saveAttempt(a);
+    (async () => {
+      // Read IDB directly — React `attempts` can lag one navigation behind.
+      const fromDb = await progressRepository.getAttemptsForTask(task.id);
+      if (cancelled) return;
+      const pool = fromDb.length > 0 ? fromDb : attempts;
+      const previous = latestAttemptForTask(
+        pool,
+        task.id,
+        task.contentVersion,
+      );
+      if (previous) {
+        setAttemptBoth(previous);
+        return;
+      }
+      if (isView) {
+        setAttemptBoth(createAttempt(task));
+        return;
+      }
+      // In-memory only until first edit / complete — avoids empty IDB ghosts.
+      setAttemptBoth(createAttempt(task));
+    })();
+
+    return () => {
+      cancelled = true;
+    };
     // Only re-init when the task changes; attempts is read at that moment.
     // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional
   }, [taskId, task, saveAttempt, isView, fresh]);
@@ -129,20 +149,54 @@ export function TaskScreen({
   const skipSelfAssessment =
     isWordReading || isWordChoice || isOddOneOut || isReading;
   const inBatch = batchIndex !== undefined && batchType !== undefined;
-  const alreadyAssessed =
-    attempt.status === 'completed' && attempt.selfAssessment != null;
+  const ratedAssessment =
+    attempt.selfAssessment != null && attempt.selfAssessment !== 'skipped'
+      ? attempt.selfAssessment
+      : null;
+  /** Completed this visit (with or without a color rating). */
+  const alreadyCompleted = attempt.status === 'completed';
   /** First task of first lesson — show self-assessment intro once per section. */
   const showAssessmentIntro =
     !skipSelfAssessment &&
     !isView &&
-    !alreadyAssessed &&
+    !ratedAssessment &&
+    !alreadyCompleted &&
     batchIndex === 0 &&
     idx === 0;
 
   const onUpdate = (next: TaskAttempt) => {
-    if (isView) return;
-    setAttempt(next);
-    void saveAttempt(next);
+    if (isView || finishingRef.current) return;
+    const base = attemptRef.current ?? attempt;
+    // After “Tālāk” completes the attempt, ignore late child patches
+    // (they could wipe answers while save/navigation is in flight).
+    if (base.status === 'completed') return;
+    // Merge onto the latest parent snapshot so a stale child copy cannot
+    // wipe rating / answer.
+    const merged: TaskAttempt = {
+      ...base,
+      ...next,
+      id: base.id,
+      taskId: base.taskId,
+      contentVersion: base.contentVersion,
+      startedAt: base.startedAt,
+      selfAssessment: next.selfAssessment ?? base.selfAssessment,
+      enteredAnswer:
+        next.enteredAnswer != null && String(next.enteredAnswer).trim() !== ''
+          ? next.enteredAnswer
+          : next.enteredAnswer === null
+            ? null
+            : (base.enteredAnswer ?? null),
+      viewedAnswers: Boolean(next.viewedAnswers || base.viewedAnswers),
+      usedHint: Boolean(next.usedHint || base.usedHint),
+      status: next.status ?? base.status,
+      reading: next.reading ?? base.reading,
+    };
+    // Re-check: finishAndGoNext may have completed mid-function.
+    if (finishingRef.current || attemptRef.current?.status === 'completed') {
+      return;
+    }
+    setAttemptBoth(merged);
+    void saveAttempt(merged);
   };
 
   const goNextTask = () => {
@@ -173,18 +227,52 @@ export function TaskScreen({
       goNextTask();
       return;
     }
-    const done = completeAttempt(attempt, null);
-    setAttempt(done);
-    await saveAttempt(done);
-    goNextTask();
+    if (finishingRef.current) return;
+    finishingRef.current = true;
+    const base = attemptRef.current ?? attempt;
+    const done = completeAttempt(base, null);
+    setAttemptBoth(done);
+    try {
+      await saveAttempt(done);
+    } finally {
+      goNextTask();
+    }
   };
 
-  const finishWith = async (assessment: SelfAssessment) => {
-    if (isView) return;
-    const done = completeAttempt(attempt, assessment);
-    setAttempt(done);
-    await saveAttempt(done);
-    goNextTask();
+  /** Select rating only — stay on the task (same pattern as reading comprehension). */
+  const selectAssessment = (assessment: SelfAssessment) => {
+    if (isView || finishingRef.current) return;
+    const base = attemptRef.current ?? attempt;
+    if (base.status === 'completed') return;
+    const next: TaskAttempt = {
+      ...base,
+      selfAssessment: assessment,
+      status: 'attempted',
+    };
+    setAttemptBoth(next);
+    void saveAttempt(next);
+  };
+
+  /** Complete with current (or given) rating, then advance. */
+  const finishAndGoNext = async (assessment?: SelfAssessment | null) => {
+    if (isView) {
+      goNextTask();
+      return;
+    }
+    if (finishingRef.current) return;
+    finishingRef.current = true;
+    const base = attemptRef.current ?? attempt;
+    const finalAssessment =
+      assessment !== undefined
+        ? assessment
+        : (base.selfAssessment ?? 'skipped');
+    const done = completeAttempt(base, finalAssessment);
+    setAttemptBoth(done);
+    try {
+      await saveAttempt(done);
+    } finally {
+      goNextTask();
+    }
   };
 
   const goPrev = () => {
@@ -219,15 +307,15 @@ export function TaskScreen({
       : TASK_TYPE_LABELS[task.type];
 
   const assessmentSavedBanner =
-    alreadyAssessed && attempt.selfAssessment ? (
+    ratedAssessment ? (
       <div
-        className={`assessment-saved assessment-saved-${attempt.selfAssessment}`}
+        className={`assessment-saved assessment-saved-${ratedAssessment}`}
         role="status"
       >
         <span className="assess-symbol" aria-hidden="true">
-          {SELF_ASSESSMENT_SYMBOLS[attempt.selfAssessment]}
+          {SELF_ASSESSMENT_SYMBOLS[ratedAssessment]}
         </span>
-        <span>{SELF_ASSESSMENT_LABELS[attempt.selfAssessment]}</span>
+        <span>{SELF_ASSESSMENT_LABELS[ratedAssessment]}</span>
       </div>
     ) : null;
 
@@ -239,8 +327,9 @@ export function TaskScreen({
           task={task}
           attempt={attempt}
           onUpdate={(next) => {
-            setAttempt(next);
-            if (!isView) void saveAttempt(next);
+            setAttemptBoth(next);
+            if (isView) return;
+            return saveAttempt(next);
           }}
           onFinished={() => {
             if (isView) {
@@ -352,12 +441,10 @@ export function TaskScreen({
                 <p className="assessment-intro">Novērtē, kā veicas</p>
               ) : null}
 
-              {alreadyAssessed && attempt.selfAssessment ? (
+              {ratedAssessment ? (
                 <p className="assessment-saved-label" role="status">
                   Pašvērtējums:{' '}
-                  <strong>
-                    {SELF_ASSESSMENT_LABELS[attempt.selfAssessment]}
-                  </strong>
+                  <strong>{SELF_ASSESSMENT_LABELS[ratedAssessment]}</strong>
                 </p>
               ) : null}
 
@@ -383,7 +470,7 @@ export function TaskScreen({
                       }`}
                       aria-label={label}
                       aria-pressed={selected}
-                      onClick={() => void finishWith(value)}
+                      onClick={() => selectAssessment(value)}
                     >
                       <span className="assess-symbol" aria-hidden="true">
                         {symbol}
@@ -399,7 +486,7 @@ export function TaskScreen({
             <Button variant="secondary" fullWidth={false} onClick={goPrev}>
               Atpakaļ
             </Button>
-            {isView || alreadyAssessed ? (
+            {isView || alreadyCompleted ? (
               <Button
                 variant="primary"
                 fullWidth={false}
@@ -407,11 +494,19 @@ export function TaskScreen({
               >
                 {nextLabel}
               </Button>
+            ) : ratedAssessment ? (
+              <Button
+                variant="primary"
+                fullWidth={false}
+                onClick={() => void finishAndGoNext()}
+              >
+                {nextLabel}
+              </Button>
             ) : (
               <Button
                 variant="neutral"
                 fullWidth={false}
-                onClick={() => void finishWith('skipped')}
+                onClick={() => void finishAndGoNext('skipped')}
               >
                 Tālāk
               </Button>

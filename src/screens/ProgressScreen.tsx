@@ -1,13 +1,21 @@
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
 import { useApp } from '../context/AppContext';
-import { getAllTasks } from '../data/loadTasks';
 import {
-  bestStatusForTask,
+  getAllTasks,
+  getTasksByType,
+  TASK_TYPE_LABELS,
+  TASK_TYPE_ORDER,
+} from '../data/loadTasks';
+import {
   completedCurrentTaskIds,
   difficultTaskIds,
   uniqueTrainingDays,
 } from '../utils/attempts';
+import {
+  RATING_CHIP_LABELS,
+  sectionProgressStats,
+} from '../utils/progressStats';
 import type { Screen } from '../navigation/types';
 
 interface ProgressScreenProps {
@@ -16,22 +24,33 @@ interface ProgressScreenProps {
   onHome: () => void;
 }
 
-export function ProgressScreen({ onNavigate, onBack, onHome }: ProgressScreenProps) {
-  const { attempts, exportProgress, importProgress } = useApp();
+export function ProgressScreen({
+  onNavigate,
+  onBack,
+  onHome,
+}: ProgressScreenProps) {
+  const { attempts, exportProgress, importProgress, clearProgressForTasks } =
+    useApp();
   const tasks = getAllTasks();
   const completed = completedCurrentTaskIds(tasks, attempts);
   const days = uniqueTrainingDays(attempts);
-  const hardIds = difficultTaskIds(attempts);
+  const allHardIds = difficultTaskIds(attempts);
 
-  let viewed = 0;
-  let attempted = 0;
-  let done = 0;
-  for (const t of tasks) {
-    const s = bestStatusForTask(attempts, t.id, t.contentVersion);
-    if (s === 'completed') done += 1;
-    else if (s === 'attempted') attempted += 1;
-    else if (s === 'viewed') viewed += 1;
-  }
+  const startHardRedo = async (ids: string[], label: string) => {
+    if (ids.length === 0) return;
+    const ok = window.confirm(
+      `Atkārtot ${label} (${ids.length})?\n\nUzdevumi būs tukši — iepriekšējās atbildes šiem uzdevumiem tiks dzēstas.`,
+    );
+    if (!ok) return;
+    await clearProgressForTasks(ids);
+    onNavigate({
+      name: 'task',
+      taskId: ids[0]!,
+      queue: ids,
+      mode: 'practice',
+      fresh: true,
+    });
+  };
 
   const handleExport = async () => {
     const snapshot = await exportProgress();
@@ -71,28 +90,87 @@ export function ProgressScreen({ onNavigate, onBack, onHome }: ProgressScreenPro
   };
 
   return (
-    <Layout subtitle="Progress" onHome={onHome} onBack={onBack}>
-      <div className="stats">
+    <Layout subtitle="Mans progress" onHome={onHome} onBack={onBack}>
+      <div className="stats progress-overview-stats">
         <p className="stat-line">
-          Pabeigti uzdevumi: <strong>{completed.size}</strong> no {tasks.length}
+          Pabeigti: <strong>{completed.size}</strong> no {tasks.length}
         </p>
         <p className="stat-line">
           Treniņu dienas: <strong>{days}</strong>
         </p>
-        <p className="stat-line">Apskatīti: {viewed}</p>
-        <p className="stat-line">Mēģināti: {attempted}</p>
-        <p className="stat-line">Pabeigti: {done}</p>
       </div>
 
-      <div className="stack">
-        {hardIds.length > 0 ? (
+      <p className="lead progress-sections-lead">Pa sadaļām</p>
+      <div className="stack progress-section-list">
+        {TASK_TYPE_ORDER.map((type) => {
+          const ofType = getTasksByType(type);
+          if (ofType.length === 0) return null;
+          const stats = sectionProgressStats(ofType, attempts);
+          return (
+            <button
+              key={type}
+              type="button"
+              className={`progress-section-card home-type-${type}`}
+              onClick={() =>
+                onNavigate({ name: 'progress_detail', type })
+              }
+            >
+              <span className="progress-section-title">
+                {TASK_TYPE_LABELS[type]}
+              </span>
+              <span className="progress-section-done">
+                {stats.completed} / {stats.total} pabeigti
+              </span>
+              {stats.ratings ? (
+                <span className="progress-chips" aria-label="Novērtējumi">
+                  <span className="progress-chip progress-chip-ok">
+                    ✓ {stats.ratings.independent}
+                  </span>
+                  <span className="progress-chip progress-chip-help">
+                    ~ {stats.ratings.with_help}
+                  </span>
+                  <span className="progress-chip progress-chip-hard">
+                    ✗ {stats.ratings.difficult}
+                  </span>
+                  <span className="progress-chip progress-chip-none">
+                    ? {stats.ratings.unrated}
+                  </span>
+                </span>
+              ) : null}
+              {stats.correctness ? (
+                <span className="progress-chips" aria-label="Atbildes">
+                  <span className="progress-chip progress-chip-correct">
+                    Pareizi {stats.correctness.correct}
+                  </span>
+                  <span className="progress-chip progress-chip-wrong">
+                    Nepareizi {stats.correctness.incorrect}
+                  </span>
+                  {stats.correctness.unanswered > 0 ? (
+                    <span className="progress-chip progress-chip-none">
+                      Bez atbildes {stats.correctness.unanswered}
+                    </span>
+                  ) : null}
+                </span>
+              ) : null}
+              {stats.hardIds.length > 0 ? (
+                <span className="progress-section-hard-hint">
+                  Grūtie: {stats.hardIds.length} — atver, lai atkārtotu
+                </span>
+              ) : null}
+            </button>
+          );
+        })}
+      </div>
+
+      <div className="stack progress-global-actions">
+        {allHardIds.length > 0 ? (
           <Button
             variant="help"
             onClick={() =>
-              onNavigate({ name: 'task_list', filter: 'difficult' })
+              void startHardRedo(allHardIds, 'visus grūtos uzdevumus')
             }
           >
-            Atkārtot grūtākos ({hardIds.length})
+            Atkārtot visus grūtos ({allHardIds.length})
           </Button>
         ) : (
           <p className="muted">Vēl nav uzdevumu, kas atzīmēti kā grūti.</p>
@@ -105,6 +183,11 @@ export function ProgressScreen({ onNavigate, onBack, onHome }: ProgressScreenPro
           Importēt progresu
         </Button>
       </div>
+
+      <p className="muted progress-legend">
+        {RATING_CHIP_LABELS.independent}: ✓ · {RATING_CHIP_LABELS.with_help}: ~
+        · {RATING_CHIP_LABELS.difficult}: ✗ · {RATING_CHIP_LABELS.unrated}: ?
+      </p>
     </Layout>
   );
 }

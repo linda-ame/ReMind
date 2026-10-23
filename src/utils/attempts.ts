@@ -52,10 +52,20 @@ export function createReadingQuestionProgress(
   };
 }
 
+/** Higher = more meaningful progress (completed wins over a newer empty “viewed”). */
+function attemptRank(a: TaskAttempt): number {
+  if (a.status === 'completed') return 3;
+  if (a.status === 'attempted') return 2;
+  return 1; // viewed
+}
+
 /**
- * Most recent attempt for a task (by startedAt).
+ * Best attempt for a task: prefer completed > attempted > viewed, then newest.
  * When contentVersion is set, only matching-version attempts are considered
  * (older versions stay in history but are not resumed).
+ *
+ * Important: a fresh empty “viewed” row must never hide an older completed one
+ * (that was the “3 of 5 empty” progress bug).
  */
 export function latestAttemptForTask(
   attempts: TaskAttempt[],
@@ -66,7 +76,14 @@ export function latestAttemptForTask(
   for (const a of attempts) {
     if (a.taskId !== taskId) continue;
     if (contentVersion != null && a.contentVersion !== contentVersion) continue;
-    if (!best || a.startedAt > best.startedAt) best = a;
+    if (!best) {
+      best = a;
+      continue;
+    }
+    const rb = attemptRank(a);
+    const ra = attemptRank(best);
+    if (rb > ra) best = a;
+    else if (rb === ra && a.startedAt > best.startedAt) best = a;
   }
   return best;
 }
@@ -213,6 +230,8 @@ export function difficultTaskIds(attempts: TaskAttempt[]): string[] {
     })
     .map(([id]) => id);
 }
+
+export { assessmentIsDifficult };
 
 export const SELF_ASSESSMENT_LABELS: Record<SelfAssessment, string> = {
   independent: 'Izdevās pašam',
