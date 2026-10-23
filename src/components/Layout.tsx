@@ -56,7 +56,7 @@ export function Layout({ children, footer, subtitle, onHome, onBack }: LayoutPro
         )}
       </header>
 
-      {subtitle ? (
+      {subtitle || handleBack ? (
         <div className="app-title-bar">
           {handleBack ? (
             <button
@@ -68,7 +68,7 @@ export function Layout({ children, footer, subtitle, onHome, onBack }: LayoutPro
               ← Atpakaļ
             </button>
           ) : null}
-          <h2 className="app-subtitle">{subtitle}</h2>
+          {subtitle ? <h2 className="app-subtitle">{subtitle}</h2> : null}
         </div>
       ) : null}
 

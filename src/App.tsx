@@ -15,6 +15,7 @@ function sameTaskSession(a: Screen, b: Screen): boolean {
   if (a.name !== 'task' || b.name !== 'task') return false;
   if (a.batchIndex !== b.batchIndex || a.batchType !== b.batchType) return false;
   if ((a.mode ?? 'practice') !== (b.mode ?? 'practice')) return false;
+  if (Boolean(a.fresh) !== Boolean(b.fresh)) return false;
   if (a.queue.length !== b.queue.length) return false;
   return a.queue.every((id, i) => id === b.queue[i]);
 }
@@ -164,12 +165,13 @@ function AppRouter() {
     case 'task':
       return (
         <TaskScreen
-          key={`${screen.taskId}-${screen.mode ?? 'practice'}`}
+          key={`${screen.taskId}-${screen.mode ?? 'practice'}-${screen.fresh ? 'fresh' : 'resume'}`}
           taskId={screen.taskId}
           queue={screen.queue}
           batchIndex={screen.batchIndex}
           batchType={screen.batchType}
           mode={screen.mode}
+          fresh={screen.fresh}
           onNavigate={navigate}
           onBack={goBack}
           onHome={goHome}

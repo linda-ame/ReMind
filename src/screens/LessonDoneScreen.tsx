@@ -33,7 +33,7 @@ export function LessonDoneScreen({
   onBack,
   onHome,
 }: Props) {
-  const { attempts } = useApp();
+  const { attempts, clearProgressForTasks } = useApp();
   const inBatch = batchIndex !== undefined && batchType !== undefined;
   const lessonNumber = inBatch ? batchIndex + 1 : null;
   const typeLabel = batchType
@@ -86,17 +86,22 @@ export function LessonDoneScreen({
       ? `Visi ${unitNounPlural(batchType)}`
       : 'Visas nodarbības';
 
-  const repeatLesson = () => {
+  const repeatLesson = async () => {
     if (queue.length === 0) {
       goToBatches();
       return;
     }
+    // Freeform queues (e.g. “atkārtot grūtos”) restart empty.
+    if (!inBatch) {
+      await clearProgressForTasks(queue);
+    }
     onNavigate({
       name: 'task',
-      taskId: queue[0],
+      taskId: queue[0]!,
       queue,
       batchIndex,
       batchType,
+      fresh: !inBatch ? true : undefined,
     });
   };
 
@@ -143,7 +148,10 @@ export function LessonDoneScreen({
                 </Button>
               </>
             ) : (
-              <Button variant="secondary" onClick={repeatLesson}>
+              <Button
+                variant="secondary"
+                onClick={() => void repeatLesson()}
+              >
                 Atkārtot šo nodarbību
               </Button>
             )}
@@ -153,7 +161,10 @@ export function LessonDoneScreen({
           </>
         ) : (
           <>
-            <Button variant="primary" onClick={repeatLesson}>
+            <Button
+              variant="primary"
+              onClick={() => void repeatLesson()}
+            >
               Darīt vēlreiz
             </Button>
             <Button

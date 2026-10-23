@@ -67,7 +67,15 @@ export function LessonReviewScreen({
     );
     if (!ok) return;
     await clearProgressForTasks(batch.taskIds);
-    openQueue('practice');
+    onNavigate({
+      name: 'task',
+      taskId: batch.taskIds[0]!,
+      queue: batch.taskIds,
+      batchIndex: batch.index,
+      batchType: type,
+      mode: 'practice',
+      fresh: true,
+    });
   };
 
   return (

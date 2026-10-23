@@ -1,0 +1,514 @@
+{
+  "schemaVersion": 1,
+  "title": "ReMind — Uzmini vārdu pēc apraksta · P01 · 50 uzdevumi",
+  "tasks": [
+    {
+      "id": "dg-p01-001",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir trauks ar izolētām sienām un cieši aizskrūvējamu vāku. Tajā dzēriens vairākas stundas saglabājas silts.",
+      "answers": [
+        "termoss",
+        "termopudele"
+      ]
+    },
+    {
+      "id": "dg-p01-002",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "To tur rokā virs galvas, kad līst lietus. Atverot veidojas auduma kupols.",
+      "answers": [
+        "lietussargs"
+      ]
+    },
+    {
+      "id": "dg-p01-003",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Šim virtuves traukam ir daudz caurumu. Tajā pēc vārīšanas nokāš makaronus.",
+      "answers": [
+        "caurduris",
+        "siets"
+      ]
+    },
+    {
+      "id": "dg-p01-004",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir ledusskapja daļa ar ļoti zemu temperatūru. Tajā pārtika sasalst.",
+      "answers": [
+        "saldētava"
+      ]
+    },
+    {
+      "id": "dg-p01-005",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Šī ierīce noteiktā laikā atskaņo signālu, lai cilvēks no rīta pamostos.",
+      "answers": [
+        "modinātājs"
+      ]
+    },
+    {
+      "id": "dg-p01-006",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir neliels metāla priekšmets ar robiem, ar kuru atslēdz durvis.",
+      "answers": [
+        "atslēga"
+      ]
+    },
+    {
+      "id": "dg-p01-007",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir neliela ierīce ar pogām, ar kuru no attāluma pārslēdz televizora kanālus.",
+      "answers": [
+        "pults"
+      ]
+    },
+    {
+      "id": "dg-p01-008",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Šim priekšmetam ir gara rinda ar zobiņiem. Ar to sakārto matus.",
+      "answers": [
+        "ķemme"
+      ]
+    },
+    {
+      "id": "dg-p01-009",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir sadzīves ierīce, kurā ar ūdeni un mazgāšanas līdzekli mazgā apģērbu.",
+      "answers": [
+        "veļasmašīna"
+      ]
+    },
+    {
+      "id": "dg-p01-010",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tie ir vairāki pakāpieni cits virs cita, pa kuriem var nokļūt no viena stāva citā.",
+      "answers": [
+        "kāpnes"
+      ]
+    },
+    {
+      "id": "dg-p01-011",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir ierīce, uz kuras uzliek produktu, lai noskaidrotu tā masu.",
+      "answers": [
+        "svari"
+      ]
+    },
+    {
+      "id": "dg-p01-012",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir ārsta izrakstīts dokuments, ar kuru aptiekā var saņemt noteiktas zāles.",
+      "answers": [
+        "recepte"
+      ]
+    },
+    {
+      "id": "dg-p01-013",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Šai ierīcei ir motors, kas iesūc putekļus no grīdas vai paklāja.",
+      "answers": [
+        "putekļsūcējs"
+      ]
+    },
+    {
+      "id": "dg-p01-014",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir gluda virsma, kurā cilvēks redz savu atspulgu.",
+      "answers": [
+        "spogulis"
+      ]
+    },
+    {
+      "id": "dg-p01-015",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tajā redzamas gada mēnešu dienas un nedēļas. Tajā var atzīmēt svarīgus datumus.",
+      "answers": [
+        "kalendārs"
+      ]
+    },
+    {
+      "id": "dg-p01-016",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir vieta, kur var aizņemties grāmatas lasīšanai uz noteiktu laiku.",
+      "answers": [
+        "bibliotēka"
+      ]
+    },
+    {
+      "id": "dg-p01-017",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir vieta ceļa malā, kur cilvēki gaida autobusu un autobuss uzņem pasažierus.",
+      "answers": [
+        "pietura",
+        "autobusa pietura"
+      ]
+    },
+    {
+      "id": "dg-p01-018",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir paaugstināta vieta blakus dzelzceļa sliedēm, kur cilvēki gaida vilcienu.",
+      "answers": [
+        "perons",
+        "platforma"
+      ]
+    },
+    {
+      "id": "dg-p01-019",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir neliela izdruka, ko veikalā saņem pēc pirkuma. Tajā redzama samaksātā summa.",
+      "answers": [
+        "čeks"
+      ]
+    },
+    {
+      "id": "dg-p01-020",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir dokuments, kurā norādīta summa, kas vēl jāsamaksā par preci vai pakalpojumu.",
+      "answers": [
+        "rēķins"
+      ]
+    },
+    {
+      "id": "dg-p01-021",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir vieta, kur divas vai vairākas ielas satiekas vai šķērsojas.",
+      "answers": [
+        "krustojums"
+      ]
+    },
+    {
+      "id": "dg-p01-022",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir satiksmes ierīce ar sarkanu, dzeltenu un zaļu gaismas signālu.",
+      "answers": [
+        "luksofors"
+      ]
+    },
+    {
+      "id": "dg-p01-023",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir ierīce, ar kuru izmēra temperatūru, piemēram, pārbauda, vai cilvēkam ir drudzis.",
+      "answers": [
+        "termometrs"
+      ]
+    },
+    {
+      "id": "dg-p01-024",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir ierīce, kas mēra gaisa spiedienu, lai palīdzētu novērot laikapstākļu izmaiņas.",
+      "answers": [
+        "barometrs"
+      ]
+    },
+    {
+      "id": "dg-p01-025",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir neliela ierīce ar magnētisku adatu, kas palīdz noteikt ziemeļu virzienu.",
+      "answers": [
+        "kompass"
+      ]
+    },
+    {
+      "id": "dg-p01-026",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir rakstisks teksts, kurā soli pa solim paskaidrots, kā lietot vai salikt kādu ierīci.",
+      "answers": [
+        "instrukcija",
+        "pamācība"
+      ]
+    },
+    {
+      "id": "dg-p01-027",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir atkārtoti uzlādējama elektroenerģijas krātuve, piemēram, automašīnā.",
+      "answers": [
+        "akumulators"
+      ]
+    },
+    {
+      "id": "dg-p01-028",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tie ir auduma gabali, kas piestiprināti virs loga un kurus var aizvilkt priekšā logam.",
+      "answers": [
+        "aizkari"
+      ]
+    },
+    {
+      "id": "dg-p01-029",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir soma ar divām plecu lencēm, ko nēsā uz muguras.",
+      "answers": [
+        "mugursoma"
+      ]
+    },
+    {
+      "id": "dg-p01-030",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir cieta ceļasoma uz riteņiem ar izvelkamu rokturi, kurā saliek mantas braucienam.",
+      "answers": [
+        "koferis",
+        "čemodāns"
+      ]
+    },
+    {
+      "id": "dg-p01-031",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir ierīce, ar kuru papīra dokumentu pārvērš digitālā attēlā datorā.",
+      "answers": [
+        "skeneris"
+      ]
+    },
+    {
+      "id": "dg-p01-032",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir ierīce, kas datora tekstu vai attēlu izdrukā uz papīra.",
+      "answers": [
+        "printeris"
+      ]
+    },
+    {
+      "id": "dg-p01-033",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir ārsts, kurš pārbauda un ārstē zobus.",
+      "answers": [
+        "zobārsts"
+      ]
+    },
+    {
+      "id": "dg-p01-034",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir aptiekas speciālists, kurš izsniedz zāles un paskaidro to lietošanu.",
+      "answers": [
+        "farmaceits",
+        "aptiekārs"
+      ]
+    },
+    {
+      "id": "dg-p01-035",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir cilvēks, kura darbs ir šūt, sašaurināt vai pielāgot apģērbu.",
+      "answers": [
+        "drēbnieks",
+        "šuvējs"
+      ]
+    },
+    {
+      "id": "dg-p01-036",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir ražotāja vai pārdevēja solījums noteiktā laikā novērst noteiktus preces trūkumus saskaņā ar nosacījumiem.",
+      "answers": [
+        "garantija"
+      ]
+    },
+    {
+      "id": "dg-p01-037",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir pakalpojums, par kuru maksā, lai noteiktu negadījumu gadījumā varētu saņemt finansiālu atlīdzību.",
+      "answers": [
+        "apdrošināšana"
+      ]
+    },
+    {
+      "id": "dg-p01-038",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir iepriekš pieteikts konkrēts apmeklējuma laiks, piemēram, pie ārsta.",
+      "answers": [
+        "pieraksts"
+      ]
+    },
+    {
+      "id": "dg-p01-039",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir naudas atdošana pircējam, piemēram, pēc atgrieztas preces pieņemšanas.",
+      "answers": [
+        "atmaksa"
+      ]
+    },
+    {
+      "id": "dg-p01-040",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir pasūtītas preces nogādāšana no veikala vai noliktavas līdz klientam.",
+      "answers": [
+        "piegāde"
+      ]
+    },
+    {
+      "id": "dg-p01-041",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir preces cenas samazinājums salīdzinājumā ar tās parasto cenu.",
+      "answers": [
+        "atlaide"
+      ]
+    },
+    {
+      "id": "dg-p01-042",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir naudas nosūtīšana no viena bankas konta uz citu bankas kontu.",
+      "answers": [
+        "pārskaitījums"
+      ]
+    },
+    {
+      "id": "dg-p01-043",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir īsa ziņa, kas automātiski parādās telefona ekrānā, piemēram, kad pienācis jauns e-pasts.",
+      "answers": [
+        "paziņojums"
+      ]
+    },
+    {
+      "id": "dg-p01-044",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir slepena burtu, ciparu vai simbolu virkne, kuru ievada, lai piekļūtu savam kontam.",
+      "answers": [
+        "parole"
+      ]
+    },
+    {
+      "id": "dg-p01-045",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir vietas vai pakalpojuma iepriekšēja pieteikšana, piemēram, restorānā vai viesnīcā.",
+      "answers": [
+        "rezervācija"
+      ]
+    },
+    {
+      "id": "dg-p01-046",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir pēdējais datums vai laiks, līdz kuram jāizpilda noteikts darbs vai jāveic maksājums.",
+      "answers": [
+        "termiņš"
+      ]
+    },
+    {
+      "id": "dg-p01-047",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir dokuments, ar kuru cilvēks piešķir citam tiesības rīkoties viņa vārdā.",
+      "answers": [
+        "pilnvara"
+      ]
+    },
+    {
+      "id": "dg-p01-048",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir iepriekš noteikts ceļš no sākuma vietas līdz galamērķim, reizēm ar vairākām pieturām.",
+      "answers": [
+        "maršruts"
+      ]
+    },
+    {
+      "id": "dg-p01-049",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tas ir paredzējums par gaidāmajiem laikapstākļiem nākamajās dienās.",
+      "answers": [
+        "prognoze"
+      ]
+    },
+    {
+      "id": "dg-p01-050",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzmini vārdu pēc apraksta.",
+      "description": "Tā ir vienošanās, kas ļauj par noteiktu maksu regulāri saņemt pakalpojumu, izdevumu vai piekļuvi.",
+      "answers": [
+        "abonements"
+      ]
+    }
+  ]
+}

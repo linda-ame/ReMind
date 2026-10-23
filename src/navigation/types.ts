@@ -29,6 +29,11 @@ export type Screen =
       batchType?: Task['type'];
       /** practice = normal fill; view = read-only review of answers. */
       mode?: TaskSessionMode;
+      /**
+       * Start a brand-new empty attempt (ignore any leftover progress).
+       * Used after clearing tasks for “atkārtot grūtos”.
+       */
+      fresh?: boolean;
     }
   | {
       name: 'lesson_done';

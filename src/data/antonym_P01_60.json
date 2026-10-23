@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 1,
+  "title": "ReMind — Pretstati · 1. komplekts · 60 uzdevumi",
+  "tasks": [
+    {
+      "id": "an-p01-001",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "karsts",
+      "answers": [
+        "auksts"
+      ]
+    },
+    {
+      "id": "an-p01-002",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "augsts",
+      "answers": [
+        "zems"
+      ]
+    },
+    {
+      "id": "an-p01-003",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "plats",
+      "answers": [
+        "šaurs"
+      ]
+    },
+    {
+      "id": "an-p01-004",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "garš",
+      "answers": [
+        "īss"
+      ]
+    },
+    {
+      "id": "an-p01-005",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "smags",
+      "answers": [
+        "viegls"
+      ]
+    },
+    {
+      "id": "an-p01-006",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "pilns",
+      "answers": [
+        "tukšs"
+      ]
+    },
+    {
+      "id": "an-p01-007",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "sauss",
+      "answers": [
+        "slapjš",
+        "mitrs"
+      ]
+    },
+    {
+      "id": "an-p01-008",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "tīrs",
+      "answers": [
+        "netīrs"
+      ]
+    },
+    {
+      "id": "an-p01-009",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "gaišs",
+      "answers": [
+        "tumšs"
+      ]
+    },
+    {
+      "id": "an-p01-010",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "skaļš",
+      "answers": [
+        "kluss"
+      ]
+    },
+    {
+      "id": "an-p01-011",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "silts",
+      "answers": [
+        "auksts"
+      ]
+    },
+    {
+      "id": "an-p01-012",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "mīksts",
+      "answers": [
+        "ciets"
+      ]
+    },
+    {
+      "id": "an-p01-013",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "ātrs",
+      "answers": [
+        "lēns"
+      ]
+    },
+    {
+      "id": "an-p01-014",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "jauns",
+      "answers": [
+        "vecs"
+      ]
+    },
+    {
+      "id": "an-p01-015",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "atvērts",
+      "answers": [
+        "aizvērts",
+        "aiztaisīts"
+      ]
+    },
+    {
+      "id": "an-p01-016",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "tuvu",
+      "answers": [
+        "tālu"
+      ]
+    },
+    {
+      "id": "an-p01-017",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "diena",
+      "answers": [
+        "nakts"
+      ]
+    },
+    {
+      "id": "an-p01-018",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "augšā",
+      "answers": [
+        "apakšā"
+      ]
+    },
+    {
+      "id": "an-p01-019",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "iekšā",
+      "answers": [
+        "ārā"
+      ]
+    },
+    {
+      "id": "an-p01-020",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "priekšā",
+      "answers": [
+        "aizmugurē"
+      ]
+    },
+    {
+      "id": "an-p01-021",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "agri",
+      "answers": [
+        "vēlu"
+      ]
+    },
+    {
+      "id": "an-p01-022",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "bieži",
+      "answers": [
+        "reti"
+      ]
+    },
+    {
+      "id": "an-p01-023",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "vienmēr",
+      "answers": [
+        "nekad"
+      ]
+    },
+    {
+      "id": "an-p01-024",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "vairāk",
+      "answers": [
+        "mazāk"
+      ]
+    },
+    {
+      "id": "an-p01-025",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "sākums",
+      "answers": [
+        "beigas"
+      ]
+    },
+    {
+      "id": "an-p01-026",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "priecīgs",
+      "answers": [
+        "bēdīgs",
+        "noskumis"
+      ]
+    },
+    {
+      "id": "an-p01-027",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "bagāts",
+      "answers": [
+        "nabadzīgs"
+      ]
+    },
+    {
+      "id": "an-p01-028",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "drosmīgs",
+      "answers": [
+        "bailīgs",
+        "gļēvs"
+      ]
+    },
+    {
+      "id": "an-p01-029",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "stiprs",
+      "answers": [
+        "vājš"
+      ]
+    },
+    {
+      "id": "an-p01-030",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "gluds",
+      "answers": [
+        "raupjš"
+      ]
+    },
+    {
+      "id": "an-p01-031",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "ass",
+      "answers": [
+        "neass",
+        "truls"
+      ]
+    },
+    {
+      "id": "an-p01-032",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "taisns",
+      "answers": [
+        "līks",
+        "greizs"
+      ]
+    },
+    {
+      "id": "an-p01-033",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "pacelt",
+      "answers": [
+        "nolaist"
+      ]
+    },
+    {
+      "id": "an-p01-034",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "pirkt",
+      "answers": [
+        "pārdot"
+      ]
+    },
+    {
+      "id": "an-p01-035",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "ieslēgt",
+      "answers": [
+        "izslēgt"
+      ]
+    },
+    {
+      "id": "an-p01-036",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "iekāpt",
+      "answers": [
+        "izkāpt"
+      ]
+    },
+    {
+      "id": "an-p01-037",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "iedegt",
+      "answers": [
+        "nodzēst",
+        "izdzēst"
+      ]
+    },
+    {
+      "id": "an-p01-038",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "dot",
+      "answers": [
+        "ņemt"
+      ]
+    },
+    {
+      "id": "an-p01-039",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "uzvarēt",
+      "answers": [
+        "zaudēt"
+      ]
+    },
+    {
+      "id": "an-p01-040",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "slēpt",
+      "answers": [
+        "atklāt"
+      ]
+    },
+    {
+      "id": "an-p01-041",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "atcerēties",
+      "answers": [
+        "aizmirst"
+      ]
+    },
+    {
+      "id": "an-p01-042",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "piekrist",
+      "answers": [
+        "iebilst",
+        "nepiekrist"
+      ]
+    },
+    {
+      "id": "an-p01-043",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "apvienot",
+      "answers": [
+        "sadalīt"
+      ]
+    },
+    {
+      "id": "an-p01-044",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "paātrināt",
+      "answers": [
+        "palēnināt"
+      ]
+    },
+    {
+      "id": "an-p01-045",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "paplašināt",
+      "answers": [
+        "sašaurināt"
+      ]
+    },
+    {
+      "id": "an-p01-046",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "paaugstināt",
+      "answers": [
+        "pazemināt"
+      ]
+    },
+    {
+      "id": "an-p01-047",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "uzlabot",
+      "answers": [
+        "pasliktināt"
+      ]
+    },
+    {
+      "id": "an-p01-048",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "pietuvināt",
+      "answers": [
+        "attālināt"
+      ]
+    },
+    {
+      "id": "an-p01-049",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "atļaut",
+      "answers": [
+        "aizliegt"
+      ]
+    },
+    {
+      "id": "an-p01-050",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "samazināt",
+      "answers": [
+        "palielināt"
+      ]
+    },
+    {
+      "id": "an-p01-051",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "aizņemties",
+      "answers": [
+        "aizdot"
+      ]
+    },
+    {
+      "id": "an-p01-052",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "aktīvs",
+      "answers": [
+        "pasīvs"
+      ]
+    },
+    {
+      "id": "an-p01-053",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "optimistisks",
+      "answers": [
+        "pesimistisks"
+      ]
+    },
+    {
+      "id": "an-p01-054",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "dāsns",
+      "answers": [
+        "skops"
+      ]
+    },
+    {
+      "id": "an-p01-055",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "rūpīgs",
+      "answers": [
+        "paviršs"
+      ]
+    },
+    {
+      "id": "an-p01-056",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "pacietīgs",
+      "answers": [
+        "nepacietīgs"
+      ]
+    },
+    {
+      "id": "an-p01-057",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "vienaldzīgs",
+      "answers": [
+        "ieinteresēts"
+      ]
+    },
+    {
+      "id": "an-p01-058",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "pastāvīgs",
+      "answers": [
+        "īslaicīgs",
+        "pagaidu"
+      ]
+    },
+    {
+      "id": "an-p01-059",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "atklāts",
+      "answers": [
+        "slepens"
+      ]
+    },
+    {
+      "id": "an-p01-060",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Kāds ir pretstats?",
+      "word": "precīzs",
+      "answers": [
+        "neprecīzs"
+      ]
+    }
+  ]
+}

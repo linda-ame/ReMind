@@ -157,7 +157,10 @@ export function LessonSummaryScreen({
           const assessment = attempt?.selfAssessment ?? null;
           const hasAssessment =
             task.type === 'sentence_completion' ||
-            task.type === 'image_word';
+            task.type === 'image_word' ||
+            task.type === 'sentence_order' ||
+            task.type === 'antonym' ||
+            task.type === 'definition_guess';
 
           return (
             <article

@@ -1,0 +1,1490 @@
+{
+  "schemaVersion": 1,
+  "title": "ReMind — Sakārto vārdus teikumā · 50 uzdevumi · P01",
+  "tasks": [
+    {
+      "id": "so-p01-001",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "laikā",
+        "vilciens",
+        "pienāca"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "modelSentence": "Vilciens pienāca laikā."
+    },
+    {
+      "id": "so-p01-002",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "lasa",
+        "avīzi",
+        "Ieva"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          2
+        ]
+      ],
+      "modelSentence": "Ieva lasa avīzi."
+    },
+    {
+      "id": "so-p01-003",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "zupa",
+        "katlā",
+        "vārās"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "modelSentence": "Katlā vārās zupa."
+    },
+    {
+      "id": "so-p01-004",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "gatavo",
+        "māsa",
+        "vakariņas"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          2,
+          0,
+          1
+        ]
+      ],
+      "modelSentence": "Māsa gatavo vakariņas."
+    },
+    {
+      "id": "so-p01-005",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "aizvēra",
+        "logu",
+        "Līga"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          2
+        ]
+      ],
+      "modelSentence": "Līga aizvēra logu."
+    },
+    {
+      "id": "so-p01-006",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "uzziedēja",
+        "rozes",
+        "dārzā"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          2
+        ]
+      ],
+      "modelSentence": "Dārzā uzziedēja rozes."
+    },
+    {
+      "id": "so-p01-007",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "sūtījumu",
+        "kurjers",
+        "piegādāja"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          2,
+          0
+        ],
+        [
+          0,
+          2,
+          1
+        ]
+      ],
+      "modelSentence": "Kurjers piegādāja sūtījumu."
+    },
+    {
+      "id": "so-p01-008",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "iedegās",
+        "vakarā",
+        "lampas"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          0,
+          2
+        ],
+        [
+          2,
+          0,
+          1
+        ]
+      ],
+      "modelSentence": "Vakarā iedegās lampas."
+    },
+    {
+      "id": "so-p01-009",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "izrakstīja",
+        "recepti",
+        "ārsts"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          2
+        ]
+      ],
+      "modelSentence": "Ārsts izrakstīja recepti."
+    },
+    {
+      "id": "so-p01-010",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "piens",
+        "beidzās",
+        "veikalā"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "modelSentence": "Veikalā beidzās piens."
+    },
+    {
+      "id": "so-p01-011",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "pie",
+        "durvīm",
+        "suns",
+        "guļ"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          3,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          3,
+          2
+        ]
+      ],
+      "modelSentence": "Suns guļ pie durvīm."
+    },
+    {
+      "id": "so-p01-012",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "veco",
+        "kaimiņš",
+        "salaboja",
+        "velosipēdu"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          2,
+          0,
+          3
+        ],
+        [
+          0,
+          3,
+          2,
+          1
+        ]
+      ],
+      "modelSentence": "Kaimiņš salaboja veco velosipēdu."
+    },
+    {
+      "id": "so-p01-013",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "maizi",
+        "Anna",
+        "svaigu",
+        "nopirka"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          3,
+          2,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1
+        ]
+      ],
+      "modelSentence": "Anna nopirka svaigu maizi."
+    },
+    {
+      "id": "so-p01-014",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "lietus",
+        "līst",
+        "no",
+        "rīta"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          3,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          3,
+          0,
+          1
+        ]
+      ],
+      "modelSentence": "No rīta līst lietus."
+    },
+    {
+      "id": "so-p01-015",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "muzeja",
+        "draugi",
+        "pie",
+        "satikās"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          3,
+          2,
+          0
+        ],
+        [
+          2,
+          0,
+          3,
+          1
+        ]
+      ],
+      "modelSentence": "Draugi satikās pie muzeja."
+    },
+    {
+      "id": "so-p01-016",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "kafiju",
+        "izdzēra",
+        "pirms",
+        "Jānis",
+        "darba"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          4,
+          3,
+          1,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          2,
+          4
+        ],
+        [
+          3,
+          2,
+          4,
+          1,
+          0
+        ]
+      ],
+      "modelSentence": "Pirms darba Jānis izdzēra kafiju."
+    },
+    {
+      "id": "so-p01-017",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "jaunu",
+        "lietussargu",
+        "nopirka",
+        "vakar",
+        "Marija"
+      ],
+      "acceptedOrders": [
+        [
+          4,
+          3,
+          2,
+          0,
+          1
+        ],
+        [
+          3,
+          4,
+          2,
+          0,
+          1
+        ]
+      ],
+      "modelSentence": "Marija vakar nopirka jaunu lietussargu."
+    },
+    {
+      "id": "so-p01-018",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "saule",
+        "iespīdēja",
+        "logu",
+        "pa",
+        "rīta"
+      ],
+      "acceptedOrders": [
+        [
+          3,
+          2,
+          1,
+          4,
+          0
+        ],
+        [
+          4,
+          0,
+          1,
+          3,
+          2
+        ]
+      ],
+      "modelSentence": "Pa logu iespīdēja rīta saule."
+    },
+    {
+      "id": "so-p01-019",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "augus",
+        "aplaista",
+        "istabas",
+        "regulāri",
+        "dārznieks"
+      ],
+      "acceptedOrders": [
+        [
+          4,
+          3,
+          1,
+          2,
+          0
+        ],
+        [
+          2,
+          0,
+          4,
+          3,
+          1
+        ]
+      ],
+      "modelSentence": "Dārznieks regulāri aplaista istabas augus."
+    },
+    {
+      "id": "so-p01-020",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "apmeklēja",
+        "muzeju",
+        "draugi",
+        "sestdien",
+        "kopā"
+      ],
+      "acceptedOrders": [
+        [
+          3,
+          2,
+          4,
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          4,
+          0,
+          1
+        ]
+      ],
+      "modelSentence": "Sestdien draugi kopā apmeklēja muzeju."
+    },
+    {
+      "id": "so-p01-021",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "ieradās",
+        "pieturā",
+        "desmitos",
+        "autobuss"
+      ],
+      "acceptedOrders": [
+        [
+          3,
+          1,
+          0,
+          2
+        ],
+        [
+          2,
+          3,
+          0,
+          1
+        ]
+      ],
+      "modelSentence": "Autobuss pieturā ieradās desmitos."
+    },
+    {
+      "id": "so-p01-022",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "stiprs",
+        "šodien",
+        "vējš",
+        "ziemeļu",
+        "pūta"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          4,
+          0,
+          3,
+          2
+        ],
+        [
+          0,
+          3,
+          2,
+          4,
+          1
+        ]
+      ],
+      "modelSentence": "Šodien pūta stiprs ziemeļu vējš."
+    },
+    {
+      "id": "so-p01-023",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "logu",
+        "virtuves",
+        "uzmanīgi",
+        "tēvs",
+        "nomazgāja"
+      ],
+      "acceptedOrders": [
+        [
+          3,
+          2,
+          4,
+          1,
+          0
+        ],
+        [
+          3,
+          4,
+          1,
+          0,
+          2
+        ]
+      ],
+      "modelSentence": "Tēvs uzmanīgi nomazgāja virtuves logu."
+    },
+    {
+      "id": "so-p01-024",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "pusdienām",
+        "pēc",
+        "suni",
+        "Anna",
+        "izveda"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          0,
+          3,
+          4,
+          2
+        ],
+        [
+          3,
+          4,
+          2,
+          1,
+          0
+        ],
+        [
+          3,
+          1,
+          0,
+          4,
+          2
+        ]
+      ],
+      "modelSentence": "Pēc pusdienām Anna izveda suni."
+    },
+    {
+      "id": "so-p01-025",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "zils",
+        "autobuss",
+        "pie",
+        "veikala",
+        "stāvēja"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          3,
+          4,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          4,
+          2,
+          3
+        ]
+      ],
+      "modelSentence": "Pie veikala stāvēja zils autobuss."
+    },
+    {
+      "id": "so-p01-026",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "atnesa",
+        "divas",
+        "vēstules",
+        "šorīt",
+        "pastnieks"
+      ],
+      "acceptedOrders": [
+        [
+          3,
+          4,
+          0,
+          1,
+          2
+        ],
+        [
+          4,
+          3,
+          0,
+          1,
+          2
+        ]
+      ],
+      "modelSentence": "Šorīt pastnieks atnesa divas vēstules."
+    },
+    {
+      "id": "so-p01-027",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "sautējumu",
+        "mēs",
+        "gatavojām",
+        "vakariņām",
+        "dārzeņu"
+      ],
+      "acceptedOrders": [
+        [
+          3,
+          1,
+          2,
+          4,
+          0
+        ],
+        [
+          1,
+          2,
+          4,
+          0,
+          3
+        ]
+      ],
+      "modelSentence": "Vakariņām mēs gatavojām dārzeņu sautējumu."
+    },
+    {
+      "id": "so-p01-028",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "pilsētas",
+        "apmeklēja",
+        "ģimene",
+        "bibliotēku",
+        "otrdien"
+      ],
+      "acceptedOrders": [
+        [
+          4,
+          2,
+          1,
+          0,
+          3
+        ],
+        [
+          2,
+          4,
+          1,
+          0,
+          3
+        ]
+      ],
+      "modelSentence": "Otrdien ģimene apmeklēja pilsētas bibliotēku."
+    },
+    {
+      "id": "so-p01-029",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "notīrīja",
+        "ietves",
+        "no",
+        "sniegu",
+        "sētnieks"
+      ],
+      "acceptedOrders": [
+        [
+          4,
+          2,
+          1,
+          0,
+          3
+        ],
+        [
+          4,
+          0,
+          3,
+          2,
+          1
+        ]
+      ],
+      "modelSentence": "Sētnieks no ietves notīrīja sniegu."
+    },
+    {
+      "id": "so-p01-030",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "krāsnī",
+        "pīrāgu",
+        "ābolu",
+        "izcepa",
+        "vecmāmiņa"
+      ],
+      "acceptedOrders": [
+        [
+          4,
+          0,
+          3,
+          2,
+          1
+        ],
+        [
+          4,
+          3,
+          2,
+          1,
+          0
+        ]
+      ],
+      "modelSentence": "Vecmāmiņa krāsnī izcepa ābolu pīrāgu."
+    },
+    {
+      "id": "so-p01-031",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "uzspīdēja",
+        "saule",
+        "pēc",
+        "spoža",
+        "lietus"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          4,
+          0,
+          3,
+          1
+        ],
+        [
+          3,
+          1,
+          0,
+          2,
+          4
+        ]
+      ],
+      "modelSentence": "Pēc lietus uzspīdēja spoža saule."
+    },
+    {
+      "id": "so-p01-032",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "kopā",
+        "filmu",
+        "viesi",
+        "skatījās",
+        "vakarā"
+      ],
+      "acceptedOrders": [
+        [
+          4,
+          2,
+          0,
+          3,
+          1
+        ],
+        [
+          2,
+          4,
+          0,
+          3,
+          1
+        ]
+      ],
+      "modelSentence": "Vakarā viesi kopā skatījās filmu."
+    },
+    {
+      "id": "so-p01-033",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "iestādījām",
+        "pagalmā",
+        "jaunu",
+        "koku",
+        "mēs"
+      ],
+      "acceptedOrders": [
+        [
+          4,
+          1,
+          0,
+          2,
+          3
+        ],
+        [
+          4,
+          0,
+          2,
+          3,
+          1
+        ]
+      ],
+      "modelSentence": "Mēs pagalmā iestādījām jaunu koku."
+    },
+    {
+      "id": "so-p01-034",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "paskaidroja",
+        "ārste",
+        "analīžu",
+        "pacientam",
+        "rezultātus"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          3,
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          0,
+          3,
+          2,
+          4
+        ]
+      ],
+      "modelSentence": "Ārste pacientam paskaidroja analīžu rezultātus."
+    },
+    {
+      "id": "so-p01-035",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "vilciens",
+        "stacijā",
+        "pienāca",
+        "pasažieru"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          2,
+          3,
+          0
+        ],
+        [
+          3,
+          0,
+          2,
+          1
+        ]
+      ],
+      "modelSentence": "Stacijā pienāca pasažieru vilciens."
+    },
+    {
+      "id": "so-p01-036",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "automašīnas",
+        "viņš",
+        "riepas",
+        "pirms",
+        "pārbaudīja",
+        "brauciena"
+      ],
+      "acceptedOrders": [
+        [
+          3,
+          5,
+          1,
+          4,
+          0,
+          2
+        ],
+        [
+          1,
+          4,
+          0,
+          2,
+          3,
+          5
+        ]
+      ],
+      "modelSentence": "Pirms brauciena viņš pārbaudīja automašīnas riepas."
+    },
+    {
+      "id": "so-p01-037",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "nākamās",
+        "darba",
+        "kolēģi",
+        "plānus",
+        "apsprieda",
+        "nedēļas"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          4,
+          0,
+          5,
+          1,
+          3
+        ],
+        [
+          0,
+          5,
+          1,
+          3,
+          4,
+          2
+        ]
+      ],
+      "modelSentence": "Kolēģi apsprieda nākamās nedēļas darba plānus."
+    },
+    {
+      "id": "so-p01-038",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "Ilze",
+        "vakarā",
+        "izslēdza",
+        "visas",
+        "istabas",
+        "lampas"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "modelSentence": "Vakarā Ilze izslēdza visas istabas lampas."
+    },
+    {
+      "id": "so-p01-039",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "dārzeņus",
+        "tēvs",
+        "svaigus",
+        "pēc",
+        "nopirka",
+        "darba"
+      ],
+      "acceptedOrders": [
+        [
+          3,
+          5,
+          1,
+          4,
+          2,
+          0
+        ],
+        [
+          1,
+          4,
+          2,
+          0,
+          3,
+          5
+        ]
+      ],
+      "modelSentence": "Pēc darba tēvs nopirka svaigus dārzeņus."
+    },
+    {
+      "id": "so-p01-040",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "bērni",
+        "pie",
+        "upes",
+        "savvaļas",
+        "pīles",
+        "vēroja"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          2,
+          0,
+          5,
+          3,
+          4
+        ],
+        [
+          0,
+          1,
+          2,
+          5,
+          3,
+          4
+        ]
+      ],
+      "modelSentence": "Pie upes bērni vēroja savvaļas pīles."
+    },
+    {
+      "id": "so-p01-041",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "mežā",
+        "pastaigā",
+        "ģimene",
+        "svētdien",
+        "devās",
+        "garā"
+      ],
+      "acceptedOrders": [
+        [
+          3,
+          2,
+          4,
+          5,
+          1,
+          0
+        ],
+        [
+          2,
+          3,
+          4,
+          5,
+          1,
+          0
+        ]
+      ],
+      "modelSentence": "Svētdien ģimene devās garā pastaigā mežā."
+    },
+    {
+      "id": "so-p01-042",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "garāžas",
+        "no",
+        "rīta",
+        "durvis",
+        "atvēra",
+        "kaimiņš"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          2,
+          5,
+          4,
+          0,
+          3
+        ],
+        [
+          5,
+          1,
+          2,
+          4,
+          0,
+          3
+        ]
+      ],
+      "modelSentence": "No rīta kaimiņš atvēra garāžas durvis."
+    },
+    {
+      "id": "so-p01-043",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "vecmāmiņa",
+        "pēc",
+        "pusdienām",
+        "laistīja",
+        "dārza",
+        "puķes"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          2,
+          0,
+          3,
+          4,
+          5
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "modelSentence": "Pēc pusdienām vecmāmiņa laistīja dārza puķes."
+    },
+    {
+      "id": "so-p01-044",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "vilcienu",
+        "cilvēki",
+        "pasažieru",
+        "gaidīja",
+        "nākamo",
+        "stacijā"
+      ],
+      "acceptedOrders": [
+        [
+          5,
+          1,
+          3,
+          4,
+          2,
+          0
+        ],
+        [
+          1,
+          5,
+          3,
+          4,
+          2,
+          0
+        ]
+      ],
+      "modelSentence": "Stacijā cilvēki gaidīja nākamo pasažieru vilcienu."
+    },
+    {
+      "id": "so-p01-045",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "apavus",
+        "dienā",
+        "siltus",
+        "izvēlas",
+        "cilvēki",
+        "lietainā"
+      ],
+      "acceptedOrders": [
+        [
+          5,
+          1,
+          4,
+          3,
+          2,
+          0
+        ],
+        [
+          4,
+          5,
+          1,
+          3,
+          2,
+          0
+        ]
+      ],
+      "modelSentence": "Lietainā dienā cilvēki izvēlas siltus apavus."
+    },
+    {
+      "id": "so-p01-046",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "nomazgāja",
+        "vakariņām",
+        "pirms",
+        "gurķus",
+        "svaigus",
+        "Rūta"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          1,
+          5,
+          0,
+          4,
+          3
+        ],
+        [
+          5,
+          2,
+          1,
+          0,
+          4,
+          3
+        ]
+      ],
+      "modelSentence": "Pirms vakariņām Rūta nomazgāja svaigus gurķus."
+    },
+    {
+      "id": "so-p01-047",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "vadītāja",
+        "sapulces",
+        "pēc",
+        "izsūtīja",
+        "visiem",
+        "ziņojumu"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          1,
+          0,
+          3,
+          4,
+          5
+        ],
+        [
+          0,
+          2,
+          1,
+          3,
+          4,
+          5
+        ]
+      ],
+      "modelSentence": "Pēc sapulces vadītāja izsūtīja visiem ziņojumu."
+    },
+    {
+      "id": "so-p01-048",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "lapas",
+        "pagalmā",
+        "bērni",
+        "rudens",
+        "vēroja",
+        "pirmās"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          1,
+          4,
+          5,
+          3,
+          0
+        ],
+        [
+          1,
+          2,
+          4,
+          5,
+          3,
+          0
+        ]
+      ],
+      "modelSentence": "Bērni pagalmā vēroja pirmās rudens lapas."
+    },
+    {
+      "id": "so-p01-049",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "bedri",
+        "lielu",
+        "uz",
+        "taksometrs",
+        "apbrauca",
+        "ceļa"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          5,
+          3,
+          4,
+          1,
+          0
+        ],
+        [
+          3,
+          4,
+          1,
+          0,
+          2,
+          5
+        ]
+      ],
+      "modelSentence": "Uz ceļa taksometrs apbrauca lielu bedri."
+    },
+    {
+      "id": "so-p01-050",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārto vārdus teikumā.",
+      "words": [
+        "Liene",
+        "siltas",
+        "vakariņas",
+        "pēc",
+        "darba",
+        "pasūtīja"
+      ],
+      "acceptedOrders": [
+        [
+          3,
+          4,
+          0,
+          5,
+          1,
+          2
+        ],
+        [
+          0,
+          3,
+          4,
+          5,
+          1,
+          2
+        ]
+      ],
+      "modelSentence": "Pēc darba Liene pasūtīja siltas vakariņas."
+    }
+  ]
+}

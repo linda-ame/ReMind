@@ -22,6 +22,10 @@ import { SentenceCompletionTaskView } from './task/SentenceCompletionTaskView';
 import { ImageWordTaskView } from './task/ImageWordTaskView';
 import { WordChoiceTaskView } from './task/WordChoiceTaskView';
 import { ReadingComprehensionTaskView } from './task/ReadingComprehensionTaskView';
+import { SentenceOrderTaskView } from './task/SentenceOrderTaskView';
+import { OddOneOutTaskView } from './task/OddOneOutTaskView';
+import { AntonymTaskView } from './task/AntonymTaskView';
+import { DefinitionGuessTaskView } from './task/DefinitionGuessTaskView';
 
 interface TaskScreenProps {
   taskId: string;
@@ -29,6 +33,8 @@ interface TaskScreenProps {
   batchIndex?: number;
   batchType?: Task['type'];
   mode?: TaskSessionMode;
+  /** Ignore stored progress and start empty (after “atkārtot grūtos”). */
+  fresh?: boolean;
   onNavigate: (screen: Screen) => void;
   onBack: () => void;
   onHome: () => void;
@@ -40,6 +46,7 @@ export function TaskScreen({
   batchIndex,
   batchType,
   mode = 'practice',
+  fresh = false,
   onNavigate,
   onBack,
   onHome,
@@ -51,6 +58,15 @@ export function TaskScreen({
 
   useEffect(() => {
     if (!task) return;
+
+    // Forced empty start (progress was cleared for redo).
+    if (fresh && !isView) {
+      const a = createAttempt(task);
+      setAttempt(a);
+      void saveAttempt(a);
+      return;
+    }
+
     const previous = latestAttemptForTask(
       attempts,
       task.id,
@@ -69,7 +85,7 @@ export function TaskScreen({
     void saveAttempt(a);
     // Only re-init when the task changes; attempts is read at that moment.
     // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional
-  }, [taskId, task, saveAttempt, isView]);
+  }, [taskId, task, saveAttempt, isView, fresh]);
 
   const taskNav = (nextTaskId: string): Screen => ({
     name: 'task',
@@ -78,6 +94,8 @@ export function TaskScreen({
     batchIndex,
     batchType,
     mode,
+    // Keep fresh for the whole redo queue so each item starts empty.
+    fresh: fresh || undefined,
   });
 
   if (!task) {
@@ -104,8 +122,12 @@ export function TaskScreen({
   const isLast = idx >= 0 && idx === queue.length - 1;
   const isWordReading = task.type === 'word_reading';
   const isWordChoice = task.type === 'word_choice';
+  const isOddOneOut = task.type === 'odd_one_out';
   const isReading = task.type === 'reading_comprehension';
-  const skipSelfAssessment = isWordReading || isWordChoice || isReading;
+  const isSentenceOrder = task.type === 'sentence_order';
+  /** Same as existing choice / reading sections — no footer self-assessment. */
+  const skipSelfAssessment =
+    isWordReading || isWordChoice || isOddOneOut || isReading;
   const inBatch = batchIndex !== undefined && batchType !== undefined;
   const alreadyAssessed =
     attempt.status === 'completed' && attempt.selfAssessment != null;
@@ -133,7 +155,8 @@ export function TaskScreen({
       onBack();
       return;
     }
-    if (inBatch || skipSelfAssessment) {
+    // End of practice queue (nodarbība or “atkārtot grūtos”) → done screen.
+    if (queue.length > 0) {
       onNavigate({
         name: 'lesson_done',
         queue,
@@ -180,17 +203,20 @@ export function TaskScreen({
       ? 'Pabeigt'
       : 'Tālāk';
 
-  const subtitle = inBatch
-    ? `${TASK_TYPE_LABELS[task.type]} · ${unitTitle(
-        task.type,
-        batchIndex! + 1,
-      )}${isView ? ' · skatīt' : ''}`
-    : TASK_TYPE_LABELS[task.type];
-
   const queueProgressLabel =
     queue.length > 0 && idx >= 0 && !isReading
       ? `${idx + 1}. no ${queue.length}`
       : null;
+
+  /** Sentence order: no type heading (progress stays in the footer like others). */
+  const subtitle = isSentenceOrder
+    ? undefined
+    : inBatch
+      ? `${TASK_TYPE_LABELS[task.type]} · ${unitTitle(
+          task.type,
+          batchIndex! + 1,
+        )}${isView ? ' · skatīt' : ''}`
+      : TASK_TYPE_LABELS[task.type];
 
   const assessmentSavedBanner =
     alreadyAssessed && attempt.selfAssessment ? (
@@ -260,7 +286,7 @@ export function TaskScreen({
     );
   }
 
-  if (isWordChoice) {
+  if (isWordChoice || isOddOneOut) {
     return (
       <Layout
         onHome={onHome}
@@ -286,13 +312,23 @@ export function TaskScreen({
           </div>
         }
       >
-        <WordChoiceTaskView
-          key={task.id}
-          task={task}
-          attempt={attempt}
-          onUpdate={onUpdate}
-          readOnly={isView}
-        />
+        {isWordChoice ? (
+          <WordChoiceTaskView
+            key={task.id}
+            task={task}
+            attempt={attempt}
+            onUpdate={onUpdate}
+            readOnly={isView}
+          />
+        ) : (
+          <OddOneOutTaskView
+            key={task.id}
+            task={task}
+            attempt={attempt}
+            onUpdate={onUpdate}
+            readOnly={isView}
+          />
+        )}
       </Layout>
     );
   }
@@ -395,6 +431,33 @@ export function TaskScreen({
       )}
       {task.type === 'image_word' && (
         <ImageWordTaskView
+          key={task.id}
+          task={task}
+          attempt={attempt}
+          onUpdate={onUpdate}
+          readOnly={isView}
+        />
+      )}
+      {task.type === 'sentence_order' && (
+        <SentenceOrderTaskView
+          key={task.id}
+          task={task}
+          attempt={attempt}
+          onUpdate={onUpdate}
+          readOnly={isView}
+        />
+      )}
+      {task.type === 'antonym' && (
+        <AntonymTaskView
+          key={task.id}
+          task={task}
+          attempt={attempt}
+          onUpdate={onUpdate}
+          readOnly={isView}
+        />
+      )}
+      {task.type === 'definition_guess' && (
+        <DefinitionGuessTaskView
           key={task.id}
           task={task}
           attempt={attempt}

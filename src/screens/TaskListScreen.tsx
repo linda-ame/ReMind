@@ -25,7 +25,7 @@ export function TaskListScreen({
   onBack,
   onHome,
 }: TaskListScreenProps) {
-  const { attempts } = useApp();
+  const { attempts, clearProgressForTasks } = useApp();
   const all = getAllTasks();
   const hardIds = new Set(difficultTaskIds(attempts));
 
@@ -42,10 +42,39 @@ export function TaskListScreen({
 
   const queue = list.map((t) => t.id);
 
+  const openPractice = async (taskId: string) => {
+    if (filter === 'difficult') {
+      // Empty redo for the whole hard queue (same as Progress).
+      await clearProgressForTasks(queue);
+      onNavigate({
+        name: 'task',
+        taskId: queue[0] ?? taskId,
+        queue,
+        mode: 'practice',
+        fresh: true,
+      });
+      return;
+    }
+    onNavigate({ name: 'task', taskId, queue });
+  };
+
   return (
     <Layout subtitle={title} onHome={onHome} onBack={onBack}>
       {list.length === 0 ? (
         <p className="lead">Nav uzdevumu šajā sarakstā.</p>
+      ) : filter === 'difficult' ? (
+        <div className="stack">
+          <p className="muted">
+            Grūtie un ar palīdzību atzīmētie. Atkārtošana sākas no tukšiem
+            uzdevumiem.
+          </p>
+          <Button
+            variant="help"
+            onClick={() => void openPractice(queue[0]!)}
+          >
+            Sākt atkārtošanu ({queue.length})
+          </Button>
+        </div>
       ) : (
         <div className="stack">
           {list.map((task, index) => {
@@ -58,9 +87,7 @@ export function TaskListScreen({
               <Button
                 key={task.id}
                 variant="secondary"
-                onClick={() =>
-                  onNavigate({ name: 'task', taskId: task.id, queue })
-                }
+                onClick={() => void openPractice(task.id)}
               >
                 {index + 1}. {taskShortLabel(task)}
                 {status ? ` — ${STATUS_LABELS[status]}` : ''}
@@ -76,6 +103,7 @@ export function TaskListScreen({
 function taskShortLabel(task: Task): string {
   switch (task.type) {
     case 'word_reading':
+    case 'antonym':
       return task.word;
     case 'sentence_completion':
     case 'image_word':
@@ -86,5 +114,13 @@ function taskShortLabel(task: Task): string {
       return task.passage.length > 48
         ? `${task.passage.slice(0, 48)}…`
         : task.passage;
+    case 'sentence_order':
+      return task.modelSentence;
+    case 'odd_one_out':
+      return task.options.join(', ');
+    case 'definition_guess':
+      return task.description.length > 48
+        ? `${task.description.slice(0, 48)}…`
+        : task.description;
   }
 }

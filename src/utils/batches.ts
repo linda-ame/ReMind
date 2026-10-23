@@ -10,6 +10,10 @@ export const BATCH_SIZE_BY_TYPE: Record<Task['type'], number> = {
   sentence_completion: 5,
   /** Each text is its own unit (not grouped into lessons). */
   reading_comprehension: 1,
+  sentence_order: 5,
+  odd_one_out: 5,
+  antonym: 5,
+  definition_guess: 5,
 };
 
 /** @deprecated Prefer batchSizeForType — kept for older call sites. */

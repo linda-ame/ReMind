@@ -1,0 +1,706 @@
+{
+  "schemaVersion": 1,
+  "title": "ReMind — Atrodi lieko vārdu · 50 uzdevumi · P01 50",
+  "tasks": [
+    {
+      "id": "oo-p01-001",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "ābols",
+        "bumbieris",
+        "burkāns",
+        "plūme"
+      ],
+      "correctIndex": 2,
+      "explanation": "Ābols, bumbieris un plūme ir augļi, bet burkāns ir sakņu dārzenis."
+    },
+    {
+      "id": "oo-p01-002",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "spilvens",
+        "karote",
+        "dakšiņa",
+        "nazis"
+      ],
+      "correctIndex": 0,
+      "explanation": "Karote, dakšiņa un nazis ir galda piederumi, bet spilvens nav galda piederums."
+    },
+    {
+      "id": "oo-p01-003",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "zvirbulis",
+        "balodis",
+        "stārķis",
+        "vāvere"
+      ],
+      "correctIndex": 3,
+      "explanation": "Zvirbulis, balodis un stārķis ir putni, bet vāvere ir zīdītājs."
+    },
+    {
+      "id": "oo-p01-004",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "janvāris",
+        "piektdiena",
+        "aprīlis",
+        "septembris"
+      ],
+      "correctIndex": 1,
+      "explanation": "Janvāris, aprīlis un septembris ir mēneši, bet piektdiena ir nedēļas diena."
+    },
+    {
+      "id": "oo-p01-005",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "roze",
+        "tulpe",
+        "ozols",
+        "narcise"
+      ],
+      "correctIndex": 2,
+      "explanation": "Roze, tulpe un narcise ir ziedoši krāšņumaugi, bet ozols ir koks."
+    },
+    {
+      "id": "oo-p01-006",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "čemodāns",
+        "mētelis",
+        "džemperis",
+        "bikses"
+      ],
+      "correctIndex": 0,
+      "explanation": "Mētelis, džemperis un bikses ir apģērbi, bet čemodāns ir bagāža."
+    },
+    {
+      "id": "oo-p01-007",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "krēsls",
+        "gulta",
+        "dīvāns",
+        "ledusskapis"
+      ],
+      "correctIndex": 3,
+      "explanation": "Krēsls, gulta un dīvāns ir mēbeles, bet ledusskapis ir sadzīves ierīce."
+    },
+    {
+      "id": "oo-p01-008",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "vijole",
+        "lietussargs",
+        "klavieres",
+        "bungas"
+      ],
+      "correctIndex": 1,
+      "explanation": "Vijole, klavieres un bungas ir mūzikas instrumenti, bet lietussargs nav."
+    },
+    {
+      "id": "oo-p01-009",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "tramvajs",
+        "autobuss",
+        "tējkanna",
+        "trolejbuss"
+      ],
+      "correctIndex": 2,
+      "explanation": "Tramvajs, autobuss un trolejbuss ir sabiedriskā transporta līdzekļi, bet tējkanna ir virtuves piederums."
+    },
+    {
+      "id": "oo-p01-010",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "vīnogas",
+        "burkāns",
+        "pastinaks",
+        "rācenis"
+      ],
+      "correctIndex": 0,
+      "explanation": "Burkāns, pastinaks un rācenis ir sakņu dārzeņi, bet vīnogas ir augļi."
+    },
+    {
+      "id": "oo-p01-011",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "virtuve",
+        "vannasistaba",
+        "guļamistaba",
+        "tramvajs"
+      ],
+      "correctIndex": 3,
+      "explanation": "Virtuve, vannasistaba un guļamistaba ir telpas mājoklī, bet tramvajs ir transportlīdzeklis."
+    },
+    {
+      "id": "oo-p01-012",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "pildspalva",
+        "lāpsta",
+        "zīmulis",
+        "krītiņš"
+      ],
+      "correctIndex": 1,
+      "explanation": "Pildspalva, zīmulis un krītiņš ir rakstīšanas vai zīmēšanas piederumi, bet lāpsta ir darba rīks."
+    },
+    {
+      "id": "oo-p01-013",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "līdaka",
+        "asaris",
+        "ezis",
+        "zandarts"
+      ],
+      "correctIndex": 2,
+      "explanation": "Līdaka, asaris un zandarts ir zivis, bet ezis ir zīdītājs."
+    },
+    {
+      "id": "oo-p01-014",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "Latvija",
+        "Rīga",
+        "Liepāja",
+        "Cēsis"
+      ],
+      "correctIndex": 0,
+      "explanation": "Rīga, Liepāja un Cēsis ir pilsētas, bet Latvija ir valsts."
+    },
+    {
+      "id": "oo-p01-015",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "pirmdiena",
+        "ceturtdiena",
+        "svētdiena",
+        "novembris"
+      ],
+      "correctIndex": 3,
+      "explanation": "Pirmdiena, ceturtdiena un svētdiena ir nedēļas dienas, bet novembris ir mēnesis."
+    },
+    {
+      "id": "oo-p01-016",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "Eiropa",
+        "Portugāle",
+        "Āzija",
+        "Āfrika"
+      ],
+      "correctIndex": 1,
+      "explanation": "Eiropa, Āzija un Āfrika ir pasaules daļas, bet Portugāle ir valsts."
+    },
+    {
+      "id": "oo-p01-017",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "dzelzs",
+        "varš",
+        "plastmasa",
+        "alumīnijs"
+      ],
+      "correctIndex": 2,
+      "explanation": "Dzelzs, varš un alumīnijs ir metāli, bet plastmasa nav metāls."
+    },
+    {
+      "id": "oo-p01-018",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "Mēness",
+        "Marss",
+        "Venera",
+        "Saturns"
+      ],
+      "correctIndex": 0,
+      "explanation": "Marss, Venera un Saturns ir planētas, bet Mēness ir Zemes dabiskais pavadonis."
+    },
+    {
+      "id": "oo-p01-019",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "komats",
+        "punkts",
+        "semikols",
+        "burts"
+      ],
+      "correctIndex": 3,
+      "explanation": "Komats, punkts un semikols ir pieturzīmes, bet burts nav pieturzīme."
+    },
+    {
+      "id": "oo-p01-020",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "trijstūris",
+        "kubs",
+        "kvadrāts",
+        "taisnstūris"
+      ],
+      "correctIndex": 1,
+      "explanation": "Trijstūris, kvadrāts un taisnstūris ir plaknes figūras, bet kubs ir telpisks ķermenis."
+    },
+    {
+      "id": "oo-p01-021",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "litrs",
+        "mililitrs",
+        "kilograms",
+        "kubikmetrs"
+      ],
+      "correctIndex": 2,
+      "explanation": "Litrs, mililitrs un kubikmetrs ir tilpuma mērvienības, bet kilograms ir masas mērvienība."
+    },
+    {
+      "id": "oo-p01-022",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "kilometrs",
+        "sekunde",
+        "minūte",
+        "stunda"
+      ],
+      "correctIndex": 0,
+      "explanation": "Sekunde, minūte un stunda ir laika mērvienības, bet kilometrs ir garuma mērvienība."
+    },
+    {
+      "id": "oo-p01-023",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "ārsts",
+        "medmāsa",
+        "farmaceits",
+        "šoferis"
+      ],
+      "correctIndex": 3,
+      "explanation": "Ārsts, medmāsa un farmaceits ir veselības aprūpes nozares profesijas, bet šoferis ir transporta vadītājs."
+    },
+    {
+      "id": "oo-p01-024",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "vijole",
+        "flauta",
+        "čells",
+        "kontrabass"
+      ],
+      "correctIndex": 1,
+      "explanation": "Vijole, čells un kontrabass ir stīgu instrumenti, bet flauta ir pūšaminstruments."
+    },
+    {
+      "id": "oo-p01-025",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "zāģis",
+        "ēvele",
+        "termometrs",
+        "kalts"
+      ],
+      "correctIndex": 2,
+      "explanation": "Zāģis, ēvele un kalts ir kokapstrādes rīki, bet termometrs mēra temperatūru."
+    },
+    {
+      "id": "oo-p01-026",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "podkāsts",
+        "laikraksts",
+        "žurnāls",
+        "brošūra"
+      ],
+      "correctIndex": 0,
+      "explanation": "Laikraksts, žurnāls un brošūra ir drukāti izdevumi, bet podkāsts ir audio raidījums."
+    },
+    {
+      "id": "oo-p01-027",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "kokvilna",
+        "lins",
+        "vilna",
+        "stikls"
+      ],
+      "correctIndex": 3,
+      "explanation": "Kokvilna, lins un vilna ir dabiskās tekstilšķiedras, bet stikls nav tekstilšķiedra."
+    },
+    {
+      "id": "oo-p01-028",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "decembris",
+        "jūlijs",
+        "janvāris",
+        "februāris"
+      ],
+      "correctIndex": 1,
+      "explanation": "Decembris, janvāris un februāris Latvijā ir ziemas mēneši, bet jūlijs ir vasaras mēnesis."
+    },
+    {
+      "id": "oo-p01-029",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "grams",
+        "kilograms",
+        "litrs",
+        "tonna"
+      ],
+      "correctIndex": 2,
+      "explanation": "Grams, kilograms un tonna ir masas mērvienības, bet litrs ir tilpuma mērvienība."
+    },
+    {
+      "id": "oo-p01-030",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "aplis",
+        "kubs",
+        "cilindrs",
+        "lode"
+      ],
+      "correctIndex": 0,
+      "explanation": "Kubs, cilindrs un lode ir telpiski ķermeņi, bet aplis ir plaknes figūra."
+    },
+    {
+      "id": "oo-p01-031",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "futbols",
+        "basketbols",
+        "volejbols",
+        "peldēšana"
+      ],
+      "correctIndex": 3,
+      "explanation": "Futbols, basketbols un volejbols ir sporta spēles ar bumbu, bet peldēšana nav bumbas spēle."
+    },
+    {
+      "id": "oo-p01-032",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "čiekurs",
+        "slēdzene",
+        "skuja",
+        "miza"
+      ],
+      "correctIndex": 1,
+      "explanation": "Čiekurs, skuja un miza ir augu daļas, bet slēdzene ir mehāniska ierīce."
+    },
+    {
+      "id": "oo-p01-033",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "vārīšana",
+        "cepšana",
+        "slaucīšana",
+        "sautēšana"
+      ],
+      "correctIndex": 2,
+      "explanation": "Vārīšana, cepšana un sautēšana ir ēdiena termiskās apstrādes veidi, bet slaucīšana ir tīrīšana."
+    },
+    {
+      "id": "oo-p01-034",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "ārsts",
+        "vilciena mašīnists",
+        "autobusa vadītājs",
+        "lidmašīnas pilots"
+      ],
+      "correctIndex": 0,
+      "explanation": "Mašīnists, autobusa vadītājs un pilots vada transportlīdzekļus, bet ārsts nodarbojas ar medicīnu."
+    },
+    {
+      "id": "oo-p01-035",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "egle",
+        "priede",
+        "lapegle",
+        "bērzs"
+      ],
+      "correctIndex": 3,
+      "explanation": "Egle, priede un lapegle ir skujkoki, bet bērzs ir lapu koks."
+    },
+    {
+      "id": "oo-p01-036",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "hektārs",
+        "metrs",
+        "kvadrātmetrs",
+        "kvadrātkilometrs"
+      ],
+      "correctIndex": 1,
+      "explanation": "Hektārs, kvadrātmetrs un kvadrātkilometrs ir laukuma mērvienības, bet metrs ir garuma mērvienība."
+    },
+    {
+      "id": "oo-p01-037",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "lēni",
+        "ātri",
+        "skaļš",
+        "klusi"
+      ],
+      "correctIndex": 2,
+      "explanation": "Lēni, ātri un klusi ir apstākļa vārdi, bet skaļš ir īpašības vārds."
+    },
+    {
+      "id": "oo-p01-038",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "dziedās",
+        "rakstīja",
+        "lasīja",
+        "zīmēja"
+      ],
+      "correctIndex": 0,
+      "explanation": "Rakstīja, lasīja un zīmēja ir pagātnes formas, bet dziedās ir nākotnes forma."
+    },
+    {
+      "id": "oo-p01-039",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "Rīga",
+        "Tallina",
+        "Viļņa",
+        "Jelgava"
+      ],
+      "correctIndex": 3,
+      "explanation": "Rīga, Tallina un Viļņa ir Baltijas valstu galvaspilsētas, bet Jelgava nav valsts galvaspilsēta."
+    },
+    {
+      "id": "oo-p01-040",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "lietus",
+        "migla",
+        "sniegs",
+        "krusa"
+      ],
+      "correctIndex": 1,
+      "explanation": "Lietus, sniegs un krusa ir nokrišņi, bet migla nav nokrišņu veids."
+    },
+    {
+      "id": "oo-p01-041",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "smaragds",
+        "rubīns",
+        "varš",
+        "safīrs"
+      ],
+      "correctIndex": 2,
+      "explanation": "Smaragds, rubīns un safīrs ir dārgakmeņi, bet varš ir metāls."
+    },
+    {
+      "id": "oo-p01-042",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "akmeņogles",
+        "saules enerģija",
+        "vēja enerģija",
+        "ūdens enerģija"
+      ],
+      "correctIndex": 0,
+      "explanation": "Saules, vēja un ūdens enerģija ir atjaunojami energoresursi, bet akmeņogles ir fosilais kurināmais."
+    },
+    {
+      "id": "oo-p01-043",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "protons",
+        "neitrons",
+        "elektrons",
+        "molekula"
+      ],
+      "correctIndex": 3,
+      "explanation": "Protons, neitrons un elektrons ir daļiņas, kas ietilpst atomu uzbūvē, bet molekula sastāv no atomiem."
+    },
+    {
+      "id": "oo-p01-044",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "advokāts",
+        "ķirurgs",
+        "tiesnesis",
+        "prokurors"
+      ],
+      "correctIndex": 1,
+      "explanation": "Advokāts, tiesnesis un prokurors strādā tiesību jomā, bet ķirurgs ir ārsts."
+    },
+    {
+      "id": "oo-p01-045",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "stāsts",
+        "novele",
+        "vārdnīca",
+        "romāns"
+      ],
+      "correctIndex": 2,
+      "explanation": "Stāsts, novele un romāns ir literārās prozas žanri, bet vārdnīca ir uzziņu izdevums."
+    },
+    {
+      "id": "oo-p01-046",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "Jupiters",
+        "Saule",
+        "Sīriuss",
+        "Polārzvaigzne"
+      ],
+      "correctIndex": 0,
+      "explanation": "Saule, Sīriuss un Polārzvaigzne ir zvaigznes, bet Jupiters ir planēta."
+    },
+    {
+      "id": "oo-p01-047",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "kvīts",
+        "rēķins",
+        "pavadzīme",
+        "kalendārs"
+      ],
+      "correctIndex": 3,
+      "explanation": "Kvīts, rēķins un pavadzīme ir darījumu dokumenti, bet kalendārs nav darījuma dokuments."
+    },
+    {
+      "id": "oo-p01-048",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "skābeklis",
+        "ūdens",
+        "slāpeklis",
+        "ūdeņradis"
+      ],
+      "correctIndex": 1,
+      "explanation": "Skābeklis, slāpeklis un ūdeņradis ir ķīmiskie elementi, bet ūdens ir ķīmisks savienojums."
+    },
+    {
+      "id": "oo-p01-049",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "viņš",
+        "viņa",
+        "mēs",
+        "viņi"
+      ],
+      "correctIndex": 2,
+      "explanation": "Viņš, viņa un viņi ir trešās personas vietniekvārdi, bet mēs ir pirmās personas vietniekvārds."
+    },
+    {
+      "id": "oo-p01-050",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodi lieko vārdu.",
+      "options": [
+        "termometrs",
+        "pulkstenis",
+        "hronometrs",
+        "taimeris"
+      ],
+      "correctIndex": 0,
+      "explanation": "Pulkstenis, hronometrs un taimeris palīdz noteikt vai mērīt laiku, bet termometrs mēra temperatūru."
+    }
+  ]
+}
