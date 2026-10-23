@@ -1,0 +1,2157 @@
+{
+  "schemaVersion": 1,
+  "title": "ReMind — sākuma uzdevumi: 4. vārdu komplekts un trīs pārējās sadaļas",
+  "tasks": [
+    {
+      "id": "remind-wr-k4-001",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "spilvendrāna"
+    },
+    {
+      "id": "remind-wr-k4-002",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "rakstāmmašīna"
+    },
+    {
+      "id": "remind-wr-k4-003",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "kontaktligzda"
+    },
+    {
+      "id": "remind-wr-k4-004",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "tvaikgludeklis"
+    },
+    {
+      "id": "remind-wr-k4-005",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "mēbelējums"
+    },
+    {
+      "id": "remind-wr-k4-006",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "gaismeklis"
+    },
+    {
+      "id": "remind-wr-k4-007",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "paklājiņš"
+    },
+    {
+      "id": "remind-wr-k4-008",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "atslēdziņa"
+    },
+    {
+      "id": "remind-wr-k4-009",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "namdurvis"
+    },
+    {
+      "id": "remind-wr-k4-010",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "grāmatskapis"
+    },
+    {
+      "id": "remind-wr-k4-011",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "spoguļskapis"
+    },
+    {
+      "id": "remind-wr-k4-012",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "cepešpanna"
+    },
+    {
+      "id": "remind-wr-k4-013",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "atkritumvedējs"
+    },
+    {
+      "id": "remind-wr-k4-014",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "spēļmantiņa"
+    },
+    {
+      "id": "remind-wr-k4-015",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "siltumizolācija"
+    },
+    {
+      "id": "remind-wr-k4-016",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "meduskūka"
+    },
+    {
+      "id": "remind-wr-k4-017",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "plācenīši"
+    },
+    {
+      "id": "remind-wr-k4-018",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "vinegrets"
+    },
+    {
+      "id": "remind-wr-k4-019",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "granātābols"
+    },
+    {
+      "id": "remind-wr-k4-020",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "nektarīns"
+    },
+    {
+      "id": "remind-wr-k4-021",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "greipfrūts"
+    },
+    {
+      "id": "remind-wr-k4-022",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "pistācijas"
+    },
+    {
+      "id": "remind-wr-k4-023",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "karamele"
+    },
+    {
+      "id": "remind-wr-k4-024",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "ķimenes"
+    },
+    {
+      "id": "remind-wr-k4-025",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "rozīnes"
+    },
+    {
+      "id": "remind-wr-k4-026",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "lakrica"
+    },
+    {
+      "id": "remind-wr-k4-027",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "kviešmaize"
+    },
+    {
+      "id": "remind-wr-k4-028",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "ābolmaize"
+    },
+    {
+      "id": "remind-wr-k4-029",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "putukrējums"
+    },
+    {
+      "id": "remind-wr-k4-030",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "kanēļmaizīte"
+    },
+    {
+      "id": "remind-wr-k4-031",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "baltalksnis"
+    },
+    {
+      "id": "remind-wr-k4-032",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "melnalksnis"
+    },
+    {
+      "id": "remind-wr-k4-033",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "dižskābardis"
+    },
+    {
+      "id": "remind-wr-k4-034",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "lapegle"
+    },
+    {
+      "id": "remind-wr-k4-035",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "jasmīns"
+    },
+    {
+      "id": "remind-wr-k4-036",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "āboliņš"
+    },
+    {
+      "id": "remind-wr-k4-037",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "sausserdis"
+    },
+    {
+      "id": "remind-wr-k4-038",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "mežvītenis"
+    },
+    {
+      "id": "remind-wr-k4-039",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "citronmelisa"
+    },
+    {
+      "id": "remind-wr-k4-040",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "hiacinte"
+    },
+    {
+      "id": "remind-wr-k4-041",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "lavanda"
+    },
+    {
+      "id": "remind-wr-k4-042",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "pūpolvītols"
+    },
+    {
+      "id": "remind-wr-k4-043",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "āmuļi"
+    },
+    {
+      "id": "remind-wr-k4-044",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "magnolija"
+    },
+    {
+      "id": "remind-wr-k4-045",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "pļavauzene"
+    },
+    {
+      "id": "remind-wr-k4-046",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "kapibara"
+    },
+    {
+      "id": "remind-wr-k4-047",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "surikats"
+    },
+    {
+      "id": "remind-wr-k4-048",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "mangusts"
+    },
+    {
+      "id": "remind-wr-k4-049",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "pīļknābis"
+    },
+    {
+      "id": "remind-wr-k4-050",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "tīģerhaizivs"
+    },
+    {
+      "id": "remind-wr-k4-051",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "ziemeļbriedis"
+    },
+    {
+      "id": "remind-wr-k4-052",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "burunduks"
+    },
+    {
+      "id": "remind-wr-k4-053",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "salamandra"
+    },
+    {
+      "id": "remind-wr-k4-054",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "skorpions"
+    },
+    {
+      "id": "remind-wr-k4-055",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "ķirzaka"
+    },
+    {
+      "id": "remind-wr-k4-056",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "jenots"
+    },
+    {
+      "id": "remind-wr-k4-057",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "albatross"
+    },
+    {
+      "id": "remind-wr-k4-058",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "tārtiņš"
+    },
+    {
+      "id": "remind-wr-k4-059",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "ķīvīte"
+    },
+    {
+      "id": "remind-wr-k4-060",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "gazele"
+    },
+    {
+      "id": "remind-wr-k4-061",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "krastlīnija"
+    },
+    {
+      "id": "remind-wr-k4-062",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "stāvkrasts"
+    },
+    {
+      "id": "remind-wr-k4-063",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "leduspuķes"
+    },
+    {
+      "id": "remind-wr-k4-064",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "zemesrags"
+    },
+    {
+      "id": "remind-wr-k4-065",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "apvārsnis"
+    },
+    {
+      "id": "remind-wr-k4-066",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "ūdensvirpulis"
+    },
+    {
+      "id": "remind-wr-k4-067",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "plūdmaiņa"
+    },
+    {
+      "id": "remind-wr-k4-068",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "viesuļvētra"
+    },
+    {
+      "id": "remind-wr-k4-069",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "atkusnis"
+    },
+    {
+      "id": "remind-wr-k4-070",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "apledojums"
+    },
+    {
+      "id": "remind-wr-k4-071",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "sniegputenis"
+    },
+    {
+      "id": "remind-wr-k4-072",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "rītausma"
+    },
+    {
+      "id": "remind-wr-k4-073",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "sniegkupena"
+    },
+    {
+      "id": "remind-wr-k4-074",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "vējlauze"
+    },
+    {
+      "id": "remind-wr-k4-075",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "nogruvums"
+    },
+    {
+      "id": "remind-wr-k4-076",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "mikroautobuss"
+    },
+    {
+      "id": "remind-wr-k4-077",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "pasažierkuģis"
+    },
+    {
+      "id": "remind-wr-k4-078",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "airulaiva"
+    },
+    {
+      "id": "remind-wr-k4-079",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "burinieks"
+    },
+    {
+      "id": "remind-wr-k4-080",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "tramvajs"
+    },
+    {
+      "id": "remind-wr-k4-081",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "stūresrats"
+    },
+    {
+      "id": "remind-wr-k4-082",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "bremžpedālis"
+    },
+    {
+      "id": "remind-wr-k4-083",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "drošībasjosta"
+    },
+    {
+      "id": "remind-wr-k4-084",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "stāvbremze"
+    },
+    {
+      "id": "remind-wr-k4-085",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "apdzīšana"
+    },
+    {
+      "id": "remind-wr-k4-086",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "pārsēšanās"
+    },
+    {
+      "id": "remind-wr-k4-087",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "ceļasoma"
+    },
+    {
+      "id": "remind-wr-k4-088",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "mugursoma"
+    },
+    {
+      "id": "remind-wr-k4-089",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "čemodāns"
+    },
+    {
+      "id": "remind-wr-k4-090",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "lidosta"
+    },
+    {
+      "id": "remind-wr-k4-091",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "ornitologs"
+    },
+    {
+      "id": "remind-wr-k4-092",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "botāniķis"
+    },
+    {
+      "id": "remind-wr-k4-093",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "entomologs"
+    },
+    {
+      "id": "remind-wr-k4-094",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "paleontologs"
+    },
+    {
+      "id": "remind-wr-k4-095",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "hidrologs"
+    },
+    {
+      "id": "remind-wr-k4-096",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "vulkānologs"
+    },
+    {
+      "id": "remind-wr-k4-097",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "fizioterapeits"
+    },
+    {
+      "id": "remind-wr-k4-098",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "ergoterapeits"
+    },
+    {
+      "id": "remind-wr-k4-099",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "logopēds"
+    },
+    {
+      "id": "remind-wr-k4-100",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "ortopēds"
+    },
+    {
+      "id": "remind-wr-k4-101",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "pediatrs"
+    },
+    {
+      "id": "remind-wr-k4-102",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "dietologs"
+    },
+    {
+      "id": "remind-wr-k4-103",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "ģeodēzists"
+    },
+    {
+      "id": "remind-wr-k4-104",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "biologs"
+    },
+    {
+      "id": "remind-wr-k4-105",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "okeanogrāfs"
+    },
+    {
+      "id": "remind-wr-k4-106",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "brīvdabasmuzejs"
+    },
+    {
+      "id": "remind-wr-k4-107",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "mākslasmuzejs"
+    },
+    {
+      "id": "remind-wr-k4-108",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "vēsturesmuzejs"
+    },
+    {
+      "id": "remind-wr-k4-109",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "pilsdrupas"
+    },
+    {
+      "id": "remind-wr-k4-110",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "cietoksnis"
+    },
+    {
+      "id": "remind-wr-k4-111",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "nocietinājums"
+    },
+    {
+      "id": "remind-wr-k4-112",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "koncertestrāde"
+    },
+    {
+      "id": "remind-wr-k4-113",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "izstāžucentrs"
+    },
+    {
+      "id": "remind-wr-k4-114",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "autoosta"
+    },
+    {
+      "id": "remind-wr-k4-115",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "ģimnāzija"
+    },
+    {
+      "id": "remind-wr-k4-116",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "skeitparks"
+    },
+    {
+      "id": "remind-wr-k4-117",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "kamerorķestris"
+    },
+    {
+      "id": "remind-wr-k4-118",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "tautastērps"
+    },
+    {
+      "id": "remind-wr-k4-119",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "metronoms"
+    },
+    {
+      "id": "remind-wr-k4-120",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "sintezators"
+    },
+    {
+      "id": "remind-wr-k4-121",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "gravitācija"
+    },
+    {
+      "id": "remind-wr-k4-122",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "mikrobioloģija"
+    },
+    {
+      "id": "remind-wr-k4-123",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "biotehnoloģija"
+    },
+    {
+      "id": "remind-wr-k4-124",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "elektroenerģija"
+    },
+    {
+      "id": "remind-wr-k4-125",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "kondensācija"
+    },
+    {
+      "id": "remind-wr-k4-126",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "fermentācija"
+    },
+    {
+      "id": "remind-wr-k4-127",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "termoregulācija"
+    },
+    {
+      "id": "remind-wr-k4-128",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "bioķīmija"
+    },
+    {
+      "id": "remind-wr-k4-129",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "neirozinātne"
+    },
+    {
+      "id": "remind-wr-k4-130",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "telekomunikācija"
+    },
+    {
+      "id": "remind-wr-k4-131",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "termodinamika"
+    },
+    {
+      "id": "remind-wr-k4-132",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "nanotehnoloģija"
+    },
+    {
+      "id": "remind-wr-k4-133",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "rentgenogrāfija"
+    },
+    {
+      "id": "remind-wr-k4-134",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "imunoloģija"
+    },
+    {
+      "id": "remind-wr-k4-135",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "radioaktivitāte"
+    },
+    {
+      "id": "remind-wr-k4-136",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Šveice"
+    },
+    {
+      "id": "remind-wr-k4-137",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Slovēnija"
+    },
+    {
+      "id": "remind-wr-k4-138",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Slovākija"
+    },
+    {
+      "id": "remind-wr-k4-139",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Melnkalne"
+    },
+    {
+      "id": "remind-wr-k4-140",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Azerbaidžāna"
+    },
+    {
+      "id": "remind-wr-k4-141",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Kazahstāna"
+    },
+    {
+      "id": "remind-wr-k4-142",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Uzbekistāna"
+    },
+    {
+      "id": "remind-wr-k4-143",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Kirgizstāna"
+    },
+    {
+      "id": "remind-wr-k4-144",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Tadžikistāna"
+    },
+    {
+      "id": "remind-wr-k4-145",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Turkmenistāna"
+    },
+    {
+      "id": "remind-wr-k4-146",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Tunisija"
+    },
+    {
+      "id": "remind-wr-k4-147",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Maroka"
+    },
+    {
+      "id": "remind-wr-k4-148",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Kenija"
+    },
+    {
+      "id": "remind-wr-k4-149",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Etiopija"
+    },
+    {
+      "id": "remind-wr-k4-150",
+      "type": "word_reading",
+      "contentVersion": 1,
+      "instruction": "Izlasiet vārdu.",
+      "word": "Bangladeša"
+    },
+    {
+      "id": "remind-sc-001",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms iešanas ārā Anna uzvilka ___.",
+      "answers": [
+        "jaku",
+        "mēteli"
+      ],
+      "hint": "Apģērba gabals."
+    },
+    {
+      "id": "remind-sc-002",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad sāka līt, Pēteris atvēra ___.",
+      "answers": [
+        "lietussargu"
+      ],
+      "hint": "Tas pasargā no lietus."
+    },
+    {
+      "id": "remind-sc-003",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Tētis sagrieza maizi ar ___.",
+      "answers": [
+        "nazi",
+        "maizes nazi"
+      ],
+      "hint": "Virtuves piederums."
+    },
+    {
+      "id": "remind-sc-004",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms ēšanas viņa nomazgāja ___.",
+      "answers": [
+        "rokas"
+      ],
+      "hint": "Ķermeņa daļa."
+    },
+    {
+      "id": "remind-sc-005",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Uz galda dega ___.",
+      "answers": [
+        "svece"
+      ],
+      "hint": "Tā dod nelielu gaismu."
+    },
+    {
+      "id": "remind-sc-006",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc pastaigas viņš novilka ___.",
+      "answers": [
+        "apavus",
+        "zābakus",
+        "kurpes"
+      ],
+      "hint": "Tos valkā kājās."
+    },
+    {
+      "id": "remind-sc-007",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Vakarā istabā ieslēdza ___.",
+      "answers": [
+        "gaismu",
+        "lampu"
+      ],
+      "hint": "Lai telpā būtu gaišs."
+    },
+    {
+      "id": "remind-sc-008",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Dārzā viņa aplaistīja ___.",
+      "answers": [
+        "puķes",
+        "ziedus",
+        "tomātus"
+      ],
+      "hint": "Kaut kas, kas aug."
+    },
+    {
+      "id": "remind-sc-009",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Veikalā pirkumus salika ___.",
+      "answers": [
+        "somā",
+        "maisiņā",
+        "grozā"
+      ],
+      "hint": "Vieta, kur ievietot pirkumus."
+    },
+    {
+      "id": "remind-sc-010",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "No rīta viņš izdzēra glāzi ___.",
+      "answers": [
+        "ūdens",
+        "piena",
+        "sulas"
+      ],
+      "hint": "Dzēriens."
+    },
+    {
+      "id": "remind-sc-011",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Ziemā rokās parasti velk ___.",
+      "answers": [
+        "cimdus"
+      ],
+      "hint": "Apģērbs aukstam laikam."
+    },
+    {
+      "id": "remind-sc-012",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc vēstules uzrakstīšanas to ielika ___.",
+      "answers": [
+        "aploksnē"
+      ],
+      "hint": "Papīra apvalks vēstulei."
+    },
+    {
+      "id": "remind-sc-013",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai pārbaudītu laiku, viņa paskatījās ___.",
+      "answers": [
+        "pulkstenī",
+        "telefonā"
+      ],
+      "hint": "Priekšmets, kas rāda laiku."
+    },
+    {
+      "id": "remind-sc-014",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad pienāca autobuss, cilvēki iekāpa ___.",
+      "answers": [
+        "autobusā"
+      ],
+      "hint": "Sabiedriskais transports."
+    },
+    {
+      "id": "remind-sc-015",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms gulētiešanas Marta iztīrīja ___.",
+      "answers": [
+        "zobus"
+      ],
+      "hint": "Ikdienas higiēna."
+    },
+    {
+      "id": "remind-sc-016",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc lietus debesīs parādījās ___.",
+      "answers": [
+        "varavīksne",
+        "saule"
+      ],
+      "hint": "Kaut kas redzams debesīs."
+    },
+    {
+      "id": "remind-sc-017",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Karstu zupu viņa ēda ar ___.",
+      "answers": [
+        "karoti"
+      ],
+      "hint": "Galda piederums."
+    },
+    {
+      "id": "remind-sc-018",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai piezvanītu draugam, viņš paņēma ___.",
+      "answers": [
+        "telefonu"
+      ],
+      "hint": "Saziņas ierīce."
+    },
+    {
+      "id": "remind-sc-019",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Durvis atslēdza ar ___.",
+      "answers": [
+        "atslēgu"
+      ],
+      "hint": "Neliels metāla priekšmets."
+    },
+    {
+      "id": "remind-sc-020",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Uz balkona viņa izkāra izmazgāto ___.",
+      "answers": [
+        "veļu"
+      ],
+      "hint": "Izmazgāti apģērbi un audumi."
+    },
+    {
+      "id": "remind-sc-021",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc vakariņām viņi nomazgāja ___.",
+      "answers": [
+        "traukus"
+      ],
+      "hint": "Virtuves darbs."
+    },
+    {
+      "id": "remind-sc-022",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Grāmatu viņš aizņēmās ___.",
+      "answers": [
+        "bibliotēkā"
+      ],
+      "hint": "Vieta, kur aizņemas grāmatas."
+    },
+    {
+      "id": "remind-sc-023",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Vētrā kokam nolūza ___.",
+      "answers": [
+        "zars"
+      ],
+      "hint": "Koka daļa."
+    },
+    {
+      "id": "remind-sc-024",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Svētkos visi kopā rotāja ___.",
+      "answers": [
+        "egli"
+      ],
+      "hint": "Koks, ko bieži rotā ziemas svētkos."
+    },
+    {
+      "id": "remind-sc-025",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai izvēdinātu istabu, viņš atvēra ___.",
+      "answers": [
+        "logu"
+      ],
+      "hint": "Tas atrodas sienā."
+    },
+    {
+      "id": "remind-sc-026",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc pusdienām kafiju ielēja ___.",
+      "answers": [
+        "krūzē",
+        "tasē"
+      ],
+      "hint": "Trauks dzērienam."
+    },
+    {
+      "id": "remind-sc-027",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad bija pārāk skaļi, viņa samazināja radio ___.",
+      "answers": [
+        "skaļumu"
+      ],
+      "hint": "Saistīts ar skaņu."
+    },
+    {
+      "id": "remind-sc-028",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Aukstā rītā automašīnas logus klāja ___.",
+      "answers": [
+        "sarma",
+        "ledus"
+      ],
+      "hint": "Tas veidojas salā."
+    },
+    {
+      "id": "remind-sc-029",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms ceļojuma viņa sakrāmēja ___.",
+      "answers": [
+        "čemodānu",
+        "somu"
+      ],
+      "hint": "Tajā ievieto ceļojuma mantas."
+    },
+    {
+      "id": "remind-sc-030",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pastaigā viņi šķērsoja ielu pa gājēju ___.",
+      "answers": [
+        "pāreju"
+      ],
+      "hint": "Vieta, kur šķērsot ielu."
+    },
+    {
+      "id": "remind-sc-031",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Dārznieks rudenī savāca nokritušās ___.",
+      "answers": [
+        "lapas"
+      ],
+      "hint": "Tās krīt no kokiem."
+    },
+    {
+      "id": "remind-sc-032",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad elektrība pazuda, viņš iededza ___.",
+      "answers": [
+        "sveci"
+      ],
+      "hint": "Gaismas avots bez elektrības."
+    },
+    {
+      "id": "remind-sc-033",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai nosūtītu vēstuli, uz aploksnes uzrakstīja ___.",
+      "answers": [
+        "adresi"
+      ],
+      "hint": "Norāda, kur sūtījums jānogādā."
+    },
+    {
+      "id": "remind-sc-034",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc dušas viņa noslaucījās ar ___.",
+      "answers": [
+        "dvieli"
+      ],
+      "hint": "Auduma priekšmets."
+    },
+    {
+      "id": "remind-sc-035",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms iešanas pāri ielai viņš paskatījās uz ___.",
+      "answers": [
+        "luksoforu"
+      ],
+      "hint": "Satiksmes signāls."
+    },
+    {
+      "id": "remind-sc-036",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "No rīta zemē bija redzamas lietus ___.",
+      "answers": [
+        "peļķes"
+      ],
+      "hint": "Tās rodas pēc lietus."
+    },
+    {
+      "id": "remind-sc-037",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc pirkuma viņš saglabāja kases ___.",
+      "answers": [
+        "čeku"
+      ],
+      "hint": "Veikalā saņemts dokuments."
+    },
+    {
+      "id": "remind-sc-038",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Dārzā zemenes viņa salasīja ___.",
+      "answers": [
+        "bļodā",
+        "grozā",
+        "traukā"
+      ],
+      "hint": "Trauks ogām."
+    },
+    {
+      "id": "remind-sc-039",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad telefons izlādējās, viņa pieslēdza ___.",
+      "answers": [
+        "lādētāju"
+      ],
+      "hint": "Tas palīdz uzlādēt ierīci."
+    },
+    {
+      "id": "remind-sc-040",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Svētku tortē bērni nopūta ___.",
+      "answers": [
+        "svecītes",
+        "sveces"
+      ],
+      "hint": "Tās deg uz tortes."
+    },
+    {
+      "id": "remind-sc-041",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pirms vilciena atiešanas viņš pārbaudīja ___.",
+      "answers": [
+        "biļeti"
+      ],
+      "hint": "Dokuments braucienam."
+    },
+    {
+      "id": "remind-sc-042",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Pēc lietus viņa noslaucīja slapjo ___.",
+      "answers": [
+        "solu",
+        "galdu"
+      ],
+      "hint": "Priekšmets, uz kura var sēdēt vai kaut ko nolikt."
+    },
+    {
+      "id": "remind-sc-043",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Lai pagatavotu tēju, viņa uzvārīja ___.",
+      "answers": [
+        "ūdeni"
+      ],
+      "hint": "Šķidrums."
+    },
+    {
+      "id": "remind-sc-044",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Viesiem ierodoties, saimniece uzklāja ___.",
+      "answers": [
+        "galdu"
+      ],
+      "hint": "Uz tā liek šķīvjus un ēdienu."
+    },
+    {
+      "id": "remind-sc-045",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Kad nokavēja autobusu, viņš izsauca ___.",
+      "answers": [
+        "taksi",
+        "taksometru"
+      ],
+      "hint": "Transporta pakalpojums."
+    },
+    {
+      "id": "remind-sc-046",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Papildiniet teikumu.",
+      "sentence": "Rudens vakarā cilvēki uzvilka siltākus ___.",
+      "answers": [
+        "džemperus",
+        "mēteļus"
+      ],
+      "hint": "Apģērba gabali."
+    },
+    {
+      "id": "remind-wc-001",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Ar ko parasti griež papīru?",
+      "options": [
+        "šķērēm",
+        "ķemmi",
+        "krūzi",
+        "karoti"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Darbarīks."
+    },
+    {
+      "id": "remind-wc-002",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kur parasti aizņemas grāmatas?",
+      "options": [
+        "aptiekā",
+        "bibliotēkā",
+        "pastā",
+        "frizētavā"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Iestāde ar grāmatām."
+    },
+    {
+      "id": "remind-wc-003",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kura ierīce rāda laiku?",
+      "options": [
+        "termometrs",
+        "pulkstenis",
+        "mikseris",
+        "kompass"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Sadzīves priekšmets."
+    },
+    {
+      "id": "remind-wc-004",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kurus divus priekšmetus izmanto rakstīšanai?",
+      "options": [
+        "pildspalvu",
+        "karoti",
+        "zīmuli",
+        "šķēres"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Rakstāmpiederumi."
+    },
+    {
+      "id": "remind-wc-005",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir transportlīdzeklis?",
+      "options": [
+        "skapītis",
+        "autobuss",
+        "paklājs",
+        "spilvens"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Ar to var pārvietoties."
+    },
+    {
+      "id": "remind-wc-006",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kuru piederumu izmanto zupas ēšanai?",
+      "options": [
+        "dakšiņu",
+        "karoti",
+        "šķēres",
+        "otu"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Galda piederums."
+    },
+    {
+      "id": "remind-wc-007",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas lietas parasti izmanto ēdiena gatavošanai?",
+      "options": [
+        "katlu",
+        "spilvenu",
+        "pannu",
+        "ķemmi"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Virtuves trauki."
+    },
+    {
+      "id": "remind-wc-008",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurā vietā parasti pērk zāles?",
+      "options": [
+        "aptiekā",
+        "bibliotēkā",
+        "stacijā",
+        "peldbaseinā"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Tirdzniecības vieta."
+    },
+    {
+      "id": "remind-wc-009",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir piena produkts?",
+      "options": [
+        "siers",
+        "maize",
+        "gurķis",
+        "ābols"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Pārtikas produkts."
+    },
+    {
+      "id": "remind-wc-010",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Ar ko parasti atslēdz durvis?",
+      "options": [
+        "atslēgu",
+        "dakšiņu",
+        "glāzi",
+        "ķemmi"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Metāla priekšmets."
+    },
+    {
+      "id": "remind-wc-011",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas lietas izmanto mājas uzkopšanai?",
+      "options": [
+        "putekļsūcēju",
+        "slotu",
+        "termometru",
+        "katlu"
+      ],
+      "correctIndices": [
+        0,
+        1
+      ],
+      "hint": "Tīrīšanas piederumi."
+    },
+    {
+      "id": "remind-wc-012",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš apģērba gabals silda rokas ziemā?",
+      "options": [
+        "cepure",
+        "cimdi",
+        "šalle",
+        "zābaki"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Apģērbs rokām."
+    },
+    {
+      "id": "remind-wc-013",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kuru ierīci izmanto temperatūras mērīšanai?",
+      "options": [
+        "pulksteni",
+        "kompasu",
+        "termometru",
+        "lineālu"
+      ],
+      "correctIndices": [
+        2
+      ],
+      "hint": "Mērīšanas ierīce."
+    },
+    {
+      "id": "remind-wc-014",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuri divi ir augļi ikdienas pārtikas iedalījumā?",
+      "options": [
+        "ābols",
+        "kartupelis",
+        "bumbieris",
+        "sīpols"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Ēdami augļi."
+    },
+    {
+      "id": "remind-wc-015",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Ar kuru no šiem var piezvanīt?",
+      "options": [
+        "telefonu",
+        "gludekli",
+        "katlu",
+        "termometru"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Saziņas ierīce."
+    },
+    {
+      "id": "remind-wc-016",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas ierīces izmanto divvirzienu saziņai?",
+      "options": [
+        "telefons",
+        "ledusskapis",
+        "dators",
+        "mikseris"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Ar tām var sarunāties."
+    },
+    {
+      "id": "remind-wc-017",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem parasti ir ceļa satiksmes signāls?",
+      "options": [
+        "spogulis",
+        "luksofors",
+        "vāze",
+        "kaste"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Regulē satiksmi."
+    },
+    {
+      "id": "remind-wc-018",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kurus divus priekšmetus lieto vannasistabā?",
+      "options": [
+        "zobu birsti",
+        "dvieli",
+        "zāģi",
+        "grābekli"
+      ],
+      "correctIndices": [
+        0,
+        1
+      ],
+      "hint": "Higiēnas piederumi."
+    },
+    {
+      "id": "remind-wc-019",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir putns?",
+      "options": [
+        "stārķis",
+        "lapsa",
+        "ezis",
+        "zivs"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Dzīvnieku grupa."
+    },
+    {
+      "id": "remind-wc-020",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas ir nedēļas dienas?",
+      "options": [
+        "otrdiena",
+        "jūlijs",
+        "piektdiena",
+        "ziema"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Nedēļas daļas."
+    },
+    {
+      "id": "remind-wc-021",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir dzēriens?",
+      "options": [
+        "tēja",
+        "maize",
+        "siers",
+        "rīsi"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "To var ieliet glāzē."
+    },
+    {
+      "id": "remind-wc-022",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas lietas parasti izmanto papīra vēstules sūtīšanai pa pastu?",
+      "options": [
+        "aploksne",
+        "pastmarka",
+        "karote",
+        "ķemme"
+      ],
+      "correctIndices": [
+        0,
+        1
+      ],
+      "hint": "Pasta sūtījums."
+    },
+    {
+      "id": "remind-wc-023",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizo vārdu.",
+      "prompt": "Kurš no šiem ir mēbele?",
+      "options": [
+        "ledusskapis",
+        "krēsls",
+        "radio",
+        "lietussargs"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Mājas iekārtojums."
+    },
+    {
+      "id": "remind-wc-024",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties pareizos vārdus.",
+      "prompt": "Kuras divas ir vietas, kur parasti iegādājas pārtiku?",
+      "options": [
+        "tirgus",
+        "muzejs",
+        "veikals",
+        "bibliotēka"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Pirkumu vietas."
+    },
+    {
+      "id": "remind-iw-001",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/kruze.svg",
+      "imageAlt": "Krūze",
+      "sentence": "Uz galda stāv ___.",
+      "answers": [
+        "krūze"
+      ],
+      "hint": "Trauks dzērienam."
+    },
+    {
+      "id": "remind-iw-002",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/atslega.svg",
+      "imageAlt": "Atslēga",
+      "sentence": "Durvis atslēdz ar ___.",
+      "answers": [
+        "atslēgu"
+      ],
+      "hint": "Durvju atslēgšanai."
+    },
+    {
+      "id": "remind-iw-003",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/gramata.svg",
+      "imageAlt": "Grāmata",
+      "sentence": "Viņš lasa ___.",
+      "answers": [
+        "grāmatu"
+      ],
+      "hint": "Lapas ar tekstu."
+    },
+    {
+      "id": "remind-iw-004",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/lietussargs.svg",
+      "imageAlt": "Lietussargs",
+      "sentence": "Lietū viņa lieto ___.",
+      "answers": [
+        "lietussargu"
+      ],
+      "hint": "Tas pasargā no lietus."
+    },
+    {
+      "id": "remind-iw-005",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/abols.svg",
+      "imageAlt": "Ābols",
+      "sentence": "Uz šķīvja ir ___.",
+      "answers": [
+        "ābols"
+      ],
+      "hint": "Auglis."
+    },
+    {
+      "id": "remind-iw-006",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/pulkstenis.svg",
+      "imageAlt": "Pulkstenis",
+      "sentence": "Pie sienas karājas ___.",
+      "answers": [
+        "pulkstenis"
+      ],
+      "hint": "Tas rāda laiku."
+    },
+    {
+      "id": "remind-iw-007",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/skeres.svg",
+      "imageAlt": "Šķēres",
+      "sentence": "Papīru griež ar ___.",
+      "answers": [
+        "šķērēm"
+      ],
+      "hint": "Darbarīks."
+    },
+    {
+      "id": "remind-iw-008",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/telefons.svg",
+      "imageAlt": "Telefons",
+      "sentence": "Viņa runā pa ___.",
+      "answers": [
+        "telefonu"
+      ],
+      "hint": "Saziņas ierīce."
+    },
+    {
+      "id": "remind-iw-009",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/velosipeds.svg",
+      "imageAlt": "Velosipēds",
+      "sentence": "Pie mājas stāv ___.",
+      "answers": [
+        "velosipēds"
+      ],
+      "hint": "Divi riteņi."
+    },
+    {
+      "id": "remind-iw-010",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/koks.svg",
+      "imageAlt": "Koks",
+      "sentence": "Dārzā aug ___.",
+      "answers": [
+        "koks"
+      ],
+      "hint": "Tam ir stumbrs un zari."
+    },
+    {
+      "id": "remind-iw-011",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/svece.svg",
+      "imageAlt": "Svece",
+      "sentence": "Uz galda deg ___.",
+      "answers": [
+        "svece"
+      ],
+      "hint": "Tā dod liesmu."
+    },
+    {
+      "id": "remind-iw-012",
+      "type": "image_word",
+      "contentVersion": 1,
+      "instruction": "Apskatiet attēlu. Papildiniet teikumu.",
+      "imageSrc": "/images/karote.svg",
+      "imageAlt": "Karote",
+      "sentence": "Zupu ēd ar ___.",
+      "answers": [
+        "karoti"
+      ],
+      "hint": "Galda piederums."
+    }
+  ]
+}

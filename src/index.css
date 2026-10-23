@@ -1,0 +1,929 @@
+/* ReMind — tablet-first, fit-to-screen base, scalable */
+
+:root {
+  --content-scale: 1;
+  /* Fit-to-screen base (px), then multiply by --content-scale from settings. */
+  --fit-font: clamp(17px, 2.35vh, 22px);
+  --app-font-size: calc(var(--fit-font) * var(--content-scale));
+  --app-text-align: center;
+  --bg: #f7f7f5;
+  --fg: #111111;
+  --muted: #444444;
+  --border: #222222;
+  --btn-bg: #1a1a1a;
+  --btn-fg: #ffffff;
+  --btn-secondary-bg: #ffffff;
+  --btn-secondary-fg: #111111;
+  --btn-success-bg: #3d5c40;
+  --btn-selected-bg: #e8d9a8;
+  --btn-selected-fg: #111111;
+  --btn-help-bg: #0d47a1;
+  --btn-danger-bg: #b71c1c;
+  --btn-neutral-bg: #424242;
+  --hint-bg: #f5efd8;
+  --answers-bg: #e4ece5;
+  --focus-ring: #0d47a1;
+  --btn-min-h: calc(52px * var(--content-scale));
+  --radius: 6px;
+  --space: calc(0.55rem + 0.35vh);
+  --max-w: 720px;
+  color-scheme: light;
+}
+
+.app-shell.high-contrast {
+  --bg: #ffffff;
+  --fg: #000000;
+  --muted: #222222;
+  --border: #000000;
+  --btn-bg: #000000;
+  --btn-fg: #ffffff;
+  --btn-secondary-bg: #ffffff;
+  --btn-secondary-fg: #000000;
+  --hint-bg: #f3edd4;
+  --btn-selected-bg: #dfc97a;
+  --btn-selected-fg: #000000;
+  --answers-bg: #dfe8e0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  min-height: 100dvh;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: var(--app-font-size);
+  line-height: 1.35;
+  color: var(--fg);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+  min-height: 100dvh;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.app-shell {
+  /* Recompute size here so scale changes always take effect. */
+  --app-font-size: calc(var(--fit-font) * var(--content-scale));
+  --btn-min-h: calc(52px * var(--content-scale));
+  height: 100dvh;
+  max-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: var(--app-font-size);
+  line-height: 1.35;
+  overflow: hidden;
+}
+
+.loading-shell {
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.app-header {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  padding: 0.35rem var(--space);
+  border-bottom: 2px solid var(--border);
+  background: var(--bg);
+  z-index: 2;
+  /* Header stays compact even when content scale is “Ļoti liels”. */
+  font-size: calc(var(--fit-font) * min(var(--content-scale), 1.15));
+}
+
+.brand-btn,
+.brand-static {
+  margin: 0;
+  padding: 0.2rem 0.55rem;
+  font-size: 1.05em;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
+  text-align: center;
+  border: none;
+  background: transparent;
+  color: var(--fg);
+}
+
+.brand-btn {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.12em;
+  min-height: 2.4em;
+}
+
+.brand-static {
+  display: block;
+}
+
+.app-title-bar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+  padding: 0.4rem var(--space);
+  border-bottom: 2px solid var(--border);
+  background: var(--bg);
+  z-index: 2;
+  /* Match header scale so title stays readable but not huge. */
+  font-size: calc(var(--fit-font) * min(var(--content-scale), 1.15));
+}
+
+.page-back-btn {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0.35rem 0.65rem;
+  min-height: 2.4em;
+  font-size: 0.85em;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--fg);
+  background: var(--bg);
+  border: 2px solid var(--border);
+  border-radius: 0.4rem;
+  cursor: pointer;
+}
+
+.page-back-btn:focus-visible {
+  outline: 3px solid var(--fg);
+  outline-offset: 2px;
+}
+
+.app-subtitle {
+  margin: 0;
+  flex: 1 1 auto;
+  min-width: 0;
+  font-size: 0.95em;
+  font-weight: 700;
+  color: var(--fg);
+  text-align: right;
+  line-height: 1.2;
+}
+
+.app-main {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space);
+  text-align: var(--app-text-align);
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.content-top {
+  justify-content: flex-start;
+}
+
+/*
+  Center via margin:auto (not justify-content:center).
+  When content is taller than the screen, auto margins collapse and the top
+  stays reachable by scrolling — plain “center” would clip it permanently.
+*/
+.content-middle {
+  justify-content: flex-start;
+}
+
+.content-middle > * {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.content-bottom {
+  justify-content: flex-start;
+}
+
+.content-bottom > * {
+  margin-top: auto;
+}
+
+/* Word reading needs the full main area so the word can be measured & fitted. */
+.app-main:has(.task-view-word-reading) {
+  justify-content: stretch;
+  align-items: stretch;
+}
+
+.app-main:has(.task-view-word-reading) > * {
+  margin-top: 0;
+  margin-bottom: 0;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.app-footer {
+  flex-shrink: 0;
+  padding: 0.45rem var(--space) calc(0.45rem + env(safe-area-inset-bottom, 0px));
+  border-top: 2px solid var(--border);
+  background: var(--bg);
+  z-index: 2;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.progress-label {
+  margin: 0;
+  text-align: center;
+  font-size: 0.78em;
+}
+
+.assessment-prompt {
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 0.82em;
+}
+
+.assessment-intro {
+  margin: 0 0 0.35rem;
+  font-size: 1em;
+  font-weight: 400;
+  color: var(--fg);
+  text-align: var(--app-text-align);
+}
+
+.assessment-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.4rem;
+  width: 100%;
+}
+
+.btn-assess {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(var(--btn-min-h) + 0.5rem);
+  padding: 0.45rem 0.25rem;
+  width: 100%;
+  color: #fff;
+  border: 2px solid #000;
+}
+
+.assess-symbol {
+  font-size: 1.75em;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.btn-assess-ok {
+  background: #3d5c40;
+}
+
+.btn-assess-help {
+  background: #c9a84a;
+  color: #111;
+}
+
+.btn-assess-hard {
+  background: #b71c1c;
+}
+
+.btn-assess-selected {
+  outline: 3px solid #000;
+  outline-offset: 2px;
+  box-shadow: inset 0 0 0 2px #fff;
+}
+
+.assessment-saved {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.55rem 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: 0.95em;
+}
+
+.assessment-saved-independent {
+  background: #d8e4d0;
+  border-color: #6a7f5c;
+  color: #2f4532;
+}
+
+.assessment-saved-with_help {
+  background: #f0e6c4;
+  border-color: #b09a5c;
+  color: #3e3200;
+}
+
+.assessment-saved-difficult {
+  background: #f8d7da;
+  border-color: #b71c1c;
+  color: #5c1010;
+}
+
+.assessment-saved-skipped {
+  background: #eceff1;
+  border-color: #78909c;
+  color: #37474f;
+}
+
+.assessment-saved-label {
+  margin: 0;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.answers-box-label {
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+  font-size: 0.85em;
+}
+
+.summary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.75rem 0.85rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.summary-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.summary-index {
+  font-weight: 700;
+  font-size: 1em;
+}
+
+.summary-assess {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  font-size: 0.82em;
+  font-weight: 700;
+}
+
+.summary-assess-independent {
+  background: #d8e4d0;
+  border-color: #6a7f5c;
+  color: #2f4532;
+}
+
+.summary-assess-with_help {
+  background: #f0e6c4;
+  border-color: #b09a5c;
+  color: #3e3200;
+}
+
+.summary-assess-difficult {
+  background: #f8d7da;
+  border-color: #b71c1c;
+  color: #5c1010;
+}
+
+.summary-assess-skipped {
+  background: #eceff1;
+  border-color: #78909c;
+  color: #37474f;
+}
+
+.summary-assess-label {
+  font-weight: 600;
+}
+
+.summary-prompt {
+  margin: 0;
+  font-size: 1.05em;
+  line-height: 1.35;
+}
+
+.summary-dl {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.summary-dl > div {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.summary-dl dt {
+  font-size: 0.78em;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.summary-dl dd {
+  margin: 0;
+  font-size: 0.95em;
+  font-weight: 600;
+}
+
+.summary-open-btn {
+  margin-top: 0.15rem;
+  min-height: calc(var(--btn-min-h) - 0.25rem);
+  font-size: 0.88em;
+}
+
+.footer-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+}
+
+.footer-actions .btn {
+  width: 100%;
+  min-height: var(--btn-min-h);
+  font-size: 0.88em;
+  padding: 0.45rem 0.5rem;
+}
+
+.lead {
+  margin: 0 0 0.85rem;
+  font-size: 1em;
+}
+
+.muted {
+  margin: 0 0 0.75rem;
+  color: var(--muted);
+  font-size: 0.9em;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.batch-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.batch-row .btn,
+.batch-row .batch-lesson-btn {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.batch-lesson-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: var(--btn-min-h);
+  padding: 0.55rem 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  /* Nesāktas — baltas */
+  background: #ffffff;
+  color: var(--btn-secondary-fg);
+  text-align: center;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+/* Pabeigtas — zaļas */
+.batch-lesson-done {
+  background: #d8e4d0;
+  border-color: #6a7f5c;
+  color: #2f4532;
+}
+
+/* Iesāktas — dzeltenīgas */
+.batch-lesson-partial {
+  background: #f0e6c4;
+  border-color: #b09a5c;
+  color: #3e3200;
+}
+
+/* Tīrīšana / atiestatīšana — viegls rozā tonis */
+.btn-clear-progress {
+  background: #fce4ec;
+  border-color: #ad6b7d;
+  color: #5c2a3a;
+}
+
+.app-shell.high-contrast .btn-clear-progress {
+  background: #f8d7e0;
+  border-color: #000000;
+  color: #000000;
+}
+
+.batch-done-mark {
+  flex-shrink: 0;
+  font-size: 1.15em;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.batch-check-label {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.5rem;
+  min-height: var(--btn-min-h);
+  padding: 0.35rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  cursor: pointer;
+}
+
+.batch-check {
+  width: 1.75rem;
+  height: 1.75rem;
+  accent-color: #4a6b4e;
+  cursor: pointer;
+}
+
+.batch-check:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}
+
+.batch-check-label:has(.batch-check:disabled) {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.scale-stack .btn {
+  min-height: calc(var(--btn-min-h) - 0.15rem);
+  font-size: 0.88em;
+  padding: 0.55rem 0.65rem;
+}
+
+.choice-stack .btn {
+  min-height: var(--btn-min-h);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.btn-row .btn {
+  flex: 1 1 8rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--btn-min-h);
+  padding: 0.55rem 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  text-align: center;
+  line-height: 1.2;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+.btn-primary {
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+}
+
+.btn-secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-fg);
+}
+
+.btn-selected {
+  background: var(--btn-selected-bg);
+  color: var(--btn-selected-fg);
+  border-color: #9a8450;
+}
+
+.app-shell.high-contrast .btn-selected {
+  border-color: #000000;
+}
+
+/* Soft tint so “Parādīt atbildi” reads apart from plain secondary actions */
+.btn-reveal-answer {
+  background: #e4ebe5;
+  border-color: #6a7f6e;
+  color: #2a3d2e;
+}
+
+.app-shell.high-contrast .btn-reveal-answer {
+  background: #d8e2d9;
+  border-color: #000000;
+  color: #000000;
+}
+
+.btn-success {
+  background: var(--btn-success-bg);
+  color: #fff;
+  border-color: #000;
+}
+
+.btn-help {
+  background: var(--btn-help-bg);
+  color: #fff;
+  border-color: #000;
+}
+
+.btn-danger {
+  background: var(--btn-danger-bg);
+  color: #fff;
+  border-color: #000;
+}
+
+.btn-neutral {
+  background: var(--btn-neutral-bg);
+  color: #fff;
+  border-color: #000;
+}
+
+.task-view {
+  width: 100%;
+}
+
+.instruction {
+  margin: 0 0 0.55rem;
+  font-size: 0.88em;
+  color: var(--muted);
+}
+
+.focus-word {
+  margin: 0.75rem 0;
+  font-size: 1.45em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.task-view-word-reading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  align-self: stretch;
+  width: 100%;
+  min-height: 12rem;
+  height: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  padding: 0.25rem;
+}
+
+.focus-word-reading {
+  margin: 0;
+  max-width: 100%;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-align: center;
+  overflow-wrap: normal;
+  /* font-size set in JS so long words shrink to fit */
+}
+
+.footer-nav-word-reading {
+  gap: 0.5rem;
+}
+
+.btn-talak-large {
+  min-height: 88px !important;
+  font-size: 1.35em !important;
+  font-weight: 700;
+}
+
+.focus-sentence {
+  margin: 0.5rem 0 0.75rem;
+  font-size: 1.15em;
+  font-weight: 700;
+}
+
+.task-image {
+  display: block;
+  width: min(100%, 32vh, 200px);
+  height: auto;
+  margin: 0 auto 0.55rem;
+  border: 2px solid var(--border);
+  background: #fff;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-size: 0.82em;
+}
+
+.text-input {
+  width: 100%;
+  min-height: var(--btn-min-h);
+  padding: 0.45rem 0.75rem;
+  margin-bottom: 0.55rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  text-align: var(--app-text-align);
+}
+
+.text-input-answer {
+  border-width: 3px;
+  border-color: var(--fg);
+  caret-color: var(--fg);
+  font-size: 1.15em;
+  font-weight: 600;
+}
+
+.text-input-answer::placeholder {
+  color: #9a9a9a;
+  font-weight: 400;
+  opacity: 0.7;
+}
+
+.app-shell.high-contrast .text-input-answer::placeholder {
+  color: #888888;
+  opacity: 0.65;
+}
+
+.text-input-answer:focus {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.hint-answers {
+  margin-top: 0.45rem;
+}
+
+.hint-box,
+.answers-box {
+  margin-top: 0.45rem;
+  padding: 0.55rem 0.7rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  text-align: var(--app-text-align);
+  font-size: 0.92em;
+}
+
+.hint-box {
+  background: var(--hint-bg);
+}
+
+.answers-box {
+  background: var(--answers-bg);
+}
+
+.answers-label {
+  margin: 0 0 0.35rem;
+  font-weight: 700;
+}
+
+.answers-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.answers-list li {
+  margin: 0.2rem 0;
+  font-weight: 700;
+}
+
+.stats {
+  margin-bottom: 1rem;
+}
+
+.stat-line {
+  margin: 0.35rem 0;
+  font-size: 1.05em;
+}
+
+.settings-block {
+  margin-bottom: 1.25rem;
+  text-align: var(--app-text-align);
+}
+
+.settings-hint {
+  margin-top: 0;
+}
+
+.settings-explain {
+  font-size: 0.82em;
+}
+
+.settings-saved {
+  margin: 0 0 0.75rem;
+  padding: 0.4rem 0.65rem;
+  font-weight: 700;
+  text-align: center;
+  border: 2px solid var(--border);
+  background: var(--answers-bg);
+}
+
+.settings-label {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+}
+
+.preview-text {
+  margin: 0.75rem 0 0;
+  font-size: 1em;
+  font-weight: 700;
+  border: 2px solid var(--border);
+  padding: 0.55rem;
+  background: #fff;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --max-w: 800px;
+  }
+
+  .app-shell {
+    border-left: 2px solid var(--border);
+    border-right: 2px solid var(--border);
+  }
+}
+
+/* Short tablets / landscape: tighten the fit base further */
+@media (max-height: 700px) {
+  :root {
+    --fit-font: clamp(15px, 2.1vh, 19px);
+  }
+
+  .task-image {
+    width: min(100%, 26vh, 160px);
+  }
+
+  .focus-word {
+    margin: 0.4rem 0;
+    font-size: 1.3em;
+  }
+}
