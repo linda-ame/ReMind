@@ -45,8 +45,9 @@ export function SettingsScreen({ onBack, onHome }: SettingsScreenProps) {
       <div className="settings-block">
         <p className="settings-label">Satura izmērs</p>
         <p className="muted settings-explain">
-          Standarts pielāgojas ekrānam, lai pogas un mājiens parasti būtu
-          redzami bez ritināšanas. Ja vajag lielākus burtus — palieliniet.
+          Maina arī pašu uzdevumu tekstu (vārdus, teikumus, lasāmo tekstu), ne
+          tikai pogas. Standarts pielāgojas ekrānam; ja vajag lielākus
+          burtus — palieliniet.
         </p>
         <div className="stack scale-stack">
           {CONTENT_SCALE_OPTIONS.map((opt) => (

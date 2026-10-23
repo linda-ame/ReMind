@@ -6,17 +6,21 @@ interface Props {
   task: WordReadingTask;
 }
 
-const FONT_MAX_PX = 120;
-const FONT_MIN_PX = 28;
+/** Base caps at contentScale 1; settings scale raises the target size. */
+const FONT_MAX_BASE_PX = 120;
+const FONT_MIN_BASE_PX = 28;
 
 /**
  * Scale the word down until it fits the available area (width + height).
  * Long words like “rakstāmmašīna” / “spilvendrāna” stay fully visible.
+ * `contentScale` from settings raises min/max so “Lielāks” grows task words too.
  */
-function useFitWord(word: string, scaleKey: number) {
+function useFitWord(word: string, contentScale: number) {
   const containerRef = useRef<HTMLDivElement>(null);
   const wordRef = useRef<HTMLParagraphElement>(null);
-  const [fontPx, setFontPx] = useState(FONT_MAX_PX);
+  const [fontPx, setFontPx] = useState(
+    Math.round(FONT_MAX_BASE_PX * contentScale),
+  );
 
   useLayoutEffect(() => {
     const container = containerRef.current;
@@ -28,8 +32,12 @@ function useFitWord(word: string, scaleKey: number) {
       const maxH = container.clientHeight;
       if (maxW < 40 || maxH < 40) return;
 
-      let lo = FONT_MIN_PX;
-      let hi = Math.min(FONT_MAX_PX, Math.floor(maxH * 0.85));
+      const scale = Number.isFinite(contentScale) ? contentScale : 1;
+      const fontMin = Math.round(FONT_MIN_BASE_PX * scale);
+      const fontMax = Math.round(FONT_MAX_BASE_PX * scale);
+
+      let lo = fontMin;
+      let hi = Math.min(fontMax, Math.floor(maxH * 0.85));
       let best = lo;
 
       el.style.whiteSpace = 'nowrap';
@@ -59,9 +67,9 @@ function useFitWord(word: string, scaleKey: number) {
       if (el.scrollWidth > maxW) {
         el.style.whiteSpace = 'normal';
         // Shrink further with wrap enabled
-        lo = FONT_MIN_PX;
+        lo = fontMin;
         hi = best;
-        best = FONT_MIN_PX;
+        best = fontMin;
         while (lo <= hi) {
           const mid = Math.floor((lo + hi) / 2);
           el.style.fontSize = `${mid}px`;
@@ -86,7 +94,7 @@ function useFitWord(word: string, scaleKey: number) {
       ro.disconnect();
       window.removeEventListener('resize', fit);
     };
-  }, [word, scaleKey]);
+  }, [word, contentScale]);
 
   return { containerRef, wordRef, fontPx };
 }
