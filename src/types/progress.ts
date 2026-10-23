@@ -61,7 +61,7 @@ export const DEFAULT_UI_SETTINGS: UiSettings = {
   contentScale: 1,
   textAlign: 'center',
   textPosition: 'middle',
-  highContrast: true,
+  highContrast: false,
 };
 
 export const CONTENT_SCALE_OPTIONS: {

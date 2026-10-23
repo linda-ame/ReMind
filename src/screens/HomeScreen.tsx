@@ -25,30 +25,43 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
 
   return (
     <Layout>
-      <div className="stack">
-        {TASK_TYPE_ORDER.map((type) => {
-          const ofType = getTasksByType(type);
-          if (ofType.length === 0) return null;
-          const completed = completedCurrentTaskIds(ofType, attempts);
-          const done = ofType.filter((t) => completed.has(t.id)).length;
-          return (
-            <Button
-              key={type}
-              variant="secondary"
-              onClick={() => openType(type)}
-            >
-              {TASK_TYPE_LABELS[type]} ({done}/{ofType.length})
-            </Button>
-          );
-        })}
+      <div className="home-menu">
+        <div className="stack home-tasks">
+          {TASK_TYPE_ORDER.map((type) => {
+            const ofType = getTasksByType(type);
+            if (ofType.length === 0) return null;
+            const completed = completedCurrentTaskIds(ofType, attempts);
+            const done = ofType.filter((t) => completed.has(t.id)).length;
+            return (
+              <Button
+                key={type}
+                variant="secondary"
+                className={`home-type-btn home-type-${type}`}
+                onClick={() => openType(type)}
+              >
+                {TASK_TYPE_LABELS[type]} ({done}/{ofType.length})
+              </Button>
+            );
+          })}
+        </div>
 
-        <Button variant="neutral" onClick={() => onNavigate({ name: 'progress' })}>
-          Progress
-        </Button>
+        <div className="home-tools" role="navigation" aria-label="Rīki">
+          <Button
+            variant="neutral"
+            className="home-nav-btn home-nav-progress"
+            onClick={() => onNavigate({ name: 'progress' })}
+          >
+            Progress
+          </Button>
 
-        <Button variant="neutral" onClick={() => onNavigate({ name: 'settings' })}>
-          Iestatījumi
-        </Button>
+          <Button
+            variant="neutral"
+            className="home-nav-btn home-nav-settings"
+            onClick={() => onNavigate({ name: 'settings' })}
+          >
+            Iestatījumi
+          </Button>
+        </div>
       </div>
     </Layout>
   );
