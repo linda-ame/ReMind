@@ -161,6 +161,31 @@ input:focus-visible {
   padding: 2rem;
 }
 
+/* Collapses on scroll-down (Layout) so reading content can use the height. */
+.app-chrome {
+  flex-shrink: 0;
+  display: grid;
+  grid-template-rows: 1fr;
+  z-index: 2;
+  transition: grid-template-rows 0.28s ease;
+}
+
+.app-chrome--hidden {
+  grid-template-rows: 0fr;
+  pointer-events: none;
+}
+
+.app-chrome-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-chrome {
+    transition: none;
+  }
+}
+
 .app-header {
   flex-shrink: 0;
   display: flex;
@@ -173,9 +198,8 @@ input:focus-visible {
   background: var(--chrome-bg);
   color: var(--chrome-fg);
   box-shadow: var(--shadow-soft);
-  z-index: 2;
-  /* Header stays compact even when content scale is “Ļoti liels”. */
-  font-size: calc(var(--fit-font) * min(var(--content-scale), 1.15));
+  /* Chrome ignores content-scale — only viewport width via --fit-font. */
+  font-size: var(--fit-font);
 }
 
 .brand-btn,
@@ -222,9 +246,8 @@ input:focus-visible {
   padding: 0.45rem var(--space);
   border-bottom: 2px solid color-mix(in srgb, var(--accent) 28%, transparent);
   background: color-mix(in srgb, var(--accent-soft) 70%, #fff);
-  z-index: 2;
-  /* Match header scale so title stays readable but not huge. */
-  font-size: calc(var(--fit-font) * min(var(--content-scale), 1.15));
+  /* Same fixed chrome size as header (not content-scale). */
+  font-size: var(--fit-font);
 }
 
 .app-shell.high-contrast .app-title-bar {

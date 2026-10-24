@@ -1,5 +1,6 @@
-import { useEffect, type CSSProperties, type ReactNode } from 'react';
+import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
 import { useApp } from '../context/AppContext';
+import { useChromeCollapse } from '../hooks/useChromeCollapse';
 
 interface LayoutProps {
   children: ReactNode;
@@ -15,6 +16,10 @@ interface LayoutProps {
 export function Layout({ children, footer, subtitle, onHome, onBack }: LayoutProps) {
   const { settings } = useApp();
   const handleBack = onBack ?? onHome;
+  const mainRef = useRef<HTMLElement>(null);
+  const showTitleBar = Boolean(subtitle || handleBack);
+  // Home keeps brand always visible; elsewhere free vertical space for reading.
+  const chromeCollapsed = useChromeCollapse(mainRef, showTitleBar);
 
   // Apply scale on <html> so every calc(var(--content-scale)) picks it up.
   useEffect(() => {
@@ -41,38 +46,49 @@ export function Layout({ children, footer, subtitle, onHome, onBack }: LayoutPro
         } as CSSProperties
       }
     >
-      <header className="app-header">
-        {onHome ? (
-          <button
-            type="button"
-            className="brand-btn"
-            onClick={onHome}
-            aria-label="ReMind — uz sākumu"
-          >
-            ReMind
-          </button>
-        ) : (
-          <h1 className="brand-static">ReMind</h1>
-        )}
-      </header>
+      <div
+        className={`app-chrome${chromeCollapsed ? ' app-chrome--hidden' : ''}`}
+        aria-hidden={chromeCollapsed || undefined}
+      >
+        <div className="app-chrome-inner">
+          <header className="app-header">
+            {onHome ? (
+              <button
+                type="button"
+                className="brand-btn"
+                onClick={onHome}
+                aria-label="ReMind — uz sākumu"
+                tabIndex={chromeCollapsed ? -1 : undefined}
+              >
+                ReMind
+              </button>
+            ) : (
+              <h1 className="brand-static">ReMind</h1>
+            )}
+          </header>
 
-      {subtitle || handleBack ? (
-        <div className="app-title-bar">
-          {handleBack ? (
-            <button
-              type="button"
-              className="page-back-btn"
-              onClick={handleBack}
-              aria-label="Atpakaļ"
-            >
-              ← Atpakaļ
-            </button>
+          {showTitleBar ? (
+            <div className="app-title-bar">
+              {handleBack ? (
+                <button
+                  type="button"
+                  className="page-back-btn"
+                  onClick={handleBack}
+                  aria-label="Atpakaļ"
+                  tabIndex={chromeCollapsed ? -1 : undefined}
+                >
+                  ← Atpakaļ
+                </button>
+              ) : null}
+              {subtitle ? <h2 className="app-subtitle">{subtitle}</h2> : null}
+            </div>
           ) : null}
-          {subtitle ? <h2 className="app-subtitle">{subtitle}</h2> : null}
         </div>
-      ) : null}
+      </div>
 
-      <main className={`app-main ${positionClass}`}>{children}</main>
+      <main ref={mainRef} className={`app-main ${positionClass}`}>
+        {children}
+      </main>
 
       {footer ? <footer className="app-footer">{footer}</footer> : null}
     </div>
