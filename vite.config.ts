@@ -1,6 +1,35 @@
 import react from '@vitejs/plugin-react';
+import fs from 'node:fs';
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { defineConfig, loadEnv } from 'vite';
+import path from 'node:path';
+import { defineConfig, loadEnv, type Plugin } from 'vite';
+
+/** Emit version.json + inject __REMIND_BUILD__ so installed PWAs can detect deploys. */
+function remindBuildIdPlugin(): Plugin {
+  const buildId =
+    process.env.VERCEL_GIT_COMMIT_SHA ||
+    process.env.CF_PAGES_COMMIT_SHA ||
+    `local-${Date.now()}`;
+
+  return {
+    name: 'remind-build-id',
+    config() {
+      return {
+        define: {
+          __REMIND_BUILD__: JSON.stringify(buildId),
+        },
+      };
+    },
+    writeBundle(options) {
+      if (!options.dir) return;
+      fs.writeFileSync(
+        path.join(options.dir, 'version.json'),
+        `${JSON.stringify({ version: buildId })}\n`,
+        'utf8',
+      );
+    },
+  };
+}
 
 function readRequestBody(req: IncomingMessage): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -25,6 +54,7 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       react(),
+      remindBuildIdPlugin(),
       {
         name: 'remind-tts-api',
         configureServer(server) {
