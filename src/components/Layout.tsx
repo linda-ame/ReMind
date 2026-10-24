@@ -1,6 +1,5 @@
-import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
+import { useEffect, type CSSProperties, type ReactNode } from 'react';
 import { useApp } from '../context/AppContext';
-import { useChromeCollapse } from '../hooks/useChromeCollapse';
 
 interface LayoutProps {
   children: ReactNode;
@@ -16,10 +15,7 @@ interface LayoutProps {
 export function Layout({ children, footer, subtitle, onHome, onBack }: LayoutProps) {
   const { settings } = useApp();
   const handleBack = onBack ?? onHome;
-  const mainRef = useRef<HTMLElement>(null);
   const showTitleBar = Boolean(subtitle || handleBack);
-  // Home keeps brand always visible; elsewhere free vertical space for reading.
-  const chromeCollapsed = useChromeCollapse(mainRef, showTitleBar);
 
   // Apply scale on <html> so every calc(var(--content-scale)) picks it up.
   useEffect(() => {
@@ -46,11 +42,12 @@ export function Layout({ children, footer, subtitle, onHome, onBack }: LayoutPro
         } as CSSProperties
       }
     >
-      <div
-        className={`app-chrome${chromeCollapsed ? ' app-chrome--hidden' : ''}`}
-        aria-hidden={chromeCollapsed || undefined}
-      >
-        <div className="app-chrome-inner">
+      {/*
+        Chrome lives inside the scroll container so it moves with the finger —
+        never sticky, never JS-collapsed. It only comes back at the top.
+      */}
+      <main className="app-main">
+        <div className="app-chrome">
           <header className="app-header">
             {onHome ? (
               <button
@@ -58,7 +55,6 @@ export function Layout({ children, footer, subtitle, onHome, onBack }: LayoutPro
                 className="brand-btn"
                 onClick={onHome}
                 aria-label="ReMind — uz sākumu"
-                tabIndex={chromeCollapsed ? -1 : undefined}
               >
                 ReMind
               </button>
@@ -75,7 +71,6 @@ export function Layout({ children, footer, subtitle, onHome, onBack }: LayoutPro
                   className="page-back-btn"
                   onClick={handleBack}
                   aria-label="Atpakaļ"
-                  tabIndex={chromeCollapsed ? -1 : undefined}
                 >
                   ← Atpakaļ
                 </button>
@@ -84,10 +79,8 @@ export function Layout({ children, footer, subtitle, onHome, onBack }: LayoutPro
             </div>
           ) : null}
         </div>
-      </div>
 
-      <main ref={mainRef} className={`app-main ${positionClass}`}>
-        {children}
+        <div className={`app-main-body ${positionClass}`}>{children}</div>
       </main>
 
       {footer ? <footer className="app-footer">{footer}</footer> : null}

@@ -163,13 +163,12 @@ input:focus-visible {
   padding: 2rem;
 }
 
-/* Collapses on scroll-down (Layout) so reading content can use the height. */
+/*
+  Chrome is the first child inside .app-main (the scrollport), so it scrolls
+  away with the content — not sticky, no collapse delay, no reappear on scroll-up.
+*/
 .app-chrome {
   flex-shrink: 0;
-  display: grid;
-  grid-template-rows: 1fr;
-  z-index: 2;
-  transition: grid-template-rows 0.12s ease-out;
   /* Isolate from .app-shell content-scale (buttons use font: inherit). */
   --content-scale: 1;
   --app-font-size: var(--chrome-font);
@@ -178,27 +177,11 @@ input:focus-visible {
   line-height: 1.25;
 }
 
-.app-chrome--hidden {
-  grid-template-rows: 0fr;
-  pointer-events: none;
-}
-
-.app-chrome-inner {
-  min-height: 0;
-  overflow: hidden;
-}
-
 .app-chrome button {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
   color: inherit;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .app-chrome {
-    transition: none;
-  }
 }
 
 .app-header {
@@ -315,12 +298,22 @@ input:focus-visible {
   min-height: 0;
   display: flex;
   flex-direction: column;
-  padding: var(--space);
+  padding: 0;
   text-align: var(--app-text-align);
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
+}
+
+.app-main-body {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space);
+  /* Fill the scrollport so short content can still vertical-center. */
+  min-height: 100%;
+  box-sizing: border-box;
 }
 
 .content-top {
@@ -379,12 +372,12 @@ input:focus-visible {
 }
 
 /* Word reading: give the word a usable height, then scroll to Tālāk. */
-.app-main:has(.task-view-word-reading) {
+.app-main:has(.task-view-word-reading) .app-main-body {
   justify-content: stretch;
   align-items: stretch;
 }
 
-.app-main:has(.task-view-word-reading) > .task-screen {
+.app-main:has(.task-view-word-reading) .task-screen {
   margin-top: 0;
   margin-bottom: 0;
   flex: 1 1 auto;
