@@ -11,8 +11,8 @@ const FONT_MAX_BASE_PX = 120;
 const FONT_MIN_BASE_PX = 28;
 
 /**
- * Scale the word down until it fits the available area (width + height).
- * Long words like “rakstāmmašīna” / “spilvendrāna” stay fully visible.
+ * Fit the word primarily to WIDTH so landscape (wider) can stay large.
+ * Height is a soft limit only; the container may scroll a little if needed.
  * `contentScale` from settings raises min/max so “Lielāks” grows task words too.
  */
 function useFitWord(word: string, contentScale: number) {
@@ -30,31 +30,39 @@ function useFitWord(word: string, contentScale: number) {
     const fit = () => {
       const maxW = container.clientWidth;
       const maxH = container.clientHeight;
-      if (maxW < 40 || maxH < 40) return;
+      if (maxW < 40) return;
 
       const scale = Number.isFinite(contentScale) ? contentScale : 1;
       const fontMin = Math.round(FONT_MIN_BASE_PX * scale);
       const fontMax = Math.round(FONT_MAX_BASE_PX * scale);
 
+      // Soft height cap: never crush below ~65% of desired max just because
+      // landscape height is short (container can scroll).
+      const softHeightCap =
+        maxH >= 40 ? Math.floor(maxH * 0.92) : fontMax;
+      const heightFloor = Math.round(fontMax * 0.65);
+      let hi = Math.min(
+        fontMax,
+        Math.max(softHeightCap, Math.min(heightFloor, fontMax)),
+      );
+
       let lo = fontMin;
-      let hi = Math.min(fontMax, Math.floor(maxH * 0.85));
       let best = lo;
 
       el.style.whiteSpace = 'nowrap';
       el.style.fontSize = `${hi}px`;
 
-      // If even max fits, use it; else binary-search.
-      if (el.scrollWidth <= maxW && el.scrollHeight <= maxH) {
+      // Prefer width fit; height overflow is OK (scroll).
+      if (el.scrollWidth <= maxW) {
         setFontPx(hi);
+        el.style.fontSize = `${hi}px`;
         return;
       }
 
       while (lo <= hi) {
         const mid = Math.floor((lo + hi) / 2);
         el.style.fontSize = `${mid}px`;
-        const fits =
-          el.scrollWidth <= maxW && el.scrollHeight <= maxH;
-        if (fits) {
+        if (el.scrollWidth <= maxW) {
           best = mid;
           lo = mid + 1;
         } else {
@@ -66,18 +74,17 @@ function useFitWord(word: string, contentScale: number) {
       el.style.fontSize = `${best}px`;
       if (el.scrollWidth > maxW) {
         el.style.whiteSpace = 'normal';
-        // Shrink further with wrap enabled
         lo = fontMin;
-        hi = best;
+        let wrapHi = best;
         best = fontMin;
-        while (lo <= hi) {
-          const mid = Math.floor((lo + hi) / 2);
+        while (lo <= wrapHi) {
+          const mid = Math.floor((lo + wrapHi) / 2);
           el.style.fontSize = `${mid}px`;
-          if (el.scrollWidth <= maxW && el.scrollHeight <= maxH) {
+          if (el.scrollWidth <= maxW) {
             best = mid;
             lo = mid + 1;
           } else {
-            hi = mid - 1;
+            wrapHi = mid - 1;
           }
         }
       }

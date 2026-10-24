@@ -4,8 +4,11 @@ import { Button } from '../components/Button';
 import { useApp } from '../context/AppContext';
 import type { Screen } from '../navigation/types';
 import {
+  CONTENT_SCALE_MAX,
+  CONTENT_SCALE_MIN,
   CONTENT_SCALE_OPTIONS,
-  type ContentScale,
+  CONTENT_SCALE_STEP,
+  isContentScalePreset,
   type TextAlign,
   type TextPosition,
 } from '../types/progress';
@@ -26,10 +29,15 @@ export function SettingsScreen({ onBack, onHome }: SettingsScreenProps) {
     return () => window.clearTimeout(t);
   }, [savedMsg]);
 
-  const change = async (partial: Parameters<typeof updateSettings>[0]) => {
+  const change = async (
+    partial: Parameters<typeof updateSettings>[0],
+    announce = true,
+  ) => {
     await updateSettings(partial);
-    setSavedMsg('Saglabāts');
+    if (announce) setSavedMsg('Saglabāts');
   };
+
+  const percent = Math.round(settings.contentScale * 100);
 
   return (
     <Layout subtitle="Iestatījumi" onHome={onHome} onBack={onBack}>
@@ -54,20 +62,61 @@ export function SettingsScreen({ onBack, onHome }: SettingsScreenProps) {
             <Button
               key={opt.value}
               variant={
-                settings.contentScale === opt.value ? 'primary' : 'secondary'
+                isContentScalePreset(settings.contentScale, opt.value)
+                  ? 'primary'
+                  : 'secondary'
               }
-              onClick={() =>
-                void change({ contentScale: opt.value as ContentScale })
-              }
+              onClick={() => void change({ contentScale: opt.value })}
             >
               {opt.label}
               {opt.value === 1 ? ' (ieteicams)' : ''} — {opt.note}
             </Button>
           ))}
         </div>
+
+        <div className="scale-slider-block">
+          <label className="settings-label" htmlFor="content-scale-slider">
+            Precīzāk — pabīdiet
+          </label>
+          <p className="muted settings-explain">
+            Starp ātrajām izvēlēm vai vēl lielāks / mazāks.
+          </p>
+          <div className="scale-slider-row">
+            <span className="scale-slider-end" aria-hidden="true">
+              A
+            </span>
+            <input
+              id="content-scale-slider"
+              className="scale-slider"
+              type="range"
+              min={CONTENT_SCALE_MIN}
+              max={CONTENT_SCALE_MAX}
+              step={CONTENT_SCALE_STEP}
+              value={settings.contentScale}
+              aria-valuemin={CONTENT_SCALE_MIN}
+              aria-valuemax={CONTENT_SCALE_MAX}
+              aria-valuenow={settings.contentScale}
+              aria-valuetext={`${percent} procenti`}
+              onInput={(e) => {
+                const value = Number(e.currentTarget.value);
+                void change({ contentScale: value }, false);
+              }}
+              onChange={(e) => {
+                const value = Number(e.currentTarget.value);
+                void change({ contentScale: value }, true);
+              }}
+            />
+            <span className="scale-slider-end scale-slider-end-lg" aria-hidden="true">
+              A
+            </span>
+          </div>
+          <p className="scale-slider-value" aria-live="polite">
+            {percent}%
+          </p>
+        </div>
+
         <p className="preview-text" aria-live="polite">
-          Paraugs ({Math.round(settings.contentScale * 100)}%): māja, ūdens,
-          saule
+          Paraugs ({percent}%): māja, ūdens, saule
         </p>
       </div>
 

@@ -2,8 +2,12 @@
 
 :root {
   --content-scale: 1;
-  /* Fit-to-screen base (px), then multiply by --content-scale from settings. */
-  --fit-font: clamp(17px, 2.35vh, 22px);
+  /*
+   * Base size tracks viewport WIDTH (not height), then × --content-scale.
+   * Landscape is wider → text stays the same or grows; short height no longer shrinks type.
+   * Example: phone ~390px → ~18px; landscape ~840px → ~26px (cap).
+   */
+  --fit-font: clamp(18px, 4.6vw, 26px);
   --app-font-size: calc(var(--fit-font) * var(--content-scale));
   --app-text-align: center;
   /* Calm teal + soft coral — chrome only; task reading stays black on white. */
@@ -43,7 +47,7 @@
   --shadow-btn: 0 2px 0 rgba(15, 61, 56, 0.12);
   --btn-min-h: calc(52px * var(--content-scale));
   --radius: 12px;
-  --space: calc(0.55rem + 0.35vh);
+  --space: calc(0.55rem + 0.45vw);
   --max-w: 720px;
   color-scheme: light;
 }
@@ -361,6 +365,10 @@ input:focus-visible {
 .task-screen:has(.task-view-word-reading) .task-view-word-reading {
   flex: 1 1 auto;
   min-height: min(42vh, 320px);
+  /* Landscape: prefer large glyphs; allow a little vertical scroll if needed */
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Legacy Layout footer (unused by tasks; kept for any other screens). */
@@ -992,60 +1000,53 @@ input:focus-visible {
 .home-type-btn {
   font-weight: 700;
   border-width: 2px;
+  /* Soft tint = section identity; black type = readable for low vision */
+  color: #111111;
 }
 
 .home-type-word_reading {
   background: var(--sky-soft);
   border-color: var(--sky);
-  color: #0d3d57;
 }
 
 .home-type-image_word {
   background: var(--mint-soft);
   border-color: var(--mint);
-  color: #1a4d35;
 }
 
 .home-type-word_choice {
   background: var(--sand-soft);
   border-color: var(--sand);
-  color: #4a320f;
 }
 
 .home-type-sentence_completion {
   background: var(--coral-soft);
   border-color: var(--coral);
-  color: #6b2e1c;
 }
 
 .home-type-reading_comprehension {
   background: var(--accent-soft);
   border-color: var(--accent);
-  color: var(--accent-deep);
 }
 
 .home-type-sentence_order {
   background: #e8f0e4;
   border-color: #5a8f4a;
-  color: #2a4d22;
 }
 
 .home-type-odd_one_out {
   background: #f5ebe0;
   border-color: #b07a45;
-  color: #5c3a18;
 }
 
 .home-type-antonym {
   background: #ebe4f2;
   border-color: #7a5a9e;
-  color: #3d2a55;
 }
 
 .home-type-definition_guess {
   background: #e4eef5;
   border-color: #4a7a9e;
-  color: #1e3d55;
 }
 
 .home-nav-progress {
@@ -1061,6 +1062,7 @@ input:focus-visible {
 }
 
 .app-shell.high-contrast .home-type-btn {
+  color: #000000;
   border-width: 3px;
 }
 
@@ -1768,6 +1770,119 @@ input:focus-visible {
   background: #fff;
 }
 
+.scale-slider-block {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 2px solid color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.app-shell.high-contrast .scale-slider-block {
+  border-top-color: #000;
+}
+
+.scale-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-top: 0.35rem;
+}
+
+.scale-slider-end {
+  flex: 0 0 auto;
+  font-weight: 700;
+  font-size: 0.95em;
+  line-height: 1;
+  color: var(--muted);
+  user-select: none;
+}
+
+.scale-slider-end-lg {
+  font-size: 1.55em;
+  color: var(--fg);
+}
+
+.scale-slider {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  height: 2.75rem;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  touch-action: none;
+}
+
+.scale-slider:focus-visible {
+  outline: none;
+}
+
+.scale-slider:focus-visible::-webkit-slider-thumb {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.scale-slider:focus-visible::-moz-range-thumb {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.scale-slider::-webkit-slider-runnable-track {
+  height: 0.65rem;
+  border-radius: 999px;
+  border: 2px solid var(--border);
+  background: color-mix(in srgb, var(--accent-soft) 70%, #fff);
+}
+
+.scale-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 2.1rem;
+  height: 2.1rem;
+  margin-top: calc((0.65rem - 2.1rem) / 2 - 2px);
+  border-radius: 50%;
+  border: 3px solid var(--accent-deep);
+  background: var(--accent);
+  box-shadow: var(--shadow-btn);
+}
+
+.scale-slider::-moz-range-track {
+  height: 0.65rem;
+  border-radius: 999px;
+  border: 2px solid var(--border);
+  background: color-mix(in srgb, var(--accent-soft) 70%, #fff);
+}
+
+.scale-slider::-moz-range-thumb {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: 50%;
+  border: 3px solid var(--accent-deep);
+  background: var(--accent);
+  box-shadow: var(--shadow-btn);
+}
+
+.app-shell.high-contrast .scale-slider::-webkit-slider-thumb,
+.app-shell.high-contrast .scale-slider::-moz-range-thumb {
+  border-color: #000;
+  background: #000;
+  box-shadow: none;
+}
+
+.app-shell.high-contrast .scale-slider::-webkit-slider-runnable-track,
+.app-shell.high-contrast .scale-slider::-moz-range-track {
+  border-color: #000;
+  background: #fff;
+}
+
+.scale-slider-value {
+  margin: 0.35rem 0 0;
+  font-weight: 700;
+  text-align: center;
+}
+
 @media (min-width: 768px) {
   :root {
     --max-w: 800px;
@@ -1786,19 +1901,14 @@ input:focus-visible {
   }
 }
 
-/* Short tablets / landscape: tighten the fit base further */
+/* Short viewport (often landscape): pack images only — do NOT shrink type */
 @media (max-height: 700px) {
-  :root {
-    --fit-font: clamp(15px, 2.1vh, 19px);
-  }
-
   .task-image {
-    width: min(100%, 26vh, 160px);
+    width: min(100%, 22vw, 160px);
   }
 
   .focus-word {
     margin: 0.4rem 0;
-    font-size: calc(1.3 * var(--fit-font) * var(--content-scale));
   }
 }
 

@@ -42,11 +42,15 @@ export type TextAlign = 'left' | 'center' | 'right';
 export type TextPosition = 'top' | 'middle' | 'bottom';
 
 /**
- * Multiplier on a viewport-based “fit the screen” base size.
- * 1 = standard (designed to fit a tablet without scrolling chrome).
- * Steps are wide so the change is obvious on a tablet.
+ * Multiplier on a viewport-width “fit” base size.
+ * 1 = standard. Presets are quick jumps; slider allows fine values in between.
  */
-export type ContentScale = 0.75 | 1 | 1.35 | 1.7;
+export type ContentScale = number;
+
+/** Slider / storage bounds (presets sit inside this range). */
+export const CONTENT_SCALE_MIN = 0.7;
+export const CONTENT_SCALE_MAX = 2;
+export const CONTENT_SCALE_STEP = 0.05;
 
 export interface UiSettings {
   contentScale: ContentScale;
@@ -65,7 +69,7 @@ export const DEFAULT_UI_SETTINGS: UiSettings = {
 };
 
 export const CONTENT_SCALE_OPTIONS: {
-  value: ContentScale;
+  value: number;
   label: string;
   note: string;
 }[] = [
@@ -75,20 +79,23 @@ export const CONTENT_SCALE_OPTIONS: {
   { value: 1.7, label: 'Ļoti liels', note: 'Var vajadzēt ritināt' },
 ];
 
-const ALLOWED_SCALES: ContentScale[] = [0.75, 1, 1.35, 1.7];
+/** Clamp + round to slider step so stored values stay tidy. */
+export function clampContentScale(value: number): number {
+  if (!Number.isFinite(value)) return 1;
+  const clamped = Math.min(
+    CONTENT_SCALE_MAX,
+    Math.max(CONTENT_SCALE_MIN, value),
+  );
+  const steps = Math.round(clamped / CONTENT_SCALE_STEP);
+  return Math.round(steps * CONTENT_SCALE_STEP * 100) / 100;
+}
 
-/** Snap legacy / unknown scales to the nearest allowed step. */
-function snapContentScale(value: number): ContentScale {
-  let best: ContentScale = 1;
-  let bestDist = Infinity;
-  for (const s of ALLOWED_SCALES) {
-    const d = Math.abs(s - value);
-    if (d < bestDist) {
-      bestDist = d;
-      best = s;
-    }
-  }
-  return best;
+/** True when current scale matches a preset button (within half a step). */
+export function isContentScalePreset(
+  current: number,
+  preset: number,
+): boolean {
+  return Math.abs(current - preset) < CONTENT_SCALE_STEP / 2 + 0.001;
 }
 
 /** Normalize stored/imported settings (incl. old fontSizePx). */
@@ -112,7 +119,7 @@ export function normalizeUiSettings(
   if (Number.isNaN(scale)) scale = 1;
 
   return {
-    contentScale: snapContentScale(scale),
+    contentScale: clampContentScale(scale),
     textAlign: merged.textAlign,
     textPosition: merged.textPosition,
     highContrast: merged.highContrast,
