@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
 import {
@@ -319,6 +319,139 @@ export function TaskScreen({
       </div>
     ) : null;
 
+  /** In-flow actions (scroll with task) — not a fixed Layout footer. */
+  const taskActions = (() => {
+    if (isWordReading) {
+      return (
+        <div className="task-actions footer-nav footer-nav-word-reading">
+          {queueProgressLabel ? (
+            <p className="progress-label">{queueProgressLabel}</p>
+          ) : null}
+          <Button
+            variant="primary"
+            className="btn-talak-large"
+            onClick={() => void finishWithoutAssessment()}
+          >
+            {nextLabel}
+          </Button>
+        </div>
+      );
+    }
+
+    if (isWordChoice || isOddOneOut) {
+      return (
+        <div className="task-actions footer-nav">
+          {queueProgressLabel ? (
+            <p className="progress-label">{queueProgressLabel}</p>
+          ) : null}
+          <div className="footer-actions">
+            <Button variant="secondary" fullWidth={false} onClick={goPrev}>
+              Atpakaļ
+            </Button>
+            <Button
+              variant="primary"
+              fullWidth={false}
+              onClick={() => void finishWithoutAssessment()}
+            >
+              {nextLabel}
+            </Button>
+          </div>
+        </div>
+      );
+    }
+
+    return (
+      <div className="task-actions footer-nav">
+        {queueProgressLabel ? (
+          <p className="progress-label">{queueProgressLabel}</p>
+        ) : null}
+
+        {isView ? (
+          assessmentSavedBanner
+        ) : (
+          <>
+            {showAssessmentIntro ? (
+              <p className="assessment-intro">Novērtē, kā veicas</p>
+            ) : null}
+
+            {ratedAssessment ? (
+              <p className="assessment-saved-label" role="status">
+                Pašvērtējums:{' '}
+                <strong>{SELF_ASSESSMENT_LABELS[ratedAssessment]}</strong>
+              </p>
+            ) : null}
+
+            <div
+              className="assessment-row"
+              role="group"
+              aria-label="Pašvērtējums"
+            >
+              {(
+                [
+                  ['independent', 'ok', 'Izdevās pašam', '✓'],
+                  ['with_help', 'help', 'Ar palīdzību', '~'],
+                  ['difficult', 'hard', 'Bija grūti', '✗'],
+                ] as const
+              ).map(([value, tone, label, symbol]) => {
+                const selected = attempt.selfAssessment === value;
+                return (
+                  <button
+                    key={value}
+                    type="button"
+                    className={`btn btn-assess btn-assess-${tone}${
+                      selected ? ' btn-assess-selected' : ''
+                    }`}
+                    aria-label={label}
+                    aria-pressed={selected}
+                    onClick={() => selectAssessment(value)}
+                  >
+                    <span className="assess-symbol" aria-hidden="true">
+                      {symbol}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </>
+        )}
+
+        <div className="footer-actions">
+          <Button variant="secondary" fullWidth={false} onClick={goPrev}>
+            Atpakaļ
+          </Button>
+          {isView || alreadyCompleted ? (
+            <Button variant="primary" fullWidth={false} onClick={goNextTask}>
+              {nextLabel}
+            </Button>
+          ) : ratedAssessment ? (
+            <Button
+              variant="primary"
+              fullWidth={false}
+              onClick={() => void finishAndGoNext()}
+            >
+              {nextLabel}
+            </Button>
+          ) : (
+            <Button
+              variant="neutral"
+              fullWidth={false}
+              onClick={() => void finishAndGoNext('skipped')}
+            >
+              Tālāk
+            </Button>
+          )}
+        </div>
+      </div>
+    );
+  })();
+
+  const wrapTask = (body: ReactNode) => (
+    <div className="task-screen">
+      <div className="task-screen-body">{body}</div>
+      {taskActions}
+    </div>
+  );
+
   if (isReading) {
     return (
       <Layout onHome={onHome} onBack={onBack} subtitle={subtitle}>
@@ -351,214 +484,88 @@ export function TaskScreen({
 
   if (isWordReading) {
     return (
-      <Layout
-        onHome={onHome}
-        onBack={onBack}
-        subtitle={subtitle}
-        footer={
-          <div className="footer-nav footer-nav-word-reading">
-            {queueProgressLabel ? (
-              <p className="progress-label">{queueProgressLabel}</p>
-            ) : null}
-            <Button
-              variant="primary"
-              className="btn-talak-large"
-              onClick={() => void finishWithoutAssessment()}
-            >
-              {nextLabel}
-            </Button>
-          </div>
-        }
-      >
-        <WordReadingTaskView task={task} />
+      <Layout onHome={onHome} onBack={onBack} subtitle={subtitle}>
+        {wrapTask(<WordReadingTaskView task={task} />)}
       </Layout>
     );
   }
 
   if (isWordChoice || isOddOneOut) {
     return (
-      <Layout
-        onHome={onHome}
-        onBack={onBack}
-        subtitle={subtitle}
-        footer={
-          <div className="footer-nav">
-            {queueProgressLabel ? (
-              <p className="progress-label">{queueProgressLabel}</p>
-            ) : null}
-            <div className="footer-actions">
-              <Button variant="secondary" fullWidth={false} onClick={goPrev}>
-                Atpakaļ
-              </Button>
-              <Button
-                variant="primary"
-                fullWidth={false}
-                onClick={() => void finishWithoutAssessment()}
-              >
-                {nextLabel}
-              </Button>
-            </div>
-          </div>
-        }
-      >
-        {isWordChoice ? (
-          <WordChoiceTaskView
-            key={task.id}
-            task={task}
-            attempt={attempt}
-            onUpdate={onUpdate}
-            readOnly={isView}
-          />
-        ) : (
-          <OddOneOutTaskView
-            key={task.id}
-            task={task}
-            attempt={attempt}
-            onUpdate={onUpdate}
-            readOnly={isView}
-          />
+      <Layout onHome={onHome} onBack={onBack} subtitle={subtitle}>
+        {wrapTask(
+          isWordChoice ? (
+            <WordChoiceTaskView
+              key={task.id}
+              task={task}
+              attempt={attempt}
+              onUpdate={onUpdate}
+              readOnly={isView}
+            />
+          ) : (
+            <OddOneOutTaskView
+              key={task.id}
+              task={task}
+              attempt={attempt}
+              onUpdate={onUpdate}
+              readOnly={isView}
+            />
+          ),
         )}
       </Layout>
     );
   }
 
   return (
-    <Layout
-      onHome={onHome}
-      onBack={onBack}
-      subtitle={subtitle}
-      footer={
-        <div className="footer-nav">
-          {queueProgressLabel ? (
-            <p className="progress-label">{queueProgressLabel}</p>
-          ) : null}
-
-          {isView ? (
-            assessmentSavedBanner
-          ) : (
-            <>
-              {showAssessmentIntro ? (
-                <p className="assessment-intro">Novērtē, kā veicas</p>
-              ) : null}
-
-              {ratedAssessment ? (
-                <p className="assessment-saved-label" role="status">
-                  Pašvērtējums:{' '}
-                  <strong>{SELF_ASSESSMENT_LABELS[ratedAssessment]}</strong>
-                </p>
-              ) : null}
-
-              <div
-                className="assessment-row"
-                role="group"
-                aria-label="Pašvērtējums"
-              >
-                {(
-                  [
-                    ['independent', 'ok', 'Izdevās pašam', '✓'],
-                    ['with_help', 'help', 'Ar palīdzību', '~'],
-                    ['difficult', 'hard', 'Bija grūti', '✗'],
-                  ] as const
-                ).map(([value, tone, label, symbol]) => {
-                  const selected = attempt.selfAssessment === value;
-                  return (
-                    <button
-                      key={value}
-                      type="button"
-                      className={`btn btn-assess btn-assess-${tone}${
-                        selected ? ' btn-assess-selected' : ''
-                      }`}
-                      aria-label={label}
-                      aria-pressed={selected}
-                      onClick={() => selectAssessment(value)}
-                    >
-                      <span className="assess-symbol" aria-hidden="true">
-                        {symbol}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            </>
+    <Layout onHome={onHome} onBack={onBack} subtitle={subtitle}>
+      {wrapTask(
+        <>
+          {task.type === 'sentence_completion' && (
+            <SentenceCompletionTaskView
+              key={task.id}
+              task={task}
+              attempt={attempt}
+              onUpdate={onUpdate}
+              readOnly={isView}
+            />
           )}
-
-          <div className="footer-actions">
-            <Button variant="secondary" fullWidth={false} onClick={goPrev}>
-              Atpakaļ
-            </Button>
-            {isView || alreadyCompleted ? (
-              <Button
-                variant="primary"
-                fullWidth={false}
-                onClick={goNextTask}
-              >
-                {nextLabel}
-              </Button>
-            ) : ratedAssessment ? (
-              <Button
-                variant="primary"
-                fullWidth={false}
-                onClick={() => void finishAndGoNext()}
-              >
-                {nextLabel}
-              </Button>
-            ) : (
-              <Button
-                variant="neutral"
-                fullWidth={false}
-                onClick={() => void finishAndGoNext('skipped')}
-              >
-                Tālāk
-              </Button>
-            )}
-          </div>
-        </div>
-      }
-    >
-      {task.type === 'sentence_completion' && (
-        <SentenceCompletionTaskView
-          key={task.id}
-          task={task}
-          attempt={attempt}
-          onUpdate={onUpdate}
-          readOnly={isView}
-        />
-      )}
-      {task.type === 'image_word' && (
-        <ImageWordTaskView
-          key={task.id}
-          task={task}
-          attempt={attempt}
-          onUpdate={onUpdate}
-          readOnly={isView}
-        />
-      )}
-      {task.type === 'sentence_order' && (
-        <SentenceOrderTaskView
-          key={task.id}
-          task={task}
-          attempt={attempt}
-          onUpdate={onUpdate}
-          readOnly={isView}
-        />
-      )}
-      {task.type === 'antonym' && (
-        <AntonymTaskView
-          key={task.id}
-          task={task}
-          attempt={attempt}
-          onUpdate={onUpdate}
-          readOnly={isView}
-        />
-      )}
-      {task.type === 'definition_guess' && (
-        <DefinitionGuessTaskView
-          key={task.id}
-          task={task}
-          attempt={attempt}
-          onUpdate={onUpdate}
-          readOnly={isView}
-        />
+          {task.type === 'image_word' && (
+            <ImageWordTaskView
+              key={task.id}
+              task={task}
+              attempt={attempt}
+              onUpdate={onUpdate}
+              readOnly={isView}
+            />
+          )}
+          {task.type === 'sentence_order' && (
+            <SentenceOrderTaskView
+              key={task.id}
+              task={task}
+              attempt={attempt}
+              onUpdate={onUpdate}
+              readOnly={isView}
+            />
+          )}
+          {task.type === 'antonym' && (
+            <AntonymTaskView
+              key={task.id}
+              task={task}
+              attempt={attempt}
+              onUpdate={onUpdate}
+              readOnly={isView}
+            />
+          )}
+          {task.type === 'definition_guess' && (
+            <DefinitionGuessTaskView
+              key={task.id}
+              task={task}
+              attempt={attempt}
+              onUpdate={onUpdate}
+              readOnly={isView}
+            />
+          )}
+        </>,
       )}
     </Layout>
   );

@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react';
 import { AnswerField } from '../../components/AnswerField';
 import { Button } from '../../components/Button';
+import { ListenButton } from '../../components/ListenButton';
 import {
   SELF_ASSESSMENT_LABELS,
   SELF_ASSESSMENT_SYMBOLS,
@@ -267,6 +268,14 @@ export function ReadingComprehensionTaskView({
         <div className="rc-passage" lang="lv">
           {task.passage}
         </div>
+        <div className="listen-row">
+          <ListenButton
+            text={task.passage}
+            label="Klausīties tekstu"
+            ariaLabel="Klausīties tekstu"
+            className="btn-rc-primary"
+          />
+        </div>
         <div className="rc-actions">
           <Button
             variant="primary"
@@ -299,6 +308,14 @@ export function ReadingComprehensionTaskView({
       <p className="focus-sentence rc-question" lang="lv">
         {question.question}
       </p>
+
+      <div className="listen-row">
+        <ListenButton
+          text={question.question}
+          label="Klausīties jautājumu"
+          ariaLabel="Klausīties jautājumu"
+        />
+      </div>
 
       <AnswerField
         id="rc-answer-input"
@@ -451,6 +468,12 @@ export function ReadingComprehensionTaskView({
             {task.passage}
           </div>
           <div className="rc-passage-overlay-footer">
+            <ListenButton
+              text={task.passage}
+              label="Klausīties tekstu"
+              ariaLabel="Klausīties tekstu"
+              className="btn-rc-primary"
+            />
             <Button
               ref={overlayCloseRef}
               variant="primary"

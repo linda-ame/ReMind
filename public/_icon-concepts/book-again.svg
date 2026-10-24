@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0f766e"/>
+  <!-- Open book -->
+  <path fill="#ffffff" d="M256 220c-16-12-46-24-88-24-26 0-48 5-62 12v148c16-9 40-14 62-14 38 0 64 10 88 24 24-14 50-24 88-24 22 0 46 5 62 14V208c-14-7-36-12-62-12-42 0-72 12-88 24z"/>
+  <path fill="#0f766e" opacity="0.3" d="M256 220v146c-20-12-44-20-76-20-20 0-38 3-52 9V208c14-5 32-8 52-8 34 0 58 8 76 20z"/>
+  <!-- Soft re-arrow above (again / rehab) -->
+  <path fill="none" stroke="#f7ecd8" stroke-width="26" stroke-linecap="round" d="M318 128a78 78 0 1 0-2 84"/>
+  <path fill="#f7ecd8" d="M328 88l36 48-56 4 20-52z"/>
+</svg>

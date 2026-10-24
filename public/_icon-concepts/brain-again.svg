@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#0f766e"/>
+  <!-- Soft brain (simple paired lobes) -->
+  <path fill="#ffffff" d="
+    M256 168
+    c-18-36-70-44-98-18
+    c-22 20-22 52-8 72
+    c-28 10-42 40-28 66
+    c12 22 42 30 68 22
+    c8 24 36 40 66 40
+    c30 0 58-16 66-40
+    c26 8 56 0 68-22
+    c14-26 0-56-28-66
+    c14-20 14-52-8-72
+    c-28-26-80-18-98 18z"/>
+  <!-- Center fold -->
+  <path fill="none" stroke="#0f766e" stroke-opacity="0.28" stroke-width="14" stroke-linecap="round"
+    d="M256 188v168"/>
+  <path fill="none" stroke="#0f766e" stroke-opacity="0.22" stroke-width="12" stroke-linecap="round"
+    d="M214 220c16 10 28 10 42 0M214 268c16 10 28 10 42 0M298 220c-16 10-28 10-42 0M298 268c-16 10-28 10-42 0"/>
+  <!-- Re-cycle arrow -->
+  <path fill="none" stroke="#f7ecd8" stroke-width="26" stroke-linecap="round"
+    d="M372 156a148 148 0 1 0 24 168"/>
+  <path fill="#f7ecd8" d="M376 108l46 58-70 10 24-68z"/>
+</svg>

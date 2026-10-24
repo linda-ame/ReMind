@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { AnswerField } from '../../components/AnswerField';
 import { HintAnswers } from '../../components/HintAnswers';
+import { ListenButton } from '../../components/ListenButton';
 import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { DefinitionGuessTask } from '../../types/task';
 import type { TaskAttempt } from '../../types/progress';
@@ -43,6 +44,13 @@ export function DefinitionGuessTaskView({
       <p className="focus-sentence definition-description" lang="lv">
         {task.description}
       </p>
+
+      <div className="listen-row">
+        <ListenButton
+          text={task.description}
+          ariaLabel="Klausīties aprakstu"
+        />
+      </div>
 
       <AnswerField
         id="answer-input"

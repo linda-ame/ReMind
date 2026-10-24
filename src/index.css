@@ -300,19 +300,61 @@ input:focus-visible {
   margin-top: auto;
 }
 
-/* Word reading needs the full main area so the word can be measured & fitted. */
+/* Task screen: body + actions scroll together in .app-main (no fixed footer). */
+.task-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.task-screen-body {
+  width: 100%;
+  min-width: 0;
+}
+
+.task-actions {
+  flex-shrink: 0;
+  width: 100%;
+  margin-top: 0.15rem;
+  padding: 0.75rem 0.15rem calc(0.35rem + env(safe-area-inset-bottom, 0px));
+  border-top: 2px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  background: color-mix(in srgb, var(--accent-soft) 40%, transparent);
+  border-radius: var(--radius);
+}
+
+.app-shell.high-contrast .task-actions {
+  background: #fff;
+  border-top-color: #000;
+}
+
+/* Word reading: give the word a usable height, then scroll to Tālāk. */
 .app-main:has(.task-view-word-reading) {
   justify-content: stretch;
   align-items: stretch;
 }
 
-.app-main:has(.task-view-word-reading) > * {
+.app-main:has(.task-view-word-reading) > .task-screen {
   margin-top: 0;
   margin-bottom: 0;
   flex: 1 1 auto;
-  min-height: 0;
+  min-height: 100%;
 }
 
+.task-screen:has(.task-view-word-reading) .task-screen-body {
+  flex: 1 1 auto;
+  min-height: min(42vh, 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.task-screen:has(.task-view-word-reading) .task-view-word-reading {
+  flex: 1 1 auto;
+  min-height: min(42vh, 320px);
+}
+
+/* Legacy Layout footer (unused by tasks; kept for any other screens). */
 .app-footer {
   flex-shrink: 0;
   padding: 0.5rem var(--space) calc(0.5rem + env(safe-area-inset-bottom, 0px));
@@ -762,6 +804,39 @@ input:focus-visible {
   font-size: calc(1.05 * var(--fit-font) * var(--content-scale));
 }
 
+.odd-one-option-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.odd-one-option-row .listen-control-compact {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.odd-one-listen.listen-btn-compact {
+  min-width: calc(var(--btn-min-h) + 0.25rem);
+  width: calc(var(--btn-min-h) + 0.25rem);
+  padding-left: 0.35rem;
+  padding-right: 0.35rem;
+  align-self: stretch;
+}
+
+.odd-one-option-btn {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.listen-control-compact .listen-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
 .btn-row {
   display: flex;
   flex-wrap: wrap;
@@ -1179,6 +1254,13 @@ input:focus-visible {
   font-weight: 700;
 }
 
+/* Ierunāt = warm green (speak in); distinct from Klausīties blue */
+.answer-dictate-btn.btn-help {
+  background: linear-gradient(180deg, #3a9a6a 0%, #2a6f4a 100%);
+  border-color: #1a4d35;
+  color: #fff;
+}
+
 .answer-dictate-btn.is-listening {
   animation: dictate-pulse 1.2s ease-in-out infinite;
 }
@@ -1211,6 +1293,63 @@ input:focus-visible {
   color: #000;
 }
 
+.listen-row {
+  margin: 0.35rem 0 0.75rem;
+}
+
+.listen-control {
+  width: 100%;
+}
+
+/* Klausīties stays sky/teal (help) — hear out; not the same as Ierunāt green */
+
+.listen-btn-inner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+}
+
+.listen-btn-icon {
+  flex: 0 0 auto;
+  display: block;
+}
+
+.listen-btn-text {
+  flex: 0 1 auto;
+}
+
+.listen-btn.is-speaking {
+  animation: dictate-pulse 1.2s ease-in-out infinite;
+}
+
+.listen-status {
+  margin: 0.4rem 0 0;
+  font-size: 0.9em;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: var(--app-text-align);
+}
+
+.listen-status-warn {
+  color: #6b2e1c;
+  background: color-mix(in srgb, var(--coral) 18%, #fff);
+  border: 2px solid var(--coral);
+  border-radius: var(--radius);
+  padding: 0.55rem 0.7rem;
+}
+
+.app-shell.high-contrast .listen-status-warn {
+  color: #000;
+  background: #fff;
+  border-color: #000;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .listen-btn.is-speaking {
+    animation: none;
+  }
+}
 
 .hint-answers {
   margin-top: 0.45rem;
@@ -1793,6 +1932,9 @@ input:focus-visible {
 
 .rc-passage-overlay-footer {
   flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   padding: 0.75rem 0.85rem calc(0.75rem + env(safe-area-inset-bottom, 0px));
   border-top: 2px solid color-mix(in srgb, var(--accent) 28%, transparent);
   background: color-mix(in srgb, var(--accent-soft) 55%, #fff);

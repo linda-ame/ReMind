@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { AnswerField } from '../../components/AnswerField';
 import { HintAnswers } from '../../components/HintAnswers';
+import { ListenButton } from '../../components/ListenButton';
 import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { SentenceCompletionTask } from '../../types/task';
 import type { TaskAttempt } from '../../types/progress';
@@ -40,6 +41,13 @@ export function SentenceCompletionTaskView({
       <p className="focus-sentence" lang="lv">
         {task.sentence}
       </p>
+
+      <div className="listen-row">
+        <ListenButton
+          text={task.sentence}
+          ariaLabel="Klausīties teikumu"
+        />
+      </div>
 
       <AnswerField
         id="answer-input"

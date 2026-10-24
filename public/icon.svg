@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="ReMind">
+  <rect width="512" height="512" rx="112" fill="#0f766e"/>
+  <rect x="28" y="28" width="456" height="456" rx="96" fill="none" stroke="#d7efec" stroke-opacity="0.22" stroke-width="16"/>
+  <path
+    fill="#ffffff"
+    d="M148 120h148c62 0 108 38 108 96 0 44-26 78-68 90l76 86h-74l-68-80h-50v80h-72V120zm72 64v68h72c28 0 46-16 46-34s-18-34-46-34h-72z"
+  />
+  <circle cx="392" cy="148" r="28" fill="#f7ecd8"/>
+</svg>

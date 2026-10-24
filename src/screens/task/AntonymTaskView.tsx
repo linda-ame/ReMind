@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { AnswerField } from '../../components/AnswerField';
 import { HintAnswers } from '../../components/HintAnswers';
+import { ListenButton } from '../../components/ListenButton';
 import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { AntonymTask } from '../../types/task';
 import type { TaskAttempt } from '../../types/progress';
@@ -46,6 +47,10 @@ export function AntonymTaskView({
       <p className="prompt-line" lang="lv">
         Kāds ir pretstats?
       </p>
+
+      <div className="listen-row">
+        <ListenButton text={task.word} ariaLabel="Klausīties vārdu" />
+      </div>
 
       <AnswerField
         id="answer-input"
