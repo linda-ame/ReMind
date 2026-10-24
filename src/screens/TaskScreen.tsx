@@ -142,7 +142,6 @@ export function TaskScreen({
   const isWordChoice = task.type === 'word_choice';
   const isOddOneOut = task.type === 'odd_one_out';
   const isReading = task.type === 'reading_comprehension';
-  const isSentenceOrder = task.type === 'sentence_order';
   /** Same as existing choice / reading sections — no footer self-assessment. */
   const skipSelfAssessment =
     !SELF_ASSESSMENT_ENABLED ||
@@ -150,7 +149,6 @@ export function TaskScreen({
     isWordChoice ||
     isOddOneOut ||
     isReading;
-  const inBatch = batchIndex !== undefined && batchType !== undefined;
   const ratedAssessment =
     SELF_ASSESSMENT_ENABLED &&
     attempt.selfAssessment != null &&
