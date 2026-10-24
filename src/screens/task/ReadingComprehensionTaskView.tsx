@@ -2,10 +2,15 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { AnswerField } from '../../components/AnswerField';
 import { Button } from '../../components/Button';
 import { ListenButton } from '../../components/ListenButton';
+import { TaskAdvanceChrome } from '../../components/TaskAdvanceChrome';
+import { SELF_ASSESSMENT_ENABLED } from '../../config/features';
+import { playCorrectChime } from '../../utils/answerFeedback';
+import { textMatchesAccepted } from '../../utils/answers';
 import {
   SELF_ASSESSMENT_LABELS,
   SELF_ASSESSMENT_SYMBOLS,
 } from '../../utils/attempts';
+import { readingQuestionAdvanceReady } from '../../utils/taskAdvance';
 import type { ReadingComprehensionTask } from '../../types/task';
 import type {
   ReadingComprehensionProgress,
@@ -20,6 +25,8 @@ interface Props {
   /** May return a Promise — finish waits so the last answer is on disk. */
   onUpdate: (attempt: TaskAttempt) => void | Promise<void>;
   onFinished: () => void;
+  /** Skip entire reading task for today (hidden once → is ready). */
+  onSkip?: () => void;
   readOnly?: boolean;
 }
 
@@ -64,6 +71,7 @@ export function ReadingComprehensionTaskView({
   attempt,
   onUpdate,
   onFinished,
+  onSkip,
   readOnly = false,
 }: Props) {
   const saved = ensureReading(attempt, task);
@@ -76,6 +84,7 @@ export function ReadingComprehensionTaskView({
   const [showPassageOverlay, setShowPassageOverlay] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
   const answerInputRef = useRef<HTMLInputElement>(null);
+  const chimedRef = useRef(false);
   const overlayCloseRef = useRef<HTMLButtonElement>(null);
   const returnFocusRef = useRef<HTMLElement | null>(null);
   const overlayTitleId = useId();
@@ -92,6 +101,7 @@ export function ReadingComprehensionTaskView({
   useEffect(() => {
     if (phase !== 'questions' || !qProgress) return;
     setShowAnswer(readOnly || qProgress.viewedAnswers);
+    chimedRef.current = false;
   }, [phase, qIndex, qProgress, readOnly]);
 
   useEffect(() => {
@@ -263,29 +273,27 @@ export function ReadingComprehensionTaskView({
 
   if (phase === 'passage') {
     return (
-      <div className="task-view rc-view">
-        <p className="instruction">{task.instruction}</p>
-        <div className="rc-passage" lang="lv">
-          {task.passage}
+      <TaskAdvanceChrome
+        canAdvance
+        onAdvance={startQuestions}
+        onSkip={onSkip}
+        advanceLabel="Sākt jautājumus"
+      >
+        <div className="task-view rc-view">
+          <p className="instruction">{task.instruction}</p>
+          <div className="rc-passage" lang="lv">
+            {task.passage}
+          </div>
+          <div className="listen-row">
+            <ListenButton
+              text={task.passage}
+              label="Klausīties tekstu"
+              ariaLabel="Klausīties tekstu"
+              className="btn-rc-primary"
+            />
+          </div>
         </div>
-        <div className="listen-row">
-          <ListenButton
-            text={task.passage}
-            label="Klausīties tekstu"
-            ariaLabel="Klausīties tekstu"
-            className="btn-rc-primary"
-          />
-        </div>
-        <div className="rc-actions">
-          <Button
-            variant="primary"
-            className="btn-rc-primary"
-            onClick={startQuestions}
-          >
-            Sākt jautājumus
-          </Button>
-        </div>
-      </div>
+      </TaskAdvanceChrome>
     );
   }
 
@@ -298,193 +306,202 @@ export function ReadingComprehensionTaskView({
   }
 
   const alreadyAssessed = qProgress.selfAssessment != null;
+  const canAdvanceQuestion =
+    readOnly || readingQuestionAdvanceReady(qProgress);
+  const advanceLabel =
+    qIndex >= task.questions.length - 1
+      ? readOnly
+        ? 'Aizvērt'
+        : 'Pabeigt'
+      : 'Nākamais';
 
   return (
-    <div className="task-view rc-view">
-      <p className="progress-label rc-q-progress">
-        Jautājums {qIndex + 1}. no {task.questions.length}
-      </p>
+    <TaskAdvanceChrome
+      canAdvance={canAdvanceQuestion}
+      onAdvance={() =>
+        void finishQuestionAndAdvance(
+          readOnly ? null : qProgress.selfAssessment,
+        )
+      }
+      onSkip={onSkip}
+      advanceLabel={advanceLabel}
+      progressLabel={`Jautājums ${qIndex + 1}. no ${task.questions.length}`}
+    >
+      <div className="task-view rc-view">
+        <p className="focus-sentence rc-question" lang="lv">
+          {question.question}
+        </p>
 
-      <p className="focus-sentence rc-question" lang="lv">
-        {question.question}
-      </p>
+        <div className="listen-row">
+          <ListenButton
+            text={question.question}
+            label="Klausīties jautājumu"
+            ariaLabel="Klausīties jautājumu"
+          />
+        </div>
 
-      <div className="listen-row">
-        <ListenButton
-          text={question.question}
-          label="Klausīties jautājumu"
-          ariaLabel="Klausīties jautājumu"
+        <AnswerField
+          id="rc-answer-input"
+          label="Atbilde (nav obligāti)"
+          value={qProgress.enteredAnswer ?? ''}
+          placeholder="Ierakstiet vai ierunājiet atbildi…"
+          readOnly={readOnly}
+          inputRef={answerInputRef}
+          onChange={(value) => {
+            if (readOnly) return;
+            patchQuestion(qIndex, {
+              enteredAnswer: value,
+              status: 'attempted',
+            });
+          }}
+          onSubmit={(text) => {
+            if (readOnly) return;
+            // Unlock Tālāk only after Enter / finished dictation (not while typing).
+            if (question.answers.length > 0 && !showAnswer) {
+              setShowAnswer(true);
+            }
+            patchQuestion(qIndex, {
+              viewedAnswers: true,
+              enteredAnswer: text,
+              status: 'attempted',
+            });
+            if (
+              question.answers.length > 0 &&
+              !chimedRef.current &&
+              textMatchesAccepted(text, question.answers, 'reading_question')
+            ) {
+              chimedRef.current = true;
+              playCorrectChime();
+            }
+          }}
         />
-      </div>
 
-      <AnswerField
-        id="rc-answer-input"
-        label="Atbilde (nav obligāti)"
-        value={qProgress.enteredAnswer ?? ''}
-        placeholder="Ierakstiet vai ierunājiet atbildi…"
-        readOnly={readOnly}
-        inputRef={answerInputRef}
-        onChange={(value) => {
-          if (readOnly) return;
-          patchQuestion(qIndex, {
-            enteredAnswer: value,
-            status: 'attempted',
-          });
-        }}
-      />
-
-      <div className="rc-actions rc-actions-stack">
-        <Button
-          variant="secondary"
-          className="btn-rc-primary"
-          onClick={(e) => openOverlay(e.currentTarget)}
-        >
-          Pārlasīt tekstu
-        </Button>
-
-        {!readOnly && !showAnswer ? (
+        <div className="rc-actions rc-actions-stack">
           <Button
             variant="secondary"
-            className="btn-reveal-answer btn-rc-primary"
-            onClick={() => {
-              setShowAnswer(true);
-              patchQuestion(qIndex, { viewedAnswers: true });
-            }}
+            className="btn-rc-primary"
+            onClick={(e) => openOverlay(e.currentTarget)}
           >
-            Parādīt atbildi
+            Pārlasīt tekstu
           </Button>
-        ) : null}
 
-        {(showAnswer || readOnly) && question.answers.length > 0 ? (
-          <div className="answers-box" role="status">
-            <p className="answers-box-label">Pareizā atbilde</p>
-            <ul className="answers-list">
-              {question.answers.map((a) => (
-                <li key={a}>{a}</li>
-              ))}
-            </ul>
-          </div>
-        ) : null}
-      </div>
-
-      {!readOnly ? (
-        <div className="rc-assess-block">
-          <p className="assessment-intro">Novērtē, kā veicas</p>
-          {alreadyAssessed && qProgress.selfAssessment ? (
-            <p className="assessment-saved-label" role="status">
-              Pašvērtējums:{' '}
-              <strong>
-                {SELF_ASSESSMENT_LABELS[qProgress.selfAssessment]}
-              </strong>
+          {(showAnswer || readOnly) && question.answers.length > 0 ? (
+            <p className="answers-inline" role="status">
+              {question.answers.length <= 1
+                ? `Atbilde: "${question.answers[0]}"`
+                : `Atbildes: ${question.answers.map((a) => `"${a}"`).join(', ')}`}
             </p>
           ) : null}
+        </div>
+
+        {SELF_ASSESSMENT_ENABLED && !readOnly ? (
+          <div className="rc-assess-block">
+            <p className="assessment-intro">Novērtē, kā veicas</p>
+            {alreadyAssessed && qProgress.selfAssessment ? (
+              <p className="assessment-saved-label" role="status">
+                Pašvērtējums:{' '}
+                <strong>
+                  {SELF_ASSESSMENT_LABELS[qProgress.selfAssessment]}
+                </strong>
+              </p>
+            ) : null}
+            <div
+              className="assessment-row rc-assessment-row"
+              role="group"
+              aria-label="Pašvērtējums"
+            >
+              {(
+                [
+                  ['independent', 'ok', 'Izdevās pašam', '✓'],
+                  ['with_help', 'help', 'Ar palīdzību', '~'],
+                  ['difficult', 'hard', 'Bija grūti', '✗'],
+                ] as const
+              ).map(([value, tone, label, symbol]) => {
+                const selected = qProgress.selfAssessment === value;
+                return (
+                  <button
+                    key={value}
+                    type="button"
+                    className={`btn btn-assess btn-assess-${tone} btn-assess-rc${
+                      selected ? ' btn-assess-selected' : ''
+                    }`}
+                    aria-label={label}
+                    aria-pressed={selected}
+                    onClick={() => selectAssessment(value)}
+                  >
+                    <span className="assess-symbol" aria-hidden="true">
+                      {symbol}
+                    </span>
+                    <span className="assess-label-text">{label}</span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        ) : SELF_ASSESSMENT_ENABLED &&
+          alreadyAssessed &&
+          qProgress.selfAssessment ? (
           <div
-            className="assessment-row rc-assessment-row"
-            role="group"
-            aria-label="Pašvērtējums"
+            className={`assessment-saved assessment-saved-${qProgress.selfAssessment}`}
+            role="status"
           >
-            {(
-              [
-                ['independent', 'ok', 'Izdevās pašam', '✓'],
-                ['with_help', 'help', 'Ar palīdzību', '~'],
-                ['difficult', 'hard', 'Bija grūti', '✗'],
-              ] as const
-            ).map(([value, tone, label, symbol]) => {
-              const selected = qProgress.selfAssessment === value;
-              return (
-                <button
-                  key={value}
-                  type="button"
-                  className={`btn btn-assess btn-assess-${tone} btn-assess-rc${
-                    selected ? ' btn-assess-selected' : ''
-                  }`}
-                  aria-label={label}
-                  aria-pressed={selected}
-                  onClick={() => selectAssessment(value)}
-                >
-                  <span className="assess-symbol" aria-hidden="true">
-                    {symbol}
-                  </span>
-                  <span className="assess-label-text">{label}</span>
-                </button>
-              );
-            })}
+            <span className="assess-symbol" aria-hidden="true">
+              {SELF_ASSESSMENT_SYMBOLS[qProgress.selfAssessment]}
+            </span>
+            <span>{SELF_ASSESSMENT_LABELS[qProgress.selfAssessment]}</span>
           </div>
-        </div>
-      ) : alreadyAssessed && qProgress.selfAssessment ? (
-        <div
-          className={`assessment-saved assessment-saved-${qProgress.selfAssessment}`}
-          role="status"
-        >
-          <span className="assess-symbol" aria-hidden="true">
-            {SELF_ASSESSMENT_SYMBOLS[qProgress.selfAssessment]}
-          </span>
-          <span>{SELF_ASSESSMENT_LABELS[qProgress.selfAssessment]}</span>
-        </div>
-      ) : null}
+        ) : null}
 
-      <div className="footer-actions rc-nav-actions">
-        <Button variant="secondary" fullWidth={false} onClick={goPrevQuestion}>
-          Atpakaļ
-        </Button>
-        <Button
-          variant="primary"
-          fullWidth={false}
-          onClick={() =>
-            void finishQuestionAndAdvance(
-              readOnly ? null : qProgress.selfAssessment,
-            )
-          }
+        <button
+          type="button"
+          className="task-rc-prev-link"
+          onClick={goPrevQuestion}
         >
-          {qIndex >= task.questions.length - 1
-            ? readOnly
-              ? 'Aizvērt'
-              : 'Pabeigt'
-            : 'Nākamais'}
-        </Button>
+          ← Atpakaļ
+        </button>
+
+        {showPassageOverlay ? (
+          <div
+            className="rc-passage-overlay"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={overlayTitleId}
+          >
+            <div className="rc-passage-overlay-bar">
+              <h2 id={overlayTitleId} className="rc-passage-overlay-title">
+                Teksts
+              </h2>
+              <button
+                type="button"
+                className="rc-passage-overlay-x"
+                aria-label="Aizvērt tekstu"
+                onClick={closeOverlay}
+              >
+                ×
+              </button>
+            </div>
+            <div className="rc-passage-overlay-body" lang="lv">
+              {task.passage}
+            </div>
+            <div className="rc-passage-overlay-footer">
+              <ListenButton
+                text={task.passage}
+                label="Klausīties tekstu"
+                ariaLabel="Klausīties tekstu"
+                className="btn-rc-primary"
+              />
+              <Button
+                ref={overlayCloseRef}
+                variant="primary"
+                className="btn-rc-primary"
+                onClick={closeOverlay}
+              >
+                Aizvērt tekstu
+              </Button>
+            </div>
+          </div>
+        ) : null}
       </div>
-
-      {showPassageOverlay ? (
-        <div
-          className="rc-passage-overlay"
-          role="dialog"
-          aria-modal="true"
-          aria-labelledby={overlayTitleId}
-        >
-          <div className="rc-passage-overlay-bar">
-            <h2 id={overlayTitleId} className="rc-passage-overlay-title">
-              Teksts
-            </h2>
-            <button
-              type="button"
-              className="rc-passage-overlay-x"
-              aria-label="Aizvērt tekstu"
-              onClick={closeOverlay}
-            >
-              ×
-            </button>
-          </div>
-          <div className="rc-passage-overlay-body" lang="lv">
-            {task.passage}
-          </div>
-          <div className="rc-passage-overlay-footer">
-            <ListenButton
-              text={task.passage}
-              label="Klausīties tekstu"
-              ariaLabel="Klausīties tekstu"
-              className="btn-rc-primary"
-            />
-            <Button
-              ref={overlayCloseRef}
-              variant="primary"
-              className="btn-rc-primary"
-              onClick={closeOverlay}
-            >
-              Aizvērt tekstu
-            </Button>
-          </div>
-        </div>
-      ) : null}
-    </div>
+    </TaskAdvanceChrome>
   );
 }

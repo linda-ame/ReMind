@@ -52,6 +52,11 @@ export default defineConfig(({ mode }) => {
   }
 
   return {
+    // Keep one stable URL; fail loudly if 5173 is taken instead of jumping to 5174.
+    server: {
+      port: 5173,
+      strictPort: true,
+    },
     plugins: [
       react(),
       remindBuildIdPlugin(),

@@ -144,6 +144,8 @@ input:focus-visible {
   /* Recompute size here so scale changes always take effect. */
   --app-font-size: calc(var(--fit-font) * var(--content-scale));
   --btn-min-h: calc(52px * var(--content-scale));
+  /* Header + title bar — used so task meta fits the first screen. */
+  --app-chrome-offset: 6.75rem;
   height: 100dvh;
   max-height: 100dvh;
   display: flex;
@@ -234,65 +236,6 @@ input:focus-visible {
   display: block;
 }
 
-.app-title-bar {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.45em;
-  padding: 0.35em 0.75em;
-  border-bottom: 2px solid color-mix(in srgb, var(--accent) 28%, transparent);
-  background: color-mix(in srgb, var(--accent-soft) 70%, #fff);
-  font-size: var(--chrome-font);
-}
-
-.app-shell.high-contrast .app-title-bar {
-  background: #fff;
-  border-bottom-color: #000;
-}
-
-.page-back-btn {
-  flex-shrink: 0;
-  margin: 0;
-  padding: 0.3em 0.7em;
-  min-height: 2.2em;
-  font-size: 0.85em;
-  font-weight: 700;
-  line-height: 1.15;
-  color: var(--accent-deep);
-  background: #fff;
-  border: 2px solid var(--accent);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-btn);
-  cursor: pointer;
-}
-
-.app-shell.high-contrast .page-back-btn {
-  color: #000;
-  border-color: #000;
-  background: #fff;
-}
-
-.page-back-btn:focus-visible {
-  outline: 3px solid var(--focus-ring);
-  outline-offset: 2px;
-}
-
-.app-subtitle {
-  margin: 0;
-  flex: 1 1 auto;
-  min-width: 0;
-  font-size: 0.95em;
-  font-weight: 700;
-  color: var(--accent-deep);
-  text-align: right;
-  line-height: 1.2;
-}
-
-.app-shell.high-contrast .app-subtitle {
-  color: #000;
-}
-
 .app-main {
   flex: 1 1 auto;
   min-height: 0;
@@ -342,7 +285,7 @@ input:focus-visible {
   margin-top: auto;
 }
 
-/* Task screen: body + actions scroll together in .app-main (no fixed footer). */
+/* Task screen: body scrolls; advance is a fixed thumb-zone control. */
 .task-screen {
   display: flex;
   flex-direction: column;
@@ -356,6 +299,172 @@ input:focus-visible {
   min-width: 0;
 }
 
+/*
+  Advance chrome: fill the first visible screen (below chrome), so progress
+  sits at the bottom without scrolling when the task is short.
+  When → is ready, a right gutter keeps content clear of the FAB.
+*/
+.task-advance-root {
+  /*
+    Large vertical hit strip on the right. Content yields a matching gutter,
+    so the tap target can be generous — many places to press are OK.
+  */
+  --task-advance-fab-width: clamp(3.1rem, 10vw, 3.85rem);
+  --task-advance-fab-height: clamp(11rem, 42vh, 18rem);
+  --task-advance-gutter: calc(var(--task-advance-fab-width) + 1.15rem);
+  --task-advance-fab-bg: #f3e4a8;
+  --task-advance-fab-fg: #3d3420;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* Body padding is outside this box — subtract so meta stays on first screen. */
+  min-height: calc(
+    100dvh - var(--app-chrome-offset) - (2 * var(--space))
+  );
+  align-self: stretch;
+  padding-bottom: calc(0.35rem + env(safe-area-inset-bottom, 0px));
+  box-sizing: border-box;
+  transition: padding-right 0.18s ease;
+}
+
+.content-middle > .task-advance-root,
+.content-bottom > .task-advance-root {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.task-advance-root.task-advance-ready {
+  padding-right: var(--task-advance-gutter);
+  padding-bottom: calc(0.75rem + env(safe-area-inset-bottom, 0px));
+}
+
+.task-advance-body {
+  width: 100%;
+  min-width: 0;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Short tasks: center content in the space above progress. */
+.task-advance-body > * {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.task-advance-after {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  flex-shrink: 0;
+  margin-top: 0.75rem;
+  padding: 0.35rem 0.5rem 0;
+  width: 100%;
+  max-width: 22rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.task-advance-progress {
+  margin: 0;
+  font-size: 1.15em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--fg);
+  line-height: 1.3;
+}
+
+.progress-label.task-advance-progress {
+  font-size: 1.15em;
+}
+
+.task-skip-btn {
+  width: 100%;
+  min-height: var(--btn-min-h);
+  font-size: 1em;
+  font-weight: 700;
+}
+
+.task-rc-prev-link {
+  appearance: none;
+  background: transparent;
+  border: none;
+  display: block;
+  margin: 1rem auto 0;
+  padding: 0.4rem 0.6rem;
+  font: inherit;
+  font-size: 0.88em;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.task-rc-prev-link:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.task-advance-fab {
+  position: fixed;
+  z-index: 45;
+  /*
+    Thumb zone on a held tablet (portrait): slightly above vertical midline,
+    toward the right — content gets a matching gutter when ready.
+  */
+  top: 48%;
+  right: max(0.45rem, calc((100vw - min(100vw, var(--max-w))) / 2 + 0.45rem));
+  bottom: auto;
+  transform: translateY(-50%);
+  width: var(--task-advance-fab-width);
+  height: var(--task-advance-fab-height);
+  border-radius: 1rem;
+  border: 3px solid #5c5340;
+  background: var(--task-advance-fab-bg);
+  color: var(--task-advance-fab-fg);
+  font-size: clamp(2rem, 5.2vw, 2.55rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 0 #5c5340, 0 4px 14px rgba(80, 70, 30, 0.16);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.task-advance-fab > span {
+  display: block;
+  transform: scaleX(1.15);
+  font-weight: 900;
+  -webkit-text-stroke: 0.04em currentColor;
+}
+
+.task-advance-fab:active {
+  transform: translateY(-50%) scale(0.97);
+  box-shadow: 0 1px 0 #5c5340, 0 2px 8px rgba(80, 70, 30, 0.12);
+}
+
+.task-advance-fab:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.app-shell.high-contrast .task-advance-fab {
+  --task-advance-fab-bg: #fff;
+  --task-advance-fab-fg: #000;
+  border-color: #000;
+  border-width: 4px;
+  box-shadow: 0 3px 0 #000;
+}
+
+/* Legacy in-flow task footer (unused by current advance chrome). */
 .task-actions {
   flex-shrink: 0;
   width: 100%;
@@ -371,17 +480,49 @@ input:focus-visible {
   border-top-color: #000;
 }
 
-/* Word reading: give the word a usable height, then scroll to Tālāk. */
+/*
+  Word reading: give the word full width + usable height.
+  → is a compact horizontal control top-right (not the tall side strip),
+  so long words are not squeezed by a right gutter.
+*/
 .app-main:has(.task-view-word-reading) .app-main-body {
   justify-content: stretch;
   align-items: stretch;
 }
 
-.app-main:has(.task-view-word-reading) .task-screen {
+.app-main:has(.task-view-word-reading) .task-advance-root {
+  --task-advance-fab-width: clamp(6.5rem, 32vw, 9.5rem);
+  --task-advance-fab-height: clamp(4rem, 11vh, 5.25rem);
+  --task-advance-gutter: 0px;
   margin-top: 0;
   margin-bottom: 0;
   flex: 1 1 auto;
   min-height: 100%;
+}
+
+.app-main:has(.task-view-word-reading) .task-advance-fab {
+  top: calc(var(--app-chrome-offset) + 0.15rem);
+  transform: none;
+  border-radius: 1rem;
+  border-width: 4px;
+  font-size: clamp(2.75rem, 8vw, 3.75rem);
+}
+
+.app-main:has(.task-view-word-reading) .task-advance-fab > span {
+  transform: scaleX(1.35) scaleY(1.1);
+  -webkit-text-stroke: 0.055em currentColor;
+}
+
+.app-main:has(.task-view-word-reading) .task-advance-fab:active {
+  transform: scale(0.97);
+}
+
+.app-main:has(.task-view-word-reading) .task-advance-body > .task-screen {
+  margin-top: 0;
+  margin-bottom: 0;
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
 }
 
 .task-screen:has(.task-view-word-reading) .task-screen-body {
@@ -593,6 +734,27 @@ input:focus-visible {
   margin: 0 0 0.35rem;
   font-weight: 700;
   font-size: 0.85em;
+}
+
+/* One wrapping line: Atbilde: "vārds" — full content scale, not a tiny caption. */
+.answers-inline {
+  margin: 0.55rem 0 0;
+  padding: 0.55rem 0.7rem;
+  border: 2px solid var(--mint);
+  border-radius: var(--radius);
+  background: var(--answers-bg);
+  color: #111;
+  font-size: 1.05em;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: var(--app-text-align);
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.app-shell.high-contrast .answers-inline {
+  border-color: #000;
+  color: #000;
 }
 
 .summary-list {
@@ -850,6 +1012,39 @@ input:focus-visible {
   font-size: calc(1.05 * var(--fit-font) * var(--content-scale));
 }
 
+.choice-option-with-mark {
+  gap: 0.45rem;
+  justify-content: flex-start;
+  text-align: left;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.choice-feedback-mark {
+  flex: 0 0 auto;
+  font-size: 1.15em;
+  line-height: 1;
+  font-weight: 700;
+  opacity: 0.95;
+  animation: choice-mark-in 0.22s ease-out;
+}
+
+.choice-option-label {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+@keyframes choice-mark-in {
+  from {
+    opacity: 0;
+    transform: translateX(-0.35rem) scale(0.85);
+  }
+  to {
+    opacity: 0.95;
+    transform: translateX(0) scale(1);
+  }
+}
+
 .odd-one-option-row {
   display: flex;
   align-items: stretch;
@@ -1006,6 +1201,42 @@ input:focus-visible {
   width: 100%;
 }
 
+.home-auth-banner {
+  width: 100%;
+  padding: 0.65rem;
+  border-radius: calc(var(--radius) + 4px);
+  border: 2px solid var(--coral);
+  background: var(--coral-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.home-auth-cta {
+  width: 100%;
+  min-height: calc(var(--btn-min-h) + 0.35rem);
+  font-size: 1.12em;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  /* Dark on light — clearer for low vision than white on coral */
+  background: #fff;
+  border-color: var(--coral);
+  border-width: 3px;
+  color: #5c2414;
+  box-shadow: 0 3px 0 color-mix(in srgb, var(--coral) 35%, transparent);
+}
+
+.app-shell.high-contrast .home-auth-banner {
+  border-color: #000;
+  background: #fff;
+}
+
+.app-shell.high-contrast .home-auth-cta {
+  background: #fff;
+  border-color: #000;
+  border-width: 3px;
+  color: #000;
+  box-shadow: none;
+}
+
 .home-tools {
   display: flex;
   flex-direction: column;
@@ -1024,6 +1255,129 @@ input:focus-visible {
   min-height: calc(var(--btn-min-h) - 0.2rem);
   font-size: 0.92em;
   font-weight: 600;
+}
+
+.home-type-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.home-type-row {
+  display: flex;
+  align-items: stretch;
+  gap: 0.45rem;
+  width: 100%;
+}
+
+.home-type-row .home-type-btn {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.home-reset-btn {
+  flex: 0 0 auto;
+  min-width: calc(var(--btn-min-h) + 0.15rem);
+  min-height: var(--btn-min-h);
+  padding: 0.35rem 0.55rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: #fce4ec;
+  border-color: #ad6b7d;
+  color: #5c2a3a;
+  font-size: 1.35em;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.home-reset-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.home-reset-btn:not(:disabled):hover {
+  filter: brightness(0.97);
+}
+
+.home-reset-confirm {
+  padding: 0.85rem 0.95rem;
+  border: 2px solid #ad6b7d;
+  border-radius: var(--radius);
+  background: #fff5f7;
+}
+
+.home-reset-confirm-title {
+  margin: 0 0 0.35rem;
+  font-size: calc(1.15 * var(--fit-font) * var(--content-scale));
+  font-weight: 700;
+  color: #3e1a24;
+  line-height: 1.25;
+}
+
+.home-reset-confirm-text {
+  margin: 0 0 0.75rem;
+}
+
+.home-reset-confirm-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.section-complete {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  padding: 0.5rem 0 1rem;
+}
+
+.section-complete-title {
+  margin: 0;
+  font-size: calc(1.55 * var(--fit-font) * var(--content-scale));
+  font-weight: 800;
+  line-height: 1.2;
+  color: #1a2e28;
+  letter-spacing: -0.01em;
+}
+
+.section-complete-sub {
+  margin: 0;
+  font-size: calc(1.05 * var(--fit-font) * var(--content-scale));
+  color: #3e4a46;
+  line-height: 1.35;
+}
+
+.section-complete-prompt {
+  margin: 0.35rem 0 0;
+  font-size: calc(1.25 * var(--fit-font) * var(--content-scale));
+  font-weight: 700;
+  line-height: 1.3;
+  color: #1a2e28;
+}
+
+.section-complete-actions {
+  margin-top: 0.5rem;
+}
+
+.app-shell.high-contrast .home-reset-btn {
+  background: #f8d7e0;
+  border-color: #000;
+  border-width: 3px;
+  color: #000;
+}
+
+.app-shell.high-contrast .home-reset-confirm {
+  border-color: #000;
+  border-width: 3px;
+  background: #fff;
+}
+
+.app-shell.high-contrast .section-complete-title,
+.app-shell.high-contrast .section-complete-prompt {
+  color: #000;
 }
 
 .home-type-btn {
@@ -2114,4 +2468,134 @@ input:focus-visible {
 
 .rc-summary-q .summary-prompt {
   margin-bottom: 0.35rem;
+}
+
+/* Auth / account */
+.account-copy {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.account-panel {
+  width: 100%;
+  gap: 0.85rem;
+}
+
+.account-email {
+  margin: 0;
+  font-size: 1.05em;
+  word-break: break-word;
+}
+
+.account-hint {
+  margin: 0 0 0.45rem;
+}
+
+.account-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  width: 100%;
+  padding: 0.85rem 0.75rem;
+  border: 2px solid color-mix(in srgb, var(--accent) 28%, transparent);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--accent-soft) 45%, #fff);
+}
+
+.app-shell.high-contrast .account-block {
+  border-color: #000;
+  background: #fff;
+}
+
+.account-block .text-input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.25rem;
+  padding: 0.65rem 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.auth-form {
+  margin-top: 0.75rem;
+  text-align: var(--app-text-align);
+}
+
+.auth-form .settings-label {
+  margin-top: 0.5rem;
+}
+
+.auth-form .text-input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0.35rem;
+  padding: 0.65rem 0.75rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+}
+
+.auth-mode-row {
+  margin-bottom: 0.75rem;
+}
+
+.auth-forgot-link {
+  display: block;
+  width: 100%;
+  margin: 0.35rem 0 0;
+  padding: 0.55rem 0.5rem;
+  border: none;
+  background: transparent;
+  color: var(--accent-deep);
+  font-size: 0.95em;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  cursor: pointer;
+}
+
+.app-shell.high-contrast .auth-forgot-link {
+  color: #000;
+}
+
+.auth-error {
+  margin: 0.5rem 0;
+  padding: 0.55rem 0.75rem;
+  font-weight: 700;
+  border: 2px solid #b00020;
+  border-radius: var(--radius);
+  background: #ffe8ec;
+  color: #7a0014;
+}
+
+.auth-info,
+.home-sync-msg {
+  margin: 0.5rem 0 0.75rem;
+  padding: 0.45rem 0.75rem;
+  font-weight: 600;
+  border: 2px solid var(--mint);
+  border-radius: var(--radius);
+  background: var(--answers-bg);
+  color: #1a4d35;
+}
+
+.auth-info {
+  text-align: center;
+}
+
+.app-shell.high-contrast .auth-error {
+  border-color: #000;
+  color: #000;
+  background: #fff;
+}
+
+.app-shell.high-contrast .auth-info,
+.app-shell.high-contrast .home-sync-msg {
+  border-color: #000;
+  color: #000;
 }

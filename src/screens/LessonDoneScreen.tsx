@@ -3,7 +3,6 @@ import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
 import {
   getTasksByType,
-  TASK_TYPE_LABELS,
   unitNounPlural,
   unitTitle,
 } from '../data/loadTasks';
@@ -21,7 +20,6 @@ interface Props {
   batchIndex?: number;
   batchType?: Task['type'];
   onNavigate: (screen: Screen) => void;
-  onBack: () => void;
   onHome: () => void;
 }
 
@@ -30,15 +28,11 @@ export function LessonDoneScreen({
   batchIndex,
   batchType,
   onNavigate,
-  onBack,
   onHome,
 }: Props) {
   const { attempts, clearProgressForTasks } = useApp();
   const inBatch = batchIndex !== undefined && batchType !== undefined;
   const lessonNumber = inBatch ? batchIndex + 1 : null;
-  const typeLabel = batchType
-    ? TASK_TYPE_LABELS[batchType]
-    : 'Uzdevumi';
   const tasksById = useMemo(() => {
     if (!batchType) return undefined;
     return new Map(getTasksByType(batchType).map((t) => [t.id, t]));
@@ -124,7 +118,7 @@ export function LessonDoneScreen({
   };
 
   return (
-    <Layout subtitle={typeLabel} onHome={onHome} onBack={onBack}>
+    <Layout onHome={onHome}>
       <p className="lead">
         {inBatch && lessonNumber != null && batchType
           ? `${unitTitle(batchType, lessonNumber)} ${

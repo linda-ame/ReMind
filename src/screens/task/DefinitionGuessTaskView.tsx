@@ -1,7 +1,12 @@
 import { useRef, useState } from 'react';
 import { AnswerField } from '../../components/AnswerField';
-import { HintAnswers } from '../../components/HintAnswers';
+import {
+  HintAnswers,
+  type HintAnswersHandle,
+} from '../../components/HintAnswers';
 import { ListenButton } from '../../components/ListenButton';
+import { playCorrectChime } from '../../utils/answerFeedback';
+import { textMatchesAccepted } from '../../utils/answers';
 import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { DefinitionGuessTask } from '../../types/task';
 import type { TaskAttempt } from '../../types/progress';
@@ -16,7 +21,6 @@ interface Props {
 /**
  * Short description → guess the word.
  * Optional typed answer; reveal answers via HintAnswers (no hints).
- * Self-assessment in TaskScreen (no auto correct/incorrect scoring).
  */
 export function DefinitionGuessTaskView({
   task,
@@ -26,6 +30,8 @@ export function DefinitionGuessTaskView({
 }: Props) {
   const [answer, setAnswer] = useState(attempt.enteredAnswer ?? '');
   const answerRef = useRef(answer);
+  const hintsRef = useRef<HintAnswersHandle>(null);
+  const chimedRef = useRef(false);
 
   const patch = (partial: Partial<TaskAttempt>) => {
     if (readOnly) return;
@@ -37,6 +43,26 @@ export function DefinitionGuessTaskView({
     answerRef.current = value;
     setAnswer(value);
     patch({ enteredAnswer: value, status: 'attempted' });
+  };
+
+  const onSubmitAnswer = (text: string) => {
+    if (readOnly) return;
+    answerRef.current = text;
+    setAnswer(text);
+    hintsRef.current?.reveal();
+    // Unlock Tālāk (Enter / finished dictation) — not on each keystroke.
+    patch({
+      viewedAnswers: true,
+      enteredAnswer: text || null,
+      status: 'attempted',
+    });
+    if (
+      !chimedRef.current &&
+      textMatchesAccepted(text, task.answers, task.type)
+    ) {
+      chimedRef.current = true;
+      playCorrectChime();
+    }
   };
 
   return (
@@ -59,12 +85,16 @@ export function DefinitionGuessTaskView({
         ariaLabel="Atbilde"
         readOnly={readOnly}
         onChange={setAnswerAndPersist}
+        onSubmit={onSubmitAnswer}
       />
 
       <HintAnswers
+        ref={hintsRef}
         answers={task.answers}
+        taskType={task.type}
         readOnly={readOnly}
         initiallyShowAnswers={attempt.viewedAnswers}
+        showRevealButton={false}
         onViewedAnswers={() =>
           patch({
             viewedAnswers: true,

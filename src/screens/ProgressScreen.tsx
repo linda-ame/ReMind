@@ -20,13 +20,11 @@ import type { Screen } from '../navigation/types';
 
 interface ProgressScreenProps {
   onNavigate: (screen: Screen) => void;
-  onBack: () => void;
   onHome: () => void;
 }
 
 export function ProgressScreen({
   onNavigate,
-  onBack,
   onHome,
 }: ProgressScreenProps) {
   const { attempts, exportProgress, importProgress, clearProgressForTasks } =
@@ -90,7 +88,7 @@ export function ProgressScreen({
   };
 
   return (
-    <Layout subtitle="Mans progress" onHome={onHome} onBack={onBack}>
+    <Layout onHome={onHome}>
       <div className="stats progress-overview-stats">
         <p className="stat-line">
           Pabeigti: <strong>{completed.size}</strong> no {tasks.length}

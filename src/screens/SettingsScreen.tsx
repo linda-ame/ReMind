@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
 import { useApp } from '../context/AppContext';
+import { useAuth } from '../context/AuthContext';
 import type { Screen } from '../navigation/types';
 import {
   CONTENT_SCALE_MAX,
@@ -15,13 +16,15 @@ import {
 
 interface SettingsScreenProps {
   onNavigate: (screen: Screen) => void;
-  onBack: () => void;
   onHome: () => void;
 }
 
-export function SettingsScreen({ onBack, onHome }: SettingsScreenProps) {
-  const { settings, updateSettings } = useApp();
+export function SettingsScreen({ onNavigate, onHome }: SettingsScreenProps) {
+  const { settings, updateSettings, cloudSync } = useApp();
+  const { user, configured, signOut } = useAuth();
   const [savedMsg, setSavedMsg] = useState<string | null>(null);
+  const [accountMsg, setAccountMsg] = useState<string | null>(null);
+  const [signingOut, setSigningOut] = useState(false);
 
   useEffect(() => {
     if (!savedMsg) return;
@@ -39,16 +42,76 @@ export function SettingsScreen({ onBack, onHome }: SettingsScreenProps) {
 
   const percent = Math.round(settings.contentScale * 100);
 
+  const handleSignOut = async () => {
+    setAccountMsg(null);
+    setSigningOut(true);
+    try {
+      await signOut();
+      setAccountMsg('Izrakstīts. Progress šajā ierīcē paliek lokāli.');
+    } catch (err) {
+      setAccountMsg(err instanceof Error ? err.message : 'Neizdevās izrakstīties.');
+    } finally {
+      setSigningOut(false);
+    }
+  };
+
   return (
-    <Layout subtitle="Iestatījumi" onHome={onHome} onBack={onBack}>
+    <Layout onHome={onHome}>
       <p className="muted settings-hint">
-        Izmaiņas saglabājas automātiski šajā ierīcē.
+        {cloudSync
+          ? 'Izmaiņas saglabājas mākonī (un ir pieejamas citā ierīcē).'
+          : 'Izmaiņas saglabājas automātiski šajā ierīcē.'}
       </p>
       {savedMsg ? (
         <p className="settings-saved" role="status">
           {savedMsg}
         </p>
       ) : null}
+
+      <div className="settings-block">
+        <p className="settings-label">Konts</p>
+        {user ? (
+          <>
+            <p className="muted settings-explain account-copy">{user.email}</p>
+            <p className="muted settings-explain account-copy">
+              Progress tiek sinhronizēts ar mākonī. Vārdu, e-pastu un paroli
+              varat mainīt sadaļā Konts.
+            </p>
+            <Button
+              variant="secondary"
+              onClick={() => onNavigate({ name: 'auth' })}
+            >
+              Atvērt kontu
+            </Button>
+            <Button
+              variant="danger"
+              disabled={signingOut}
+              onClick={() => void handleSignOut()}
+            >
+              {signingOut ? 'Izrakstās…' : 'Izrakstīties'}
+            </Button>
+          </>
+        ) : (
+          <>
+            <p className="muted settings-explain">
+              {configured
+                ? 'Bez konta progress paliek tikai šajā ierīcē. Izveidojiet kontu, lai saglabātu mākonī.'
+                : 'Konts nav konfigurēts (trūkst Supabase atslēgu). Progress joprojām darbojas lokāli.'}
+            </p>
+            <Button
+              variant="secondary"
+              onClick={() => onNavigate({ name: 'auth' })}
+            >
+              Ielogoties / reģistrēties
+            </Button>
+          </>
+        )}
+        {accountMsg ? (
+          <p className="settings-saved" role="status">
+            {accountMsg}
+          </p>
+        ) : null}
+      </div>
 
       <div className="settings-block">
         <p className="settings-label">Satura izmērs</p>

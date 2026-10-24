@@ -3,8 +3,6 @@ import { Button } from '../components/Button';
 import {
   getTaskById,
   getTasksByType,
-  TASK_TYPE_LABELS,
-  unitTitle,
 } from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
 import { buildBatchesForType } from '../utils/batches';
@@ -14,6 +12,7 @@ import {
   SELF_ASSESSMENT_SYMBOLS,
 } from '../utils/attempts';
 import {
+  answersBoxLabel,
   enteredAnswerLabels,
   expectedAnswerLabels,
   formatAnswerList,
@@ -30,7 +29,6 @@ interface Props {
   type: Task['type'];
   batchIndex: number;
   onNavigate: (screen: Screen) => void;
-  onBack: () => void;
   onHome: () => void;
 }
 
@@ -38,7 +36,6 @@ export function LessonSummaryScreen({
   type,
   batchIndex,
   onNavigate,
-  onBack,
   onHome,
 }: Props) {
   const { attempts } = useApp();
@@ -51,11 +48,7 @@ export function LessonSummaryScreen({
 
   if (!batch) {
     return (
-      <Layout
-        subtitle={TASK_TYPE_LABELS[type]}
-        onHome={onHome}
-        onBack={onBack}
-      >
+      <Layout onHome={onHome}>
         <p className="lead">Nav atrasts.</p>
       </Layout>
     );
@@ -73,11 +66,7 @@ export function LessonSummaryScreen({
   };
 
   return (
-    <Layout
-      subtitle={`${TASK_TYPE_LABELS[type]} · ${unitTitle(type, batch.lessonNumber)}`}
-      onHome={onHome}
-      onBack={onBack}
-    >
+    <Layout onHome={onHome}>
       <p className="lead">Kopsavilkums</p>
 
       <div className="summary-list" role="list">
@@ -156,7 +145,12 @@ export function LessonSummaryScreen({
                             </dd>
                           </div>
                           <div>
-                            <dt>Pareizā atbilde</dt>
+                            <dt>
+                              {answersBoxLabel(
+                                'reading_question',
+                                q.answers.length,
+                              )}
+                            </dt>
                             <dd>{formatAnswerList(q.answers)}</dd>
                           </div>
                         </dl>
@@ -225,7 +219,12 @@ export function LessonSummaryScreen({
                   <dd>{formatAnswerList(enteredAnswerLabels(task, attempt))}</dd>
                 </div>
                 <div>
-                  <dt>Pareizā atbilde</dt>
+                  <dt>
+                    {answersBoxLabel(
+                      task.type,
+                      expectedAnswerLabels(task).length,
+                    )}
+                  </dt>
                   <dd>
                     {formatAnswerList(expectedAnswerLabels(task))}
                   </dd>

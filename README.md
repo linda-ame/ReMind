@@ -5,9 +5,9 @@ Lasīšanas un valodas rehabilitācijas web aplikācija (MVP) pieaugušiem pēc 
 ## Tehnoloģijas
 
 - React + TypeScript + Vite
-- Uzdevumu saturs: `src/data/tasks.json`
-- Progress: IndexedDB (`ProgressRepository` interfeiss — vēlāk var pievienot Supabase)
-- Bez autentifikācijas
+- Uzdevumu saturs: `src/data/*.json`
+- Progress: IndexedDB (bez konta) vai Supabase (pēc ielogošanās)
+- Auth: Supabase e-pasts + parole (ģimenes “skatītājs” — vēlāk)
 
 ## Lokālā izstrāde
 
@@ -15,6 +15,20 @@ Lasīšanas un valodas rehabilitācijas web aplikācija (MVP) pieaugušiem pēc 
 npm install
 npm run dev
 ```
+
+### Supabase (konts + sync)
+
+1. Izveido projektu [supabase.com](https://supabase.com).
+2. SQL Editorā izpildi `supabase/migrations/001_initial.sql`.
+3. Auth → Providers → Email: MVP laikā vari izslēgt “Confirm email”.
+4. Project Settings → API: ielīmē URL un **anon** atslēgu `.env.local`:
+
+```bash
+VITE_SUPABASE_URL=https://xxxx.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJ...
+```
+
+5. Restartē `npm run dev`. Bez šīm atslēgām aplikācija strādā kā iepriekš (tikai lokāli).
 
 ## Būvēšana
 

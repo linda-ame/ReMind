@@ -6,6 +6,11 @@ interface AnswerFieldProps {
   id: string;
   value: string;
   onChange: (value: string) => void;
+  /**
+   * Enter key, or final speech dictation result.
+   * Use to reveal answers / give feedback. Value is the submitted text.
+   */
+  onSubmit?: (value: string) => void;
   placeholder?: string;
   label?: string;
   /** Accessible name when no visible label */
@@ -23,6 +28,7 @@ export function AnswerField({
   id,
   value,
   onChange,
+  onSubmit,
   placeholder = 'Ierakstiet atbildi…',
   label,
   ariaLabel,
@@ -32,6 +38,16 @@ export function AnswerField({
 }: AnswerFieldProps) {
   const localInputRef = useRef<HTMLInputElement>(null);
   const inputRef = externalInputRef ?? localInputRef;
+  const valueRef = useRef(value);
+  valueRef.current = value;
+  const onSubmitRef = useRef(onSubmit);
+  onSubmitRef.current = onSubmit;
+
+  const finish = (text: string) => {
+    if (readOnly) return;
+    inputRef.current?.blur();
+    onSubmitRef.current?.(text);
+  };
 
   const dictation = useSpeechDictation({
     lang: 'lv-LV',
@@ -41,6 +57,8 @@ export function AnswerField({
     },
     onResult: (text) => {
       onChange(text);
+      // Same as Enter: dismiss keyboard path + reveal answers
+      finish(text);
     },
   });
 
@@ -74,12 +92,19 @@ export function AnswerField({
           autoComplete="off"
           autoCorrect="off"
           spellCheck={false}
+          enterKeyHint="done"
           readOnly={readOnly}
           aria-readonly={readOnly || undefined}
           onChange={(e) => {
             if (readOnly) return;
             if (dictation.listening) dictation.stop();
             onChange(e.target.value);
+          }}
+          onKeyDown={(e) => {
+            if (e.key !== 'Enter') return;
+            e.preventDefault();
+            if (dictation.listening) dictation.stop();
+            finish(valueRef.current);
           }}
         />
 

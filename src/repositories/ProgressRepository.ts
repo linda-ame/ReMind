@@ -1,9 +1,8 @@
 import type { ProgressSnapshot, TaskAttempt, UiSettings } from '../types/progress';
 
 /**
- * Abstract progress store. IndexedDB is the MVP backend;
- * a future SupabaseProgressRepository can implement the same surface
- * without changing screens or attempt recording logic.
+ * Abstract progress store. IndexedDB for guests;
+ * SupabaseProgressRepository when signed in.
  */
 export interface ProgressRepository {
   getSettings(): Promise<UiSettings>;

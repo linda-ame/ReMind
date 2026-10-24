@@ -198,5 +198,9 @@ export class IndexedDBProgressRepository implements ProgressRepository {
   }
 }
 
-/** Singleton used by the app. Swap this for a Supabase implementation later. */
-export const progressRepository: ProgressRepository = new IndexedDBProgressRepository();
+/** Local guest store — always available; cloud sync uses Supabase when signed in. */
+export const indexedDBProgressRepository: ProgressRepository =
+  new IndexedDBProgressRepository();
+
+/** @deprecated Use indexedDBProgressRepository */
+export const progressRepository = indexedDBProgressRepository;

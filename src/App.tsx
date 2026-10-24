@@ -1,8 +1,10 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { AuthProvider, useAuth } from './context/AuthContext';
 import { AppProvider, useApp } from './context/AppContext';
 import type { Screen } from './navigation/types';
 import { HomeScreen } from './screens/HomeScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
+import { AuthScreen } from './screens/AuthScreen';
 import { ProgressScreen } from './screens/ProgressScreen';
 import { ProgressDetailScreen } from './screens/ProgressDetailScreen';
 import { TaskListScreen } from './screens/TaskListScreen';
@@ -11,6 +13,7 @@ import { TaskScreen } from './screens/TaskScreen';
 import { LessonDoneScreen } from './screens/LessonDoneScreen';
 import { LessonReviewScreen } from './screens/LessonReviewScreen';
 import { LessonSummaryScreen } from './screens/LessonSummaryScreen';
+import { SectionCompleteScreen } from './screens/SectionCompleteScreen';
 
 function sameTaskSession(a: Screen, b: Screen): boolean {
   if (a.name !== 'task' || b.name !== 'task') return false;
@@ -49,6 +52,9 @@ function popToMatching(stack: Screen[], next: Screen): Screen[] | null {
     if (next.name === 'settings' && cur.name === 'settings') {
       return stack.slice(0, i + 1);
     }
+    if (next.name === 'auth' && cur.name === 'auth') {
+      return stack.slice(0, i + 1);
+    }
     if (
       next.name === 'lesson_review' &&
       cur.name === 'lesson_review' &&
@@ -65,14 +71,32 @@ function popToMatching(stack: Screen[], next: Screen): Screen[] | null {
     ) {
       return stack.slice(0, i + 1);
     }
+    if (
+      next.name === 'section_complete' &&
+      cur.name === 'section_complete' &&
+      cur.type === next.type
+    ) {
+      return stack.slice(0, i + 1);
+    }
   }
   return null;
 }
 
 function AppRouter() {
+  const { ready: authReady, passwordRecovery } = useAuth();
   const { ready } = useApp();
   const [stack, setStack] = useState<Screen[]>([{ name: 'home' }]);
   const screen = stack[stack.length - 1] ?? { name: 'home' };
+
+  // Open auth when the user arrives via the password-reset email link.
+  useEffect(() => {
+    if (!passwordRecovery) return;
+    setStack((s) => {
+      const top = s[s.length - 1];
+      if (top?.name === 'auth') return s;
+      return [...s, { name: 'auth' }];
+    });
+  }, [passwordRecovery]);
 
   const goHome = useCallback(() => {
     setStack([{ name: 'home' }]);
@@ -94,8 +118,20 @@ function AppRouter() {
       if (top && sameTaskSession(top, next)) {
         return [...s.slice(0, -1), next];
       }
-      // Done screen replaces the finished task.
-      if (next.name === 'lesson_done' && top?.name === 'task') {
+      // Done / section-complete screens replace the finished task.
+      if (
+        (next.name === 'lesson_done' || next.name === 'section_complete') &&
+        top?.name === 'task'
+      ) {
+        return [...s.slice(0, -1), next];
+      }
+      // Starting (or restarting) practice from the complete screen
+      // replaces it so Back does not return to “all done”.
+      if (
+        next.name === 'task' &&
+        top?.name === 'section_complete' &&
+        next.batchType === top.type
+      ) {
         return [...s.slice(0, -1), next];
       }
       const popped = popToMatching(s, next);
@@ -104,7 +140,7 @@ function AppRouter() {
     });
   }, []);
 
-  if (!ready) {
+  if (!authReady || !ready) {
     return (
       <div className="app-shell loading-shell">
         <p className="lead">Ielādē…</p>
@@ -115,28 +151,23 @@ function AppRouter() {
   switch (screen.name) {
     case 'home':
       return <HomeScreen onNavigate={navigate} />;
+    case 'auth':
+      return (
+        <AuthScreen onNavigate={navigate} onHome={goHome} />
+      );
     case 'settings':
       return (
-        <SettingsScreen
-          onNavigate={navigate}
-          onBack={goBack}
-          onHome={goHome}
-        />
+        <SettingsScreen onNavigate={navigate} onHome={goHome} />
       );
     case 'progress':
       return (
-        <ProgressScreen
-          onNavigate={navigate}
-          onBack={goBack}
-          onHome={goHome}
-        />
+        <ProgressScreen onNavigate={navigate} onHome={goHome} />
       );
     case 'progress_detail':
       return (
         <ProgressDetailScreen
           type={screen.type}
           onNavigate={navigate}
-          onBack={goBack}
           onHome={goHome}
         />
       );
@@ -146,7 +177,6 @@ function AppRouter() {
           filter={screen.filter ?? 'all'}
           type={screen.type}
           onNavigate={navigate}
-          onBack={goBack}
           onHome={goHome}
         />
       );
@@ -155,7 +185,6 @@ function AppRouter() {
         <BatchListScreen
           type={screen.type}
           onNavigate={navigate}
-          onBack={goBack}
           onHome={goHome}
         />
       );
@@ -165,7 +194,6 @@ function AppRouter() {
           type={screen.type}
           batchIndex={screen.batchIndex}
           onNavigate={navigate}
-          onBack={goBack}
           onHome={goHome}
         />
       );
@@ -175,7 +203,6 @@ function AppRouter() {
           type={screen.type}
           batchIndex={screen.batchIndex}
           onNavigate={navigate}
-          onBack={goBack}
           onHome={goHome}
         />
       );
@@ -201,7 +228,14 @@ function AppRouter() {
           batchIndex={screen.batchIndex}
           batchType={screen.batchType}
           onNavigate={navigate}
-          onBack={goBack}
+          onHome={goHome}
+        />
+      );
+    case 'section_complete':
+      return (
+        <SectionCompleteScreen
+          type={screen.type}
+          onNavigate={navigate}
           onHome={goHome}
         />
       );
@@ -210,8 +244,10 @@ function AppRouter() {
 
 export default function App() {
   return (
-    <AppProvider>
-      <AppRouter />
-    </AppProvider>
+    <AuthProvider>
+      <AppProvider>
+        <AppRouter />
+      </AppProvider>
+    </AuthProvider>
   );
 }

@@ -3,7 +3,6 @@ import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
 import {
   getTasksByType,
-  TASK_TYPE_LABELS,
   unitNoun,
   unitNounPlural,
   unitTitle,
@@ -21,14 +20,12 @@ import type { Task } from '../types/task';
 interface BatchListScreenProps {
   type: Task['type'];
   onNavigate: (screen: Screen) => void;
-  onBack: () => void;
   onHome: () => void;
 }
 
 export function BatchListScreen({
   type,
   onNavigate,
-  onBack,
   onHome,
 }: BatchListScreenProps) {
   const { attempts, clearProgressForTasks } = useApp();
@@ -117,11 +114,7 @@ export function BatchListScreen({
   };
 
   return (
-    <Layout
-      subtitle={TASK_TYPE_LABELS[type]}
-      onHome={onHome}
-      onBack={onBack}
-    >
+    <Layout onHome={onHome}>
       <div className="stack">
         {!selectMode && !continueBatch ? (
           <p className="muted settings-explain" role="status">

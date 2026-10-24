@@ -1,6 +1,10 @@
 import { useRef, useState } from 'react';
 import { Button } from '../../components/Button';
 import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
+import {
+  playCorrectChime,
+  playWrongBuzz,
+} from '../../utils/answerFeedback';
 import type { WordChoiceTask } from '../../types/task';
 import type { TaskAttempt } from '../../types/progress';
 
@@ -37,10 +41,20 @@ function serializeSelected(selected: Set<string>): string | null {
   return JSON.stringify([...selected]);
 }
 
+function isFullyCorrect(
+  selected: Set<string>,
+  correctOptions: Set<string>,
+): boolean {
+  if (selected.size !== correctOptions.size) return false;
+  for (const option of selected) {
+    if (!correctOptions.has(option)) return false;
+  }
+  return true;
+}
+
 /**
- * Choose option(s), then reveal: correct → green; wrong selected stay yellow.
- * No “Pareizi/Nepareizi” labels during practice — that belongs in progress/summary.
- * No self-assessment (Next is in TaskScreen).
+ * Choose option(s): wrong picks stay red; keep searching until all correct
+ * are found. Tālāk unlocks only when fully correct (viewedAnswers).
  */
 export function WordChoiceTaskView({
   task,
@@ -48,60 +62,90 @@ export function WordChoiceTaskView({
   onUpdate,
   readOnly = false,
 }: Props) {
-  const [selected, setSelected] = useState<Set<string>>(() =>
-    parseSelected(attempt.enteredAnswer, task.options),
-  );
-  const selectedRef = useRef(selected);
-  const [revealed, setRevealed] = useState(
-    readOnly || attempt.viewedAnswers,
-  );
-
   const correctOptions = new Set(
     task.correctIndices.map((i) => task.options[i]),
   );
+  const prior = parseSelected(attempt.enteredAnswer, task.options);
+  const startedSolved =
+    readOnly ||
+    attempt.viewedAnswers ||
+    isFullyCorrect(prior, correctOptions);
+
+  /** Confirmed correct picks (green). */
+  const [confirmedCorrect, setConfirmedCorrect] = useState<Set<string>>(
+    () => {
+      if (startedSolved) return new Set(correctOptions);
+      return new Set([...prior].filter((o) => correctOptions.has(o)));
+    },
+  );
+  /** Wrong picks stay visible in red while the user keeps looking. */
+  const [wrongPicked, setWrongPicked] = useState<Set<string>>(() => {
+    if (startedSolved) return new Set();
+    return new Set([...prior].filter((o) => !correctOptions.has(o)));
+  });
+  const [solved, setSolved] = useState(startedSolved);
+  const confirmedRef = useRef(confirmedCorrect);
+
   /** One correct answer → exclusive single-select; two+ → multi-select. */
   const singleSelect = correctOptions.size === 1;
 
-  const patch = (partial: Partial<TaskAttempt>) => {
+  const patch = (partial: Partial<TaskAttempt>, nextConfirmed: Set<string>) => {
     if (readOnly) return;
     onUpdate(
       buildAttemptUpdate(
         attempt,
         partial,
-        serializeSelected(selectedRef.current),
+        serializeSelected(nextConfirmed),
       ),
     );
   };
 
   const toggleOption = (option: string) => {
-    if (readOnly || revealed) return;
-    let next: Set<string>;
-    if (singleSelect) {
-      next = selected.has(option) ? new Set() : new Set([option]);
-    } else {
-      next = new Set(selected);
-      if (next.has(option)) next.delete(option);
-      else next.add(option);
+    if (readOnly || solved) return;
+    if (wrongPicked.has(option)) return;
+    if (confirmedCorrect.has(option)) return;
+
+    if (!correctOptions.has(option)) {
+      const nextWrong = new Set(wrongPicked);
+      nextWrong.add(option);
+      setWrongPicked(nextWrong);
+      playWrongBuzz();
+      // Do not change enteredAnswer / viewedAnswers — keep searching.
+      return;
     }
-    selectedRef.current = next;
-    setSelected(next);
-    patch({
-      enteredAnswer: serializeSelected(next),
-      status: 'attempted',
-    });
+
+    const nextConfirmed = new Set(confirmedCorrect);
+    nextConfirmed.add(option);
+    confirmedRef.current = nextConfirmed;
+    setConfirmedCorrect(nextConfirmed);
+
+    if (singleSelect || isFullyCorrect(nextConfirmed, correctOptions)) {
+      setSolved(true);
+      patch(
+        {
+          enteredAnswer: serializeSelected(nextConfirmed),
+          viewedAnswers: true,
+          status: 'attempted',
+        },
+        nextConfirmed,
+      );
+      playCorrectChime();
+      return;
+    }
+
+    patch(
+      {
+        enteredAnswer: serializeSelected(nextConfirmed),
+        status: 'attempted',
+      },
+      nextConfirmed,
+    );
   };
 
   const optionVariant = (option: string) => {
-    const isSelected = selected.has(option);
-    const isCorrect = correctOptions.has(option);
-
-    if (revealed) {
-      if (isCorrect) return 'success' as const;
-      if (isSelected) return 'selected' as const;
-      return 'secondary' as const;
-    }
-
-    return isSelected ? ('selected' as const) : ('secondary' as const);
+    if (confirmedCorrect.has(option)) return 'success' as const;
+    if (wrongPicked.has(option)) return 'danger' as const;
+    return 'secondary' as const;
   };
 
   return (
@@ -112,42 +156,42 @@ export function WordChoiceTaskView({
       </p>
 
       <div className="stack choice-stack">
-        {task.options.map((option) => (
-          <Button
-            key={option}
-            variant={optionVariant(option)}
-            aria-disabled={readOnly || revealed || undefined}
-            onClick={() => toggleOption(option)}
-            aria-pressed={selected.has(option)}
-          >
-            {option}
-          </Button>
-        ))}
-      </div>
+        {task.options.map((option) => {
+          const isWrong = wrongPicked.has(option);
+          const isConfirmed = confirmedCorrect.has(option);
+          const showWrongMark = isWrong;
+          const showCheck = isConfirmed;
 
-      {!revealed && !readOnly ? (
-        <div className="hint-answers">
-          <div className="btn-row">
+          return (
             <Button
-              variant="secondary"
-              className="btn-reveal-answer"
-              disabled={selected.size === 0}
-              onClick={() => {
-                setRevealed(true);
-                patch({
-                  viewedAnswers: true,
-                  enteredAnswer: serializeSelected(selectedRef.current),
-                  status: 'attempted',
-                });
-              }}
+              key={option}
+              variant={optionVariant(option)}
+              className={
+                showWrongMark || showCheck
+                  ? 'choice-option-with-mark'
+                  : undefined
+              }
+              aria-disabled={
+                readOnly || solved || isWrong || isConfirmed || undefined
+              }
+              onClick={() => toggleOption(option)}
+              aria-pressed={isWrong || isConfirmed}
             >
-              {correctOptions.size === 1
-                ? 'Parādīt atbildi'
-                : 'Parādīt atbildes'}
+              {showCheck ? (
+                <span className="choice-feedback-mark" aria-hidden="true">
+                  ✓
+                </span>
+              ) : null}
+              {showWrongMark ? (
+                <span className="choice-feedback-mark" aria-hidden="true">
+                  ✗
+                </span>
+              ) : null}
+              <span className="choice-option-label">{option}</span>
             </Button>
-          </div>
-        </div>
-      ) : null}
+          );
+        })}
+      </div>
     </div>
   );
 }

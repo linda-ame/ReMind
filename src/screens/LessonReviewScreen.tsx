@@ -2,7 +2,6 @@ import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
 import {
   getTasksByType,
-  TASK_TYPE_LABELS,
   unitTitle,
 } from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
@@ -14,7 +13,6 @@ interface Props {
   type: Task['type'];
   batchIndex: number;
   onNavigate: (screen: Screen) => void;
-  onBack: () => void;
   onHome: () => void;
 }
 
@@ -26,7 +24,6 @@ export function LessonReviewScreen({
   type,
   batchIndex,
   onNavigate,
-  onBack,
   onHome,
 }: Props) {
   const { clearProgressForTasks } = useApp();
@@ -40,11 +37,7 @@ export function LessonReviewScreen({
 
   if (!batch || !title) {
     return (
-      <Layout
-        subtitle={TASK_TYPE_LABELS[type]}
-        onHome={onHome}
-        onBack={onBack}
-      >
+      <Layout onHome={onHome}>
         <p className="lead">Nav atrasts.</p>
       </Layout>
     );
@@ -79,11 +72,7 @@ export function LessonReviewScreen({
   };
 
   return (
-    <Layout
-      subtitle={TASK_TYPE_LABELS[type]}
-      onHome={onHome}
-      onBack={onBack}
-    >
+    <Layout onHome={onHome}>
       <p className="lead">
         {title} ·{' '}
         {type === 'reading_comprehension' ? 'pabeigts' : 'pabeigta'}

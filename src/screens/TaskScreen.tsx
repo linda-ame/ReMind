@@ -1,20 +1,22 @@
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Layout } from '../components/Layout';
-import { Button } from '../components/Button';
+import { TaskAdvanceChrome } from '../components/TaskAdvanceChrome';
 import {
   getTaskById,
-  TASK_TYPE_LABELS,
-  unitTitle,
+  getTasksByType,
 } from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
 import { progressRepository } from '../repositories/IndexedDBProgressRepository';
 import {
   completeAttempt,
+  countCompletedInSet,
   createAttempt,
   latestAttemptForTask,
   SELF_ASSESSMENT_LABELS,
   SELF_ASSESSMENT_SYMBOLS,
 } from '../utils/attempts';
+import { taskHasAdvanceReady } from '../utils/taskAdvance';
+import { SELF_ASSESSMENT_ENABLED } from '../config/features';
 import type { Screen, TaskSessionMode } from '../navigation/types';
 import type { SelfAssessment, TaskAttempt } from '../types/progress';
 import type { Task } from '../types/task';
@@ -52,7 +54,7 @@ export function TaskScreen({
   onBack,
   onHome,
 }: TaskScreenProps) {
-  const { attempts, saveAttempt } = useApp();
+  const { attempts, saveAttempt, skipTaskToday } = useApp();
   const task = getTaskById(taskId);
   const [attempt, setAttempt] = useState<TaskAttempt | null>(null);
   const attemptRef = useRef<TaskAttempt | null>(null);
@@ -74,7 +76,7 @@ export function TaskScreen({
     if (fresh && !isView) {
       const a = createAttempt(task);
       setAttemptBoth(a);
-      // Not persisted until the user answers / presses Tālāk.
+      // Not persisted until the user answers / advances.
       return;
     }
 
@@ -120,7 +122,7 @@ export function TaskScreen({
 
   if (!task) {
     return (
-      <Layout onHome={onHome} onBack={onBack} subtitle="Kļūda">
+      <Layout onHome={onHome}>
         <p className="lead">Uzdevums nav atrasts.</p>
       </Layout>
     );
@@ -128,11 +130,7 @@ export function TaskScreen({
 
   if (!attempt) {
     return (
-      <Layout
-        onHome={onHome}
-        onBack={onBack}
-        subtitle={TASK_TYPE_LABELS[task.type]}
-      >
+      <Layout onHome={onHome}>
         <p className="lead">Ielādē…</p>
       </Layout>
     );
@@ -147,10 +145,16 @@ export function TaskScreen({
   const isSentenceOrder = task.type === 'sentence_order';
   /** Same as existing choice / reading sections — no footer self-assessment. */
   const skipSelfAssessment =
-    isWordReading || isWordChoice || isOddOneOut || isReading;
+    !SELF_ASSESSMENT_ENABLED ||
+    isWordReading ||
+    isWordChoice ||
+    isOddOneOut ||
+    isReading;
   const inBatch = batchIndex !== undefined && batchType !== undefined;
   const ratedAssessment =
-    attempt.selfAssessment != null && attempt.selfAssessment !== 'skipped'
+    SELF_ASSESSMENT_ENABLED &&
+    attempt.selfAssessment != null &&
+    attempt.selfAssessment !== 'skipped'
       ? attempt.selfAssessment
       : null;
   /** Completed this visit (with or without a color rating). */
@@ -167,7 +171,7 @@ export function TaskScreen({
   const onUpdate = (next: TaskAttempt) => {
     if (isView || finishingRef.current) return;
     const base = attemptRef.current ?? attempt;
-    // After “Tālāk” completes the attempt, ignore late child patches
+    // After advance completes the attempt, ignore late child patches
     // (they could wipe answers while save/navigation is in flight).
     if (base.status === 'completed') return;
     // Merge onto the latest parent snapshot so a stale child copy cannot
@@ -199,6 +203,10 @@ export function TaskScreen({
     void saveAttempt(merged);
   };
 
+  /** Home → section: random remaining tasks (no lesson batches). */
+  const isSectionPractice =
+    batchType != null && batchIndex === undefined && !fresh && !isView;
+
   const goNextTask = () => {
     const nextId = idx >= 0 && idx < queue.length - 1 ? queue[idx + 1] : null;
     if (nextId) {
@@ -209,7 +217,12 @@ export function TaskScreen({
       onBack();
       return;
     }
-    // End of practice queue (nodarbība or “atkārtot grūtos”) → done screen.
+    // Section practice: finished all remaining → celebrate / offer reset.
+    if (isSectionPractice && batchType) {
+      onNavigate({ name: 'section_complete', type: batchType });
+      return;
+    }
+    // End of practice queue (legacy lesson or “atkārtot grūtos”) → done screen.
     if (queue.length > 0) {
       onNavigate({
         name: 'lesson_done',
@@ -275,12 +288,24 @@ export function TaskScreen({
     }
   };
 
-  const goPrev = () => {
-    if (idx > 0) {
-      onNavigate(taskNav(queue[idx - 1]));
-    } else {
-      onBack();
+  /** Skip for today — do not mark completed; go to next in queue. */
+  const skipAndGoNext = () => {
+    if (isView || finishingRef.current) return;
+    finishingRef.current = true;
+    skipTaskToday(task.id);
+    goNextTask();
+  };
+
+  const handleAdvance = () => {
+    if (isView || alreadyCompleted) {
+      goNextTask();
+      return;
     }
+    if (skipSelfAssessment) {
+      void finishWithoutAssessment();
+      return;
+    }
+    void finishAndGoNext();
   };
 
   const nextLabel = isView
@@ -291,170 +316,108 @@ export function TaskScreen({
       ? 'Pabeigt'
       : 'Tālāk';
 
+  const sectionTasks =
+    isSectionPractice && batchType ? getTasksByType(batchType) : null;
+  const sectionTotal = sectionTasks?.length ?? 0;
+  const sectionDone = sectionTasks
+    ? countCompletedInSet(
+        sectionTasks.map((t) => t.id),
+        attempts,
+        new Map(sectionTasks.map((t) => [t.id, t])),
+      )
+    : 0;
+  /** Overall section progress (current counts once completed). */
   const queueProgressLabel =
-    queue.length > 0 && idx >= 0 && !isReading
-      ? `${idx + 1}. no ${queue.length}`
-      : null;
+    !isReading && sectionTasks && sectionTotal > 0
+      ? `${alreadyCompleted ? sectionDone : Math.min(sectionDone + 1, sectionTotal)} / ${sectionTotal}`
+      : queue.length > 0 && idx >= 0 && !isReading
+        ? `${idx + 1}. no ${queue.length}`
+        : null;
 
-  /** Sentence order: no type heading (progress stays in the footer like others). */
-  const subtitle = isSentenceOrder
-    ? undefined
-    : inBatch
-      ? `${TASK_TYPE_LABELS[task.type]} · ${unitTitle(
-          task.type,
-          batchIndex! + 1,
-        )}${isView ? ' · skatīt' : ''}`
-      : TASK_TYPE_LABELS[task.type];
-
-  const assessmentSavedBanner =
-    ratedAssessment ? (
-      <div
-        className={`assessment-saved assessment-saved-${ratedAssessment}`}
-        role="status"
-      >
-        <span className="assess-symbol" aria-hidden="true">
-          {SELF_ASSESSMENT_SYMBOLS[ratedAssessment]}
-        </span>
-        <span>{SELF_ASSESSMENT_LABELS[ratedAssessment]}</span>
-      </div>
-    ) : null;
-
-  /** In-flow actions (scroll with task) — not a fixed Layout footer. */
-  const taskActions = (() => {
-    if (isWordReading) {
-      return (
-        <div className="task-actions footer-nav footer-nav-word-reading">
-          {queueProgressLabel ? (
-            <p className="progress-label">{queueProgressLabel}</p>
-          ) : null}
-          <Button
-            variant="primary"
-            className="btn-talak-large"
-            onClick={() => void finishWithoutAssessment()}
-          >
-            {nextLabel}
-          </Button>
-        </div>
-      );
-    }
-
-    if (isWordChoice || isOddOneOut) {
-      return (
-        <div className="task-actions footer-nav">
-          {queueProgressLabel ? (
-            <p className="progress-label">{queueProgressLabel}</p>
-          ) : null}
-          <div className="footer-actions">
-            <Button variant="secondary" fullWidth={false} onClick={goPrev}>
-              Atpakaļ
-            </Button>
-            <Button
-              variant="primary"
-              fullWidth={false}
-              onClick={() => void finishWithoutAssessment()}
-            >
-              {nextLabel}
-            </Button>
-          </div>
-        </div>
-      );
-    }
-
-    return (
-      <div className="task-actions footer-nav">
-        {queueProgressLabel ? (
-          <p className="progress-label">{queueProgressLabel}</p>
+  const assessmentBlock =
+    skipSelfAssessment || isView ? null : (
+      <>
+        {showAssessmentIntro ? (
+          <p className="assessment-intro">Novērtē, kā veicas</p>
         ) : null}
 
-        {isView ? (
-          assessmentSavedBanner
-        ) : (
-          <>
-            {showAssessmentIntro ? (
-              <p className="assessment-intro">Novērtē, kā veicas</p>
-            ) : null}
+        {ratedAssessment ? (
+          <p className="assessment-saved-label" role="status">
+            Pašvērtējums:{' '}
+            <strong>{SELF_ASSESSMENT_LABELS[ratedAssessment]}</strong>
+          </p>
+        ) : null}
 
-            {ratedAssessment ? (
-              <p className="assessment-saved-label" role="status">
-                Pašvērtējums:{' '}
-                <strong>{SELF_ASSESSMENT_LABELS[ratedAssessment]}</strong>
-              </p>
-            ) : null}
-
-            <div
-              className="assessment-row"
-              role="group"
-              aria-label="Pašvērtējums"
-            >
-              {(
-                [
-                  ['independent', 'ok', 'Izdevās pašam', '✓'],
-                  ['with_help', 'help', 'Ar palīdzību', '~'],
-                  ['difficult', 'hard', 'Bija grūti', '✗'],
-                ] as const
-              ).map(([value, tone, label, symbol]) => {
-                const selected = attempt.selfAssessment === value;
-                return (
-                  <button
-                    key={value}
-                    type="button"
-                    className={`btn btn-assess btn-assess-${tone}${
-                      selected ? ' btn-assess-selected' : ''
-                    }`}
-                    aria-label={label}
-                    aria-pressed={selected}
-                    onClick={() => selectAssessment(value)}
-                  >
-                    <span className="assess-symbol" aria-hidden="true">
-                      {symbol}
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </>
-        )}
-
-        <div className="footer-actions">
-          <Button variant="secondary" fullWidth={false} onClick={goPrev}>
-            Atpakaļ
-          </Button>
-          {isView || alreadyCompleted ? (
-            <Button variant="primary" fullWidth={false} onClick={goNextTask}>
-              {nextLabel}
-            </Button>
-          ) : ratedAssessment ? (
-            <Button
-              variant="primary"
-              fullWidth={false}
-              onClick={() => void finishAndGoNext()}
-            >
-              {nextLabel}
-            </Button>
-          ) : (
-            <Button
-              variant="neutral"
-              fullWidth={false}
-              onClick={() => void finishAndGoNext('skipped')}
-            >
-              Tālāk
-            </Button>
-          )}
+        <div
+          className="assessment-row"
+          role="group"
+          aria-label="Pašvērtējums"
+        >
+          {(
+            [
+              ['independent', 'ok', 'Izdevās pašam', '✓'],
+              ['with_help', 'help', 'Ar palīdzību', '~'],
+              ['difficult', 'hard', 'Bija grūti', '✗'],
+            ] as const
+          ).map(([value, tone, label, symbol]) => {
+            const selected = attempt.selfAssessment === value;
+            return (
+              <button
+                key={value}
+                type="button"
+                className={`btn btn-assess btn-assess-${tone}${
+                  selected ? ' btn-assess-selected' : ''
+                }`}
+                aria-label={label}
+                aria-pressed={selected}
+                onClick={() => selectAssessment(value)}
+              >
+                <span className="assess-symbol" aria-hidden="true">
+                  {symbol}
+                </span>
+              </button>
+            );
+          })}
         </div>
-      </div>
+      </>
     );
-  })();
+
+  const canAdvance =
+    isView ||
+    alreadyCompleted ||
+    taskHasAdvanceReady(task, attempt);
 
   const wrapTask = (body: ReactNode) => (
-    <div className="task-screen">
-      <div className="task-screen-body">{body}</div>
-      {taskActions}
-    </div>
+    <TaskAdvanceChrome
+      canAdvance={canAdvance}
+      onAdvance={handleAdvance}
+      onSkip={isView ? undefined : skipAndGoNext}
+      advanceLabel={nextLabel}
+      progressLabel={queueProgressLabel}
+    >
+      <div className="task-screen">
+        <div className="task-screen-body">
+          {body}
+          {assessmentBlock}
+          {isView && ratedAssessment ? (
+            <div
+              className={`assessment-saved assessment-saved-${ratedAssessment}`}
+              role="status"
+            >
+              <span className="assess-symbol" aria-hidden="true">
+                {SELF_ASSESSMENT_SYMBOLS[ratedAssessment]}
+              </span>
+              <span>{SELF_ASSESSMENT_LABELS[ratedAssessment]}</span>
+            </div>
+          ) : null}
+        </div>
+      </div>
+    </TaskAdvanceChrome>
   );
 
   if (isReading) {
     return (
-      <Layout onHome={onHome} onBack={onBack} subtitle={subtitle}>
+      <Layout onHome={onHome}>
         <ReadingComprehensionTaskView
           key={`${task.id}-${mode}`}
           task={task}
@@ -469,13 +432,9 @@ export function TaskScreen({
               onBack();
               return;
             }
-            onNavigate({
-              name: 'lesson_done',
-              queue,
-              batchIndex,
-              batchType,
-            });
+            goNextTask();
           }}
+          onSkip={isView ? undefined : skipAndGoNext}
           readOnly={isView}
         />
       </Layout>
@@ -484,7 +443,7 @@ export function TaskScreen({
 
   if (isWordReading) {
     return (
-      <Layout onHome={onHome} onBack={onBack} subtitle={subtitle}>
+      <Layout onHome={onHome}>
         {wrapTask(<WordReadingTaskView task={task} />)}
       </Layout>
     );
@@ -492,7 +451,7 @@ export function TaskScreen({
 
   if (isWordChoice || isOddOneOut) {
     return (
-      <Layout onHome={onHome} onBack={onBack} subtitle={subtitle}>
+      <Layout onHome={onHome}>
         {wrapTask(
           isWordChoice ? (
             <WordChoiceTaskView
@@ -517,7 +476,7 @@ export function TaskScreen({
   }
 
   return (
-    <Layout onHome={onHome} onBack={onBack} subtitle={subtitle}>
+    <Layout onHome={onHome}>
       {wrapTask(
         <>
           {task.type === 'sentence_completion' && (

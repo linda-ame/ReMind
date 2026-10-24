@@ -6,9 +6,11 @@ export type TaskSessionMode = 'practice' | 'view';
 export type Screen =
   | { name: 'home' }
   | { name: 'settings' }
+  | { name: 'auth' }
   | { name: 'progress' }
   | { name: 'progress_detail'; type: Task['type'] }
   | { name: 'task_list'; filter?: 'all' | 'difficult'; type?: Task['type'] }
+  /** @deprecated Lesson lists removed — kept for legacy navigation. */
   | { name: 'batch_list'; type: Task['type'] }
   | {
       name: 'lesson_review';
@@ -20,13 +22,19 @@ export type Screen =
       type: Task['type'];
       batchIndex: number;
     }
+  /** All tasks in a section completed — offer reset. */
+  | { name: 'section_complete'; type: Task['type'] }
   | {
       name: 'task';
       taskId: string;
-      /** Ordered list of task IDs for next/prev within a session (e.g. one lesson). */
+      /** Ordered list of task IDs for next/prev within a session. */
       queue: string[];
-      /** When set, finishing the queue returns to this type’s batch list. */
+      /** Legacy lesson index (optional). Section practice omits this. */
       batchIndex?: number;
+      /**
+       * Section type for home → random practice.
+       * With no batchIndex: finishing the queue opens section_complete.
+       */
       batchType?: Task['type'];
       /** practice = normal fill; view = read-only review of answers. */
       mode?: TaskSessionMode;

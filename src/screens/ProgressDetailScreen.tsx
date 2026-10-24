@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
-import { getTasksByType, TASK_TYPE_LABELS } from '../data/loadTasks';
+import { getTasksByType } from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
 import {
   latestAttemptForTask,
@@ -9,6 +9,7 @@ import {
   SELF_ASSESSMENT_SYMBOLS,
 } from '../utils/attempts';
 import {
+  answersBoxLabel,
   enteredAnswerLabels,
   expectedAnswerLabels,
   formatAnswerList,
@@ -30,7 +31,6 @@ import type { Task } from '../types/task';
 interface Props {
   type: Task['type'];
   onNavigate: (screen: Screen) => void;
-  onBack: () => void;
   onHome: () => void;
 }
 
@@ -46,7 +46,6 @@ const CRITERION_ORDER: ProgressCriterion[] = [
 export function ProgressDetailScreen({
   type,
   onNavigate,
-  onBack,
   onHome,
 }: Props) {
   const { attempts, clearProgressForTasks } = useApp();
@@ -162,7 +161,7 @@ export function ProgressDetailScreen({
           .join(' + ')}`;
 
   return (
-    <Layout subtitle={TASK_TYPE_LABELS[type]} onHome={onHome} onBack={onBack}>
+    <Layout onHome={onHome}>
       <div className="stats">
         <p className="stat-line">
           Pabeigti: <strong>{stats.completed}</strong> no {stats.total}
@@ -349,7 +348,12 @@ export function ProgressDetailScreen({
                                 </dd>
                               </div>
                               <div>
-                                <dt>Pareizā atbilde</dt>
+                                <dt>
+                                  {answersBoxLabel(
+                                    'reading_question',
+                                    q.answers.length,
+                                  )}
+                                </dt>
                                 <dd>{formatAnswerList(q.answers)}</dd>
                               </div>
                             </dl>
@@ -430,7 +434,12 @@ export function ProgressDetailScreen({
                         </dd>
                       </div>
                       <div>
-                        <dt>Pareizā atbilde</dt>
+                        <dt>
+                          {answersBoxLabel(
+                            task.type,
+                            expectedAnswerLabels(task).length,
+                          )}
+                        </dt>
                         <dd>
                           {formatAnswerList(expectedAnswerLabels(task))}
                         </dd>

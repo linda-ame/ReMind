@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { Button } from '../../components/Button';
+import { ListenButton } from '../../components/ListenButton';
 import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { SentenceOrderTask } from '../../types/task';
 import type { TaskAttempt } from '../../types/progress';
@@ -52,10 +53,9 @@ function formatBuiltSentence(
 }
 
 /**
- * Tap words (no drag-and-drop) to build a sentence.
- * Selected words show a 1, 2, 3… badge; words stay in scrambled button order.
- * Self-assessment lives in TaskScreen footer (same as sentence_completion).
- * No instruction heading — type title omitted; progress is in the footer.
+ * Tap words to build a sentence; tap again to remove (no separate undo).
+ * Listen plays the built sentence. Pārbaudīt (model) appears when all words
+ * are placed. Tālāk unlocks only then (see taskHasAdvanceReady).
  */
 export function SentenceOrderTaskView({
   task,
@@ -77,6 +77,8 @@ export function SentenceOrderTaskView({
     positionByIndex.set(wordIndex, pickPos + 1);
   });
 
+  const allPlaced = order.length >= task.words.length;
+
   const patch = (partial: Partial<TaskAttempt>) => {
     if (readOnly) return;
     onUpdate(
@@ -97,14 +99,13 @@ export function SentenceOrderTaskView({
     });
   };
 
-  const pickWord = (index: number) => {
-    if (readOnly || positionByIndex.has(index)) return;
+  const toggleWord = (index: number) => {
+    if (readOnly) return;
+    if (positionByIndex.has(index)) {
+      setOrderAndSave(order.filter((i) => i !== index));
+      return;
+    }
     setOrderAndSave([...order, index]);
-  };
-
-  const undoLast = () => {
-    if (readOnly || order.length === 0) return;
-    setOrderAndSave(order.slice(0, -1));
   };
 
   const builtSentence = formatBuiltSentence(
@@ -129,6 +130,15 @@ export function SentenceOrderTaskView({
         )}
       </div>
 
+      {builtSentence ? (
+        <div className="listen-row">
+          <ListenButton
+            text={builtSentence}
+            ariaLabel="Klausīties izveidoto teikumu"
+          />
+        </div>
+      ) : null}
+
       <div className="stack choice-stack sentence-order-words">
         {task.words.map((word, index) => {
           const position = positionByIndex.get(index);
@@ -138,12 +148,13 @@ export function SentenceOrderTaskView({
               key={`${index}-${word}`}
               variant={isUsed ? 'selected' : 'secondary'}
               className={isUsed ? 'sentence-order-word-used' : undefined}
-              aria-disabled={readOnly || isUsed || undefined}
               aria-pressed={isUsed}
               aria-label={
-                isUsed ? `${word}, ${position}. vietā` : word
+                isUsed
+                  ? `${word}, ${position}. vietā — piespiediet, lai noņemtu`
+                  : word
               }
-              onClick={() => pickWord(index)}
+              onClick={() => toggleWord(index)}
             >
               <span className="sentence-order-word-label">{word}</span>
               {isUsed ? (
@@ -156,32 +167,21 @@ export function SentenceOrderTaskView({
         })}
       </div>
 
-      {!readOnly ? (
+      {!readOnly && allPlaced && !showModel ? (
         <div className="btn-row sentence-order-actions">
           <Button
-            variant="neutral"
-            fullWidth={false}
-            disabled={order.length === 0}
-            onClick={undoLast}
+            variant="secondary"
+            className="btn-reveal-answer"
+            onClick={() => {
+              setShowModel(true);
+              patch({
+                viewedAnswers: true,
+                enteredAnswer: serializeOrder(orderRef.current),
+              });
+            }}
           >
-            Atsaukt
+            Pārbaudīt
           </Button>
-          {!showModel ? (
-            <Button
-              variant="secondary"
-              fullWidth={false}
-              className="btn-reveal-answer"
-              onClick={() => {
-                setShowModel(true);
-                patch({
-                  viewedAnswers: true,
-                  enteredAnswer: serializeOrder(orderRef.current),
-                });
-              }}
-            >
-              Parādīt teikumu
-            </Button>
-          ) : null}
         </div>
       ) : null}
 
