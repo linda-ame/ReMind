@@ -37,13 +37,13 @@ export default async function handler(
   }
 
   const result = await synthesizeGoogleMp3(text);
-  if (!result.ok) {
-    res.status(result.status).json({ error: result.error });
+  if (result.ok) {
+    res.setHeader('Content-Type', result.contentType);
+    res.status(200).send(result.audio);
     return;
   }
 
-  res.setHeader('Content-Type', result.contentType);
-  res.status(200).send(result.audio);
+  res.status(result.status).json({ error: result.error });
 }
 
 function safeJson(raw: string): unknown {

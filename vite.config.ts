@@ -81,17 +81,17 @@ export default defineConfig(({ mode }) => {
                 }
 
                 const result = await synthesizeGoogleMp3(text);
-                if (!result.ok) {
-                  res.statusCode = result.status;
-                  res.setHeader('Content-Type', 'application/json');
-                  res.end(JSON.stringify({ error: result.error }));
+                if (result.ok) {
+                  res.statusCode = 200;
+                  res.setHeader('Content-Type', result.contentType);
+                  res.setHeader('Cache-Control', 'no-store');
+                  res.end(result.audio);
                   return;
                 }
 
-                res.statusCode = 200;
-                res.setHeader('Content-Type', result.contentType);
-                res.setHeader('Cache-Control', 'no-store');
-                res.end(result.audio);
+                res.statusCode = result.status;
+                res.setHeader('Content-Type', 'application/json');
+                res.end(JSON.stringify({ error: result.error }));
               } catch (err) {
                 console.error('[tts]', err);
                 res.statusCode = 500;
