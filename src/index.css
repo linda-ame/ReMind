@@ -9,6 +9,8 @@
    */
   --fit-font: clamp(18px, 4.6vw, 26px);
   --app-font-size: calc(var(--fit-font) * var(--content-scale));
+  /* Nav / brand only — never follows content-scale (keeps chrome compact). */
+  --chrome-font: clamp(16px, 3.8vw, 20px);
   --app-text-align: center;
   /* Calm teal + soft coral — chrome only; task reading stays black on white. */
   --accent: #0f766e;
@@ -167,7 +169,13 @@ input:focus-visible {
   display: grid;
   grid-template-rows: 1fr;
   z-index: 2;
-  transition: grid-template-rows 0.28s ease;
+  transition: grid-template-rows 0.12s ease-out;
+  /* Isolate from .app-shell content-scale (buttons use font: inherit). */
+  --content-scale: 1;
+  --app-font-size: var(--chrome-font);
+  --btn-min-h: 2.75em;
+  font-size: var(--chrome-font);
+  line-height: 1.25;
 }
 
 .app-chrome--hidden {
@@ -178,6 +186,13 @@ input:focus-visible {
 .app-chrome-inner {
   min-height: 0;
   overflow: hidden;
+}
+
+.app-chrome button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -192,21 +207,20 @@ input:focus-visible {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.1rem;
-  padding: 0.45rem var(--space);
+  gap: 0.1em;
+  padding: 0.35em 0.75em;
   border-bottom: none;
   background: var(--chrome-bg);
   color: var(--chrome-fg);
   box-shadow: var(--shadow-soft);
-  /* Chrome ignores content-scale — only viewport width via --fit-font. */
-  font-size: var(--fit-font);
+  font-size: var(--chrome-font);
 }
 
 .brand-btn,
 .brand-static {
   margin: 0;
-  padding: 0.25rem 0.65rem;
-  font-size: 1.12em;
+  padding: 0.2em 0.55em;
+  font-size: 1.08em;
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: 0.04em;
@@ -219,7 +233,7 @@ input:focus-visible {
 .brand-btn {
   cursor: pointer;
   text-decoration: none;
-  min-height: 2.4em;
+  min-height: 2.2em;
   border-radius: 999px;
   transition: background 0.15s ease;
 }
@@ -242,12 +256,11 @@ input:focus-visible {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.55rem;
-  padding: 0.45rem var(--space);
+  gap: 0.45em;
+  padding: 0.35em 0.75em;
   border-bottom: 2px solid color-mix(in srgb, var(--accent) 28%, transparent);
   background: color-mix(in srgb, var(--accent-soft) 70%, #fff);
-  /* Same fixed chrome size as header (not content-scale). */
-  font-size: var(--fit-font);
+  font-size: var(--chrome-font);
 }
 
 .app-shell.high-contrast .app-title-bar {
@@ -258,8 +271,8 @@ input:focus-visible {
 .page-back-btn {
   flex-shrink: 0;
   margin: 0;
-  padding: 0.35rem 0.75rem;
-  min-height: 2.4em;
+  padding: 0.3em 0.7em;
+  min-height: 2.2em;
   font-size: 0.85em;
   font-weight: 700;
   line-height: 1.15;

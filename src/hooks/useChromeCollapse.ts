@@ -1,11 +1,8 @@
 import { useEffect, useRef, useState, type RefObject } from 'react';
 
-const TOP_REVEAL_PX = 8;
-const DELTA_PX = 12;
-
 /**
- * Hide chrome when scrolling down in `scrollRef`; show again on scroll up
- * (or when near the top). No-op when `enabled` is false.
+ * Hide chrome as soon as the user scrolls down; show again on scroll up
+ * (or when back at the top). No-op when `enabled` is false.
  */
 export function useChromeCollapse(
   scrollRef: RefObject<HTMLElement | null>,
@@ -36,12 +33,13 @@ export function useChromeCollapse(
         const delta = top - lastTop.current;
         lastTop.current = top;
 
-        if (top < TOP_REVEAL_PX) {
+        if (top <= 0) {
           setCollapsed(false);
           return;
         }
-        if (delta > DELTA_PX) setCollapsed(true);
-        else if (delta < -DELTA_PX) setCollapsed(false);
+        // Any downward movement hides immediately; any upward reveals.
+        if (delta > 0) setCollapsed(true);
+        else if (delta < 0) setCollapsed(false);
       });
     };
 
