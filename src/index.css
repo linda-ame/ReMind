@@ -2014,14 +2014,6 @@ input:focus-visible {
   border-width: 3px;
 }
 
-.odd-one-comparison-rule {
-  margin: 0 0 1rem;
-  font-size: calc(1.15 * var(--fit-font) * var(--content-scale));
-  font-weight: 650;
-  line-height: 1.4;
-  text-align: var(--app-text-align);
-}
-
 .odd-one-out-explanation {
   margin: 0.5rem 0 0.75rem;
   font-size: calc(0.95 * var(--fit-font) * var(--content-scale));

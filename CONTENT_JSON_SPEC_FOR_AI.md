@@ -243,7 +243,7 @@ UI does not show `instruction` on screen — the section title already says «At
 Extra fields:
 - `options` (string[], required) — exactly four words
 - `correctIndex` (number, required) — 0-based index of the odd word
-- `comparisonRule` (string, optional) — cue shown **before** choosing (concept / meaning sets)
+- `comparisonRule` (string, optional) — authoring note only; **not shown** in the UI (the post-answer `explanation` is enough)
 - `explanation` (string, required) — short reason why it does not belong; shown after choice
 - `hint` (string, optional)
 

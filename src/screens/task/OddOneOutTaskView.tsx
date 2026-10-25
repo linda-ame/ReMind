@@ -118,12 +118,6 @@ export function OddOneOutTaskView({
 
   return (
     <div className="task-view">
-      {task.comparisonRule ? (
-        <p className="odd-one-comparison-rule" lang="lv">
-          {task.comparisonRule}
-        </p>
-      ) : null}
-
       <div className="stack choice-stack odd-one-choice-stack">
         {task.options.map((option, index) => {
           const isWrong = wrongIndices.has(index);

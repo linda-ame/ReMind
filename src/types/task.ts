@@ -126,7 +126,7 @@ export interface OddOneOutTask extends BaseTask {
   options: string[];
   /** Index of the odd word (0-based). */
   correctIndex: number;
-  /** Comparison cue shown before choosing (concept / meaning tasks). */
+  /** Optional authoring cue; not shown in the UI. */
   comparisonRule?: string;
   /** Short explanation why that word does not belong. */
   explanation: string;
