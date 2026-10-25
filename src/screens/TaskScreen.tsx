@@ -16,6 +16,7 @@ import {
   SELF_ASSESSMENT_SYMBOLS,
 } from '../utils/attempts';
 import { taskHasAdvanceReady } from '../utils/taskAdvance';
+import { loadDifficultyLevels } from '../utils/difficulty';
 import { SELF_ASSESSMENT_ENABLED } from '../config/features';
 import type { Screen, TaskSessionMode } from '../navigation/types';
 import type { SelfAssessment, TaskAttempt } from '../types/progress';
@@ -217,7 +218,11 @@ export function TaskScreen({
     }
     // Section practice: finished all remaining → celebrate / offer reset.
     if (isSectionPractice && batchType) {
-      onNavigate({ name: 'section_complete', type: batchType });
+      onNavigate({
+        name: 'section_complete',
+        type: batchType,
+        difficultyLevels: loadDifficultyLevels(batchType),
+      });
       return;
     }
     // End of practice queue (legacy lesson or “atkārtot grūtos”) → done screen.

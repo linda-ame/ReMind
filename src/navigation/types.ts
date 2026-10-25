@@ -1,4 +1,4 @@
-import type { Task } from '../types/task';
+import type { DifficultyLevel, Task } from '../types/task';
 
 /** How the user opens a lesson task queue. */
 export type TaskSessionMode = 'practice' | 'view';
@@ -12,6 +12,8 @@ export type Screen =
   | { name: 'task_list'; filter?: 'all' | 'difficult'; type?: Task['type'] }
   /** @deprecated Lesson lists removed — kept for legacy navigation. */
   | { name: 'batch_list'; type: Task['type'] }
+  /** Per-section difficulty levels (1–5 multi-select). */
+  | { name: 'customize_content'; focusType?: Task['type'] }
   | {
       name: 'lesson_review';
       type: Task['type'];
@@ -22,8 +24,12 @@ export type Screen =
       type: Task['type'];
       batchIndex: number;
     }
-  /** All tasks in a section completed — offer reset. */
-  | { name: 'section_complete'; type: Task['type'] }
+  /** Filtered (or all) tasks in a section completed — offer reset / other level. */
+  | {
+      name: 'section_complete';
+      type: Task['type'];
+      difficultyLevels?: DifficultyLevel[];
+    }
   | {
       name: 'task';
       taskId: string;

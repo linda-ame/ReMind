@@ -362,3 +362,23 @@ export function isReadingQuestionCorrect(
   if (!t) return null;
   return textMatchesAccepted(t, answers, 'reading_question');
 }
+
+/** Soft answer-field tint after submit (white until then). */
+export type AnswerInputFeedback = 'correct' | 'incorrect' | 'unevaluable';
+
+/**
+ * Background tint for typed / built answers after the learner submits.
+ * Match uses the same rules as scoring (incl. long-word typo where allowed).
+ * Empty submit → unevaluable (yellow); otherwise correct / incorrect.
+ */
+export function answerInputFeedback(
+  submitted: boolean,
+  entered: string,
+  accepted: string[],
+  taskType: Task['type'] | 'reading_question',
+): AnswerInputFeedback | null {
+  if (!submitted) return null;
+  if (!entered.trim()) return 'unevaluable';
+  if (textMatchesAccepted(entered, accepted, taskType)) return 'correct';
+  return 'incorrect';
+}

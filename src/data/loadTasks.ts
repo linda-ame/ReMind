@@ -1,4 +1,9 @@
-import type { Task, TaskPack } from '../types/task';
+import type {
+  DifficultyLevel,
+  ReadingComprehensionTask,
+  Task,
+  TaskPack,
+} from '../types/task';
 import rawV1 from './tasks.json';
 import rawRc from './reading_comprehension.json';
 import rawP03 from './p03_visi_3_tipi.json';
@@ -6,6 +11,8 @@ import rawSentenceOrder from './sentence_order_P01_50.json';
 import rawOddOneOut from './odd_one_out_P01_50.json';
 import rawAntonym from './antonym_P01_60.json';
 import rawDefinitionGuess from './definition_guess_P01_50.json';
+import difficultyByIdRaw from './metadata/remind_difficulty_by_id.json';
+import questionDifficultyByIdRaw from './metadata/remind_reading_question_difficulty_by_id.json';
 
 const v1 = rawV1 as TaskPack;
 const rc = rawRc as TaskPack;
@@ -14,6 +21,57 @@ const sentenceOrder = rawSentenceOrder as TaskPack;
 const oddOneOut = rawOddOneOut as TaskPack;
 const antonym = rawAntonym as TaskPack;
 const definitionGuess = rawDefinitionGuess as TaskPack;
+
+const difficultyById = difficultyByIdRaw as Record<string, number>;
+const questionDifficultyById = questionDifficultyByIdRaw as Record<
+  string,
+  number
+>;
+
+function asDifficulty(value: number | undefined): DifficultyLevel | null {
+  if (value === 1 || value === 2 || value === 3 || value === 4 || value === 5) {
+    return value;
+  }
+  return null;
+}
+
+function withDifficulty(task: Task): Task {
+  const difficulty = asDifficulty(difficultyById[task.id]);
+  if (task.type !== 'reading_comprehension') {
+    return { ...task, difficulty };
+  }
+  const enriched: ReadingComprehensionTask = {
+    ...task,
+    difficulty,
+    questions: task.questions.map((q) => ({
+      ...q,
+      difficulty: asDifficulty(questionDifficultyById[q.id]),
+    })),
+  };
+  return enriched;
+}
+
+const rawTasks: Task[] = [
+  ...v1.tasks,
+  ...rc.tasks,
+  ...p03.tasks,
+  ...sentenceOrder.tasks,
+  ...oddOneOut.tasks,
+  ...antonym.tasks,
+  ...definitionGuess.tasks,
+];
+
+const tasksWithDifficulty = rawTasks.map(withDifficulty);
+
+if (import.meta.env.DEV) {
+  const missing = tasksWithDifficulty.filter((t) => t.difficulty == null);
+  if (missing.length > 0) {
+    console.warn(
+      `[ReMind] ${missing.length} task(s) without difficulty metadata:`,
+      missing.map((t) => t.id),
+    );
+  }
+}
 
 /** Merged pack: existing packs + P01 sections. Keep old IDs intact. */
 const pack: TaskPack = {
@@ -27,15 +85,7 @@ const pack: TaskPack = {
     definitionGuess.schemaVersion,
   ),
   title: v1.title,
-  tasks: [
-    ...v1.tasks,
-    ...rc.tasks,
-    ...p03.tasks,
-    ...sentenceOrder.tasks,
-    ...oddOneOut.tasks,
-    ...antonym.tasks,
-    ...definitionGuess.tasks,
-  ],
+  tasks: tasksWithDifficulty,
 };
 
 /** Easier → harder (used for home menu and “Sākt visus”). */
@@ -96,4 +146,9 @@ export function getTaskById(id: string): Task | undefined {
 export function getTasksByType(type: Task['type']): Task[] {
   // Preserve JSON order within a type (important for word-reading pack sequence).
   return pack.tasks.filter((t) => t.type === type);
+}
+
+/** Lookup for reading-question difficulty (passage uses task.difficulty). */
+export function getQuestionDifficulty(questionId: string): DifficultyLevel | null {
+  return asDifficulty(questionDifficultyById[questionId]);
 }

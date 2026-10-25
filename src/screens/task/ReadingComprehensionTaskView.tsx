@@ -5,7 +5,10 @@ import { ListenButton } from '../../components/ListenButton';
 import { TaskAdvanceChrome } from '../../components/TaskAdvanceChrome';
 import { SELF_ASSESSMENT_ENABLED } from '../../config/features';
 import { playCorrectChime } from '../../utils/answerFeedback';
-import { textMatchesAccepted } from '../../utils/answers';
+import {
+  answerInputFeedback,
+  textMatchesAccepted,
+} from '../../utils/answers';
 import {
   SELF_ASSESSMENT_LABELS,
   SELF_ASSESSMENT_SYMBOLS,
@@ -347,6 +350,12 @@ export function ReadingComprehensionTaskView({
           placeholder="Ierakstiet vai ierunājiet atbildi…"
           readOnly={readOnly}
           inputRef={answerInputRef}
+          feedback={answerInputFeedback(
+            readOnly ? qProgress.viewedAnswers : showAnswer,
+            qProgress.enteredAnswer ?? '',
+            question.answers,
+            'reading_question',
+          )}
           onChange={(value) => {
             if (readOnly) return;
             patchQuestion(qIndex, {
@@ -357,7 +366,7 @@ export function ReadingComprehensionTaskView({
           onSubmit={(text) => {
             if (readOnly) return;
             // Unlock Tālāk only after Enter / finished dictation (not while typing).
-            if (question.answers.length > 0 && !showAnswer) {
+            if (!showAnswer) {
               setShowAnswer(true);
             }
             patchQuestion(qIndex, {

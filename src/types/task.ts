@@ -12,6 +12,9 @@ export type TaskType =
   | 'antonym'
   | 'definition_guess';
 
+/** Content complexity 1 (easiest) … 5 (hardest). Null if metadata missing. */
+export type DifficultyLevel = 1 | 2 | 3 | 4 | 5;
+
 export interface BaseTask {
   /** Stable, immutable ID — never reuse or change. */
   id: string;
@@ -19,12 +22,19 @@ export interface BaseTask {
   /** Content version for this task; bump if wording/options change. */
   contentVersion: number;
   instruction: string;
+  /**
+   * Content difficulty from metadata (not clinical).
+   * Attached at load time; null when ID has no rating yet.
+   */
+  difficulty?: DifficultyLevel | null;
 }
 
 export interface ReadingComprehensionQuestion {
   id: string;
   question: string;
   answers: string[];
+  /** Per-question difficulty (optional metadata). */
+  difficulty?: DifficultyLevel | null;
 }
 
 export interface WordReadingTask extends BaseTask {

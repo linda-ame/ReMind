@@ -1,0 +1,691 @@
+﻿id,type,difficulty_v2,difficulty_v1,difference,source,active,reason,text
+remind-wr-001,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,saksofons
+remind-wr-002,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,termometrs
+remind-wr-003,word_reading,1,2,-1,word_reading_archive,no,"Labi pazīstams, viegli atpazīstams vārds",kalendārs
+remind-wr-004,word_reading,1,2,-1,word_reading_archive,no,"Labi pazīstams, viegli atpazīstams vārds",bibliotēka
+remind-wr-005,word_reading,2,3,-1,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,ledusskapis
+remind-wr-006,word_reading,1,2,-1,word_reading_archive,no,"Labi pazīstams, viegli atpazīstams vārds",televizors
+remind-wr-007,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,krustojums
+remind-wr-008,word_reading,1,1,0,word_reading_archive,no,"Labi pazīstams, viegli atpazīstams vārds",autobuss
+remind-wr-009,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,pasažieris
+remind-wr-010,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,velosipēds
+remind-wr-011,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,automašīna
+remind-wr-012,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,luksofors
+remind-wr-013,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,puķupods
+remind-wr-014,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,siltumnīca
+remind-wr-015,word_reading,1,2,-1,word_reading_archive,no,"Labi pazīstams, viegli atpazīstams vārds",lejkanna
+remind-wr-016,word_reading,3,3,0,word_reading_archive,no,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",zālespļāvējs
+remind-wr-017,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,makšķere
+remind-wr-018,word_reading,2,3,-1,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,lietussargs
+remind-wr-019,word_reading,2,3,-1,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,saulesbrilles
+remind-wr-020,word_reading,2,3,-1,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,lietusmētelis
+remind-wr-021,word_reading,3,3,0,word_reading_archive,no,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",rokassprādze
+remind-wr-022,word_reading,3,4,-1,word_reading_archive,no,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",kabataslukturis
+remind-wr-023,word_reading,3,3,0,word_reading_archive,no,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",spilvendrāna
+remind-wr-024,word_reading,3,3,0,word_reading_archive,no,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",konditoreja
+remind-wr-025,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,kafijkanna
+remind-wr-026,word_reading,1,2,-1,word_reading_archive,no,"Labi pazīstams, viegli atpazīstams vārds",pārdevējs
+remind-wr-027,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,maiznīca
+remind-wr-028,word_reading,2,3,-1,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,ugunsdzēsējs
+remind-wr-029,word_reading,3,3,0,word_reading_archive,no,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",santehniķis
+remind-wr-030,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,elektriķis
+remind-wr-031,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,frizētava
+remind-wr-032,word_reading,1,1,0,word_reading_archive,no,"Labi pazīstams, viegli atpazīstams vārds",aptieka
+remind-wr-033,word_reading,2,3,-1,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,peldbaseins
+remind-wr-034,word_reading,3,3,0,word_reading_archive,no,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",autostāvvieta
+remind-wr-035,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,apsveikums
+remind-wr-036,word_reading,3,3,0,word_reading_archive,no,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",laikapstākļi
+remind-wr-037,word_reading,2,3,-1,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,pēcpusdiena
+remind-wr-038,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,ceļojums
+remind-wr-039,word_reading,1,2,-1,word_reading_archive,no,"Labi pazīstams, viegli atpazīstams vārds",viesnīca
+remind-wr-040,word_reading,1,2,-1,word_reading_archive,no,"Labi pazīstams, viegli atpazīstams vārds",pastaiga
+remind-wr-041,word_reading,2,3,-1,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,koncertzāle
+remind-wr-042,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,ūdensroze
+remind-wr-043,word_reading,2,2,0,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,varavīksne
+remind-wr-044,word_reading,3,3,0,word_reading_archive,no,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",krūmmellenes
+remind-wr-045,word_reading,2,3,-1,word_reading_archive,no,Ikdienišķs vārds vai pārskatāms saliktenis,pārsteigums
+remind-wr-k4-001,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",spilvendrāna
+remind-wr-k4-002,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",rakstāmmašīna
+remind-wr-k4-003,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",kontaktligzda
+remind-wr-k4-004,word_reading,3,4,-1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",tvaikgludeklis
+remind-wr-k4-005,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,mēbelējums
+remind-wr-k4-006,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,gaismeklis
+remind-wr-k4-007,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,paklājiņš
+remind-wr-k4-008,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,atslēdziņa
+remind-wr-k4-009,word_reading,3,2,1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",namdurvis
+remind-wr-k4-010,word_reading,2,3,-1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,grāmatskapis
+remind-wr-k4-011,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",spoguļskapis
+remind-wr-k4-012,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,cepešpanna
+remind-wr-k4-013,word_reading,3,4,-1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",atkritumvedējs
+remind-wr-k4-014,word_reading,2,3,-1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,spēļmantiņa
+remind-wr-k4-015,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,siltumizolācija
+remind-wr-k4-016,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,meduskūka
+remind-wr-k4-017,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,plācenīši
+remind-wr-k4-018,word_reading,3,2,1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",vinegrets
+remind-wr-k4-019,word_reading,2,3,-1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,granātābols
+remind-wr-k4-020,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,nektarīns
+remind-wr-k4-021,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,greipfrūts
+remind-wr-k4-022,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,pistācijas
+remind-wr-k4-023,word_reading,1,1,0,word_reading_active,yes,"Labi pazīstams, viegli atpazīstams vārds",karamele
+remind-wr-k4-024,word_reading,1,1,0,word_reading_active,yes,"Labi pazīstams, viegli atpazīstams vārds",ķimenes
+remind-wr-k4-025,word_reading,1,1,0,word_reading_active,yes,"Labi pazīstams, viegli atpazīstams vārds",rozīnes
+remind-wr-k4-026,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,lakrica
+remind-wr-k4-027,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,kviešmaize
+remind-wr-k4-028,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,ābolmaize
+remind-wr-k4-029,word_reading,2,3,-1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,putukrējums
+remind-wr-k4-030,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",kanēļmaizīte
+remind-wr-k4-031,word_reading,3,4,-1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",baltalksnis
+remind-wr-k4-032,word_reading,3,4,-1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",melnalksnis
+remind-wr-k4-033,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,dižskābardis
+remind-wr-k4-034,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,lapegle
+remind-wr-k4-035,word_reading,1,1,0,word_reading_active,yes,"Labi pazīstams, viegli atpazīstams vārds",jasmīns
+remind-wr-k4-036,word_reading,1,1,0,word_reading_active,yes,"Labi pazīstams, viegli atpazīstams vārds",āboliņš
+remind-wr-k4-037,word_reading,4,3,1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,sausserdis
+remind-wr-k4-038,word_reading,4,3,1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,mežvītenis
+remind-wr-k4-039,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,citronmelisa
+remind-wr-k4-040,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,hiacinte
+remind-wr-k4-041,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,lavanda
+remind-wr-k4-042,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",pūpolvītols
+remind-wr-k4-043,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,āmuļi
+remind-wr-k4-044,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,magnolija
+remind-wr-k4-045,word_reading,4,3,1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,pļavauzene
+remind-wr-k4-046,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",kapibara
+remind-wr-k4-047,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",surikats
+remind-wr-k4-048,word_reading,4,3,1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,mangusts
+remind-wr-k4-049,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",pīļknābis
+remind-wr-k4-050,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",tīģerhaizivs
+remind-wr-k4-051,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",ziemeļbriedis
+remind-wr-k4-052,word_reading,3,2,1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",burunduks
+remind-wr-k4-053,word_reading,4,3,1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,salamandra
+remind-wr-k4-054,word_reading,3,1,2,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",skorpions
+remind-wr-k4-055,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,ķirzaka
+remind-wr-k4-056,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,jenots
+remind-wr-k4-057,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",albatross
+remind-wr-k4-058,word_reading,4,2,2,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,tārtiņš
+remind-wr-k4-059,word_reading,4,2,2,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,ķīvīte
+remind-wr-k4-060,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,gazele
+remind-wr-k4-061,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",krastlīnija
+remind-wr-k4-062,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",stāvkrasts
+remind-wr-k4-063,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,leduspuķes
+remind-wr-k4-064,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",zemesrags
+remind-wr-k4-065,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,apvārsnis
+remind-wr-k4-066,word_reading,4,3,1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,ūdensvirpulis
+remind-wr-k4-067,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",plūdmaiņa
+remind-wr-k4-068,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",viesuļvētra
+remind-wr-k4-069,word_reading,1,1,0,word_reading_active,yes,"Labi pazīstams, viegli atpazīstams vārds",atkusnis
+remind-wr-k4-070,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,apledojums
+remind-wr-k4-071,word_reading,2,3,-1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,sniegputenis
+remind-wr-k4-072,word_reading,3,1,2,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",rītausma
+remind-wr-k4-073,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",sniegkupena
+remind-wr-k4-074,word_reading,4,3,1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,vējlauze
+remind-wr-k4-075,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,nogruvums
+remind-wr-k4-076,word_reading,3,4,-1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",mikroautobuss
+remind-wr-k4-077,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",pasažierkuģis
+remind-wr-k4-078,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,airulaiva
+remind-wr-k4-079,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,burinieks
+remind-wr-k4-080,word_reading,1,1,0,word_reading_active,yes,"Labi pazīstams, viegli atpazīstams vārds",tramvajs
+remind-wr-k4-081,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,stūresrats
+remind-wr-k4-082,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",bremžpedālis
+remind-wr-k4-083,word_reading,2,3,-1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,drošībasjosta
+remind-wr-k4-084,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,stāvbremze
+remind-wr-k4-085,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,apdzīšana
+remind-wr-k4-086,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,pārsēšanās
+remind-wr-k4-087,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,ceļasoma
+remind-wr-k4-088,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,mugursoma
+remind-wr-k4-089,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,čemodāns
+remind-wr-k4-090,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,lidosta
+remind-wr-k4-091,word_reading,4,3,1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,ornitologs
+remind-wr-k4-092,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",botāniķis
+remind-wr-k4-093,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,entomologs
+remind-wr-k4-094,word_reading,5,5,0,word_reading_active,yes,Ļoti specifisks/mazpazīstams termins; augsts lasīšanas sarežģītības risks,paleontologs
+remind-wr-k4-095,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,hidrologs
+remind-wr-k4-096,word_reading,5,5,0,word_reading_active,yes,Ļoti specifisks/mazpazīstams termins; augsts lasīšanas sarežģītības risks,vulkānologs
+remind-wr-k4-097,word_reading,3,5,-2,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",fizioterapeits
+remind-wr-k4-098,word_reading,4,5,-1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,ergoterapeits
+remind-wr-k4-099,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,logopēds
+remind-wr-k4-100,word_reading,3,2,1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",ortopēds
+remind-wr-k4-101,word_reading,2,1,1,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,pediatrs
+remind-wr-k4-102,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",dietologs
+remind-wr-k4-103,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,ģeodēzists
+remind-wr-k4-104,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,biologs
+remind-wr-k4-105,word_reading,5,5,0,word_reading_active,yes,Ļoti specifisks/mazpazīstams termins; augsts lasīšanas sarežģītības risks,okeanogrāfs
+remind-wr-k4-106,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,brīvdabasmuzejs
+remind-wr-k4-107,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",mākslasmuzejs
+remind-wr-k4-108,word_reading,3,4,-1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",vēsturesmuzejs
+remind-wr-k4-109,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,pilsdrupas
+remind-wr-k4-110,word_reading,3,2,1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",cietoksnis
+remind-wr-k4-111,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",nocietinājums
+remind-wr-k4-112,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,koncertestrāde
+remind-wr-k4-113,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",izstāžucentrs
+remind-wr-k4-114,word_reading,1,1,0,word_reading_active,yes,"Labi pazīstams, viegli atpazīstams vārds",autoosta
+remind-wr-k4-115,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,ģimnāzija
+remind-wr-k4-116,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,skeitparks
+remind-wr-k4-117,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,kamerorķestris
+remind-wr-k4-118,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",tautastērps
+remind-wr-k4-119,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,metronoms
+remind-wr-k4-120,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",sintezators
+remind-wr-k4-121,word_reading,3,4,-1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",gravitācija
+remind-wr-k4-122,word_reading,4,5,-1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,mikrobioloģija
+remind-wr-k4-123,word_reading,4,5,-1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,biotehnoloģija
+remind-wr-k4-124,word_reading,3,4,-1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",elektroenerģija
+remind-wr-k4-125,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,kondensācija
+remind-wr-k4-126,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,fermentācija
+remind-wr-k4-127,word_reading,4,5,-1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,termoregulācija
+remind-wr-k4-128,word_reading,3,4,-1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",bioķīmija
+remind-wr-k4-129,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,neirozinātne
+remind-wr-k4-130,word_reading,4,5,-1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,telekomunikācija
+remind-wr-k4-131,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,termodinamika
+remind-wr-k4-132,word_reading,5,5,0,word_reading_active,yes,Ļoti specifisks/mazpazīstams termins; augsts lasīšanas sarežģītības risks,nanotehnoloģija
+remind-wr-k4-133,word_reading,5,5,0,word_reading_active,yes,Ļoti specifisks/mazpazīstams termins; augsts lasīšanas sarežģītības risks,rentgenogrāfija
+remind-wr-k4-134,word_reading,4,4,0,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,imunoloģija
+remind-wr-k4-135,word_reading,5,5,0,word_reading_active,yes,Ļoti specifisks/mazpazīstams termins; augsts lasīšanas sarežģītības risks,radioaktivitāte
+remind-wr-k4-136,word_reading,1,1,0,word_reading_active,yes,"Labi pazīstams, viegli atpazīstams vārds",Šveice
+remind-wr-k4-137,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,Slovēnija
+remind-wr-k4-138,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,Slovākija
+remind-wr-k4-139,word_reading,3,2,1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",Melnkalne
+remind-wr-k4-140,word_reading,4,3,1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,Azerbaidžāna
+remind-wr-k4-141,word_reading,3,2,1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",Kazahstāna
+remind-wr-k4-142,word_reading,3,3,0,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",Uzbekistāna
+remind-wr-k4-143,word_reading,4,3,1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,Kirgizstāna
+remind-wr-k4-144,word_reading,4,3,1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,Tadžikistāna
+remind-wr-k4-145,word_reading,4,3,1,word_reading_active,yes,Mazpazīstams nosaukums vai terminoloģija; sarežģītāka vārda forma,Turkmenistāna
+remind-wr-k4-146,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,Tunisija
+remind-wr-k4-147,word_reading,1,1,0,word_reading_active,yes,"Labi pazīstams, viegli atpazīstams vārds",Maroka
+remind-wr-k4-148,word_reading,1,1,0,word_reading_active,yes,"Labi pazīstams, viegli atpazīstams vārds",Kenija
+remind-wr-k4-149,word_reading,2,2,0,word_reading_active,yes,Ikdienišķs vārds vai pārskatāms saliktenis,Etiopija
+remind-wr-k4-150,word_reading,3,2,1,word_reading_active,yes,"Mazāk biežs vārds, saliktenis vai neierasta skaņu/burtu kombinācija",Bangladeša
+remind-sc-001,sentence_completion,1,2,-1,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,"Pirms iešanas ārā Anna uzvilka ___. [atbildes: jaku, mēteli]"
+remind-sc-002,sentence_completion,1,2,-1,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,"Kad sāka līt, Pēteris atvēra ___. [atbildes: lietussargu]"
+remind-sc-003,sentence_completion,1,1,0,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,"Tētis sagrieza maizi ar ___. [atbildes: nazi, maizes nazi]"
+remind-sc-004,sentence_completion,1,1,0,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,Pirms ēšanas viņa nomazgāja ___. [atbildes: rokas]
+remind-sc-005,sentence_completion,1,1,0,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,Uz galda dega ___. [atbildes: svece]
+remind-sc-006,sentence_completion,1,1,0,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,"Pēc pastaigas viņš novilka ___. [atbildes: apavus, zābakus, kurpes]"
+remind-sc-007,sentence_completion,1,1,0,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,"Vakarā istabā ieslēdza ___. [atbildes: gaismu, lampu]"
+remind-sc-008,sentence_completion,2,1,1,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Dārzā viņa aplaistīja ___. [atbildes: puķes, ziedus, tomātus]"
+remind-sc-009,sentence_completion,2,1,1,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Veikalā pirkumus salika ___. [atbildes: somā, maisiņā, grozā]"
+remind-sc-010,sentence_completion,1,2,-1,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,"No rīta viņš izdzēra glāzi ___. [atbildes: ūdens, piena, sulas]"
+remind-sc-011,sentence_completion,1,1,0,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,Ziemā rokās parasti velk ___. [atbildes: cimdus]
+remind-sc-012,sentence_completion,2,2,0,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Pēc vēstules uzrakstīšanas to ielika ___. [atbildes: aploksnē]
+remind-sc-013,sentence_completion,2,2,0,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Lai pārbaudītu laiku, viņa paskatījās ___. [atbildes: pulkstenī, telefonā]"
+remind-sc-014,sentence_completion,1,2,-1,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,"Kad pienāca autobuss, cilvēki iekāpa ___. [atbildes: autobusā]"
+remind-sc-015,sentence_completion,1,1,0,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,Pirms gulētiešanas Marta iztīrīja ___. [atbildes: zobus]
+remind-sc-016,sentence_completion,1,1,0,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,"Pēc lietus debesīs parādījās ___. [atbildes: varavīksne, saule]"
+remind-sc-017,sentence_completion,1,2,-1,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,Karstu zupu viņa ēda ar ___. [atbildes: karoti]
+remind-sc-018,sentence_completion,1,2,-1,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,"Lai piezvanītu draugam, viņš paņēma ___. [atbildes: telefonu]"
+remind-sc-019,sentence_completion,1,1,0,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,Durvis atslēdza ar ___. [atbildes: atslēgu]
+remind-sc-020,sentence_completion,1,2,-1,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,Uz balkona viņa izkāra izmazgāto ___. [atbildes: veļu]
+remind-sc-021,sentence_completion,1,1,0,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,Pēc vakariņām viņi nomazgāja ___. [atbildes: traukus]
+remind-sc-022,sentence_completion,2,1,1,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Grāmatu viņš aizņēmās ___. [atbildes: bibliotēkā]
+remind-sc-023,sentence_completion,2,1,1,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Vētrā kokam nolūza ___. [atbildes: zars]
+remind-sc-024,sentence_completion,1,1,0,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,Svētkos visi kopā rotāja ___. [atbildes: egli]
+remind-sc-025,sentence_completion,1,2,-1,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,"Lai izvēdinātu istabu, viņš atvēra ___. [atbildes: logu]"
+remind-sc-026,sentence_completion,2,1,1,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pēc pusdienām kafiju ielēja ___. [atbildes: krūzē, tasē]"
+remind-sc-027,sentence_completion,2,3,-1,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Kad bija pārāk skaļi, viņa samazināja radio ___. [atbildes: skaļumu]"
+remind-sc-028,sentence_completion,2,2,0,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Aukstā rītā automašīnas logus klāja ___. [atbildes: sarma, ledus]"
+remind-sc-029,sentence_completion,2,1,1,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pirms ceļojuma viņa sakrāmēja ___. [atbildes: čemodānu, somu]"
+remind-sc-030,sentence_completion,2,2,0,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Pastaigā viņi šķērsoja ielu pa gājēju ___. [atbildes: pāreju]
+remind-sc-031,sentence_completion,2,1,1,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Dārznieks rudenī savāca nokritušās ___. [atbildes: lapas]
+remind-sc-032,sentence_completion,2,2,0,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Kad elektrība pazuda, viņš iededza ___. [atbildes: sveci]"
+remind-sc-033,sentence_completion,2,3,-1,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Lai nosūtītu vēstuli, uz aploksnes uzrakstīja ___. [atbildes: adresi]"
+remind-sc-034,sentence_completion,1,2,-1,sentence_completion_A,yes,No konteksta viegli paredzama ikdienas atbilde,Pēc dušas viņa noslaucījās ar ___. [atbildes: dvieli]
+remind-sc-035,sentence_completion,2,3,-1,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Pirms iešanas pāri ielai viņš paskatījās uz ___. [atbildes: luksoforu]
+remind-sc-036,sentence_completion,2,2,0,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,No rīta zemē bija redzamas lietus ___. [atbildes: peļķes]
+remind-sc-037,sentence_completion,2,2,0,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Pēc pirkuma viņš saglabāja kases ___. [atbildes: čeku]
+remind-sc-038,sentence_completion,2,1,1,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Dārzā zemenes viņa salasīja ___. [atbildes: bļodā, grozā, traukā]"
+remind-sc-039,sentence_completion,2,2,0,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Kad telefons izlādējās, viņa pieslēdza ___. [atbildes: lādētāju]"
+remind-sc-040,sentence_completion,2,1,1,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Svētku tortē bērni nopūta ___. [atbildes: svecītes, sveces]"
+remind-sc-041,sentence_completion,2,2,0,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Pirms vilciena atiešanas viņš pārbaudīja ___. [atbildes: biļeti]
+remind-sc-042,sentence_completion,2,2,0,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pēc lietus viņa noslaucīja slapjo ___. [atbildes: solu, galdu]"
+remind-sc-043,sentence_completion,2,2,0,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Lai pagatavotu tēju, viņa uzvārīja ___. [atbildes: ūdeni]"
+remind-sc-044,sentence_completion,2,1,1,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Viesiem ierodoties, saimniece uzklāja ___. [atbildes: galdu]"
+remind-sc-045,sentence_completion,2,2,0,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Kad nokavēja autobusu, viņš izsauca ___. [atbildes: taksi, taksometru]"
+remind-sc-046,sentence_completion,2,2,0,sentence_completion_A,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Rudens vakarā cilvēki uzvilka siltākus ___. [atbildes: džemperus, mēteļus]"
+remind-sc-p03-001,sentence_completion,1,2,-1,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Virtuvē uz plīts lēni vārījās ___. [atbildes: zupa, putra, ūdens]"
+remind-sc-p03-002,sentence_completion,1,2,-1,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Pirms ciemiņu ierašanās viņa notīrīja ___. [atbildes: galdu, spoguli, grīdu]"
+remind-sc-p03-003,sentence_completion,1,2,-1,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Pēc logu mazgāšanas stikli kļuva ___. [atbildes: tīri, spodri]"
+remind-sc-p03-004,sentence_completion,1,2,-1,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"No skapja viņš izņēma tīru ___. [atbildes: kreklu, džemperi, dvieli]"
+remind-sc-p03-005,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pēc mazgāšanas drēbes viņa pakāra uz ___. [atbildes: auklas, žāvētāja, pakaramā]"
+remind-sc-p03-006,sentence_completion,1,2,-1,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Pie ārdurvīm viesi nolika savus ___. [atbildes: apavus, zābakus, mēteļus]"
+remind-sc-p03-007,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Lai telpā kļūtu siltāk, viņa ieslēdza ___. [atbildes: radiatoru, sildītāju]"
+remind-sc-p03-008,sentence_completion,1,1,0,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Uz palodzes zaļoja neliels ___. [atbildes: augs, kaktuss, zieds]"
+remind-sc-p03-009,sentence_completion,1,2,-1,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"No ledusskapja viņš izņēma pudeli ___. [atbildes: piena, kefīra, ūdens]"
+remind-sc-p03-010,sentence_completion,2,3,-1,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Pirms maltītes viņa uzklāja galdam tīru ___. [atbildes: galdautu]
+remind-sc-p03-011,sentence_completion,1,1,0,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Plauktā bija saliktas vairākas ___. [atbildes: grāmatas, kastes, vāzes]"
+remind-sc-p03-012,sentence_completion,1,2,-1,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Lai istabā būtu gaišāk, viņš atvilka ___. [atbildes: aizkarus, žalūzijas]"
+remind-sc-p03-013,sentence_completion,1,2,-1,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Pēc ēdiena gatavošanas viņa izslēdza ___. [atbildes: plīti, cepeškrāsni]"
+remind-sc-p03-014,sentence_completion,1,2,-1,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Pie izlietnes viņš nolika tīru ___. [atbildes: sūkli, dvieli, trauku]"
+remind-sc-p03-015,sentence_completion,1,2,-1,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Kad sāka pūst caurvējš, viņa aizvēra ___. [atbildes: logu, durvis]"
+remind-sc-p03-016,sentence_completion,2,1,1,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Rudenī viņi pagrabā noglabāja ___. [atbildes: kartupeļus, burkānus, ievārījumu]"
+remind-sc-p03-017,sentence_completion,1,1,0,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"No rīta guļamistabā noskanēja ___. [atbildes: modinātājs, zvans]"
+remind-sc-p03-018,sentence_completion,1,2,-1,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Pirms darba viņš uzlādēja savu ___. [atbildes: telefonu, datoru, pulksteni]"
+remind-sc-p03-019,sentence_completion,1,2,-1,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Viesistabā pie dīvāna bija mīksts ___. [atbildes: paklājs, spilvens]"
+remind-sc-p03-020,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pēc vakariņām viņa pārpalikumus ielika ___. [atbildes: ledusskapī, traukā, kastītē]"
+remind-sc-p03-021,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Pie kases pārdevēja izsniedza pirkuma ___. [atbildes: čeku]
+remind-sc-p03-022,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pirms pirkuma viņš salīdzināja preču ___. [atbildes: cenas, izmērus]"
+remind-sc-p03-023,sentence_completion,2,1,1,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Bankomatā viņa izņēma skaidru ___. [atbildes: naudu]
+remind-sc-p03-024,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pasta nodaļā viņš nosūtīja nelielu ___. [atbildes: paku, sūtījumu, vēstuli]"
+remind-sc-p03-025,sentence_completion,1,1,0,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,Autoostā viņa gaidīja pienākam ___. [atbildes: autobusu]
+remind-sc-p03-026,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Vilciena vagona logā bija redzama ___. [atbildes: ainava, pļava, mežmala]"
+remind-sc-p03-027,sentence_completion,2,3,-1,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Pirms došanās ceļā viņš piepildīja automašīnas ___. [atbildes: bāku]
+remind-sc-p03-028,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pie gājēju pārejas viņa sagaidīja zaļo ___. [atbildes: signālu, gaismu]"
+remind-sc-p03-029,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pilsētas centrā viņi iegāja nelielā ___. [atbildes: kafejnīcā, veikalā, grāmatnīcā]"
+remind-sc-p03-030,sentence_completion,2,1,1,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Tirgū pārdevējs nosvēra kilogramu ___. [atbildes: ābolu, tomātu, burkānu]"
+remind-sc-p03-031,sentence_completion,1,1,0,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Veikalā viņa pielaikoja jaunu ___. [atbildes: jaku, mēteli, kleitu]"
+remind-sc-p03-032,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pēc apmaksas viņš ielika bankas karti ___. [atbildes: makā, kabatā, somā]"
+remind-sc-p03-033,sentence_completion,1,1,0,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Pieturā bija piestājis sarkans ___. [atbildes: autobuss, trolejbuss]"
+remind-sc-p03-034,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Braucot pa nezināmu vietu, viņa ieslēdza ___. [atbildes: navigāciju, karti]"
+remind-sc-p03-035,sentence_completion,3,2,1,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Bibliotēkā viņš meklēja grāmatu par ___. [atbildes: vēsturi, ceļojumiem, dabu]"
+remind-sc-p03-036,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pēc remonta meistars izsniedza ___. [atbildes: rēķinu, čeku, garantijas talonu]"
+remind-sc-p03-037,sentence_completion,3,2,1,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Aptiekā farmaceits paskaidroja zāļu lietošanas ___. [atbildes: kārtību, noteikumus]"
+remind-sc-p03-038,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Pie ieejas muzejā viņi nopirka ___. [atbildes: biļetes]
+remind-sc-p03-039,sentence_completion,3,2,1,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Uz stacijas tablo parādījās vilciena ___. [atbildes: numurs, maršruts]"
+remind-sc-p03-040,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pēc telefona sarunas viņa pierakstīja tikšanās ___. [atbildes: laiku, vietu, datumu]"
+remind-sc-p03-041,sentence_completion,1,1,0,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Salātus viņa pārkaisīja ar ___. [atbildes: dillēm, pētersīļiem]"
+remind-sc-p03-042,sentence_completion,1,1,0,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Pirms cepšanas viņš uzkarsēja ___. [atbildes: pannu, cepeškrāsni]"
+remind-sc-p03-043,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Lai mīkla kļūtu viendabīga, viņa to rūpīgi ___. [atbildes: samaisīja, izmīcīja]"
+remind-sc-p03-044,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,No karstā katla pacēlās balti ___. [atbildes: tvaiki]
+remind-sc-p03-045,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Svaigu maizi viņš nolika uz griešanas ___. [atbildes: dēlīša]
+remind-sc-p03-046,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pirms pievienošanas zupai burkānus viņa ___. [atbildes: nomizoja, sagrieza, nomazgāja]"
+remind-sc-p03-047,sentence_completion,3,2,1,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Vasarā pie ezera viņi klausījās putnu ___. [atbildes: dziesmās, balsīs]"
+remind-sc-p03-048,sentence_completion,1,3,-2,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,Pēc vētras uz takas mētājās nolūzuši ___. [atbildes: zari]
+remind-sc-p03-049,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Agri no rīta pļavu klāja bieza ___. [atbildes: migla, rasa]"
+remind-sc-p03-050,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Siltā dienā viņa devās pastaigā gar ___. [atbildes: jūru, upi, ezeru]"
+remind-sc-p03-051,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Rudenī mežā viņi salasīja grozu ___. [atbildes: sēņu, gaileņu]"
+remind-sc-p03-052,sentence_completion,1,2,-1,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Pēc garas pastaigas viņš apsēdās uz ___. [atbildes: soli, akmens, krēsla]"
+remind-sc-p03-053,sentence_completion,3,1,2,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Vakarā dārzā skanēja sienāžu ___. [atbildes: cirpšana, čīgāšana]"
+remind-sc-p03-054,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pirms došanās saulē viņa uzlika galvā ___. [atbildes: cepuri, platmali]"
+remind-sc-p03-055,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Dārza dobē pēc lietus parādījās mazas ___. [atbildes: peļķes, sliekas]"
+remind-sc-p03-056,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Vējainā laikā jūras krastā cēlās lieli ___. [atbildes: viļņi]
+remind-sc-p03-057,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pirms vingrošanas viņš izstaipīja roku ___. [atbildes: muskuļus, pirkstus]"
+remind-sc-p03-058,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pēc pastaigas svaigā gaisā viņai uzlabojās ___. [atbildes: garastāvoklis, pašsajūta]"
+remind-sc-p03-059,sentence_completion,1,3,-2,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Kad ārā kļuva tumšs, debesīs iemirdzējās ___. [atbildes: zvaigznes]"
+remind-sc-p03-060,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Dārzā nogatavojušās ogas viņa uzmanīgi ___. [atbildes: nolasīja, salasīja]"
+remind-sc-p03-061,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pirms sapulces viņa pārskatīja savas ___. [atbildes: piezīmes, atgādnes]"
+remind-sc-p03-062,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Datora ekrānā viņš atvēra jaunu ___. [atbildes: dokumentu, failu, logu]"
+remind-sc-p03-063,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Lai nepalaistu garām tikšanos, viņa iestatīja ___. [atbildes: atgādinājumu, modinātāju]"
+remind-sc-p03-064,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Telefona sarunas laikā viņš pierakstīja svarīgu ___. [atbildes: numuru, adresi, informāciju]"
+remind-sc-p03-065,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pēc vēstules saņemšanas viņa nosūtīja īsu ___. [atbildes: atbildi, pateicību]"
+remind-sc-p03-066,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,Ziņu raidījumā paziņoja rītdienas laika ___. [atbildes: prognozi]
+remind-sc-p03-067,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts",Pirms ceļojuma viņa pārbaudīja pases derīguma ___. [atbildes: termiņu]
+remind-sc-p03-068,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pie ārsta viņš pierakstījās uz nākamo ___. [atbildes: nedēļu, otrdienu, piektdienu]"
+remind-sc-p03-069,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Atverot kalendāru, viņa pārbaudīja šodienas ___. [atbildes: datumu, plānus]"
+remind-sc-p03-070,sentence_completion,1,3,-2,sentence_completion_B,yes,No konteksta viegli paredzama ikdienas atbilde,"Lai uzzinātu jaunākās ziņas, viņš ieslēdza ___. [atbildes: radio, televizoru, datoru]"
+remind-sc-p03-071,sentence_completion,2,3,-1,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pirms koncerta publika ieņēma savas ___. [atbildes: vietas, sēdvietas]"
+remind-sc-p03-072,sentence_completion,2,3,-1,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Kad izrāde beidzās, skatītāji sāka ___. [atbildes: aplaudēt, piecelties]"
+remind-sc-p03-073,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Fotogrāfs pirms uzņemšanas noregulēja kameras ___. [atbildes: fokusu, iestatījumus]"
+remind-sc-p03-074,sentence_completion,2,3,-1,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pēc garas darba dienas viņš devās mājās ___. [atbildes: atpūsties, gulēt]"
+remind-sc-p03-075,sentence_completion,3,2,1,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Uz apsveikuma kartītes viņa uzrakstīja sirsnīgu ___. [atbildes: novēlējumu, sveicienu]"
+remind-sc-p03-076,sentence_completion,3,2,1,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Sarunas laikā viņš uzmanīgi ieklausījās otra cilvēka ___. [atbildes: vārdos, teiktajā]"
+remind-sc-p03-077,sentence_completion,2,2,0,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Jaunajā telefonā viņa saglabāja drauga ___. [atbildes: numuru, kontaktu]"
+remind-sc-p03-078,sentence_completion,2,3,-1,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pirms nosūtīšanas viņa pārlasīja savu ___. [atbildes: ziņu, vēstuli, tekstu]"
+remind-sc-p03-079,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Lai atrastu pareizo māju, viņš pārbaudīja ___. [atbildes: adresi, mājas numuru, ielas nosaukumu]"
+remind-sc-p03-080,sentence_completion,2,3,-1,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pēc garām brīvdienām viņa atgriezās savā ___. [atbildes: darbā, birojā]"
+remind-sc-p03-081,sentence_completion,3,2,1,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Tā kā vakarā kļuva vēss, viņi aizvēra terases ___. [atbildes: durvis, logus]"
+remind-sc-p03-082,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Lai nezaudētu dokumentu, viņa izveidoja tā ___. [atbildes: kopiju]"
+remind-sc-p03-083,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Lai arī ārā bija apmācies, viņi devās ___. [atbildes: pastaigā, ceļā, ekskursijā]"
+remind-sc-p03-084,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Kad vilciens kavējās, viņa paziņoja par to ___. [atbildes: draugam, kolēģim, ģimenei]"
+remind-sc-p03-085,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Pirms svarīga lēmuma pieņemšanas viņš uzklausīja drauga ___. [atbildes: viedokli, padomu]"
+remind-sc-p03-086,sentence_completion,3,2,1,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Tiklīdz sākās lietus, viņi patvērās zem ___. [atbildes: jumta, nojumes, koka]"
+remind-sc-p03-087,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Lai atcerētos recepti, viņa pierakstīja visas ___. [atbildes: sastāvdaļas, darbības]"
+remind-sc-p03-088,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Kad pazuda elektrība, ledusskapis pārstāja ___. [atbildes: darboties, rūkt, dzesēt]"
+remind-sc-p03-089,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Pēc pusnakts satiksme pilsētā kļuva ___. [atbildes: klusāka, retāka]"
+remind-sc-p03-090,sentence_completion,2,3,-1,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Ja biļete ir elektroniska, to var parādīt ___. [atbildes: telefonā, ekrānā]"
+remind-sc-p03-091,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Kad dārzā iestājās sausums, augi sāka ___. [atbildes: vīst, kalst]"
+remind-sc-p03-092,sentence_completion,2,3,-1,sentence_completion_B,yes,Nepieciešams izraudzīties kontekstam un locījumam piemērotu vārdu,"Pēc sirsnīgas sarunas viņa jutās daudz ___. [atbildes: labāk, mierīgāk]"
+remind-sc-p03-093,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Kad ceļš bija apledojis, autovadītājs samazināja ___. [atbildes: ātrumu]"
+remind-sc-p03-094,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Pirms sākt remontu, viņš sagatavoja nepieciešamos ___. [atbildes: instrumentus, materiālus]"
+remind-sc-p03-095,sentence_completion,3,3,0,sentence_completion_B,yes,"Vairāk nosacījumu, mazāk acīmredzama atbilde vai abstraktāks konteksts","Kad sūtījums kavējās, viņš pārbaudīja piegādes ___. [atbildes: statusu, datumu]"
+remind-wc-001,word_choice,1,1,0,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Ar ko parasti griež papīru? [atbildes: šķērēm]
+remind-wc-002,word_choice,1,1,0,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kur parasti aizņemas grāmatas? [atbildes: bibliotēkā]
+remind-wc-003,word_choice,1,2,-1,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kura ierīce rāda laiku? [atbildes: pulkstenis]
+remind-wc-004,word_choice,2,2,0,word_choice_A,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kurus divus priekšmetus izmanto rakstīšanai? [atbildes: pildspalvu, zīmuli]"
+remind-wc-005,word_choice,1,1,0,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš no šiem ir transportlīdzeklis? [atbildes: autobuss]
+remind-wc-006,word_choice,1,1,0,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kuru piederumu izmanto zupas ēšanai? [atbildes: karoti]
+remind-wc-007,word_choice,2,2,0,word_choice_A,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas lietas parasti izmanto ēdiena gatavošanai? [atbildes: katlu, pannu]"
+remind-wc-008,word_choice,1,1,0,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurā vietā parasti pērk zāles? [atbildes: aptiekā]
+remind-wc-009,word_choice,1,1,0,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš no šiem ir piena produkts? [atbildes: siers]
+remind-wc-010,word_choice,1,1,0,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Ar ko parasti atslēdz durvis? [atbildes: atslēgu]
+remind-wc-011,word_choice,2,2,0,word_choice_A,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas lietas izmanto mājas uzkopšanai? [atbildes: putekļsūcēju, slotu]"
+remind-wc-012,word_choice,1,1,0,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš apģērba gabals silda rokas ziemā? [atbildes: cimdi]
+remind-wc-013,word_choice,2,2,0,word_choice_A,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,Kuru ierīci izmanto temperatūras mērīšanai? [atbildes: termometru]
+remind-wc-014,word_choice,2,2,0,word_choice_A,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuri divi ir augļi ikdienas pārtikas iedalījumā? [atbildes: ābols, bumbieris]"
+remind-wc-015,word_choice,1,1,0,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Ar kuru no šiem var piezvanīt? [atbildes: telefonu]
+remind-wc-016,word_choice,2,2,0,word_choice_A,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas ierīces izmanto divvirzienu saziņai? [atbildes: telefons, dators]"
+remind-wc-017,word_choice,1,1,0,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš no šiem parasti ir ceļa satiksmes signāls? [atbildes: luksofors]
+remind-wc-018,word_choice,2,2,0,word_choice_A,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kurus divus priekšmetus lieto vannasistabā? [atbildes: zobu birsti, dvieli]"
+remind-wc-019,word_choice,1,1,0,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš no šiem ir putns? [atbildes: stārķis]
+remind-wc-020,word_choice,2,2,0,word_choice_A,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas ir nedēļas dienas? [atbildes: otrdiena, piektdiena]"
+remind-wc-021,word_choice,1,1,0,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš no šiem ir dzēriens? [atbildes: tēja]
+remind-wc-022,word_choice,2,3,-1,word_choice_A,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas lietas parasti izmanto papīra vēstules sūtīšanai pa pastu? [atbildes: aploksne, pastmarka]"
+remind-wc-023,word_choice,1,1,0,word_choice_A,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš no šiem ir mēbele? [atbildes: krēsls]
+remind-wc-024,word_choice,2,2,0,word_choice_A,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas ir vietas, kur parasti iegādājas pārtiku? [atbildes: tirgus, veikals]"
+remind-wc-p03-001,word_choice,2,1,1,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,Kurš mēnesis seko martam? [atbildes: aprīlis]
+remind-wc-p03-002,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuri divi ir gadalaiki? [atbildes: vasara, ziema]"
+remind-wc-p03-003,word_choice,2,1,1,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,Kurš no šiem ir Latvijas pilsēta? [atbildes: Valmiera]
+remind-wc-p03-004,word_choice,2,1,1,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,Kurš no šiem ir upe? [atbildes: Venta]
+remind-wc-p03-005,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuri divi ir dārzeņi ikdienas pārtikas iedalījumā? [atbildes: burkāns, bietes]"
+remind-wc-p03-006,word_choice,1,1,0,word_choice_B,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš priekšmets parasti atrodas uz rakstāmgalda? [atbildes: klaviatūra]
+remind-wc-p03-007,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuri divi piederumi noder apģērba labošanai? [atbildes: adata, poga]"
+remind-wc-p03-008,word_choice,1,1,0,word_choice_B,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš no šiem ir apģērba gabals? [atbildes: džemperis]
+remind-wc-p03-009,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuri divi ir virtuves trauki? [atbildes: bļoda, šķīvis]"
+remind-wc-p03-010,word_choice,3,1,2,word_choice_B,yes,"Nepieciešamas specifiskākas zināšanas, klasifikācija vai vairāki nosacījumi","Kurš priekšmets palīdz pārbaudīt, vai virsma ir taisna? [atbildes: līmeņrādis]"
+remind-wc-p03-011,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas lietas izmanto dārza kopšanai? [atbildes: lāpsta, grābeklis]"
+remind-wc-p03-012,word_choice,2,1,1,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,Kurš no šiem ir sadzīves elektroierīce? [atbildes: putekļsūcējs]
+remind-wc-p03-013,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas ir mēbeles? [atbildes: kumode, dīvāns]"
+remind-wc-p03-014,word_choice,2,1,1,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,Kurš no šiem ir mūzikas instruments? [atbildes: akordeons]
+remind-wc-p03-015,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuri divi ir mūzikas instrumenti? [atbildes: flauta, vijole]"
+remind-wc-p03-016,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,Kurš no šiem ir dokuments identitātes apliecināšanai? [atbildes: pase]
+remind-wc-p03-017,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas lietas izmanto vēstules rakstīšanai uz papīra? [atbildes: papīrs, pildspalva]"
+remind-wc-p03-018,word_choice,1,1,0,word_choice_B,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš no šiem ir mēneša nosaukums? [atbildes: oktobris]
+remind-wc-p03-019,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas ir nedēļas nogales dienas? [atbildes: svētdiena, sestdiena]"
+remind-wc-p03-020,word_choice,1,2,-1,word_choice_B,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš no šiem raksturo temperatūru? [atbildes: silts]
+remind-wc-p03-021,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuri divi ir laikapstākļi? [atbildes: lietus, migla]"
+remind-wc-p03-022,word_choice,1,1,0,word_choice_B,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš no šiem ir koka daļa? [atbildes: sakne]
+remind-wc-p03-023,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuri divi ir putni? [atbildes: bezdelīga, zīlīte]"
+remind-wc-p03-024,word_choice,2,1,1,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,Kurš no šiem ir zivs? [atbildes: līdaka]
+remind-wc-p03-025,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas vietas ir saistītas ar kultūras pasākumiem? [atbildes: koncertzāle, teātris]"
+remind-wc-p03-026,word_choice,2,1,1,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,Kurš no šiem ir sabiedriskā transporta veids? [atbildes: tramvajs]
+remind-wc-p03-027,word_choice,3,2,1,word_choice_B,yes,"Nepieciešamas specifiskākas zināšanas, klasifikācija vai vairāki nosacījumi","Kuras divas vietas ir transporta pieturas? [atbildes: autoosta, dzelzceļa stacija]"
+remind-wc-p03-028,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,Kurš no šiem ir virtuves mērinstruments? [atbildes: virtuves svari]
+remind-wc-p03-029,word_choice,3,2,1,word_choice_B,yes,"Nepieciešamas specifiskākas zināšanas, klasifikācija vai vairāki nosacījumi","Kuras divas darbības parasti dara pirms gatavošanas? [atbildes: mazgā produktus, sagriež dārzeņus]"
+remind-wc-p03-030,word_choice,2,1,1,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,Kurš no šiem ir garšaugs? [atbildes: dilles]
+remind-wc-p03-031,word_choice,3,2,1,word_choice_B,yes,"Nepieciešamas specifiskākas zināšanas, klasifikācija vai vairāki nosacījumi","Kurus divus izmanto dokumentu glabāšanai? [atbildes: reģistrators, mape]"
+remind-wc-p03-032,word_choice,2,1,1,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,Kurš no šiem palīdz atrast adresi nezināmā vietā? [atbildes: karte]
+remind-wc-p03-033,word_choice,3,2,1,word_choice_B,yes,"Nepieciešamas specifiskākas zināšanas, klasifikācija vai vairāki nosacījumi","Kuri divi saziņas veidi ir rakstiski? [atbildes: īsziņa, e-pasts]"
+remind-wc-p03-034,word_choice,3,1,2,word_choice_B,yes,"Nepieciešamas specifiskākas zināšanas, klasifikācija vai vairāki nosacījumi",Kurš no šiem ir putraims? [atbildes: griķi]
+remind-wc-p03-035,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuri divi ir piena produkti? [atbildes: jogurts, biezpiens]"
+remind-wc-p03-036,word_choice,1,1,0,word_choice_B,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš priekšmets pasargā acis no spilgtas saules? [atbildes: saulesbrilles]
+remind-wc-p03-037,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas lietas palīdz redzēt tumsā? [atbildes: lampa, lukturītis]"
+remind-wc-p03-038,word_choice,1,1,0,word_choice_B,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš no šiem ir telpas nosaukums mājās? [atbildes: vannasistaba]
+remind-wc-p03-039,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas telpas var būt mājoklī? [atbildes: guļamistaba, virtuve]"
+remind-wc-p03-040,word_choice,1,1,0,word_choice_B,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš no šiem ir sveiciena vārds? [atbildes: labdien]
+remind-wc-p03-041,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas ir pieklājības frāzes? [atbildes: paldies, lūdzu]"
+remind-wc-p03-042,word_choice,1,2,-1,word_choice_B,yes,"Tieša, ikdienišķa kategorijas/priekšmeta atpazīšana",Kurš no šiem ir pretstats vārdam “plats”? [atbildes: šaurs]
+remind-wc-p03-043,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuri divi vārdi apzīmē kustību? [atbildes: iet, skrien]"
+remind-wc-p03-044,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,Kurš vārds apzīmē pagātnes laiku? [atbildes: vakar]
+remind-wc-p03-045,word_choice,3,2,1,word_choice_B,yes,"Nepieciešamas specifiskākas zināšanas, klasifikācija vai vairāki nosacījumi","Kuri divi vārdi apzīmē vietu, nevis laiku? [atbildes: tur, šeit]"
+remind-wc-p03-046,word_choice,3,2,1,word_choice_B,yes,"Nepieciešamas specifiskākas zināšanas, klasifikācija vai vairāki nosacījumi","Kāda informācija vajadzīga, lai nosūtītu vēstuli pa pastu? [atbildes: saņēmēja adrese]"
+remind-wc-p03-047,word_choice,2,2,0,word_choice_B,yes,Jāsalīdzina vairākas iespējas vai jāatlasa vairāki derīgi varianti,"Kuras divas lietas var norādīt kalendārā? [atbildes: nedēļas diena, datums]"
+remind-wc-p03-048,word_choice,3,2,1,word_choice_B,yes,"Nepieciešamas specifiskākas zināšanas, klasifikācija vai vairāki nosacījumi",Kurš instruments palīdz noteikt virzienu dabā? [atbildes: kompass]
+remind-iw-001,image_word,1,1,0,image_word_A,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Uz galda stāv ___. [attēls: Krūze]
+remind-iw-002,image_word,1,1,0,image_word_A,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Durvis atslēdz ar ___. [attēls: Atslēga]
+remind-iw-003,image_word,1,1,0,image_word_A,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Viņš lasa ___. [attēls: Grāmata]
+remind-iw-004,image_word,1,2,-1,image_word_A,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Lietū viņa lieto ___. [attēls: Lietussargs]
+remind-iw-005,image_word,1,1,0,image_word_A,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Uz šķīvja ir ___. [attēls: Ābols]
+remind-iw-006,image_word,1,2,-1,image_word_A,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Pie sienas karājas ___. [attēls: Pulkstenis]
+remind-iw-007,image_word,2,1,1,image_word_A,yes,Vajadzīga mazāk ierasta priekšmeta nosaukšana vai vārda formas maiņa,Papīru griež ar ___. [attēls: Šķēres]
+remind-iw-008,image_word,1,1,0,image_word_A,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Viņa runā pa ___. [attēls: Telefons]
+remind-iw-009,image_word,2,2,0,image_word_A,yes,Vajadzīga mazāk ierasta priekšmeta nosaukšana vai vārda formas maiņa,Pie mājas stāv ___. [attēls: Velosipēds]
+remind-iw-010,image_word,1,1,0,image_word_A,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Dārzā aug ___. [attēls: Koks]
+remind-iw-011,image_word,1,1,0,image_word_A,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Uz galda deg ___. [attēls: Svece]
+remind-iw-012,image_word,1,1,0,image_word_A,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Zupu ēd ar ___. [attēls: Karote]
+remind-iw-p03-001,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Aukstā dienā galvā uzvelk ___. [attēls: Cepure ar nagu]
+remind-iw-p03-002,image_word,1,2,-1,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,"Kad ārā salst, rokās uzvelk ___. [attēls: Cimdu pāris]"
+remind-iw-p03-003,image_word,1,2,-1,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Pēc pastaigas viņš pie durvīm novilka ___. [attēls: Zābaku pāris]
+remind-iw-p03-004,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Zupai viņa sagrieza ___. [attēls: Burkāns ar lapām]
+remind-iw-p03-005,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Augļu salātiem pievienoja ___. [attēls: Banāns]
+remind-iw-p03-006,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Uz dēlīša viņa sagrieza ___. [attēls: Tomāts ar kātiņu]
+remind-iw-p03-007,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Pie rakstāmgalda atrodas ___. [attēls: Koka krēsls]
+remind-iw-p03-008,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Guļamistabā stāv plata ___. [attēls: Gulta ar spilvenu]
+remind-iw-p03-009,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Vakarā viņš ieslēdza galda ___. [attēls: Galda lampa]
+remind-iw-p03-010,image_word,2,1,1,image_word_B,yes,Vajadzīga mazāk ierasta priekšmeta nosaukšana vai vārda formas maiņa,Viņa izgludināja kreklu ar ___. [attēls: Gludeklis]
+remind-iw-p03-011,image_word,2,1,1,image_word_B,yes,Vajadzīga mazāk ierasta priekšmeta nosaukšana vai vārda formas maiņa,Ūdeni tējai uzvārīja ___. [attēls: Tējkanna ar snīpi]
+remind-iw-p03-012,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Uz galda nolika tukšu ___. [attēls: Šķīvis]
+remind-iw-p03-013,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Makaronus viņš ēda ar ___. [attēls: Dakšiņa ar četriem zariem]
+remind-iw-p03-014,image_word,2,2,0,image_word_B,yes,Vajadzīga mazāk ierasta priekšmeta nosaukšana vai vārda formas maiņa,Ceļojumam viņa sakrāmēja ___. [attēls: Mugursoma]
+remind-iw-p03-015,image_word,2,1,1,image_word_B,yes,Vajadzīga mazāk ierasta priekšmeta nosaukšana vai vārda formas maiņa,Lasīšanai viņš uzlika ___. [attēls: Briļļu rāmis]
+remind-iw-p03-016,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Viņa izķemmēja matus ar ___. [attēls: Ķemme ar zobiem]
+remind-iw-p03-017,image_word,2,1,1,image_word_B,yes,Vajadzīga mazāk ierasta priekšmeta nosaukšana vai vārda formas maiņa,Grīdas mazgāšanai viņa paņēma ___. [attēls: Spainis ar rokturi]
+remind-iw-p03-018,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Rudenī dārzā izauga liels ___. [attēls: Apaļš ķirbis]
+remind-iw-p03-019,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Mežā zem koka auga ___. [attēls: Sēne ar cepurīti]
+remind-iw-p03-020,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Upē peldēja ___. [attēls: Zivs]
+remind-iw-p03-021,image_word,1,1,0,image_word_B,yes,Attēlā attēlots ikdienišķs konkrēts priekšmets,Vāzē viņa ielika ___. [attēls: Puķe ar ziedlapām]
+remind-iw-p03-022,image_word,2,1,1,image_word_B,yes,Vajadzīga mazāk ierasta priekšmeta nosaukšana vai vārda formas maiņa,Ceļojumā viņš paņēma ūdens ___. [attēls: Ūdens pudele]
+remind-iw-p03-023,image_word,3,2,1,image_word_B,yes,Retāks priekšmeta nosaukums un atbilstoša locījuma lietošana,Fotogrāfs līdzi paņēma ___. [attēls: Fotoaparāts ar objektīvu]
+remind-iw-p03-024,image_word,2,1,1,image_word_B,yes,Vajadzīga mazāk ierasta priekšmeta nosaukšana vai vārda formas maiņa,Pie krasta pietauvoja ___. [attēls: Maza airu laiva]
+remind-rc-001,reading_comprehension,2,2,0,reading_comprehension,yes,Īss teksts ar tiešām atbildēm,Sestdien Ilze aizgāja uz tirgu. Viņa nopirka tomātus un ābolus. Mājās Ilze pagatavoja salātus.
+remind-rc-002,reading_comprehension,2,2,0,reading_comprehension,yes,Īss teksts ar tiešām atbildēm,No rīta Jānis devās uz bibliotēku. Viņš paņēma grāmatu par putniem. Mājās Jānis apsēdās pie loga un sāka lasīt.
+remind-rc-003,reading_comprehension,3,2,1,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,"Piektdien Marta brauca ar autobusu uz pilsētu. Viņa satika māsu, un abas aizgāja uz kafejnīcu. Marta pasūtīja tēju, bet māsa — kafiju."
+remind-rc-004,reading_comprehension,3,2,1,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Pēcpusdienā Andrejs devās uz dārzu. Viņš aplaistīja gurķus un noplūca zemenes. Zemenes Andrejs ielika bļodā un aiznesa uz virtuvi.
+remind-rc-005,reading_comprehension,2,2,0,reading_comprehension,yes,Īss teksts ar tiešām atbildēm,Vakarā ārā sākās lietus. Līga aizvēra logu un ieslēdza lampu. Pēc tam viņa uzvārīja tēju un apsēdās dīvānā.
+remind-rc-006,reading_comprehension,2,2,0,reading_comprehension,yes,Īss teksts ar tiešām atbildēm,Svētdien Pēteris devās pastaigā uz parku. Pie dīķa viņš ieraudzīja pīles. Pēc pastaigas Pēteris nopirka maizi un atgriezās mājās.
+remind-rc-007,reading_comprehension,2,2,0,reading_comprehension,yes,Īss teksts ar tiešām atbildēm,No rīta Eva uzvārīja kafiju. Viņa atvēra logu un apsēdās virtuvē. Uz galda stāvēja avīze.
+remind-rc-008,reading_comprehension,2,2,0,reading_comprehension,yes,Īss teksts ar tiešām atbildēm,Otrdien Rihards aizgāja uz pastu. Viņš nosūtīja vēstuli māsai. Pēc tam Rihards nopirka aploksni.
+remind-rc-009,reading_comprehension,3,2,1,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Dace uz balkona iestādīja pelargonijas. Viņa tās aplēja ar lejkannu. Vakarā Dace aizvēra balkona durvis.
+remind-rc-010,reading_comprehension,2,2,0,reading_comprehension,yes,Īss teksts ar tiešām atbildēm,Svētdien Egils aizbrauca uz Liepāju. Viņš staigāja pa pludmali un fotografēja laivas. Mājās Egils parādīja fotogrāfijas.
+remind-rc-011,reading_comprehension,2,2,0,reading_comprehension,yes,Īss teksts ar tiešām atbildēm,Aina vakarā klausījās radio. Viņa dzirdēja ziņas par laikapstākļiem. Pēc raidījuma Aina piezvanīja brālim.
+remind-rc-012,reading_comprehension,3,2,1,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Rūta virtuvē sajauca mīklu. Viņa izveidoja mazas maizītes un ievietoja tās krāsnī. Pēc pusstundas virtuvē smaržoja pēc kanēļa.
+remind-rc-013,reading_comprehension,3,3,0,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Piektdien Andris gaidīja autobusu pieturā. Viņam rokā bija zila soma. Autobuss pienāca pēc desmit minūtēm. Andris apsēdās pie loga.
+remind-rc-014,reading_comprehension,3,3,0,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Vasarā Gunta savāca gurķus siltumnīcā. Viņa izvēlējās lielākos un salika tos grozā. Mazākos gurķus Gunta atstāja vēl augt. Vakarā viņa pagatavoja salātus.
+remind-rc-015,reading_comprehension,3,3,0,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Ilmārs sestdien apmeklēja muzeju. Viņš aplūkoja vecas fotogrāfijas un pulksteņus. Vienu stundu Ilmārs klausījās gida stāstījumu. Pēc tam viņš iegādājās pastkarti.
+remind-rc-016,reading_comprehension,3,3,0,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Aprīlī Liene iegādājās bērzu sulas pudeli. Viņa ievietoja to ledusskapī. Pusdienās Liene sulas glāzi nolika uz galda. Vakarā pudele jau bija tukša.
+remind-rc-017,reading_comprehension,3,3,0,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,"Oskars pamanīja, ka virtuvē nedeg lampa. Viņš paņēma jaunu spuldzi no skapja. Pirms maiņas Oskars izslēdza elektrību. Pēc tam lampa atkal dega."
+remind-rc-018,reading_comprehension,3,3,0,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Rudenī Zaiga devās uz mežu ar grozu. Zem priedes viņa atrada baraviku. Grozā bija arī gailenes. Mājās Zaiga sēnes notīrīja.
+remind-rc-019,reading_comprehension,3,3,0,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Piektdien Normunds svinēja dzimšanas dienu. Draugi viņam uzdāvināja grāmatu. Uz galda bija ābolu kūka. Pēc vakariņām visi klausījās mūziku.
+remind-rc-020,reading_comprehension,3,3,0,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Sanda no rīta devās uz staciju. Pie kases viņa nopirka biļeti uz Jelgavu. Vilciens atbrauca pēc piecām minūtēm. Sanda iekāpa otrajā vagonā.
+remind-rc-021,reading_comprehension,3,3,0,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,"Spīdēja saule, bet pūta vējš. Ilze uzvilka sarkanu jaku. Parkā viņa fotografēja kļavu lapas. Mājās Ilze izdzēra siltu tēju."
+remind-rc-022,reading_comprehension,3,3,0,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Roberts pusdienlaikā iegāja kafejnīcā. Viņš pasūtīja zupu un minerālūdeni. Zupu atnesa siltā šķīvī. Pēc pusdienām Roberts samaksāja ar karti.
+remind-rc-023,reading_comprehension,3,3,0,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Vakar radio solīja sniegu. Tomēr no rīta lija lietus. Mārtiņš paņēma lietussargu un devās uz darbu. Pusdienlaikā debesis noskaidrojās.
+remind-rc-024,reading_comprehension,3,3,0,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,"Pusdienlaikā Kristīnei pienāca ziņa no brāļa. Brālis jautāja par nedēļas nogales plāniem. Kristīne atbildēja, ka sestdien būs mājās. Pēc tam viņa nolika telefonu uz plaukta."
+remind-rc-025,reading_comprehension,4,5,-1,reading_comprehension,yes,"Vairākas līdzīgas detaļas, notikumu secība vai pretnostatījums",Ieva bija nolēmusi sestdien doties uz Siguldu. Piektdien vakarā viņa pārbaudīja vilcienu sarakstu. No rīta sākās stiprs lietus. Ieva nolēma braucienu atlikt. Tā vietā viņa mājās lasīja romānu.
+remind-rc-026,reading_comprehension,3,4,-1,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Māris uzaicināja pie sevis kaimiņus. Viņš pagatavoja dārzeņu zupu un izcepa maizi. Kaimiņi ieradās septiņos vakarā. Viņi atnesa ziedus. Pēc vakariņām visi spēlēja kārtis.
+remind-rc-027,reading_comprehension,4,4,0,reading_comprehension,yes,"Vairākas līdzīgas detaļas, notikumu secība vai pretnostatījums",Juris svētdien gribēja apgriezt rožu krūmus. Viņš šķūnī meklēja dārza šķēres. Sākumā Juris atrada lāpstu. Šķēres atradās plauktā zem loga. Pēc darba viņš instrumentus nolika atpakaļ.
+remind-rc-028,reading_comprehension,4,4,0,reading_comprehension,yes,"Vairākas līdzīgas detaļas, notikumu secība vai pretnostatījums","Pēc iepirkšanās Inese atgriezās mājās ar autobusu. Izkāpjot viņa pamanīja, ka soma palikusi sēdeklī. Inese uzreiz piezvanīja transporta uzņēmumam. Autobusa vadītājs somu atrada. Vakarā Inese to saņēma pieturā."
+remind-rc-029,reading_comprehension,3,4,-1,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,"Trešdien no rīta bija saulains. Velta iznesa puķu podus uz terases. Pēcpusdienā sāka līt. Viņa ātri ienesa podus istabā. Vakarā Velta atvēra logu, lai ielaistu svaigu gaisu."
+remind-rc-030,reading_comprehension,3,4,-1,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Ilze atrada avīzē kartupeļu sacepuma recepti. Pēc darba viņa nopirka sieru un kartupeļus. Mājās Ilze ieslēdza cepeškrāsni. Sacepums bija gatavs pēc stundas. Vakariņās viņa to pasniedza ar salātiem.
+remind-rc-031,reading_comprehension,3,4,-1,reading_comprehension,yes,Jānotur atmiņā vairāki fakti un personu/darbību saites,Vasarā Rīga bija pilna ar tūristiem. Kāds viesis pie stacijas meklēja muzeju. Elza viņam parādīja ceļu kartē. Tūrists pateicās latviski. Pēc tam Elza turpināja ceļu uz darbu.
+remind-rc-032,reading_comprehension,4,4,0,reading_comprehension,yes,"Vairākas līdzīgas detaļas, notikumu secība vai pretnostatījums",Viesturs sestdien aizgāja uz tirgu pēc medus. Pie pirmā stenda pārdeva ābolus. Medu viņš atrada pie saimnieces zilā mētelī. Viesturs nopirka divas burkas. Vienu burku viņš uzdāvināja kaimiņienei.
+remind-rc-033,reading_comprehension,4,4,0,reading_comprehension,yes,"Vairākas līdzīgas detaļas, notikumu secība vai pretnostatījums",Ivars agri no rīta pārbaudīja velosipēda riepas. Vienā riepā bija maz gaisa. Viņš to piepumpēja un uzlika ķiveri. Pa ceļam Ivars apstājās pie ezera. Mājās viņš atgriezās pirms pusdienām.
+remind-rc-034,reading_comprehension,4,4,0,reading_comprehension,yes,"Vairākas līdzīgas detaļas, notikumu secība vai pretnostatījums","Maija bija izslēgusi televizoru, jo gribēja mieru. Viņa apsēdās krēslā ar krustvārdu mīklu. Pēc brīža iezvanījās telefons. Zvanīja viņas meita. Sarunas beigās Maija nolika telefonu uz galda."
+remind-rc-035,reading_comprehension,4,4,0,reading_comprehension,yes,"Vairākas līdzīgas detaļas, notikumu secība vai pretnostatījums",Anda pasūtīja pušķi mātes dzimšanas dienai. Floriste ieteica dzeltenas tulpes. Anda piekrita un palūdza pievienot apsveikuma kartīti. Pušķi piegādāja piektdien. Māte kartīti izlasīja vakarā.
+remind-rc-036,reading_comprehension,4,5,-1,reading_comprehension,yes,"Vairākas līdzīgas detaļas, notikumu secība vai pretnostatījums","Svētdien Baiba kopā ar brāli aizbrauca pie ezera. Viņi paņēma līdzi termosu ar tēju. Pie ūdens bija vēss, tāpēc Baiba uzvilka jaku. Brālis fotografēja gulbjus. Pirms braukšanas mājās viņi apsēdās uz soliņa."
+so-p01-001,sentence_order,1,1,0,sentence_order,yes,"Īss, ierasts subjekta–darbības–objekta teikums",Vilciens pienāca laikā.
+so-p01-002,sentence_order,1,1,0,sentence_order,yes,"Īss, ierasts subjekta–darbības–objekta teikums",Ieva lasa avīzi.
+so-p01-003,sentence_order,1,1,0,sentence_order,yes,"Īss, ierasts subjekta–darbības–objekta teikums",Katlā vārās zupa.
+so-p01-004,sentence_order,1,1,0,sentence_order,yes,"Īss, ierasts subjekta–darbības–objekta teikums",Māsa gatavo vakariņas.
+so-p01-005,sentence_order,1,1,0,sentence_order,yes,"Īss, ierasts subjekta–darbības–objekta teikums",Līga aizvēra logu.
+so-p01-006,sentence_order,1,1,0,sentence_order,yes,"Īss, ierasts subjekta–darbības–objekta teikums",Dārzā uzziedēja rozes.
+so-p01-007,sentence_order,2,1,1,sentence_order,yes,"Vienkāršs, bet ar vairākiem teikuma locekļiem",Kurjers piegādāja sūtījumu.
+so-p01-008,sentence_order,1,1,0,sentence_order,yes,"Īss, ierasts subjekta–darbības–objekta teikums",Vakarā iedegās lampas.
+so-p01-009,sentence_order,2,1,1,sentence_order,yes,"Vienkāršs, bet ar vairākiem teikuma locekļiem",Ārsts izrakstīja recepti.
+so-p01-010,sentence_order,1,1,0,sentence_order,yes,"Īss, ierasts subjekta–darbības–objekta teikums",Veikalā beidzās piens.
+so-p01-011,sentence_order,2,2,0,sentence_order,yes,"Vienkāršs, bet ar vairākiem teikuma locekļiem",Suns guļ pie durvīm.
+so-p01-012,sentence_order,2,2,0,sentence_order,yes,"Vienkāršs, bet ar vairākiem teikuma locekļiem",Kaimiņš salaboja veco velosipēdu.
+so-p01-013,sentence_order,2,2,0,sentence_order,yes,"Vienkāršs, bet ar vairākiem teikuma locekļiem",Anna nopirka svaigu maizi.
+so-p01-014,sentence_order,2,2,0,sentence_order,yes,"Vienkāršs, bet ar vairākiem teikuma locekļiem",No rīta līst lietus.
+so-p01-015,sentence_order,2,2,0,sentence_order,yes,"Vienkāršs, bet ar vairākiem teikuma locekļiem",Draugi satikās pie muzeja.
+so-p01-016,sentence_order,3,3,0,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Pirms darba Jānis izdzēra kafiju.
+so-p01-017,sentence_order,3,3,0,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Marija vakar nopirka jaunu lietussargu.
+so-p01-018,sentence_order,2,3,-1,sentence_order,yes,"Vienkāršs, bet ar vairākiem teikuma locekļiem",Pa logu iespīdēja rīta saule.
+so-p01-019,sentence_order,3,3,0,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Dārznieks regulāri aplaista istabas augus.
+so-p01-020,sentence_order,2,3,-1,sentence_order,yes,"Vienkāršs, bet ar vairākiem teikuma locekļiem",Sestdien draugi kopā apmeklēja muzeju.
+so-p01-021,sentence_order,2,2,0,sentence_order,yes,"Vienkāršs, bet ar vairākiem teikuma locekļiem",Autobuss pieturā ieradās desmitos.
+so-p01-022,sentence_order,3,3,0,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Šodien pūta stiprs ziemeļu vējš.
+so-p01-023,sentence_order,3,3,0,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Tēvs uzmanīgi nomazgāja virtuves logu.
+so-p01-024,sentence_order,3,3,0,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Pēc pusdienām Anna izveda suni.
+so-p01-025,sentence_order,2,3,-1,sentence_order,yes,"Vienkāršs, bet ar vairākiem teikuma locekļiem",Pie veikala stāvēja zils autobuss.
+so-p01-026,sentence_order,3,3,0,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Šorīt pastnieks atnesa divas vēstules.
+so-p01-027,sentence_order,3,3,0,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Vakariņām mēs gatavojām dārzeņu sautējumu.
+so-p01-028,sentence_order,3,3,0,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Otrdien ģimene apmeklēja pilsētas bibliotēku.
+so-p01-029,sentence_order,3,3,0,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Sētnieks no ietves notīrīja sniegu.
+so-p01-030,sentence_order,3,3,0,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Vecmāmiņa krāsnī izcepa ābolu pīrāgu.
+so-p01-031,sentence_order,3,3,0,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Pēc lietus uzspīdēja spoža saule.
+so-p01-032,sentence_order,2,3,-1,sentence_order,yes,"Vienkāršs, bet ar vairākiem teikuma locekļiem",Vakarā viesi kopā skatījās filmu.
+so-p01-033,sentence_order,3,3,0,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Mēs pagalmā iestādījām jaunu koku.
+so-p01-034,sentence_order,4,3,1,sentence_order,yes,"Grūtāka vārdkopu sasaistīšana, secība vai locījumu attiecības",Ārste pacientam paskaidroja analīžu rezultātus.
+so-p01-035,sentence_order,2,2,0,sentence_order,yes,"Vienkāršs, bet ar vairākiem teikuma locekļiem",Stacijā pienāca pasažieru vilciens.
+so-p01-036,sentence_order,3,4,-1,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Pirms brauciena viņš pārbaudīja automašīnas riepas.
+so-p01-037,sentence_order,4,4,0,sentence_order,yes,"Grūtāka vārdkopu sasaistīšana, secība vai locījumu attiecības",Kolēģi apsprieda nākamās nedēļas darba plānus.
+so-p01-038,sentence_order,3,4,-1,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Vakarā Ilze izslēdza visas istabas lampas.
+so-p01-039,sentence_order,3,4,-1,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Pēc darba tēvs nopirka svaigus dārzeņus.
+so-p01-040,sentence_order,3,4,-1,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Pie upes bērni vēroja savvaļas pīles.
+so-p01-041,sentence_order,3,4,-1,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Svētdien ģimene devās garā pastaigā mežā.
+so-p01-042,sentence_order,3,4,-1,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,No rīta kaimiņš atvēra garāžas durvis.
+so-p01-043,sentence_order,3,4,-1,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Pēc pusdienām vecmāmiņa laistīja dārza puķes.
+so-p01-044,sentence_order,3,4,-1,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Stacijā cilvēki gaidīja nākamo pasažieru vilcienu.
+so-p01-045,sentence_order,3,4,-1,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Lietainā dienā cilvēki izvēlas siltus apavus.
+so-p01-046,sentence_order,3,4,-1,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Pirms vakariņām Rūta nomazgāja svaigus gurķus.
+so-p01-047,sentence_order,4,4,0,sentence_order,yes,"Grūtāka vārdkopu sasaistīšana, secība vai locījumu attiecības",Pēc sapulces vadītāja izsūtīja visiem ziņojumu.
+so-p01-048,sentence_order,3,4,-1,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Bērni pagalmā vēroja pirmās rudens lapas.
+so-p01-049,sentence_order,3,4,-1,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Uz ceļa taksometrs apbrauca lielu bedri.
+so-p01-050,sentence_order,3,4,-1,sentence_order,yes,Jāsaskaņo vairākas vārdkopas un laika/vietas norādes,Pēc darba Liene pasūtīja siltas vakariņas.
+oo-p01-001,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,ābols / bumbieris / burkāns / plūme
+oo-p01-002,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,spilvens / karote / dakšiņa / nazis
+oo-p01-003,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,zvirbulis / balodis / stārķis / vāvere
+oo-p01-004,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,janvāris / piektdiena / aprīlis / septembris
+oo-p01-005,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,roze / tulpe / ozols / narcise
+oo-p01-006,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,čemodāns / mētelis / džemperis / bikses
+oo-p01-007,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,krēsls / gulta / dīvāns / ledusskapis
+oo-p01-008,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,vijole / lietussargs / klavieres / bungas
+oo-p01-009,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,tramvajs / autobuss / tējkanna / trolejbuss
+oo-p01-010,odd_one_out,2,1,1,odd_one_out,yes,"Jāatšķir divas saistītas, tomēr nodalāmas kategorijas",vīnogas / burkāns / pastinaks / rācenis
+oo-p01-011,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,virtuve / vannasistaba / guļamistaba / tramvajs
+oo-p01-012,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,pildspalva / lāpsta / zīmulis / krītiņš
+oo-p01-013,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,līdaka / asaris / ezis / zandarts
+oo-p01-014,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,Latvija / Rīga / Liepāja / Cēsis
+oo-p01-015,odd_one_out,1,1,0,odd_one_out,yes,Trīs konkrēti vienas pazīstamas kategorijas vārdi,pirmdiena / ceturtdiena / svētdiena / novembris
+oo-p01-016,odd_one_out,2,3,-1,odd_one_out,yes,"Jāatšķir divas saistītas, tomēr nodalāmas kategorijas",Eiropa / Portugāle / Āzija / Āfrika
+oo-p01-017,odd_one_out,2,2,0,odd_one_out,yes,"Jāatšķir divas saistītas, tomēr nodalāmas kategorijas",dzelzs / varš / plastmasa / alumīnijs
+oo-p01-018,odd_one_out,2,2,0,odd_one_out,yes,"Jāatšķir divas saistītas, tomēr nodalāmas kategorijas",Mēness / Marss / Venera / Saturns
+oo-p01-019,odd_one_out,2,2,0,odd_one_out,yes,"Jāatšķir divas saistītas, tomēr nodalāmas kategorijas",komats / punkts / semikols / burts
+oo-p01-020,odd_one_out,3,3,0,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,trijstūris / kubs / kvadrāts / taisnstūris
+oo-p01-021,odd_one_out,3,3,0,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,litrs / mililitrs / kilograms / kubikmetrs
+oo-p01-022,odd_one_out,2,2,0,odd_one_out,yes,"Jāatšķir divas saistītas, tomēr nodalāmas kategorijas",kilometrs / sekunde / minūte / stunda
+oo-p01-023,odd_one_out,2,2,0,odd_one_out,yes,"Jāatšķir divas saistītas, tomēr nodalāmas kategorijas",ārsts / medmāsa / farmaceits / šoferis
+oo-p01-024,odd_one_out,3,3,0,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,vijole / flauta / čells / kontrabass
+oo-p01-025,odd_one_out,3,2,1,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,zāģis / ēvele / termometrs / kalts
+oo-p01-026,odd_one_out,3,3,0,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,podkāsts / laikraksts / žurnāls / brošūra
+oo-p01-027,odd_one_out,2,2,0,odd_one_out,yes,"Jāatšķir divas saistītas, tomēr nodalāmas kategorijas",kokvilna / lins / vilna / stikls
+oo-p01-028,odd_one_out,2,2,0,odd_one_out,yes,"Jāatšķir divas saistītas, tomēr nodalāmas kategorijas",decembris / jūlijs / janvāris / februāris
+oo-p01-029,odd_one_out,2,2,0,odd_one_out,yes,"Jāatšķir divas saistītas, tomēr nodalāmas kategorijas",grams / kilograms / litrs / tonna
+oo-p01-030,odd_one_out,3,3,0,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,aplis / kubs / cilindrs / lode
+oo-p01-031,odd_one_out,2,2,0,odd_one_out,yes,"Jāatšķir divas saistītas, tomēr nodalāmas kategorijas",futbols / basketbols / volejbols / peldēšana
+oo-p01-032,odd_one_out,2,2,0,odd_one_out,yes,"Jāatšķir divas saistītas, tomēr nodalāmas kategorijas",čiekurs / slēdzene / skuja / miza
+oo-p01-033,odd_one_out,3,2,1,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,vārīšana / cepšana / slaucīšana / sautēšana
+oo-p01-034,odd_one_out,3,2,1,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,ārsts / vilciena mašīnists / autobusa vadītājs / lidmašīnas pilots
+oo-p01-035,odd_one_out,3,3,0,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,egle / priede / lapegle / bērzs
+oo-p01-036,odd_one_out,4,4,0,odd_one_out,yes,Abstrakta vai mazpazīstama kategorijas robeža,hektārs / metrs / kvadrātmetrs / kvadrātkilometrs
+oo-p01-037,odd_one_out,4,4,0,odd_one_out,yes,Abstrakta vai mazpazīstama kategorijas robeža,lēni / ātri / skaļš / klusi
+oo-p01-038,odd_one_out,3,4,-1,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,dziedās / rakstīja / lasīja / zīmēja
+oo-p01-039,odd_one_out,3,4,-1,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,Rīga / Tallina / Viļņa / Jelgava
+oo-p01-040,odd_one_out,3,3,0,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,lietus / migla / sniegs / krusa
+oo-p01-041,odd_one_out,4,3,1,odd_one_out,yes,Abstrakta vai mazpazīstama kategorijas robeža,smaragds / rubīns / varš / safīrs
+oo-p01-042,odd_one_out,4,4,0,odd_one_out,yes,Abstrakta vai mazpazīstama kategorijas robeža,akmeņogles / saules enerģija / vēja enerģija / ūdens enerģija
+oo-p01-043,odd_one_out,5,5,0,odd_one_out,yes,Specializēta zinātniska/valodnieciska klasifikācija,protons / neitrons / elektrons / molekula
+oo-p01-044,odd_one_out,3,3,0,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,advokāts / ķirurgs / tiesnesis / prokurors
+oo-p01-045,odd_one_out,4,3,1,odd_one_out,yes,Abstrakta vai mazpazīstama kategorijas robeža,stāsts / novele / vārdnīca / romāns
+oo-p01-046,odd_one_out,3,4,-1,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,Jupiters / Saule / Sīriuss / Polārzvaigzne
+oo-p01-047,odd_one_out,3,3,0,odd_one_out,yes,Specifiskākas jomas zināšanas vai abstraktāka klasifikācija,kvīts / rēķins / pavadzīme / kalendārs
+oo-p01-048,odd_one_out,4,5,-1,odd_one_out,yes,Abstrakta vai mazpazīstama kategorijas robeža,skābeklis / ūdens / slāpeklis / ūdeņradis
+oo-p01-049,odd_one_out,4,5,-1,odd_one_out,yes,Abstrakta vai mazpazīstama kategorijas robeža,viņš / viņa / mēs / viņi
+oo-p01-050,odd_one_out,2,3,-1,odd_one_out,yes,"Jāatšķir divas saistītas, tomēr nodalāmas kategorijas",termometrs / pulkstenis / hronometrs / taimeris
+an-p01-001,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,karsts — auksts
+an-p01-002,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,augsts — zems
+an-p01-003,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,plats — šaurs
+an-p01-004,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,garš — īss
+an-p01-005,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,smags — viegls
+an-p01-006,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,pilns — tukšs
+an-p01-007,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,"sauss — slapjš, mitrs"
+an-p01-008,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,tīrs — netīrs
+an-p01-009,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,gaišs — tumšs
+an-p01-010,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,skaļš — kluss
+an-p01-011,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,silts — auksts
+an-p01-012,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,mīksts — ciets
+an-p01-013,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,ātrs — lēns
+an-p01-014,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,jauns — vecs
+an-p01-015,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,"atvērts — aizvērts, aiztaisīts"
+an-p01-016,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,tuvu — tālu
+an-p01-017,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,diena — nakts
+an-p01-018,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,augšā — apakšā
+an-p01-019,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,iekšā — ārā
+an-p01-020,antonym,1,1,0,antonym,yes,Ļoti pazīstams ikdienas pretstatu pāris,priekšā — aizmugurē
+an-p01-021,antonym,2,2,0,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,agri — vēlu
+an-p01-022,antonym,2,3,-1,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,bieži — reti
+an-p01-023,antonym,2,3,-1,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,vienmēr — nekad
+an-p01-024,antonym,2,2,0,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,vairāk — mazāk
+an-p01-025,antonym,2,2,0,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,sākums — beigas
+an-p01-026,antonym,2,2,0,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,"priecīgs — bēdīgs, noskumis"
+an-p01-027,antonym,2,3,-1,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,bagāts — nabadzīgs
+an-p01-028,antonym,3,3,0,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,"drosmīgs — bailīgs, gļēvs"
+an-p01-029,antonym,2,2,0,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,stiprs — vājš
+an-p01-030,antonym,3,3,0,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,gluds — raupjš
+an-p01-031,antonym,3,3,0,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,"ass — neass, truls"
+an-p01-032,antonym,2,3,-1,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,"taisns — līks, greizs"
+an-p01-033,antonym,2,2,0,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,pacelt — nolaist
+an-p01-034,antonym,2,2,0,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,pirkt — pārdot
+an-p01-035,antonym,2,2,0,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,ieslēgt — izslēgt
+an-p01-036,antonym,2,2,0,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,iekāpt — izkāpt
+an-p01-037,antonym,3,2,1,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,"iedegt — nodzēst, izdzēst"
+an-p01-038,antonym,2,2,0,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,dot — ņemt
+an-p01-039,antonym,2,3,-1,antonym,yes,Tiešs pretstats ar nelielu leksisku vai konteksta sarežģītību,uzvarēt — zaudēt
+an-p01-040,antonym,3,3,0,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,slēpt — atklāt
+an-p01-041,antonym,3,4,-1,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,atcerēties — aizmirst
+an-p01-042,antonym,3,4,-1,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,"piekrist — iebilst, nepiekrist"
+an-p01-043,antonym,4,4,0,antonym,yes,Retāks vai semantiski niansēts pretstats,apvienot — sadalīt
+an-p01-044,antonym,3,4,-1,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,paātrināt — palēnināt
+an-p01-045,antonym,3,4,-1,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,paplašināt — sašaurināt
+an-p01-046,antonym,3,4,-1,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,paaugstināt — pazemināt
+an-p01-047,antonym,3,4,-1,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,uzlabot — pasliktināt
+an-p01-048,antonym,3,4,-1,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,pietuvināt — attālināt
+an-p01-049,antonym,3,3,0,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,atļaut — aizliegt
+an-p01-050,antonym,3,3,0,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,samazināt — palielināt
+an-p01-051,antonym,3,4,-1,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,aizņemties — aizdot
+an-p01-052,antonym,3,3,0,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,aktīvs — pasīvs
+an-p01-053,antonym,4,5,-1,antonym,yes,Retāks vai semantiski niansēts pretstats,optimistisks — pesimistisks
+an-p01-054,antonym,3,3,0,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,dāsns — skops
+an-p01-055,antonym,3,3,0,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,rūpīgs — paviršs
+an-p01-056,antonym,3,3,0,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,pacietīgs — nepacietīgs
+an-p01-057,antonym,4,5,-1,antonym,yes,Retāks vai semantiski niansēts pretstats,vienaldzīgs — ieinteresēts
+an-p01-058,antonym,4,4,0,antonym,yes,Retāks vai semantiski niansēts pretstats,"pastāvīgs — īslaicīgs, pagaidu"
+an-p01-059,antonym,3,4,-1,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,atklāts — slepens
+an-p01-060,antonym,3,3,0,antonym,yes,Abstrakta darbība/īpašība vai mazāk lietota vārda forma,precīzs — neprecīzs
+dg-p01-001,definition_guess,3,3,0,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tas ir trauks ar izolētām sienām un cieši aizskrūvējamu vāku. Tajā dzēriens vairākas stundas saglabājas silts. [atbilde: termoss, termopudele]"
+dg-p01-002,definition_guess,2,2,0,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"To tur rokā virs galvas, kad līst lietus. Atverot veidojas auduma kupols. [atbilde: lietussargs]"
+dg-p01-003,definition_guess,3,3,0,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Šim virtuves traukam ir daudz caurumu. Tajā pēc vārīšanas nokāš makaronus. [atbilde: caurduris, siets]"
+dg-p01-004,definition_guess,2,2,0,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,Tā ir ledusskapja daļa ar ļoti zemu temperatūru. Tajā pārtika sasalst. [atbilde: saldētava]
+dg-p01-005,definition_guess,2,2,0,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"Šī ierīce noteiktā laikā atskaņo signālu, lai cilvēks no rīta pamostos. [atbilde: modinātājs]"
+dg-p01-006,definition_guess,1,1,0,definition_guess,yes,Apraksts ļoti tieši nosauc pazīstama priekšmeta īpašības,"Tas ir neliels metāla priekšmets ar robiem, ar kuru atslēdz durvis. [atbilde: atslēga]"
+dg-p01-007,definition_guess,2,2,0,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"Tā ir neliela ierīce ar pogām, ar kuru no attāluma pārslēdz televizora kanālus. [atbilde: pults]"
+dg-p01-008,definition_guess,1,1,0,definition_guess,yes,Apraksts ļoti tieši nosauc pazīstama priekšmeta īpašības,Šim priekšmetam ir gara rinda ar zobiņiem. Ar to sakārto matus. [atbilde: ķemme]
+dg-p01-009,definition_guess,2,2,0,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"Tā ir sadzīves ierīce, kurā ar ūdeni un mazgāšanas līdzekli mazgā apģērbu. [atbilde: veļasmašīna]"
+dg-p01-010,definition_guess,1,2,-1,definition_guess,yes,Apraksts ļoti tieši nosauc pazīstama priekšmeta īpašības,"Tie ir vairāki pakāpieni cits virs cita, pa kuriem var nokļūt no viena stāva citā. [atbilde: kāpnes]"
+dg-p01-011,definition_guess,2,2,0,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"Tā ir ierīce, uz kuras uzliek produktu, lai noskaidrotu tā masu. [atbilde: svari]"
+dg-p01-012,definition_guess,3,3,0,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tas ir ārsta izrakstīts dokuments, ar kuru aptiekā var saņemt noteiktas zāles. [atbilde: recepte]"
+dg-p01-013,definition_guess,2,2,0,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"Šai ierīcei ir motors, kas iesūc putekļus no grīdas vai paklāja. [atbilde: putekļsūcējs]"
+dg-p01-014,definition_guess,1,1,0,definition_guess,yes,Apraksts ļoti tieši nosauc pazīstama priekšmeta īpašības,"Tā ir gluda virsma, kurā cilvēks redz savu atspulgu. [atbilde: spogulis]"
+dg-p01-015,definition_guess,2,2,0,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,Tajā redzamas gada mēnešu dienas un nedēļas. Tajā var atzīmēt svarīgus datumus. [atbilde: kalendārs]
+dg-p01-016,definition_guess,1,3,-2,definition_guess,yes,Apraksts ļoti tieši nosauc pazīstama priekšmeta īpašības,"Tā ir vieta, kur var aizņemties grāmatas lasīšanai uz noteiktu laiku. [atbilde: bibliotēka]"
+dg-p01-017,definition_guess,1,3,-2,definition_guess,yes,Apraksts ļoti tieši nosauc pazīstama priekšmeta īpašības,"Tā ir vieta ceļa malā, kur cilvēki gaida autobusu un autobuss uzņem pasažierus. [atbilde: pietura, autobusa pietura]"
+dg-p01-018,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tā ir paaugstināta vieta blakus dzelzceļa sliedēm, kur cilvēki gaida vilcienu. [atbilde: perons, platforma]"
+dg-p01-019,definition_guess,2,3,-1,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"Tā ir neliela izdruka, ko veikalā saņem pēc pirkuma. Tajā redzama samaksātā summa. [atbilde: čeks]"
+dg-p01-020,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tas ir dokuments, kurā norādīta summa, kas vēl jāsamaksā par preci vai pakalpojumu. [atbilde: rēķins]"
+dg-p01-021,definition_guess,2,3,-1,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"Tā ir vieta, kur divas vai vairākas ielas satiekas vai šķērsojas. [atbilde: krustojums]"
+dg-p01-022,definition_guess,2,2,0,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"Tā ir satiksmes ierīce ar sarkanu, dzeltenu un zaļu gaismas signālu. [atbilde: luksofors]"
+dg-p01-023,definition_guess,2,3,-1,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"Tā ir ierīce, ar kuru izmēra temperatūru, piemēram, pārbauda, vai cilvēkam ir drudzis. [atbilde: termometrs]"
+dg-p01-024,definition_guess,4,4,0,definition_guess,yes,Formālāks vai abstrakts jēdziens ar netiešu aprakstu,"Tā ir ierīce, kas mēra gaisa spiedienu, lai palīdzētu novērot laikapstākļu izmaiņas. [atbilde: barometrs]"
+dg-p01-025,definition_guess,3,3,0,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tā ir neliela ierīce ar magnētisku adatu, kas palīdz noteikt ziemeļu virzienu. [atbilde: kompass]"
+dg-p01-026,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tas ir rakstisks teksts, kurā soli pa solim paskaidrots, kā lietot vai salikt kādu ierīci. [atbilde: instrukcija, pamācība]"
+dg-p01-027,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tā ir atkārtoti uzlādējama elektroenerģijas krātuve, piemēram, automašīnā. [atbilde: akumulators]"
+dg-p01-028,definition_guess,2,2,0,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"Tie ir auduma gabali, kas piestiprināti virs loga un kurus var aizvilkt priekšā logam. [atbilde: aizkari]"
+dg-p01-029,definition_guess,1,2,-1,definition_guess,yes,Apraksts ļoti tieši nosauc pazīstama priekšmeta īpašības,"Tā ir soma ar divām plecu lencēm, ko nēsā uz muguras. [atbilde: mugursoma]"
+dg-p01-030,definition_guess,2,3,-1,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"Tā ir cieta ceļasoma uz riteņiem ar izvelkamu rokturi, kurā saliek mantas braucienam. [atbilde: koferis, čemodāns]"
+dg-p01-031,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tā ir ierīce, ar kuru papīra dokumentu pārvērš digitālā attēlā datorā. [atbilde: skeneris]"
+dg-p01-032,definition_guess,2,2,0,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"Tā ir ierīce, kas datora tekstu vai attēlu izdrukā uz papīra. [atbilde: printeris]"
+dg-p01-033,definition_guess,1,2,-1,definition_guess,yes,Apraksts ļoti tieši nosauc pazīstama priekšmeta īpašības,"Tas ir ārsts, kurš pārbauda un ārstē zobus. [atbilde: zobārsts]"
+dg-p01-034,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tas ir aptiekas speciālists, kurš izsniedz zāles un paskaidro to lietošanu. [atbilde: farmaceits, aptiekārs]"
+dg-p01-035,definition_guess,3,3,0,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tas ir cilvēks, kura darbs ir šūt, sašaurināt vai pielāgot apģērbu. [atbilde: drēbnieks, šuvējs]"
+dg-p01-036,definition_guess,4,5,-1,definition_guess,yes,Formālāks vai abstrakts jēdziens ar netiešu aprakstu,Tas ir ražotāja vai pārdevēja solījums noteiktā laikā novērst noteiktus preces trūkumus saskaņā ar nosacījumiem. [atbilde: garantija]
+dg-p01-037,definition_guess,4,5,-1,definition_guess,yes,Formālāks vai abstrakts jēdziens ar netiešu aprakstu,"Tas ir pakalpojums, par kuru maksā, lai noteiktu negadījumu gadījumā varētu saņemt finansiālu atlīdzību. [atbilde: apdrošināšana]"
+dg-p01-038,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tas ir iepriekš pieteikts konkrēts apmeklējuma laiks, piemēram, pie ārsta. [atbilde: pieraksts]"
+dg-p01-039,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tā ir naudas atdošana pircējam, piemēram, pēc atgrieztas preces pieņemšanas. [atbilde: atmaksa]"
+dg-p01-040,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,Tā ir pasūtītas preces nogādāšana no veikala vai noliktavas līdz klientam. [atbilde: piegāde]
+dg-p01-041,definition_guess,2,4,-2,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,Tas ir preces cenas samazinājums salīdzinājumā ar tās parasto cenu. [atbilde: atlaide]
+dg-p01-042,definition_guess,4,5,-1,definition_guess,yes,Formālāks vai abstrakts jēdziens ar netiešu aprakstu,Tā ir naudas nosūtīšana no viena bankas konta uz citu bankas kontu. [atbilde: pārskaitījums]
+dg-p01-043,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tā ir īsa ziņa, kas automātiski parādās telefona ekrānā, piemēram, kad pienācis jauns e-pasts. [atbilde: paziņojums]"
+dg-p01-044,definition_guess,2,4,-2,definition_guess,yes,Pazīstams jēdziens ar dažām nosakošām pazīmēm,"Tā ir slepena burtu, ciparu vai simbolu virkne, kuru ievada, lai piekļūtu savam kontam. [atbilde: parole]"
+dg-p01-045,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tā ir vietas vai pakalpojuma iepriekšēja pieteikšana, piemēram, restorānā vai viesnīcā. [atbilde: rezervācija]"
+dg-p01-046,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tas ir pēdējais datums vai laiks, līdz kuram jāizpilda noteikts darbs vai jāveic maksājums. [atbilde: termiņš]"
+dg-p01-047,definition_guess,4,5,-1,definition_guess,yes,Formālāks vai abstrakts jēdziens ar netiešu aprakstu,"Tas ir dokuments, ar kuru cilvēks piešķir citam tiesības rīkoties viņa vārdā. [atbilde: pilnvara]"
+dg-p01-048,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,"Tas ir iepriekš noteikts ceļš no sākuma vietas līdz galamērķim, reizēm ar vairākām pieturām. [atbilde: maršruts]"
+dg-p01-049,definition_guess,3,4,-1,definition_guess,yes,Jāapvieno vairākas pazīmes vai jāatceras retāks termins,Tas ir paredzējums par gaidāmajiem laikapstākļiem nākamajās dienās. [atbilde: prognoze]
+dg-p01-050,definition_guess,4,5,-1,definition_guess,yes,Formālāks vai abstrakts jēdziens ar netiešu aprakstu,"Tā ir vienošanās, kas ļauj par noteiktu maksu regulāri saņemt pakalpojumu, izdevumu vai piekļuvi. [atbilde: abonements]"

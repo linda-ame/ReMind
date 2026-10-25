@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { Button } from '../../components/Button';
 import { ListenButton } from '../../components/ListenButton';
+import { isAnswerCorrect } from '../../utils/answers';
 import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { SentenceOrderTask } from '../../types/task';
 import type { TaskAttempt } from '../../types/progress';
@@ -114,10 +115,24 @@ export function SentenceOrderTaskView({
     task.words.length,
   );
 
+  const orderFeedback = showModel
+    ? isAnswerCorrect(task, {
+        ...attempt,
+        enteredAnswer: serializeOrder(order),
+      }) === true
+      ? 'correct'
+      : 'incorrect'
+    : null;
+
   return (
     <div className="task-view task-view-sentence-order">
       <div
-        className="sentence-build-area"
+        className={[
+          'sentence-build-area',
+          orderFeedback ? `sentence-build-area-${orderFeedback}` : '',
+        ]
+          .filter(Boolean)
+          .join(' ')}
         lang="lv"
         role="status"
         aria-live="polite"

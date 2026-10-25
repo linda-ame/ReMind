@@ -6,7 +6,10 @@ import {
 } from '../../components/HintAnswers';
 import { ListenButton } from '../../components/ListenButton';
 import { playCorrectChime } from '../../utils/answerFeedback';
-import { textMatchesAccepted } from '../../utils/answers';
+import {
+  answerInputFeedback,
+  textMatchesAccepted,
+} from '../../utils/answers';
 import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import type { SentenceCompletionTask } from '../../types/task';
 import type { TaskAttempt } from '../../types/progress';
@@ -26,6 +29,9 @@ export function SentenceCompletionTaskView({
   readOnly = false,
 }: Props) {
   const [answer, setAnswer] = useState(attempt.enteredAnswer ?? '');
+  const [answerChecked, setAnswerChecked] = useState(
+    () => attempt.viewedAnswers,
+  );
   const answerRef = useRef(answer);
   const hintsRef = useRef<HintAnswersHandle>(null);
   const chimedRef = useRef(false);
@@ -46,6 +52,7 @@ export function SentenceCompletionTaskView({
     if (readOnly) return;
     answerRef.current = text;
     setAnswer(text);
+    setAnswerChecked(true);
     hintsRef.current?.reveal();
     // Unlock Tālāk (Enter / finished dictation) — not on each keystroke.
     patch({
@@ -84,6 +91,12 @@ export function SentenceCompletionTaskView({
         readOnly={readOnly}
         onChange={setAnswerAndPersist}
         onSubmit={onSubmitAnswer}
+        feedback={answerInputFeedback(
+          answerChecked,
+          answer,
+          task.answers,
+          task.type,
+        )}
       />
 
       <HintAnswers

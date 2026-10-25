@@ -10,6 +10,10 @@ import { useApp } from '../context/AppContext';
 import { useAuth } from '../context/AuthContext';
 import { MANS_PROGRESS_ENABLED } from '../config/features';
 import { completedCurrentTaskIds } from '../utils/attempts';
+import {
+  filterTasksByDifficulty,
+  loadDifficultyLevels,
+} from '../utils/difficulty';
 import { buildRandomPracticeQueue } from '../utils/randomQueue';
 import type { Screen } from '../navigation/types';
 import type { Task } from '../types/task';
@@ -30,7 +34,9 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
     setResetConfirmType(null);
     const ofType = getTasksByType(type);
     if (ofType.length === 0) return;
-    const queue = buildRandomPracticeQueue(ofType, attempts, taskSkips);
+    const levels = loadDifficultyLevels(type);
+    const pool = filterTasksByDifficulty(ofType, levels);
+    const queue = buildRandomPracticeQueue(pool, attempts, taskSkips);
     if (queue.length === 0) {
       onNavigate({ name: 'section_complete', type });
       return;
@@ -48,6 +54,11 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
     await clearProgressForTasks(ids);
     setResetConfirmType(null);
   };
+
+  const homeSections = TASK_TYPE_ORDER.flatMap((type) => {
+    const ofType = getTasksByType(type);
+    return ofType.length > 0 ? [{ type, ofType }] : [];
+  });
 
   return (
     <Layout>
@@ -71,13 +82,15 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
         ) : null}
 
         <div className="stack home-tasks">
-          {TASK_TYPE_ORDER.map((type) => {
-            const ofType = getTasksByType(type);
-            if (ofType.length === 0) return null;
-            const completed = completedCurrentTaskIds(ofType, attempts);
-            const done = ofType.filter((t) => completed.has(t.id)).length;
+          {homeSections.map(({ type, ofType }, index) => {
+            const levels = loadDifficultyLevels(type);
+            const pool = filterTasksByDifficulty(ofType, levels);
+            const completedInPool = completedCurrentTaskIds(pool, attempts);
+            const done = pool.filter((t) => completedInPool.has(t.id)).length;
+            const sectionDone = completedCurrentTaskIds(ofType, attempts).size;
             const confirming = resetConfirmType === type;
-            const canReset = done > 0;
+            const canReset = sectionDone > 0;
+            const label = `${index + 1}. ${TASK_TYPE_LABELS[type]}`;
 
             return (
               <div key={type} className="home-type-block">
@@ -87,13 +100,13 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
                     className={`home-type-btn home-type-${type}`}
                     onClick={() => openType(type)}
                   >
-                    {TASK_TYPE_LABELS[type]} ({done}/{ofType.length})
+                    {label} ({done}/{pool.length})
                   </Button>
                   <button
                     type="button"
                     className="home-reset-btn"
                     disabled={!canReset}
-                    aria-label={`Sākt no jauna: ${TASK_TYPE_LABELS[type]}`}
+                    aria-label={`Sākt no jauna: ${label}`}
                     title="Sākt no jauna"
                     onClick={() =>
                       setResetConfirmType((prev) =>
@@ -108,10 +121,10 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
                 {confirming ? (
                   <div className="home-reset-confirm" role="region">
                     <p className="home-reset-confirm-title">
-                      Sākt «{TASK_TYPE_LABELS[type]}» no jauna?
+                      Sākt «{label}» no jauna?
                     </p>
                     <p className="muted home-reset-confirm-text">
-                      Tiks dzēsts šīs sadaļas progress ({done} no{' '}
+                      Tiks dzēsts šīs sadaļas progress ({sectionDone} no{' '}
                       {ofType.length}). Uzdevumi atkal tiks piedāvāti
                       nejaušā secībā.
                     </p>
@@ -137,6 +150,14 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
         </div>
 
         <div className="home-tools" role="navigation" aria-label="Rīki">
+          <Button
+            variant="neutral"
+            className="home-nav-btn home-nav-customize"
+            onClick={() => onNavigate({ name: 'customize_content' })}
+          >
+            Pielāgot saturu
+          </Button>
+
           {MANS_PROGRESS_ENABLED ? (
             <Button
               variant="neutral"

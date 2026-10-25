@@ -1,0 +1,121 @@
+﻿question_id,passage_id,difficulty_v2,difficulty_v1,difference,reason,question,answers
+remind-rc-001-q1,remind-rc-001,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Kur Ilze iepirkās?,tirgū
+remind-rc-001-q2,remind-rc-001,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Kādus dārzeņus Ilze nopirka?,tomātus
+remind-rc-001-q3,remind-rc-001,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ko Ilze pagatavoja mājās?,salātus
+remind-rc-002-q1,remind-rc-002,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Kur Jānis paņēma grāmatu?,bibliotēkā
+remind-rc-002-q2,remind-rc-002,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Par kādiem dzīvniekiem bija grāmata?,putniem
+remind-rc-002-q3,remind-rc-002,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Pie kā Jānis apsēdās?,loga
+remind-rc-003-q1,remind-rc-003,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ar ko Marta brauca?,autobusu
+remind-rc-003-q2,remind-rc-003,3,1,2,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko pasūtīja Marta?,tēju
+remind-rc-003-q3,remind-rc-003,3,1,2,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko pasūtīja māsa?,kafiju
+remind-rc-004-q1,remind-rc-004,3,1,2,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Andrejs aplaistīja?,gurķus
+remind-rc-004-q2,remind-rc-004,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ko Andrejs noplūca?,zemenes
+remind-rc-004-q3,remind-rc-004,3,1,2,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Uz kuru telpu Andrejs aiznesa zemenes?,virtuvi
+remind-rc-005-q1,remind-rc-005,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Kas vakarā sākās ārā?,lietus
+remind-rc-005-q2,remind-rc-005,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ko Līga aizvēra?,logu
+remind-rc-005-q3,remind-rc-005,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ko Līga uzvārīja?,tēju
+remind-rc-006-q1,remind-rc-006,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Kur Pēteris pastaigājās?,parkā
+remind-rc-006-q2,remind-rc-006,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Kādus putnus viņš redzēja?,pīles
+remind-rc-006-q3,remind-rc-006,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ko Pēteris nopirka?,maizi
+remind-rc-007-q1,remind-rc-007,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ko Eva uzvārīja?,kafiju
+remind-rc-007-q2,remind-rc-007,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ko Eva atvēra?,logu
+remind-rc-007-q3,remind-rc-007,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Kas stāvēja uz galda?,avīze
+remind-rc-008-q1,remind-rc-008,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Kurā dienā Rihards aizgāja uz pastu?,otrdien
+remind-rc-008-q2,remind-rc-008,3,1,2,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kam Rihards nosūtīja vēstuli?,māsai
+remind-rc-008-q3,remind-rc-008,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ko viņš nopirka pēc tam?,aploksni
+remind-rc-009-q1,remind-rc-009,3,1,2,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kādas puķes Dace iestādīja?,pelargonijas
+remind-rc-009-q2,remind-rc-009,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ar ko Dace aplēja puķes?,lejkannu
+remind-rc-009-q3,remind-rc-009,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ko Dace vakarā aizvēra?,durvis
+remind-rc-010-q1,remind-rc-010,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Kur Egils staigāja?,pludmalē
+remind-rc-010-q2,remind-rc-010,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ko Egils fotografēja?,laivas
+remind-rc-010-q3,remind-rc-010,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ko Egils parādīja mājās?,fotogrāfijas
+remind-rc-011-q1,remind-rc-011,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ko Aina vakarā klausījās?,radio
+remind-rc-011-q2,remind-rc-011,3,1,2,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Par ko bija ziņas?,laikapstākļiem
+remind-rc-011-q3,remind-rc-011,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Kam Aina piezvanīja?,brālim
+remind-rc-012-q1,remind-rc-012,2,1,1,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Ko Rūta sajauca?,mīklu
+remind-rc-012-q2,remind-rc-012,3,1,2,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kur Rūta ievietoja maizītes?,krāsnī
+remind-rc-012-q3,remind-rc-012,3,1,2,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Pēc kā virtuvē smaržoja?,kanēļa
+remind-rc-013-q1,remind-rc-013,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Andris gaidīja?,autobusu
+remind-rc-013-q2,remind-rc-013,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kādā krāsā bija soma?,zilā
+remind-rc-013-q3,remind-rc-013,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Pie kā Andris apsēdās?,loga
+remind-rc-014-q1,remind-rc-014,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kur Gunta savāca gurķus?,siltumnīcā
+remind-rc-014-q2,remind-rc-014,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kādus gurķus Gunta atstāja augt?,mazākos
+remind-rc-014-q3,remind-rc-014,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Gunta pagatavoja vakarā?,salātus
+remind-rc-015-q1,remind-rc-015,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Ilmārs aplūkoja bez fotogrāfijām?,pulksteņus
+remind-rc-015-q2,remind-rc-015,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kura stāstījumu Ilmārs klausījās?,gida
+remind-rc-015-q3,remind-rc-015,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Ilmārs iegādājās pēc tam?,pastkarti
+remind-rc-016-q1,remind-rc-016,2,2,0,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Kurā mēnesī Liene iegādājās sulu?,aprīlī
+remind-rc-016-q2,remind-rc-016,2,2,0,Tiešā fakta atcerēšanās pēc teksta paslēpšanas,Kur Liene ievietoja pudeli?,ledusskapī
+remind-rc-016-q3,remind-rc-016,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kāda pudele bija vakarā?,tukša
+remind-rc-017-q1,remind-rc-017,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kas virtuvē nedega?,lampa
+remind-rc-017-q2,remind-rc-017,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",No kā Oskars paņēma spuldzi?,skapja
+remind-rc-017-q3,remind-rc-017,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Oskars izslēdza pirms maiņas?,elektrību
+remind-rc-018-q1,remind-rc-018,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Zaiga paņēma līdzi uz mežu?,grozu
+remind-rc-018-q2,remind-rc-018,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Zem kā Zaiga atrada baraviku?,priedes
+remind-rc-018-q3,remind-rc-018,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kādu sēni Zaiga atrada?,baraviku
+remind-rc-019-q1,remind-rc-019,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko draugi uzdāvināja Normundam?,grāmatu
+remind-rc-019-q2,remind-rc-019,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kāda kūka bija uz galda?,ābolu
+remind-rc-019-q3,remind-rc-019,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko visi klausījās pēc vakariņām?,mūziku
+remind-rc-020-q1,remind-rc-020,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Pie kā Sanda nopirka biļeti?,kases
+remind-rc-020-q2,remind-rc-020,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Uz kuru pilsētu bija biļete?,Jelgavu
+remind-rc-020-q3,remind-rc-020,4,2,2,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Kurā vagonā Sanda iekāpa?,otrajā
+remind-rc-021-q1,remind-rc-021,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kādā krāsā bija Ilzes jaka?,sarkanā
+remind-rc-021-q2,remind-rc-021,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kāda koka lapas Ilze fotografēja?,kļavas
+remind-rc-021-q3,remind-rc-021,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Ilze izdzēra mājās?,tēju
+remind-rc-022-q1,remind-rc-022,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kur Roberts iegāja?,kafejnīcā
+remind-rc-022-q2,remind-rc-022,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Roberts pasūtīja līdzās zupai?,minerālūdeni
+remind-rc-022-q3,remind-rc-022,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ar ko Roberts samaksāja?,karti
+remind-rc-023-q1,remind-rc-023,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko radio solīja?,sniegu
+remind-rc-023-q2,remind-rc-023,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kas lija no rīta?,lietus
+remind-rc-023-q3,remind-rc-023,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Mārtiņš paņēma?,lietussargu
+remind-rc-024-q1,remind-rc-024,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",No kā Kristīnei pienāca ziņa?,brāļa
+remind-rc-024-q2,remind-rc-024,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kur Kristīne būs sestdien?,mājās
+remind-rc-024-q3,remind-rc-024,3,2,1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Uz kā viņa nolika telefonu?,plaukta
+remind-rc-025-q1,remind-rc-025,4,4,0,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Uz kuru pilsētu Ieva plānoja doties?,Siguldu
+remind-rc-025-q2,remind-rc-025,3,4,-1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Ieva pārbaudīja piektdien?,sarakstu
+remind-rc-025-q3,remind-rc-025,4,4,0,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Kādi nokrišņi sākās no rīta?,lietus
+remind-rc-025-q4,remind-rc-025,3,4,-1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Ieva lasīja mājās?,romānu
+remind-rc-026-q1,remind-rc-026,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Māris pagatavoja?,zupu
+remind-rc-026-q2,remind-rc-026,4,3,1,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Cikos kaimiņi ieradās?,septiņos
+remind-rc-026-q3,remind-rc-026,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko kaimiņi atnesa?,ziedus
+remind-rc-026-q4,remind-rc-026,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko visi spēlēja pēc vakariņām?,kārtis
+remind-rc-027-q1,remind-rc-027,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kādu instrumentu Juris meklēja?,šķēres
+remind-rc-027-q2,remind-rc-027,4,3,1,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Ko Juris atrada sākumā?,lāpstu
+remind-rc-027-q3,remind-rc-027,4,3,1,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Kur atradās šķēres?,plauktā
+remind-rc-027-q4,remind-rc-027,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Juris pēc darba nolika atpakaļ?,instrumentus
+remind-rc-028-q1,remind-rc-028,4,3,1,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Ko Inese aizmirsa autobusā?,somu
+remind-rc-028-q2,remind-rc-028,4,3,1,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Kur bija palikusi soma?,sēdeklī
+remind-rc-028-q3,remind-rc-028,4,3,1,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Kas atrada somu?,vadītājs
+remind-rc-028-q4,remind-rc-028,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kur Inese somu saņēma?,pieturā
+remind-rc-029-q1,remind-rc-029,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Velta iznesa ārā?,podus
+remind-rc-029-q2,remind-rc-029,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kad sāka līt?,pēcpusdienā
+remind-rc-029-q3,remind-rc-029,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kur Velta ienesa podus?,istabā
+remind-rc-029-q4,remind-rc-029,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Velta vakarā atvēra?,logu
+remind-rc-030-q1,remind-rc-030,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kur Ilze atrada recepti?,avīzē
+remind-rc-030-q2,remind-rc-030,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Ilze nopirka bez kartupeļiem?,sieru
+remind-rc-030-q3,remind-rc-030,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Ilze ieslēdza mājās?,cepeškrāsni
+remind-rc-030-q4,remind-rc-030,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ar ko Ilze pasniedza sacepumu?,salātiem
+remind-rc-031-q1,remind-rc-031,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko tūrists meklēja?,muzeju
+remind-rc-031-q2,remind-rc-031,4,3,1,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Pie kā tūrists meklēja muzeju?,stacijas
+remind-rc-031-q3,remind-rc-031,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kur Elza parādīja ceļu?,kartē
+remind-rc-031-q4,remind-rc-031,4,3,1,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Kādā valodā tūrists pateicās?,latviski
+remind-rc-032-q1,remind-rc-032,4,3,1,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Pēc kā Viesturs devās uz tirgu?,medus
+remind-rc-032-q2,remind-rc-032,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kādā krāsā bija saimnieces mētelis?,zilā
+remind-rc-032-q3,remind-rc-032,4,3,1,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Cik burkas Viesturs nopirka?,divas
+remind-rc-032-q4,remind-rc-032,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kam Viesturs uzdāvināja burku?,kaimiņienei
+remind-rc-033-q1,remind-rc-033,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Ivars pārbaudīja?,riepas
+remind-rc-033-q2,remind-rc-033,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Ivars uzlika galvā?,ķiveri
+remind-rc-033-q3,remind-rc-033,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Pie kā Ivars apstājās?,ezera
+remind-rc-033-q4,remind-rc-033,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Pirms kā Ivars atgriezās mājās?,pusdienām
+remind-rc-034-q1,remind-rc-034,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Maija izslēdza?,televizoru
+remind-rc-034-q2,remind-rc-034,4,3,1,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Kādā mēbelē Maija apsēdās?,krēslā
+remind-rc-034-q3,remind-rc-034,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kas piezvanīja Maijai?,meita
+remind-rc-034-q4,remind-rc-034,4,3,1,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Uz kā Maija nolika telefonu?,galda
+remind-rc-035-q1,remind-rc-035,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kurai radiniecei bija domāts pušķis?,mātei
+remind-rc-035-q2,remind-rc-035,4,3,1,Grūtāka detaļa vai pretnostatījums starp vairākām darbībām,Kādas puķes ieteica floriste?,tulpes
+remind-rc-035-q3,remind-rc-035,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko pievienoja pušķim?,kartīti
+remind-rc-035-q4,remind-rc-035,3,3,0,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Kurā dienā pušķi piegādāja?,piektdien
+remind-rc-036-q1,remind-rc-036,3,4,-1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ar ko Baiba aizbrauca pie ezera?,brāli
+remind-rc-036-q2,remind-rc-036,3,4,-1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko viņi paņēma līdzi?,termosu
+remind-rc-036-q3,remind-rc-036,3,4,-1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko Baiba uzvilka?,jaku
+remind-rc-036-q4,remind-rc-036,3,4,-1,"Vairāku līdzīgu detaļu, personu vai secības atšķiršana",Ko brālis fotografēja?,gulbjus

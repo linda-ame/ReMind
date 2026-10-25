@@ -14,6 +14,8 @@ import { LessonDoneScreen } from './screens/LessonDoneScreen';
 import { LessonReviewScreen } from './screens/LessonReviewScreen';
 import { LessonSummaryScreen } from './screens/LessonSummaryScreen';
 import { SectionCompleteScreen } from './screens/SectionCompleteScreen';
+import { CustomizeContentScreen } from './screens/CustomizeContentScreen';
+import { loadDifficultyLevels } from './utils/difficulty';
 
 function sameTaskSession(a: Screen, b: Screen): boolean {
   if (a.name !== 'task' || b.name !== 'task') return false;
@@ -53,6 +55,12 @@ function popToMatching(stack: Screen[], next: Screen): Screen[] | null {
       return stack.slice(0, i + 1);
     }
     if (next.name === 'auth' && cur.name === 'auth') {
+      return stack.slice(0, i + 1);
+    }
+    if (
+      next.name === 'customize_content' &&
+      cur.name === 'customize_content'
+    ) {
       return stack.slice(0, i + 1);
     }
     if (
@@ -125,12 +133,19 @@ function AppRouter() {
       ) {
         return [...s.slice(0, -1), next];
       }
-      // Starting (or restarting) practice from the complete screen
-      // replaces it so Back does not return to “all done”.
+      // Starting practice from the complete screen replaces it
+      // so Back does not return to “all done”.
       if (
         next.name === 'task' &&
         top?.name === 'section_complete' &&
         next.batchType === top.type
+      ) {
+        return [...s.slice(0, -1), next];
+      }
+      // Customize content from section_complete replaces that screen.
+      if (
+        next.name === 'customize_content' &&
+        top?.name === 'section_complete'
       ) {
         return [...s.slice(0, -1), next];
       }
@@ -158,6 +173,14 @@ function AppRouter() {
     case 'settings':
       return (
         <SettingsScreen onNavigate={navigate} onHome={goHome} />
+      );
+    case 'customize_content':
+      return (
+        <CustomizeContentScreen
+          focusType={screen.focusType}
+          onNavigate={navigate}
+          onHome={goHome}
+        />
       );
     case 'progress':
       return (
@@ -235,6 +258,9 @@ function AppRouter() {
       return (
         <SectionCompleteScreen
           type={screen.type}
+          difficultyLevels={
+            screen.difficultyLevels ?? loadDifficultyLevels(screen.type)
+          }
           onNavigate={navigate}
           onHome={goHome}
         />

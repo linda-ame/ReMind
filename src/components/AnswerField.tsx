@@ -1,5 +1,6 @@
 import { useEffect, useRef, type RefObject } from 'react';
 import { useSpeechDictation } from '../hooks/useSpeechDictation';
+import type { AnswerInputFeedback } from '../utils/answers';
 import { Button } from './Button';
 
 interface AnswerFieldProps {
@@ -18,6 +19,8 @@ interface AnswerFieldProps {
   readOnly?: boolean;
   autoFocus?: boolean;
   inputRef?: RefObject<HTMLInputElement | null>;
+  /** Soft field tint after submit; omit / null keeps white. */
+  feedback?: AnswerInputFeedback | null;
 }
 
 /**
@@ -35,6 +38,7 @@ export function AnswerField({
   readOnly = false,
   autoFocus = false,
   inputRef: externalInputRef,
+  feedback = null,
 }: AnswerFieldProps) {
   const localInputRef = useRef<HTMLInputElement>(null);
   const inputRef = externalInputRef ?? localInputRef;
@@ -84,7 +88,14 @@ export function AnswerField({
         <input
           ref={inputRef}
           id={id}
-          className="text-input text-input-answer answer-field-input"
+          className={[
+            'text-input',
+            'text-input-answer',
+            'answer-field-input',
+            feedback ? `text-input-answer-${feedback}` : '',
+          ]
+            .filter(Boolean)
+            .join(' ')}
           type="text"
           value={value}
           placeholder={placeholder}

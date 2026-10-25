@@ -6,33 +6,42 @@ import {
 } from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
 import {
+  filterTasksByDifficulty,
+  formatDifficultyLevelsLabel,
+  loadDifficultyLevels,
+} from '../utils/difficulty';
+import {
   buildRandomPracticeQueue,
   countSkippedTodayIncomplete,
 } from '../utils/randomQueue';
 import type { Screen } from '../navigation/types';
-import type { Task } from '../types/task';
+import type { DifficultyLevel, Task } from '../types/task';
 
 interface Props {
   type: Task['type'];
+  difficultyLevels?: DifficultyLevel[];
   onNavigate: (screen: Screen) => void;
   onHome: () => void;
 }
 
 export function SectionCompleteScreen({
   type,
+  difficultyLevels: levelsProp,
   onNavigate,
   onHome,
 }: Props) {
   const { clearProgressForTasks, attempts, taskSkips } = useApp();
   const label = TASK_TYPE_LABELS[type];
+  const levels = levelsProp ?? loadDifficultyLevels(type);
   const ofType = getTasksByType(type);
-  const total = ofType.length;
+  const pool = filterTasksByDifficulty(ofType, levels);
+  const total = pool.length;
+  const levelLabel = formatDifficultyLevelsLabel(levels);
 
   const startOver = async () => {
-    const ids = ofType.map((t) => t.id);
+    const ids = pool.map((t) => t.id);
     await clearProgressForTasks(ids);
-    // After clear, attempts/skips refresh — build queue from empty progress.
-    const queue = buildRandomPracticeQueue(ofType, [], []);
+    const queue = buildRandomPracticeQueue(pool, [], []);
     if (queue.length === 0) {
       onNavigate({ name: 'home' });
       return;
@@ -45,14 +54,18 @@ export function SectionCompleteScreen({
     });
   };
 
-  const remaining = buildRandomPracticeQueue(ofType, attempts, taskSkips);
+  const remaining = buildRandomPracticeQueue(pool, attempts, taskSkips);
   const skippedToday = buildRandomPracticeQueue(
-    ofType,
+    pool,
     attempts,
     taskSkips,
     'skipped_today',
   );
-  const skippedCount = countSkippedTodayIncomplete(ofType, attempts, taskSkips);
+  const skippedCount = countSkippedTodayIncomplete(pool, attempts, taskSkips);
+
+  const changeLevel = () => {
+    onNavigate({ name: 'customize_content', focusType: type });
+  };
 
   return (
     <Layout onHome={onHome}>
@@ -63,7 +76,7 @@ export function SectionCompleteScreen({
               Vēl ir pieejami uzdevumi
             </h1>
             <p className="section-complete-sub">
-              Sadaļā «{label}» — {remaining.length} no {total} vēl nav
+              «{label}» · {levelLabel} — {remaining.length} no {total} vēl nav
               izpildīti.
             </p>
             <div className="stack section-complete-actions">
@@ -80,6 +93,9 @@ export function SectionCompleteScreen({
               >
                 Turpināt ({remaining.length} atlikuši)
               </Button>
+              <Button variant="secondary" onClick={changeLevel}>
+                Pielāgot saturu
+              </Button>
               <Button variant="neutral" onClick={onHome}>
                 Uz sākumu
               </Button>
@@ -91,8 +107,8 @@ export function SectionCompleteScreen({
               Jūs esat izpildījuši visus pieejamos uzdevumus
             </h1>
             <p className="section-complete-sub">
-              Šodien izlaisti {skippedCount} — tie rīt atkal būs pieejami
-              nejaušā secībā. Varat arī izpildīt tos tagad.
+              «{label}» · {levelLabel}. Šodien izlaisti {skippedCount} — tie
+              rīt atkal būs pieejami. Varat arī izpildīt tos tagad.
             </p>
             <div className="stack section-complete-actions">
               <Button
@@ -109,10 +125,30 @@ export function SectionCompleteScreen({
                 Pildīt šodien izlaistos ({skippedCount})
               </Button>
               <p className="section-complete-prompt">
-                Vai dzēst progresu un sākt no jauna?
+                Vai dzēst progresu šajā filtrā un sākt no jauna?
               </p>
               <Button variant="secondary" onClick={() => void startOver()}>
-                Sākt no jauna
+                Atkārtot
+              </Button>
+              <Button variant="secondary" onClick={changeLevel}>
+                Pielāgot saturu
+              </Button>
+              <Button variant="neutral" onClick={onHome}>
+                Uz sākumu
+              </Button>
+            </div>
+          </>
+        ) : total === 0 ? (
+          <>
+            <h1 className="section-complete-title">
+              Šajā filtrā uzdevumu nav
+            </h1>
+            <p className="section-complete-sub">
+              «{label}» · {levelLabel} — izvēlētajos līmeņos nav uzdevumu.
+            </p>
+            <div className="stack section-complete-actions">
+              <Button variant="primary" onClick={changeLevel}>
+                Pielāgot saturu
               </Button>
               <Button variant="neutral" onClick={onHome}>
                 Uz sākumu
@@ -122,17 +158,17 @@ export function SectionCompleteScreen({
         ) : (
           <>
             <h1 className="section-complete-title">
-              Jūs esat izpildījuši visus uzdevumus
+              Šajā filtrā jaunu uzdevumu nav
             </h1>
             <p className="section-complete-sub">
-              Sadaļā «{label}» — visi {total} uzdevumi.
+              «{label}» · {levelLabel} — visi {total} uzdevumi izpildīti.
             </p>
             <div className="stack section-complete-actions">
-              <p className="section-complete-prompt">
-                Vai dzēst progresu un sākt no jauna?
-              </p>
               <Button variant="primary" onClick={() => void startOver()}>
-                Sākt no jauna
+                Atkārtot
+              </Button>
+              <Button variant="secondary" onClick={changeLevel}>
+                Pielāgot saturu
               </Button>
               <Button variant="neutral" onClick={onHome}>
                 Uz sākumu
