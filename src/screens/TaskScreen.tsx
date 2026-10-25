@@ -16,7 +16,10 @@ import {
   SELF_ASSESSMENT_SYMBOLS,
 } from '../utils/attempts';
 import { taskHasAdvanceReady } from '../utils/taskAdvance';
-import { loadDifficultyLevels } from '../utils/difficulty';
+import {
+  filterTasksByDifficulty,
+  loadDifficultyLevels,
+} from '../utils/difficulty';
 import { SELF_ASSESSMENT_ENABLED } from '../config/features';
 import type { Screen, TaskSessionMode } from '../navigation/types';
 import type { SelfAssessment, TaskAttempt } from '../types/progress';
@@ -320,8 +323,14 @@ export function TaskScreen({
       ? 'Pabeigt'
       : 'Tālāk';
 
+  /** Selected difficulty pool (same filter as home), not the whole section. */
   const sectionTasks =
-    isSectionPractice && batchType ? getTasksByType(batchType) : null;
+    isSectionPractice && batchType
+      ? filterTasksByDifficulty(
+          getTasksByType(batchType),
+          loadDifficultyLevels(batchType),
+        )
+      : null;
   const sectionTotal = sectionTasks?.length ?? 0;
   const sectionDone = sectionTasks
     ? countCompletedInSet(
@@ -330,7 +339,7 @@ export function TaskScreen({
         new Map(sectionTasks.map((t) => [t.id, t])),
       )
     : 0;
-  /** Overall section progress (current counts once completed). */
+  /** Progress within the chosen difficulty set (current counts once completed). */
   const queueProgressLabel =
     !isReading && sectionTasks && sectionTotal > 0
       ? `${alreadyCompleted ? sectionDone : Math.min(sectionDone + 1, sectionTotal)} / ${sectionTotal}`
