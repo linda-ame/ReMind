@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 1,
+  "title": "Izlasi un atrodi attēlu — 10 izmēģinājuma uzdevumi, 5. līmenis",
+  "tasks": [
+    {
+      "id": "sim-p01-001",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties attēlu, kas tam pilnībā atbilst.",
+      "prompt": "Skrējēja ar 12. numuru finišēja aiz skrējējas ar 7. numuru, bet priekšā skrējējai ar 4. numuru. Kurš pjedestāls atbilst rezultātam?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-001-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-001-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-001-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-001-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "Pirmā ir 7. numura skrējēja, otrā — 12., trešā — 4."
+    },
+    {
+      "id": "sim-p01-002",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties attēlu, kas tam pilnībā atbilst.",
+      "prompt": "Sieviete ar iepirkumu grozu stāv starp cilvēku ar spieķi un cilvēku ar mugursomu. Cilvēks ar spieķi ir vistuvāk kasei. Kurš attēls ir pareizs?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-002-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-002-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-002-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-002-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "No kases uz rindas beigām: cilvēks ar spieķi, sieviete ar grozu, cilvēks ar mugursomu."
+    },
+    {
+      "id": "sim-p01-003",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties attēlu, kas tam pilnībā atbilst.",
+      "prompt": "Velosipēds brauc automašīnas priekšā, bet autobuss — aiz tās. Visi pārvietojas pa labi. Kura transportlīdzekļu secība ir pareiza?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-003-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-003-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-003-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-003-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": "Braukšanas virzienā no priekšas uz aizmuguri: velosipēds, automašīna, autobuss."
+    },
+    {
+      "id": "sim-p01-004",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties attēlu, kas tam pilnībā atbilst.",
+      "prompt": "Grāmata atrodas tieši virs pulksteņa, bet vāze — pa labi no pulksteņa tajā pašā plauktā. Kurš attēls atbilst aprakstam?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-004-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-004-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-004-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-004-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Grāmata ir augšā tieši virs pulksteņa; vāze ir pulksteņa labajā pusē apakšējā plauktā."
+    },
+    {
+      "id": "sim-p01-005",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties attēlu, kas tam pilnībā atbilst.",
+      "prompt": "Anna liek grāmatu plauktā, bet Toms iznes atkritumu maisu. Kaķis atrodas zem galda. Kurš attēls rāda visas trīs detaļas?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-005-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-005-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-005-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-005-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "Anna ir pie grāmatu plaukta, Toms nes atkritumu maisu, kaķis ir zem galda."
+    },
+    {
+      "id": "sim-p01-006",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties attēlu, kas tam pilnībā atbilst.",
+      "prompt": "Anna ar lejkannu laista puķes, nevis zālienu. Tajā pašā laikā Toms ar grābekli savāc lapas. Kurš attēls atbilst abām darbībām?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-006-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-006-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-006-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-006-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "Anna lej ūdeni uz puķēm, bet Toms ar grābekli savāc lapas."
+    },
+    {
+      "id": "sim-p01-007",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties attēlu, kas tam pilnībā atbilst.",
+      "prompt": "Vispirms Anna pasniedza Tomam kasti. Pēc tam Toms iedeva Annai aploksni. Kurā attēlā pareizi parādīta abu darbību secība un virziens?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-007-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-007-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-007-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-007-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": "Pirmajā kadrā kaste virzās no Annas pie Toma; otrajā aploksne no Toma pie Annas."
+    },
+    {
+      "id": "sim-p01-008",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties attēlu, kas tam pilnībā atbilst.",
+      "prompt": "Anna iestādīja koku, pirms Toms sāka krāsot žogu. Kurā attēlā pareizi attēlota darbību secība un cilvēku lomas?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-008-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-008-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-008-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-008-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Vispirms Anna stāda koku, pēc tam Toms krāso žogu."
+    },
+    {
+      "id": "sim-p01-009",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties attēlu, kas tam pilnībā atbilst.",
+      "prompt": "Virtuvē Anna mazgā šķīvjus, bet Toms griež maizi. Kaķis ir zem galda, nevis uz tā. Kurš attēls rāda pareizo situāciju?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-009-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-009-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-009-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-009-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "Anna mazgā šķīvi izlietnē, Toms griež maizi, un kaķis ir zem galda."
+    },
+    {
+      "id": "sim-p01-010",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties attēlu, kas tam pilnībā atbilst.",
+      "prompt": "Darbnīcā Anna krāso krēslu, bet Toms labo velosipēdu. Krēsls atrodas velosipēdam pa kreisi. Kurš attēls atbilst visam aprakstam?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-010-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-010-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-010-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p01-010-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "Anna kreisajā pusē krāso krēslu, bet Toms labajā pusē labo velosipēdu."
+    }
+  ]
+}

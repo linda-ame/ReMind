@@ -34,6 +34,7 @@ import { SentenceOrderTaskView } from './task/SentenceOrderTaskView';
 import { OddOneOutTaskView } from './task/OddOneOutTaskView';
 import { AntonymTaskView } from './task/AntonymTaskView';
 import { DefinitionGuessTaskView } from './task/DefinitionGuessTaskView';
+import { SentenceImageMatchTaskView } from './task/SentenceImageMatchTaskView';
 
 interface TaskScreenProps {
   taskId: string;
@@ -539,6 +540,15 @@ export function TaskScreen({
           )}
           {task.type === 'definition_guess' && (
             <DefinitionGuessTaskView
+              key={task.id}
+              task={task}
+              attempt={attempt}
+              onUpdate={onUpdate}
+              readOnly={isView}
+            />
+          )}
+          {task.type === 'sentence_image_match' && (
+            <SentenceImageMatchTaskView
               key={task.id}
               task={task}
               attempt={attempt}

@@ -11,7 +11,8 @@ export type TaskType =
   | 'sentence_order'
   | 'odd_one_out'
   | 'antonym'
-  | 'definition_guess';
+  | 'definition_guess'
+  | 'sentence_image_match';
 
 /** Reading question: answer stated in text vs inferred. */
 export type ReadingQuestionType = 'direct' | 'inference';
@@ -149,6 +150,19 @@ export interface DefinitionGuessTask extends BaseTask {
   answers: string[];
 }
 
+/** One sentence; pick the matching image among four options. */
+export interface SentenceImageMatchTask extends BaseTask {
+  type: 'sentence_image_match';
+  /** Full prompt / sentence shown above the image choices. */
+  prompt: string;
+  options: { imageSrc: string; imageAlt: string }[];
+  /** Index of the matching image (0-based). */
+  correctIndex: number;
+  /** Short explanation shown after the learner checks their answer. */
+  explanation: string;
+  hint?: string;
+}
+
 export type Task =
   | WordReadingTask
   | SentenceCompletionTask
@@ -159,7 +173,8 @@ export type Task =
   | SentenceOrderTask
   | OddOneOutTask
   | AntonymTask
-  | DefinitionGuessTask;
+  | DefinitionGuessTask
+  | SentenceImageMatchTask;
 
 export interface TaskPack {
   schemaVersion: number;

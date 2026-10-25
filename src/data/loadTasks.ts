@@ -18,6 +18,7 @@ import rawSentenceOrderP02 from './sentence_order_P02.json';
 import rawOddOneOutP02 from './odd_one_out_P02.json';
 import rawAntonymP02 from './antonym_P02.json';
 import rawDefinitionGuessP02 from './definition_guess_P02.json';
+import rawSentenceImageMatch from './sentence_image_match_P01_10.json';
 import difficultyByIdRaw from './metadata/remind_difficulty_by_id.json';
 import questionDifficultyByIdRaw from './metadata/remind_reading_question_difficulty_by_id.json';
 
@@ -35,6 +36,7 @@ const sentenceOrderP02 = rawSentenceOrderP02 as TaskPack;
 const oddOneOutP02 = rawOddOneOutP02 as TaskPack;
 const antonymP02 = rawAntonymP02 as TaskPack;
 const definitionGuessP02 = rawDefinitionGuessP02 as TaskPack;
+const sentenceImageMatch = rawSentenceImageMatch as TaskPack;
 
 const difficultyById = difficultyByIdRaw as Record<string, number>;
 const questionDifficultyById = questionDifficultyByIdRaw as Record<
@@ -80,6 +82,7 @@ const rawTasks: Task[] = [
   ...oddOneOutP02.tasks,
   ...antonymP02.tasks,
   ...definitionGuessP02.tasks,
+  ...sentenceImageMatch.tasks,
 ];
 
 const tasksWithDifficulty = rawTasks.map(withDifficulty);
@@ -111,6 +114,7 @@ const pack: TaskPack = {
     oddOneOutP02.schemaVersion,
     antonymP02.schemaVersion,
     definitionGuessP02.schemaVersion,
+    sentenceImageMatch.schemaVersion,
   ),
   title: v1.title,
   tasks: tasksWithDifficulty,
@@ -130,6 +134,7 @@ export const TASK_TYPE_ORDER: Task['type'][] = [
   'odd_one_out',
   'antonym',
   'definition_guess',
+  'sentence_image_match',
 ];
 
 export const TASK_TYPE_LABELS: Record<Task['type'], string> = {
@@ -143,6 +148,7 @@ export const TASK_TYPE_LABELS: Record<Task['type'], string> = {
   odd_one_out: 'Atrodi lieko vārdu',
   antonym: 'Pretstati',
   definition_guess: 'Uzmini vārdu pēc apraksta',
+  sentence_image_match: 'Izlasi un atrodi attēlu',
 };
 
 /** Lesson vs single-task unit label for list / done / review screens. */

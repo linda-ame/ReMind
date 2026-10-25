@@ -31,7 +31,7 @@ Language: Latvian by default (instructions, words, sentences, options, hints).
 Blank marker: use exactly three underscores `___` where a word is missing.
 
 Supported `type` values:
-`word_reading`, `sentence_completion`, `sentence_completion_multi`, `image_word`, `word_choice`, `reading_comprehension`, `sentence_order`, `odd_one_out`, `antonym`, `definition_guess`
+`word_reading`, `sentence_completion`, `sentence_completion_multi`, `image_word`, `word_choice`, `reading_comprehension`, `sentence_order`, `odd_one_out`, `antonym`, `definition_guess`, `sentence_image_match`
 
 ---
 
@@ -300,6 +300,44 @@ Extra fields:
 
 ---
 
+## Task type 10: `sentence_image_match`
+
+Read a sentence / short paragraph and choose which of four images matches it completely. Learner selects an image, then confirms with «Pārbaudīt».
+
+```json
+{
+  "id": "sim-001",
+  "type": "sentence_image_match",
+  "contentVersion": 1,
+  "instruction": "Izlasiet teikumu. Izvēlieties attēlu, kas tam pilnībā atbilst.",
+  "prompt": "Velosipēds brauc automašīnas priekšā, bet autobuss — aiz tās. Visi pārvietojas pa labi. Kura transportlīdzekļu secība ir pareiza?",
+  "options": [
+    { "imageSrc": "/images/sentence-image-match/sim-001-a.svg", "imageAlt": "1. attēla variants" },
+    { "imageSrc": "/images/sentence-image-match/sim-001-b.svg", "imageAlt": "2. attēla variants" },
+    { "imageSrc": "/images/sentence-image-match/sim-001-c.svg", "imageAlt": "3. attēla variants" },
+    { "imageSrc": "/images/sentence-image-match/sim-001-d.svg", "imageAlt": "4. attēla variants" }
+  ],
+  "correctIndex": 3,
+  "explanation": "Braukšanas virzienā no priekšas uz aizmuguri: velosipēds, automašīna, autobuss.",
+  "hint": "Skatieties secību no priekšas uz aizmuguri."
+}
+```
+
+Extra fields:
+- `prompt` (string, required) — the sentence / question shown above the images
+- `options` (array of `{ imageSrc, imageAlt }`, required) — usually exactly 4
+- `correctIndex` (number, required) — 0-based index of the matching image
+- `explanation` (string, required) — short reason shown after check
+- `hint` (string, optional)
+
+Quality rules:
+- Exactly one unambiguous correct image.
+- Distractors should differ by one clear detail (order, role, location, action).
+- Keep `imageAlt` neutral (e.g. `1. attēla variants`) so the answer is not readable from alt text alone.
+- Image files live under `public/images/sentence-image-match/`; `imageSrc` starts with `/images/...`.
+
+---
+
 ## Full example pack (mixed types)
 
 ```json
@@ -368,8 +406,9 @@ Extra fields:
 10. For `odd_one_out`, ensure exactly one unambiguous odd word and keep `explanation`.
 11. For `antonym`, only antonyms — no synonym sets and no `hint` in this phase.
 12. For `definition_guess`, do not include `hint`.
-13. Difficulty: mix easy concrete items; avoid rare jargon unless requested.
-14. Output one complete `TaskPack` JSON object unless asked for multiple packs.
+13. For `sentence_image_match`, ensure exactly one correct image, keep a short `explanation`, and use neutral `imageAlt` text.
+14. Difficulty: mix easy concrete items; avoid rare jargon unless requested.
+15. Output one complete `TaskPack` JSON object unless asked for multiple packs.
 
 ## What to produce
 

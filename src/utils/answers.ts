@@ -24,6 +24,8 @@ export function taskPromptText(task: Task): string {
       return task.word;
     case 'definition_guess':
       return task.description;
+    case 'sentence_image_match':
+      return task.prompt;
   }
 }
 
@@ -50,6 +52,11 @@ export function expectedAnswerLabels(task: Task): string[] {
     case 'odd_one_out': {
       const odd = task.options[task.correctIndex];
       return odd ? [odd] : [];
+    }
+    case 'sentence_image_match': {
+      const opt = task.options[task.correctIndex];
+      const letter = String.fromCharCode(65 + task.correctIndex);
+      return opt ? [`${letter}. variants`] : [];
     }
   }
 }
@@ -110,6 +117,23 @@ export function enteredAnswerLabels(
       }
     } catch {
       /* plain string option */
+    }
+    return [raw];
+  }
+
+  if (task.type === 'sentence_image_match') {
+    try {
+      const idx = Number(JSON.parse(raw));
+      if (
+        Number.isInteger(idx) &&
+        idx >= 0 &&
+        idx < task.options.length
+      ) {
+        const letter = String.fromCharCode(65 + idx);
+        return [`${letter}. variants`];
+      }
+    } catch {
+      /* ignore */
     }
     return [raw];
   }
@@ -270,6 +294,7 @@ export function taskHasSelfAssessment(task: Task): boolean {
     task.type === 'sentence_order' ||
     task.type === 'antonym' ||
     task.type === 'definition_guess' ||
+    task.type === 'sentence_image_match' ||
     task.type === 'reading_comprehension'
   );
 }
@@ -367,6 +392,16 @@ export function isAnswerCorrect(
         const i = task.options.indexOf(raw);
         if (i < 0) return false;
         return i === task.correctIndex;
+      }
+    }
+
+    case 'sentence_image_match': {
+      try {
+        const idx = Number(JSON.parse(raw));
+        if (!Number.isInteger(idx)) return null;
+        return idx === task.correctIndex;
+      } catch {
+        return null;
       }
     }
 

@@ -82,6 +82,16 @@ export function taskHasAdvanceReady(
     }
   }
 
+  // Sentence–image match: only the correct image unlocks (wrong picks stay searchable).
+  if (task.type === 'sentence_image_match') {
+    try {
+      const idx = Number(JSON.parse(s));
+      return Number.isInteger(idx) && idx === task.correctIndex;
+    } catch {
+      return false;
+    }
+  }
+
   return true;
 }
 

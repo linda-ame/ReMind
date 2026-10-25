@@ -111,5 +111,9 @@ function taskShortLabel(task: Task): string {
       return task.description.length > 48
         ? `${task.description.slice(0, 48)}…`
         : task.description;
+    case 'sentence_image_match':
+      return task.prompt.length > 48
+        ? `${task.prompt.slice(0, 48)}…`
+        : task.prompt;
   }
 }
