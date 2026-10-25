@@ -20,6 +20,7 @@ import rawAntonymP02 from './antonym_P02.json';
 import rawDefinitionGuessP02 from './definition_guess_P02.json';
 import rawSentenceImageMatch from './sentence_image_match_P01_10.json';
 import rawLogopedaP03 from './logopeda_P03_130.json';
+import rawDefinitionGuessP04 from './definition_guess_P04_50.json';
 import difficultyByIdRaw from './metadata/remind_difficulty_by_id.json';
 import questionDifficultyByIdRaw from './metadata/remind_reading_question_difficulty_by_id.json';
 
@@ -39,6 +40,7 @@ const antonymP02 = rawAntonymP02 as TaskPack;
 const definitionGuessP02 = rawDefinitionGuessP02 as TaskPack;
 const sentenceImageMatch = rawSentenceImageMatch as TaskPack;
 const logopedaP03 = rawLogopedaP03 as TaskPack;
+const definitionGuessP04 = rawDefinitionGuessP04 as TaskPack;
 
 const difficultyById = difficultyByIdRaw as Record<string, number>;
 const questionDifficultyById = questionDifficultyByIdRaw as Record<
@@ -86,6 +88,7 @@ const rawTasks: Task[] = [
   ...definitionGuessP02.tasks,
   ...sentenceImageMatch.tasks,
   ...logopedaP03.tasks,
+  ...definitionGuessP04.tasks,
 ];
 
 const tasksWithDifficulty = rawTasks.map(withDifficulty);
@@ -100,7 +103,7 @@ if (import.meta.env.DEV) {
   }
 }
 
-/** Merged pack: existing packs + P01 + P02 + logopēda P03. Keep old IDs intact. */
+/** Merged pack: existing packs + P01–P04. Keep old IDs intact. */
 const pack: TaskPack = {
   schemaVersion: Math.max(
     v1.schemaVersion,
@@ -119,6 +122,7 @@ const pack: TaskPack = {
     definitionGuessP02.schemaVersion,
     sentenceImageMatch.schemaVersion,
     logopedaP03.schemaVersion,
+    definitionGuessP04.schemaVersion,
   ),
   title: v1.title,
   tasks: tasksWithDifficulty,

@@ -167,6 +167,11 @@ export interface DefinitionGuessTask extends BaseTask {
   mode?: 'description' | 'clues';
   /** Separate clue lines when mode is `clues` (typically 3). */
   clues?: string[];
+  /**
+   * How to render `clues`. Missing = sentence-style cards (P03).
+   * `keywords` = short labels in one wrapping comma-separated row (P04).
+   */
+  clueStyle?: 'keywords';
 }
 
 /** One sentence; pick the matching image among four options. */

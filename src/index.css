@@ -2339,6 +2339,24 @@ input:focus-visible {
   line-height: 1.4;
 }
 
+.definition-keywords {
+  margin: 0.5rem 0 0.75rem;
+  line-height: 1.45;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-wrap: balance;
+}
+
+.definition-keyword {
+  display: inline;
+  white-space: nowrap;
+}
+
+.definition-keyword-sep {
+  font-weight: 700;
+  white-space: normal;
+}
+
 .definition-clues {
   margin: 0.5rem 0 0.75rem;
   padding: 0;

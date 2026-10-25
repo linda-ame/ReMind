@@ -41,8 +41,11 @@ export function DefinitionGuessTaskView({
 
   const useClues =
     task.mode === 'clues' && Array.isArray(task.clues) && task.clues.length > 0;
+  const useKeywordClues = useClues && task.clueStyle === 'keywords';
   const listenText = useClues
-    ? (task.clues ?? []).join(' ')
+    ? useKeywordClues
+      ? (task.clues ?? []).join(', ')
+      : (task.clues ?? []).join(' ')
     : task.description;
 
   const patch = (partial: Partial<TaskAttempt>) => {
@@ -80,7 +83,20 @@ export function DefinitionGuessTaskView({
 
   return (
     <div className="task-view">
-      {useClues ? (
+      {useKeywordClues ? (
+        <p className="focus-sentence definition-keywords" lang="lv">
+          {(task.clues ?? []).map((clue, i) => (
+            <span key={`kw-${i}`}>
+              {i > 0 ? (
+                <span className="definition-keyword-sep" aria-hidden="true">
+                  ,{' '}
+                </span>
+              ) : null}
+              <span className="definition-keyword">{clue}</span>
+            </span>
+          ))}
+        </p>
+      ) : useClues ? (
         <ol className="definition-clues" lang="lv">
           {(task.clues ?? []).map((clue, i) => (
             <li key={`clue-${i}`} className="definition-clue">

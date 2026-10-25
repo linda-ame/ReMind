@@ -1,0 +1,856 @@
+{
+  "schemaVersion": 3,
+  "title": "Uzmini vārdu — trīs īsas pazīmes (P04, 50 uzdevumi)",
+  "tasks": [
+    {
+      "id": "dg-p04-001",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "STIKLA",
+        "TRAUSLA",
+        "PUĶU"
+      ],
+      "description": "STIKLA, TRAUSLA, PUĶU",
+      "answers": [
+        "vāze"
+      ]
+    },
+    {
+      "id": "dg-p04-002",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "ŠAURA",
+        "PAPĪRA",
+        "GRĀMATAS"
+      ],
+      "description": "ŠAURA, PAPĪRA, GRĀMATAS",
+      "answers": [
+        "grāmatzīme"
+      ]
+    },
+    {
+      "id": "dg-p04-003",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "KOKA",
+        "ŠŪPOJAMS",
+        "ATPŪTAS"
+      ],
+      "description": "KOKA, ŠŪPOJAMS, ATPŪTAS",
+      "answers": [
+        "šūpuļkrēsls"
+      ]
+    },
+    {
+      "id": "dg-p04-004",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "APDRUKĀTA",
+        "PAPĪRA",
+        "GRĀMATAS"
+      ],
+      "description": "APDRUKĀTA, PAPĪRA, GRĀMATAS",
+      "answers": [
+        "lappuse"
+      ]
+    },
+    {
+      "id": "dg-p04-005",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "GUMIJAS",
+        "OFICIĀLS",
+        "DOKUMENTU"
+      ],
+      "description": "GUMIJAS, OFICIĀLS, DOKUMENTU",
+      "answers": [
+        "zīmogs"
+      ]
+    },
+    {
+      "id": "dg-p04-006",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "NOSLĒDZAMA",
+        "METĀLA",
+        "DZĒRIENU"
+      ],
+      "description": "NOSLĒDZAMA, METĀLA, DZĒRIENU",
+      "answers": [
+        "termokrūze"
+      ]
+    },
+    {
+      "id": "dg-p04-007",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "STIKLOTA",
+        "SILTA",
+        "DĀRZA"
+      ],
+      "description": "STIKLOTA, SILTA, DĀRZA",
+      "answers": [
+        "siltumnīca"
+      ]
+    },
+    {
+      "id": "dg-p04-008",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "METĀLA",
+        "AR KODU",
+        "VELOSIPĒDA"
+      ],
+      "description": "METĀLA, AR KODU, VELOSIPĒDA",
+      "answers": [
+        "slēdzene"
+      ]
+    },
+    {
+      "id": "dg-p04-009",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "PAPĪRA",
+        "AIZLĪMĒJAMA",
+        "VĒSTULES"
+      ],
+      "description": "PAPĪRA, AIZLĪMĒJAMA, VĒSTULES",
+      "answers": [
+        "aploksne"
+      ]
+    },
+    {
+      "id": "dg-p04-010",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "ELEKTRISKS",
+        "KARSTS",
+        "APĢĒRBA"
+      ],
+      "description": "ELEKTRISKS, KARSTS, APĢĒRBA",
+      "answers": [
+        "gludeklis"
+      ]
+    },
+    {
+      "id": "dg-p04-011",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "PĪTS",
+        "LIELS",
+        "NETĪRĀS VEĻAS"
+      ],
+      "description": "PĪTS, LIELS, NETĪRĀS VEĻAS",
+      "answers": [
+        "veļasgrozs"
+      ]
+    },
+    {
+      "id": "dg-p04-012",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "ELEKTRISKA",
+        "VIRTUVES",
+        "AUGĻU"
+      ],
+      "description": "ELEKTRISKA, VIRTUVES, AUGĻU",
+      "answers": [
+        "sulu spiede"
+      ]
+    },
+    {
+      "id": "dg-p04-013",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "RAKSTISKS",
+        "DIVPUSĒJS",
+        "SAISTOŠS"
+      ],
+      "description": "RAKSTISKS, DIVPUSĒJS, SAISTOŠS",
+      "answers": [
+        "līgums"
+      ]
+    },
+    {
+      "id": "dg-p04-014",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "ZEMS",
+        "KOKA",
+        "DURVJU"
+      ],
+      "description": "ZEMS, KOKA, DURVJU",
+      "answers": [
+        "slieksnis"
+      ]
+    },
+    {
+      "id": "dg-p04-015",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "BALTS",
+        "AUDUMA",
+        "SVĒTKU"
+      ],
+      "description": "BALTS, AUDUMA, SVĒTKU",
+      "answers": [
+        "galdauts"
+      ]
+    },
+    {
+      "id": "dg-p04-016",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "BIEZA",
+        "PELĒKA",
+        "RĪTA"
+      ],
+      "description": "BIEZA, PELĒKA, RĪTA",
+      "answers": [
+        "migla"
+      ]
+    },
+    {
+      "id": "dg-p04-017",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "GARA",
+        "LEDUS",
+        "JUMTA"
+      ],
+      "description": "GARA, LEDUS, JUMTA",
+      "answers": [
+        "lāsteka"
+      ]
+    },
+    {
+      "id": "dg-p04-018",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "BALTA",
+        "PELDOŠA",
+        "DĪĶA"
+      ],
+      "description": "BALTA, PELDOŠA, DĪĶA",
+      "answers": [
+        "ūdensroze"
+      ]
+    },
+    {
+      "id": "dg-p04-019",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "LOKVEIDA",
+        "DAUDZKRĀSAINA",
+        "DEBESU"
+      ],
+      "description": "LOKVEIDA, DAUDZKRĀSAINA, DEBESU",
+      "answers": [
+        "varavīksne"
+      ]
+    },
+    {
+      "id": "dg-p04-020",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "ATKĀRTOTA",
+        "DZIRDAMA",
+        "KALNU"
+      ],
+      "description": "ATKĀRTOTA, DZIRDAMA, KALNU",
+      "answers": [
+        "atbalss"
+      ]
+    },
+    {
+      "id": "dg-p04-021",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "AUGSTAS",
+        "SPĀRNOTAS",
+        "VĒJA"
+      ],
+      "description": "AUGSTAS, SPĀRNOTAS, VĒJA",
+      "answers": [
+        "vējdzirnavas"
+      ]
+    },
+    {
+      "id": "dg-p04-022",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "KOKA",
+        "PIEKĀRTS",
+        "STRAZDU"
+      ],
+      "description": "KOKA, PIEKĀRTS, STRAZDU",
+      "answers": [
+        "būrītis"
+      ]
+    },
+    {
+      "id": "dg-p04-023",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "LIELS",
+        "SKUJU",
+        "MEŽA"
+      ],
+      "description": "LIELS, SKUJU, MEŽA",
+      "answers": [
+        "skudrupūznis"
+      ]
+    },
+    {
+      "id": "dg-p04-024",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "SMILŠAINA",
+        "VĒJA VEIDOTA",
+        "PIEJŪRAS"
+      ],
+      "description": "SMILŠAINA, VĒJA VEIDOTA, PIEJŪRAS",
+      "answers": [
+        "kāpa"
+      ]
+    },
+    {
+      "id": "dg-p04-025",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "ŠAURS",
+        "TEKOŠS",
+        "MEŽA"
+      ],
+      "description": "ŠAURS, TEKOŠS, MEŽA",
+      "answers": [
+        "strauts"
+      ]
+    },
+    {
+      "id": "dg-p04-026",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "BIEZS",
+        "LĒNKUSTĪGS",
+        "KALNU"
+      ],
+      "description": "BIEZS, LĒNKUSTĪGS, KALNU",
+      "answers": [
+        "ledājs"
+      ]
+    },
+    {
+      "id": "dg-p04-027",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "DZIĻA",
+        "APĻVEIDA",
+        "PAGALMA"
+      ],
+      "description": "DZIĻA, APĻVEIDA, PAGALMA",
+      "answers": [
+        "aka"
+      ]
+    },
+    {
+      "id": "dg-p04-028",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "AUGSTS",
+        "SKAĻŠ",
+        "KRĪTOŠA ŪDENS"
+      ],
+      "description": "AUGSTS, SKAĻŠ, KRĪTOŠA ŪDENS",
+      "answers": [
+        "ūdenskritums"
+      ]
+    },
+    {
+      "id": "dg-p04-029",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "SMAGS",
+        "METĀLA",
+        "KUĢA"
+      ],
+      "description": "SMAGS, METĀLA, KUĢA",
+      "answers": [
+        "enkurs"
+      ]
+    },
+    {
+      "id": "dg-p04-030",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "AUGSTA",
+        "SPOŽA",
+        "PIEKRASTES"
+      ],
+      "description": "AUGSTA, SPOŽA, PIEKRASTES",
+      "answers": [
+        "bāka"
+      ]
+    },
+    {
+      "id": "dg-p04-031",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "LIELS",
+        "PELDOŠS",
+        "AUTOMAŠĪNU"
+      ],
+      "description": "LIELS, PELDOŠS, AUTOMAŠĪNU",
+      "answers": [
+        "prāmis"
+      ]
+    },
+    {
+      "id": "dg-p04-032",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "TRĪSSTŪRVEIDA",
+        "AUDUMA",
+        "JAHTAS"
+      ],
+      "description": "TRĪSSTŪRVEIDA, AUDUMA, JAHTAS",
+      "answers": [
+        "bura"
+      ]
+    },
+    {
+      "id": "dg-p04-033",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "GARŠ",
+        "ASFALTĒTS",
+        "LIDOSTAS"
+      ],
+      "description": "GARŠ, ASFALTĒTS, LIDOSTAS",
+      "answers": [
+        "skrejceļš"
+      ]
+    },
+    {
+      "id": "dg-p04-034",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "AIZVERAMS",
+        "AIZMUGURĒJS",
+        "AUTOMAŠĪNAS"
+      ],
+      "description": "AIZVERAMS, AIZMUGURĒJS, AUTOMAŠĪNAS",
+      "answers": [
+        "bagāžnieks"
+      ]
+    },
+    {
+      "id": "dg-p04-035",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "SVĪTRAINA",
+        "ASFALTĒTA",
+        "GĀJĒJU"
+      ],
+      "description": "SVĪTRAINA, ASFALTĒTA, GĀJĒJU",
+      "answers": [
+        "pāreja"
+      ]
+    },
+    {
+      "id": "dg-p04-036",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "ASFALTĒTA",
+        "MARĶĒTA",
+        "AUTOMAŠĪNU"
+      ],
+      "description": "ASFALTĒTA, MARĶĒTA, AUTOMAŠĪNU",
+      "answers": [
+        "stāvvieta"
+      ]
+    },
+    {
+      "id": "dg-p04-037",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "TRĪSSTŪRVEIDA",
+        "BRĪDINOŠA",
+        "CEĻMALAS"
+      ],
+      "description": "TRĪSSTŪRVEIDA, BRĪDINOŠA, CEĻMALAS",
+      "answers": [
+        "ceļazīme"
+      ]
+    },
+    {
+      "id": "dg-p04-038",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "BRUĢĒTA",
+        "ŠAURA",
+        "GĀJĒJU"
+      ],
+      "description": "BRUĢĒTA, ŠAURA, GĀJĒJU",
+      "answers": [
+        "ietve"
+      ]
+    },
+    {
+      "id": "dg-p04-039",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "MAZS",
+        "PĀRNĒSĀJAMS",
+        "GAISMU RAIDOŠS"
+      ],
+      "description": "MAZS, PĀRNĒSĀJAMS, GAISMU RAIDOŠS",
+      "answers": [
+        "lukturītis"
+      ]
+    },
+    {
+      "id": "dg-p04-040",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "GARŠ",
+        "SLIEŽU",
+        "PILSĒTAS"
+      ],
+      "description": "GARŠ, SLIEŽU, PILSĒTAS",
+      "answers": [
+        "tramvajs"
+      ]
+    },
+    {
+      "id": "dg-p04-041",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "DIVU OKULĀRU",
+        "OPTISKS",
+        "PALIELINOŠS"
+      ],
+      "description": "DIVU OKULĀRU, OPTISKS, PALIELINOŠS",
+      "answers": [
+        "binoklis"
+      ]
+    },
+    {
+      "id": "dg-p04-042",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "GARŠ",
+        "OPTISKS",
+        "ASTRONOMIJAS"
+      ],
+      "description": "GARŠ, OPTISKS, ASTRONOMIJAS",
+      "answers": [
+        "teleskops"
+      ]
+    },
+    {
+      "id": "dg-p04-043",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "OPTISKS",
+        "PALIELINOŠS",
+        "LABORATORIJAS"
+      ],
+      "description": "OPTISKS, PALIELINOŠS, LABORATORIJAS",
+      "answers": [
+        "mikroskops"
+      ]
+    },
+    {
+      "id": "dg-p04-044",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "BIEZA",
+        "ILUSTRĒTA",
+        "UZZIŅU"
+      ],
+      "description": "BIEZA, ILUSTRĒTA, UZZIŅU",
+      "answers": [
+        "enciklopēdija"
+      ]
+    },
+    {
+      "id": "dg-p04-045",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "MEDICĪNISKS",
+        "AR CAURULĪTI",
+        "KLAUSĪŠANĀS"
+      ],
+      "description": "MEDICĪNISKS, AR CAURULĪTI, KLAUSĪŠANĀS",
+      "answers": [
+        "stetoskops"
+      ]
+    },
+    {
+      "id": "dg-p04-046",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "APAĻŠ",
+        "AR SKALU",
+        "SPIEDIENA"
+      ],
+      "description": "APAĻŠ, AR SKALU, SPIEDIENA",
+      "answers": [
+        "manometrs"
+      ]
+    },
+    {
+      "id": "dg-p04-047",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "METĀLA",
+        "DIVU CAURUMU",
+        "BIROJA"
+      ],
+      "description": "METĀLA, DIVU CAURUMU, BIROJA",
+      "answers": [
+        "perforators"
+      ]
+    },
+    {
+      "id": "dg-p04-048",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "ROKAS",
+        "METĀLA",
+        "SKAVU"
+      ],
+      "description": "ROKAS, METĀLA, SKAVU",
+      "answers": [
+        "skavotājs"
+      ]
+    },
+    {
+      "id": "dg-p04-049",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "PLĒŠU",
+        "TAUSTIŅU",
+        "ROKAS"
+      ],
+      "description": "PLĒŠU, TAUSTIŅU, ROKAS",
+      "answers": [
+        "akordeons"
+      ]
+    },
+    {
+      "id": "dg-p04-050",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc trim pazīmēm.",
+      "mode": "clues",
+      "clueStyle": "keywords",
+      "clues": [
+        "RITMISKS",
+        "TIKŠĶOŠS",
+        "MŪZIKAS"
+      ],
+      "description": "RITMISKS, TIKŠĶOŠS, MŪZIKAS",
+      "answers": [
+        "metronoms"
+      ]
+    }
+  ]
+}
