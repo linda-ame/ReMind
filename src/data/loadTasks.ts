@@ -11,6 +11,13 @@ import rawSentenceOrder from './sentence_order_P01_50.json';
 import rawOddOneOut from './odd_one_out_P01_50.json';
 import rawAntonym from './antonym_P01_60.json';
 import rawDefinitionGuess from './definition_guess_P01_50.json';
+import rawSentenceCompletionP02 from './sentence_completion_P02.json';
+import rawWordChoiceP02 from './word_choice_P02.json';
+import rawReadingP02 from './reading_comprehension_P02.json';
+import rawSentenceOrderP02 from './sentence_order_P02.json';
+import rawOddOneOutP02 from './odd_one_out_P02.json';
+import rawAntonymP02 from './antonym_P02.json';
+import rawDefinitionGuessP02 from './definition_guess_P02.json';
 import difficultyByIdRaw from './metadata/remind_difficulty_by_id.json';
 import questionDifficultyByIdRaw from './metadata/remind_reading_question_difficulty_by_id.json';
 
@@ -21,6 +28,13 @@ const sentenceOrder = rawSentenceOrder as TaskPack;
 const oddOneOut = rawOddOneOut as TaskPack;
 const antonym = rawAntonym as TaskPack;
 const definitionGuess = rawDefinitionGuess as TaskPack;
+const sentenceCompletionP02 = rawSentenceCompletionP02 as TaskPack;
+const wordChoiceP02 = rawWordChoiceP02 as TaskPack;
+const readingP02 = rawReadingP02 as TaskPack;
+const sentenceOrderP02 = rawSentenceOrderP02 as TaskPack;
+const oddOneOutP02 = rawOddOneOutP02 as TaskPack;
+const antonymP02 = rawAntonymP02 as TaskPack;
+const definitionGuessP02 = rawDefinitionGuessP02 as TaskPack;
 
 const difficultyById = difficultyByIdRaw as Record<string, number>;
 const questionDifficultyById = questionDifficultyByIdRaw as Record<
@@ -59,6 +73,13 @@ const rawTasks: Task[] = [
   ...oddOneOut.tasks,
   ...antonym.tasks,
   ...definitionGuess.tasks,
+  ...sentenceCompletionP02.tasks,
+  ...wordChoiceP02.tasks,
+  ...readingP02.tasks,
+  ...sentenceOrderP02.tasks,
+  ...oddOneOutP02.tasks,
+  ...antonymP02.tasks,
+  ...definitionGuessP02.tasks,
 ];
 
 const tasksWithDifficulty = rawTasks.map(withDifficulty);
@@ -73,7 +94,7 @@ if (import.meta.env.DEV) {
   }
 }
 
-/** Merged pack: existing packs + P01 sections. Keep old IDs intact. */
+/** Merged pack: existing packs + P01 + P02. Keep old IDs intact. */
 const pack: TaskPack = {
   schemaVersion: Math.max(
     v1.schemaVersion,
@@ -83,12 +104,22 @@ const pack: TaskPack = {
     oddOneOut.schemaVersion,
     antonym.schemaVersion,
     definitionGuess.schemaVersion,
+    sentenceCompletionP02.schemaVersion,
+    wordChoiceP02.schemaVersion,
+    readingP02.schemaVersion,
+    sentenceOrderP02.schemaVersion,
+    oddOneOutP02.schemaVersion,
+    antonymP02.schemaVersion,
+    definitionGuessP02.schemaVersion,
   ),
   title: v1.title,
   tasks: tasksWithDifficulty,
 };
 
-/** Easier → harder (used for home menu and “Sākt visus”). */
+/**
+ * Menu sections (home / progress). Multi-blank completion is grouped under
+ * Teikumu papildināšana — not a separate home button.
+ */
 export const TASK_TYPE_ORDER: Task['type'][] = [
   'word_reading',
   'image_word',
@@ -106,6 +137,7 @@ export const TASK_TYPE_LABELS: Record<Task['type'], string> = {
   image_word: 'Vārdu atpazīšana',
   word_choice: 'Vārdu izvēle',
   sentence_completion: 'Teikumu papildināšana',
+  sentence_completion_multi: 'Teikumu papildināšana',
   reading_comprehension: 'Izlasi un atbildi',
   sentence_order: 'Sakārto vārdus teikumā',
   odd_one_out: 'Atrodi lieko vārdu',
@@ -127,8 +159,18 @@ export function unitTitle(type: Task['type'], lessonNumber: number): string {
 }
 
 function typeRank(type: Task['type']): number {
+  if (type === 'sentence_completion_multi') {
+    return TASK_TYPE_ORDER.indexOf('sentence_completion');
+  }
   const i = TASK_TYPE_ORDER.indexOf(type);
   return i === -1 ? 999 : i;
+}
+
+/** True when both belong to the same home / practice section. */
+export function sameSectionType(a: Task['type'], b: Task['type']): boolean {
+  const norm = (t: Task['type']) =>
+    t === 'sentence_completion_multi' ? 'sentence_completion' : t;
+  return norm(a) === norm(b);
 }
 
 export function getTaskPack(): TaskPack {
@@ -143,7 +185,21 @@ export function getTaskById(id: string): Task | undefined {
   return pack.tasks.find((t) => t.id === id);
 }
 
+/**
+ * Tasks for a home section. `sentence_completion` includes multi-blank
+ * (sentence_completion_multi) tasks.
+ */
 export function getTasksByType(type: Task['type']): Task[] {
+  if (type === 'sentence_completion') {
+    return pack.tasks.filter(
+      (t) =>
+        t.type === 'sentence_completion' ||
+        t.type === 'sentence_completion_multi',
+    );
+  }
+  if (type === 'sentence_completion_multi') {
+    return pack.tasks.filter((t) => t.type === 'sentence_completion_multi');
+  }
   // Preserve JSON order within a type (important for word-reading pack sequence).
   return pack.tasks.filter((t) => t.type === type);
 }

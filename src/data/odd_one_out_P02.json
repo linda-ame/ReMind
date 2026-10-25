@@ -1,0 +1,456 @@
+{
+  "schemaVersion": 1,
+  "title": "Atrodi lieko — nozīmju un jēdzienu salīdzināšana",
+  "tasks": [
+    {
+      "id": "oo-p02-001",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "centimetrs",
+        "kvadrātmetrs",
+        "kilometrs",
+        "milimetrs"
+      ],
+      "correctIndex": 1,
+      "comparisonRule": "Trīs apzīmē garumu; viens — laukumu.",
+      "explanation": "Kvadrātmetrs ir laukuma, nevis garuma mērvienība."
+    },
+    {
+      "id": "oo-p02-002",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "litrs",
+        "kilograms",
+        "mililitrs",
+        "kubikmetrs"
+      ],
+      "correctIndex": 1,
+      "comparisonRule": "Trīs apzīmē tilpumu; viens — masu.",
+      "explanation": "Kilograms ir masas mērvienība."
+    },
+    {
+      "id": "oo-p02-003",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "hipotēze",
+        "pierādījums",
+        "pieņēmums",
+        "minējums"
+      ],
+      "correctIndex": 1,
+      "comparisonRule": "Trīs ir vēl nepierādīti pieņēmumi; viens — to pamatojoši fakti vai argumenti.",
+      "explanation": "Pierādījums nav minējums, bet pamatojums."
+    },
+    {
+      "id": "oo-p02-004",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "skaļrunis",
+        "mikrofons",
+        "projektors",
+        "austiņas"
+      ],
+      "correctIndex": 2,
+      "comparisonRule": "Trīs ierīces paredzētas skaņas uztveršanai vai atskaņošanai; viena — attēla projicēšanai.",
+      "explanation": "Projektors projicē attēlu."
+    },
+    {
+      "id": "oo-p02-005",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "pārskaitījums",
+        "rēķins",
+        "kartes maksājums",
+        "skaidras naudas iemaksa"
+      ],
+      "correctIndex": 1,
+      "comparisonRule": "Trīs ir naudas samaksas veidi; viens — dokuments ar maksājuma pieprasījumu.",
+      "explanation": "Rēķins nav maksājuma izpildes veids."
+    },
+    {
+      "id": "oo-p02-006",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "iemaksa",
+        "noguldījums",
+        "aizdevums",
+        "depozīts"
+      ],
+      "correctIndex": 2,
+      "comparisonRule": "Trīs var apzīmēt bankā noguldītu naudu; viens — bankas izsniegtu naudu aizņēmējam.",
+      "explanation": "Aizdevums ir aizdota, nevis noguldīta nauda."
+    },
+    {
+      "id": "oo-p02-007",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "konstitūcija",
+        "likums",
+        "noteikumi",
+        "recenzija"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs ir normatīvi vai reglamentējoši teksti; viens — vērtējošs teksts.",
+      "explanation": "Recenzija ir vērtējums, nevis normatīvais akts."
+    },
+    {
+      "id": "oo-p02-008",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "ziemeļi",
+        "dienvidi",
+        "ziemeļaustrumi",
+        "rietumi"
+      ],
+      "correctIndex": 2,
+      "comparisonRule": "Trīs ir galvenās debespuses; viena — starpdebespuse.",
+      "explanation": "Ziemeļaustrumi atrodas starp ziemeļiem un austrumiem."
+    },
+    {
+      "id": "oo-p02-009",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "blīvums",
+        "platums",
+        "dziļums",
+        "augstums"
+      ],
+      "correctIndex": 0,
+      "comparisonRule": "Trīs raksturo izmērus telpā; viens — vielas masu tilpuma vienībā.",
+      "explanation": "Blīvums nav telpisks izmērs."
+    },
+    {
+      "id": "oo-p02-010",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "stāstījums",
+        "jautājums",
+        "izsaukums",
+        "priekšlikums"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs nosauc teikumu veidus pēc izteikuma mērķa; viens — vispārīgs ierosinājums.",
+      "explanation": "Stāstījums, jautājums un izsaukums ir izteikuma mērķa veidi; priekšlikums ir ierosinājums."
+    },
+    {
+      "id": "oo-p02-011",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "biogrāfija",
+        "autobiogrāfija",
+        "dienasgrāmata",
+        "katalogs"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs ir teksti par cilvēka dzīvi vai personisko pieredzi; viens — sistematizēts saraksts.",
+      "explanation": "Katalogs apkopo vienības, nevis stāsta cilvēka dzīves norises."
+    },
+    {
+      "id": "oo-p02-012",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "atvainoties",
+        "pateikties",
+        "apsveikt",
+        "pārbaudīt"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs darbības ir tipiskas pieklājības runas darbības; viena ir faktu vai stāvokļa pārbaude.",
+      "explanation": "Pārbaudīt nav pieklājības izteikums."
+    },
+    {
+      "id": "oo-p02-013",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "oriģināls",
+        "kopija",
+        "noraksts",
+        "dublikāts"
+      ],
+      "correctIndex": 0,
+      "comparisonRule": "Trīs apzīmē atveidotus dokumentus; viens — sākotnējo dokumentu.",
+      "explanation": "Oriģināls ir sākotnējais dokuments."
+    },
+    {
+      "id": "oo-p02-014",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "piekrišana",
+        "iebildums",
+        "atteikums",
+        "noraidījums"
+      ],
+      "correctIndex": 0,
+      "comparisonRule": "Trīs izsaka nepiekrišanu vai noraidīšanu; viens — akceptu.",
+      "explanation": "Piekrišana izsaka akceptu."
+    },
+    {
+      "id": "oo-p02-015",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "piedāvājums",
+        "vienošanās",
+        "līgums",
+        "vienprātība"
+      ],
+      "correctIndex": 0,
+      "comparisonRule": "Trīs apzīmē jau panāktu saskaņu vai vienošanos; viens — vēl tikai izteiktu iespēju.",
+      "explanation": "Piedāvājums vēl nenozīmē panāktu vienošanos."
+    },
+    {
+      "id": "oo-p02-016",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "iemesls",
+        "cēlonis",
+        "pamats",
+        "sekas"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs atbild uz jautājumu „kāpēc?”; viens apzīmē rezultātu.",
+      "explanation": "Sekas rodas cēloņa dēļ."
+    },
+    {
+      "id": "oo-p02-017",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "provizorisks",
+        "galīgs",
+        "pagaidu",
+        "sākotnējs"
+      ],
+      "correctIndex": 1,
+      "comparisonRule": "Trīs norāda uz vēl nenoslēgtu statusu; viens — uz pabeigtu, galīgu statusu.",
+      "explanation": "Galīgs nozīmē pabeigtu vai apstiprinātu."
+    },
+    {
+      "id": "oo-p02-018",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "novērojums",
+        "fakts",
+        "mērījums",
+        "prognoze"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs saistīti ar konstatētu informāciju; viens — paredzējums par nākotni.",
+      "explanation": "Prognoze nav jau novērots fakts."
+    },
+    {
+      "id": "oo-p02-019",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "ienākumi",
+        "ieņēmumi",
+        "peļņa",
+        "zaudējumi"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs var būt finansiāli pozitīvs rezultāts vai ienākoši līdzekļi; viens — negatīvs rezultāts.",
+      "explanation": "Zaudējumi ir negatīvs finansiāls rezultāts; pārējie apzīmē pozitīvus ienākošus līdzekļus vai peļņu."
+    },
+    {
+      "id": "oo-p02-020",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "saskaņot",
+        "apstiprināt",
+        "noraidīt",
+        "akceptēt"
+      ],
+      "correctIndex": 2,
+      "comparisonRule": "Trīs apzīmē piekrišanas vai pieņemšanas darbības; viens — noraidīšanu.",
+      "explanation": "Noraidīt ir nepieņemt."
+    },
+    {
+      "id": "oo-p02-021",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "uzraudzīt",
+        "kontrolēt",
+        "pārraudzīt",
+        "ignorēt"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs nozīmē sekot norisēm vai tās uzraudzīt; viens — nepievērst uzmanību.",
+      "explanation": "Ignorēt nozīmē neņemt vērā."
+    },
+    {
+      "id": "oo-p02-022",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "nevainīgs",
+        "neitrāls",
+        "objektīvs",
+        "bezkaislīgs"
+      ],
+      "correctIndex": 0,
+      "comparisonRule": "Trīs raksturo neieinteresētu vai bezpersonisku vērtējumu; viens — vainas neesamību.",
+      "explanation": "Nevainīgs runā par vainu, nevis vērtējuma neitralitāti."
+    },
+    {
+      "id": "oo-p02-023",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "secinājums",
+        "spriedums",
+        "atzinums",
+        "pieprasījums"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs var būt vērtējuma vai izpētes rezultāti; viens — prasība kaut ko sniegt vai darīt.",
+      "explanation": "Pieprasījums ir lūgums vai prasība."
+    },
+    {
+      "id": "oo-p02-024",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "ievads",
+        "iztirzājums",
+        "rezumējums",
+        "priekšvārds"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs ir pamatteksta argumentācijas posmi; viens — atsevišķs ievadteksts par izdevumu.",
+      "explanation": "Priekšvārds ir atsevišķs teksts pirms pamatdaļas."
+    },
+    {
+      "id": "oo-p02-025",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "vienlaikus",
+        "vienlaicīgi",
+        "reizē",
+        "secīgi"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs apzīmē vienu laiku; viens — notikšanu vienam pēc otra.",
+      "explanation": "Secīgi nozīmē pēc kārtas."
+    },
+    {
+      "id": "oo-p02-026",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "nepieciešams",
+        "obligāts",
+        "izvēles",
+        "prasīts"
+      ],
+      "correctIndex": 2,
+      "comparisonRule": "Trīs norāda uz nepieciešamību vai prasību; viens — brīvu izvēli.",
+      "explanation": "Izvēles nozīmē, ka nav obligāti."
+    },
+    {
+      "id": "oo-p02-027",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "pārbaudāms",
+        "izmērāms",
+        "novērojams",
+        "iedomāts"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs saistīti ar empīrisku pārbaudi; viens var būt tikai iztēles radīts.",
+      "explanation": "Iedomāts pats par sevi nav novērojums vai mērījums."
+    },
+    {
+      "id": "oo-p02-028",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "atlikt",
+        "pārcelt",
+        "pagarināt",
+        "anulēt"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs maina izpildes laiku vai ilgumu, saglabājot notikumu; viens to pilnībā atceļ.",
+      "explanation": "Anulēt nozīmē atcelt, nevis pārcelt laikā."
+    },
+    {
+      "id": "oo-p02-029",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "uzkrāt",
+        "saglabāt",
+        "paturēt",
+        "izšķērdēt"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs saistīti ar resursa noturēšanu; viens — nevajadzīgu iztērēšanu.",
+      "explanation": "Izšķērdēt nozīmē izlietot nelietderīgi."
+    },
+    {
+      "id": "oo-p02-030",
+      "type": "odd_one_out",
+      "contentVersion": 1,
+      "instruction": "Atrodiet lieko vārdu.",
+      "options": [
+        "pamudinājums",
+        "ieteikums",
+        "priekšlikums",
+        "aizliegums"
+      ],
+      "correctIndex": 3,
+      "comparisonRule": "Trīs rosina rīkoties, piedāvājot iespēju; viens liedz rīcību.",
+      "explanation": "Aizliegums ierobežo darbību."
+    }
+  ]
+}

@@ -8,13 +8,14 @@ export function taskPromptText(task: Task): string {
     case 'word_reading':
       return task.word;
     case 'sentence_completion':
+    case 'sentence_completion_multi':
       return task.sentence;
     case 'image_word':
       return task.sentence;
     case 'word_choice':
       return task.prompt;
     case 'reading_comprehension':
-      return task.passage;
+      return task.title?.trim() ? task.title : task.passage;
     case 'sentence_order':
       return task.modelSentence;
     case 'odd_one_out':
@@ -36,6 +37,8 @@ export function expectedAnswerLabels(task: Task): string[] {
     case 'antonym':
     case 'definition_guess':
       return [...task.answers];
+    case 'sentence_completion_multi':
+      return task.answersByBlank.map((blank) => blank[0] ?? '').filter(Boolean);
     case 'word_choice':
       return task.correctIndices
         .map((i) => task.options[i])
@@ -107,6 +110,20 @@ export function enteredAnswerLabels(
       }
     } catch {
       /* plain string option */
+    }
+    return [raw];
+  }
+
+  if (task.type === 'sentence_completion_multi') {
+    try {
+      const parsed: unknown = JSON.parse(raw);
+      if (Array.isArray(parsed)) {
+        return parsed.filter(
+          (x): x is string => typeof x === 'string' && x.trim() !== '',
+        );
+      }
+    } catch {
+      /* ignore */
     }
     return [raw];
   }
@@ -198,6 +215,7 @@ export function taskUsesPossibleAnswerLabel(
   return (
     type === 'image_word' ||
     type === 'sentence_completion' ||
+    type === 'sentence_completion_multi' ||
     type === 'antonym' ||
     type === 'definition_guess' ||
     type === 'reading_comprehension' ||
@@ -247,6 +265,7 @@ export function taskHasSelfAssessment(task: Task): boolean {
   if (!SELF_ASSESSMENT_ENABLED) return false;
   return (
     task.type === 'sentence_completion' ||
+    task.type === 'sentence_completion_multi' ||
     task.type === 'image_word' ||
     task.type === 'sentence_order' ||
     task.type === 'antonym' ||
@@ -295,6 +314,27 @@ export function isAnswerCorrect(
     case 'antonym':
     case 'definition_guess':
       return textMatchesAccepted(raw, task.answers, task.type);
+
+    case 'sentence_completion_multi': {
+      let blanks: string[] = [];
+      try {
+        const parsed: unknown = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+          blanks = parsed.map((x) =>
+            typeof x === 'string' ? x : '',
+          );
+        }
+      } catch {
+        return null;
+      }
+      if (blanks.every((b) => !b.trim())) return null;
+      // Soft match: every non-empty blank that has a key must match;
+      // unanswered blanks count as not fully correct.
+      if (blanks.length < task.answersByBlank.length) return false;
+      return task.answersByBlank.every((accepted, i) =>
+        textMatchesAccepted(blanks[i] ?? '', accepted, task.type),
+      );
+    }
 
     case 'word_choice': {
       const correct = new Set(

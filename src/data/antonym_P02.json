@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 1,
+  "title": "Atrodi pretstatu — sarežģītāki vārdi",
+  "tasks": [
+    {
+      "id": "an-p02-001",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "privāts",
+      "answers": [
+        "publisks"
+      ],
+      "hint": "Vai kaut kas paredzēts personiskai lietošanai vai sabiedrībai?"
+    },
+    {
+      "id": "an-p02-002",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "objektīvs",
+      "answers": [
+        "subjektīvs"
+      ],
+      "hint": "Neatkarīgi no personiskām izjūtām vai tieši atkarīgi no tām?"
+    },
+    {
+      "id": "an-p02-003",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "konkrēts",
+      "answers": [
+        "abstrakts"
+      ],
+      "hint": "Vai doma ir skaidri noteikta vai vispārināta?"
+    },
+    {
+      "id": "an-p02-004",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "teorētisks",
+      "answers": [
+        "praktisks"
+      ],
+      "hint": "Par ideju vai reālu darbību?"
+    },
+    {
+      "id": "an-p02-005",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "obligāts",
+      "answers": [
+        "brīvprātīgs"
+      ],
+      "hint": "Vai izvēle ir brīva?"
+    },
+    {
+      "id": "an-p02-006",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "virspusējs",
+      "answers": [
+        "padziļināts"
+      ],
+      "hint": "Cik rūpīgi kaut kas izpētīts?"
+    },
+    {
+      "id": "an-p02-007",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "īslaicīgs",
+      "answers": [
+        "ilgstošs"
+      ],
+      "hint": "Cik ilgi tas turpinās?"
+    },
+    {
+      "id": "an-p02-008",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "novēlots",
+      "answers": [
+        "savlaicīgs"
+      ],
+      "hint": "Vai notiek pareizajā laikā?"
+    },
+    {
+      "id": "an-p02-009",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "vienpusējs",
+      "answers": [
+        "abpusējs"
+      ],
+      "hint": "Vai iesaistīta viena vai abas puses?"
+    },
+    {
+      "id": "an-p02-010",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "patstāvīgs",
+      "answers": [
+        "atkarīgs"
+      ],
+      "hint": "Vai cilvēks rīkojas pats vai paļaujas uz citiem?"
+    },
+    {
+      "id": "an-p02-011",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "formāls",
+      "answers": [
+        "neformāls"
+      ],
+      "hint": "Par saziņas oficiālo raksturu."
+    },
+    {
+      "id": "an-p02-012",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "aptuvens",
+      "answers": [
+        "precīzs"
+      ],
+      "hint": "Vai lielums nosaukts noteikti?"
+    },
+    {
+      "id": "an-p02-013",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "ražīgs",
+      "answers": [
+        "neproduktīvs"
+      ],
+      "hint": "Cik daudz noderīga izdodas paveikt?"
+    },
+    {
+      "id": "an-p02-014",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "savstarpējs",
+      "answers": [
+        "vienpusējs"
+      ],
+      "hint": "Vai darbība notiek abos virzienos?"
+    },
+    {
+      "id": "an-p02-015",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "pamatots",
+      "answers": [
+        "nepamatots"
+      ],
+      "hint": "Vai apgalvojumam ir pamatojums?"
+    },
+    {
+      "id": "an-p02-016",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "pieejams",
+      "answers": [
+        "nepieejams"
+      ],
+      "hint": "Vai iespējams kaut ko izmantot vai saņemt?"
+    },
+    {
+      "id": "an-p02-017",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "izdevīgs",
+      "answers": [
+        "neizdevīgs"
+      ],
+      "hint": "Vai ieguvums attaisno izmaksas?"
+    },
+    {
+      "id": "an-p02-018",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "neatkarīgs",
+      "answers": [
+        "atkarīgs"
+      ],
+      "hint": "Vai pastāv patstāvība?"
+    },
+    {
+      "id": "an-p02-019",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "caurspīdīgs",
+      "answers": [
+        "necaurspīdīgs"
+      ],
+      "hint": "Vai materiālam var redzēt cauri?"
+    },
+    {
+      "id": "an-p02-020",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "paredzams",
+      "answers": [
+        "neparedzams"
+      ],
+      "hint": "Vai var prognozēt turpmāko?"
+    },
+    {
+      "id": "an-p02-021",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "pakāpenisks",
+      "answers": [
+        "pēkšņs"
+      ],
+      "hint": "Vai pārmaiņa notiek pamazām vai uzreiz?"
+    },
+    {
+      "id": "an-p02-022",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "viennozīmīgs",
+      "answers": [
+        "divdomīgs"
+      ],
+      "hint": "Vai izteikumam ir viena skaidra nozīme?"
+    },
+    {
+      "id": "an-p02-023",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "nelokāms",
+      "answers": [
+        "pielaidīgs"
+      ],
+      "hint": "Vai cilvēks pieļauj izņēmumus?"
+    },
+    {
+      "id": "an-p02-024",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "konstruktīvs",
+      "answers": [
+        "destruktīvs"
+      ],
+      "hint": "Vai darbība palīdz veidot vai grauj?"
+    },
+    {
+      "id": "an-p02-025",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "kolektīvs",
+      "answers": [
+        "individuāls"
+      ],
+      "hint": "Kopīgs vai katram atsevišķs?"
+    },
+    {
+      "id": "an-p02-026",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "uzticams",
+      "answers": [
+        "neuzticams"
+      ],
+      "hint": "Vai uz informāciju var paļauties?"
+    },
+    {
+      "id": "an-p02-027",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "samērīgs",
+      "answers": [
+        "nesamērīgs"
+      ],
+      "hint": "Vai attiecība ir atbilstoša?"
+    },
+    {
+      "id": "an-p02-028",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "vienveidīgs",
+      "answers": [
+        "daudzveidīgs"
+      ],
+      "hint": "Vai ir dažādība?"
+    },
+    {
+      "id": "an-p02-029",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "īsts",
+      "answers": [
+        "šķietams"
+      ],
+      "hint": "Vai tas ir reāls, nevis tikai izskatās tā?"
+    },
+    {
+      "id": "an-p02-030",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Nosauciet pretējas nozīmes vārdu.",
+      "word": "stabils",
+      "answers": [
+        "nestabils"
+      ],
+      "hint": "Vai stāvoklis saglabājas līdzīgs?"
+    }
+  ]
+}

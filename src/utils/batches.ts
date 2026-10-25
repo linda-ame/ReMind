@@ -8,6 +8,7 @@ export const BATCH_SIZE_BY_TYPE: Record<Task['type'], number> = {
   image_word: 5,
   word_choice: 5,
   sentence_completion: 5,
+  sentence_completion_multi: 5,
   /** Each text is its own unit (not grouped into lessons). */
   reading_comprehension: 1,
   sentence_order: 5,

@@ -1,0 +1,353 @@
+{
+  "schemaVersion": 1,
+  "title": "Uzmini vārdu — sarežģītāki apraksti",
+  "tasks": [
+    {
+      "id": "dg-p02-001",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir naudas daudzums, ko uzņēmums nopelna pēc izdevumu atskaitīšanas no ieņēmumiem.",
+      "answers": [
+        "peļņa"
+      ],
+      "hint": "Tas nav tas pats, kas visi ieņēmumi."
+    },
+    {
+      "id": "dg-p02-002",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir noteikts darbu vai notikumu saraksts ar paredzētajiem izpildes laikiem.",
+      "answers": [
+        "grafiks",
+        "darbu grafiks"
+      ],
+      "hint": "Tas palīdz plānot laiku."
+    },
+    {
+      "id": "dg-p02-003",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tā ir noteiktas informācijas kopija, ko saglabā, lai to varētu atjaunot datu zuduma gadījumā.",
+      "answers": [
+        "rezerves kopija",
+        "datu rezerves kopija"
+      ],
+      "hint": "Noder, ja oriģināls pazūd."
+    },
+    {
+      "id": "dg-p02-004",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir cilvēks, kas palīdz divām pusēm sazināties vai panākt vienošanos, pats nebūdams viena no pusēm.",
+      "answers": [
+        "starpnieks"
+      ],
+      "hint": "Viņš atrodas starp divām pusēm."
+    },
+    {
+      "id": "dg-p02-005",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tā ir naudas summa, ko cilvēks regulāri maksā par aizdevuma izmantošanu papildus pamatsummai.",
+      "answers": [
+        "procenti",
+        "aizdevuma procenti"
+      ],
+      "hint": "Tā nav sākotnējā aizņemtā summa."
+    },
+    {
+      "id": "dg-p02-006",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tā ir kļūdas vai trūkuma oficiāla paziņošana pārdevējam, prasot problēmu novērst.",
+      "answers": [
+        "reklamācija",
+        "pretenzija"
+      ],
+      "hint": "Saistīts ar nekvalitatīvu pirkumu."
+    },
+    {
+      "id": "dg-p02-007",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir rakstisks sapulcē pārrunātā un pieņemto lēmumu pieraksts.",
+      "answers": [
+        "protokols",
+        "sapulces protokols"
+      ],
+      "hint": "To sagatavo pēc sanāksmes."
+    },
+    {
+      "id": "dg-p02-008",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir iemesls, kura dēļ kādu lēmumu uzskata par pareizu vai pamatotu.",
+      "answers": [
+        "pamatojums"
+      ],
+      "hint": "Ar to skaidro, kāpēc."
+    },
+    {
+      "id": "dg-p02-009",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tā ir izvēle, kurai, salīdzinot ar citām, piešķirta lielāka svarība vai steidzamība.",
+      "answers": [
+        "prioritāte"
+      ],
+      "hint": "To dara vispirms."
+    },
+    {
+      "id": "dg-p02-010",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tā ir iespēja saņemt pakalpojumu vai izmantot vietu neatkarīgi no ierobežojumiem, kas citus varētu kavēt.",
+      "answers": [
+        "pieejamība"
+      ],
+      "hint": "Saistīts ar iespēju lietot."
+    },
+    {
+      "id": "dg-p02-011",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir apzināti pieņemts lēmums atteikties no kādas priekšrocības, lai abas puses panāktu vienošanos.",
+      "answers": [
+        "piekāpšanās",
+        "kompromiss"
+      ],
+      "hint": "Daļēja atteikšanās no savas prasības."
+    },
+    {
+      "id": "dg-p02-012",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tā ir iespējamā notikumu attīstība noteiktos apstākļos, ko izmanto, plānojot vairākus nākotnes variantus.",
+      "answers": [
+        "scenārijs",
+        "attīstības scenārijs"
+      ],
+      "hint": "Attiecas uz nākotni."
+    },
+    {
+      "id": "dg-p02-013",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir rakstisks dokuments, kurā viena puse norāda, ka otra kaut ko ir saņēmusi vai samaksājusi.",
+      "answers": [
+        "apliecinājums",
+        "kvīts"
+      ],
+      "hint": "Par saņemšanas faktu."
+    },
+    {
+      "id": "dg-p02-014",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir izdevumu un ieņēmumu plānots sadalījums noteiktam laikam.",
+      "answers": [
+        "budžets"
+      ],
+      "hint": "Naudas plāns."
+    },
+    {
+      "id": "dg-p02-015",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir izmaiņu kopums, ar kuru sistemātiski uzlabo kādas organizācijas darbu vai noteikumus.",
+      "answers": [
+        "reforma"
+      ],
+      "hint": "Pārmaiņas sistēmā."
+    },
+    {
+      "id": "dg-p02-016",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir dokuments vai informācijas avots, ar kuru var pamatot faktu, lēmumu vai prasību.",
+      "answers": [
+        "pierādījums"
+      ],
+      "hint": "Tas palīdz apstiprināt apgalvojumu."
+    },
+    {
+      "id": "dg-p02-017",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tā ir situācija, kurā divi apgalvojumi nevar abi būt patiesi vienlaikus.",
+      "answers": [
+        "pretruna"
+      ],
+      "hint": "Savstarpēja neatbilstība."
+    },
+    {
+      "id": "dg-p02-018",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir iepriekš nosprausts rezultāts, kuru cilvēks cenšas sasniegt ar savām darbībām.",
+      "answers": [
+        "mērķis"
+      ],
+      "hint": "Uz to tiecas."
+    },
+    {
+      "id": "dg-p02-019",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir papildus piešķirts laiks uzdevuma pabeigšanai pēc sākotnēji noteiktā beigu datuma.",
+      "answers": [
+        "termiņa pagarinājums",
+        "pagarinājums"
+      ],
+      "hint": "Līdz tam jāpagūst."
+    },
+    {
+      "id": "dg-p02-020",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir personas vai iestādes oficiāli izteikts pieprasījums izskatīt kādu jautājumu un pieņemt lēmumu.",
+      "answers": [
+        "iesniegums"
+      ],
+      "hint": "To iesniedz iestādei."
+    },
+    {
+      "id": "dg-p02-021",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir dokumentā norādīts ierobežojums, kas jāizpilda, lai vienošanās būtu spēkā.",
+      "answers": [
+        "nosacījums"
+      ],
+      "hint": "Jāievēro, lai kaut kas notiktu."
+    },
+    {
+      "id": "dg-p02-022",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir aprēķins, kurā izvērtē, vai ieguvumi ir lielāki nekā izmaksas.",
+      "answers": [
+        "izdevīguma izvērtējums",
+        "izmaksu un ieguvumu analīze"
+      ],
+      "hint": "Salīdzina plusus un mīnusus."
+    },
+    {
+      "id": "dg-p02-023",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir rakstīts vai mutisks informācijas nodošanas veids, kurā uzskaitīti galvenie notikumi un rezultāti noteiktā periodā.",
+      "answers": [
+        "pārskats",
+        "atskaite"
+      ],
+      "hint": "Apkopo paveikto."
+    },
+    {
+      "id": "dg-p02-024",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir rakstisks piedāvājums, kurā norādīta preces vai darba cena un nosacījumi.",
+      "answers": [
+        "cenu piedāvājums",
+        "piedāvājums"
+      ],
+      "hint": "To parasti salīdzina pirms pirkuma."
+    },
+    {
+      "id": "dg-p02-025",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tā ir iepriekšējās kļūdas labošana vai neprecīzas informācijas izmaiņa, lai tā kļūtu pareiza.",
+      "answers": [
+        "precizējums",
+        "labojums"
+      ],
+      "hint": "Tiek novērsta neprecizitāte."
+    },
+    {
+      "id": "dg-p02-026",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir iemesls, kas izskaidro, kāpēc kāds notikums ir noticis.",
+      "answers": [
+        "cēlonis"
+      ],
+      "hint": "No tā izriet sekas."
+    },
+    {
+      "id": "dg-p02-027",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir cilvēks, kas pārbauda dokumentu vai procesu atbilstību noteiktiem noteikumiem.",
+      "answers": [
+        "auditors",
+        "pārbaudītājs"
+      ],
+      "hint": "Saistīts ar neatkarīgu pārbaudi."
+    },
+    {
+      "id": "dg-p02-028",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir darbību kopums, ar kuru atjauno bojātas sistēmas vai ierīces darbību.",
+      "answers": [
+        "remonts",
+        "salabošana"
+      ],
+      "hint": "Pēc tam lieta atkal darbojas."
+    },
+    {
+      "id": "dg-p02-029",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tā ir atļauja vai tiesības, kas piešķirtas cilvēkam piekļūt sistēmai vai noteiktai informācijai.",
+      "answers": [
+        "piekļuves tiesības",
+        "piekļuve"
+      ],
+      "hint": "Kas drīkst piekļūt datiem?"
+    },
+    {
+      "id": "dg-p02-030",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Uzminiet vārdu pēc apraksta.",
+      "description": "Tas ir vērtējums, kas balstīts uz pārbaudāmiem faktiem, nevis personīgām simpātijām.",
+      "answers": [
+        "objektīvs vērtējums",
+        "objektivitāte"
+      ],
+      "hint": "Neitrāls vērtējums."
+    }
+  ]
+}

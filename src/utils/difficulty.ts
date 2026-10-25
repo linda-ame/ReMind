@@ -91,12 +91,17 @@ export function formatDifficultyLevelsLabel(
 const STORAGE_PREFIX = 'remind.difficultyLevels.';
 const LEGACY_PRESET_PREFIX = 'remind.difficultyPreset.';
 
+/** Multi-blank completion shares the Teikumu papildināšana filter. */
+function sectionStorageType(type: Task['type']): Task['type'] {
+  return type === 'sentence_completion_multi' ? 'sentence_completion' : type;
+}
+
 function storageKey(type: Task['type']): string {
-  return `${STORAGE_PREFIX}${type}`;
+  return `${STORAGE_PREFIX}${sectionStorageType(type)}`;
 }
 
 function legacyPresetKey(type: Task['type']): string {
-  return `${LEGACY_PRESET_PREFIX}${type}`;
+  return `${LEGACY_PRESET_PREFIX}${sectionStorageType(type)}`;
 }
 
 function levelsFromLegacyPreset(raw: string): DifficultyLevel[] | null {

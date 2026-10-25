@@ -1,0 +1,523 @@
+{
+  "schemaVersion": 1,
+  "title": "Vārdu izvēle — sarežģītāki 4.–5. līmeņa uzdevumi",
+  "tasks": [
+    {
+      "id": "wc-p04-001",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties abas pareizās atbildes.",
+      "prompt": "Kuri divi apgalvojumi apraksta drošu rīcību, saņemot negaidītu maksājuma pieprasījumu?",
+      "options": [
+        "Pārbaudīt sūtītāja identitāti",
+        "Uzreiz nosūtīt paroles",
+        "Salīdzināt informāciju ar oficiālu avotu",
+        "Atvērt visas saites ziņojumā"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Jāizvērtē ziņojuma ticamība."
+    },
+    {
+      "id": "wc-p04-002",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kuru vārdu ievietot teikumā: \"Viņš neatteicās, ___ lūdza vēl laiku pārdomām\"?",
+      "options": [
+        "jo",
+        "toties",
+        "bet",
+        "lai"
+      ],
+      "correctIndices": [
+        2
+      ],
+      "hint": "Domā par pretstatījumu."
+    },
+    {
+      "id": "wc-p04-003",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties abas pareizās atbildes.",
+      "prompt": "Kuras divas darbības palīdz pārliecināties, vai informācija ir uzticama?",
+      "options": [
+        "Pārbaudīt publicēšanas datumu",
+        "Skatīties tikai virsrakstu",
+        "Salīdzināt ar neatkarīgu avotu",
+        "Paļauties uz ieraksta popularitāti"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Vērtē avotu un kontekstu."
+    },
+    {
+      "id": "wc-p04-004",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš vārds nozīmē, ka lēmumu vēl iespējams mainīt?",
+      "options": [
+        "galīgs",
+        "provizorisks",
+        "neatgriezenisks",
+        "obligāts"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Runa ir par pagaidu lēmumu."
+    },
+    {
+      "id": "wc-p04-005",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurā situācijā vispiemērotākais vārds ir \"atlikt\"?",
+      "options": [
+        "Tikšanos pārceļ uz piektdienu",
+        "Tikšanās ir atcelta pavisam",
+        "Tikšanās jau notiek",
+        "Tikšanās ir beigusies"
+      ],
+      "correctIndices": [
+        0
+      ],
+      "hint": "Notikums vēl paredzēts vēlāk."
+    },
+    {
+      "id": "wc-p04-006",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš no apgalvojumiem visprecīzāk izskaidro vārdu \"kompromiss\"?",
+      "options": [
+        "Viena puse iegūst visu",
+        "Abas puses no kaut kā piekāpjas",
+        "Neviens neko neapspriež",
+        "Lēmumu pieņem nejauši"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Abas puses meklē pieņemamu risinājumu."
+    },
+    {
+      "id": "wc-p04-007",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties abas pareizās atbildes.",
+      "prompt": "Kuras divas pazīmes liecina, ka tekstā izteikts pieņēmums, nevis drošs fakts?",
+      "options": [
+        "Lietots vārds \"iespējams\"",
+        "Minēts pārbaudāms datums",
+        "Lietots vārds \"varētu\"",
+        "Minēts precīzs mērījums"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Izvēlies nedrošības izteiksmes."
+    },
+    {
+      "id": "wc-p04-008",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš formulējums ir pieklājīgs, bet nepārprotams atteikums?",
+      "options": [
+        "Varbūt kaut kad",
+        "Es nevarēšu piedalīties",
+        "Kā jums šķiet?",
+        "Droši vien jā"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Atteikums ir skaidrs."
+    },
+    {
+      "id": "wc-p04-009",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš saistītājvārds izsaka pretstatījumu teikumā: \"Viņa piekrita priekšlikumam, ___ izvirzīja vienu nosacījumu\"?",
+      "options": [
+        "tāpēc",
+        "turklāt",
+        "tomēr",
+        "jo"
+      ],
+      "correctIndices": [
+        2
+      ],
+      "hint": "Jāparāda ierobežojums piekrišanai."
+    },
+    {
+      "id": "wc-p04-010",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties abas pareizās atbildes.",
+      "prompt": "Kuras divas darbības notiek pirms apzināta pirkuma lēmuma?",
+      "options": [
+        "Salīdzināt piedāvājumus",
+        "Saglabāt čeku pēc pirkuma",
+        "Izvērtēt nepieciešamību",
+        "Rakstīt atsauksmi pēc pirkuma"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Domā par lēmuma sagatavošanu."
+    },
+    {
+      "id": "wc-p04-011",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš no vārdiem vislabāk atbilst ziņai, kuras patiesums vēl nav pārbaudīts?",
+      "options": [
+        "pierādīta",
+        "apstiprināta",
+        "nepārbaudīta",
+        "neapstrīdama"
+      ],
+      "correctIndices": [
+        2
+      ],
+      "hint": "Nav veikta pārbaude."
+    },
+    {
+      "id": "wc-p04-012",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš apgalvojums izriet no teikuma \"Visi dalībnieki ieradās, izņemot Ievu\"?",
+      "options": [
+        "Ieva arī ieradās",
+        "Ieva neieradās",
+        "Neviens neieradās",
+        "Ierodas tikai Ieva"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Izņēmums neietilpst kopumā."
+    },
+    {
+      "id": "wc-p04-013",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties abas pareizās atbildes.",
+      "prompt": "Kuras divas darbības samazina pārpratumu risku sarunā?",
+      "options": [
+        "Pārjautāt neskaidro",
+        "Pārtraukt sarunu pusvārdā",
+        "Atkārtot vienošanos saviem vārdiem",
+        "Pieņemt, ka viss ir saprasts"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Noskaidro, vai abas puses domā vienu un to pašu."
+    },
+    {
+      "id": "wc-p04-014",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš vārds vislabāk apraksta informāciju, kas ir saistīta ar aplūkojamo jautājumu?",
+      "options": [
+        "nejauša",
+        "atbilstoša",
+        "novecojusi",
+        "slepena"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Saturam jāattiecas uz tematu."
+    },
+    {
+      "id": "wc-p04-015",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kā visprecīzāk raksturot situāciju: piegādes laiks pārcelts no ceturtdienas uz sestdienu?",
+      "options": [
+        "paātrināta",
+        "atcelta",
+        "aizkavēta",
+        "pabeigta"
+      ],
+      "correctIndices": [
+        2
+      ],
+      "hint": "Piegāde notiks vēlāk."
+    },
+    {
+      "id": "wc-p04-016",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš teikums nozīmē, ka šobrīd nav nepieciešams rīkoties?",
+      "options": [
+        "Jāatbild tūlīt",
+        "Var pagaidīt līdz rītam",
+        "Termiņš beidzas šodien",
+        "Kavējums nav pieļaujams"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Rīcību var atlikt."
+    },
+    {
+      "id": "wc-p04-017",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties abas pareizās atbildes.",
+      "prompt": "Kuri divi vārdi parasti raksturo pretēju vērtējumu vienam un tam pašam priekšlikumam?",
+      "options": [
+        "lietderīgs",
+        "noderīgs",
+        "nelietderīgs",
+        "praktisks"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Meklē vārdu un tā pretējo vērtējumu."
+    },
+    {
+      "id": "wc-p04-018",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš formulējums skaidri parāda cēloni, nevis sekas?",
+      "options": [
+        "Vilciens aizkavējās",
+        "Tāpēc es nokavēju",
+        "Rezultātā sākums pārcēlās",
+        "Sliežu bojājuma dēļ"
+      ],
+      "correctIndices": [
+        3
+      ],
+      "hint": "Cēlonis ir notikuma iemesls."
+    },
+    {
+      "id": "wc-p04-019",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "\"Ja līs, pasākums notiks telpās.\" Kas no tā droši izriet?",
+      "options": [
+        "Pasākums noteikti nenotiks",
+        "Lietus gadījumā vieta būs iekštelpās",
+        "Noteikti līs",
+        "Pasākums notiks tikai ārā"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Nosacījums nenosaka, vai būs lietus."
+    },
+    {
+      "id": "wc-p04-020",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš teikums loģiski atbilst paziņojumam \"Pēc 18.00 ieeja tikai ar rezervāciju\"?",
+      "options": [
+        "Pirms 18.00 rezervācija ir aizliegta",
+        "Pēc 18.00 bez rezervācijas ieiet nevar",
+        "Pēc 18.00 ieeja ir bezmaksas",
+        "Rezervācija nepieciešama tikai bērniem"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Ņem vērā precīzu laika robežu."
+    },
+    {
+      "id": "wc-p04-021",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš no piemēriem ir secinājums, nevis novērojums?",
+      "options": [
+        "Logs ir slapjš",
+        "Pie durvīm stāv lietussargs",
+        "Droši vien nesen lija",
+        "Uz galda ir glāze"
+      ],
+      "correctIndices": [
+        2
+      ],
+      "hint": "Secinājums balstās uz pazīmēm."
+    },
+    {
+      "id": "wc-p04-022",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš apgalvojums noteikti ir patiess, ja \"ne visi autobusi kavējas\"?",
+      "options": [
+        "Neviens autobuss nekavējas",
+        "Vismaz viens autobuss nekavējas",
+        "Visi autobusi ierodas laikā",
+        "Tieši viens autobuss kavējas"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "\"Ne visi\" vēl nenozīmē \"neviens\"."
+    },
+    {
+      "id": "wc-p04-023",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš formulējums nozīmē, ka norādītā summa vēl nav gala cena?",
+      "options": [
+        "Cena ir nemainīga",
+        "Cena var tikt precizēta",
+        "Cena ir samaksāta",
+        "Cena ir atcelta"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Summa vēl var mainīties."
+    },
+    {
+      "id": "wc-p04-024",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš vārds izsaka vislielāko pārliecību par informāciju?",
+      "options": [
+        "iespējams",
+        "varbūt",
+        "acīmredzot",
+        "neapšaubāmi"
+      ],
+      "correctIndices": [
+        3
+      ],
+      "hint": "Salīdzini pārliecības pakāpi."
+    },
+    {
+      "id": "wc-p04-025",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš apgalvojums nav pretrunā paziņojumam \"Biļetes pārdod tikai internetā\"?",
+      "options": [
+        "Biļetes var nopirkt kasē",
+        "Biļetes iespējams iegādāties mājaslapā",
+        "Biļetes pieejamas tikai pie ieejas",
+        "Biļetes izsniedz autobusā"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Meklē vienīgo norādīto iegādes kanālu."
+    },
+    {
+      "id": "wc-p04-026",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Ja sūtījums pienāks ne agrāk kā trešdien, kura piegādes diena ir iespējama?",
+      "options": [
+        "otrdiena",
+        "pirmdiena",
+        "ceturtdiena",
+        "svētdiena pirms trešdienas"
+      ],
+      "correctIndices": [
+        2
+      ],
+      "hint": "\"Ne agrāk\" nosaka zemāko robežu."
+    },
+    {
+      "id": "wc-p04-027",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš no vārdiem visprecīzāk apzīmē spriedumu bez pietiekamiem pierādījumiem?",
+      "options": [
+        "secinājums",
+        "fakts",
+        "pieņēmums",
+        "apstiprinājums"
+      ],
+      "correctIndices": [
+        2
+      ],
+      "hint": "Informācija vēl nav pierādīta."
+    },
+    {
+      "id": "wc-p04-028",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš variants atbilst teikumam \"Tikai Marta neatsūtīja atbildi\"?",
+      "options": [
+        "Marta atbildēja pirmā",
+        "Visi, izņemot Martu, atbildēja",
+        "Neviens neatbildēja",
+        "Marta atbildēja pēc visiem"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "\"Tikai\" izceļ vienīgo izņēmumu."
+    },
+    {
+      "id": "wc-p04-029",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties atbilstošo atbildi.",
+      "prompt": "Kurš apgalvojums izriet no teikuma \"Neviens, kurš nokavēja sākumu, nesaņēma materiālus\"?",
+      "options": [
+        "Visi savlaicīgie saņēma materiālus",
+        "Kavētāji materiālus nesaņēma",
+        "Materiālus nesaņēma neviens",
+        "Visi kavēja sākumu"
+      ],
+      "correctIndices": [
+        1
+      ],
+      "hint": "Šeit zināma tikai informācija par kavētājiem."
+    },
+    {
+      "id": "wc-p04-030",
+      "type": "word_choice",
+      "contentVersion": 1,
+      "instruction": "Izvēlieties abas pareizās atbildes.",
+      "prompt": "Kuras divas frāzes nozīmē, ka plāns vēl nav galīgi apstiprināts?",
+      "options": [
+        "pagaidu variants",
+        "galīgais lēmums",
+        "sākotnējais priekšlikums",
+        "apstiprinātais grafiks"
+      ],
+      "correctIndices": [
+        0,
+        2
+      ],
+      "hint": "Meklē nenoteiktību vai sākotnēju statusu."
+    }
+  ]
+}

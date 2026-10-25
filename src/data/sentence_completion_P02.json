@@ -1,0 +1,731 @@
+{
+  "schemaVersion": 1,
+  "title": "Teikumu papildināšana — sarežģītāki 4.–5. līmeņa uzdevumi",
+  "tasks": [
+    {
+      "id": "sc-p04-001",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Lai gan dokumenti tika iesniegti laikus, pieteikumu ___, jo tajā nebija obligātā pielikuma.",
+      "answers": [
+        "noraidīja"
+      ],
+      "hint": "Pieteikums neatbilda visām prasībām."
+    },
+    {
+      "id": "sc-p04-002",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Pretēji sākotnējam solījumam piegādes termiņu ___, nevis saīsināja.",
+      "answers": [
+        "pagarināja"
+      ],
+      "hint": "Piegāde notiks vēlāk."
+    },
+    {
+      "id": "sc-p04-003",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Piedāvājums šķita izdevīgāks, ___ tikai preces cenu un neņemot vērā piegādi.",
+      "answers": [
+        "salīdzinot"
+      ],
+      "hint": "Kā tika veikts salīdzinājums?"
+    },
+    {
+      "id": "sc-p04-004",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Viņa neapstrīdēja pašu lēmumu, bet gan tā ___.",
+      "answers": [
+        "pamatojumu"
+      ],
+      "hint": "Jautājums bija par lēmuma iemesliem."
+    },
+    {
+      "id": "sc-p04-005",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Pēc ziņojumu salīdzināšanas atklājās, ka divu avotu informācija ir ___.",
+      "answers": [
+        "pretrunīga",
+        "atšķirīga"
+      ],
+      "hint": "Abi avoti nesniedz vienādu informāciju."
+    },
+    {
+      "id": "sc-p04-006",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Ja informācija nāk tikai no viena nepārbaudīta avota, pret to jāizturas ___.",
+      "answers": [
+        "piesardzīgi",
+        "kritiski"
+      ],
+      "hint": "Cik daudz var uzticēties avotam?"
+    },
+    {
+      "id": "sc-p04-007",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Jaunais noteikums attiecas tikai uz klientiem, kuri līgumu ___ pēc 1. novembra.",
+      "answers": [
+        "noslēguši",
+        "parakstījuši"
+      ],
+      "hint": "Svarīga ir līguma noslēgšanas diena."
+    },
+    {
+      "id": "sc-p04-008",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Uzņēmums nevis atcēla pasākumu, bet ___ to uz nākamo nedēļu.",
+      "answers": [
+        "pārcēla"
+      ],
+      "hint": "Pasākums tomēr notiks vēlāk."
+    },
+    {
+      "id": "sc-p04-009",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Kaut arī priekšlikumu atbalstīja vairākums, daļa klātesošo pauda ___.",
+      "answers": [
+        "iebildumus",
+        "neapmierinātību"
+      ],
+      "hint": "Ne visi bija vienisprātis."
+    },
+    {
+      "id": "sc-p04-010",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Ja aprēķinā neiekļauj visas izmaksas, secinājums var izrādīties ___.",
+      "answers": [
+        "maldinošs",
+        "neprecīzs"
+      ],
+      "hint": "Tas neatspoguļos visu situāciju."
+    },
+    {
+      "id": "sc-p04-011",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Vēstule tika nosūtīta laikā, tomēr adresāts to saņēma ___.",
+      "answers": [
+        "ar kavēšanos",
+        "novēloti"
+      ],
+      "hint": "Nosūtīšana un saņemšana notika atšķirīgos laikos."
+    },
+    {
+      "id": "sc-p04-012",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Neviens no iesniegtajiem variantiem neatbilda prasībām, tāpēc komisija nolēma konkursu ___.",
+      "answers": [
+        "atkārtot",
+        "izsludināt no jauna"
+      ],
+      "hint": "Iepriekšējie piedāvājumi nederēja."
+    },
+    {
+      "id": "sc-p04-013",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Sākotnēji noteiktā kārtība tika mainīta, un dalībniekus par to ___ rakstiski.",
+      "answers": [
+        "informēja",
+        "apziņoja"
+      ],
+      "hint": "Ziņa bija jānodod visiem dalībniekiem."
+    },
+    {
+      "id": "sc-p04-014",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Lai salīdzinājums būtu godīgs, abi piedāvājumi jāvērtē pēc ___ kritērijiem.",
+      "answers": [
+        "vienādiem"
+      ],
+      "hint": "Abiem jāpiemēro tādi paši noteikumi."
+    },
+    {
+      "id": "sc-p04-015",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Norādītā summa nav gala cena, jo tajā vēl nav ___ piegādes izmaksas.",
+      "answers": [
+        "iekļautas"
+      ],
+      "hint": "Piegāde būs jāapmaksā papildus."
+    },
+    {
+      "id": "sc-p04-016",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Lai izvairītos no divdomības, dokumentā precizēja ___ formulējuma nozīmi.",
+      "answers": [
+        "neskaidrā",
+        "strīdīgā"
+      ],
+      "hint": "Tas bija formulējums, ko varēja saprast dažādi."
+    },
+    {
+      "id": "sc-p04-017",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Lai gan abi apgalvojumi šķita ticami, tie viens otram ___.",
+      "answers": [
+        "pretrunāja"
+      ],
+      "hint": "Abi reizē nevarēja būt patiesi."
+    },
+    {
+      "id": "sc-p04-018",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Viņa piekrita dalībai tikai ar ___, ka pasākums beigsies laikā.",
+      "answers": [
+        "nosacījumu"
+      ],
+      "hint": "Piekrišana nebija bez ierobežojumiem."
+    },
+    {
+      "id": "sc-p04-019",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Tā kā galīgais lēmums vēl nebija pieņemts, paziņojumu atzīmēja kā ___.",
+      "answers": [
+        "provizorisku",
+        "pagaidu"
+      ],
+      "hint": "Tas vēl nebija galīgs."
+    },
+    {
+      "id": "sc-p04-020",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Pieļautā kļūda neietekmēja rezultātu, tāpēc aprēķinu nebija nepieciešams ___.",
+      "answers": [
+        "atkārtot",
+        "labot"
+      ],
+      "hint": "Nebija jāveic jauns aprēķins."
+    },
+    {
+      "id": "sc-p04-021",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Lai noteiktu īsto iemeslu, speciālists vispirms izslēdza citus iespējamos ___.",
+      "answers": [
+        "cēloņus",
+        "iemeslus"
+      ],
+      "hint": "Meklē īsto izskaidrojumu."
+    },
+    {
+      "id": "sc-p04-022",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Ja otrā puse nepiekritīs izmaiņām, sākotnējā vienošanās paliks ___.",
+      "answers": [
+        "spēkā",
+        "nemainīga"
+      ],
+      "hint": "Vecā vienošanās turpinās darboties."
+    },
+    {
+      "id": "scm-p02-001",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Kad Anna ieraudzīja, ka vilciens ir ___, viņa piezvanīja kolēģei un brīdināja par savu ___.",
+      "answersByBlank": [
+        [
+          "nokavējies"
+        ],
+        [
+          "kavēšanos"
+        ]
+      ],
+      "modelText": "Kad Anna ieraudzīja, ka vilciens ir nokavējies, viņa piezvanīja kolēģei un brīdināja par savu kavēšanos.",
+      "hint": "Nokavējies vilciens izraisa kavēšanos."
+    },
+    {
+      "id": "scm-p02-002",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Lai gan sākotnējā cena bija ___, pēc atlaides prece kļuva ievērojami ___.",
+      "answersByBlank": [
+        [
+          "augsta"
+        ],
+        [
+          "lētāka"
+        ]
+      ],
+      "modelText": "Lai gan sākotnējā cena bija augsta, pēc atlaides prece kļuva ievērojami lētāka.",
+      "hint": "Cenas izmaiņu virziens."
+    },
+    {
+      "id": "scm-p02-003",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Pirms līguma ___ viņi vēlreiz pārrunāja visus strīdīgos ___.",
+      "answersByBlank": [
+        [
+          "parakstīšanas"
+        ],
+        [
+          "jautājumus"
+        ]
+      ],
+      "modelText": "Pirms līguma parakstīšanas viņi vēlreiz pārrunāja visus strīdīgos jautājumus.",
+      "hint": "Darbība ar dokumentu un apspriežamie temati."
+    },
+    {
+      "id": "scm-p02-004",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Tā kā laika prognoze solīja ___, ģimene pastaigas vietā izvēlējās apmeklēt ___.",
+      "answersByBlank": [
+        [
+          "lietu"
+        ],
+        [
+          "muzeju",
+          "izstādi"
+        ]
+      ],
+      "modelText": "Tā kā laika prognoze solīja lietu, ģimene pastaigas vietā izvēlējās apmeklēt muzeju.",
+      "hint": "Slikts laiks un iekštelpu nodarbe."
+    },
+    {
+      "id": "scm-p02-005",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Ja izdevumi ___, bet ienākumi nemainās, ietaupīt kļūst arvien ___.",
+      "answersByBlank": [
+        [
+          "pieaug"
+        ],
+        [
+          "grūtāk"
+        ]
+      ],
+      "modelText": "Ja izdevumi pieaug, bet ienākumi nemainās, ietaupīt kļūst arvien grūtāk.",
+      "hint": "Salīdzini izdevumus un ienākumus."
+    },
+    {
+      "id": "scm-p02-006",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Vēstule nebija ___ īstajam saņēmējam, tāpēc pasts to ___ atpakaļ.",
+      "answersByBlank": [
+        [
+          "adresēta"
+        ],
+        [
+          "nosūtīja",
+          "atgrieza"
+        ]
+      ],
+      "modelText": "Vēstule nebija adresēta īstajam saņēmējam, tāpēc pasts to nosūtīja atpakaļ.",
+      "hint": "Saņēmējs un sūtījuma atgriešana."
+    },
+    {
+      "id": "scm-p02-007",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Vispirms viņš pārbaudīja dokumenta ___, pēc tam to ___ elektroniski.",
+      "answersByBlank": [
+        [
+          "saturu"
+        ],
+        [
+          "parakstīja"
+        ]
+      ],
+      "modelText": "Vispirms viņš pārbaudīja dokumenta saturu, pēc tam to parakstīja elektroniski.",
+      "hint": "Darbību secība ar dokumentu."
+    },
+    {
+      "id": "scm-p02-008",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Ieva saprata, ka pasūtījums ir ___, jo piegādes datums bija pagājis, bet paka vēl nebija ___.",
+      "answersByBlank": [
+        [
+          "aizkavējies",
+          "nokavēts"
+        ],
+        [
+          "pienākusi",
+          "piegādāta"
+        ]
+      ],
+      "modelText": "Ieva saprata, ka pasūtījums ir aizkavējies, jo piegādes datums bija pagājis, bet paka vēl nebija pienākusi.",
+      "hint": "Sūtījums nav saņemts laikā."
+    },
+    {
+      "id": "scm-p02-009",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Kaut arī kaimiņiem bija ___ par remontu, viņi spēja panākt ___.",
+      "answersByBlank": [
+        [
+          "domstarpības",
+          "nesaskaņas"
+        ],
+        [
+          "vienošanos",
+          "kompromisu"
+        ]
+      ],
+      "modelText": "Kaut arī kaimiņiem bija domstarpības par remontu, viņi spēja panākt vienošanos.",
+      "hint": "No strīda līdz kopīgam lēmumam."
+    },
+    {
+      "id": "scm-p02-010",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Ar veco paroli viņš vairs nevarēja ___ sistēmā, tāpēc bija jāizveido ___.",
+      "answersByBlank": [
+        [
+          "pieteikties",
+          "ielogoties"
+        ],
+        [
+          "jauna parole",
+          "jaunu paroli"
+        ]
+      ],
+      "modelText": "Ar veco paroli viņš vairs nevarēja pieteikties sistēmā, tāpēc bija jāizveido jauna parole.",
+      "hint": "Ieiešana sistēmā un piekļuves atjaunošana."
+    },
+    {
+      "id": "scm-p02-011",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Jauns grafiks stāsies ___ pirmdien, bet iepriekšējais zaudēs ___.",
+      "answersByBlank": [
+        [
+          "spēkā"
+        ],
+        [
+          "spēku"
+        ]
+      ],
+      "modelText": "Jauns grafiks stāsies spēkā pirmdien, bet iepriekšējais zaudēs spēku.",
+      "hint": "Vienādi vārdi dažādās formās."
+    },
+    {
+      "id": "scm-p02-012",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Viņa izvēlējās ___ maršrutu, lai gan tas bija garāks, jo gribēja izvairīties no ___.",
+      "answersByBlank": [
+        [
+          "citu",
+          "apvedceļa"
+        ],
+        [
+          "sastrēgumiem"
+        ]
+      ],
+      "modelText": "Viņa izvēlējās citu maršrutu, lai gan tas bija garāks, jo gribēja izvairīties no sastrēgumiem.",
+      "hint": "Garāks ceļš var būt ātrāks."
+    },
+    {
+      "id": "scm-p02-013",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Veikala darbinieks vispirms ___ pirkuma čeku un tikai pēc tam ___ naudu.",
+      "answersByBlank": [
+        [
+          "pārbaudīja"
+        ],
+        [
+          "atmaksāja",
+          "atdeva"
+        ]
+      ],
+      "modelText": "Veikala darbinieks vispirms pārbaudīja pirkuma čeku un tikai pēc tam atmaksāja naudu.",
+      "hint": "Atgriežot preci, ir darbību secība."
+    },
+    {
+      "id": "scm-p02-014",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "No rīta ūdens bija ___, bet līdz pusdienlaikam saule to jau bija ___.",
+      "answersByBlank": [
+        [
+          "auksts"
+        ],
+        [
+          "sasildījusi"
+        ]
+      ],
+      "modelText": "No rīta ūdens bija auksts, bet līdz pusdienlaikam saule to jau bija sasildījusi.",
+      "hint": "Temperatūras maiņa dienas gaitā."
+    },
+    {
+      "id": "scm-p02-015",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet abus trūkstošos vārdus.",
+      "sentence": "Lai saglabātu vietu, Anna veica ___ internetā; uz vietas viņai vairs nevajadzēja gaidīt ___.",
+      "answersByBlank": [
+        [
+          "rezervāciju"
+        ],
+        [
+          "rindā"
+        ]
+      ],
+      "modelText": "Lai saglabātu vietu, Anna veica rezervāciju internetā; uz vietas viņai vairs nevajadzēja gaidīt rindā.",
+      "hint": "Vietas pieteikšana iepriekš."
+    },
+    {
+      "id": "scm-p02-016",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu un ievietojiet trīs trūkstošās atbildes.",
+      "sentence": "Paziņojumā teikts, ka vilciens no 8.00 pārcelts uz 9.30. Marta uz staciju devās ___, jo vilciens aties ___ un viņai nevajadzēs tik ilgi ___.",
+      "answersByBlank": [
+        [
+          "vēlāk"
+        ],
+        [
+          "pusdesmitos",
+          "9.30"
+        ],
+        [
+          "gaidīt"
+        ]
+      ],
+      "modelText": "Paziņojumā teikts, ka vilciens no 8.00 pārcelts uz 9.30. Marta uz staciju devās vēlāk, jo vilciens aties pusdesmitos un viņai nevajadzēs tik ilgi gaidīt.",
+      "hint": "Salīdzini veco un jauno laiku."
+    },
+    {
+      "id": "scm-p02-017",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu un ievietojiet trīs trūkstošās atbildes.",
+      "sentence": "Pirmajā veikalā prece maksā 60 eiro, bet piegāde 20 eiro. Otrajā veikalā prece maksā 75 eiro un piegāde ir bez maksas. Izdevīgāks ir ___ piedāvājums, jo tas kopā maksā ___, nevis ___ eiro.",
+      "answersByBlank": [
+        [
+          "otrais"
+        ],
+        [
+          "75 eiro",
+          "75"
+        ],
+        [
+          "80"
+        ]
+      ],
+      "modelText": "Pirmajā veikalā prece maksā 60 eiro, bet piegāde 20 eiro. Otrajā veikalā prece maksā 75 eiro un piegāde ir bez maksas. Izdevīgāks ir otrais piedāvājums, jo tas kopā maksā 75 eiro, nevis 80 eiro.",
+      "hint": "Salīdzini kopējo cenu, ieskaitot piegādi."
+    },
+    {
+      "id": "scm-p02-018",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu un ievietojiet trīs trūkstošās atbildes.",
+      "sentence": "Pirmais vilciens atiet 9.10, nākamais — 9.40. Anna stacijā ierodas 9.20. Viņa ir nokavējusi ___ vilcienu, bet var paspēt uz ___, kas aties pēc ___ minūtēm.",
+      "answersByBlank": [
+        [
+          "pirmo"
+        ],
+        [
+          "otro"
+        ],
+        [
+          "20"
+        ]
+      ],
+      "modelText": "Pirmais vilciens atiet 9.10, nākamais — 9.40. Anna stacijā ierodas 9.20. Viņa ir nokavējusi pirmo vilcienu, bet var paspēt uz otro, kas aties pēc 20 minūtēm.",
+      "hint": "Salīdzini ierašanās laiku ar abiem reisiem."
+    },
+    {
+      "id": "scm-p02-019",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu un ievietojiet trīs trūkstošās atbildes.",
+      "sentence": "Pašvaldība paziņoja, ka bibliotēka pirmdien būs slēgta, bet otrdien strādās kā parasti. Jānis vēlas aizņemties grāmatu un nevar gaidīt līdz trešdienai. Viņam jādodas uz bibliotēku ___, jo pirmdien tā būs ___ un trešdien būtu ___.",
+      "answersByBlank": [
+        [
+          "otrdien"
+        ],
+        [
+          "slēgta"
+        ],
+        [
+          "par vēlu"
+        ]
+      ],
+      "modelText": "Pašvaldība paziņoja, ka bibliotēka pirmdien būs slēgta, bet otrdien strādās kā parasti. Jānis vēlas aizņemties grāmatu un nevar gaidīt līdz trešdienai. Viņam jādodas uz bibliotēku otrdien, jo pirmdien tā būs slēgta un trešdien būtu par vēlu.",
+      "hint": "Kurā dienā bibliotēka ir atvērta pietiekami agri?"
+    },
+    {
+      "id": "scm-p02-020",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu un ievietojiet trīs trūkstošās atbildes.",
+      "sentence": "Ieva bija rezervējusi galdiņu sešiem cilvēkiem, bet divi viesi saslima. Pirms ierašanās Ieva piezvanīja restorānam un mainīja rezervāciju. Tagad pie galdiņa būs ___ cilvēki, jo ___ neieradīsies un sākotnēji bija ___ vietas.",
+      "answersByBlank": [
+        [
+          "četri",
+          "4"
+        ],
+        [
+          "divi",
+          "2"
+        ],
+        [
+          "sešas",
+          "6"
+        ]
+      ],
+      "modelText": "Ieva bija rezervējusi galdiņu sešiem cilvēkiem, bet divi viesi saslima. Pirms ierašanās Ieva piezvanīja restorānam un mainīja rezervāciju. Tagad pie galdiņa būs četri cilvēki, jo divi neieradīsies un sākotnēji bija sešas vietas.",
+      "hint": "Atņem viesus, kuri neieradīsies."
+    },
+    {
+      "id": "scm-p02-021",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu un ievietojiet trīs trūkstošās atbildes.",
+      "sentence": "Darbu bija iecerēts pabeigt piektdien, tomēr piegāde kavējās līdz pirmdienai. Komanda nolēma darbu pabeigt otrdien. Sākotnējo ___ nācās pārcelt, jo kavējās ___, un jaunais pabeigšanas datums ir ___.",
+      "answersByBlank": [
+        [
+          "termiņu"
+        ],
+        [
+          "piegāde"
+        ],
+        [
+          "otrdiena"
+        ]
+      ],
+      "modelText": "Darbu bija iecerēts pabeigt piektdien, tomēr piegāde kavējās līdz pirmdienai. Komanda nolēma darbu pabeigt otrdien. Sākotnējo termiņu nācās pārcelt, jo kavējās piegāde, un jaunais pabeigšanas datums ir otrdiena.",
+      "hint": "Notikumu secība un beigu datums."
+    },
+    {
+      "id": "scm-p02-022",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu un ievietojiet trīs trūkstošās atbildes.",
+      "sentence": "Precei bija norādīta 30 eiro cena. Pie kases piemēroja 20 procentu atlaidi, tāpēc pircējs samaksāja 24 eiro. Atlaide bija ___ eiro, jaunā cena bija ___ eiro, un prece kļuva ___.",
+      "answersByBlank": [
+        [
+          "6"
+        ],
+        [
+          "24"
+        ],
+        [
+          "lētāka"
+        ]
+      ],
+      "modelText": "Precei bija norādīta 30 eiro cena. Pie kases piemēroja 20 procentu atlaidi, tāpēc pircējs samaksāja 24 eiro. Atlaide bija 6 eiro, jaunā cena bija 24 eiro, un prece kļuva lētāka.",
+      "hint": "Aprēķini starpību, nevis tikai procentu."
+    },
+    {
+      "id": "scm-p02-023",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu un ievietojiet trīs trūkstošās atbildes.",
+      "sentence": "Paziņojums vēstīja, ka apmeklētājus pieņem tikai pēc iepriekšēja pieraksta. Līga ieradās bez pieraksta, tāpēc viņu nepieņēma. Nākamreiz Līga vispirms veiks ___, tad ieradīsies norādītajā ___ un varēs saņemt ___.",
+      "answersByBlank": [
+        [
+          "pierakstu"
+        ],
+        [
+          "laikā"
+        ],
+        [
+          "pakalpojumu"
+        ]
+      ],
+      "modelText": "Paziņojums vēstīja, ka apmeklētājus pieņem tikai pēc iepriekšēja pieraksta. Līga ieradās bez pieraksta, tāpēc viņu nepieņēma. Nākamreiz Līga vispirms veiks pierakstu, tad ieradīsies norādītajā laikā un varēs saņemt pakalpojumu.",
+      "hint": "Pārdomā, kura darbība jāveic pirms vizītes."
+    },
+    {
+      "id": "scm-p02-024",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu un ievietojiet trīs trūkstošās atbildes.",
+      "sentence": "Jauns līgums sāk darboties 1. novembrī, bet vecais beidzas 31. oktobrī. Tātad 31. oktobrī vēl darbojas ___ līgums, 1. novembrī jau darbojas ___, un starp līgumiem nav ___.",
+      "answersByBlank": [
+        [
+          "vecais"
+        ],
+        [
+          "jaunais"
+        ],
+        [
+          "pārtraukuma"
+        ]
+      ],
+      "modelText": "Jauns līgums sāk darboties 1. novembrī, bet vecais beidzas 31. oktobrī. Tātad 31. oktobrī vēl darbojas vecais līgums, 1. novembrī jau darbojas jaunais, un starp līgumiem nav pārtraukuma.",
+      "hint": "Salīdzini abu līgumu beigu un sākuma datumus."
+    },
+    {
+      "id": "scm-p02-025",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu un ievietojiet trīs trūkstošās atbildes.",
+      "sentence": "Marta vēlējās nopirkt divas biļetes par 12 eiro katru. Viņai bija 20 eiro, tāpēc pilnai samaksai pietrūka naudas. Abas biļetes kopā maksā ___ eiro, Martai pietrūkst ___ eiro, un ar esošo naudu viņa var nopirkt tikai ___ biļeti.",
+      "answersByBlank": [
+        [
+          "24"
+        ],
+        [
+          "4"
+        ],
+        [
+          "vienu"
+        ]
+      ],
+      "modelText": "Marta vēlējās nopirkt divas biļetes par 12 eiro katru. Viņai bija 20 eiro, tāpēc pilnai samaksai pietrūka naudas. Abas biļetes kopā maksā 24 eiro, Martai pietrūkst 4 eiro, un ar esošo naudu viņa var nopirkt tikai vienu biļeti.",
+      "hint": "Vispirms aprēķini kopējo summu."
+    }
+  ]
+}

@@ -23,6 +23,7 @@ import type { SelfAssessment, TaskAttempt } from '../types/progress';
 import type { Task } from '../types/task';
 import { WordReadingTaskView } from './task/WordReadingTaskView';
 import { SentenceCompletionTaskView } from './task/SentenceCompletionTaskView';
+import { SentenceCompletionMultiTaskView } from './task/SentenceCompletionMultiTaskView';
 import { ImageWordTaskView } from './task/ImageWordTaskView';
 import { WordChoiceTaskView } from './task/WordChoiceTaskView';
 import { ReadingComprehensionTaskView } from './task/ReadingComprehensionTaskView';
@@ -484,6 +485,15 @@ export function TaskScreen({
         <>
           {task.type === 'sentence_completion' && (
             <SentenceCompletionTaskView
+              key={task.id}
+              task={task}
+              attempt={attempt}
+              onUpdate={onUpdate}
+              readOnly={isView}
+            />
+          )}
+          {task.type === 'sentence_completion_multi' && (
+            <SentenceCompletionMultiTaskView
               key={task.id}
               task={task}
               attempt={attempt}

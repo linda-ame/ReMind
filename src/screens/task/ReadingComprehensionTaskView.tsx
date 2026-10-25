@@ -284,6 +284,11 @@ export function ReadingComprehensionTaskView({
       >
         <div className="task-view rc-view">
           <p className="instruction">{task.instruction}</p>
+          {task.title ? (
+            <h2 className="rc-passage-title" lang="lv">
+              {task.title}
+            </h2>
+          ) : null}
           <div className="rc-passage" lang="lv">
             {task.passage}
           </div>
@@ -395,11 +400,18 @@ export function ReadingComprehensionTaskView({
           </Button>
 
           {(showAnswer || readOnly) && question.answers.length > 0 ? (
-            <p className="answers-inline" role="status">
-              {question.answers.length <= 1
-                ? `Atbilde: "${question.answers[0]}"`
-                : `Atbildes: ${question.answers.map((a) => `"${a}"`).join(', ')}`}
-            </p>
+            <div className="rc-answer-reveal" role="status">
+              <p className="answers-inline">
+                {question.answers.length <= 1
+                  ? `Atbilde: "${question.answers[0]}"`
+                  : `Atbildes: ${question.answers.map((a) => `"${a}"`).join(', ')}`}
+              </p>
+              {question.explanation ? (
+                <p className="rc-question-explanation" lang="lv">
+                  {question.explanation}
+                </p>
+              ) : null}
+            </div>
           ) : null}
         </div>
 
@@ -478,7 +490,7 @@ export function ReadingComprehensionTaskView({
           >
             <div className="rc-passage-overlay-bar">
               <h2 id={overlayTitleId} className="rc-passage-overlay-title">
-                Teksts
+                {task.title?.trim() ? task.title : 'Teksts'}
               </h2>
               <button
                 type="button"

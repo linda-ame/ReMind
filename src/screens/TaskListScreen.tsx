@@ -94,14 +94,15 @@ function taskShortLabel(task: Task): string {
     case 'antonym':
       return task.word;
     case 'sentence_completion':
+    case 'sentence_completion_multi':
     case 'image_word':
       return task.sentence;
     case 'word_choice':
       return task.prompt;
-    case 'reading_comprehension':
-      return task.passage.length > 48
-        ? `${task.passage.slice(0, 48)}…`
-        : task.passage;
+    case 'reading_comprehension': {
+      const label = task.title?.trim() || task.passage;
+      return label.length > 48 ? `${label.slice(0, 48)}…` : label;
+    }
     case 'sentence_order':
       return task.modelSentence;
     case 'odd_one_out':

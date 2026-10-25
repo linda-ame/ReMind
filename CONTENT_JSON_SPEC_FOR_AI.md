@@ -31,7 +31,7 @@ Language: Latvian by default (instructions, words, sentences, options, hints).
 Blank marker: use exactly three underscores `___` where a word is missing.
 
 Supported `type` values:
-`word_reading`, `sentence_completion`, `image_word`, `word_choice`, `reading_comprehension`, `sentence_order`, `odd_one_out`, `antonym`, `definition_guess`
+`word_reading`, `sentence_completion`, `sentence_completion_multi`, `image_word`, `word_choice`, `reading_comprehension`, `sentence_order`, `odd_one_out`, `antonym`, `definition_guess`
 
 ---
 
@@ -76,6 +76,33 @@ Extra fields:
 - `sentence` (string, required) — must contain `___` exactly once
 - `answers` (string[], required) — all acceptable answers (synonyms, case variants if needed)
 - `hint` (string, optional)
+
+---
+
+## Task type 2b: `sentence_completion_multi`
+
+Sentence with **two or three** blanks. Extension of `sentence_completion` — do not change single-blank behaviour.
+
+```json
+{
+  "id": "scm-001",
+  "type": "sentence_completion_multi",
+  "contentVersion": 1,
+  "instruction": "Ievietojiet abus trūkstošos vārdus.",
+  "sentence": "Kad vilciens ir ___, brīdiniet par ___.",
+  "answersByBlank": [["nokavējies"], ["kavēšanos"]],
+  "modelText": "Kad vilciens ir nokavējies, brīdiniet par kavēšanos.",
+  "hint": "Nokavējies vilciens izraisa kavēšanos."
+}
+```
+
+Extra fields:
+- `sentence` (string, required) — must contain `___` exactly 2 or 3 times
+- `answersByBlank` (string[][], required) — accepted answers per blank, same order as blanks
+- `modelText` (string, required) — full completed sentence for review
+- `hint` (string, optional)
+
+UI: one field per blank; one self-assessment for the whole task; soft matching (other phrasings may be fine).
 
 ---
 
@@ -143,20 +170,24 @@ Short passage + comprehension questions (schemaVersion 2+).
   "type": "reading_comprehension",
   "contentVersion": 1,
   "instruction": "Izlasiet tekstu un atbildiet uz jautājumiem.",
+  "title": "Rīta ieradums",
   "passage": "Rītos Anna dzer tēju. Pēc tam viņa iet uz darbu.",
   "questions": [
     {
       "id": "rc-001-q1",
       "question": "Ko Anna dzer rītos?",
-      "answers": ["tēju", "tēja"]
+      "answers": ["tēju", "tēja"],
+      "questionType": "direct",
+      "explanation": "Tekstā tas pateikts pirmajā teikumā."
     }
   ]
 }
 ```
 
 Extra fields:
+- `title` (string, optional) — short title above the passage
 - `passage` (string, required)
-- `questions` (array, required) — each item has `id`, `question`, `answers`
+- `questions` (array, required) — each item has `id`, `question`, `answers`; optionally `questionType` (`direct` | `inference`) and `explanation` (shown only after the learner answers)
 
 ---
 
@@ -204,6 +235,7 @@ UI does not show `instruction` on screen — the section title already says «At
   "instruction": "Atrodi lieko vārdu.",
   "options": ["ābols", "bumbieris", "galds", "plūme"],
   "correctIndex": 2,
+  "comparisonRule": "Trīs ir augļi; viens — mēbele.",
   "explanation": "Galds ir mēbele; pārējie ir augļi."
 }
 ```
@@ -211,7 +243,8 @@ UI does not show `instruction` on screen — the section title already says «At
 Extra fields:
 - `options` (string[], required) — exactly four words
 - `correctIndex` (number, required) — 0-based index of the odd word
-- `explanation` (string, required) — short reason why it does not belong
+- `comparisonRule` (string, optional) — cue shown **before** choosing (concept / meaning sets)
+- `explanation` (string, required) — short reason why it does not belong; shown after choice
 - `hint` (string, optional)
 
 Quality rules:

@@ -4,6 +4,7 @@ export const CONTENT_SCHEMA_VERSION = 3;
 export type TaskType =
   | 'word_reading'
   | 'sentence_completion'
+  | 'sentence_completion_multi'
   | 'image_word'
   | 'word_choice'
   | 'reading_comprehension'
@@ -11,6 +12,9 @@ export type TaskType =
   | 'odd_one_out'
   | 'antonym'
   | 'definition_guess';
+
+/** Reading question: answer stated in text vs inferred. */
+export type ReadingQuestionType = 'direct' | 'inference';
 
 /** Content complexity 1 (easiest) … 5 (hardest). Null if metadata missing. */
 export type DifficultyLevel = 1 | 2 | 3 | 4 | 5;
@@ -33,6 +37,10 @@ export interface ReadingComprehensionQuestion {
   id: string;
   question: string;
   answers: string[];
+  /** direct = in text; inference = must be deduced. Optional. */
+  questionType?: ReadingQuestionType;
+  /** Shown after the learner answers — not before. */
+  explanation?: string;
   /** Per-question difficulty (optional metadata). */
   difficulty?: DifficultyLevel | null;
 }
@@ -49,6 +57,21 @@ export interface SentenceCompletionTask extends BaseTask {
   sentence: string;
   /** Accepted answers (shown when user requests them). */
   answers: string[];
+  hint?: string;
+}
+
+/**
+ * Sentence with two or three `___` blanks.
+ * Stored answers: JSON string[] in `enteredAnswer` (one string per blank).
+ */
+export interface SentenceCompletionMultiTask extends BaseTask {
+  type: 'sentence_completion_multi';
+  /** Sentence with two or three `___` markers. */
+  sentence: string;
+  /** Accepted answers per blank, same order as blanks in `sentence`. */
+  answersByBlank: string[][];
+  /** Full completed sentence for review. */
+  modelText: string;
   hint?: string;
 }
 
@@ -75,6 +98,8 @@ export interface WordChoiceTask extends BaseTask {
 /** Short text + comprehension questions (schemaVersion 2). */
 export interface ReadingComprehensionTask extends BaseTask {
   type: 'reading_comprehension';
+  /** Optional short title shown above the passage. */
+  title?: string;
   passage: string;
   questions: ReadingComprehensionQuestion[];
 }
@@ -101,6 +126,8 @@ export interface OddOneOutTask extends BaseTask {
   options: string[];
   /** Index of the odd word (0-based). */
   correctIndex: number;
+  /** Comparison cue shown before choosing (concept / meaning tasks). */
+  comparisonRule?: string;
   /** Short explanation why that word does not belong. */
   explanation: string;
   hint?: string;
@@ -125,6 +152,7 @@ export interface DefinitionGuessTask extends BaseTask {
 export type Task =
   | WordReadingTask
   | SentenceCompletionTask
+  | SentenceCompletionMultiTask
   | ImageWordTask
   | WordChoiceTask
   | ReadingComprehensionTask

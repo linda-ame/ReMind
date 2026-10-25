@@ -6,6 +6,7 @@ import type { Task } from '../types/task';
 
 const TYPED_ANSWER_TYPES: ReadonlySet<Task['type']> = new Set([
   'sentence_completion',
+  'sentence_completion_multi',
   'antonym',
   'definition_guess',
   'image_word',

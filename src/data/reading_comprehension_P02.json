@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "title": "Izlasi un atbildi — garāki teksti un secinājumi",
+  "tasks": [
+    {
+      "id": "remind-rc-037",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "title": "Remonta diena",
+      "passage": "Sestdien Jānis bija iecerējis nokrāsot balkona margas. No rīta tās vēl bija mitras pēc nakts lietus. Viņš izlasīja uz krāsas bundžas, ka virsmai pirms krāsošanas jābūt sausai. Tā vietā Jānis sakārtoja darbarīkus un aizgāja uz veikalu pēc otas. Pēcpusdienā uzspīdēja saule, tomēr margas vēl nebija pilnīgi nožuvušas. Jānis nolēma krāsošanu pārcelt uz nākamo dienu.",
+      "questions": [
+        {
+          "id": "remind-rc-037-q1",
+          "question": "Kāpēc Jānis no rīta nesāka krāsot?",
+          "answers": [
+            "Margas bija mitras",
+            "Mitru margu dēļ"
+          ],
+          "questionType": "inference",
+          "explanation": "Krāsai vajadzīga sausa virsma, bet margas bija mitras."
+        },
+        {
+          "id": "remind-rc-037-q2",
+          "question": "Ko Jānis nopirka veikalā?",
+          "answers": [
+            "otu"
+          ],
+          "questionType": "direct",
+          "explanation": "Tekstā tas pateikts."
+        },
+        {
+          "id": "remind-rc-037-q3",
+          "question": "Kāpēc viņš nekrāsoja arī pēcpusdienā?",
+          "answers": [
+            "Margas vēl nebija sausas",
+            "Tās nebija nožuvušas"
+          ],
+          "questionType": "inference",
+          "explanation": "Saule bija, bet virsma vēl bija mitra."
+        },
+        {
+          "id": "remind-rc-037-q4",
+          "question": "Kurā dienā Jānis plānoja turpināt?",
+          "answers": [
+            "svētdien",
+            "nākamajā dienā"
+          ],
+          "questionType": "inference",
+          "explanation": "Ja sestdien pārcēla uz nākamo dienu, tā ir svētdiena."
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-038",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "title": "Mainītais maršruts",
+      "passage": "Liene katru rītu brauc uz darbu ar 12. autobusu. Piektdien pieturā viņa ieraudzīja paziņojumu, ka ceļa remontdarbu dēļ autobuss uz laiku neapstājas pie bibliotēkas. Jaunā tuvākā pietura atradās pie sporta centra. Liene paskatījās kartē un redzēja, ka no tās līdz darbam jāiet piecas minūtes ilgāk. Viņa uzrakstīja kolēģei, ka ieradīsies nedaudz vēlāk. Nākamajā nedēļā Liene sāka iziet no mājas agrāk.",
+      "questions": [
+        {
+          "id": "remind-rc-038-q1",
+          "question": "Kāpēc autobuss neapstājās ierastajā pieturā?",
+          "answers": [
+            "Remontdarbu dēļ",
+            "Ceļa remonta dēļ"
+          ],
+          "questionType": "direct",
+          "explanation": "Paziņojumā minēti remontdarbi."
+        },
+        {
+          "id": "remind-rc-038-q2",
+          "question": "Kāpēc Liene brīdināja kolēģi?",
+          "answers": [
+            "Viņa varēja kavēties",
+            "Viņai bija jāiet tālāk"
+          ],
+          "questionType": "inference",
+          "explanation": "No jaunās pieturas ceļš kājām ir ilgāks."
+        },
+        {
+          "id": "remind-rc-038-q3",
+          "question": "Kur tagad jāizkāpj Lienei?",
+          "answers": [
+            "pie sporta centra"
+          ],
+          "questionType": "direct",
+          "explanation": "Jaunā pietura ir pie sporta centra."
+        },
+        {
+          "id": "remind-rc-038-q4",
+          "question": "Kāpēc Liene nākamajā nedēļā devās prom agrāk?",
+          "answers": [
+            "Lai nekavētu darbu",
+            "Lai ierastos laikā"
+          ],
+          "questionType": "inference",
+          "explanation": "Agrāka iziešana kompensē garāku iešanas laiku."
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-039",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "title": "Kļūda rēķinā",
+      "passage": "Māris saņēma elektrības rēķinu, kas bija daudz lielāks nekā parasti. Vispirms viņš salīdzināja tajā norādīto skaitītāja rādījumu ar paša pierakstiem. Izrādījās, ka rēķinā ievadīts nepareizs skaitlis. Māris piezvanīja pakalpojuma sniedzējam un nosūtīja skaitītāja fotogrāfiju. Pēc divām dienām viņš saņēma labotu rēķinu. To Māris apmaksāja norādītajā termiņā.",
+      "questions": [
+        {
+          "id": "remind-rc-039-q1",
+          "question": "Kāpēc Māris šaubījās par rēķinu?",
+          "answers": [
+            "Tas bija neparasti liels",
+            "Summa bija pārāk liela"
+          ],
+          "questionType": "inference",
+          "explanation": "Rēķins ievērojami atšķīrās no ierastā."
+        },
+        {
+          "id": "remind-rc-039-q2",
+          "question": "Kas rēķinā bija kļūdains?",
+          "answers": [
+            "Skaitītāja rādījums",
+            "rādījums"
+          ],
+          "questionType": "direct",
+          "explanation": "Kļūda bija ievadītajā rādījumā."
+        },
+        {
+          "id": "remind-rc-039-q3",
+          "question": "Kāpēc Māris nosūtīja fotogrāfiju?",
+          "answers": [
+            "Lai pierādītu pareizo rādījumu",
+            "Lai pamatotu kļūdu"
+          ],
+          "questionType": "inference",
+          "explanation": "Foto parādīja faktisko rādījumu."
+        },
+        {
+          "id": "remind-rc-039-q4",
+          "question": "Kuru rēķinu Māris samaksāja?",
+          "answers": [
+            "Laboto rēķinu",
+            "jauno rēķinu"
+          ],
+          "questionType": "inference",
+          "explanation": "Pēc labošanas tika saņemts cits rēķins."
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-040",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "title": "Aizmirstās atslēgas",
+      "passage": "Elīna pēc darba atgriezās mājās un pie durvīm saprata, ka atslēgas palikušas birojā. Kolēģi jau bija devušies prom, bet biroja ēka vēl bija atvērta. Elīna vispirms piezvanīja apsargam, lai noskaidrotu, vai drīkst atgriezties. Apsargs apstiprināja, ka ēkā vēl var ieiet. Elīna aizbrauca atpakaļ un atrada atslēgas uz sava galda. Šoreiz pirms iziešanas viņa pārbaudīja somu.",
+      "questions": [
+        {
+          "id": "remind-rc-040-q1",
+          "question": "Kāpēc Elīna nevarēja uzreiz ieiet mājās?",
+          "answers": [
+            "Viņai nebija atslēgu",
+            "Atslēgas bija birojā"
+          ],
+          "questionType": "inference",
+          "explanation": "Atslēgas palika darbā."
+        },
+        {
+          "id": "remind-rc-040-q2",
+          "question": "Kam Elīna piezvanīja?",
+          "answers": [
+            "apsargam"
+          ],
+          "questionType": "direct",
+          "explanation": "Tas pateikts tekstā."
+        },
+        {
+          "id": "remind-rc-040-q3",
+          "question": "Kāpēc viņa zvanīja pirms braukšanas?",
+          "answers": [
+            "Lai pārbaudītu piekļuvi",
+            "Lai zinātu, vai var ieiet"
+          ],
+          "questionType": "inference",
+          "explanation": "Bija jānoskaidro, vai birojs vēl pieejams."
+        },
+        {
+          "id": "remind-rc-040-q4",
+          "question": "Kāpēc viņa beigās pārbaudīja somu?",
+          "answers": [
+            "Lai atkal neaizmirstu atslēgas",
+            "Lai atslēgas būtu līdzi"
+          ],
+          "questionType": "inference",
+          "explanation": "Elīna nevēlējās atkārtot kļūdu."
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-041",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "title": "Muzeja apmeklējums",
+      "passage": "Dace gribēja apmeklēt izstādi, kurai trešdienās bija samazināta ieejas maksa. Tomēr trešdien viņai bija ārsta pieraksts, kuru nevarēja pārcelt. Dace izvēlējās doties uz muzeju ceturtdien. Viņa nopirka parastu biļeti un izstādē pavadīja divas stundas. Lai gan samaksāja vairāk, Dace bija apmierināta ar apmeklējumu. Vēlāk viņa ieteica izstādi draudzenei.",
+      "questions": [
+        {
+          "id": "remind-rc-041-q1",
+          "question": "Kāpēc Dace muzeju neapmeklēja trešdien?",
+          "answers": [
+            "Viņai bija ārsta pieraksts",
+            "Bija vizīte pie ārsta"
+          ],
+          "questionType": "direct",
+          "explanation": "Trešdien bija cita, nepārceļama vizīte."
+        },
+        {
+          "id": "remind-rc-041-q2",
+          "question": "Vai Dace saņēma trešdienas atlaidi?",
+          "answers": [
+            "nē",
+            "nesaņēma"
+          ],
+          "questionType": "inference",
+          "explanation": "Viņa devās ceturtdien un pirka parastu biļeti."
+        },
+        {
+          "id": "remind-rc-041-q3",
+          "question": "Kā var spriest, ka izstāde Dacei patika?",
+          "answers": [
+            "Viņa to ieteica draudzenei",
+            "Viņa bija apmierināta"
+          ],
+          "questionType": "inference",
+          "explanation": "Viņa bija apmierināta un ieteica izstādi."
+        },
+        {
+          "id": "remind-rc-041-q4",
+          "question": "Kādu biļeti Dace nopirka?",
+          "answers": [
+            "parastu"
+          ],
+          "questionType": "direct",
+          "explanation": "Tā bija parasta, nevis atlaides biļete."
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-042",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "title": "Bibliotēkas grāmata",
+      "passage": "Armands no bibliotēkas aizņēmās grāmatu uz divām nedēļām. Pēc desmit dienām viņš bija izlasījis tikai pusi, jo vairākus vakarus strādāja ilgāk. Bibliotēkas mājaslapā Armands pamanīja iespēju pagarināt nodošanas termiņu. Viņš to izmantoja, pirms sākotnējais termiņš bija beidzies. Pēc vēl vienas nedēļas Armands grāmatu pabeidza un atdeva. Viņam nebija jāmaksā kavējuma maksa.",
+      "questions": [
+        {
+          "id": "remind-rc-042-q1",
+          "question": "Kāpēc Armands grāmatu nepabeidza pirmajās desmit dienās?",
+          "answers": [
+            "Viņš strādāja ilgāk",
+            "Viņam trūka laika"
+          ],
+          "questionType": "inference",
+          "explanation": "Ilgāki darba vakari samazināja lasīšanas laiku."
+        },
+        {
+          "id": "remind-rc-042-q2",
+          "question": "Ko Armands pagarināja?",
+          "answers": [
+            "nodošanas termiņu",
+            "termiņu"
+          ],
+          "questionType": "direct",
+          "explanation": "Pagarināja grāmatas nodošanas termiņu."
+        },
+        {
+          "id": "remind-rc-042-q3",
+          "question": "Kāpēc viņam nebija kavējuma maksas?",
+          "answers": [
+            "Viņš termiņu pagarināja",
+            "Viņš atdeva laikā"
+          ],
+          "questionType": "inference",
+          "explanation": "Termiņš tika pagarināts pirms kavējuma."
+        },
+        {
+          "id": "remind-rc-042-q4",
+          "question": "Vai Armands atdeva neizlasītu grāmatu?",
+          "answers": [
+            "nē",
+            "grāmatu pabeidza"
+          ],
+          "questionType": "inference",
+          "explanation": "Pirms atdošanas viņš pabeidza lasīt."
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-043",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "title": "Izslēgta elektrība",
+      "passage": "Pēteris vakarā gatavojās cept pankūkas uz elektriskās plīts. Tieši tad mājā pazuda elektrība. Viņš pārbaudīja, vai kāpņu telpā deg gaisma, un ieraudzīja, ka arī tur ir tumšs. Pēteris piezvanīja apsaimniekotājam un uzzināja, ka rajonā noticis elektrotīkla bojājums. Viņš nolēma vakariņās pagatavot aukstās maizītes. Elektrību atjaunoja pēc stundas.",
+      "questions": [
+        {
+          "id": "remind-rc-043-q1",
+          "question": "Kāpēc Pēteris necepa pankūkas?",
+          "answers": [
+            "Nebija elektrības",
+            "Plīts nedarbojās"
+          ],
+          "questionType": "inference",
+          "explanation": "Elektriskajai plītij vajadzīga elektrība."
+        },
+        {
+          "id": "remind-rc-043-q2",
+          "question": "Ko Pēteris pārbaudīja kāpņu telpā?",
+          "answers": [
+            "gaismu"
+          ],
+          "questionType": "direct",
+          "explanation": "Viņš skatījās, vai tur deg gaisma."
+        },
+        {
+          "id": "remind-rc-043-q3",
+          "question": "Kāpēc viņš domāja, ka problēma nav tikai dzīvoklī?",
+          "answers": [
+            "Kāpņu telpā arī nebija gaismas",
+            "Elektrības nebija arī ārpus dzīvokļa"
+          ],
+          "questionType": "inference",
+          "explanation": "Arī koplietošanas telpā bija tumšs."
+        },
+        {
+          "id": "remind-rc-043-q4",
+          "question": "Kādas vakariņas viņš izvēlējās?",
+          "answers": [
+            "aukstās maizītes",
+            "maizītes"
+          ],
+          "questionType": "direct",
+          "explanation": "Viņš gatavoja aukstas maizītes."
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-044",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "title": "Divi piedāvājumi",
+      "passage": "Ilze vēlējās nopirkt veļasmašīnu. Vienā veikalā tā maksāja 420 eiro, bet piegāde vēl 35 eiro. Otrā veikalā tā pati veļasmašīna maksāja 440 eiro, un piegāde bija bez maksas. Ilze salīdzināja kopējās izmaksas, nevis tikai cenu uz etiķetes. Viņa izvēlējās otro veikalu. Ierīci piegādāja nākamajā dienā.",
+      "questions": [
+        {
+          "id": "remind-rc-044-q1",
+          "question": "Kurā veikalā veļasmašīnas cena uz etiķetes bija zemāka?",
+          "answers": [
+            "pirmajā"
+          ],
+          "questionType": "direct",
+          "explanation": "420 eiro ir mazāk nekā 440 eiro."
+        },
+        {
+          "id": "remind-rc-044-q2",
+          "question": "Kurā veikalā kopējais pirkums bija lētāks?",
+          "answers": [
+            "otrajā"
+          ],
+          "questionType": "inference",
+          "explanation": "Pirmajā 420 + 35 = 455, otrajā 440 eiro."
+        },
+        {
+          "id": "remind-rc-044-q3",
+          "question": "Kāpēc Ilze neizvēlējās zemāko cenu uz etiķetes?",
+          "answers": [
+            "Piegāde palielināja izmaksas",
+            "Kopējā cena bija lielāka"
+          ],
+          "questionType": "inference",
+          "explanation": "Jāsalīdzina pilnā summa ar piegādi."
+        },
+        {
+          "id": "remind-rc-044-q4",
+          "question": "Cik eiro maksāja izdevīgākais piedāvājums kopā?",
+          "answers": [
+            "440",
+            "440 eiro"
+          ],
+          "questionType": "inference",
+          "explanation": "Otrā piedāvājuma piegāde bija bez maksas."
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-045",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "title": "Vēlākā tikšanās",
+      "passage": "Darba grupai bija paredzēta sapulce pulksten 14.00. No rīta vadītāja uzzināja, ka divi dalībnieki līdz 14.30 vēl būs klientu tikšanās reizē. Viņa piedāvāja sapulci sākt 15.00, un visi piekrita. Lai nevienam nerastos pārpratumi, vadītāja izsūtīja jaunu kalendāra uzaicinājumu. Viens dalībnieks veco laiku jau bija ierakstījis papīra plānotājā. Saņēmis ziņu, viņš laiku izlaboja.",
+      "questions": [
+        {
+          "id": "remind-rc-045-q1",
+          "question": "Kāpēc sapulces sākumu pārcēla?",
+          "answers": [
+            "Divi dalībnieki nebūtu brīvi",
+            "Daži vēl bija citā tikšanās reizē"
+          ],
+          "questionType": "inference",
+          "explanation": "Divi dalībnieki bija aizņemti līdz 14.30."
+        },
+        {
+          "id": "remind-rc-045-q2",
+          "question": "Cikos sapulce notika pēc izmaiņām?",
+          "answers": [
+            "15.00",
+            "piecpadsmitos"
+          ],
+          "questionType": "direct",
+          "explanation": "Jaunais sākums ir 15.00."
+        },
+        {
+          "id": "remind-rc-045-q3",
+          "question": "Kāpēc vadītāja sūtīja jaunu uzaicinājumu?",
+          "answers": [
+            "Lai informētu par jauno laiku",
+            "Lai nepieļautu pārpratumus"
+          ],
+          "questionType": "inference",
+          "explanation": "Visiem bija jāzina vienāds laiks."
+        },
+        {
+          "id": "remind-rc-045-q4",
+          "question": "Kāpēc viens dalībnieks laboja plānotāju?",
+          "answers": [
+            "Bija mainījies sapulces laiks",
+            "Sapulci pārcēla"
+          ],
+          "questionType": "inference",
+          "explanation": "Viņš jau bija ierakstījis veco laiku."
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-046",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "title": "Dārza laistīšana",
+      "passage": "Rūta devās prom uz četrām dienām un palūdza kaimiņienei aplaistīt siltumnīcas augus. Pirms aizbraukšanas viņa atstāja rezerves atslēgu un uzrakstīja īsu norādi par laistīšanu. Otrajā dienā sākās stiprs lietus, tomēr siltumnīcā zeme palika sausa. Kaimiņiene ielēja ūdeni augiem, kā bija norādīts. Atgriezusies Rūta pateicās par palīdzību. Visi augi izskatījās veseli.",
+      "questions": [
+        {
+          "id": "remind-rc-046-q1",
+          "question": "Kāpēc lietus nenodrošināja augiem pietiekamu ūdeni?",
+          "answers": [
+            "Augi bija siltumnīcā",
+            "Siltumnīcā zeme palika sausa"
+          ],
+          "questionType": "inference",
+          "explanation": "Lietus ūdens tieši uz augsnes siltumnīcā nenonāca."
+        },
+        {
+          "id": "remind-rc-046-q2",
+          "question": "Ko Rūta atstāja kaimiņienei?",
+          "answers": [
+            "atslēgu",
+            "rezerves atslēgu"
+          ],
+          "questionType": "direct",
+          "explanation": "Atstāja rezerves atslēgu un norādi."
+        },
+        {
+          "id": "remind-rc-046-q3",
+          "question": "Kāpēc kaimiņiene augus laistīja arī lietus laikā?",
+          "answers": [
+            "Zeme siltumnīcā bija sausa",
+            "Lietus augus neaplaistīja"
+          ],
+          "questionType": "inference",
+          "explanation": "Siltumnīcā zeme nebija samirkusi."
+        },
+        {
+          "id": "remind-rc-046-q4",
+          "question": "Kas liecina, ka palīdzība bija veiksmīga?",
+          "answers": [
+            "Augi bija veseli",
+            "Visi augi izskatījās veseli"
+          ],
+          "questionType": "inference",
+          "explanation": "Atgriežoties augi izskatījās veseli."
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-047",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "title": "Negaidītais paziņojums",
+      "passage": "Andris telefonā saņēma īsziņu, kurā bija rakstīts, ka viņa bankas konts tūlīt tiks bloķēts. Ziņā bija saite un lūgums nekavējoties ievadīt paroli. Andris pamanīja, ka sūtītāja numurs viņam nav pazīstams. Viņš saiti neatvēra, bet pats atvēra bankas oficiālo lietotni. Tajā nebija nekādu brīdinājumu. Andris par aizdomīgo īsziņu paziņoja bankai.",
+      "questions": [
+        {
+          "id": "remind-rc-047-q1",
+          "question": "Kāpēc Andris neievadīja paroli no īsziņas saites?",
+          "answers": [
+            "Ziņa šķita aizdomīga",
+            "Viņš neuzticējās sūtītājam"
+          ],
+          "questionType": "inference",
+          "explanation": "Nepazīstams sūtītājs un paroles pieprasījums bija aizdomīgas pazīmes."
+        },
+        {
+          "id": "remind-rc-047-q2",
+          "question": "Kur Andris pārbaudīja sava konta informāciju?",
+          "answers": [
+            "Bankas lietotnē",
+            "oficiālajā lietotnē"
+          ],
+          "questionType": "direct",
+          "explanation": "Viņš pats atvēra bankas oficiālo lietotni."
+        },
+        {
+          "id": "remind-rc-047-q3",
+          "question": "Kas liecināja, ka īsziņas apgalvojums nav apstiprināts?",
+          "answers": [
+            "Lietotnē nebija brīdinājuma",
+            "Bankas lietotnē brīdinājuma nebija"
+          ],
+          "questionType": "inference",
+          "explanation": "Oficiālajā lietotnē nebija atbilstoša paziņojuma."
+        },
+        {
+          "id": "remind-rc-047-q4",
+          "question": "Kāpēc Andris pats atvēra lietotni, nevis saiti?",
+          "answers": [
+            "Lai pārbaudītu drošā veidā",
+            "Lai izvairītos no krāpšanas"
+          ],
+          "questionType": "inference",
+          "explanation": "Izmantoja patstāvīgi atvērtu oficiālu kanālu."
+        }
+      ]
+    },
+    {
+      "id": "remind-rc-048",
+      "type": "reading_comprehension",
+      "contentVersion": 1,
+      "instruction": "Izlasiet tekstu. Atbildiet uz jautājumiem.",
+      "title": "Kopīgais lēmums",
+      "passage": "Mājas iedzīvotāji sapulcējās, lai lemtu par pagalma apgaismojumu. Daži vēlējās uzstādīt jaunas lampas, bet citi uztraucās par izmaksām. Apsaimniekotājs piedāvāja sadalīt darbu divās kārtās. Šogad varētu nomainīt bojātās lampas, bet pārējās — nākamgad. Pēc apspriešanās vairākums atbalstīja šo priekšlikumu. Darbi vēl nebija sākti, jo vispirms vajadzēja saņemt cenu piedāvājumu.",
+      "questions": [
+        {
+          "id": "remind-rc-048-q1",
+          "question": "Kāpēc daļa iedzīvotāju sākotnēji šaubījās?",
+          "answers": [
+            "Izmaksu dēļ",
+            "Viņus uztrauca cena"
+          ],
+          "questionType": "inference",
+          "explanation": "Bažas radīja iespējamas izmaksas."
+        },
+        {
+          "id": "remind-rc-048-q2",
+          "question": "Kas bija paredzēts pirmajā kārtā?",
+          "answers": [
+            "Bojāto lampu nomaiņa",
+            "Nomainīt bojātās lampas"
+          ],
+          "questionType": "direct",
+          "explanation": "Pirmajā gadā plānoja mainīt bojātās lampas."
+        },
+        {
+          "id": "remind-rc-048-q3",
+          "question": "Vai sapulces beigās lampas jau bija nomainītas?",
+          "answers": [
+            "nē",
+            "darbi vēl nebija sākti"
+          ],
+          "questionType": "inference",
+          "explanation": "Vēl tikai gaidīja cenu piedāvājumu."
+        },
+        {
+          "id": "remind-rc-048-q4",
+          "question": "Kāpēc darbus sadalīja divās kārtās?",
+          "answers": [
+            "Lai sadalītu izmaksas",
+            "Lai samazinātu sākotnējos izdevumus"
+          ],
+          "questionType": "inference",
+          "explanation": "Tas ļauj neveikt visus izdevumus uzreiz."
+        }
+      ]
+    }
+  ]
+}

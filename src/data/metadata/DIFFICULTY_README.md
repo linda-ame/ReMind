@@ -16,10 +16,15 @@ Atšķirībā no V1, katram ID saturs pārskatīts pēc valodas nozīmes, vārda
 
 ## Faili
 
-- `remind_difficulty_by_id.json` — 690 ID → līmeņi (645 aktuālie, 45 arhīva demonstrācijas vārdi).
-- `remind_reading_question_difficulty_by_id.json` — papildu 120 individuālie jautājumi pie 36 tekstiem.
-- `remind_difficulty_review.csv` — visu 690 uzdevumu līmenis V2, vecais V1, izmaiņa, aktīvs/arhīva statuss un satura fragments.
-- `remind_reading_question_review.csv` — atsevišķi jautājumu līmeņi.
+- `remind_difficulty_by_id.json` — uzdevumu ID → līmeņi (V2 + P02; vecie ID nav dzēsti).
+- `remind_reading_question_difficulty_by_id.json` — jautājumu ID → līmeņi (36×V2 + 12×P02 teksti).
+- `remind_difficulty_review.csv` — V2 pārskats (vecie uzdevumi).
+- `remind_reading_question_review.csv` — V2 jautājumu pārskats.
+- `remind_difficulty_review_P02.csv` — P02 satura grūtības pārskats.
+
+### P02 papildinājums (2026-10-25)
+
+Pievienoti 209 jauni uzdevumi un 48 lasīšanas jautājumi (4.–5. līmenis). Esošie P01/V2 līmeņi nav mainīti.
 
 ## Aktīvo uzdevumu sadalījums (bez 45 arhīva vārdiem)
 

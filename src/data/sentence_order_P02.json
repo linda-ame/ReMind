@@ -1,0 +1,934 @@
+{
+  "schemaVersion": 1,
+  "title": "Sakārto vārdus — garāki teikumi",
+  "tasks": [
+    {
+      "id": "so-p02-001",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "laiku",
+        "atiešanas",
+        "pārbaudīja",
+        "Marta",
+        "došanās",
+        "pirms",
+        "staciju",
+        "vilciena",
+        "uz"
+      ],
+      "acceptedOrders": [
+        [
+          5,
+          4,
+          8,
+          6,
+          3,
+          2,
+          7,
+          1,
+          0
+        ]
+      ],
+      "modelSentence": "Pirms došanās uz staciju Marta pārbaudīja vilciena atiešanas laiku."
+    },
+    {
+      "id": "so-p02-002",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "telpu",
+        "kopīgi",
+        "vienojās",
+        "pārrunām",
+        "remontēt",
+        "ilgām",
+        "pēc",
+        "kāpņu",
+        "kaimiņi"
+      ],
+      "acceptedOrders": [
+        [
+          6,
+          5,
+          3,
+          8,
+          2,
+          1,
+          4,
+          7,
+          0
+        ]
+      ],
+      "modelSentence": "Pēc ilgām pārrunām kaimiņi vienojās kopīgi remontēt kāpņu telpu."
+    },
+    {
+      "id": "so-p02-003",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "nenokavētu",
+        "no",
+        "viņš",
+        "mājas",
+        "pusstundu",
+        "lai",
+        "vizīti,",
+        "agrāk",
+        "izgāja"
+      ],
+      "acceptedOrders": [
+        [
+          5,
+          0,
+          6,
+          2,
+          1,
+          3,
+          8,
+          4,
+          7
+        ]
+      ],
+      "modelSentence": "Lai nenokavētu vizīti, viņš no mājas izgāja pusstundu agrāk."
+    },
+    {
+      "id": "so-p02-004",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "pastnieks",
+        "vēstuli,",
+        "kuru",
+        "Anna",
+        "atstājis",
+        "atrada",
+        "bija",
+        "kaimiņienei",
+        "vakarā"
+      ],
+      "acceptedOrders": [
+        [
+          8,
+          3,
+          5,
+          1,
+          2,
+          0,
+          6,
+          4,
+          7
+        ]
+      ],
+      "modelSentence": "Vakarā Anna atrada vēstuli, kuru pastnieks bija atstājis kaimiņienei."
+    },
+    {
+      "id": "so-p02-005",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "lietus",
+        "garas",
+        "centrā",
+        "negaidīta",
+        "rindas",
+        "pilsētas",
+        "izveidojās",
+        "pēc",
+        "automašīnu"
+      ],
+      "acceptedOrders": [
+        [
+          7,
+          3,
+          0,
+          5,
+          2,
+          6,
+          1,
+          8,
+          4
+        ]
+      ],
+      "modelSentence": "Pēc negaidīta lietus pilsētas centrā izveidojās garas automašīnu rindas."
+    },
+    {
+      "id": "so-p02-006",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "parakstīja",
+        "tikai",
+        "un",
+        "izlasīja",
+        "vispirms",
+        "tad",
+        "līgumu",
+        "to",
+        "Marija"
+      ],
+      "acceptedOrders": [
+        [
+          8,
+          4,
+          3,
+          6,
+          2,
+          1,
+          5,
+          7,
+          0
+        ]
+      ],
+      "modelSentence": "Marija vispirms izlasīja līgumu un tikai tad to parakstīja."
+    },
+    {
+      "id": "so-p02-007",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "izbraukšanas",
+        "degvielas",
+        "līmeni",
+        "pārbaudīja",
+        "riepas",
+        "un",
+        "automašīnas",
+        "pirms",
+        "autovadītājs"
+      ],
+      "acceptedOrders": [
+        [
+          7,
+          0,
+          8,
+          3,
+          4,
+          5,
+          6,
+          1,
+          2
+        ]
+      ],
+      "modelSentence": "Pirms izbraukšanas autovadītājs pārbaudīja riepas un automašīnas degvielas līmeni."
+    },
+    {
+      "id": "so-p02-008",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "izvēlējās",
+        "viņi",
+        "vilcienu",
+        "lai",
+        "biļetes",
+        "dārgākas,",
+        "bija",
+        "arī",
+        "ērtāko"
+      ],
+      "acceptedOrders": [
+        [
+          3,
+          7,
+          4,
+          6,
+          5,
+          1,
+          0,
+          8,
+          2
+        ]
+      ],
+      "modelSentence": "Lai arī biļetes bija dārgākas, viņi izvēlējās ērtāko vilcienu."
+    },
+    {
+      "id": "so-p02-009",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "nosūtīja",
+        "kad",
+        "dalībniekiem",
+        "beigusies,",
+        "kopsavilkumu",
+        "bija",
+        "sapulce",
+        "visiem",
+        "vadītāja"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          6,
+          5,
+          3,
+          8,
+          0,
+          7,
+          2,
+          4
+        ]
+      ],
+      "modelSentence": "Kad sapulce bija beigusies, vadītāja nosūtīja visiem dalībniekiem kopsavilkumu."
+    },
+    {
+      "id": "so-p02-010",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "pastkastītes",
+        "vēstuli",
+        "izņēma",
+        "no",
+        "gaidīto",
+        "rītā",
+        "svētdienas",
+        "Jānis",
+        "sen"
+      ],
+      "acceptedOrders": [
+        [
+          6,
+          5,
+          7,
+          2,
+          3,
+          0,
+          8,
+          4,
+          1
+        ]
+      ],
+      "modelSentence": "Svētdienas rītā Jānis izņēma no pastkastītes sen gaidīto vēstuli."
+    },
+    {
+      "id": "so-p02-011",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "stāvos",
+        "augšējos",
+        "kāpnēm",
+        "pa",
+        "remontēja,",
+        "kāpa",
+        "tā",
+        "iedzīvotāji",
+        "liftu",
+        "kā"
+      ],
+      "acceptedOrders": [
+        [
+          6,
+          9,
+          8,
+          4,
+          7,
+          1,
+          0,
+          5,
+          3,
+          2
+        ]
+      ],
+      "modelSentence": "Tā kā liftu remontēja, iedzīvotāji augšējos stāvos kāpa pa kāpnēm."
+    },
+    {
+      "id": "so-p02-012",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "telefona",
+        "adresi",
+        "un",
+        "laiku",
+        "viņa",
+        "pierakstīja",
+        "pēc",
+        "tikšanās",
+        "sarunas"
+      ],
+      "acceptedOrders": [
+        [
+          6,
+          0,
+          8,
+          4,
+          5,
+          1,
+          2,
+          7,
+          3
+        ]
+      ],
+      "modelSentence": "Pēc telefona sarunas viņa pierakstīja adresi un tikšanās laiku."
+    },
+    {
+      "id": "so-p02-013",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "ceļu",
+        "citu",
+        "sastrēgumiem,",
+        "izvairītos",
+        "izvēlējās",
+        "lai",
+        "Marta",
+        "no",
+        "mājup"
+      ],
+      "acceptedOrders": [
+        [
+          5,
+          3,
+          7,
+          2,
+          6,
+          4,
+          1,
+          0,
+          8
+        ]
+      ],
+      "modelSentence": "Lai izvairītos no sastrēgumiem, Marta izvēlējās citu ceļu mājup."
+    },
+    {
+      "id": "so-p02-014",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "vairākos",
+        "cenas",
+        "veikalos",
+        "interneta",
+        "pirms",
+        "viņš",
+        "salīdzināja",
+        "iepirkšanās"
+      ],
+      "acceptedOrders": [
+        [
+          4,
+          7,
+          5,
+          6,
+          1,
+          0,
+          3,
+          2
+        ]
+      ],
+      "modelSentence": "Pirms iepirkšanās viņš salīdzināja cenas vairākos interneta veikalos."
+    },
+    {
+      "id": "so-p02-015",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "pasūtījums",
+        "paziņojumu",
+        "nosūtīs",
+        "kavēsies,",
+        "uzņēmums",
+        "pircējam",
+        "atsevišķu",
+        "ja"
+      ],
+      "acceptedOrders": [
+        [
+          7,
+          0,
+          3,
+          4,
+          5,
+          2,
+          6,
+          1
+        ]
+      ],
+      "modelSentence": "Ja pasūtījums kavēsies, uzņēmums pircējam nosūtīs atsevišķu paziņojumu."
+    },
+    {
+      "id": "so-p02-016",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "bija",
+        "vakardienas",
+        "vētras",
+        "liels",
+        "pēc",
+        "viens",
+        "parkā",
+        "nogāzies",
+        "koks"
+      ],
+      "acceptedOrders": [
+        [
+          4,
+          1,
+          2,
+          6,
+          0,
+          7,
+          5,
+          3,
+          8
+        ]
+      ],
+      "modelSentence": "Pēc vakardienas vētras parkā bija nogāzies viens liels koks."
+    },
+    {
+      "id": "so-p02-017",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "pabeidza",
+        "kad",
+        "rakstīt",
+        "Andris",
+        "atskanēja",
+        "telefons,",
+        "vēstuli",
+        "tieši",
+        "svarīgu"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          4,
+          5,
+          3,
+          7,
+          0,
+          2,
+          8,
+          6
+        ]
+      ],
+      "modelSentence": "Kad atskanēja telefons, Andris tieši pabeidza rakstīt svarīgu vēstuli."
+    },
+    {
+      "id": "so-p02-018",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "pārbaudīja",
+        "nogurumu,",
+        "aprēķinus",
+        "visus",
+        "vēlreiz",
+        "viņa",
+        "neskatoties",
+        "uz"
+      ],
+      "acceptedOrders": [
+        [
+          6,
+          7,
+          1,
+          5,
+          4,
+          0,
+          3,
+          2
+        ]
+      ],
+      "modelSentence": "Neskatoties uz nogurumu, viņa vēlreiz pārbaudīja visus aprēķinus."
+    },
+    {
+      "id": "so-p02-019",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "neskaidro",
+        "par",
+        "darba",
+        "vienojās",
+        "pēc",
+        "risinājumu",
+        "un",
+        "pārrunāja",
+        "kolēģi",
+        "situāciju"
+      ],
+      "acceptedOrders": [
+        [
+          4,
+          2,
+          8,
+          7,
+          0,
+          9,
+          6,
+          3,
+          1,
+          5
+        ]
+      ],
+      "modelSentence": "Pēc darba kolēģi pārrunāja neskaidro situāciju un vienojās par risinājumu."
+    },
+    {
+      "id": "so-p02-020",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "maršruta",
+        "autobusu,",
+        "kamēr",
+        "gaidīja",
+        "izmaiņām",
+        "izlasīja",
+        "paziņojumu",
+        "par",
+        "Liene"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          3,
+          1,
+          8,
+          5,
+          6,
+          7,
+          0,
+          4
+        ]
+      ],
+      "modelSentence": "Kamēr gaidīja autobusu, Liene izlasīja paziņojumu par maršruta izmaiņām."
+    },
+    {
+      "id": "so-p02-021",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "viņš",
+        "čeku",
+        "atsevišķā",
+        "lai",
+        "apliecinājumu,",
+        "saglabātu",
+        "pirkuma",
+        "ielika",
+        "mapē"
+      ],
+      "acceptedOrders": [
+        [
+          3,
+          5,
+          6,
+          4,
+          0,
+          7,
+          1,
+          2,
+          8
+        ]
+      ],
+      "modelSentence": "Lai saglabātu pirkuma apliecinājumu, viņš ielika čeku atsevišķā mapē."
+    },
+    {
+      "id": "so-p02-022",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "tiklīdz",
+        "lietus,",
+        "pārtrauktā",
+        "beidzās",
+        "pie",
+        "darba",
+        "atgriezās",
+        "dārznieks"
+      ],
+      "acceptedOrders": [
+        [
+          0,
+          3,
+          1,
+          7,
+          6,
+          4,
+          2,
+          5
+        ]
+      ],
+      "modelSentence": "Tiklīdz beidzās lietus, dārznieks atgriezās pie pārtrauktā darba."
+    },
+    {
+      "id": "so-p02-023",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "argumentus",
+        "galīgā",
+        "uzklausīja",
+        "arī",
+        "puses",
+        "pieņemšanas",
+        "viņi",
+        "otras",
+        "pirms",
+        "lēmuma"
+      ],
+      "acceptedOrders": [
+        [
+          8,
+          1,
+          9,
+          5,
+          6,
+          2,
+          3,
+          7,
+          4,
+          0
+        ]
+      ],
+      "modelSentence": "Pirms galīgā lēmuma pieņemšanas viņi uzklausīja arī otras puses argumentus."
+    },
+    {
+      "id": "so-p02-024",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "ticama,",
+        "avotu",
+        "pārbaudīja",
+        "Elīna",
+        "saņemtā",
+        "šķita",
+        "arī",
+        "ziņa",
+        "tās",
+        "kaut"
+      ],
+      "acceptedOrders": [
+        [
+          9,
+          6,
+          4,
+          7,
+          5,
+          0,
+          3,
+          2,
+          8,
+          1
+        ]
+      ],
+      "modelSentence": "Kaut arī saņemtā ziņa šķita ticama, Elīna pārbaudīja tās avotu."
+    },
+    {
+      "id": "so-p02-025",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "izdevumu",
+        "no",
+        "iesniedza",
+        "atgriezies",
+        "komandējuma,",
+        "uzreiz",
+        "pārskatu",
+        "Māris"
+      ],
+      "acceptedOrders": [
+        [
+          3,
+          1,
+          4,
+          7,
+          5,
+          2,
+          0,
+          6
+        ]
+      ],
+      "modelSentence": "Atgriezies no komandējuma, Māris uzreiz iesniedza izdevumu pārskatu."
+    },
+    {
+      "id": "so-p02-026",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "spēkā,",
+        "kad",
+        "kursēt",
+        "agrāk",
+        "autobuss",
+        "stājās",
+        "grafiks",
+        "sāka",
+        "jaunais"
+      ],
+      "acceptedOrders": [
+        [
+          1,
+          8,
+          6,
+          5,
+          0,
+          4,
+          7,
+          2,
+          3
+        ]
+      ],
+      "modelSentence": "Kad jaunais grafiks stājās spēkā, autobuss sāka kursēt agrāk."
+    },
+    {
+      "id": "so-p02-027",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "precizēja",
+        "cenu",
+        "lai",
+        "uzņēmums",
+        "nevienu",
+        "paziņojumā",
+        "norādīto",
+        "nemaldinātu,"
+      ],
+      "acceptedOrders": [
+        [
+          2,
+          4,
+          7,
+          3,
+          0,
+          5,
+          6,
+          1
+        ]
+      ],
+      "modelSentence": "Lai nevienu nemaldinātu, uzņēmums precizēja paziņojumā norādīto cenu."
+    },
+    {
+      "id": "so-p02-028",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "visi",
+        "sākotnējais",
+        "kāpēc",
+        "tikšanās",
+        "pēc",
+        "plāns",
+        "saprata,",
+        "pēdējās",
+        "jāmaina"
+      ],
+      "acceptedOrders": [
+        [
+          4,
+          7,
+          3,
+          0,
+          6,
+          2,
+          8,
+          1,
+          5
+        ]
+      ],
+      "modelSentence": "Pēc pēdējās tikšanās visi saprata, kāpēc jāmaina sākotnējais plāns."
+    },
+    {
+      "id": "so-p02-029",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "apraksts",
+        "pirkuma",
+        "neskaidrs,",
+        "papildu",
+        "jautājumi",
+        "jāuzdod",
+        "ja",
+        "ir",
+        "pirms"
+      ],
+      "acceptedOrders": [
+        [
+          6,
+          0,
+          7,
+          2,
+          8,
+          1,
+          5,
+          3,
+          4
+        ]
+      ],
+      "modelSentence": "Ja apraksts ir neskaidrs, pirms pirkuma jāuzdod papildu jautājumi."
+    },
+    {
+      "id": "so-p02-030",
+      "type": "sentence_order",
+      "contentVersion": 1,
+      "instruction": "Sakārtojiet vārdus teikumā.",
+      "words": [
+        "rēķinā",
+        "to",
+        "atrada",
+        "un",
+        "nekavējoties",
+        "lūdza",
+        "vakar",
+        "izlabot",
+        "kļūdu",
+        "Ilze"
+      ],
+      "acceptedOrders": [
+        [
+          6,
+          9,
+          2,
+          8,
+          0,
+          3,
+          5,
+          1,
+          4,
+          7
+        ]
+      ],
+      "modelSentence": "Vakar Ilze atrada kļūdu rēķinā un lūdza to nekavējoties izlabot."
+    }
+  ]
+}

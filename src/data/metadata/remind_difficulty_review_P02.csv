@@ -1,0 +1,258 @@
+id,type,difficulty,preview
+sc-p04-001,sentence_completion,4,"Lai gan dokumenti tika iesniegti laikus, pieteikumu ___, jo tajā nebija obligātā pielikuma."
+sc-p04-002,sentence_completion,4,"Pretēji sākotnējam solījumam piegādes termiņu ___, nevis saīsināja."
+sc-p04-003,sentence_completion,4,"Piedāvājums šķita izdevīgāks, ___ tikai preces cenu un neņemot vērā piegādi."
+sc-p04-004,sentence_completion,4,"Viņa neapstrīdēja pašu lēmumu, bet gan tā ___."
+sc-p04-005,sentence_completion,4,"Pēc ziņojumu salīdzināšanas atklājās, ka divu avotu informācija ir ___."
+sc-p04-006,sentence_completion,4,"Ja informācija nāk tikai no viena nepārbaudīta avota, pret to jāizturas ___."
+sc-p04-007,sentence_completion,4,"Jaunais noteikums attiecas tikai uz klientiem, kuri līgumu ___ pēc 1. novembra."
+sc-p04-008,sentence_completion,4,"Uzņēmums nevis atcēla pasākumu, bet ___ to uz nākamo nedēļu."
+sc-p04-009,sentence_completion,4,"Kaut arī priekšlikumu atbalstīja vairākums, daļa klātesošo pauda ___."
+sc-p04-010,sentence_completion,4,"Ja aprēķinā neiekļauj visas izmaksas, secinājums var izrādīties ___."
+sc-p04-011,sentence_completion,4,"Vēstule tika nosūtīta laikā, tomēr adresāts to saņēma ___."
+sc-p04-012,sentence_completion,4,"Neviens no iesniegtajiem variantiem neatbilda prasībām, tāpēc komisija nolēma konkursu ___."
+sc-p04-013,sentence_completion,4,"Sākotnēji noteiktā kārtība tika mainīta, un dalībniekus par to ___ rakstiski."
+sc-p04-014,sentence_completion,4,"Lai salīdzinājums būtu godīgs, abi piedāvājumi jāvērtē pēc ___ kritērijiem."
+sc-p04-015,sentence_completion,4,"Norādītā summa nav gala cena, jo tajā vēl nav ___ piegādes izmaksas."
+sc-p04-016,sentence_completion,4,"Lai izvairītos no divdomības, dokumentā precizēja ___ formulējuma nozīmi."
+sc-p04-017,sentence_completion,4,"Lai gan abi apgalvojumi šķita ticami, tie viens otram ___."
+sc-p04-018,sentence_completion,4,"Viņa piekrita dalībai tikai ar ___, ka pasākums beigsies laikā."
+sc-p04-019,sentence_completion,4,"Tā kā galīgais lēmums vēl nebija pieņemts, paziņojumu atzīmēja kā ___."
+sc-p04-020,sentence_completion,4,"Pieļautā kļūda neietekmēja rezultātu, tāpēc aprēķinu nebija nepieciešams ___."
+sc-p04-021,sentence_completion,4,"Lai noteiktu īsto iemeslu, speciālists vispirms izslēdza citus iespējamos ___."
+sc-p04-022,sentence_completion,4,"Ja otrā puse nepiekritīs izmaiņām, sākotnējā vienošanās paliks ___."
+scm-p02-001,sentence_completion_multi,4,"Kad Anna ieraudzīja, ka vilciens ir ___, viņa piezvanīja kolēģei un brīdināja par savu ___."
+scm-p02-002,sentence_completion_multi,4,"Lai gan sākotnējā cena bija ___, pēc atlaides prece kļuva ievērojami ___."
+scm-p02-003,sentence_completion_multi,4,Pirms līguma ___ viņi vēlreiz pārrunāja visus strīdīgos ___.
+scm-p02-004,sentence_completion_multi,4,"Tā kā laika prognoze solīja ___, ģimene pastaigas vietā izvēlējās apmeklēt ___."
+scm-p02-005,sentence_completion_multi,4,"Ja izdevumi ___, bet ienākumi nemainās, ietaupīt kļūst arvien ___."
+scm-p02-006,sentence_completion_multi,4,"Vēstule nebija ___ īstajam saņēmējam, tāpēc pasts to ___ atpakaļ."
+scm-p02-007,sentence_completion_multi,4,"Vispirms viņš pārbaudīja dokumenta ___, pēc tam to ___ elektroniski."
+scm-p02-008,sentence_completion_multi,5,"Ieva saprata, ka pasūtījums ir ___, jo piegādes datums bija pagājis, bet paka vēl nebija ___."
+scm-p02-009,sentence_completion_multi,5,"Kaut arī kaimiņiem bija ___ par remontu, viņi spēja panākt ___."
+scm-p02-010,sentence_completion_multi,5,"Ar veco paroli viņš vairs nevarēja ___ sistēmā, tāpēc bija jāizveido ___."
+scm-p02-011,sentence_completion_multi,5,"Jauns grafiks stāsies ___ pirmdien, bet iepriekšējais zaudēs ___."
+scm-p02-012,sentence_completion_multi,5,"Viņa izvēlējās ___ maršrutu, lai gan tas bija garāks, jo gribēja izvairīties no ___."
+scm-p02-013,sentence_completion_multi,5,Veikala darbinieks vispirms ___ pirkuma čeku un tikai pēc tam ___ naudu.
+scm-p02-014,sentence_completion_multi,5,"No rīta ūdens bija ___, bet līdz pusdienlaikam saule to jau bija ___."
+scm-p02-015,sentence_completion_multi,5,"Lai saglabātu vietu, Anna veica ___ internetā; uz vietas viņai vairs nevajadzēja gaidīt ___."
+scm-p02-016,sentence_completion_multi,5,"Paziņojumā teikts, ka vilciens no 8.00 pārcelts uz 9.30. Marta uz staciju devās ___, jo vilciens aties ___ un viņai nevajadzēs tik ilgi ___."
+scm-p02-017,sentence_completion_multi,5,"Pirmajā veikalā prece maksā 60 eiro, bet piegāde 20 eiro. Otrajā veikalā prece maksā 75 eiro un piegāde ir bez maksas. Izdevīgāks ir ___ piedāvājums, jo tas kopā maksā ___, nevis ___ eiro."
+scm-p02-018,sentence_completion_multi,5,"Pirmais vilciens atiet 9.10, nākamais — 9.40. Anna stacijā ierodas 9.20. Viņa ir nokavējusi ___ vilcienu, bet var paspēt uz ___, kas aties pēc ___ minūtēm."
+scm-p02-019,sentence_completion_multi,5,"Pašvaldība paziņoja, ka bibliotēka pirmdien būs slēgta, bet otrdien strādās kā parasti. Jānis vēlas aizņemties grāmatu un nevar gaidīt līdz trešdienai. Viņam jādodas uz bibliotēku ___, jo pirmdien tā būs ___ un trešdien būtu ___."
+scm-p02-020,sentence_completion_multi,5,"Ieva bija rezervējusi galdiņu sešiem cilvēkiem, bet divi viesi saslima. Pirms ierašanās Ieva piezvanīja restorānam un mainīja rezervāciju. Tagad pie galdiņa būs ___ cilvēki, jo ___ neieradīsies un sākotnēji bija ___ vietas."
+scm-p02-021,sentence_completion_multi,5,"Darbu bija iecerēts pabeigt piektdien, tomēr piegāde kavējās līdz pirmdienai. Komanda nolēma darbu pabeigt otrdien. Sākotnējo ___ nācās pārcelt, jo kavējās ___, un jaunais pabeigšanas datums ir ___."
+scm-p02-022,sentence_completion_multi,5,"Precei bija norādīta 30 eiro cena. Pie kases piemēroja 20 procentu atlaidi, tāpēc pircējs samaksāja 24 eiro. Atlaide bija ___ eiro, jaunā cena bija ___ eiro, un prece kļuva ___."
+scm-p02-023,sentence_completion_multi,5,"Paziņojums vēstīja, ka apmeklētājus pieņem tikai pēc iepriekšēja pieraksta. Līga ieradās bez pieraksta, tāpēc viņu nepieņēma. Nākamreiz Līga vispirms veiks ___, tad ieradīsies norādītajā ___ un varēs saņemt ___."
+scm-p02-024,sentence_completion_multi,5,"Jauns līgums sāk darboties 1. novembrī, bet vecais beidzas 31. oktobrī. Tātad 31. oktobrī vēl darbojas ___ līgums, 1. novembrī jau darbojas ___, un starp līgumiem nav ___."
+scm-p02-025,sentence_completion_multi,5,"Marta vēlējās nopirkt divas biļetes par 12 eiro katru. Viņai bija 20 eiro, tāpēc pilnai samaksai pietrūka naudas. Abas biļetes kopā maksā ___ eiro, Martai pietrūkst ___ eiro, un ar esošo naudu viņa var nopirkt tikai ___ biļeti."
+wc-p04-001,word_choice,4,"Kuri divi apgalvojumi apraksta drošu rīcību, saņemot negaidītu maksājuma pieprasījumu?"
+wc-p04-002,word_choice,4,"Kuru vārdu ievietot teikumā: ""Viņš neatteicās, ___ lūdza vēl laiku pārdomām""?"
+wc-p04-003,word_choice,4,"Kuras divas darbības palīdz pārliecināties, vai informācija ir uzticama?"
+wc-p04-004,word_choice,4,"Kurš vārds nozīmē, ka lēmumu vēl iespējams mainīt?"
+wc-p04-005,word_choice,4,"Kurā situācijā vispiemērotākais vārds ir ""atlikt""?"
+wc-p04-006,word_choice,4,"Kurš no apgalvojumiem visprecīzāk izskaidro vārdu ""kompromiss""?"
+wc-p04-007,word_choice,4,"Kuras divas pazīmes liecina, ka tekstā izteikts pieņēmums, nevis drošs fakts?"
+wc-p04-008,word_choice,4,"Kurš formulējums ir pieklājīgs, bet nepārprotams atteikums?"
+wc-p04-009,word_choice,4,"Kurš saistītājvārds izsaka pretstatījumu teikumā: ""Viņa piekrita priekšlikumam, ___ izvirzīja vienu nosacījumu""?"
+wc-p04-010,word_choice,4,Kuras divas darbības notiek pirms apzināta pirkuma lēmuma?
+wc-p04-011,word_choice,4,"Kurš no vārdiem vislabāk atbilst ziņai, kuras patiesums vēl nav pārbaudīts?"
+wc-p04-012,word_choice,4,"Kurš apgalvojums izriet no teikuma ""Visi dalībnieki ieradās, izņemot Ievu""?"
+wc-p04-013,word_choice,4,Kuras divas darbības samazina pārpratumu risku sarunā?
+wc-p04-014,word_choice,4,"Kurš vārds vislabāk apraksta informāciju, kas ir saistīta ar aplūkojamo jautājumu?"
+wc-p04-015,word_choice,4,Kā visprecīzāk raksturot situāciju: piegādes laiks pārcelts no ceturtdienas uz sestdienu?
+wc-p04-016,word_choice,4,"Kurš teikums nozīmē, ka šobrīd nav nepieciešams rīkoties?"
+wc-p04-017,word_choice,4,Kuri divi vārdi parasti raksturo pretēju vērtējumu vienam un tam pašam priekšlikumam?
+wc-p04-018,word_choice,5,"Kurš formulējums skaidri parāda cēloni, nevis sekas?"
+wc-p04-019,word_choice,5,"""Ja līs, pasākums notiks telpās."" Kas no tā droši izriet?"
+wc-p04-020,word_choice,5,"Kurš teikums loģiski atbilst paziņojumam ""Pēc 18.00 ieeja tikai ar rezervāciju""?"
+wc-p04-021,word_choice,5,"Kurš no piemēriem ir secinājums, nevis novērojums?"
+wc-p04-022,word_choice,5,"Kurš apgalvojums noteikti ir patiess, ja ""ne visi autobusi kavējas""?"
+wc-p04-023,word_choice,5,"Kurš formulējums nozīmē, ka norādītā summa vēl nav gala cena?"
+wc-p04-024,word_choice,5,Kurš vārds izsaka vislielāko pārliecību par informāciju?
+wc-p04-025,word_choice,5,"Kurš apgalvojums nav pretrunā paziņojumam ""Biļetes pārdod tikai internetā""?"
+wc-p04-026,word_choice,5,"Ja sūtījums pienāks ne agrāk kā trešdien, kura piegādes diena ir iespējama?"
+wc-p04-027,word_choice,5,Kurš no vārdiem visprecīzāk apzīmē spriedumu bez pietiekamiem pierādījumiem?
+wc-p04-028,word_choice,5,"Kurš variants atbilst teikumam ""Tikai Marta neatsūtīja atbildi""?"
+wc-p04-029,word_choice,5,"Kurš apgalvojums izriet no teikuma ""Neviens, kurš nokavēja sākumu, nesaņēma materiālus""?"
+wc-p04-030,word_choice,5,"Kuras divas frāzes nozīmē, ka plāns vēl nav galīgi apstiprināts?"
+remind-rc-037,reading_comprehension,4,"Sestdien Jānis bija iecerējis nokrāsot balkona margas. No rīta tās vēl bija mitras pēc nakts lietus. Viņš izlasīja uz krāsas bundžas, ka virsmai pirms krāsošanas jābūt sausai. Tā vietā Jānis sakārtoja darbarīkus un aizgāja uz veikalu pēc otas. Pēcpusdienā uzspīdēja saule, tomēr margas vēl nebija pilnīgi nožuvušas. Jānis nolēma krāsošanu pārcelt uz nākamo dienu."
+remind-rc-037-q1,reading_question_inference,4,Kāpēc Jānis no rīta nesāka krāsot?
+remind-rc-037-q2,reading_question_direct,3,Ko Jānis nopirka veikalā?
+remind-rc-037-q3,reading_question_inference,4,Kāpēc viņš nekrāsoja arī pēcpusdienā?
+remind-rc-037-q4,reading_question_inference,4,Kurā dienā Jānis plānoja turpināt?
+remind-rc-038,reading_comprehension,4,"Liene katru rītu brauc uz darbu ar 12. autobusu. Piektdien pieturā viņa ieraudzīja paziņojumu, ka ceļa remontdarbu dēļ autobuss uz laiku neapstājas pie bibliotēkas. Jaunā tuvākā pietura atradās pie sporta centra. Liene paskatījās kartē un redzēja, ka no tās līdz darbam jāiet piecas minūtes ilgāk. Viņa uzrakstīja kolēģei, ka ieradīsies nedaudz vēlāk. Nākamajā nedēļā Liene sāka iziet no mājas agrāk."
+remind-rc-038-q1,reading_question_direct,3,Kāpēc autobuss neapstājās ierastajā pieturā?
+remind-rc-038-q2,reading_question_inference,4,Kāpēc Liene brīdināja kolēģi?
+remind-rc-038-q3,reading_question_direct,3,Kur tagad jāizkāpj Lienei?
+remind-rc-038-q4,reading_question_inference,4,Kāpēc Liene nākamajā nedēļā devās prom agrāk?
+remind-rc-039,reading_comprehension,4,"Māris saņēma elektrības rēķinu, kas bija daudz lielāks nekā parasti. Vispirms viņš salīdzināja tajā norādīto skaitītāja rādījumu ar paša pierakstiem. Izrādījās, ka rēķinā ievadīts nepareizs skaitlis. Māris piezvanīja pakalpojuma sniedzējam un nosūtīja skaitītāja fotogrāfiju. Pēc divām dienām viņš saņēma labotu rēķinu. To Māris apmaksāja norādītajā termiņā."
+remind-rc-039-q1,reading_question_inference,4,Kāpēc Māris šaubījās par rēķinu?
+remind-rc-039-q2,reading_question_direct,3,Kas rēķinā bija kļūdains?
+remind-rc-039-q3,reading_question_inference,4,Kāpēc Māris nosūtīja fotogrāfiju?
+remind-rc-039-q4,reading_question_inference,4,Kuru rēķinu Māris samaksāja?
+remind-rc-040,reading_comprehension,4,"Elīna pēc darba atgriezās mājās un pie durvīm saprata, ka atslēgas palikušas birojā. Kolēģi jau bija devušies prom, bet biroja ēka vēl bija atvērta. Elīna vispirms piezvanīja apsargam, lai noskaidrotu, vai drīkst atgriezties. Apsargs apstiprināja, ka ēkā vēl var ieiet. Elīna aizbrauca atpakaļ un atrada atslēgas uz sava galda. Šoreiz pirms iziešanas viņa pārbaudīja somu."
+remind-rc-040-q1,reading_question_inference,4,Kāpēc Elīna nevarēja uzreiz ieiet mājās?
+remind-rc-040-q2,reading_question_direct,3,Kam Elīna piezvanīja?
+remind-rc-040-q3,reading_question_inference,4,Kāpēc viņa zvanīja pirms braukšanas?
+remind-rc-040-q4,reading_question_inference,4,Kāpēc viņa beigās pārbaudīja somu?
+remind-rc-041,reading_comprehension,4,"Dace gribēja apmeklēt izstādi, kurai trešdienās bija samazināta ieejas maksa. Tomēr trešdien viņai bija ārsta pieraksts, kuru nevarēja pārcelt. Dace izvēlējās doties uz muzeju ceturtdien. Viņa nopirka parastu biļeti un izstādē pavadīja divas stundas. Lai gan samaksāja vairāk, Dace bija apmierināta ar apmeklējumu. Vēlāk viņa ieteica izstādi draudzenei."
+remind-rc-041-q1,reading_question_direct,3,Kāpēc Dace muzeju neapmeklēja trešdien?
+remind-rc-041-q2,reading_question_inference,4,Vai Dace saņēma trešdienas atlaidi?
+remind-rc-041-q3,reading_question_inference,4,"Kā var spriest, ka izstāde Dacei patika?"
+remind-rc-041-q4,reading_question_direct,3,Kādu biļeti Dace nopirka?
+remind-rc-042,reading_comprehension,4,"Armands no bibliotēkas aizņēmās grāmatu uz divām nedēļām. Pēc desmit dienām viņš bija izlasījis tikai pusi, jo vairākus vakarus strādāja ilgāk. Bibliotēkas mājaslapā Armands pamanīja iespēju pagarināt nodošanas termiņu. Viņš to izmantoja, pirms sākotnējais termiņš bija beidzies. Pēc vēl vienas nedēļas Armands grāmatu pabeidza un atdeva. Viņam nebija jāmaksā kavējuma maksa."
+remind-rc-042-q1,reading_question_inference,4,Kāpēc Armands grāmatu nepabeidza pirmajās desmit dienās?
+remind-rc-042-q2,reading_question_direct,3,Ko Armands pagarināja?
+remind-rc-042-q3,reading_question_inference,4,Kāpēc viņam nebija kavējuma maksas?
+remind-rc-042-q4,reading_question_inference,4,Vai Armands atdeva neizlasītu grāmatu?
+remind-rc-043,reading_comprehension,4,"Pēteris vakarā gatavojās cept pankūkas uz elektriskās plīts. Tieši tad mājā pazuda elektrība. Viņš pārbaudīja, vai kāpņu telpā deg gaisma, un ieraudzīja, ka arī tur ir tumšs. Pēteris piezvanīja apsaimniekotājam un uzzināja, ka rajonā noticis elektrotīkla bojājums. Viņš nolēma vakariņās pagatavot aukstās maizītes. Elektrību atjaunoja pēc stundas."
+remind-rc-043-q1,reading_question_inference,4,Kāpēc Pēteris necepa pankūkas?
+remind-rc-043-q2,reading_question_direct,3,Ko Pēteris pārbaudīja kāpņu telpā?
+remind-rc-043-q3,reading_question_inference,4,"Kāpēc viņš domāja, ka problēma nav tikai dzīvoklī?"
+remind-rc-043-q4,reading_question_direct,3,Kādas vakariņas viņš izvēlējās?
+remind-rc-044,reading_comprehension,5,"Ilze vēlējās nopirkt veļasmašīnu. Vienā veikalā tā maksāja 420 eiro, bet piegāde vēl 35 eiro. Otrā veikalā tā pati veļasmašīna maksāja 440 eiro, un piegāde bija bez maksas. Ilze salīdzināja kopējās izmaksas, nevis tikai cenu uz etiķetes. Viņa izvēlējās otro veikalu. Ierīci piegādāja nākamajā dienā."
+remind-rc-044-q1,reading_question_direct,3,Kurā veikalā veļasmašīnas cena uz etiķetes bija zemāka?
+remind-rc-044-q2,reading_question_inference,5,Kurā veikalā kopējais pirkums bija lētāks?
+remind-rc-044-q3,reading_question_inference,5,Kāpēc Ilze neizvēlējās zemāko cenu uz etiķetes?
+remind-rc-044-q4,reading_question_inference,4,Cik eiro maksāja izdevīgākais piedāvājums kopā?
+remind-rc-045,reading_comprehension,5,"Darba grupai bija paredzēta sapulce pulksten 14.00. No rīta vadītāja uzzināja, ka divi dalībnieki līdz 14.30 vēl būs klientu tikšanās reizē. Viņa piedāvāja sapulci sākt 15.00, un visi piekrita. Lai nevienam nerastos pārpratumi, vadītāja izsūtīja jaunu kalendāra uzaicinājumu. Viens dalībnieks veco laiku jau bija ierakstījis papīra plānotājā. Saņēmis ziņu, viņš laiku izlaboja."
+remind-rc-045-q1,reading_question_inference,5,Kāpēc sapulces sākumu pārcēla?
+remind-rc-045-q2,reading_question_direct,3,Cikos sapulce notika pēc izmaiņām?
+remind-rc-045-q3,reading_question_inference,5,Kāpēc vadītāja sūtīja jaunu uzaicinājumu?
+remind-rc-045-q4,reading_question_inference,5,Kāpēc viens dalībnieks laboja plānotāju?
+remind-rc-046,reading_comprehension,5,"Rūta devās prom uz četrām dienām un palūdza kaimiņienei aplaistīt siltumnīcas augus. Pirms aizbraukšanas viņa atstāja rezerves atslēgu un uzrakstīja īsu norādi par laistīšanu. Otrajā dienā sākās stiprs lietus, tomēr siltumnīcā zeme palika sausa. Kaimiņiene ielēja ūdeni augiem, kā bija norādīts. Atgriezusies Rūta pateicās par palīdzību. Visi augi izskatījās veseli."
+remind-rc-046-q1,reading_question_inference,5,Kāpēc lietus nenodrošināja augiem pietiekamu ūdeni?
+remind-rc-046-q2,reading_question_direct,3,Ko Rūta atstāja kaimiņienei?
+remind-rc-046-q3,reading_question_inference,5,Kāpēc kaimiņiene augus laistīja arī lietus laikā?
+remind-rc-046-q4,reading_question_inference,5,"Kas liecina, ka palīdzība bija veiksmīga?"
+remind-rc-047,reading_comprehension,5,"Andris telefonā saņēma īsziņu, kurā bija rakstīts, ka viņa bankas konts tūlīt tiks bloķēts. Ziņā bija saite un lūgums nekavējoties ievadīt paroli. Andris pamanīja, ka sūtītāja numurs viņam nav pazīstams. Viņš saiti neatvēra, bet pats atvēra bankas oficiālo lietotni. Tajā nebija nekādu brīdinājumu. Andris par aizdomīgo īsziņu paziņoja bankai."
+remind-rc-047-q1,reading_question_inference,5,Kāpēc Andris neievadīja paroli no īsziņas saites?
+remind-rc-047-q2,reading_question_direct,3,Kur Andris pārbaudīja sava konta informāciju?
+remind-rc-047-q3,reading_question_inference,5,"Kas liecināja, ka īsziņas apgalvojums nav apstiprināts?"
+remind-rc-047-q4,reading_question_inference,5,"Kāpēc Andris pats atvēra lietotni, nevis saiti?"
+remind-rc-048,reading_comprehension,5,"Mājas iedzīvotāji sapulcējās, lai lemtu par pagalma apgaismojumu. Daži vēlējās uzstādīt jaunas lampas, bet citi uztraucās par izmaksām. Apsaimniekotājs piedāvāja sadalīt darbu divās kārtās. Šogad varētu nomainīt bojātās lampas, bet pārējās — nākamgad. Pēc apspriešanās vairākums atbalstīja šo priekšlikumu. Darbi vēl nebija sākti, jo vispirms vajadzēja saņemt cenu piedāvājumu."
+remind-rc-048-q1,reading_question_inference,5,Kāpēc daļa iedzīvotāju sākotnēji šaubījās?
+remind-rc-048-q2,reading_question_direct,3,Kas bija paredzēts pirmajā kārtā?
+remind-rc-048-q3,reading_question_inference,5,Vai sapulces beigās lampas jau bija nomainītas?
+remind-rc-048-q4,reading_question_inference,5,Kāpēc darbus sadalīja divās kārtās?
+so-p02-001,sentence_order,4,Pirms došanās uz staciju Marta pārbaudīja vilciena atiešanas laiku.
+so-p02-002,sentence_order,4,Pēc ilgām pārrunām kaimiņi vienojās kopīgi remontēt kāpņu telpu.
+so-p02-003,sentence_order,4,"Lai nenokavētu vizīti, viņš no mājas izgāja pusstundu agrāk."
+so-p02-004,sentence_order,4,"Vakarā Anna atrada vēstuli, kuru pastnieks bija atstājis kaimiņienei."
+so-p02-005,sentence_order,5,Pēc negaidīta lietus pilsētas centrā izveidojās garas automašīnu rindas.
+so-p02-006,sentence_order,4,Marija vispirms izlasīja līgumu un tikai tad to parakstīja.
+so-p02-007,sentence_order,4,Pirms izbraukšanas autovadītājs pārbaudīja riepas un automašīnas degvielas līmeni.
+so-p02-008,sentence_order,4,"Lai arī biļetes bija dārgākas, viņi izvēlējās ērtāko vilcienu."
+so-p02-009,sentence_order,5,"Kad sapulce bija beigusies, vadītāja nosūtīja visiem dalībniekiem kopsavilkumu."
+so-p02-010,sentence_order,4,Svētdienas rītā Jānis izņēma no pastkastītes sen gaidīto vēstuli.
+so-p02-011,sentence_order,5,"Tā kā liftu remontēja, iedzīvotāji augšējos stāvos kāpa pa kāpnēm."
+so-p02-012,sentence_order,4,Pēc telefona sarunas viņa pierakstīja adresi un tikšanās laiku.
+so-p02-013,sentence_order,4,"Lai izvairītos no sastrēgumiem, Marta izvēlējās citu ceļu mājup."
+so-p02-014,sentence_order,4,Pirms iepirkšanās viņš salīdzināja cenas vairākos interneta veikalos.
+so-p02-015,sentence_order,5,"Ja pasūtījums kavēsies, uzņēmums pircējam nosūtīs atsevišķu paziņojumu."
+so-p02-016,sentence_order,4,Pēc vakardienas vētras parkā bija nogāzies viens liels koks.
+so-p02-017,sentence_order,4,"Kad atskanēja telefons, Andris tieši pabeidza rakstīt svarīgu vēstuli."
+so-p02-018,sentence_order,5,"Neskatoties uz nogurumu, viņa vēlreiz pārbaudīja visus aprēķinus."
+so-p02-019,sentence_order,5,Pēc darba kolēģi pārrunāja neskaidro situāciju un vienojās par risinājumu.
+so-p02-020,sentence_order,4,"Kamēr gaidīja autobusu, Liene izlasīja paziņojumu par maršruta izmaiņām."
+so-p02-021,sentence_order,4,"Lai saglabātu pirkuma apliecinājumu, viņš ielika čeku atsevišķā mapē."
+so-p02-022,sentence_order,5,"Tiklīdz beidzās lietus, dārznieks atgriezās pie pārtrauktā darba."
+so-p02-023,sentence_order,5,Pirms galīgā lēmuma pieņemšanas viņi uzklausīja arī otras puses argumentus.
+so-p02-024,sentence_order,5,"Kaut arī saņemtā ziņa šķita ticama, Elīna pārbaudīja tās avotu."
+so-p02-025,sentence_order,5,"Atgriezies no komandējuma, Māris uzreiz iesniedza izdevumu pārskatu."
+so-p02-026,sentence_order,5,"Kad jaunais grafiks stājās spēkā, autobuss sāka kursēt agrāk."
+so-p02-027,sentence_order,4,"Lai nevienu nemaldinātu, uzņēmums precizēja paziņojumā norādīto cenu."
+so-p02-028,sentence_order,5,"Pēc pēdējās tikšanās visi saprata, kāpēc jāmaina sākotnējais plāns."
+so-p02-029,sentence_order,5,"Ja apraksts ir neskaidrs, pirms pirkuma jāuzdod papildu jautājumi."
+so-p02-030,sentence_order,4,Vakar Ilze atrada kļūdu rēķinā un lūdza to nekavējoties izlabot.
+oo-p02-001,odd_one_out,4,centimetrs | kvadrātmetrs | kilometrs | milimetrs
+oo-p02-002,odd_one_out,4,litrs | kilograms | mililitrs | kubikmetrs
+oo-p02-003,odd_one_out,4,hipotēze | pierādījums | pieņēmums | minējums
+oo-p02-004,odd_one_out,4,skaļrunis | mikrofons | projektors | austiņas
+oo-p02-005,odd_one_out,4,pārskaitījums | rēķins | kartes maksājums | skaidras naudas iemaksa
+oo-p02-006,odd_one_out,4,iemaksa | noguldījums | aizdevums | depozīts
+oo-p02-007,odd_one_out,4,konstitūcija | likums | noteikumi | recenzija
+oo-p02-008,odd_one_out,4,ziemeļi | dienvidi | ziemeļaustrumi | rietumi
+oo-p02-009,odd_one_out,4,blīvums | platums | dziļums | augstums
+oo-p02-010,odd_one_out,4,stāstījums | jautājums | izsaukums | priekšlikums
+oo-p02-011,odd_one_out,4,biogrāfija | autobiogrāfija | dienasgrāmata | katalogs
+oo-p02-012,odd_one_out,4,atvainoties | pateikties | apsveikt | pārbaudīt
+oo-p02-013,odd_one_out,4,oriģināls | kopija | noraksts | dublikāts
+oo-p02-014,odd_one_out,4,piekrišana | iebildums | atteikums | noraidījums
+oo-p02-015,odd_one_out,4,piedāvājums | vienošanās | līgums | vienprātība
+oo-p02-016,odd_one_out,5,iemesls | cēlonis | pamats | sekas
+oo-p02-017,odd_one_out,5,provizorisks | galīgs | pagaidu | sākotnējs
+oo-p02-018,odd_one_out,5,novērojums | fakts | mērījums | prognoze
+oo-p02-019,odd_one_out,5,ienākumi | ieņēmumi | peļņa | zaudējumi
+oo-p02-020,odd_one_out,5,saskaņot | apstiprināt | noraidīt | akceptēt
+oo-p02-021,odd_one_out,5,uzraudzīt | kontrolēt | pārraudzīt | ignorēt
+oo-p02-022,odd_one_out,5,nevainīgs | neitrāls | objektīvs | bezkaislīgs
+oo-p02-023,odd_one_out,5,secinājums | spriedums | atzinums | pieprasījums
+oo-p02-024,odd_one_out,5,ievads | iztirzājums | rezumējums | priekšvārds
+oo-p02-025,odd_one_out,5,vienlaikus | vienlaicīgi | reizē | secīgi
+oo-p02-026,odd_one_out,5,nepieciešams | obligāts | izvēles | prasīts
+oo-p02-027,odd_one_out,5,pārbaudāms | izmērāms | novērojams | iedomāts
+oo-p02-028,odd_one_out,5,atlikt | pārcelt | pagarināt | anulēt
+oo-p02-029,odd_one_out,5,uzkrāt | saglabāt | paturēt | izšķērdēt
+oo-p02-030,odd_one_out,5,pamudinājums | ieteikums | priekšlikums | aizliegums
+an-p02-001,antonym,4,privāts
+an-p02-002,antonym,4,objektīvs
+an-p02-003,antonym,5,konkrēts
+an-p02-004,antonym,4,teorētisks
+an-p02-005,antonym,4,obligāts
+an-p02-006,antonym,5,virspusējs
+an-p02-007,antonym,4,īslaicīgs
+an-p02-008,antonym,4,novēlots
+an-p02-009,antonym,4,vienpusējs
+an-p02-010,antonym,4,patstāvīgs
+an-p02-011,antonym,4,formāls
+an-p02-012,antonym,4,aptuvens
+an-p02-013,antonym,5,ražīgs
+an-p02-014,antonym,4,savstarpējs
+an-p02-015,antonym,4,pamatots
+an-p02-016,antonym,4,pieejams
+an-p02-017,antonym,4,izdevīgs
+an-p02-018,antonym,4,neatkarīgs
+an-p02-019,antonym,4,caurspīdīgs
+an-p02-020,antonym,4,paredzams
+an-p02-021,antonym,5,pakāpenisks
+an-p02-022,antonym,5,viennozīmīgs
+an-p02-023,antonym,5,nelokāms
+an-p02-024,antonym,5,konstruktīvs
+an-p02-025,antonym,4,kolektīvs
+an-p02-026,antonym,4,uzticams
+an-p02-027,antonym,4,samērīgs
+an-p02-028,antonym,5,vienveidīgs
+an-p02-029,antonym,5,īsts
+an-p02-030,antonym,4,stabils
+dg-p02-001,definition_guess,5,"Tas ir naudas daudzums, ko uzņēmums nopelna pēc izdevumu atskaitīšanas no ieņēmumiem."
+dg-p02-002,definition_guess,4,Tas ir noteikts darbu vai notikumu saraksts ar paredzētajiem izpildes laikiem.
+dg-p02-003,definition_guess,4,"Tā ir noteiktas informācijas kopija, ko saglabā, lai to varētu atjaunot datu zuduma gadījumā."
+dg-p02-004,definition_guess,5,"Tas ir cilvēks, kas palīdz divām pusēm sazināties vai panākt vienošanos, pats nebūdams viena no pusēm."
+dg-p02-005,definition_guess,4,"Tā ir naudas summa, ko cilvēks regulāri maksā par aizdevuma izmantošanu papildus pamatsummai."
+dg-p02-006,definition_guess,5,"Tā ir kļūdas vai trūkuma oficiāla paziņošana pārdevējam, prasot problēmu novērst."
+dg-p02-007,definition_guess,4,Tas ir rakstisks sapulcē pārrunātā un pieņemto lēmumu pieraksts.
+dg-p02-008,definition_guess,4,"Tas ir iemesls, kura dēļ kādu lēmumu uzskata par pareizu vai pamatotu."
+dg-p02-009,definition_guess,4,"Tā ir izvēle, kurai, salīdzinot ar citām, piešķirta lielāka svarība vai steidzamība."
+dg-p02-010,definition_guess,4,"Tā ir iespēja saņemt pakalpojumu vai izmantot vietu neatkarīgi no ierobežojumiem, kas citus varētu kavēt."
+dg-p02-011,definition_guess,5,"Tas ir apzināti pieņemts lēmums atteikties no kādas priekšrocības, lai abas puses panāktu vienošanos."
+dg-p02-012,definition_guess,4,"Tā ir iespējamā notikumu attīstība noteiktos apstākļos, ko izmanto, plānojot vairākus nākotnes variantus."
+dg-p02-013,definition_guess,5,"Tas ir rakstisks dokuments, kurā viena puse norāda, ka otra kaut ko ir saņēmusi vai samaksājusi."
+dg-p02-014,definition_guess,4,Tas ir izdevumu un ieņēmumu plānots sadalījums noteiktam laikam.
+dg-p02-015,definition_guess,4,"Tas ir izmaiņu kopums, ar kuru sistemātiski uzlabo kādas organizācijas darbu vai noteikumus."
+dg-p02-016,definition_guess,5,"Tas ir dokuments vai informācijas avots, ar kuru var pamatot faktu, lēmumu vai prasību."
+dg-p02-017,definition_guess,5,"Tā ir situācija, kurā divi apgalvojumi nevar abi būt patiesi vienlaikus."
+dg-p02-018,definition_guess,4,"Tas ir iepriekš nosprausts rezultāts, kuru cilvēks cenšas sasniegt ar savām darbībām."
+dg-p02-019,definition_guess,4,Tas ir papildus piešķirts laiks uzdevuma pabeigšanai pēc sākotnēji noteiktā beigu datuma.
+dg-p02-020,definition_guess,4,Tas ir personas vai iestādes oficiāli izteikts pieprasījums izskatīt kādu jautājumu un pieņemt lēmumu.
+dg-p02-021,definition_guess,5,"Tas ir dokumentā norādīts ierobežojums, kas jāizpilda, lai vienošanās būtu spēkā."
+dg-p02-022,definition_guess,5,"Tas ir aprēķins, kurā izvērtē, vai ieguvumi ir lielāki nekā izmaksas."
+dg-p02-023,definition_guess,4,"Tas ir rakstīts vai mutisks informācijas nodošanas veids, kurā uzskaitīti galvenie notikumi un rezultāti noteiktā periodā."
+dg-p02-024,definition_guess,4,"Tas ir rakstisks piedāvājums, kurā norādīta preces vai darba cena un nosacījumi."
+dg-p02-025,definition_guess,4,"Tā ir iepriekšējās kļūdas labošana vai neprecīzas informācijas izmaiņa, lai tā kļūtu pareiza."
+dg-p02-026,definition_guess,4,"Tas ir iemesls, kas izskaidro, kāpēc kāds notikums ir noticis."
+dg-p02-027,definition_guess,5,"Tas ir cilvēks, kas pārbauda dokumentu vai procesu atbilstību noteiktiem noteikumiem."
+dg-p02-028,definition_guess,4,"Tas ir darbību kopums, ar kuru atjauno bojātas sistēmas vai ierīces darbību."
+dg-p02-029,definition_guess,5,"Tā ir atļauja vai tiesības, kas piešķirtas cilvēkam piekļūt sistēmai vai noteiktai informācijai."
+dg-p02-030,definition_guess,5,"Tas ir vērtējums, kas balstīts uz pārbaudāmiem faktiem, nevis personīgām simpātijām."
