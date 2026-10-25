@@ -2339,6 +2339,33 @@ input:focus-visible {
   line-height: 1.4;
 }
 
+.definition-clues {
+  margin: 0.5rem 0 0.75rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  text-align: var(--app-text-align);
+}
+
+.definition-clue {
+  margin: 0;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius);
+  border: 2px solid color-mix(in srgb, var(--mint) 55%, transparent);
+  background: color-mix(in srgb, var(--mint) 18%, transparent);
+  font-size: calc(1.15 * var(--fit-font) * var(--content-scale));
+  font-weight: 650;
+  line-height: 1.35;
+}
+
+.app-shell.high-contrast .definition-clue {
+  border-color: #000;
+  background: #fff;
+  color: #000;
+}
+
 .hint-box,
 .answers-box {
   margin-top: 0.45rem;

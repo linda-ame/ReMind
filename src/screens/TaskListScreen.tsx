@@ -91,8 +91,16 @@ export function TaskListScreen({
 function taskShortLabel(task: Task): string {
   switch (task.type) {
     case 'word_reading':
-    case 'antonym':
       return task.word;
+    case 'antonym': {
+      const label =
+        task.mode === 'context_passage'
+          ? task.title?.trim() || task.passage || task.word
+          : task.mode === 'context_sentence'
+            ? task.sentence || task.word
+            : task.word;
+      return label.length > 48 ? `${label.slice(0, 48)}…` : label;
+    }
     case 'sentence_completion':
     case 'sentence_completion_multi':
     case 'image_word':
@@ -107,10 +115,13 @@ function taskShortLabel(task: Task): string {
       return task.modelSentence;
     case 'odd_one_out':
       return task.options.join(', ');
-    case 'definition_guess':
-      return task.description.length > 48
-        ? `${task.description.slice(0, 48)}…`
-        : task.description;
+    case 'definition_guess': {
+      const label =
+        task.mode === 'clues' && task.clues?.length
+          ? task.clues.join(' ')
+          : task.description;
+      return label.length > 48 ? `${label.slice(0, 48)}…` : label;
+    }
     case 'sentence_image_match':
       return task.prompt.length > 48
         ? `${task.prompt.slice(0, 48)}…`

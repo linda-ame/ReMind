@@ -21,8 +21,17 @@ export function taskPromptText(task: Task): string {
     case 'odd_one_out':
       return task.instruction;
     case 'antonym':
+      if (task.mode === 'context_passage') {
+        return task.title?.trim() || task.passage || task.word;
+      }
+      if (task.mode === 'context_sentence') {
+        return task.sentence || task.word;
+      }
       return task.word;
     case 'definition_guess':
+      if (task.mode === 'clues' && task.clues?.length) {
+        return task.clues.join(' ');
+      }
       return task.description;
     case 'sentence_image_match':
       return task.prompt;
@@ -36,8 +45,12 @@ export function expectedAnswerLabels(task: Task): string[] {
       return [];
     case 'sentence_completion':
     case 'image_word':
-    case 'antonym':
     case 'definition_guess':
+      return [...task.answers];
+    case 'antonym':
+      if (task.mode === 'context_passage' && task.blanks?.length) {
+        return task.blanks.map((b) => b.answers[0] ?? '').filter(Boolean);
+      }
       return [...task.answers];
     case 'sentence_completion_multi':
       return task.answersByBlank.map((blank) => blank[0] ?? '').filter(Boolean);
@@ -138,7 +151,10 @@ export function enteredAnswerLabels(
     return [raw];
   }
 
-  if (task.type === 'sentence_completion_multi') {
+  if (
+    task.type === 'sentence_completion_multi' ||
+    (task.type === 'antonym' && task.mode === 'context_passage')
+  ) {
     try {
       const parsed: unknown = JSON.parse(raw);
       if (Array.isArray(parsed)) {
@@ -336,9 +352,28 @@ export function isAnswerCorrect(
   switch (task.type) {
     case 'sentence_completion':
     case 'image_word':
-    case 'antonym':
     case 'definition_guess':
       return textMatchesAccepted(raw, task.answers, task.type);
+
+    case 'antonym': {
+      if (task.mode === 'context_passage' && task.blanks?.length) {
+        let blanks: string[] = [];
+        try {
+          const parsed: unknown = JSON.parse(raw);
+          if (Array.isArray(parsed)) {
+            blanks = parsed.map((x) => (typeof x === 'string' ? x : ''));
+          }
+        } catch {
+          return null;
+        }
+        if (blanks.every((b) => !b.trim())) return null;
+        if (blanks.length < task.blanks.length) return false;
+        return task.blanks.every((blank, i) =>
+          textMatchesAccepted(blanks[i] ?? '', blank.answers, task.type),
+        );
+      }
+      return textMatchesAccepted(raw, task.answers, task.type);
+    }
 
     case 'sentence_completion_multi': {
       let blanks: string[] = [];

@@ -1,0 +1,2342 @@
+{
+  "schemaVersion": 3,
+  "title": "ReMind P03 — 130 papildinājumi četrās esošajās sadaļās",
+  "tasks": [
+    {
+      "id": "dg-p03-001",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Rakstisks dokuments. Ļauj citai personai rīkoties tavā vārdā. Tajā var norādīt konkrētas atļautās darbības.",
+      "answers": [
+        "pilnvara"
+      ],
+      "hint": "Dokumentu paraksta persona, kura piešķir tiesības.",
+      "mode": "clues",
+      "clues": [
+        "Rakstisks dokuments.",
+        "Ļauj citai personai rīkoties tavā vārdā.",
+        "Tajā var norādīt konkrētas atļautās darbības."
+      ]
+    },
+    {
+      "id": "dg-p03-002",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "To izmanto, lai iekļūtu noteiktā teritorijā. To mēdz uzrādīt apsardzei. Tā var būt kartīte ar personas foto.",
+      "answers": [
+        "caurlaide"
+      ],
+      "hint": "Tā apliecina tiesības ieiet.",
+      "mode": "clues",
+      "clues": [
+        "To izmanto, lai iekļūtu noteiktā teritorijā.",
+        "To mēdz uzrādīt apsardzei.",
+        "Tā var būt kartīte ar personas foto."
+      ]
+    },
+    {
+      "id": "dg-p03-003",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Dokuments tiek nosūtīts kopā ar precēm. Tajā norādīts preču nosaukums un daudzums. To pārbauda preču saņēmējs.",
+      "answers": [
+        "pavadzīme"
+      ],
+      "hint": "Tas nav reklāmas buklets.",
+      "mode": "clues",
+      "clues": [
+        "Dokuments tiek nosūtīts kopā ar precēm.",
+        "Tajā norādīts preču nosaukums un daudzums.",
+        "To pārbauda preču saņēmējs."
+      ]
+    },
+    {
+      "id": "dg-p03-004",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "To saņem pēc naudas samaksāšanas. Tā apliecina, ka maksājums ir saņemts. Uz tās mēdz būt summa un datums.",
+      "answers": [
+        "kvīts"
+      ],
+      "hint": "Apliecinājums par maksājumu.",
+      "mode": "clues",
+      "clues": [
+        "To saņem pēc naudas samaksāšanas.",
+        "Tā apliecina, ka maksājums ir saņemts.",
+        "Uz tās mēdz būt summa un datums."
+      ]
+    },
+    {
+      "id": "dg-p03-005",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Tas nosaka, līdz kuram laikam preci solīts atvest. Tas var būt norādīts pasūtījuma apstiprinājumā. Kavējuma gadījumā to pārsniedz.",
+      "answers": [
+        "piegādes termiņš"
+      ],
+      "hint": "Saistīts ar piegādes laiku.",
+      "mode": "clues",
+      "clues": [
+        "Tas nosaka, līdz kuram laikam preci solīts atvest.",
+        "Tas var būt norādīts pasūtījuma apstiprinājumā.",
+        "Kavējuma gadījumā to pārsniedz."
+      ]
+    },
+    {
+      "id": "dg-p03-006",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "To norāda pie preces cenas. Tās dēļ pircējs maksā mazāk nekā iepriekš. To var izteikt procentos.",
+      "answers": [
+        "atlaide"
+      ],
+      "hint": "Saistīta ar cenas samazināšanu.",
+      "mode": "clues",
+      "clues": [
+        "To norāda pie preces cenas.",
+        "Tās dēļ pircējs maksā mazāk nekā iepriekš.",
+        "To var izteikt procentos."
+      ]
+    },
+    {
+      "id": "dg-p03-007",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Naudu pārskaita pirms preces saņemšanas. Par to vienojas pircējs un pārdevējs. Tā vēl nav samaksa pēc piegādes.",
+      "answers": [
+        "priekšapmaksa"
+      ],
+      "hint": "Samaksa pirms saņemšanas.",
+      "mode": "clues",
+      "clues": [
+        "Naudu pārskaita pirms preces saņemšanas.",
+        "Par to vienojas pircējs un pārdevējs.",
+        "Tā vēl nav samaksa pēc piegādes."
+      ]
+    },
+    {
+      "id": "dg-p03-008",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Redzams uz daudzu preču iepakojuma. Sastāv no paralēlām līnijām un bieži skaitļiem. To nolasa ar skeneri pie kases.",
+      "answers": [
+        "svītrkods"
+      ],
+      "hint": "To izmanto preču identificēšanai.",
+      "mode": "clues",
+      "clues": [
+        "Redzams uz daudzu preču iepakojuma.",
+        "Sastāv no paralēlām līnijām un bieži skaitļiem.",
+        "To nolasa ar skeneri pie kases."
+      ]
+    },
+    {
+      "id": "dg-p03-009",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Vieta iestādē, kur apmeklētāji piesakās. Tur pārbauda pierakstu un norāda kabinetu. Tā bieži atrodas poliklīnikas ieejas tuvumā.",
+      "answers": [
+        "reģistratūra"
+      ],
+      "hint": "Apmeklētāju pieņemšanas vieta.",
+      "mode": "clues",
+      "clues": [
+        "Vieta iestādē, kur apmeklētāji piesakās.",
+        "Tur pārbauda pierakstu un norāda kabinetu.",
+        "Tā bieži atrodas poliklīnikas ieejas tuvumā."
+      ]
+    },
+    {
+      "id": "dg-p03-010",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Ārsts var to izsniegt pacientam. Ar to pacientu virza uz izmeklējumu vai konsultāciju. Tajā norāda medicīnisku pamatojumu.",
+      "answers": [
+        "nosūtījums"
+      ],
+      "hint": "Dokuments pie cita speciālista.",
+      "mode": "clues",
+      "clues": [
+        "Ārsts var to izsniegt pacientam.",
+        "Ar to pacientu virza uz izmeklējumu vai konsultāciju.",
+        "Tajā norāda medicīnisku pamatojumu."
+      ]
+    },
+    {
+      "id": "dg-p03-011",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "To saņem pēc laboratorijas pārbaudes. Tajā redzami mērījumi un to vienības. To var apspriest ar ārstu.",
+      "answers": [
+        "analīžu rezultāts"
+      ],
+      "hint": "Dokuments pēc laboratorijas apmeklējuma.",
+      "mode": "clues",
+      "clues": [
+        "To saņem pēc laboratorijas pārbaudes.",
+        "Tajā redzami mērījumi un to vienības.",
+        "To var apspriest ar ārstu."
+      ]
+    },
+    {
+      "id": "dg-p03-012",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Tajā cilvēki uzturas pirms vizītes vai izbraukšanas. Tajā parasti ir krēsli. Tā nav pati ārsta kabineta vai vilciena telpa.",
+      "answers": [
+        "gaidīšanas zāle"
+      ],
+      "hint": "Telpa, kur gaida savu kārtu.",
+      "mode": "clues",
+      "clues": [
+        "Tajā cilvēki uzturas pirms vizītes vai izbraukšanas.",
+        "Tajā parasti ir krēsli.",
+        "Tā nav pati ārsta kabineta vai vilciena telpa."
+      ]
+    },
+    {
+      "id": "dg-p03-013",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Pa to staigā pasažieri stacijā. Tas atrodas blakus vilciena sliedēm. No tā iekāpj vilcienā.",
+      "answers": [
+        "perons"
+      ],
+      "hint": "Stacijas platforma.",
+      "mode": "clues",
+      "clues": [
+        "Pa to staigā pasažieri stacijā.",
+        "Tas atrodas blakus vilciena sliedēm.",
+        "No tā iekāpj vilcienā."
+      ]
+    },
+    {
+      "id": "dg-p03-014",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Vienā braucienā nomaina transportlīdzekli. Tā var notikt, pārejot no autobusa uz vilcienu. Parasti nepieciešama pietura vai stacija.",
+      "answers": [
+        "pārsēšanās"
+      ],
+      "hint": "Transporta maiņa ceļojuma laikā.",
+      "mode": "clues",
+      "clues": [
+        "Vienā braucienā nomaina transportlīdzekli.",
+        "Tā var notikt, pārejot no autobusa uz vilcienu.",
+        "Parasti nepieciešama pietura vai stacija."
+      ]
+    },
+    {
+      "id": "dg-p03-015",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Tajā ievieto somas, kas nav jātur rokās. Tas var atrasties autobusa apakšējā daļā. To atver pirms brauciena vai pēc tā.",
+      "answers": [
+        "bagāžas nodalījums"
+      ],
+      "hint": "Vieta ceļojuma mantām.",
+      "mode": "clues",
+      "clues": [
+        "Tajā ievieto somas, kas nav jātur rokās.",
+        "Tas var atrasties autobusa apakšējā daļā.",
+        "To atver pirms brauciena vai pēc tā."
+      ]
+    },
+    {
+      "id": "dg-p03-016",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "To lieto automašīnā. Tā notur pasažieri sēdeklī. To piesprādzē pirms braukšanas.",
+      "answers": [
+        "drošības josta"
+      ],
+      "hint": "Satiksmes drošības priekšmets.",
+      "mode": "clues",
+      "clues": [
+        "To lieto automašīnā.",
+        "Tā notur pasažieri sēdeklī.",
+        "To piesprādzē pirms braukšanas."
+      ]
+    },
+    {
+      "id": "dg-p03-017",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Tā paredzēta gadījumam, kad galvenā pazūd. Ar to var atslēgt tās pašas durvis. To bieži glabā citā drošā vietā.",
+      "answers": [
+        "rezerves atslēga"
+      ],
+      "hint": "Otrs atslēgas eksemplārs.",
+      "mode": "clues",
+      "clues": [
+        "Tā paredzēta gadījumam, kad galvenā pazūd.",
+        "Ar to var atslēgt tās pašas durvis.",
+        "To bieži glabā citā drošā vietā."
+      ]
+    },
+    {
+      "id": "dg-p03-018",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Tā atrodas ārdurvīs. Caur to var paskatīties uz apmeklētāju. Durvis nav jāatver, lai redzētu cilvēku otrā pusē.",
+      "answers": [
+        "durvju actiņa"
+      ],
+      "hint": "Neliela optiska ierīce durvīs.",
+      "mode": "clues",
+      "clues": [
+        "Tā atrodas ārdurvīs.",
+        "Caur to var paskatīties uz apmeklētāju.",
+        "Durvis nav jāatver, lai redzētu cilvēku otrā pusē."
+      ]
+    },
+    {
+      "id": "dg-p03-019",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Ierīce atrodas pie ūdensvada. Tā rāda patērētā ūdens daudzumu. Tās rādījumus izmanto rēķina aprēķināšanai.",
+      "answers": [
+        "ūdens skaitītājs"
+      ],
+      "hint": "Mēra ūdens patēriņu.",
+      "mode": "clues",
+      "clues": [
+        "Ierīce atrodas pie ūdensvada.",
+        "Tā rāda patērētā ūdens daudzumu.",
+        "Tās rādījumus izmanto rēķina aprēķināšanai."
+      ]
+    },
+    {
+      "id": "dg-p03-020",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Ar to iestata vēlamo temperatūru. Tas var vadīt apkures ierīces darbību. Kad telpa sasniedz noteikto temperatūru, sildīšana var samazināties.",
+      "answers": [
+        "termoregulators"
+      ],
+      "hint": "Ierīce temperatūras regulēšanai.",
+      "mode": "clues",
+      "clues": [
+        "Ar to iestata vēlamo temperatūru.",
+        "Tas var vadīt apkures ierīces darbību.",
+        "Kad telpa sasniedz noteikto temperatūru, sildīšana var samazināties."
+      ]
+    },
+    {
+      "id": "dg-p03-021",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Nodrošina gaisa apmaiņu telpās. Palīdz izvadīt mitru vai piesārņotu gaisu. Var darboties dabiski vai ar ventilatoru.",
+      "answers": [
+        "ventilācija"
+      ],
+      "hint": "Saistīta ar gaisa kustību telpā.",
+      "mode": "clues",
+      "clues": [
+        "Nodrošina gaisa apmaiņu telpās.",
+        "Palīdz izvadīt mitru vai piesārņotu gaisu.",
+        "Var darboties dabiski vai ar ventilatoru."
+      ]
+    },
+    {
+      "id": "dg-p03-022",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Darbarīks, ko izmanto būvniecībā. Ar to pārbauda, vai virsma ir horizontāla. Tā burbulis palīdz noteikt slīpumu.",
+      "answers": [
+        "līmeņrādis"
+      ],
+      "hint": "Darbarīks taisnuma pārbaudei.",
+      "mode": "clues",
+      "clues": [
+        "Darbarīks, ko izmanto būvniecībā.",
+        "Ar to pārbauda, vai virsma ir horizontāla.",
+        "Tā burbulis palīdz noteikt slīpumu."
+      ]
+    },
+    {
+      "id": "dg-p03-023",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "To izritina, lai noteiktu garumu. Uz tās ir centimetru un metru atzīmes. To lieto, piemēram, mērot mēbeles.",
+      "answers": [
+        "mērlente"
+      ],
+      "hint": "Elastīgs garuma mērīšanas rīks.",
+      "mode": "clues",
+      "clues": [
+        "To izritina, lai noteiktu garumu.",
+        "Uz tās ir centimetru un metru atzīmes.",
+        "To lieto, piemēram, mērot mēbeles."
+      ]
+    },
+    {
+      "id": "dg-p03-024",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Tas aizsargā elektrisko ķēdi. Pārslodzes gadījumā var pārtraukt strāvas plūsmu. Tas atrodams elektrības sadalnēs vai ierīcēs.",
+      "answers": [
+        "drošinātājs"
+      ],
+      "hint": "Elektriskās drošības elements.",
+      "mode": "clues",
+      "clues": [
+        "Tas aizsargā elektrisko ķēdi.",
+        "Pārslodzes gadījumā var pārtraukt strāvas plūsmu.",
+        "Tas atrodams elektrības sadalnēs vai ierīcēs."
+      ]
+    },
+    {
+      "id": "dg-p03-025",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Par to parasti maksā noteiktu maksu. Tā palīdz segt noteiktus zaudējumus, ja notiek paredzēts gadījums. Tās nosacījumi ir rakstīti līgumā.",
+      "answers": [
+        "apdrošināšana"
+      ],
+      "hint": "Saistīta ar risku un zaudējumu segšanu.",
+      "mode": "clues",
+      "clues": [
+        "Par to parasti maksā noteiktu maksu.",
+        "Tā palīdz segt noteiktus zaudējumus, ja notiek paredzēts gadījums.",
+        "Tās nosacījumi ir rakstīti līgumā."
+      ]
+    },
+    {
+      "id": "dg-p03-026",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Dokuments rāda noteiktā periodā veiktus ierakstus. To var saņemt, piemēram, no bankas konta. Tajā redzami datumi un summas.",
+      "answers": [
+        "izraksts"
+      ],
+      "hint": "Pārskats par ierakstiem.",
+      "mode": "clues",
+      "clues": [
+        "Dokuments rāda noteiktā periodā veiktus ierakstus.",
+        "To var saņemt, piemēram, no bankas konta.",
+        "Tajā redzami datumi un summas."
+      ]
+    },
+    {
+      "id": "dg-p03-027",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "To liek dokumenta beigās. Tas apliecina dokumenta apstiprināšanu vai autorību. To var izdarīt ar roku vai elektroniski.",
+      "answers": [
+        "paraksts"
+      ],
+      "hint": "Personas identifikācijas apliecinājums dokumentā.",
+      "mode": "clues",
+      "clues": [
+        "To liek dokumenta beigās.",
+        "Tas apliecina dokumenta apstiprināšanu vai autorību.",
+        "To var izdarīt ar roku vai elektroniski."
+      ]
+    },
+    {
+      "id": "dg-p03-028",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Tas nosaka pēdējo pieļaujamo laiku kādai darbībai. To var norādīt pieteikuma iesniegšanai. Pēc tā beigām darbība var būt nokavēta.",
+      "answers": [
+        "termiņš"
+      ],
+      "hint": "Saistīts ar laika robežu.",
+      "mode": "clues",
+      "clues": [
+        "Tas nosaka pēdējo pieļaujamo laiku kādai darbībai.",
+        "To var norādīt pieteikuma iesniegšanai.",
+        "Pēc tā beigām darbība var būt nokavēta."
+      ]
+    },
+    {
+      "id": "dg-p03-029",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "To iesniedz, lai pretendētu uz pakalpojumu vai dalību. Tajā norāda prasīto informāciju par sevi. To var nosūtīt elektroniski.",
+      "answers": [
+        "pieteikums"
+      ],
+      "hint": "Dokuments ar lūgumu piedalīties vai saņemt pakalpojumu.",
+      "mode": "clues",
+      "clues": [
+        "To iesniedz, lai pretendētu uz pakalpojumu vai dalību.",
+        "Tajā norāda prasīto informāciju par sevi.",
+        "To var nosūtīt elektroniski."
+      ]
+    },
+    {
+      "id": "dg-p03-030",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Tās laikā pārskaita uzņēmuma mantas. Iegūtos skaitļus salīdzina ar uzskaites datiem. Tā palīdz atrast iztrūkumu vai pārpalikumu.",
+      "answers": [
+        "inventarizācija"
+      ],
+      "hint": "Mantu faktiskā daudzuma pārbaude.",
+      "mode": "clues",
+      "clues": [
+        "Tās laikā pārskaita uzņēmuma mantas.",
+        "Iegūtos skaitļus salīdzina ar uzskaites datiem.",
+        "Tā palīdz atrast iztrūkumu vai pārpalikumu."
+      ]
+    },
+    {
+      "id": "dg-p03-031",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Tas ir ceļš no sākumpunkta līdz galamērķim. Tam var būt pieturas vai starppunkti. To mēdz attēlot kartē.",
+      "answers": [
+        "maršruts"
+      ],
+      "hint": "Plānots pārvietošanās ceļš.",
+      "mode": "clues",
+      "clues": [
+        "Tas ir ceļš no sākumpunkta līdz galamērķim.",
+        "Tam var būt pieturas vai starppunkti.",
+        "To mēdz attēlot kartē."
+      ]
+    },
+    {
+      "id": "dg-p03-032",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Pa to brauc, ja ierastais ceļš nav izmantojams. Tas var būt norādīts ceļa remonta laikā. Bieži ceļš kļūst garāks.",
+      "answers": [
+        "apvedceļš"
+      ],
+      "hint": "Alternatīvs ceļš apkārt šķērslim.",
+      "mode": "clues",
+      "clues": [
+        "Pa to brauc, ja ierastais ceļš nav izmantojams.",
+        "Tas var būt norādīts ceļa remonta laikā.",
+        "Bieži ceļš kļūst garāks."
+      ]
+    },
+    {
+      "id": "dg-p03-033",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Tā mērķis ir nodot informāciju cilvēkiem. Tas var parādīties tālruņa ekrānā. Tas var informēt par izmaiņām vai notikumu.",
+      "answers": [
+        "paziņojums"
+      ],
+      "hint": "Īsa oficiāla vai elektroniska ziņa.",
+      "mode": "clues",
+      "clues": [
+        "Tā mērķis ir nodot informāciju cilvēkiem.",
+        "Tas var parādīties tālruņa ekrānā.",
+        "Tas var informēt par izmaiņām vai notikumu."
+      ]
+    },
+    {
+      "id": "dg-p03-034",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "To saņem pēc tam, kad darbība ir pieņemta vai saskaņota. Tas var būt e-pasts pēc rezervācijas. Tas palīdz pārliecināties, ka pieteikums saņemts.",
+      "answers": [
+        "apstiprinājums"
+      ],
+      "hint": "Paziņojums par pieņemtu darbību.",
+      "mode": "clues",
+      "clues": [
+        "To saņem pēc tam, kad darbība ir pieņemta vai saskaņota.",
+        "Tas var būt e-pasts pēc rezervācijas.",
+        "Tas palīdz pārliecināties, ka pieteikums saņemts."
+      ]
+    },
+    {
+      "id": "dg-p03-035",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Tas nosaka, ko nedrīkst vai cik daudz drīkst. Tas var attiekties uz ātrumu vai apmeklētāju skaitu. To mēdz izteikt ar skaitli vai noteikumu.",
+      "answers": [
+        "ierobežojums"
+      ],
+      "hint": "Atļautā apjoma vai rīcības robeža.",
+      "mode": "clues",
+      "clues": [
+        "Tas nosaka, ko nedrīkst vai cik daudz drīkst.",
+        "Tas var attiekties uz ātrumu vai apmeklētāju skaitu.",
+        "To mēdz izteikt ar skaitli vai noteikumu."
+      ]
+    },
+    {
+      "id": "dg-p03-036",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Tā nosaka, kam pievērš uzmanību vispirms. Svarīgāks darbs var saņemt augstāku šo statusu. To izmanto, plānojot vairākus darbus.",
+      "answers": [
+        "prioritāte"
+      ],
+      "hint": "Svarīguma secība.",
+      "mode": "clues",
+      "clues": [
+        "Tā nosaka, kam pievērš uzmanību vispirms.",
+        "Svarīgāks darbs var saņemt augstāku šo statusu.",
+        "To izmanto, plānojot vairākus darbus."
+      ]
+    },
+    {
+      "id": "dg-p03-037",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Pie tās nonāk vismaz divas puses. Puses piekrīt noteiktiem nosacījumiem. Tā var būt mutiska vai rakstiska.",
+      "answers": [
+        "vienošanās"
+      ],
+      "hint": "Savstarpēji saskaņots lēmums.",
+      "mode": "clues",
+      "clues": [
+        "Pie tās nonāk vismaz divas puses.",
+        "Puses piekrīt noteiktiem nosacījumiem.",
+        "Tā var būt mutiska vai rakstiska."
+      ]
+    },
+    {
+      "id": "dg-p03-038",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Divas puses sākumā vēlas atšķirīgus risinājumus. Abas kaut ko piekāpjas. Rezultāts nav pilnībā nevienas puses sākotnējā vēlme.",
+      "answers": [
+        "kompromiss"
+      ],
+      "hint": "Savstarpēja piekāpšanās.",
+      "mode": "clues",
+      "clues": [
+        "Divas puses sākumā vēlas atšķirīgus risinājumus.",
+        "Abas kaut ko piekāpjas.",
+        "Rezultāts nav pilnībā nevienas puses sākotnējā vēlme."
+      ]
+    },
+    {
+      "id": "dg-p03-039",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Divi cilvēki vienu ziņu saprot atšķirīgi. Tas var izraisīt nevajadzīgu strīdu. To bieži novērš, precizējot teikto.",
+      "answers": [
+        "pārpratums"
+      ],
+      "hint": "Kļūda saziņā un saprašanā.",
+      "mode": "clues",
+      "clues": [
+        "Divi cilvēki vienu ziņu saprot atšķirīgi.",
+        "Tas var izraisīt nevajadzīgu strīdu.",
+        "To bieži novērš, precizējot teikto."
+      ]
+    },
+    {
+      "id": "dg-p03-040",
+      "type": "definition_guess",
+      "contentVersion": 1,
+      "instruction": "Atmini vārdu pēc pazīmēm.",
+      "description": "Pie tā nonāk, apvienojot faktus un novērojumus. Tas nav tikai atkārtots fakts. Tas pauž, ko var saprast no dotās informācijas.",
+      "answers": [
+        "secinājums"
+      ],
+      "hint": "Izrietošs spriedums.",
+      "mode": "clues",
+      "clues": [
+        "Pie tā nonāk, apvienojot faktus un novērojumus.",
+        "Tas nav tikai atkārtots fakts.",
+        "Tas pauž, ko var saprast no dotās informācijas."
+      ]
+    },
+    {
+      "id": "an-p03-001",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "skaļi",
+      "answers": [
+        "klusi"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Sapulces sākumā visi runāja skaļi, bet pēc aizrādījuma — ___."
+    },
+    {
+      "id": "an-p03-002",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "sauss",
+      "answers": [
+        "slapjš",
+        "mitrs"
+      ],
+      "mode": "context_sentence",
+      "sentence": "No rīta ceļš bija sauss, taču pēc lietus kļuva ___."
+    },
+    {
+      "id": "an-p03-003",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "drošs",
+      "answers": [
+        "bīstams",
+        "nedrošs"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Sākumā šis ceļa posms šķita drošs, bet tumsā tas kļuva ___."
+    },
+    {
+      "id": "an-p03-004",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "atvēra",
+      "answers": [
+        "aizvēra"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Pēc darba beigām darbinieks nevis atvēra, bet ___ noliktavas durvis."
+    },
+    {
+      "id": "an-p03-005",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "palielināja",
+      "answers": [
+        "samazināja"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Veikals sākumā palielināja cenas, bet izpārdošanas laikā tās ___."
+    },
+    {
+      "id": "an-p03-006",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "ieradās",
+      "answers": [
+        "aizbrauca"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Vilciens nevis ieradās, bet ___ no stacijas."
+    },
+    {
+      "id": "an-p03-007",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "piekrita",
+      "answers": [
+        "iebilda",
+        "nepiekrita"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Pirmajā sanāksmē viņa piekrita priekšlikumam, bet nākamajā tam ___."
+    },
+    {
+      "id": "an-p03-008",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "uzvarēja",
+      "answers": [
+        "zaudēja"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Pagājušajā reizē komanda uzvarēja, bet šoreiz ___."
+    },
+    {
+      "id": "an-p03-009",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "pilna",
+      "answers": [
+        "tukša"
+      ],
+      "mode": "context_sentence",
+      "sentence": "No rīta ūdens tvertne bija pilna, bet vakarā gandrīz ___."
+    },
+    {
+      "id": "an-p03-010",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "uzkāpa",
+      "answers": [
+        "nokāpa"
+      ],
+      "mode": "context_sentence",
+      "sentence": "No rīta ceļotāji uzkāpa kalnā, bet pēcpusdienā no tā ___."
+    },
+    {
+      "id": "an-p03-011",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "aizņēmās",
+      "answers": [
+        "atdeva"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Jānis aizņēmās grāmatu no Annas, bet vēlāk to viņai ___."
+    },
+    {
+      "id": "an-p03-012",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "ieslēdza",
+      "answers": [
+        "izslēdza"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Sākumā viņš ieslēdza apgaismojumu, bet pirms aiziešanas to ___."
+    },
+    {
+      "id": "an-p03-013",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "pieauga",
+      "answers": [
+        "samazinājās",
+        "kritās"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Pavasarī upes līmenis pieauga, bet vasarā tas ___."
+    },
+    {
+      "id": "an-p03-014",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "skaidra",
+      "answers": [
+        "apmākušās"
+      ],
+      "mode": "context_sentence",
+      "sentence": "No rīta debesis bija skaidras, bet vakarā kļuva ___."
+    },
+    {
+      "id": "an-p03-015",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "kavējās",
+      "answers": [
+        "laikus",
+        "savlaicīgi"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Pirmdien autobuss kavējās, bet otrdien pienāca ___."
+    },
+    {
+      "id": "an-p03-016",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "atļauts",
+      "answers": [
+        "aizliegts"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Vakar šajā ielā vēl bija atļauts novietot auto, bet tagad tas ir ___."
+    },
+    {
+      "id": "an-p03-017",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "redzams",
+      "answers": [
+        "neredzams"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Dienā ceļa apzīmējums bija labi redzams, bet miglā gandrīz ___."
+    },
+    {
+      "id": "an-p03-018",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "vienmērīgi",
+      "answers": [
+        "nevienmērīgi"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Sākumā motors strādāja vienmērīgi, bet vēlāk — ___."
+    },
+    {
+      "id": "an-p03-019",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "nestabils",
+      "answers": [
+        "stabils"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Pirms nostiprināšanas plaukts bija nestabils, bet pēc remonta — ___."
+    },
+    {
+      "id": "an-p03-020",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "apstiprināja",
+      "answers": [
+        "noraidīja"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Sākotnēji komisija apstiprināja pieteikumu, bet pēc kļūdas atklāšanas to ___."
+    },
+    {
+      "id": "an-p03-021",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "paplašināja",
+      "answers": [
+        "sašaurināja"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Pilsēta paplašināja gājēju zonu, bet automašīnām paredzēto joslu ___."
+    },
+    {
+      "id": "an-p03-022",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "precīzs",
+      "answers": [
+        "neprecīzs"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Pirmais mērījums bija precīzs, bet otrais — ___."
+    },
+    {
+      "id": "an-p03-023",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "uzlaboja",
+      "answers": [
+        "pasliktināja"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Jaunā programma uzlaboja darba ātrumu, bet nepareizi iestatījumi to ___."
+    },
+    {
+      "id": "an-p03-024",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "pagaidu",
+      "answers": [
+        "pastāvīgs",
+        "ilgtermiņa"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Sākumā tas bija pagaidu risinājums, bet vēlāk kļuva ___."
+    },
+    {
+      "id": "an-p03-025",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Aizpildiet teikumu ar pretējas nozīmes vārdu.",
+      "word": "atkarīgs",
+      "answers": [
+        "neatkarīgs"
+      ],
+      "mode": "context_sentence",
+      "sentence": "Agrāk lēmums bija atkarīgs no viena cilvēka, bet pēc reformas — ___."
+    },
+    {
+      "id": "an-p03-026",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Izlasiet īso tekstu. Ievietojiet pretējas nozīmes vārdus.",
+      "word": "plats",
+      "answers": [
+        "šaura"
+      ],
+      "mode": "context_passage",
+      "title": "Cēloņi un sekas",
+      "passage": "Aizvakar ceļš bija plats, bet pēc remonta braucamā daļa kļuva ___. Satiksme agrāk bija ātra, bet sastrēgumu laikā tā ir ___. Zīme, kas dienā bija labi redzama, miglā kļuva gandrīz ___.",
+      "blanks": [
+        {
+          "sourceWord": "plats",
+          "answers": [
+            "šaura"
+          ]
+        },
+        {
+          "sourceWord": "ātra",
+          "answers": [
+            "lēna"
+          ]
+        },
+        {
+          "sourceWord": "redzama",
+          "answers": [
+            "neredzama"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "an-p03-027",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Izlasiet īso tekstu. Ievietojiet pretējas nozīmes vārdus.",
+      "word": "agri",
+      "answers": [
+        "vēlu"
+      ],
+      "mode": "context_passage",
+      "title": "Darba grafiks",
+      "passage": "Pirmajā nedēļā birojs durvis vēra agri, otrajā — ___. Pirmdien klientu bija daudz, otrdien — ___. Sākumā telpā bija skaļi, bet vakarā iestājās ___.",
+      "blanks": [
+        {
+          "sourceWord": "agri",
+          "answers": [
+            "vēlu"
+          ]
+        },
+        {
+          "sourceWord": "daudz",
+          "answers": [
+            "maz"
+          ]
+        },
+        {
+          "sourceWord": "skaļi",
+          "answers": [
+            "klusums"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "an-p03-028",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Izlasiet īso tekstu. Ievietojiet pretējas nozīmes vārdus.",
+      "word": "vecas",
+      "answers": [
+        "jaunas"
+      ],
+      "mode": "context_passage",
+      "title": "Tilta remonts",
+      "passage": "Pirms remonta margas bija vecas, bet pēc tā kļuva ___. Iepriekšējās kāpnes bija stāvas, jaunās — ___. Vecais apgaismojums bija vājš, jaunais — ___.",
+      "blanks": [
+        {
+          "sourceWord": "vecas",
+          "answers": [
+            "jaunas"
+          ]
+        },
+        {
+          "sourceWord": "stāvas",
+          "answers": [
+            "lēzenas"
+          ]
+        },
+        {
+          "sourceWord": "vājš",
+          "answers": [
+            "spēcīgs",
+            "spilgts"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "an-p03-029",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Izlasiet īso tekstu. Ievietojiet pretējas nozīmes vārdus.",
+      "word": "dārgs",
+      "answers": [
+        "lēts",
+        "lētāks"
+      ],
+      "mode": "context_passage",
+      "title": "Piedāvājuma izvēle",
+      "passage": "Pirmais piedāvājums bija dārgs, otrais — ___. Piegādes laiks sākumā bija ilgs, bet otrajā piedāvājumā — ___. Pirmajā līgumā noteikumi bija neskaidri, otrajā — ___.",
+      "blanks": [
+        {
+          "sourceWord": "dārgs",
+          "answers": [
+            "lēts",
+            "lētāks"
+          ]
+        },
+        {
+          "sourceWord": "ilgs",
+          "answers": [
+            "īss",
+            "īsāks"
+          ]
+        },
+        {
+          "sourceWord": "neskaidri",
+          "answers": [
+            "skaidri"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "an-p03-030",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Izlasiet īso tekstu. Ievietojiet pretējas nozīmes vārdus.",
+      "word": "tukša",
+      "answers": [
+        "pilna"
+      ],
+      "mode": "context_passage",
+      "title": "Atgriešanās mājās",
+      "passage": "No rīta māja bija tukša, bet vakarā kļuva ___. Gaiteņa durvis sākumā bija atvērtas, bet vēlāk — ___. Telpā bija tumšs, līdz kāds ieslēdza gaismu un kļuva ___.",
+      "blanks": [
+        {
+          "sourceWord": "tukša",
+          "answers": [
+            "pilna"
+          ]
+        },
+        {
+          "sourceWord": "atvērtas",
+          "answers": [
+            "aizvērtas"
+          ]
+        },
+        {
+          "sourceWord": "tumšs",
+          "answers": [
+            "gaišs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "an-p03-031",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Izlasiet īso tekstu. Ievietojiet pretējas nozīmes vārdus.",
+      "word": "stiprs",
+      "answers": [
+        "vājš"
+      ],
+      "mode": "context_passage",
+      "title": "Laikapstākļu maiņa",
+      "passage": "Rītā vējš bija stiprs, vakarā tas kļuva ___. Gaisa temperatūra dienā bija augsta, naktī — ___. Pēc negaisa slapjais bruģis saulē pamazām kļuva ___.",
+      "blanks": [
+        {
+          "sourceWord": "stiprs",
+          "answers": [
+            "vājš"
+          ]
+        },
+        {
+          "sourceWord": "augsta",
+          "answers": [
+            "zema"
+          ]
+        },
+        {
+          "sourceWord": "slapjais",
+          "answers": [
+            "sauss"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "an-p03-032",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Izlasiet īso tekstu. Ievietojiet pretējas nozīmes vārdus.",
+      "word": "vienisprātis",
+      "answers": [
+        "domstarpības"
+      ],
+      "mode": "context_passage",
+      "title": "Sanāksme",
+      "passage": "Sākumā dalībnieki bija vienisprātis, bet pēc jaunā priekšlikuma radās ___. Pirmais arguments bija pamatots, nākamais — ___. Diskusija iesākās mierīgi, bet beidzās ___.",
+      "blanks": [
+        {
+          "sourceWord": "vienisprātis",
+          "answers": [
+            "domstarpības"
+          ]
+        },
+        {
+          "sourceWord": "pamatots",
+          "answers": [
+            "nepamatots"
+          ]
+        },
+        {
+          "sourceWord": "mierīgi",
+          "answers": [
+            "saspringti"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "an-p03-033",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Izlasiet īso tekstu. Ievietojiet pretējas nozīmes vārdus.",
+      "word": "laikus",
+      "answers": [
+        "kavēšanos"
+      ],
+      "mode": "context_passage",
+      "title": "Vilciena brauciens",
+      "passage": "Pirmais vilciens pienāca laikus, otrais — ar ___. Brauciena sākumā vagons bija pārpildīts, vēlāk tas kļuva gandrīz ___. Pieturā durvis atvērās, bet pirms kustības atkal ___.",
+      "blanks": [
+        {
+          "sourceWord": "laikus",
+          "answers": [
+            "kavēšanos"
+          ]
+        },
+        {
+          "sourceWord": "pārpildīts",
+          "answers": [
+            "tukšs"
+          ]
+        },
+        {
+          "sourceWord": "atvērās",
+          "answers": [
+            "aizvērās"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "an-p03-034",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Izlasiet īso tekstu. Ievietojiet pretējas nozīmes vārdus.",
+      "word": "klusums",
+      "answers": [
+        "troksnis"
+      ],
+      "mode": "context_passage",
+      "title": "Bibliotēka",
+      "passage": "No rīta lasītavā valdīja klusums, pēcpusdienā tajā sākās ___. Daļa grāmatu bija jaunas, citas — ___. Vienu grāmatu lasītājs aizņēmās, bet otru tajā pašā dienā ___.",
+      "blanks": [
+        {
+          "sourceWord": "klusums",
+          "answers": [
+            "troksnis"
+          ]
+        },
+        {
+          "sourceWord": "jaunas",
+          "answers": [
+            "vecas"
+          ]
+        },
+        {
+          "sourceWord": "aizņēmās",
+          "answers": [
+            "atdeva"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "an-p03-035",
+      "type": "antonym",
+      "contentVersion": 1,
+      "instruction": "Izlasiet īso tekstu. Ievietojiet pretējas nozīmes vārdus.",
+      "word": "lieli",
+      "answers": [
+        "mazi"
+      ],
+      "mode": "context_passage",
+      "title": "Neparedzētie izdevumi",
+      "passage": "Mēneša sākumā ieņēmumi bija lieli, beigās — ___. Viens pirkums bija nepieciešams, otrs — ___. Sākumā plāns šķita izdevīgs, bet pēc aprēķina — ___.",
+      "blanks": [
+        {
+          "sourceWord": "lieli",
+          "answers": [
+            "mazi"
+          ]
+        },
+        {
+          "sourceWord": "nepieciešams",
+          "answers": [
+            "nevajadzīgs",
+            "lieks"
+          ]
+        },
+        {
+          "sourceWord": "izdevīgs",
+          "answers": [
+            "neizdevīgs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sc-p03-001",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Lai gan vilciens kavējās, pasažieri ___ nepameta peronu.",
+      "answers": [
+        "tomēr"
+      ]
+    },
+    {
+      "id": "sc-p03-002",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Iedzīvotāji iesniedza sūdzību, jo solītais remonts ___ nebija sākts.",
+      "answers": [
+        "joprojām",
+        "vēl"
+      ]
+    },
+    {
+      "id": "sc-p03-003",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Ja dokumenti būs noformēti pareizi, pieteikumu varēs ___ bez papildu precizējumiem.",
+      "answers": [
+        "izskatīt",
+        "apstrādāt"
+      ]
+    },
+    {
+      "id": "sc-p03-004",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Uzņēmums izvēlējās otro piedāvājumu, jo tas, neskatoties uz augstāku cenu, bija ___ uzticamāks.",
+      "answers": [
+        "ievērojami",
+        "daudz"
+      ]
+    },
+    {
+      "id": "sc-p03-005",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Sakaru pārtraukuma laikā svarīgo informāciju viņa ___ pierakstīja uz papīra.",
+      "answers": [
+        "uzreiz",
+        "nekavējoties"
+      ]
+    },
+    {
+      "id": "sc-p03-006",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Lai gan nokrišņi beidzās, slidena ceļa dēļ šoferis ātrumu ___ samazināja.",
+      "answers": [
+        "tomēr",
+        "vēl"
+      ]
+    },
+    {
+      "id": "sc-p03-007",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Sarunā abiem izdevās vienoties, kaut gan sākotnēji viņu viedokļi ___ atšķīrās.",
+      "answers": [
+        "būtiski",
+        "ievērojami"
+      ]
+    },
+    {
+      "id": "sc-p03-008",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Ja prece izrādīsies bojāta, pircējs varēs ___ tās apmaiņu.",
+      "answers": [
+        "pieprasīt"
+      ]
+    },
+    {
+      "id": "sc-p03-009",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Marta pārbaudīja summu otrreiz, lai pirms pārskaitījuma ___ iespējamu kļūdu.",
+      "answers": [
+        "pamanītu",
+        "atklātu"
+      ]
+    },
+    {
+      "id": "sc-p03-010",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Pirms izdarīt secinājumu, viņš ___ abu avotu sniegto informāciju.",
+      "answers": [
+        "salīdzināja",
+        "izvērtēja"
+      ]
+    },
+    {
+      "id": "sc-p03-011",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Kaut arī sūtījums bija iepakots rūpīgi, pārvadāšanas laikā tas ___ tika sabojāts.",
+      "answers": [
+        "tomēr"
+      ]
+    },
+    {
+      "id": "sc-p03-012",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Vēstulē nebija norādīts saņēmējs, tāpēc darbinieks vispirms mēģināja ___ adresātu.",
+      "answers": [
+        "noskaidrot",
+        "identificēt"
+      ]
+    },
+    {
+      "id": "sc-p03-013",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Pēc visu liecinieku uzklausīšanas komisija ___ galīgo lēmumu līdz pirmdienai.",
+      "answers": [
+        "atlika"
+      ]
+    },
+    {
+      "id": "sc-p03-014",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Ja abi pulksteņi rāda atšķirīgu laiku, pirms brauciena vajag ___ pārliecināties par atiešanas brīdi.",
+      "answers": [
+        "vēlreiz"
+      ]
+    },
+    {
+      "id": "sc-p03-015",
+      "type": "sentence_completion",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošo vārdu.",
+      "sentence": "Lēmums šķita pieņemams, taču pēc izdevumu aprēķina tas kļuva ___ izdevīgs.",
+      "answers": [
+        "mazāk",
+        "ne tik"
+      ]
+    },
+    {
+      "id": "scm-p03-001",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Sūtījums pienāca ___, nekā bija solīts, tādēļ pircējs pieprasīja ___ par kavējumu.",
+      "answersByBlank": [
+        [
+          "vēlāk"
+        ],
+        [
+          "paskaidrojumu",
+          "skaidrojumu"
+        ]
+      ],
+      "modelText": "Sūtījums pienāca vēlāk, nekā bija solīts, tādēļ pircējs pieprasīja paskaidrojumu par kavējumu."
+    },
+    {
+      "id": "scm-p03-002",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Lai gan biļetes bija ___, uz koncertu devāmies, jo pasākums notiek tikai ___ gadā.",
+      "answersByBlank": [
+        [
+          "dārgas"
+        ],
+        [
+          "reizi"
+        ]
+      ],
+      "modelText": "Lai gan biļetes bija dārgas, uz koncertu devāmies, jo pasākums notiek tikai reizi gadā."
+    },
+    {
+      "id": "scm-p03-003",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Pirmajā aptiekā zāles bija izpārdotas, tāpēc darbiniece ieteica ___ aptieku, kur tās vēl bija ___.",
+      "answersByBlank": [
+        [
+          "citu",
+          "blakus esošu"
+        ],
+        [
+          "pieejamas",
+          "nopērkamas"
+        ]
+      ],
+      "modelText": "Pirmajā aptiekā zāles bija izpārdotas, tāpēc darbiniece ieteica citu aptieku, kur tās vēl bija pieejamas."
+    },
+    {
+      "id": "scm-p03-004",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Pirms viesu ierašanās viņi ___ galdu un tikai pēc tam sāka ___ vakariņas.",
+      "answersByBlank": [
+        [
+          "uzklāja"
+        ],
+        [
+          "gatavot"
+        ]
+      ],
+      "modelText": "Pirms viesu ierašanās viņi uzklāja galdu un tikai pēc tam sāka gatavot vakariņas."
+    },
+    {
+      "id": "scm-p03-005",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Kad vilciens bija ___, pasažieri saprata, ka pārsēšanās nākamajā stacijā būs ___.",
+      "answersByBlank": [
+        [
+          "nokavējies"
+        ],
+        [
+          "apgrūtināta",
+          "sarežģīta"
+        ]
+      ],
+      "modelText": "Kad vilciens bija nokavējies, pasažieri saprata, ka pārsēšanās nākamajā stacijā būs apgrūtināta."
+    },
+    {
+      "id": "scm-p03-006",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Kaut arī sākotnējais plāns bija ___, pēc izmaiņām tas kļuva ___ un prasīja papildu laiku.",
+      "answersByBlank": [
+        [
+          "vienkāršs"
+        ],
+        [
+          "sarežģītāks"
+        ]
+      ],
+      "modelText": "Kaut arī sākotnējais plāns bija vienkāršs, pēc izmaiņām tas kļuva sarežģītāks un prasīja papildu laiku."
+    },
+    {
+      "id": "scm-p03-007",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Tā kā uzraksts uz iepakojuma bija ___, viņa izmantoja brilles, lai varētu to ___.",
+      "answersByBlank": [
+        [
+          "sīks",
+          "mazs"
+        ],
+        [
+          "izlasīt"
+        ]
+      ],
+      "modelText": "Tā kā uzraksts uz iepakojuma bija sīks, viņa izmantoja brilles, lai varētu to izlasīt."
+    },
+    {
+      "id": "scm-p03-008",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Nākamajā dienā darbu nevarēja ___, jo nepieciešamais materiāls vēl nebija ___.",
+      "answersByBlank": [
+        [
+          "pabeigt",
+          "turpināt"
+        ],
+        [
+          "piegādāts",
+          "atvests"
+        ]
+      ],
+      "modelText": "Nākamajā dienā darbu nevarēja pabeigt, jo nepieciešamais materiāls vēl nebija piegādāts."
+    },
+    {
+      "id": "scm-p03-009",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Ja laika prognoze ___ stipru vēju, organizatori pasākumu ___ uz citu dienu.",
+      "answersByBlank": [
+        [
+          "solīs",
+          "prognozēs"
+        ],
+        [
+          "pārcels"
+        ]
+      ],
+      "modelText": "Ja laika prognoze solīs stipru vēju, organizatori pasākumu pārcels uz citu dienu."
+    },
+    {
+      "id": "scm-p03-010",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Pirms līguma ___ viņa rūpīgi izlasīja sadaļu par tā ___.",
+      "answersByBlank": [
+        [
+          "parakstīšanas"
+        ],
+        [
+          "termiņu",
+          "izbeigšanu"
+        ]
+      ],
+      "modelText": "Pirms līguma parakstīšanas viņa rūpīgi izlasīja sadaļu par tā termiņu."
+    },
+    {
+      "id": "scm-p03-011",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Lai atrastu ___ dokumentu, viņš meklētājā ievadīja ne tikai nosaukumu, bet arī tā ___.",
+      "answersByBlank": [
+        [
+          "vajadzīgo",
+          "pareizo"
+        ],
+        [
+          "datumu"
+        ]
+      ],
+      "modelText": "Lai atrastu vajadzīgo dokumentu, viņš meklētājā ievadīja ne tikai nosaukumu, bet arī tā datumu."
+    },
+    {
+      "id": "scm-p03-012",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Apspriedē priekšlikumu vispirms ___, bet pēc izmaksu izvērtēšanas to ___.",
+      "answersByBlank": [
+        [
+          "atbalstīja"
+        ],
+        [
+          "noraidīja"
+        ]
+      ],
+      "modelText": "Apspriedē priekšlikumu vispirms atbalstīja, bet pēc izmaksu izvērtēšanas to noraidīja."
+    },
+    {
+      "id": "scm-p03-013",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Pēc negaisa elektrība ___ tikai vakarā, tāpēc ledusskapja saturu vajadzēja ___.",
+      "answersByBlank": [
+        [
+          "atjaunojās"
+        ],
+        [
+          "pārbaudīt"
+        ]
+      ],
+      "modelText": "Pēc negaisa elektrība atjaunojās tikai vakarā, tāpēc ledusskapja saturu vajadzēja pārbaudīt."
+    },
+    {
+      "id": "scm-p03-014",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Pirmais rēķins bija apmaksāts ___, taču otram bija nokavēts samaksas ___.",
+      "answersByBlank": [
+        [
+          "laikus"
+        ],
+        [
+          "termiņš"
+        ]
+      ],
+      "modelText": "Pirmais rēķins bija apmaksāts laikus, taču otram bija nokavēts samaksas termiņš."
+    },
+    {
+      "id": "scm-p03-015",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Pēc maršruta ___ izrādījās, ka īsākais ceļš nav ___, jo tilts ir slēgts.",
+      "answersByBlank": [
+        [
+          "pārbaudes"
+        ],
+        [
+          "izbraucams",
+          "pieejams"
+        ]
+      ],
+      "modelText": "Pēc maršruta pārbaudes izrādījās, ka īsākais ceļš nav izbraucams, jo tilts ir slēgts."
+    },
+    {
+      "id": "scm-p03-016",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Līga ieplānoja braukt uz Liepāju. No rīta viņa pārbaudīja ___, lai uzzinātu vilciena laiku. Tā kā reiss bija ___, viņa devās uz staciju vēlāk un paspēja nopirkt ___.",
+      "answersByBlank": [
+        [
+          "sarakstu"
+        ],
+        [
+          "pārcelts"
+        ],
+        [
+          "biļeti"
+        ]
+      ],
+      "modelText": "Līga ieplānoja braukt uz Liepāju. No rīta viņa pārbaudīja sarakstu, lai uzzinātu vilciena laiku. Tā kā reiss bija pārcelts, viņa devās uz staciju vēlāk un paspēja nopirkt biļeti."
+    },
+    {
+      "id": "scm-p03-017",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Uzņēmums saņēma divus piedāvājumus. Pirmais bija ___, taču piegāde aizņemtu mēnesi. Otrais maksāja vairāk, toties preces varētu saņemt ___. Vadītājs izvēlējās otro, jo laiks bija ___.",
+      "answersByBlank": [
+        [
+          "lētāks"
+        ],
+        [
+          "ātrāk"
+        ],
+        [
+          "svarīgs",
+          "izšķirošs"
+        ]
+      ],
+      "modelText": "Uzņēmums saņēma divus piedāvājumus. Pirmais bija lētāks, taču piegāde aizņemtu mēnesi. Otrais maksāja vairāk, toties preces varētu saņemt ātrāk. Vadītājs izvēlējās otro, jo laiks bija svarīgs."
+    },
+    {
+      "id": "scm-p03-018",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Dārzā augsne bija ļoti ___. Pirms stādīšanas Mārtiņš to ___, pēc tam ielika stādus un tos rūpīgi ___.",
+      "answersByBlank": [
+        [
+          "sablīvējusies",
+          "cieta"
+        ],
+        [
+          "uzirdināja"
+        ],
+        [
+          "aplaistīja"
+        ]
+      ],
+      "modelText": "Dārzā augsne bija ļoti sablīvējusies. Pirms stādīšanas Mārtiņš to uzirdināja, pēc tam ielika stādus un tos rūpīgi aplaistīja."
+    },
+    {
+      "id": "scm-p03-019",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Viesnīcā Anna bija rezervējusi divvietīgu numuru. Reģistratūrā viņai piedāvāja ___ numuru, lai gan viņa ceļoja divatā. Anna lūdza ___ rezervācijai atbilstošu numuru, un darbinieks kļūdu ___.",
+      "answersByBlank": [
+        [
+          "vienvietīgu"
+        ],
+        [
+          "piešķirt",
+          "atrast"
+        ],
+        [
+          "izlaboja"
+        ]
+      ],
+      "modelText": "Viesnīcā Anna bija rezervējusi divvietīgu numuru. Reģistratūrā viņai piedāvāja vienvietīgu numuru, lai gan viņa ceļoja divatā. Anna lūdza piešķirt rezervācijai atbilstošu numuru, un darbinieks kļūdu izlaboja."
+    },
+    {
+      "id": "scm-p03-020",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Tēvs pasūtīja jaunu velosipēdu. Piegādes dienā viņš pamanīja, ka trūkst viena ___. Viņš sazinājās ar ___, kurš apsolīja detaļu atsūtīt ___.",
+      "answersByBlank": [
+        [
+          "riteņa",
+          "pedāļa"
+        ],
+        [
+          "pārdevēju"
+        ],
+        [
+          "vēlāk"
+        ]
+      ],
+      "modelText": "Tēvs pasūtīja jaunu velosipēdu. Piegādes dienā viņš pamanīja, ka trūkst viena riteņa. Viņš sazinājās ar pārdevēju, kurš apsolīja detaļu atsūtīt vēlāk."
+    },
+    {
+      "id": "scm-p03-021",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Pirms konferences sākuma organizatori pārbaudīja mikrofonus. Viens no tiem ___, tāpēc to aizstāja ar ___. Pārbaudi atkārtoja, lai pārliecinātos, ka skaņa ir ___.",
+      "answersByBlank": [
+        [
+          "nedarbojās"
+        ],
+        [
+          "citu"
+        ],
+        [
+          "dzirdama",
+          "skaidra"
+        ]
+      ],
+      "modelText": "Pirms konferences sākuma organizatori pārbaudīja mikrofonus. Viens no tiem nedarbojās, tāpēc to aizstāja ar citu. Pārbaudi atkārtoja, lai pārliecinātos, ka skaņa ir dzirdama."
+    },
+    {
+      "id": "scm-p03-022",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Pēteris pie ārsta ieradās agrāk. Uzgaidāmajā telpā viņš ieraudzīja, ka ārsta kabinets ir ___. Reģistratūrā viņš noskaidroja, ka vizīte ___ uz citu stāvu, un devās ___.",
+      "answersByBlank": [
+        [
+          "slēgts"
+        ],
+        [
+          "pārcelta"
+        ],
+        [
+          "augšup",
+          "turp"
+        ]
+      ],
+      "modelText": "Pēteris pie ārsta ieradās agrāk. Uzgaidāmajā telpā viņš ieraudzīja, ka ārsta kabinets ir slēgts. Reģistratūrā viņš noskaidroja, ka vizīte pārcelta uz citu stāvu, un devās augšup."
+    },
+    {
+      "id": "scm-p03-023",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Ilze salīdzināja divus maršrutus. Pirmais bija ___, bet tajā bieži veidojās sastrēgumi. Otrais bija garāks, tomēr kustība tajā bija ___. Ilze izvēlējās otro, lai ierastos ___.",
+      "answersByBlank": [
+        [
+          "īsāks"
+        ],
+        [
+          "raitāka"
+        ],
+        [
+          "laikus",
+          "savlaicīgi"
+        ]
+      ],
+      "modelText": "Ilze salīdzināja divus maršrutus. Pirmais bija īsāks, bet tajā bieži veidojās sastrēgumi. Otrais bija garāks, tomēr kustība tajā bija raitāka. Ilze izvēlējās otro, lai ierastos laikus."
+    },
+    {
+      "id": "scm-p03-024",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Pēc sanāksmes Jānis pārskatīja pierakstus. Viņš atklāja, ka vienā punktā informācija ir ___. Tāpēc viņš nosūtīja kolēģiem ___ jautājumu un tikai pēc atbildes sagatavoja galīgo ___.",
+      "answersByBlank": [
+        [
+          "nepilnīga"
+        ],
+        [
+          "precizējošu"
+        ],
+        [
+          "ziņojumu",
+          "kopsavilkumu"
+        ]
+      ],
+      "modelText": "Pēc sanāksmes Jānis pārskatīja pierakstus. Viņš atklāja, ka vienā punktā informācija ir nepilnīga. Tāpēc viņš nosūtīja kolēģiem precizējošu jautājumu un tikai pēc atbildes sagatavoja galīgo ziņojumu."
+    },
+    {
+      "id": "scm-p03-025",
+      "type": "sentence_completion_multi",
+      "contentVersion": 1,
+      "instruction": "Ievietojiet trūkstošos vārdus.",
+      "sentence": "Vakarā Marta dzirdēja, ka virtuvē pil ūdens. Viņa pārbaudīja ___ un ieraudzīja bojātu savienojumu. Vispirms aizgrieza ___, pēc tam piezvanīja ___, lai bojājumu novērstu.",
+      "answersByBlank": [
+        [
+          "cauruli",
+          "izlietni"
+        ],
+        [
+          "ūdeni"
+        ],
+        [
+          "santehniķim"
+        ]
+      ],
+      "modelText": "Vakarā Marta dzirdēja, ka virtuvē pil ūdens. Viņa pārbaudīja cauruli un ieraudzīja bojātu savienojumu. Vispirms aizgrieza ūdeni, pēc tam piezvanīja santehniķim, lai bojājumu novērstu."
+    },
+    {
+      "id": "sim-p03-001",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Skrējēja ar 8. numuru finišēja aiz skrējējas ar 3. numuru, bet pirms skrējējas ar 11. numuru. Kurš pjedestāls rāda pareizo secību?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-001-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-001-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-001-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-001-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "No pirmās līdz trešajai vietai: 3., 8. un 11. numurs."
+    },
+    {
+      "id": "sim-p03-002",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Cilvēks ar mugursomu stāv starp pircēju ar grozu un cilvēku ar spieķi. Pircējs ar grozu atrodas vistuvāk kasei. Kurš attēls ir pareizs?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-002-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-002-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-002-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-002-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "Rindā no kases: grozs, mugursoma, spieķis."
+    },
+    {
+      "id": "sim-p03-003",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Autobuss brauc automašīnai pa priekšu, bet velosipēds atrodas aiz automašīnas. Visi brauc pa labi. Kurš attēls atbilst aprakstam?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-003-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-003-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-003-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-003-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "Pa labi braucošajiem transportlīdzekļiem priekšā ir autobuss, tad automašīna, beigās velosipēds."
+    },
+    {
+      "id": "sim-p03-004",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Grāmata ir pa labi no vāzes tajā pašā plauktā. Pulkstenis atrodas tieši zem grāmatas. Kurš variants ir pareizs?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-004-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-004-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-004-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-004-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "Augšējā plauktā vāze atrodas pa kreisi no grāmatas; zem grāmatas ir pulkstenis."
+    },
+    {
+      "id": "sim-p03-005",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Anna mazgā traukus, bet Toms nes kasti. Kaķis sēž uz galda. Kurš attēls atbilst visām detaļām?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-005-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-005-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-005-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-005-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "Anna ir pie izlietnes, Toms nes kasti, bet kaķis sēž uz galda."
+    },
+    {
+      "id": "sim-p03-006",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Anna lasa grāmatu, kamēr Toms laista puķes. Kaķis guļ zem galda. Kurš attēls ir pareizs?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-006-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-006-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-006-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-006-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Anna lasa, Toms laista puķes, kaķis atrodas zem galda."
+    },
+    {
+      "id": "sim-p03-007",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Anna griež burkānu, bet Toms mazgā traukus. Kaķis sēž uz galda. Kurš variants ir pareizs?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-007-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-007-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-007-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-007-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "Anna griež burkānu, Toms mazgā traukus, bet kaķis ir uz galda."
+    },
+    {
+      "id": "sim-p03-008",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Toms vispirms iestādīja koku. Tikai pēc tam Anna šo koku aplaistīja. Kurš attēls rāda pareizo secību?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-008-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-008-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-008-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-008-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "Pirmais kadrs: Toms stāda koku. Otrais: Anna to laista."
+    },
+    {
+      "id": "sim-p03-009",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Anna nokrāsoja žogu pirms tam, kad Toms iestādīja koku. Kurš attēls rāda šo notikumu secību?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-009-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-009-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-009-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-009-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Vispirms Anna krāso žogu, tad Toms stāda koku."
+    },
+    {
+      "id": "sim-p03-010",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Vispirms Toms pasniedza Annai aploksni. Pēc tam Anna nodeva Tomam kasti. Kurš attēls attēlo abas darbības pareizi?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-010-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-010-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-010-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-010-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "Aploksne vispirms pārvietojas no Toma pie Annas; pēc tam kaste no Annas pie Toma."
+    },
+    {
+      "id": "sim-p03-011",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Anna vispirms pasniedza Tomam aploksni. Pēc tam Toms Annai atdeva kasti. Kurš variants ir pareizs?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-011-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-011-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-011-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-011-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "Pirmajā darbībā aploksne nonāk pie Toma, otrajā — kaste nonāk pie Annas."
+    },
+    {
+      "id": "sim-p03-012",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Anna labo velosipēdu, kamēr Toms krāso krēslu. Velosipēds atrodas pa labi no krēsla. Kurš attēls ir pareizs?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-012-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-012-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-012-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-012-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 1,
+      "explanation": "Toms ar krēslu atrodas pa kreisi, bet Anna ar velosipēdu — pa labi."
+    },
+    {
+      "id": "sim-p03-013",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Toms labo velosipēdu, bet Anna nes kasti. Kaste atrodas pa labi no velosipēda. Kurš attēls ir pareizs?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-013-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-013-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-013-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-013-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 2,
+      "explanation": "Toms ar velosipēdu atrodas pa kreisi, Anna ar kasti — pa labi."
+    },
+    {
+      "id": "sim-p03-014",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Pulkstenis stāv augšējā plaukta vidū. Tieši zem tā ir vāze, bet grāmata apakšējā plauktā atrodas pa kreisi no vāzes. Kurš attēls ir pareizs?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-014-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-014-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-014-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-014-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 0,
+      "explanation": "Augšējā vidū pulkstenis; apakšējā vidū vāze; apakšējā kreisajā nodalījumā grāmata."
+    },
+    {
+      "id": "sim-p03-015",
+      "type": "sentence_image_match",
+      "contentVersion": 1,
+      "instruction": "Izlasiet teikumu. Izvēlieties pilnībā atbilstošo attēlu.",
+      "prompt": "Cilvēks ar spieķi gaida starp sievieti ar grozu un cilvēku ar mugursomu. Cilvēks ar mugursomu ir vistuvāk kasei. Kurš attēls rāda pareizo rindu?",
+      "options": [
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-015-a.svg",
+          "imageAlt": "1. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-015-b.svg",
+          "imageAlt": "2. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-015-c.svg",
+          "imageAlt": "3. attēla variants"
+        },
+        {
+          "imageSrc": "/images/sentence-image-match/sim-p03-015-d.svg",
+          "imageAlt": "4. attēla variants"
+        }
+      ],
+      "correctIndex": 3,
+      "explanation": "No kases uz rindas beigām: mugursoma, spieķis, grozs."
+    }
+  ]
+}

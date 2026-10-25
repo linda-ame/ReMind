@@ -134,20 +134,39 @@ export interface OddOneOutTask extends BaseTask {
   hint?: string;
 }
 
-/** Given a word, find an acceptable antonym (not synonyms). */
+/**
+ * Given a word (or context), find an acceptable antonym.
+ * Default / missing `mode` = single word prompt.
+ * `context_sentence` = one blank in `sentence`.
+ * `context_passage` = multiple blanks in `passage` via `blanks`.
+ */
 export interface AntonymTask extends BaseTask {
   type: 'antonym';
   word: string;
-  /** Acceptable antonyms. */
+  /** Acceptable antonyms (single-word / context_sentence). */
   answers: string[];
+  mode?: 'word' | 'context_sentence' | 'context_passage';
+  /** Sentence with exactly one `___` when mode is context_sentence. */
+  sentence?: string;
+  /** Optional short title for context_passage. */
+  title?: string;
+  /** Passage with 2–3 `___` markers when mode is context_passage. */
+  passage?: string;
+  /** Per-blank keys for context_passage (same order as `___` in passage). */
+  blanks?: { sourceWord: string; answers: string[] }[];
 }
 
-/** Guess the word from a short description. */
+/** Guess the word from a short description or from separate clues. */
 export interface DefinitionGuessTask extends BaseTask {
   type: 'definition_guess';
   description: string;
   /** Acceptable answers (examples; other fitting words may also be fine). */
   answers: string[];
+  hint?: string;
+  /** Default / missing = show `description`. `clues` = show `clues` rows. */
+  mode?: 'description' | 'clues';
+  /** Separate clue lines when mode is `clues` (typically 3). */
+  clues?: string[];
 }
 
 /** One sentence; pick the matching image among four options. */

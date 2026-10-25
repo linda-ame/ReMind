@@ -22,8 +22,8 @@ interface Props {
 }
 
 /**
- * Short description → guess the word.
- * Optional typed answer; reveal answers via HintAnswers (no hints).
+ * Short description (or separate clues) → guess the word.
+ * Optional typed answer; reveal answers via HintAnswers.
  */
 export function DefinitionGuessTaskView({
   task,
@@ -38,6 +38,12 @@ export function DefinitionGuessTaskView({
   const answerRef = useRef(answer);
   const hintsRef = useRef<HintAnswersHandle>(null);
   const chimedRef = useRef(false);
+
+  const useClues =
+    task.mode === 'clues' && Array.isArray(task.clues) && task.clues.length > 0;
+  const listenText = useClues
+    ? (task.clues ?? []).join(' ')
+    : task.description;
 
   const patch = (partial: Partial<TaskAttempt>) => {
     if (readOnly) return;
@@ -74,14 +80,24 @@ export function DefinitionGuessTaskView({
 
   return (
     <div className="task-view">
-      <p className="focus-sentence definition-description" lang="lv">
-        {task.description}
-      </p>
+      {useClues ? (
+        <ol className="definition-clues" lang="lv">
+          {(task.clues ?? []).map((clue, i) => (
+            <li key={`clue-${i}`} className="definition-clue">
+              {clue}
+            </li>
+          ))}
+        </ol>
+      ) : (
+        <p className="focus-sentence definition-description" lang="lv">
+          {task.description}
+        </p>
+      )}
 
       <div className="listen-row">
         <ListenButton
-          text={task.description}
-          ariaLabel="Klausīties aprakstu"
+          text={listenText}
+          ariaLabel={useClues ? 'Klausīties pazīmes' : 'Klausīties aprakstu'}
         />
       </div>
 
