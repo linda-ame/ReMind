@@ -218,13 +218,22 @@ input:focus-visible {
 .brand-btn {
   cursor: pointer;
   text-decoration: none;
-  min-height: 2.2em;
+  /* Larger hit area helps Android taps inside the scrollport. */
+  min-height: 48px;
+  min-width: 48px;
+  padding: 0.35em 0.85em;
   border-radius: 999px;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
   transition: background 0.15s ease;
 }
 
 .brand-btn:hover {
   background: rgba(255, 255, 255, 0.14);
+}
+
+.brand-btn:active {
+  background: rgba(255, 255, 255, 0.22);
 }
 
 .brand-btn:focus-visible {
