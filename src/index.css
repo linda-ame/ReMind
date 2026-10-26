@@ -3258,3 +3258,84 @@ input:focus-visible {
   border-color: #000;
   color: #000;
 }
+
+/*
+  Mobile keyboard: the shell fills only the visible area above the keys.
+  Task content sits on that bottom edge (no centering gap, no 1/40 under the
+  field). A leading spacer shrinks away when the question is taller than the
+  visible area, so the question can still be scrolled with the keyboard open.
+*/
+html.keyboard-open .app-shell {
+  position: fixed;
+  top: var(--vv-offset, 0px);
+  left: 0;
+  right: 0;
+  width: auto;
+  margin-inline: auto;
+  height: var(--vv-height, 100dvh);
+  max-height: var(--vv-height, 100dvh);
+}
+
+html.keyboard-open .app-main {
+  scroll-padding: 0;
+  overscroll-behavior: none;
+  touch-action: pan-y;
+}
+
+html.keyboard-open .app-main:has(.answer-field)::before {
+  content: '';
+  flex: 1 0 0px;
+  min-height: 0;
+}
+
+html.keyboard-open .app-main:has(.answer-field) .app-main-body {
+  min-height: 0;
+  flex: 0 0 auto;
+  margin-top: 0;
+  padding-bottom: 0.3rem;
+  justify-content: flex-start;
+}
+
+html.keyboard-open .app-main:has(.answer-field) .content-middle > *,
+html.keyboard-open .app-main:has(.answer-field) .content-bottom > *,
+html.keyboard-open .app-main:has(.answer-field) .content-top > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+html.keyboard-open .task-advance-root {
+  min-height: 0;
+  padding-bottom: 0;
+}
+
+html.keyboard-open .task-advance-body > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+html.keyboard-open .task-advance-after {
+  display: none;
+}
+
+html.keyboard-open .task-advance-root.task-advance-ready {
+  padding-right: 0;
+}
+
+html.keyboard-open .task-advance-fab {
+  display: none;
+}
+
+html.keyboard-open .answer-field {
+  margin-bottom: 0;
+}
+
+html.keyboard-open .answer-field-input {
+  scroll-margin: 0;
+}
+
+html.keyboard-open .answer-dictate-status:empty,
+html.keyboard-open .hint-answers:empty {
+  display: none;
+  margin: 0;
+  min-height: 0;
+}
