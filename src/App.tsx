@@ -15,7 +15,18 @@ import { LessonReviewScreen } from './screens/LessonReviewScreen';
 import { LessonSummaryScreen } from './screens/LessonSummaryScreen';
 import { SectionCompleteScreen } from './screens/SectionCompleteScreen';
 import { CustomizeContentScreen } from './screens/CustomizeContentScreen';
+import { useKeyboardViewport } from './hooks/useKeyboardViewport';
 import { loadDifficultyLevels } from './utils/difficulty';
+
+/** Home → section practice, including the “all done” screen for that section. */
+function isHomeSectionScreen(screen: Screen): boolean {
+  if (screen.name === 'section_complete') return true;
+  return (
+    screen.name === 'task' &&
+    screen.batchType != null &&
+    screen.batchIndex == null
+  );
+}
 
 function sameTaskSession(a: Screen, b: Screen): boolean {
   if (a.name !== 'task' || b.name !== 'task') return false;
@@ -91,6 +102,7 @@ function popToMatching(stack: Screen[], next: Screen): Screen[] | null {
 }
 
 function AppRouter() {
+  useKeyboardViewport();
   const { ready: authReady, passwordRecovery } = useAuth();
   const { ready } = useApp();
   const [stack, setStack] = useState<Screen[]>([{ name: 'home' }]);
@@ -148,6 +160,12 @@ function AppRouter() {
         top?.name === 'section_complete'
       ) {
         return [...s.slice(0, -1), next];
+      }
+      // ←/→ between sections replaces the current one instead of stacking.
+      if (top && isHomeSectionScreen(top) && isHomeSectionScreen(next)) {
+        let i = s.length;
+        while (i > 0 && isHomeSectionScreen(s[i - 1]!)) i -= 1;
+        return [...s.slice(0, i), next];
       }
       const popped = popToMatching(s, next);
       if (popped) return popped;

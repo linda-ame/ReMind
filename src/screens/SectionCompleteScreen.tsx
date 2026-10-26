@@ -68,7 +68,7 @@ export function SectionCompleteScreen({
   };
 
   return (
-    <Layout onHome={onHome}>
+    <Layout onHome={onHome} sectionType={type} onNavigate={onNavigate}>
       <div className="section-complete">
         {remaining.length > 0 ? (
           <>

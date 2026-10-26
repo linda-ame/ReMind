@@ -14,7 +14,7 @@ import {
   filterTasksByDifficulty,
   loadDifficultyLevels,
 } from '../utils/difficulty';
-import { buildRandomPracticeQueue } from '../utils/randomQueue';
+import { sectionPracticeScreen } from '../utils/sectionPractice';
 import type { Screen } from '../navigation/types';
 import type { Task } from '../types/task';
 
@@ -32,21 +32,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
 
   const openType = (type: Task['type']) => {
     setResetConfirmType(null);
-    const ofType = getTasksByType(type);
-    if (ofType.length === 0) return;
-    const levels = loadDifficultyLevels(type);
-    const pool = filterTasksByDifficulty(ofType, levels);
-    const queue = buildRandomPracticeQueue(pool, attempts, taskSkips);
-    if (queue.length === 0) {
-      onNavigate({ name: 'section_complete', type });
-      return;
-    }
-    onNavigate({
-      name: 'task',
-      taskId: queue[0]!,
-      queue,
-      batchType: type,
-    });
+    onNavigate(sectionPracticeScreen(type, attempts, taskSkips));
   };
 
   const resetSection = async (type: Task['type']) => {

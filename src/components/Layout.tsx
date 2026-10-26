@@ -1,17 +1,46 @@
-import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
+import {
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  type CSSProperties,
+  type MouseEvent,
+  type PointerEvent,
+  type ReactNode,
+  type TouchEvent,
+} from 'react';
 import { useApp } from '../context/AppContext';
+import type { Screen } from '../navigation/types';
+import type { Task } from '../types/task';
+import {
+  adjacentMenuSection,
+  menuSectionLabel,
+  sectionPracticeScreen,
+} from '../utils/sectionPractice';
 
 interface LayoutProps {
   children: ReactNode;
   footer?: ReactNode;
-  /** If set, tapping ReMind returns home. Omit on the home screen. */
+  /** If set, tapping ReMind / the R mark returns home. Omit on the home screen. */
   onHome?: () => void;
+  /**
+   * Home practice section. Header shows the R mark, this section’s name
+   * (no task count), and arrows to the previous / next section.
+   */
+  sectionType?: Task['type'];
+  onNavigate?: (screen: Screen) => void;
 }
 
-export function Layout({ children, footer, onHome }: LayoutProps) {
-  const { settings } = useApp();
+export function Layout({
+  children,
+  footer,
+  onHome,
+  sectionType,
+  onNavigate,
+}: LayoutProps) {
+  const { settings, attempts, taskSkips } = useApp();
   /** Avoid double-fire when Android synthesizes click after pointerup. */
   const homeFiredAt = useRef(0);
+  const chromeRef = useRef<HTMLDivElement>(null);
 
   // Apply scale on <html> so every calc(var(--content-scale)) picks it up.
   useEffect(() => {
@@ -19,6 +48,24 @@ export function Layout({ children, footer, onHome }: LayoutProps) {
     root.style.setProperty('--content-scale', String(settings.contentScale));
     root.dataset.contentScale = String(settings.contentScale);
   }, [settings.contentScale]);
+
+  // Header is outside the scrollport. Measure it so task layout still fits.
+  useLayoutEffect(() => {
+    const el = chromeRef.current;
+    if (!el) return;
+    const apply = () => {
+      const shell = el.closest('.app-shell');
+      if (!(shell instanceof HTMLElement)) return;
+      shell.style.setProperty(
+        '--app-chrome-offset',
+        `${el.getBoundingClientRect().height}px`,
+      );
+    };
+    apply();
+    const observer = new ResizeObserver(apply);
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [sectionType]);
 
   const positionClass =
     settings.textPosition === 'top'
@@ -35,6 +82,36 @@ export function Layout({ children, footer, onHome }: LayoutProps) {
     onHome();
   };
 
+  const homeHandlers = {
+    onClick: (e: MouseEvent) => {
+      e.preventDefault();
+      e.stopPropagation();
+      goHome();
+    },
+    onPointerUp: (e: PointerEvent) => {
+      if (e.button !== 0) return;
+      if (e.pointerType === 'touch' || e.pointerType === 'pen') {
+        e.preventDefault();
+        e.stopPropagation();
+        goHome();
+      }
+    },
+    onTouchStart: (e: TouchEvent) => {
+      e.stopPropagation();
+    },
+    onTouchEnd: (e: TouchEvent) => {
+      e.stopPropagation();
+    },
+  };
+
+  const prevSection = sectionType ? adjacentMenuSection(sectionType, -1) : null;
+  const nextSection = sectionType ? adjacentMenuSection(sectionType, 1) : null;
+
+  const openSection = (type: Task['type']) => {
+    if (!onNavigate) return;
+    onNavigate(sectionPracticeScreen(type, attempts, taskSkips));
+  };
+
   return (
     <div
       className={`app-shell${settings.highContrast ? ' high-contrast' : ''}`}
@@ -46,49 +123,64 @@ export function Layout({ children, footer, onHome }: LayoutProps) {
         } as CSSProperties
       }
     >
-      {/*
-        Chrome lives inside the scroll container so it moves with the finger —
-        never sticky, never JS-collapsed. It only comes back at the top.
-        Home tap uses pointerup + stopPropagation so Android does not cancel
-        the click when the scrollport owns the gesture.
-      */}
-      <main className="app-main">
-        <div className="app-chrome">
-          <header className="app-header">
-            {onHome ? (
+      <div className="app-chrome" ref={chromeRef}>
+        <header
+          className={sectionType ? 'app-header app-header-section' : 'app-header'}
+        >
+          {sectionType ? (
+            <>
               <button
                 type="button"
-                className="brand-btn"
+                className="brand-mark"
                 aria-label="ReMind — uz sākumu"
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  goHome();
-                }}
-                onPointerUp={(e) => {
-                  if (e.button !== 0) return;
-                  // Touch: click is often cancelled inside overflow scroll.
-                  if (e.pointerType === 'touch' || e.pointerType === 'pen') {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    goHome();
-                  }
-                }}
-                onTouchStart={(e) => {
-                  e.stopPropagation();
-                }}
-                onTouchEnd={(e) => {
-                  e.stopPropagation();
-                }}
+                {...homeHandlers}
               >
-                ReMind
+                <span aria-hidden="true">R</span>
               </button>
-            ) : (
-              <h1 className="brand-static">ReMind</h1>
-            )}
-          </header>
-        </div>
+              <div className="section-switch">
+                <button
+                  type="button"
+                  className="section-switch-btn"
+                  aria-label="Iepriekšējā sadaļa"
+                  disabled={!prevSection}
+                  onClick={() => {
+                    if (prevSection) openSection(prevSection);
+                  }}
+                >
+                  <span aria-hidden="true">←</span>
+                </button>
+                <p className="section-switch-title">
+                  {menuSectionLabel(sectionType)}
+                </p>
+                <button
+                  type="button"
+                  className="section-switch-btn"
+                  aria-label="Nākamā sadaļa"
+                  disabled={!nextSection}
+                  onClick={() => {
+                    if (nextSection) openSection(nextSection);
+                  }}
+                >
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </>
+          ) : onHome ? (
+            <button
+              type="button"
+              className="brand-btn"
+              aria-label="ReMind — uz sākumu"
+              {...homeHandlers}
+            >
+              ReMind
+            </button>
+          ) : (
+            <h1 className="brand-static">ReMind</h1>
+          )}
+        </header>
+      </div>
 
+      <main className="app-main">
         <div className={`app-main-body ${positionClass}`}>{children}</div>
       </main>
 

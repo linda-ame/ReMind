@@ -54,6 +54,9 @@ export default defineConfig(({ mode }) => {
   return {
     // Keep one stable URL; fail loudly if 5173 is taken instead of jumping to 5174.
     server: {
+      // Bind both IPv4 and IPv6. Node's default "localhost" is often ::1 only,
+      // so http://127.0.0.1:5173 refused the connection.
+      host: '::',
       port: 5173,
       strictPort: true,
     },

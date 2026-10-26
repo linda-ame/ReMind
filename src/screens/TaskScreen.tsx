@@ -115,6 +115,11 @@ export function TaskScreen({
     // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional
   }, [taskId, task, saveAttempt, isView, fresh]);
 
+  const sectionLayout =
+    batchType != null && batchIndex == null
+      ? { sectionType: batchType, onNavigate }
+      : {};
+
   const taskNav = (nextTaskId: string): Screen => ({
     name: 'task',
     taskId: nextTaskId,
@@ -128,7 +133,7 @@ export function TaskScreen({
 
   if (!task) {
     return (
-      <Layout onHome={onHome}>
+      <Layout onHome={onHome} {...sectionLayout}>
         <p className="lead">Uzdevums nav atrasts.</p>
       </Layout>
     );
@@ -136,7 +141,7 @@ export function TaskScreen({
 
   if (!attempt) {
     return (
-      <Layout onHome={onHome}>
+      <Layout onHome={onHome} {...sectionLayout}>
         <p className="lead">Ielādē…</p>
       </Layout>
     );
@@ -431,7 +436,7 @@ export function TaskScreen({
 
   if (isReading) {
     return (
-      <Layout onHome={onHome}>
+      <Layout onHome={onHome} {...sectionLayout}>
         <ReadingComprehensionTaskView
           key={`${task.id}-${mode}`}
           task={task}
@@ -457,7 +462,7 @@ export function TaskScreen({
 
   if (isWordReading) {
     return (
-      <Layout onHome={onHome}>
+      <Layout onHome={onHome} {...sectionLayout}>
         {wrapTask(<WordReadingTaskView task={task} />)}
       </Layout>
     );
@@ -465,7 +470,7 @@ export function TaskScreen({
 
   if (isWordChoice || isOddOneOut) {
     return (
-      <Layout onHome={onHome}>
+      <Layout onHome={onHome} {...sectionLayout}>
         {wrapTask(
           isWordChoice ? (
             <WordChoiceTaskView
@@ -490,7 +495,7 @@ export function TaskScreen({
   }
 
   return (
-    <Layout onHome={onHome}>
+    <Layout onHome={onHome} {...sectionLayout}>
       {wrapTask(
         <>
           {task.type === 'sentence_completion' && (
