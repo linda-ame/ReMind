@@ -1,5 +1,12 @@
-import { useEffect, useRef, useState, type KeyboardEvent, type PointerEvent as ReactPointerEvent, type RefObject } from 'react';
+import { useEffect, useId, useRef, useState, type KeyboardEvent, type PointerEvent as ReactPointerEvent, type RefObject } from 'react';
 import { useSpeechDictation } from '../hooks/useSpeechDictation';
+import {
+  clearMicrophoneGrantedInPage,
+  isMicrophonePermissionError,
+  markMicrophoneGrantedInPage,
+  microphoneGrantedInPage,
+  queryMicrophonePermission,
+} from '../speech/recognition';
 import type { AnswerInputFeedback } from '../utils/answers';
 import { Button } from './Button';
 
@@ -8,9 +15,9 @@ interface AnswerFieldProps {
   value: string;
   onChange: (value: string) => void;
   /**
-   * Keyboard Enter, the green Enter button while the keyboard is open,
+   * Keyboard Enter, the green Pārbaudīt button while the keyboard is open,
    * or a final speech dictation result.
-   * Use to check the answer / finish the task. Value is the submitted text.
+   * Checks the answer and stays on the task. Value is the submitted text.
    */
   onSubmit?: (value: string) => void;
   placeholder?: string;
@@ -84,6 +91,12 @@ export function AnswerField({
 
   const [fieldFocused, setFieldFocused] = useState(false);
   const [keyboardOpen, setKeyboardOpen] = useState(false);
+  /** In-app step before the browser/OS microphone prompt. */
+  const [micDialog, setMicDialog] = useState<null | 'ask' | 'asking' | 'blocked'>(
+    null,
+  );
+  const allowMicRef = useRef<HTMLButtonElement>(null);
+  const micTitleId = useId();
 
   useEffect(() => {
     const root = document.documentElement;
@@ -97,6 +110,72 @@ export function AnswerField({
   const { listening, stop } = dictation;
   const showEnter =
     keyboardOpen && fieldFocused && !listening && !readOnly;
+
+  useEffect(() => {
+    if (!dictation.listening) return;
+    markMicrophoneGrantedInPage();
+    setMicDialog(null);
+  }, [dictation.listening]);
+
+  useEffect(() => {
+    if (!isMicrophonePermissionError(dictation.errorCode)) return;
+    clearMicrophoneGrantedInPage();
+    setMicDialog('blocked');
+  }, [dictation.errorCode]);
+
+  useEffect(() => {
+    if (!micDialog || !dictation.errorCode) return;
+    if (isMicrophonePermissionError(dictation.errorCode)) return;
+    if (dictation.errorCode === 'aborted') return;
+    setMicDialog(null);
+  }, [dictation.errorCode, micDialog]);
+
+  useEffect(() => {
+    if (!micDialog) return;
+    allowMicRef.current?.focus();
+    const onKey = (event: globalThis.KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setMicDialog(null);
+      dictation.clearError();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [micDialog, dictation.clearError]);
+
+  const closeMicDialog = () => {
+    setMicDialog(null);
+    dictation.clearError();
+    if (dictation.listening) dictation.stop();
+  };
+
+  const allowMicrophone = () => {
+    dictation.clearError();
+    setMicDialog('asking');
+    // Same click opens the system prompt. Speech recognition requests the
+    // microphone itself; a separate getUserMedia call would steal the gesture.
+    dictation.start();
+  };
+
+  const onDictate = () => {
+    if (dictation.listening) {
+      dictation.stop();
+      return;
+    }
+    dictation.clearError();
+    void (async () => {
+      const perm = await queryMicrophonePermission();
+      if (perm === 'granted' || microphoneGrantedInPage()) {
+        dictation.start();
+        return;
+      }
+      if (perm === 'denied') {
+        clearMicrophoneGrantedInPage();
+        setMicDialog('blocked');
+        return;
+      }
+      setMicDialog('ask');
+    })();
+  };
   // Stop listening if the field becomes read-only mid-session
   useEffect(() => {
     if (readOnly && listening) stop();
@@ -189,7 +268,7 @@ export function AnswerField({
               dictation.listening
                 ? 'Apturēt ierunāšanu'
                 : showEnter
-                  ? 'Enter'
+                  ? 'Pārbaudīt atbildi'
                   : 'Ierunāt atbildi'
             }
             onPointerDown={(event: ReactPointerEvent<HTMLButtonElement>) => {
@@ -201,11 +280,10 @@ export function AnswerField({
                 finish(valueRef.current);
                 return;
               }
-              dictation.clearError();
-              dictation.toggle();
+              onDictate();
             }}
           >
-            {dictation.listening ? 'Apturēt' : showEnter ? 'Enter' : 'Ierunāt'}
+            {dictation.listening ? 'Apturēt' : showEnter ? 'Pārbaudīt' : 'Ierunāt'}
           </Button>
         ) : null}
       </div>
@@ -217,8 +295,49 @@ export function AnswerField({
       >
         {dictation.listening
           ? 'Klausos… runājiet skaļi.'
-          : (dictation.error ?? '')}
+          : micDialog
+            ? ''
+            : (dictation.error ?? '')}
       </p>
+
+      {micDialog ? (
+        <div
+          className="mic-permission-backdrop"
+          onClick={closeMicDialog}
+        >
+          <div
+            className="mic-permission-card"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby={micTitleId}
+            onClick={(event) => event.stopPropagation()}
+          >
+            <h2 id={micTitleId} className="mic-permission-title">
+              {micDialog === 'blocked' ? 'Mikrofons ir bloķēts' : 'Mikrofons'}
+            </h2>
+            <p className="mic-permission-text">
+              {micDialog === 'blocked'
+                ? 'Atļaujas logs vairs neatveras. Ierīces iestatījumos atļaujiet mikrofonu šai lapai un nospiediet vēlreiz.'
+                : micDialog === 'asking'
+                  ? 'Atveras atļaujas logs. Nospiediet Atļaut.'
+                  : 'Lai ierunātu atbildi, atļaujiet mikrofonu. Pēc tam parādīsies ierīces logs.'}
+            </p>
+            <div className="mic-permission-actions">
+              <Button
+                ref={allowMicRef}
+                variant="primary"
+                disabled={micDialog === 'asking'}
+                onClick={allowMicrophone}
+              >
+                {micDialog === 'blocked' ? 'Mēģināt vēlreiz' : 'Atļaut mikrofonu'}
+              </Button>
+              <Button variant="neutral" onClick={closeMicDialog}>
+                {micDialog === 'blocked' ? 'Aizvērt' : 'Atcelt'}
+              </Button>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 }

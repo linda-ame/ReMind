@@ -48,6 +48,53 @@ export function normalizeDictationTranscript(raw: string): string {
   return raw.replace(/\s+/g, ' ').trim();
 }
 
+export type MicrophonePermissionState = 'granted' | 'denied' | 'prompt' | 'unknown';
+
+/**
+ * Remember a successful dictation in this page load.
+ * Safari often cannot answer permissions.query for the microphone,
+ * so the in-app prompt would otherwise return before every answer.
+ */
+let micGrantedInPage = false;
+
+export function markMicrophoneGrantedInPage(): void {
+  micGrantedInPage = true;
+}
+
+export function microphoneGrantedInPage(): boolean {
+  return micGrantedInPage;
+}
+
+export function clearMicrophoneGrantedInPage(): void {
+  micGrantedInPage = false;
+}
+
+export function isMicrophonePermissionError(code: string | null): boolean {
+  return code === 'not-allowed' || code === 'service-not-allowed';
+}
+
+/** `unknown` when the browser has no microphone entry in the Permissions API (Safari). */
+export async function queryMicrophonePermission(): Promise<MicrophonePermissionState> {
+  if (typeof navigator === 'undefined' || !navigator.permissions?.query) {
+    return 'unknown';
+  }
+  try {
+    const status = await navigator.permissions.query({
+      name: 'microphone' as PermissionName,
+    });
+    if (
+      status.state === 'granted' ||
+      status.state === 'denied' ||
+      status.state === 'prompt'
+    ) {
+      return status.state;
+    }
+    return 'unknown';
+  } catch {
+    return 'unknown';
+  }
+}
+
 export function dictationErrorMessage(code: string): string {
   switch (code) {
     case 'not-allowed':

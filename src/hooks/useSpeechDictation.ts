@@ -21,6 +21,7 @@ export interface UseSpeechDictationResult {
   supported: boolean;
   listening: boolean;
   error: string | null;
+  errorCode: string | null;
   clearError: () => void;
   start: () => void;
   stop: () => void;
@@ -38,6 +39,7 @@ export function useSpeechDictation(
   const [supported] = useState(() => isSpeechDictationSupported());
   const [listening, setListening] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [errorCode, setErrorCode] = useState<string | null>(null);
 
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
   const onInterimRef = useRef(onInterim);
@@ -64,6 +66,7 @@ export function useSpeechDictation(
   const start = useCallback(() => {
     if (!enabled || !supported) return;
     setError(null);
+    setErrorCode(null);
 
     const Ctor = getSpeechRecognitionCtor();
     if (!Ctor) return;
@@ -98,7 +101,9 @@ export function useSpeechDictation(
 
     recognition.onerror = (ev) => {
       const msg = dictationErrorMessage(ev.error);
+      setErrorCode(ev.error);
       if (msg) setError(msg);
+      else setError(null);
       setListening(false);
     };
 
@@ -125,6 +130,7 @@ export function useSpeechDictation(
     try {
       recognition.start();
     } catch {
+      setErrorCode('start-failed');
       setError('Neizdevās sākt ierunāšanu.');
       setListening(false);
       recognitionRef.current = null;
@@ -136,7 +142,10 @@ export function useSpeechDictation(
     else start();
   }, [listening, start, stop]);
 
-  const clearError = useCallback(() => setError(null), []);
+  const clearError = useCallback(() => {
+    setError(null);
+    setErrorCode(null);
+  }, []);
 
   useEffect(() => {
     return () => {
@@ -159,6 +168,7 @@ export function useSpeechDictation(
     supported: supported && enabled,
     listening,
     error,
+    errorCode,
     clearError,
     start,
     stop,

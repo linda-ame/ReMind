@@ -3,6 +3,7 @@ import { AnswerField } from '../../components/AnswerField';
 import { Button } from '../../components/Button';
 import { ListenButton } from '../../components/ListenButton';
 import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
+import { keywordUsedInText } from '../../utils/lvInflection';
 import type { TaskAttempt } from '../../types/progress';
 import type { SentenceCreationTask } from '../../types/task';
 
@@ -65,6 +66,7 @@ export function SentenceCreationTaskView({
   const [exampleOpen, setExampleOpen] = useState(
     attempt.usedHint || attempt.viewedAnswers,
   );
+  const [missingWords, setMissingWords] = useState(false);
   const slotsRef = useRef(slots);
   const textRef = useRef(text);
   slotsRef.current = slots;
@@ -91,6 +93,16 @@ export function SentenceCreationTaskView({
         )
       : textRef.current.trim().length > 0;
     if (!hasText) return;
+    if (!fixed) {
+      const missing = (task.keywords ?? []).some(
+        (word) => !keywordUsedInText(word, textRef.current),
+      );
+      if (missing) {
+        setMissingWords(true);
+        return;
+      }
+    }
+    setMissingWords(false);
     patch({ viewedAnswers: true, status: 'attempted' });
   };
 
@@ -144,11 +156,19 @@ export function SentenceCreationTaskView({
       ) : (
         <>
           <div className="keyword-row" aria-label="Dotie vārdi">
-            {(task.keywords ?? []).map((word) => (
-              <span className="keyword-chip" lang="lv" key={word}>
-                {word}
-              </span>
-            ))}
+            {(task.keywords ?? []).map((word) => {
+              const used = keywordUsedInText(word, text);
+              return (
+                <span
+                  className={used ? 'keyword-chip keyword-chip-used' : 'keyword-chip'}
+                  lang="lv"
+                  key={word}
+                  aria-label={used ? `${word}, iesaistīts` : word}
+                >
+                  {word}
+                </span>
+              );
+            })}
           </div>
           <AnswerField
             id={`sentence-free-${task.id}`}
@@ -165,9 +185,22 @@ export function SentenceCreationTaskView({
               if (readOnly) return;
               textRef.current = nextValue;
               setText(nextValue);
+              if (
+                missingWords &&
+                (task.keywords ?? []).every((word) =>
+                  keywordUsedInText(word, nextValue),
+                )
+              ) {
+                setMissingWords(false);
+              }
               patch({ status: 'attempted' });
             }}
           />
+          {missingWords ? (
+            <p className="keyword-missing" role="status">
+              Teikumā vēl jāiesaista visi vārdi.
+            </p>
+          ) : null}
         </>
       )}
 

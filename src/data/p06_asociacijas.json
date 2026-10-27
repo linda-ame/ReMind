@@ -120,55 +120,16 @@
       ]
     },
     {
-      "id": "as-brand-p01-010",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 2,
-      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "Maxima",
-      "exampleAssociations": [
-        "pārtikas veikals",
-        "pārtika",
-        "iepirkšanās"
-      ]
-    },
-    {
-      "id": "as-brand-p01-011",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 2,
-      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "Lidl",
-      "exampleAssociations": [
-        "pārtikas veikals",
-        "pārtika",
-        "iepirkšanās"
-      ]
-    },
-    {
       "id": "as-brand-p01-012",
       "type": "brand_association",
       "contentVersion": 1,
       "difficulty": 3,
       "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "Ķekava",
+      "brand": "Ķekavas",
       "exampleAssociations": [
         "vistas gaļa",
         "vista",
         "gaļas produkti"
-      ]
-    },
-    {
-      "id": "as-brand-p01-013",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 2,
-      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "DEPO",
-      "exampleAssociations": [
-        "būvmateriāli",
-        "remonts",
-        "instrumenti"
       ]
     },
     {
@@ -182,32 +143,6 @@
         "mēbeles",
         "skapis",
         "interjers"
-      ]
-    },
-    {
-      "id": "as-brand-p01-015",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 3,
-      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "JYSK",
-      "exampleAssociations": [
-        "matracis",
-        "gultasveļa",
-        "mēbeles"
-      ]
-    },
-    {
-      "id": "as-brand-p01-016",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 2,
-      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "Drogas",
-      "exampleAssociations": [
-        "kosmētika",
-        "šampūns",
-        "kopšanas līdzekļi"
       ]
     },
     {
@@ -351,19 +286,6 @@
         "kurjers",
         "paciņa",
         "piegāde"
-      ]
-    },
-    {
-      "id": "as-brand-p01-028",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 2,
-      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "Latvijas Pasts",
-      "exampleAssociations": [
-        "vēstule",
-        "pastmarka",
-        "sūtījums"
       ]
     },
     {
@@ -731,19 +653,6 @@
       ]
     },
     {
-      "id": "as-brand-p01-057",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 3,
-      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "Zara",
-      "exampleAssociations": [
-        "drēbes",
-        "apģērbs",
-        "mode"
-      ]
-    },
-    {
       "id": "as-brand-p01-058",
       "type": "brand_association",
       "contentVersion": 1,
@@ -793,19 +702,6 @@
         "spēles",
         "konsole",
         "datorspēles"
-      ]
-    },
-    {
-      "id": "as-brand-p01-062",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 2,
-      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "AliExpress",
-      "exampleAssociations": [
-        "interneta veikals",
-        "pasūtījums",
-        "Ķīna"
       ]
     },
     {
@@ -879,7 +775,7 @@
       "contentVersion": 1,
       "difficulty": 2,
       "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "Skrīveru saldumi",
+      "brand": "Skrīveri",
       "exampleAssociations": [
         "gotiņa",
         "konfektes",
@@ -897,32 +793,6 @@
         "maize",
         "kūka",
         "bulciņa"
-      ]
-    },
-    {
-      "id": "as-brand-p01-070",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 2,
-      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "ss.com",
-      "exampleAssociations": [
-        "sludinājumi",
-        "auto",
-        "dzīvoklis"
-      ]
-    },
-    {
-      "id": "as-brand-p01-071",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 3,
-      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "Draugiem.lv",
-      "exampleAssociations": [
-        "sociālais tīkls",
-        "profils",
-        "foto"
       ]
     },
     {
@@ -965,19 +835,6 @@
       ]
     },
     {
-      "id": "as-brand-p01-075",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 2,
-      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "Rīgas satiksme",
-      "exampleAssociations": [
-        "autobuss",
-        "tramvajs",
-        "e-talons"
-      ]
-    },
-    {
       "id": "as-brand-p01-076",
       "type": "brand_association",
       "contentVersion": 1,
@@ -1009,37 +866,11 @@
       "contentVersion": 1,
       "difficulty": 2,
       "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "Mēness aptieka",
+      "brand": "Mēness",
       "exampleAssociations": [
         "aptieka",
         "zāles",
         "vitamīni"
-      ]
-    },
-    {
-      "id": "as-brand-p01-079",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 3,
-      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "Elkor",
-      "exampleAssociations": [
-        "elektronika",
-        "sadzīves tehnika",
-        "televizors"
-      ]
-    },
-    {
-      "id": "as-brand-p01-080",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 3,
-      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "Lux Express",
-      "exampleAssociations": [
-        "autobuss",
-        "biļete",
-        "ceļojums"
       ]
     },
     {
@@ -1151,15 +982,6 @@
       "exampleAssociations": ["salas"]
     },
     {
-      "id": "as-name-p01-013",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 3,
-      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
-      "brand": "Baleāru …",
-      "exampleAssociations": ["salas"]
-    },
-    {
       "id": "as-name-p01-014",
       "type": "brand_association",
       "contentVersion": 1,
@@ -1184,42 +1006,6 @@
       "difficulty": 2,
       "instruction": "Pabeidz šo pazīstamo nosaukumu.",
       "brand": "Amazones …",
-      "exampleAssociations": ["upe"]
-    },
-    {
-      "id": "as-name-p01-017",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 2,
-      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
-      "brand": "Daugavas …",
-      "exampleAssociations": ["upe"]
-    },
-    {
-      "id": "as-name-p01-018",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 2,
-      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
-      "brand": "Gaujas …",
-      "exampleAssociations": ["upe"]
-    },
-    {
-      "id": "as-name-p01-019",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 2,
-      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
-      "brand": "Volgas …",
-      "exampleAssociations": ["upe"]
-    },
-    {
-      "id": "as-name-p01-020",
-      "type": "brand_association",
-      "contentVersion": 1,
-      "difficulty": 2,
-      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
-      "brand": "Donavas …",
       "exampleAssociations": ["upe"]
     },
     {

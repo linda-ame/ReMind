@@ -27,7 +27,7 @@ export function normalizeClock(raw: string): string | null {
   return `${String(hour).padStart(2, '0')}:${match[2]}`;
 }
 
-function fieldMatches(field: MemoryFactField, raw: string): boolean {
+export function fieldMatches(field: MemoryFactField, raw: string): boolean {
   const clock = normalizeClock(raw);
   const text = normText(raw);
   return field.acceptedAnswers.some((accepted) => {

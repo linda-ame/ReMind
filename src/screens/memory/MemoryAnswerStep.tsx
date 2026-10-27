@@ -2,8 +2,13 @@ import { useEffect, useRef, useState } from 'react';
 import { AnswerField } from '../../components/AnswerField';
 import { Button } from '../../components/Button';
 import type { MemoryDraft, MemoryRecallTask } from '../../types/memory';
+import type { AnswerInputFeedback } from '../../utils/answers';
 import { playCorrectChime, playWrongBuzz } from '../../utils/answerFeedback';
-import type { MemorySubmitKind } from '../../utils/memoryScore';
+import {
+  fieldMatches,
+  scoreMemoryDraft,
+  type MemorySubmitKind,
+} from '../../utils/memoryScore';
 
 interface Props {
   task: MemoryRecallTask;
@@ -36,6 +41,16 @@ export function MemoryAnswerStep({
     onSubmit('submit');
   };
 
+  const [checked, setChecked] = useState(false);
+
+  const checkAnswer = (nextDraft: MemoryDraft) => {
+    setChecked(true);
+    const scored = scoreMemoryDraft(task, nextDraft, 'submit');
+    if (!scored.freeScore) return;
+    if (scored.freeScore.exact) playCorrectChime();
+    else playWrongBuzz();
+  };
+
   const reveal = () => {
     onDraft((current) => {
       if (task.answer.kind !== 'facts') {
@@ -59,15 +74,23 @@ export function MemoryAnswerStep({
       {task.answer.kind === 'ordered_digits' ||
       task.answer.kind === 'unordered_list' ? (
         <RecallField
+          task={task}
           draft={draft}
           readOnly={revealed}
+          checked={checked}
           onDraft={onDraft}
-          onConfirm={confirm}
+          onCheck={checkAnswer}
         />
       ) : null}
 
       {task.answer.kind === 'facts' ? (
-        <FactFields task={task} draft={draft} onDraft={onDraft} onConfirm={confirm} />
+        <FactFields
+          task={task}
+          draft={draft}
+          checked={checked}
+          onDraft={onDraft}
+          onCheck={checkAnswer}
+        />
       ) : null}
 
       {draft.recognitionOpen ? (
@@ -87,9 +110,16 @@ export function MemoryAnswerStep({
           </Button>
         </div>
       ) : (
-        <Button variant="secondary" onClick={openRecognition}>
-          Parādīt variantus
-        </Button>
+        <div className="memory-actions">
+          {checked ? (
+            <Button variant="primary" onClick={confirm}>
+              Tālāk
+            </Button>
+          ) : null}
+          <Button variant="secondary" onClick={openRecognition}>
+            Parādīt variantus
+          </Button>
+        </div>
       )}
 
       {draft.recognitionOpen && revealed ? (
@@ -117,16 +147,31 @@ export function MemoryAnswerStep({
   );
 }
 
+function recallTone(
+  task: MemoryRecallTask,
+  draft: MemoryDraft,
+  checked: boolean,
+): AnswerInputFeedback | null {
+  if (!checked) return null;
+  const scored = scoreMemoryDraft(task, draft, 'submit');
+  if (!scored.freeScore) return 'unevaluable';
+  return scored.freeScore.exact ? 'correct' : 'incorrect';
+}
+
 function RecallField({
+  task,
   draft,
   readOnly,
+  checked,
   onDraft,
-  onConfirm,
+  onCheck,
 }: {
+  task: MemoryRecallTask;
   draft: MemoryDraft;
   readOnly: boolean;
+  checked: boolean;
   onDraft: (recipe: (draft: MemoryDraft) => MemoryDraft) => void;
-  onConfirm: () => void;
+  onCheck: (draft: MemoryDraft) => void;
 }) {
   return (
     <AnswerField
@@ -136,24 +181,40 @@ function RecallField({
       placeholder="Ierakstiet vai ierunājiet atbildi…"
       autoFocus
       readOnly={readOnly}
+      feedback={recallTone(task, draft, checked)}
       onChange={(value) =>
         onDraft((current) => ({ ...current, pendingItem: value }))
       }
-      onSubmit={onConfirm}
+      onSubmit={(text) => onCheck({ ...draft, pendingItem: text })}
     />
   );
+}
+
+function factTone(
+  task: MemoryRecallTask,
+  draft: MemoryDraft,
+  key: string,
+  checked: boolean,
+): AnswerInputFeedback | null {
+  if (!checked || task.answer.kind !== 'facts') return null;
+  const field = task.answer.fields.find((item) => item.key === key);
+  const raw = draft.facts[key] ?? '';
+  if (!field || !raw.trim()) return 'unevaluable';
+  return fieldMatches(field, raw) ? 'correct' : 'incorrect';
 }
 
 function FactFields({
   task,
   draft,
+  checked,
   onDraft,
-  onConfirm,
+  onCheck,
 }: {
   task: MemoryRecallTask;
   draft: MemoryDraft;
+  checked: boolean;
   onDraft: (recipe: (draft: MemoryDraft) => MemoryDraft) => void;
-  onConfirm: () => void;
+  onCheck: (draft: MemoryDraft) => void;
 }) {
   if (task.answer.kind !== 'facts') return null;
   const fields = task.answer.fields;
@@ -170,16 +231,21 @@ function FactFields({
           placeholder="Ierakstiet vai ierunājiet atbildi…"
           autoFocus={index === 0}
           readOnly={revealedKeys.has(field.key)}
+          feedback={factTone(task, draft, field.key, checked)}
           onChange={(next) =>
             onDraft((current) => ({
               ...current,
               facts: { ...current.facts, [field.key]: next },
             }))
           }
-          onSubmit={() => {
+          onSubmit={(text) => {
+            const nextDraft: MemoryDraft = {
+              ...draft,
+              facts: { ...draft.facts, [field.key]: text },
+            };
             const next = fields[index + 1];
             if (!next) {
-              onConfirm();
+              onCheck(nextDraft);
               return;
             }
             document.getElementById(`memory-fact-${next.key}`)?.focus();

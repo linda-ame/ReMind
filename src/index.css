@@ -2188,10 +2188,11 @@ input:focus-visible {
 .answer-dictate-btn {
   flex: 0 0 auto;
   align-self: stretch;
-  min-width: 6.5rem;
+  min-width: 7.4rem;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
   font-weight: 700;
+  white-space: nowrap;
 }
 
 /* Ierunāt = warm green (speak in); distinct from Klausīties blue */
@@ -2231,6 +2232,57 @@ input:focus-visible {
 
 .app-shell.high-contrast .answer-dictate-status {
   color: #000;
+}
+
+.mic-permission-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(17, 17, 17, 0.45);
+}
+
+.mic-permission-card {
+  width: min(100%, 26rem);
+  background: #fff;
+  color: #111;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.15rem 1rem 1rem;
+  box-shadow: var(--shadow-soft);
+  text-align: center;
+}
+
+.mic-permission-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.25em;
+  font-weight: 700;
+}
+
+.mic-permission-text {
+  margin: 0 0 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.mic-permission-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.app-shell.high-contrast .mic-permission-backdrop {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.app-shell.high-contrast .mic-permission-card {
+  background: #fff;
+  color: #000;
+  border: 3px solid #000;
+  box-shadow: none;
 }
 
 .listen-row {
@@ -3038,6 +3090,17 @@ input:focus-visible {
   line-height: 1.2;
 }
 
+.keyword-chip-used {
+  background: #d9efe8;
+  border-color: #1a4d45;
+}
+
+.keyword-missing {
+  margin: 0.15rem 0 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+
 .sentence-free-input {
   min-height: 7.5rem;
   resize: none;
@@ -3137,6 +3200,7 @@ input:focus-visible {
 
 .app-shell.high-contrast .sentence-slot-locked,
 .app-shell.high-contrast .keyword-chip,
+.app-shell.high-contrast .keyword-chip-used,
 .app-shell.high-contrast .task-example,
 .app-shell.high-contrast .task-feedback-ok,
 .app-shell.high-contrast .task-feedback-miss,
@@ -3145,6 +3209,11 @@ input:focus-visible {
   background: #fff;
   border-color: #000;
   color: #000;
+}
+
+.app-shell.high-contrast .keyword-chip-used {
+  background: #000;
+  color: #fff;
 }
 
 @media (min-width: 768px) {
