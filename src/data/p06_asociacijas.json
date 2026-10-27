@@ -83,10 +83,10 @@
     {
       "id": "as-brand-p01-007",
       "type": "brand_association",
-      "contentVersion": 1,
+      "contentVersion": 2,
       "difficulty": 2,
       "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
-      "brand": "Ādažu Čipsi",
+      "brand": "Ādažu",
       "exampleAssociations": [
         "čipsi",
         "uzkodas",
