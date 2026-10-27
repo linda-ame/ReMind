@@ -12,7 +12,10 @@ export type TaskType =
   | 'odd_one_out'
   | 'antonym'
   | 'definition_guess'
-  | 'sentence_image_match';
+  | 'sentence_image_match'
+  | 'sentence_creation'
+  | 'spelling_check'
+  | 'brand_association';
 
 /** Reading question: answer stated in text vs inferred. */
 export type ReadingQuestionType = 'direct' | 'inference';
@@ -174,6 +177,43 @@ export interface DefinitionGuessTask extends BaseTask {
   clueStyle?: 'keywords';
 }
 
+/**
+ * Build one sentence. No automatic right/wrong — many Latvian sentences fit.
+ * `fixed_word_position`: exactly four slots, one locked.
+ * `include_keywords`: free sentence that uses every given word (inflection allowed).
+ */
+export interface SentenceCreationTask extends BaseTask {
+  type: 'sentence_creation';
+  mode: 'fixed_word_position' | 'include_keywords';
+  /** Example only; shown on request and never written over the learner’s text. */
+  modelSentence: string;
+  /** Locked word when mode is fixed_word_position. */
+  fixedWord?: string;
+  /** 0-based slot of `fixedWord` (always four slots). */
+  fixedPosition?: 0 | 1 | 2 | 3;
+  slotCount?: 4;
+  /** Words to include when mode is include_keywords. */
+  keywords?: string[];
+}
+
+/**
+ * Name one association with a brand. `exampleAssociations` are illustrations,
+ * not an exclusive answer key — other words can also fit.
+ */
+export interface BrandAssociationTask extends BaseTask {
+  type: 'brand_association';
+  brand: string;
+  exampleAssociations: string[];
+}
+
+/** Judge whether a shown word is spelled correctly; if not, write the right form. */
+export interface SpellingCheckTask extends BaseTask {
+  type: 'spelling_check';
+  shownWord: string;
+  isCorrect: boolean;
+  correctWord: string;
+}
+
 /** One sentence; pick the matching image among four options. */
 export interface SentenceImageMatchTask extends BaseTask {
   type: 'sentence_image_match';
@@ -198,7 +238,10 @@ export type Task =
   | OddOneOutTask
   | AntonymTask
   | DefinitionGuessTask
-  | SentenceImageMatchTask;
+  | SentenceImageMatchTask
+  | SentenceCreationTask
+  | SpellingCheckTask
+  | BrandAssociationTask;
 
 export interface TaskPack {
   schemaVersion: number;

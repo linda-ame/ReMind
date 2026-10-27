@@ -35,6 +35,9 @@ import { OddOneOutTaskView } from './task/OddOneOutTaskView';
 import { AntonymTaskView } from './task/AntonymTaskView';
 import { DefinitionGuessTaskView } from './task/DefinitionGuessTaskView';
 import { SentenceImageMatchTaskView } from './task/SentenceImageMatchTaskView';
+import { SentenceCreationTaskView } from './task/SentenceCreationTaskView';
+import { SpellingCheckTaskView } from './task/SpellingCheckTaskView';
+import { BrandAssociationTaskView } from './task/BrandAssociationTaskView';
 
 interface TaskScreenProps {
   taskId: string;
@@ -153,13 +156,19 @@ export function TaskScreen({
   const isWordChoice = task.type === 'word_choice';
   const isOddOneOut = task.type === 'odd_one_out';
   const isReading = task.type === 'reading_comprehension';
+  const isSentenceCreation = task.type === 'sentence_creation';
+  const isSpellingCheck = task.type === 'spelling_check';
+  const isBrandAssociation = task.type === 'brand_association';
   /** Same as existing choice / reading sections — no footer self-assessment. */
   const skipSelfAssessment =
     !SELF_ASSESSMENT_ENABLED ||
     isWordReading ||
     isWordChoice ||
     isOddOneOut ||
-    isReading;
+    isReading ||
+    isSentenceCreation ||
+    isSpellingCheck ||
+    isBrandAssociation;
   const ratedAssessment =
     SELF_ASSESSMENT_ENABLED &&
     attempt.selfAssessment != null &&
@@ -554,6 +563,33 @@ export function TaskScreen({
           )}
           {task.type === 'sentence_image_match' && (
             <SentenceImageMatchTaskView
+              key={task.id}
+              task={task}
+              attempt={attempt}
+              onUpdate={onUpdate}
+              readOnly={isView}
+            />
+          )}
+          {task.type === 'sentence_creation' && (
+            <SentenceCreationTaskView
+              key={task.id}
+              task={task}
+              attempt={attempt}
+              onUpdate={onUpdate}
+              readOnly={isView}
+            />
+          )}
+          {task.type === 'spelling_check' && (
+            <SpellingCheckTaskView
+              key={task.id}
+              task={task}
+              attempt={attempt}
+              onUpdate={onUpdate}
+              readOnly={isView}
+            />
+          )}
+          {task.type === 'brand_association' && (
+            <BrandAssociationTaskView
               key={task.id}
               task={task}
               attempt={attempt}

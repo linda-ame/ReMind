@@ -1,0 +1,1772 @@
+{
+  "schemaVersion": 2,
+  "title": "ReMind P05 — teikumu veidošana un pareizrakstība",
+  "tasks": [
+    {
+      "id": "cr-p05-fix-001",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "Sieviete",
+      "fixedPosition": 0,
+      "slotCount": 4,
+      "modelSentence": "Sieviete pārbauda vilciena sarakstu."
+    },
+    {
+      "id": "cr-p05-fix-002",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "Vilciens",
+      "fixedPosition": 0,
+      "slotCount": 4,
+      "modelSentence": "Vilciens pienāca desmitos vakarā."
+    },
+    {
+      "id": "cr-p05-fix-003",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "Ārsts",
+      "fixedPosition": 0,
+      "slotCount": 4,
+      "modelSentence": "Ārsts izskaidroja izmeklējuma rezultātus."
+    },
+    {
+      "id": "cr-p05-fix-004",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "Apmeklētāji",
+      "fixedPosition": 0,
+      "slotCount": 4,
+      "modelSentence": "Apmeklētāji gaidīja autobusu pieturā."
+    },
+    {
+      "id": "cr-p05-fix-005",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "Mākslinieks",
+      "fixedPosition": 0,
+      "slotCount": 4,
+      "modelSentence": "Mākslinieks restaurēja vecu gleznu."
+    },
+    {
+      "id": "cr-p05-fix-006",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "Vadītājs",
+      "fixedPosition": 0,
+      "slotCount": 4,
+      "modelSentence": "Vadītājs pārbaudīja riepu spiedienu."
+    },
+    {
+      "id": "cr-p05-fix-007",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "Līgums",
+      "fixedPosition": 0,
+      "slotCount": 4,
+      "modelSentence": "Līgums stājās spēkā vakar."
+    },
+    {
+      "id": "cr-p05-fix-008",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "Bibliotēka",
+      "fixedPosition": 0,
+      "slotCount": 4,
+      "modelSentence": "Bibliotēka rīt būs slēgta."
+    },
+    {
+      "id": "cr-p05-fix-009",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "Lietus",
+      "fixedPosition": 0,
+      "slotCount": 4,
+      "modelSentence": "Lietus apgrūtināja rīta satiksmi."
+    },
+    {
+      "id": "cr-p05-fix-010",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "Pētnieks",
+      "fixedPosition": 0,
+      "slotCount": 4,
+      "modelSentence": "Pētnieks salīdzināja iegūtos rezultātus."
+    },
+    {
+      "id": "cr-p05-fix-011",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "atcēla",
+      "fixedPosition": 1,
+      "slotCount": 4,
+      "modelSentence": "Rīkotāji atcēla vakara koncertu."
+    },
+    {
+      "id": "cr-p05-fix-012",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "pārbaudīja",
+      "fixedPosition": 1,
+      "slotCount": 4,
+      "modelSentence": "Mehāniķis pārbaudīja automašīnas bremzes."
+    },
+    {
+      "id": "cr-p05-fix-013",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "izvēlējās",
+      "fixedPosition": 1,
+      "slotCount": 4,
+      "modelSentence": "Klients izvēlējās izdevīgāko piedāvājumu."
+    },
+    {
+      "id": "cr-p05-fix-014",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "pamanīja",
+      "fixedPosition": 1,
+      "slotCount": 4,
+      "modelSentence": "Autovadītājs pamanīja bojātu luksoforu."
+    },
+    {
+      "id": "cr-p05-fix-015",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "atcerējās",
+      "fixedPosition": 1,
+      "slotCount": 4,
+      "modelSentence": "Mārtiņš atcerējās ārsta ieteikumu."
+    },
+    {
+      "id": "cr-p05-fix-016",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "pārvietoja",
+      "fixedPosition": 1,
+      "slotCount": 4,
+      "modelSentence": "Strādnieki pārvietoja smagos galdus."
+    },
+    {
+      "id": "cr-p05-fix-017",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "uzrakstīja",
+      "fixedPosition": 1,
+      "slotCount": 4,
+      "modelSentence": "Sieviete uzrakstīja īsu iesniegumu."
+    },
+    {
+      "id": "cr-p05-fix-018",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "salīdzināja",
+      "fixedPosition": 1,
+      "slotCount": 4,
+      "modelSentence": "Pircējs salīdzināja divas cenas."
+    },
+    {
+      "id": "cr-p05-fix-019",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "paziņoja",
+      "fixedPosition": 1,
+      "slotCount": 4,
+      "modelSentence": "Skolotāja paziņoja eksāmena rezultātus."
+    },
+    {
+      "id": "cr-p05-fix-020",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "izskaidroja",
+      "fixedPosition": 1,
+      "slotCount": 4,
+      "modelSentence": "Gids izskaidroja pilsētas vēsturi."
+    },
+    {
+      "id": "cr-p05-fix-021",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "pēc",
+      "fixedPosition": 2,
+      "slotCount": 4,
+      "modelSentence": "Autobuss ieradās pēc pusstundas."
+    },
+    {
+      "id": "cr-p05-fix-022",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "iepriekš",
+      "fixedPosition": 2,
+      "slotCount": 4,
+      "modelSentence": "Jānis biļetes iepriekš rezervēja."
+    },
+    {
+      "id": "cr-p05-fix-023",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "precīzi",
+      "fixedPosition": 2,
+      "slotCount": 4,
+      "modelSentence": "Meistars detaļas precīzi izmērīja."
+    },
+    {
+      "id": "cr-p05-fix-024",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "pulksten",
+      "fixedPosition": 2,
+      "slotCount": 4,
+      "modelSentence": "Vilciens atiet pulksten sešos."
+    },
+    {
+      "id": "cr-p05-fix-025",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "jaunu",
+      "fixedPosition": 2,
+      "slotCount": 4,
+      "modelSentence": "Uzņēmums iegādājās jaunu aprīkojumu."
+    },
+    {
+      "id": "cr-p05-fix-026",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "iepriekšējo",
+      "fixedPosition": 2,
+      "slotCount": 4,
+      "modelSentence": "Komisija izvērtēja iepriekšējo priekšlikumu."
+    },
+    {
+      "id": "cr-p05-fix-027",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "pamatīgi",
+      "fixedPosition": 2,
+      "slotCount": 4,
+      "modelSentence": "Meistars grīdu pamatīgi notīrīja."
+    },
+    {
+      "id": "cr-p05-fix-028",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "īpaši",
+      "fixedPosition": 2,
+      "slotCount": 4,
+      "modelSentence": "Tēja šodien īpaši smaržo."
+    },
+    {
+      "id": "cr-p05-fix-029",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "atkal",
+      "fixedPosition": 2,
+      "slotCount": 4,
+      "modelSentence": "Vilciens vakar atkal kavējās."
+    },
+    {
+      "id": "cr-p05-fix-030",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "daudz",
+      "fixedPosition": 2,
+      "slotCount": 4,
+      "modelSentence": "Eksperts atrada daudz kļūdu."
+    },
+    {
+      "id": "cr-p05-fix-031",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "nokavēja",
+      "fixedPosition": 3,
+      "slotCount": 4,
+      "modelSentence": "Pasažieri pēdējo vilcienu nokavēja."
+    },
+    {
+      "id": "cr-p05-fix-032",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "piedāvājumu",
+      "fixedPosition": 3,
+      "slotCount": 4,
+      "modelSentence": "Uzņēmums izvērtēja jauno piedāvājumu."
+    },
+    {
+      "id": "cr-p05-fix-033",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "nepieciešama",
+      "fixedPosition": 3,
+      "slotCount": 4,
+      "modelSentence": "Šim projektam palīdzība nepieciešama."
+    },
+    {
+      "id": "cr-p05-fix-034",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "atbildību",
+      "fixedPosition": 3,
+      "slotCount": 4,
+      "modelSentence": "Vadītājs uzņēmās pilnu atbildību."
+    },
+    {
+      "id": "cr-p05-fix-035",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "atšķiras",
+      "fixedPosition": 3,
+      "slotCount": 4,
+      "modelSentence": "Šie divi piedāvājumi atšķiras."
+    },
+    {
+      "id": "cr-p05-fix-036",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "apstiprināja",
+      "fixedPosition": 3,
+      "slotCount": 4,
+      "modelSentence": "Komisija jauno plānu apstiprināja."
+    },
+    {
+      "id": "cr-p05-fix-037",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "izdevīgi",
+      "fixedPosition": 3,
+      "slotCount": 4,
+      "modelSentence": "Uzņēmums iekārtas iegādājās izdevīgi."
+    },
+    {
+      "id": "cr-p05-fix-038",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "dokumentus",
+      "fixedPosition": 3,
+      "slotCount": 4,
+      "modelSentence": "Pirms tikšanās sagatavoja dokumentus."
+    },
+    {
+      "id": "cr-p05-fix-039",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "piektdien",
+      "fixedPosition": 3,
+      "slotCount": 4,
+      "modelSentence": "Sanāksme ir paredzēta piektdien."
+    },
+    {
+      "id": "cr-p05-fix-040",
+      "type": "sentence_creation",
+      "mode": "fixed_word_position",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Papildini četrus laukus, lai izveidotos teikums. Doto vārdu nepārvieto.",
+      "fixedWord": "iespējas",
+      "fixedPosition": 3,
+      "slotCount": 4,
+      "modelSentence": "Speciālisti apsprieda vairākas iespējas."
+    },
+    {
+      "id": "cr-p05-key-001",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "ārsts",
+        "izmeklējums"
+      ],
+      "modelSentence": "Ārsts pēc izmeklējuma pacientam izskaidroja rezultātus."
+    },
+    {
+      "id": "cr-p05-key-002",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "vilciens",
+        "kavēšanās"
+      ],
+      "modelSentence": "Vilciena kavēšanās dēļ sanāksme sākās vēlāk."
+    },
+    {
+      "id": "cr-p05-key-003",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "bibliotēka",
+        "grāmata"
+      ],
+      "modelSentence": "Bibliotēkā viņa atrada sen meklētu grāmatu."
+    },
+    {
+      "id": "cr-p05-key-004",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "tirgus",
+        "cena"
+      ],
+      "modelSentence": "Tirgū dārzeņu cenas šonedēļ bija zemākas."
+    },
+    {
+      "id": "cr-p05-key-005",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "automašīna",
+        "riepa"
+      ],
+      "modelSentence": "Mehāniķis automašīnai nomainīja nodilušo riepu."
+    },
+    {
+      "id": "cr-p05-key-006",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "pastaiga",
+        "laikapstākļi"
+      ],
+      "modelSentence": "Pastaiga izdevās patīkama, lai gan laikapstākļi bija vēsi."
+    },
+    {
+      "id": "cr-p05-key-007",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "upe",
+        "tilts"
+      ],
+      "modelSentence": "Pāri upei uzbūvēja jaunu tiltu."
+    },
+    {
+      "id": "cr-p05-key-008",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "avīze",
+        "raksts"
+      ],
+      "modelSentence": "Avīzē publicēja rakstu par vietējo uzņēmumu."
+    },
+    {
+      "id": "cr-p05-key-009",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "kafejnīca",
+        "satikšanās"
+      ],
+      "modelSentence": "Satikšanās kafejnīcā ilga gandrīz divas stundas."
+    },
+    {
+      "id": "cr-p05-key-010",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "autobuss",
+        "pietura"
+      ],
+      "modelSentence": "Autobuss pie pieturas apstājās tieši laikā."
+    },
+    {
+      "id": "cr-p05-key-011",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "dārzs",
+        "raža"
+      ],
+      "modelSentence": "Šogad dārzā izauga bagātīga raža."
+    },
+    {
+      "id": "cr-p05-key-012",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "vējš",
+        "lietussargs"
+      ],
+      "modelSentence": "Spēcīgais vējš salauza manu lietussargu."
+    },
+    {
+      "id": "cr-p05-key-013",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "aptieka",
+        "recepte"
+      ],
+      "modelSentence": "Aptiekā farmaceits pārbaudīja elektronisko recepti."
+    },
+    {
+      "id": "cr-p05-key-014",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "sacensības",
+        "medaļa"
+      ],
+      "modelSentence": "Sportists sacensībās ieguva sudraba medaļu."
+    },
+    {
+      "id": "cr-p05-key-015",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "rēķins",
+        "samaksāt"
+      ],
+      "modelSentence": "Pirms termiņa izdevās samaksāt elektrības rēķinu."
+    },
+    {
+      "id": "cr-p05-key-016",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "darbs",
+        "sapulce"
+      ],
+      "modelSentence": "Darbā sapulce ieilga līdz pusdienlaikam."
+    },
+    {
+      "id": "cr-p05-key-017",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "koncerts",
+        "biļete"
+      ],
+      "modelSentence": "Biļeti uz koncertu iegādājāmies jau pavasarī."
+    },
+    {
+      "id": "cr-p05-key-018",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "dzīvoklis",
+        "remonts"
+      ],
+      "modelSentence": "Dzīvoklī remonts ilga gandrīz mēnesi."
+    },
+    {
+      "id": "cr-p05-key-019",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "ūdens",
+        "krāns"
+      ],
+      "modelSentence": "No virtuves krāna tecēja auksts ūdens."
+    },
+    {
+      "id": "cr-p05-key-020",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "vēstule",
+        "pastkaste"
+      ],
+      "modelSentence": "Vēstuli iemetu pastkastē pie veikala."
+    },
+    {
+      "id": "cr-p05-key-021",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "kavēšanās",
+        "sanāksme",
+        "paskaidrojums"
+      ],
+      "modelSentence": "Kavēšanās dēļ viņš sanāksmē sniedza īsu paskaidrojumu."
+    },
+    {
+      "id": "cr-p05-key-022",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "pilsēta",
+        "karte",
+        "maršruts"
+      ],
+      "modelSentence": "Pirms pastaigas pa pilsētu viņa kartē izplānoja maršrutu."
+    },
+    {
+      "id": "cr-p05-key-023",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "ārsts",
+        "analīzes",
+        "atbilde"
+      ],
+      "modelSentence": "Ārsts analīžu atbildes izskaidroja nākamajā vizītē."
+    },
+    {
+      "id": "cr-p05-key-024",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "auto",
+        "serviss",
+        "bremzes"
+      ],
+      "modelSentence": "Auto servisā mehāniķis pārbaudīja bremzes."
+    },
+    {
+      "id": "cr-p05-key-025",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "darbs",
+        "grafiks",
+        "brīvdiena"
+      ],
+      "modelSentence": "Jaunajā darba grafikā bija paredzēta papildu brīvdiena."
+    },
+    {
+      "id": "cr-p05-key-026",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "meklēt",
+        "atslēga",
+        "soma"
+      ],
+      "modelSentence": "Soma bija tukša, tāpēc atslēgu nācās meklēt citur."
+    },
+    {
+      "id": "cr-p05-key-027",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "sniegs",
+        "ceļš",
+        "autobuss"
+      ],
+      "modelSentence": "Sniega dēļ ceļš bija slidens un autobuss kavējās."
+    },
+    {
+      "id": "cr-p05-key-028",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "pasūtījums",
+        "piegāde",
+        "adrese"
+      ],
+      "modelSentence": "Pasūtījuma piegāde aizkavējās nepareizi norādītas adreses dēļ."
+    },
+    {
+      "id": "cr-p05-key-029",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "intervija",
+        "darbs",
+        "pieredze"
+      ],
+      "modelSentence": "Darba intervijā viņa stāstīja par savu pieredzi."
+    },
+    {
+      "id": "cr-p05-key-030",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "krāsns",
+        "maize",
+        "smarža"
+      ],
+      "modelSentence": "No krāsns nāca svaigi ceptas maizes smarža."
+    },
+    {
+      "id": "cr-p05-key-031",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "tālrunis",
+        "ziņa",
+        "tikšanās"
+      ],
+      "modelSentence": "Tālrunī pienāca ziņa par pārceltu tikšanos."
+    },
+    {
+      "id": "cr-p05-key-032",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "māja",
+        "logs",
+        "vētra"
+      ],
+      "modelSentence": "Vētras laikā mājas logs tika sabojāts."
+    },
+    {
+      "id": "cr-p05-key-033",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "lasīt",
+        "raksts",
+        "žurnāls"
+      ],
+      "modelSentence": "Vakar žurnālā lasīju interesantu rakstu."
+    },
+    {
+      "id": "cr-p05-key-034",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "plāns",
+        "nauda",
+        "ceļojums"
+      ],
+      "modelSentence": "Ceļojuma plānu nācās mainīt, jo pietrūka naudas."
+    },
+    {
+      "id": "cr-p05-key-035",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "sezona",
+        "augļi",
+        "tirgus"
+      ],
+      "modelSentence": "Sezonas augļi tirgū bija īpaši svaigi."
+    },
+    {
+      "id": "cr-p05-key-036",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "bērns",
+        "velosipēds",
+        "ķivere"
+      ],
+      "modelSentence": "Bērns pirms brauciena ar velosipēdu uzvilka ķiveri."
+    },
+    {
+      "id": "cr-p05-key-037",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "satiksme",
+        "negadījums",
+        "apvedceļš"
+      ],
+      "modelSentence": "Satiksmes negadījuma dēļ autovadītāji izvēlējās apvedceļu."
+    },
+    {
+      "id": "cr-p05-key-038",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "vēsture",
+        "muzejs",
+        "izstāde"
+      ],
+      "modelSentence": "Muzejā atvēra izstādi par pilsētas vēsturi."
+    },
+    {
+      "id": "cr-p05-key-039",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "kafija",
+        "vakars",
+        "miegs"
+      ],
+      "modelSentence": "Vakarā izdzertā kafija traucēja manam miegam."
+    },
+    {
+      "id": "cr-p05-key-040",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "lēmums",
+        "informācija",
+        "sapulce"
+      ],
+      "modelSentence": "Sapulcē pieņēma lēmumu pēc informācijas izvērtēšanas."
+    },
+    {
+      "id": "cr-p05-key-041",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "sports",
+        "trauma",
+        "treniņš"
+      ],
+      "modelSentence": "Sporta treniņu nācās pārtraukt negaidītas traumas dēļ."
+    },
+    {
+      "id": "cr-p05-key-042",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "aplikācija",
+        "uzdevums",
+        "progress"
+      ],
+      "modelSentence": "Aplikācija saglabā katra uzdevuma izpildes progresu."
+    },
+    {
+      "id": "cr-p05-key-043",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "suns",
+        "pastaiga",
+        "lietus"
+      ],
+      "modelSentence": "Neskatoties uz lietu, suns pastaigas laikā priecīgi skraidīja."
+    },
+    {
+      "id": "cr-p05-key-044",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "rīts",
+        "plānot",
+        "diena"
+      ],
+      "modelSentence": "Viņa mēdz plānot dienu jau no rīta."
+    },
+    {
+      "id": "cr-p05-key-045",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "uzņēmums",
+        "līgums",
+        "termiņš",
+        "piegāde"
+      ],
+      "modelSentence": "Uzņēmums līgumā precizēja piegādes termiņu."
+    },
+    {
+      "id": "cr-p05-key-046",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "lidosta",
+        "pase",
+        "reiss",
+        "kavēšanās"
+      ],
+      "modelSentence": "Lidostā viņa pārbaudīja pasi, kamēr tablo rādīja reisa kavēšanos."
+    },
+    {
+      "id": "cr-p05-key-047",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "ārsts",
+        "recepte",
+        "aptieka",
+        "zāles"
+      ],
+      "modelSentence": "Pēc ārsta vizītes ar recepti aptiekā iegādājos zāles."
+    },
+    {
+      "id": "cr-p05-key-048",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "pilsēta",
+        "remonts",
+        "satiksme",
+        "autobuss"
+      ],
+      "modelSentence": "Pilsētas ielu remonts apgrūtināja satiksmi, tāpēc autobuss kavējās."
+    },
+    {
+      "id": "cr-p05-key-049",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "bibliotēka",
+        "pētnieks",
+        "raksts",
+        "avots"
+      ],
+      "modelSentence": "Bibliotēkā pētnieks rakstam meklēja uzticamus avotus."
+    },
+    {
+      "id": "cr-p05-key-050",
+      "type": "sentence_creation",
+      "mode": "include_keywords",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Iesaisti visus dotos vārdus vienā teikumā. Vārdu galotnes drīkst mainīt.",
+      "keywords": [
+        "sacensības",
+        "rezultāts",
+        "treneris",
+        "analīze"
+      ],
+      "modelSentence": "Pēc sacensībām treneris veica rezultātu analīzi."
+    },
+    {
+      "id": "sp-p01-001",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "neatkariba",
+      "isCorrect": false,
+      "correctWord": "neatkarība"
+    },
+    {
+      "id": "sp-p01-002",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "attiecības",
+      "isCorrect": true,
+      "correctWord": "attiecības"
+    },
+    {
+      "id": "sp-p01-003",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "parsteigums",
+      "isCorrect": false,
+      "correctWord": "pārsteigums"
+    },
+    {
+      "id": "sp-p01-004",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "sabiedrība",
+      "isCorrect": true,
+      "correctWord": "sabiedrība"
+    },
+    {
+      "id": "sp-p01-005",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "lidzsvars",
+      "isCorrect": false,
+      "correctWord": "līdzsvars"
+    },
+    {
+      "id": "sp-p01-006",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "pēcpusdiena",
+      "isCorrect": true,
+      "correctWord": "pēcpusdiena"
+    },
+    {
+      "id": "sp-p01-007",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "piedzivojums",
+      "isCorrect": false,
+      "correctWord": "piedzīvojums"
+    },
+    {
+      "id": "sp-p01-008",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "automašīna",
+      "isCorrect": true,
+      "correctWord": "automašīna"
+    },
+    {
+      "id": "sp-p01-009",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "uznemējs",
+      "isCorrect": false,
+      "correctWord": "uzņēmējs"
+    },
+    {
+      "id": "sp-p01-010",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "izlēmīgs",
+      "isCorrect": true,
+      "correctWord": "izlēmīgs"
+    },
+    {
+      "id": "sp-p01-011",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "atziniba",
+      "isCorrect": false,
+      "correctWord": "atzinība"
+    },
+    {
+      "id": "sp-p01-012",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "izdevība",
+      "isCorrect": true,
+      "correctWord": "izdevība"
+    },
+    {
+      "id": "sp-p01-013",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "rikojums",
+      "isCorrect": false,
+      "correctWord": "rīkojums"
+    },
+    {
+      "id": "sp-p01-014",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "piemērots",
+      "isCorrect": true,
+      "correctWord": "piemērots"
+    },
+    {
+      "id": "sp-p01-015",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "liekuligs",
+      "isCorrect": false,
+      "correctWord": "liekulīgs"
+    },
+    {
+      "id": "sp-p01-016",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "nokavēts",
+      "isCorrect": true,
+      "correctWord": "nokavēts"
+    },
+    {
+      "id": "sp-p01-017",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "nepieciesams",
+      "isCorrect": false,
+      "correctWord": "nepieciešams"
+    },
+    {
+      "id": "sp-p01-018",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "slēdziens",
+      "isCorrect": true,
+      "correctWord": "slēdziens"
+    },
+    {
+      "id": "sp-p01-019",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "pārdomats",
+      "isCorrect": false,
+      "correctWord": "pārdomāts"
+    },
+    {
+      "id": "sp-p01-020",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "pieteikums",
+      "isCorrect": true,
+      "correctWord": "pieteikums"
+    },
+    {
+      "id": "sp-p01-021",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "škērslis",
+      "isCorrect": false,
+      "correctWord": "šķērslis"
+    },
+    {
+      "id": "sp-p01-022",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "precizitāte",
+      "isCorrect": true,
+      "correctWord": "precizitāte"
+    },
+    {
+      "id": "sp-p01-023",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "specialists",
+      "isCorrect": false,
+      "correctWord": "speciālists"
+    },
+    {
+      "id": "sp-p01-024",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "izpratne",
+      "isCorrect": true,
+      "correctWord": "izpratne"
+    },
+    {
+      "id": "sp-p01-025",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "parsteidzošs",
+      "isCorrect": false,
+      "correctWord": "pārsteidzošs"
+    },
+    {
+      "id": "sp-p01-026",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "attālums",
+      "isCorrect": true,
+      "correctWord": "attālums"
+    },
+    {
+      "id": "sp-p01-027",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "nakotne",
+      "isCorrect": false,
+      "correctWord": "nākotne"
+    },
+    {
+      "id": "sp-p01-028",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "pārvietošanās",
+      "isCorrect": true,
+      "correctWord": "pārvietošanās"
+    },
+    {
+      "id": "sp-p01-029",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "apliecinajums",
+      "isCorrect": false,
+      "correctWord": "apliecinājums"
+    },
+    {
+      "id": "sp-p01-030",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "nepārprotams",
+      "isCorrect": true,
+      "correctWord": "nepārprotams"
+    },
+    {
+      "id": "sp-p01-031",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "atbildiba",
+      "isCorrect": false,
+      "correctWord": "atbildība"
+    },
+    {
+      "id": "sp-p01-032",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "sarežģīts",
+      "isCorrect": true,
+      "correctWord": "sarežģīts"
+    },
+    {
+      "id": "sp-p01-033",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "uzmānība",
+      "isCorrect": false,
+      "correctWord": "uzmanība"
+    },
+    {
+      "id": "sp-p01-034",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "neatlaidīgs",
+      "isCorrect": true,
+      "correctWord": "neatlaidīgs"
+    },
+    {
+      "id": "sp-p01-035",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "priekšrociba",
+      "isCorrect": false,
+      "correctWord": "priekšrocība"
+    },
+    {
+      "id": "sp-p01-036",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "pieredzējis",
+      "isCorrect": true,
+      "correctWord": "pieredzējis"
+    },
+    {
+      "id": "sp-p01-037",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "pārlieciba",
+      "isCorrect": false,
+      "correctWord": "pārliecība"
+    },
+    {
+      "id": "sp-p01-038",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "apstiprinājums",
+      "isCorrect": true,
+      "correctWord": "apstiprinājums"
+    },
+    {
+      "id": "sp-p01-039",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "izskaidroijums",
+      "isCorrect": false,
+      "correctWord": "izskaidrojums"
+    },
+    {
+      "id": "sp-p01-040",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "pārskatāms",
+      "isCorrect": true,
+      "correctWord": "pārskatāms"
+    },
+    {
+      "id": "sp-p01-041",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "akumulātors",
+      "isCorrect": false,
+      "correctWord": "akumulators"
+    },
+    {
+      "id": "sp-p01-042",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "apzinīgs",
+      "isCorrect": true,
+      "correctWord": "apzinīgs"
+    },
+    {
+      "id": "sp-p01-043",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "atjaunossana",
+      "isCorrect": false,
+      "correctWord": "atjaunošana"
+    },
+    {
+      "id": "sp-p01-044",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "ilgtermiņa",
+      "isCorrect": true,
+      "correctWord": "ilgtermiņa"
+    },
+    {
+      "id": "sp-p01-045",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "daudzveidigs",
+      "isCorrect": false,
+      "correctWord": "daudzveidīgs"
+    },
+    {
+      "id": "sp-p01-046",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "saskanīgs",
+      "isCorrect": true,
+      "correctWord": "saskanīgs"
+    },
+    {
+      "id": "sp-p01-047",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "mūsdienigs",
+      "isCorrect": false,
+      "correctWord": "mūsdienīgs"
+    },
+    {
+      "id": "sp-p01-048",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "atšķirīgs",
+      "isCorrect": true,
+      "correctWord": "atšķirīgs"
+    },
+    {
+      "id": "sp-p01-049",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "nepieejamiba",
+      "isCorrect": false,
+      "correctWord": "nepieejamība"
+    },
+    {
+      "id": "sp-p01-050",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "priecīgs",
+      "isCorrect": true,
+      "correctWord": "priecīgs"
+    },
+    {
+      "id": "sp-p01-051",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "neapmierinatība",
+      "isCorrect": false,
+      "correctWord": "neapmierinātība"
+    },
+    {
+      "id": "sp-p01-052",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "nepieciešamība",
+      "isCorrect": true,
+      "correctWord": "nepieciešamība"
+    },
+    {
+      "id": "sp-p01-053",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "izmēģinajums",
+      "isCorrect": false,
+      "correctWord": "izmēģinājums"
+    },
+    {
+      "id": "sp-p01-054",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "izglītība",
+      "isCorrect": true,
+      "correctWord": "izglītība"
+    },
+    {
+      "id": "sp-p01-055",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "pārmaīņas",
+      "isCorrect": false,
+      "correctWord": "pārmaiņas"
+    },
+    {
+      "id": "sp-p01-056",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "līdzdalība",
+      "isCorrect": true,
+      "correctWord": "līdzdalība"
+    },
+    {
+      "id": "sp-p01-057",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "uzticamiba",
+      "isCorrect": false,
+      "correctWord": "uzticamība"
+    },
+    {
+      "id": "sp-p01-058",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "izzināšana",
+      "isCorrect": true,
+      "correctWord": "izzināšana"
+    },
+    {
+      "id": "sp-p01-059",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "gatavošānās",
+      "isCorrect": false,
+      "correctWord": "gatavošanās"
+    },
+    {
+      "id": "sp-p01-060",
+      "type": "spelling_check",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosaki, vai vārds uzrakstīts pareizi. Ja nepareizi, uzraksti to pareizi.",
+      "shownWord": "izņēmums",
+      "isCorrect": true,
+      "correctWord": "izņēmums"
+    }
+  ]
+}

@@ -35,6 +35,14 @@ export function taskPromptText(task: Task): string {
       return task.description;
     case 'sentence_image_match':
       return task.prompt;
+    case 'sentence_creation':
+      return task.mode === 'include_keywords'
+        ? (task.keywords ?? []).join(', ')
+        : (task.fixedWord ?? task.modelSentence);
+    case 'spelling_check':
+      return task.shownWord;
+    case 'brand_association':
+      return task.brand;
   }
 }
 
@@ -71,6 +79,12 @@ export function expectedAnswerLabels(task: Task): string[] {
       const letter = String.fromCharCode(65 + task.correctIndex);
       return opt ? [`${letter}. variants`] : [];
     }
+    case 'sentence_creation':
+      return [task.modelSentence];
+    case 'spelling_check':
+      return [task.correctWord];
+    case 'brand_association':
+      return [...task.exampleAssociations];
   }
 }
 
@@ -149,6 +163,30 @@ export function enteredAnswerLabels(
       /* ignore */
     }
     return [raw];
+  }
+
+  if (task.type === 'sentence_creation' && task.mode === 'fixed_word_position') {
+    try {
+      const parsed: unknown = JSON.parse(raw);
+      if (Array.isArray(parsed)) {
+        const words = parsed.filter(
+          (x): x is string => typeof x === 'string' && x.trim() !== '',
+        );
+        return words.length > 0 ? [words.join(' ')] : [];
+      }
+    } catch {
+      /* plain text */
+    }
+    return [raw];
+  }
+
+  if (task.type === 'spelling_check') {
+    const stored = parseSpellingAnswer(raw);
+    if (!stored.choice) return [raw];
+    if (stored.choice === 'nepareizi' && stored.correction.trim()) {
+      return [`Nepareizi: ${stored.correction.trim()}`];
+    }
+    return [stored.choice === 'pareizi' ? 'Pareizi' : 'Nepareizi'];
   }
 
   if (
@@ -258,9 +296,44 @@ export function taskUsesPossibleAnswerLabel(
     type === 'sentence_completion_multi' ||
     type === 'antonym' ||
     type === 'definition_guess' ||
+    type === 'sentence_creation' ||
+    type === 'brand_association' ||
     type === 'reading_comprehension' ||
     type === 'reading_question'
   );
+}
+
+/** Compare a spelling correction: trim and case only — diacritics stay significant. */
+export function spellingWordsMatch(entered: string, correct: string): boolean {
+  return (
+    entered.trim().toLocaleLowerCase('lv-LV') ===
+    correct.trim().toLocaleLowerCase('lv-LV')
+  );
+}
+
+export type SpellingChoice = 'pareizi' | 'nepareizi';
+
+export function parseSpellingAnswer(raw: string | null | undefined): {
+  choice: SpellingChoice | null;
+  correction: string;
+} {
+  if (!raw) return { choice: null, correction: '' };
+  try {
+    const parsed: unknown = JSON.parse(raw);
+    if (parsed && typeof parsed === 'object' && !Array.isArray(parsed)) {
+      const record = parsed as { choice?: unknown; correction?: unknown };
+      const choice =
+        record.choice === 'pareizi' || record.choice === 'nepareizi'
+          ? record.choice
+          : null;
+      const correction =
+        typeof record.correction === 'string' ? record.correction : '';
+      return { choice, correction };
+    }
+  } catch {
+    /* legacy plain text */
+  }
+  return { choice: null, correction: '' };
 }
 
 /** Label above the answer key list (task UI + summaries). */
@@ -293,7 +366,11 @@ export function textMatchesAccepted(
 
 /** Types where the app can judge correct vs incorrect from the answer key. */
 export function taskHasObjectiveAnswer(task: Task): boolean {
-  return task.type !== 'word_reading';
+  return (
+    task.type !== 'word_reading' &&
+    task.type !== 'sentence_creation' &&
+    task.type !== 'brand_association'
+  );
 }
 
 /**
@@ -459,7 +536,20 @@ export function isAnswerCorrect(
     }
 
     case 'word_reading':
+    case 'sentence_creation':
+    case 'brand_association':
       return null;
+
+    case 'spelling_check': {
+      if (!attempt.viewedAnswers) return null;
+      const stored = parseSpellingAnswer(raw);
+      if (!stored.choice) return null;
+      const judgmentOk =
+        (stored.choice === 'pareizi') === task.isCorrect;
+      if (!judgmentOk) return false;
+      if (task.isCorrect) return true;
+      return spellingWordsMatch(stored.correction, task.correctWord);
+    }
   }
 }
 

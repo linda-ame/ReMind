@@ -126,5 +126,16 @@ function taskShortLabel(task: Task): string {
       return task.prompt.length > 48
         ? `${task.prompt.slice(0, 48)}…`
         : task.prompt;
+    case 'sentence_creation': {
+      const label =
+        task.mode === 'include_keywords'
+          ? (task.keywords ?? []).join(', ')
+          : (task.fixedWord ?? task.modelSentence);
+      return label.length > 48 ? `${label.slice(0, 48)}…` : label;
+    }
+    case 'spelling_check':
+      return task.shownWord;
+    case 'brand_association':
+      return task.brand;
   }
 }

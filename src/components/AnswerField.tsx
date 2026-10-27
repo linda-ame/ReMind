@@ -1,4 +1,4 @@
-import { useEffect, useRef, type RefObject } from 'react';
+import { useEffect, useRef, type KeyboardEvent, type RefObject } from 'react';
 import { useSpeechDictation } from '../hooks/useSpeechDictation';
 import type { AnswerInputFeedback } from '../utils/answers';
 import { Button } from './Button';
@@ -10,6 +10,7 @@ interface AnswerFieldProps {
   /**
    * Enter key, or final speech dictation result.
    * Use to reveal answers / give feedback. Value is the submitted text.
+   * A multiline field keeps Enter as a new line and submits only from dictation.
    */
   onSubmit?: (value: string) => void;
   placeholder?: string;
@@ -21,6 +22,11 @@ interface AnswerFieldProps {
   inputRef?: RefObject<HTMLInputElement | null>;
   /** Soft field tint after submit; omit / null keeps white. */
   feedback?: AnswerInputFeedback | null;
+  /** Sentence box. Enter inserts a line; Ierunāt still fills the text. */
+  multiline?: boolean;
+  rows?: number;
+  className?: string;
+  inputClassName?: string;
 }
 
 /**
@@ -39,6 +45,10 @@ export function AnswerField({
   autoFocus = false,
   inputRef: externalInputRef,
   feedback = null,
+  multiline = false,
+  rows = 4,
+  className = '',
+  inputClassName = '',
 }: AnswerFieldProps) {
   const localInputRef = useRef<HTMLInputElement>(null);
   const inputRef = externalInputRef ?? localInputRef;
@@ -76,8 +86,31 @@ export function AnswerField({
     if (readOnly && listening) stop();
   }, [readOnly, listening, stop]);
 
+  const fieldClass = [
+    'text-input',
+    'text-input-answer',
+    'answer-field-input',
+    inputClassName,
+    feedback ? `text-input-answer-${feedback}` : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const onFieldChange = (next: string) => {
+    if (readOnly) return;
+    if (dictation.listening) dictation.stop();
+    onChange(next);
+  };
+
+  const onFieldKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key !== 'Enter' || multiline) return;
+    e.preventDefault();
+    if (dictation.listening) dictation.stop();
+    finish(valueRef.current);
+  };
+
   return (
-    <div className="answer-field">
+    <div className={['answer-field', className].filter(Boolean).join(' ')}>
       {label ? (
         <label className="field-label" htmlFor={id}>
           {label}
@@ -85,39 +118,41 @@ export function AnswerField({
       ) : null}
 
       <div className="answer-field-row">
-        <input
-          ref={inputRef}
-          id={id}
-          className={[
-            'text-input',
-            'text-input-answer',
-            'answer-field-input',
-            feedback ? `text-input-answer-${feedback}` : '',
-          ]
-            .filter(Boolean)
-            .join(' ')}
-          type="text"
-          value={value}
-          placeholder={placeholder}
-          aria-label={label ? undefined : (ariaLabel ?? 'Atbilde')}
-          autoComplete="off"
-          autoCorrect="off"
-          spellCheck={false}
-          enterKeyHint="done"
-          readOnly={readOnly}
-          aria-readonly={readOnly || undefined}
-          onChange={(e) => {
-            if (readOnly) return;
-            if (dictation.listening) dictation.stop();
-            onChange(e.target.value);
-          }}
-          onKeyDown={(e) => {
-            if (e.key !== 'Enter') return;
-            e.preventDefault();
-            if (dictation.listening) dictation.stop();
-            finish(valueRef.current);
-          }}
-        />
+        {multiline ? (
+          <textarea
+            id={id}
+            className={fieldClass}
+            value={value}
+            rows={rows}
+            placeholder={placeholder}
+            aria-label={label ? undefined : (ariaLabel ?? 'Atbilde')}
+            autoComplete="off"
+            autoCorrect="off"
+            spellCheck={false}
+            readOnly={readOnly}
+            aria-readonly={readOnly || undefined}
+            lang="lv"
+            onChange={(e) => onFieldChange(e.target.value)}
+          />
+        ) : (
+          <input
+            ref={inputRef}
+            id={id}
+            className={fieldClass}
+            type="text"
+            value={value}
+            placeholder={placeholder}
+            aria-label={label ? undefined : (ariaLabel ?? 'Atbilde')}
+            autoComplete="off"
+            autoCorrect="off"
+            spellCheck={false}
+            enterKeyHint="done"
+            readOnly={readOnly}
+            aria-readonly={readOnly || undefined}
+            onChange={(e) => onFieldChange(e.target.value)}
+            onKeyDown={onFieldKeyDown}
+          />
+        )}
 
         {dictation.supported ? (
           <Button

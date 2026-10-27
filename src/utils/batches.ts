@@ -16,6 +16,9 @@ export const BATCH_SIZE_BY_TYPE: Record<Task['type'], number> = {
   antonym: 5,
   definition_guess: 5,
   sentence_image_match: 5,
+  sentence_creation: 5,
+  spelling_check: 5,
+  brand_association: 5,
 };
 
 /** @deprecated Prefer batchSizeForType — kept for older call sites. */

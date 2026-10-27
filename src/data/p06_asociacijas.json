@@ -1,0 +1,526 @@
+{
+  "schemaVersion": 2,
+  "title": "ReMind — Asociācijas: Latvijā pazīstami zīmoli, 1. komplekts",
+  "tasks": [
+    {
+      "id": "as-brand-p01-001",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Colgate",
+      "exampleAssociations": [
+        "zobu pasta",
+        "zobu birste",
+        "zobu kopšana"
+      ]
+    },
+    {
+      "id": "as-brand-p01-002",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Laima",
+      "exampleAssociations": [
+        "šokolāde",
+        "konfektes",
+        "saldumi"
+      ]
+    },
+    {
+      "id": "as-brand-p01-003",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Kārums",
+      "exampleAssociations": [
+        "biezpiena sieriņš",
+        "sieriņš",
+        "biezpiens"
+      ]
+    },
+    {
+      "id": "as-brand-p01-004",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Selga",
+      "exampleAssociations": [
+        "cepumi",
+        "vafeles",
+        "saldumi"
+      ]
+    },
+    {
+      "id": "as-brand-p01-005",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Spilva",
+      "exampleAssociations": [
+        "kečups",
+        "mērce",
+        "konservēti dārzeņi"
+      ]
+    },
+    {
+      "id": "as-brand-p01-006",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Cido",
+      "exampleAssociations": [
+        "sula",
+        "dzērieni",
+        "nektārs"
+      ]
+    },
+    {
+      "id": "as-brand-p01-007",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Ādažu Čipsi",
+      "exampleAssociations": [
+        "čipsi",
+        "uzkodas",
+        "kartupeļu čipsi"
+      ]
+    },
+    {
+      "id": "as-brand-p01-008",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Lāči",
+      "exampleAssociations": [
+        "maize",
+        "rudzu maize",
+        "maizes ceptuve"
+      ]
+    },
+    {
+      "id": "as-brand-p01-009",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Rimi",
+      "exampleAssociations": [
+        "pārtikas veikals",
+        "pārtika",
+        "iepirkšanās"
+      ]
+    },
+    {
+      "id": "as-brand-p01-010",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Maxima",
+      "exampleAssociations": [
+        "pārtikas veikals",
+        "pārtika",
+        "iepirkšanās"
+      ]
+    },
+    {
+      "id": "as-brand-p01-011",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Lidl",
+      "exampleAssociations": [
+        "pārtikas veikals",
+        "pārtika",
+        "iepirkšanās"
+      ]
+    },
+    {
+      "id": "as-brand-p01-012",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Ķekava",
+      "exampleAssociations": [
+        "vistas gaļa",
+        "vista",
+        "gaļas produkti"
+      ]
+    },
+    {
+      "id": "as-brand-p01-013",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "DEPO",
+      "exampleAssociations": [
+        "būvmateriāli",
+        "remonts",
+        "instrumenti"
+      ]
+    },
+    {
+      "id": "as-brand-p01-014",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "IKEA",
+      "exampleAssociations": [
+        "mēbeles",
+        "skapis",
+        "interjers"
+      ]
+    },
+    {
+      "id": "as-brand-p01-015",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "JYSK",
+      "exampleAssociations": [
+        "matracis",
+        "gultasveļa",
+        "mēbeles"
+      ]
+    },
+    {
+      "id": "as-brand-p01-016",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Drogas",
+      "exampleAssociations": [
+        "kosmētika",
+        "šampūns",
+        "kopšanas līdzekļi"
+      ]
+    },
+    {
+      "id": "as-brand-p01-017",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "MÁDARA",
+      "exampleAssociations": [
+        "kosmētika",
+        "sejas krēms",
+        "ādas kopšana"
+      ]
+    },
+    {
+      "id": "as-brand-p01-018",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Stenders",
+      "exampleAssociations": [
+        "ziepes",
+        "vannas bumba",
+        "ķermeņa kopšana"
+      ]
+    },
+    {
+      "id": "as-brand-p01-019",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Dzintars",
+      "exampleAssociations": [
+        "smaržas",
+        "lūpu balzams",
+        "kosmētika"
+      ]
+    },
+    {
+      "id": "as-brand-p01-020",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Swedbank",
+      "exampleAssociations": [
+        "banka",
+        "bankas karte",
+        "maksājumi"
+      ]
+    },
+    {
+      "id": "as-brand-p01-021",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "LMT",
+      "exampleAssociations": [
+        "mobilie sakari",
+        "telefons",
+        "internets"
+      ]
+    },
+    {
+      "id": "as-brand-p01-022",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Tele2",
+      "exampleAssociations": [
+        "mobilie sakari",
+        "telefons",
+        "SIM karte"
+      ]
+    },
+    {
+      "id": "as-brand-p01-023",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Bite",
+      "exampleAssociations": [
+        "mobilie sakari",
+        "telefons",
+        "tarifs"
+      ]
+    },
+    {
+      "id": "as-brand-p01-024",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Tet",
+      "exampleAssociations": [
+        "internets",
+        "televīzija",
+        "rūteris"
+      ]
+    },
+    {
+      "id": "as-brand-p01-025",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "airBaltic",
+      "exampleAssociations": [
+        "lidmašīna",
+        "lidojums",
+        "aviobiļete"
+      ]
+    },
+    {
+      "id": "as-brand-p01-026",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Omniva",
+      "exampleAssociations": [
+        "pakomāts",
+        "sūtījums",
+        "piegāde"
+      ]
+    },
+    {
+      "id": "as-brand-p01-027",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "DPD",
+      "exampleAssociations": [
+        "kurjers",
+        "paciņa",
+        "piegāde"
+      ]
+    },
+    {
+      "id": "as-brand-p01-028",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Latvijas Pasts",
+      "exampleAssociations": [
+        "vēstule",
+        "pastmarka",
+        "sūtījums"
+      ]
+    },
+    {
+      "id": "as-brand-p01-029",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Virši",
+      "exampleAssociations": [
+        "degviela",
+        "uzpildes stacija",
+        "benzīns"
+      ]
+    },
+    {
+      "id": "as-brand-p01-030",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Circle K",
+      "exampleAssociations": [
+        "degviela",
+        "uzpildes stacija",
+        "kafija"
+      ]
+    },
+    {
+      "id": "as-brand-p01-031",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Bolt",
+      "exampleAssociations": [
+        "taksometrs",
+        "brauciens",
+        "auto izsaukšana"
+      ]
+    },
+    {
+      "id": "as-brand-p01-032",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Wolt",
+      "exampleAssociations": [
+        "ēdiena piegāde",
+        "kurjers",
+        "pasūtījums"
+      ]
+    },
+    {
+      "id": "as-brand-p01-033",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Nike",
+      "exampleAssociations": [
+        "sporta apavi",
+        "sports",
+        "apģērbs"
+      ]
+    },
+    {
+      "id": "as-brand-p01-034",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Adidas",
+      "exampleAssociations": [
+        "sporta apģērbs",
+        "sporta apavi",
+        "sports"
+      ]
+    },
+    {
+      "id": "as-brand-p01-035",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "LEGO",
+      "exampleAssociations": [
+        "klucīši",
+        "konstruktors",
+        "rotaļlietas"
+      ]
+    },
+    {
+      "id": "as-brand-p01-036",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Apple",
+      "exampleAssociations": [
+        "telefons",
+        "dators",
+        "iPhone"
+      ]
+    },
+    {
+      "id": "as-brand-p01-037",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Samsung",
+      "exampleAssociations": [
+        "telefons",
+        "televizors",
+        "planšete"
+      ]
+    },
+    {
+      "id": "as-brand-p01-038",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Bosch",
+      "exampleAssociations": [
+        "instrumenti",
+        "urbjmašīna",
+        "sadzīves tehnika"
+      ]
+    },
+    {
+      "id": "as-brand-p01-039",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Nivea",
+      "exampleAssociations": [
+        "krēms",
+        "kosmētika",
+        "ādas kopšana"
+      ]
+    },
+    {
+      "id": "as-brand-p01-040",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Gillette",
+      "exampleAssociations": [
+        "skuveklis",
+        "skūšanās",
+        "skuvekļa asmeņi"
+      ]
+    }
+  ]
+}

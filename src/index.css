@@ -2948,6 +2948,188 @@ input:focus-visible {
   line-height: 1;
 }
 
+.sentence-slots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  width: 100%;
+  margin-bottom: 0.85rem;
+}
+
+.sentence-slot {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.sentence-slot-index {
+  flex: 0 0 auto;
+  width: 1.6rem;
+  padding-top: 0.95rem;
+  font-size: 1.15em;
+  font-weight: 800;
+  text-align: center;
+}
+
+.sentence-slot-field {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.sentence-slot-locked {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.75rem;
+  border: 3px solid var(--fg);
+  border-radius: var(--radius);
+  background: var(--sand-soft);
+  font-size: calc(1.15 * var(--fit-font) * var(--content-scale));
+  font-weight: 800;
+}
+
+.sentence-slot-field .text-input {
+  min-height: 4rem;
+  margin-bottom: 0;
+}
+
+.sentence-slot-field .answer-dictate-status:empty,
+.sentence-free-field .answer-dictate-status:empty {
+  display: none;
+  margin: 0;
+  min-height: 0;
+}
+
+.keyword-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.55rem;
+  margin: 0.35rem 0 0.85rem;
+}
+
+.keyword-chip {
+  padding: 0.55rem 0.9rem;
+  border: 3px solid var(--fg);
+  border-radius: var(--radius);
+  background: #fff;
+  font-size: 1.25em;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.sentence-free-input {
+  min-height: 7.5rem;
+  resize: vertical;
+}
+
+.brand-instruction {
+  font-size: calc(1.15 * var(--fit-font) * var(--content-scale));
+  font-weight: 700;
+  color: var(--fg);
+  text-align: center;
+}
+
+.brand-name {
+  margin: 0.2rem 0 0.85rem;
+  font-size: calc(2 * var(--fit-font) * var(--content-scale));
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.brand-example-list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 1.15em;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.spelling-word {
+  margin: 0.35rem 0 0.75rem;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius);
+  font-size: calc(1.85 * var(--fit-font) * var(--content-scale));
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.spelling-word-ok {
+  background: var(--mint-soft);
+}
+
+.spelling-word-miss {
+  background: var(--coral-soft);
+}
+
+.spelling-live {
+  margin: 0.65rem 0 0;
+  font-weight: 700;
+  text-align: center;
+}
+
+.spelling-choice-stack {
+  margin-top: 0.85rem;
+}
+
+.spelling-choice-stack .btn {
+  min-height: 4.25rem;
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+.spelling-correction {
+  margin-top: 0.85rem;
+}
+
+.task-example,
+.task-feedback {
+  margin: 0.85rem 0 0;
+  padding: 0.75rem 0.85rem;
+  border-radius: var(--radius);
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.task-example {
+  border: 3px solid var(--mint);
+  background: var(--answers-bg);
+}
+
+.task-feedback p {
+  margin: 0.25rem 0;
+}
+
+.task-feedback-ok {
+  border: 3px solid var(--mint);
+  background: var(--answers-bg);
+}
+
+.task-feedback-miss {
+  border: 3px solid var(--sand);
+  background: var(--sand-soft);
+}
+
+.app-shell.high-contrast .sentence-slot-locked,
+.app-shell.high-contrast .keyword-chip,
+.app-shell.high-contrast .task-example,
+.app-shell.high-contrast .task-feedback-ok,
+.app-shell.high-contrast .task-feedback-miss,
+.app-shell.high-contrast .spelling-word-ok,
+.app-shell.high-contrast .spelling-word-miss {
+  background: #fff;
+  border-color: #000;
+  color: #000;
+}
+
 @media (min-width: 768px) {
   :root {
     --max-w: 800px;

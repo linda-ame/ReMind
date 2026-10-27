@@ -21,6 +21,8 @@ import rawDefinitionGuessP02 from './definition_guess_P02.json';
 import rawSentenceImageMatch from './sentence_image_match_P01_10.json';
 import rawLogopedaP03 from './logopeda_P03_130.json';
 import rawDefinitionGuessP04 from './definition_guess_P04_50.json';
+import rawP05 from './p05_visi.json';
+import rawP06 from './p06_asociacijas.json';
 import difficultyByIdRaw from './metadata/remind_difficulty_by_id.json';
 import questionDifficultyByIdRaw from './metadata/remind_reading_question_difficulty_by_id.json';
 
@@ -41,6 +43,8 @@ const definitionGuessP02 = rawDefinitionGuessP02 as TaskPack;
 const sentenceImageMatch = rawSentenceImageMatch as TaskPack;
 const logopedaP03 = rawLogopedaP03 as TaskPack;
 const definitionGuessP04 = rawDefinitionGuessP04 as TaskPack;
+const p05 = rawP05 as TaskPack;
+const p06 = rawP06 as TaskPack;
 
 const difficultyById = difficultyByIdRaw as Record<string, number>;
 const questionDifficultyById = questionDifficultyByIdRaw as Record<
@@ -89,6 +93,8 @@ const rawTasks: Task[] = [
   ...sentenceImageMatch.tasks,
   ...logopedaP03.tasks,
   ...definitionGuessP04.tasks,
+  ...p05.tasks,
+  ...p06.tasks,
 ];
 
 const tasksWithDifficulty = rawTasks.map(withDifficulty);
@@ -103,7 +109,7 @@ if (import.meta.env.DEV) {
   }
 }
 
-/** Merged pack: existing packs + P01–P04. Keep old IDs intact. */
+/** Merged pack: existing packs + P01–P06. Keep old IDs intact. */
 const pack: TaskPack = {
   schemaVersion: Math.max(
     v1.schemaVersion,
@@ -123,6 +129,8 @@ const pack: TaskPack = {
     sentenceImageMatch.schemaVersion,
     logopedaP03.schemaVersion,
     definitionGuessP04.schemaVersion,
+    p05.schemaVersion,
+    p06.schemaVersion,
   ),
   title: v1.title,
   tasks: tasksWithDifficulty,
@@ -143,6 +151,9 @@ export const TASK_TYPE_ORDER: Task['type'][] = [
   'antonym',
   'definition_guess',
   'sentence_image_match',
+  'sentence_creation',
+  'spelling_check',
+  'brand_association',
 ];
 
 export const TASK_TYPE_LABELS: Record<Task['type'], string> = {
@@ -157,6 +168,9 @@ export const TASK_TYPE_LABELS: Record<Task['type'], string> = {
   antonym: 'Pretstati',
   definition_guess: 'Uzmini vārdu pēc apraksta',
   sentence_image_match: 'Izlasi un atrodi attēlu',
+  sentence_creation: 'Veido teikumu',
+  spelling_check: 'Pārbaudi pareizrakstību',
+  brand_association: 'Asociācijas',
 };
 
 /** Lesson vs single-task unit label for list / done / review screens. */
