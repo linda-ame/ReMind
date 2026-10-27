@@ -85,22 +85,29 @@ export function hasMicrophonePrompt(): boolean {
   return micPromptAccepted;
 }
 
+export type MicrophoneRequestResult =
+  | { ok: true }
+  | { ok: false; reason: string };
+
 /**
  * Must be called directly from a tap. This is what makes Safari appear under
  * Settings → Privacy & Security → Microphone and shows the system Allow sheet.
  */
-export function requestMicrophoneFromGesture(): Promise<boolean> {
+export function requestMicrophoneFromGesture(): Promise<MicrophoneRequestResult> {
   if (typeof navigator === 'undefined' || !navigator.mediaDevices?.getUserMedia) {
-    return Promise.resolve(false);
+    return Promise.resolve({ ok: false, reason: 'nav' });
   }
   return navigator.mediaDevices
     .getUserMedia({ audio: true })
     .then((stream) => {
       for (const track of stream.getTracks()) track.stop();
       micPromptAccepted = true;
-      return true;
+      return { ok: true as const };
     })
-    .catch(() => false);
+    .catch((error: unknown) => ({
+      ok: false as const,
+      reason: error instanceof Error ? error.name : 'unknown',
+    }));
 }
 
 /** `unknown` when the browser has no microphone entry in the Permissions API (Safari). */

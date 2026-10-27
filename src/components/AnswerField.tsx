@@ -104,6 +104,7 @@ export function AnswerField({
   const [knownPerm, setKnownPerm] = useState<MicrophonePermissionState | null>(
     null,
   );
+  const [micFail, setMicFail] = useState<string | null>(null);
 
   useEffect(() => {
     let cancel = false;
@@ -190,8 +191,9 @@ export function AnswerField({
       // getUserMedia has to start inside this tap, or iOS never shows
       // "Safari Would Like to Access the Microphone" and Safari stays off
       // the privacy list.
-      void requestMicrophoneFromGesture().then((ok) => {
-        if (!ok) {
+      void requestMicrophoneFromGesture().then((result) => {
+        if (!result.ok) {
+          setMicFail(result.reason);
           setMicDialog('speech');
           return;
         }
@@ -361,7 +363,7 @@ export function AnswerField({
               {micDialog === 'again'
                 ? 'Nospiediet Ierunāt vēlreiz un runājiet.'
                 : micDialog === 'speech'
-                  ? 'Lapas izvēlnē Microphone pārslēdz uz Ask. Aizver Safari pavisam, atver lapu no jauna un nospied Ierunāt. Tad iPhone logā izvēlies Allow.'
+                  ? `Settings → Apps → Safari → ritini līdz apakšai → Microphone → Ask. Pēc tam aizver Safari pavisam un atver lapu no jauna.${micFail ? ` (${micFail})` : ''}`
                   : micDialog === 'blocked'
                   ? 'Atļaujas logs vairs neatveras. Ierīces iestatījumos atļaujiet mikrofonu šai lapai un nospiediet vēlreiz.'
                   : micDialog === 'asking'
