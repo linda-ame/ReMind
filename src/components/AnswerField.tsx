@@ -334,7 +334,7 @@ export function AnswerField({
               {micDialog === 'again'
                 ? 'Mikrofons ir atļauts'
                 : micDialog === 'speech'
-                  ? 'Ierunāšana neizdevās'
+                  ? 'iPhone neprot ierunāt latviski'
                   : micDialog === 'blocked'
                     ? 'Mikrofons ir bloķēts'
                     : 'Mikrofons'}
@@ -343,7 +343,7 @@ export function AnswerField({
               {micDialog === 'again'
                 ? 'Nospiediet Ierunāt vēlreiz un runājiet.'
                 : micDialog === 'speech'
-                  ? `Aizver Safari pavisam, atver lapu no jauna un nospied Ierunāt vienu reizi.${dictation.errorCode ? ` (${dictation.errorCode})` : ''}`
+                  ? 'Safari mikrofonu jau drīkst. Latviešu ierunāšanu iPhone nepiedāvā. Atbildi ieraksti ar tastatūru.'
                   : micDialog === 'blocked'
                   ? 'Atļaujas logs vairs neatveras. Ierīces iestatījumos atļaujiet mikrofonu šai lapai un nospiediet vēlreiz.'
                   : micDialog === 'asking'
@@ -355,19 +355,25 @@ export function AnswerField({
                 ref={allowMicRef}
                 variant="primary"
                 disabled={micDialog === 'asking'}
-                onClick={allowMicrophone}
+                onClick={
+                  micDialog === 'speech' ? closeMicDialog : allowMicrophone
+                }
               >
                 {micDialog === 'again'
                   ? 'Ierunāt'
-                  : micDialog === 'blocked' || micDialog === 'speech'
-                    ? 'Mēģināt vēlreiz'
-                    : 'Atļaut mikrofonu'}
+                  : micDialog === 'speech'
+                    ? 'Aizvērt'
+                    : micDialog === 'blocked'
+                      ? 'Mēģināt vēlreiz'
+                      : 'Atļaut mikrofonu'}
               </Button>
+              {micDialog === 'speech' ? null : (
               <Button variant="neutral" onClick={closeMicDialog}>
-                {micDialog === 'blocked' || micDialog === 'speech' || micDialog === 'again'
+                {micDialog === 'blocked' || micDialog === 'again'
                   ? 'Aizvērt'
                   : 'Atcelt'}
               </Button>
+              )}
             </div>
           </div>
         </div>
