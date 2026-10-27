@@ -2924,6 +2924,30 @@ input:focus-visible {
   text-align: center;
 }
 
+.scale-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 0.45rem;
+}
+
+.scale-stepper .scale-slider-value {
+  margin: 0;
+  min-width: 4.75rem;
+  font-size: 1.2em;
+}
+
+.scale-step-btn {
+  width: 3.4rem;
+  min-width: 3.4rem;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
 @media (min-width: 768px) {
   :root {
     --max-w: 800px;
