@@ -289,6 +289,7 @@ function AppRouter() {
         <MemoryScreen
           key={screen.mode}
           mode={screen.mode}
+          onNavigate={navigate}
           onHome={goHome}
         />
       );

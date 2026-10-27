@@ -22,12 +22,15 @@ import {
 } from '../utils/memoryQueue';
 import { scoreMemoryDraft, type MemorySubmitKind } from '../utils/memoryScore';
 import { loadMemoryVisualFirst } from '../utils/memoryVisual';
+import type { Screen } from '../navigation/types';
+import type { MenuSection } from '../utils/sectionPractice';
 import { MemoryAnswerStep } from './memory/MemoryAnswerStep';
 import { MemoryDistractorStep } from './memory/MemoryDistractorStep';
 import { MemoryStudyStep } from './memory/MemoryStudyStep';
 
 interface Props {
   mode: MemoryMode;
+  onNavigate: (screen: Screen) => void;
   onHome: () => void;
 }
 
@@ -74,7 +77,9 @@ function beginDelayed(session: MemorySession): MemorySession {
   });
 }
 
-export function MemoryScreen({ mode, onHome }: Props) {
+export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
+  const sectionType: MenuSection =
+    mode === 'immediate' ? 'memory_immediate' : 'memory_delayed';
   const [session, setSession] = useState<MemorySession | null>(null);
   const [resume, setResume] = useState<MemorySession | null>(null);
   const [ready, setReady] = useState(false);
@@ -196,7 +201,7 @@ export function MemoryScreen({ mode, onHome }: Props) {
 
   if (loadError) {
     return (
-      <Layout onHome={onHome}>
+      <Layout onHome={onHome} sectionType={sectionType} onNavigate={onNavigate}>
         <div className="memory-flow">
           <h1 className="memory-heading">{MODE_LABEL[mode]}</h1>
           <p className="memory-note" role="alert">
@@ -212,7 +217,7 @@ export function MemoryScreen({ mode, onHome }: Props) {
 
   if (!ready) {
     return (
-      <Layout onHome={onHome}>
+      <Layout onHome={onHome} sectionType={sectionType} onNavigate={onNavigate}>
         <p className="lead">Ielādē…</p>
       </Layout>
     );
@@ -220,7 +225,7 @@ export function MemoryScreen({ mode, onHome }: Props) {
 
   if (resume) {
     return (
-      <Layout onHome={onHome}>
+      <Layout onHome={onHome} sectionType={sectionType} onNavigate={onNavigate}>
         <div className="memory-flow">
           <h1 className="memory-heading">{MODE_LABEL[mode]}</h1>
           <p className="memory-instruction">
@@ -248,7 +253,7 @@ export function MemoryScreen({ mode, onHome }: Props) {
 
   if (empty || !session) {
     return (
-      <Layout onHome={onHome}>
+      <Layout onHome={onHome} sectionType={sectionType} onNavigate={onNavigate}>
         <div className="memory-flow">
           <h1 className="memory-heading">{MODE_LABEL[mode]}</h1>
           <p className="memory-instruction">
@@ -266,7 +271,7 @@ export function MemoryScreen({ mode, onHome }: Props) {
   const task = getMemoryTaskById(session.taskId);
   if (!task || task.contentVersion !== session.taskContentVersion) {
     return (
-      <Layout onHome={onHome}>
+      <Layout onHome={onHome} sectionType={sectionType} onNavigate={onNavigate}>
         <div className="memory-flow">
           <p className="memory-instruction">Šis uzdevums vairs nav pieejams.</p>
           <Button variant="primary" onClick={() => void startFresh(session)}>
@@ -378,7 +383,7 @@ export function MemoryScreen({ mode, onHome }: Props) {
   };
 
   return (
-    <Layout onHome={onHome}>
+    <Layout onHome={onHome} sectionType={sectionType} onNavigate={onNavigate}>
       {session.phase === 'study' ? (
         <MemoryStudyStep
           task={task}

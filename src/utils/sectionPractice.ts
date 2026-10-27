@@ -10,33 +10,70 @@ import { filterTasksByDifficulty, loadDifficultyLevels } from './difficulty';
 import { buildRandomPracticeQueue } from './randomQueue';
 import type { TaskSkip } from './taskSkips';
 
+/** Home section in menu order, including the two memory practices. */
+export type MenuSection =
+  | Task['type']
+  | 'memory_immediate'
+  | 'memory_delayed';
+
+const MEMORY_MENU: { id: MenuSection; label: string }[] = [
+  { id: 'memory_immediate', label: 'Atceries uzreiz' },
+  { id: 'memory_delayed', label: 'Atceries pēc brīža' },
+];
+
 /** Home menu type. Multi-blank completion shares Teikumu papildināšana. */
 export function menuSectionType(type: Task['type']): Task['type'] {
   return type === 'sentence_completion_multi' ? 'sentence_completion' : type;
 }
 
 /** Sections that appear on the home screen, in menu order. */
-export function menuSections(): Task['type'][] {
-  return TASK_TYPE_ORDER.filter((type) => getTasksByType(type).length > 0);
+export function menuSections(): MenuSection[] {
+  const tasks = TASK_TYPE_ORDER.filter((type) => getTasksByType(type).length > 0);
+  return [...tasks, ...MEMORY_MENU.map((item) => item.id)];
+}
+
+function isMemorySection(
+  section: MenuSection,
+): section is 'memory_immediate' | 'memory_delayed' {
+  return section === 'memory_immediate' || section === 'memory_delayed';
+}
+
+function menuSectionName(section: MenuSection): string {
+  if (isMemorySection(section)) {
+    return MEMORY_MENU.find((item) => item.id === section)?.label ?? section;
+  }
+  return TASK_TYPE_LABELS[menuSectionType(section)];
 }
 
 /** “1. Vārdu lasīšana” — name only, no done/total count. */
-export function menuSectionLabel(type: Task['type']): string {
-  const key = menuSectionType(type);
+export function menuSectionLabel(section: MenuSection): string {
+  const key = isMemorySection(section) ? section : menuSectionType(section);
   const sections = menuSections();
   const index = sections.indexOf(key);
-  const name = TASK_TYPE_LABELS[key];
+  const name = menuSectionName(key);
   return index < 0 ? name : `${index + 1}. ${name}`;
 }
 
 export function adjacentMenuSection(
-  type: Task['type'],
+  section: MenuSection,
   dir: -1 | 1,
-): Task['type'] | null {
+): MenuSection | null {
   const sections = menuSections();
-  const index = sections.indexOf(menuSectionType(type));
+  const key = isMemorySection(section) ? section : menuSectionType(section);
+  const index = sections.indexOf(key);
   if (index < 0) return null;
   return sections[index + dir] ?? null;
+}
+
+/** Open a home section from the header arrows. */
+export function menuSectionScreen(
+  section: MenuSection,
+  attempts: TaskAttempt[],
+  taskSkips: TaskSkip[],
+): Screen {
+  if (section === 'memory_immediate') return { name: 'memory', mode: 'immediate' };
+  if (section === 'memory_delayed') return { name: 'memory', mode: 'delayed' };
+  return sectionPracticeScreen(section, attempts, taskSkips);
 }
 
 /** Same entry as tapping a section on the home screen. */

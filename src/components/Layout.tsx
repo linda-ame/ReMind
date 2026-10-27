@@ -10,11 +10,11 @@ import {
 } from 'react';
 import { useApp } from '../context/AppContext';
 import type { Screen } from '../navigation/types';
-import type { Task } from '../types/task';
 import {
   adjacentMenuSection,
   menuSectionLabel,
-  sectionPracticeScreen,
+  menuSectionScreen,
+  type MenuSection,
 } from '../utils/sectionPractice';
 
 interface LayoutProps {
@@ -26,7 +26,7 @@ interface LayoutProps {
    * Home practice section. Header shows the R mark, this section’s name
    * (no task count), and arrows to the previous / next section.
    */
-  sectionType?: Task['type'];
+  sectionType?: MenuSection;
   onNavigate?: (screen: Screen) => void;
 }
 
@@ -107,9 +107,9 @@ export function Layout({
   const prevSection = sectionType ? adjacentMenuSection(sectionType, -1) : null;
   const nextSection = sectionType ? adjacentMenuSection(sectionType, 1) : null;
 
-  const openSection = (type: Task['type']) => {
+  const openSection = (section: MenuSection) => {
     if (!onNavigate) return;
-    onNavigate(sectionPracticeScreen(type, attempts, taskSkips));
+    onNavigate(menuSectionScreen(section, attempts, taskSkips));
   };
 
   return (
