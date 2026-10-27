@@ -14,15 +14,19 @@ export interface UseSpeechSynthesisResult {
   loading: boolean;
   error: string | null;
   clearError: () => void;
-  speak: (text: string) => void;
+  speak: (text: string, speakingRate?: number) => void;
   stop: () => void;
-  toggle: (text: string) => void;
+  toggle: (text: string, speakingRate?: number) => void;
 }
 
 /**
  * Cloud Latvian TTS (Google via `/api/tts`) — plays returned MP3.
  * Does not use device voices (avoids English mispronunciation).
  */
+function clipKey(text: string, speakingRate?: number): string {
+  return speakingRate == null ? text : `${speakingRate}|${text}`;
+}
+
 export function useSpeechSynthesis(): UseSpeechSynthesisResult {
   const [supported, setSupported] = useState(true);
   const [ready, setReady] = useState(false);
@@ -84,7 +88,7 @@ export function useSpeechSynthesis(): UseSpeechSynthesisResult {
   }, [cleanupAudio]);
 
   const speak = useCallback(
-    (text: string) => {
+    (text: string, speakingRate?: number) => {
       const trimmed = text.trim();
       if (!trimmed) return;
 
@@ -96,12 +100,12 @@ export function useSpeechSynthesis(): UseSpeechSynthesisResult {
       setError(null);
       setLoading(true);
       setSpeaking(false);
-      activeTextRef.current = trimmed;
+      activeTextRef.current = clipKey(trimmed, speakingRate);
       const gen = requestGen.current;
 
       void (async () => {
         try {
-          const blob = await fetchCloudSpeech(trimmed);
+          const blob = await fetchCloudSpeech(trimmed, speakingRate);
           if (gen !== requestGen.current) return;
 
           const url = URL.createObjectURL(blob);
@@ -149,15 +153,15 @@ export function useSpeechSynthesis(): UseSpeechSynthesisResult {
   );
 
   const toggle = useCallback(
-    (text: string) => {
+    (text: string, speakingRate?: number) => {
       if (
         (speaking || loading) &&
-        activeTextRef.current === text.trim()
+        activeTextRef.current === clipKey(text.trim(), speakingRate)
       ) {
         stop();
         return;
       }
-      speak(text);
+      speak(text, speakingRate);
     },
     [speaking, loading, speak, stop],
   );

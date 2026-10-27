@@ -108,9 +108,16 @@ export default defineConfig(({ mode }) => {
 
                 const raw = await readRequestBody(req);
                 let text = '';
+                let speakingRate: number | undefined;
                 try {
-                  const body = JSON.parse(raw) as { text?: unknown };
+                  const body = JSON.parse(raw) as {
+                    text?: unknown;
+                    speakingRate?: unknown;
+                  };
                   text = typeof body.text === 'string' ? body.text : '';
+                  if (typeof body.speakingRate === 'number') {
+                    speakingRate = body.speakingRate;
+                  }
                 } catch {
                   res.statusCode = 400;
                   res.setHeader('Content-Type', 'application/json');
@@ -118,7 +125,11 @@ export default defineConfig(({ mode }) => {
                   return;
                 }
 
-                const result = await synthesizeGoogleMp3(text);
+                const result = await synthesizeGoogleMp3(
+                  text,
+                  undefined,
+                  speakingRate,
+                );
                 if (result.ok) {
                   res.statusCode = 200;
                   res.setHeader('Content-Type', result.contentType);

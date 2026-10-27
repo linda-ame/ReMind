@@ -3,6 +3,8 @@
 export const TTS_MAX_CHARS = 2500;
 /** Standard voice = larger free tier than WaveNet/Neural. */
 export const GOOGLE_LV_VOICE = 'lv-LV-Standard-A';
+/** 1.0 is normal. Rehab listening stays a little under that. */
+export const TTS_DEFAULT_RATE = 0.7;
 
 export function getGoogleTtsConfig(): { apiKey: string } | null {
   const apiKey =
@@ -29,9 +31,15 @@ export type GoogleTtsResult =
  * Synthesize Latvian speech via Google Cloud Text-to-Speech REST API.
  * @see https://cloud.google.com/text-to-speech/docs/reference/rest/v1/text/synthesize
  */
+export function clampSpeakingRate(value: unknown): number {
+  const rate = typeof value === 'number' && Number.isFinite(value) ? value : TTS_DEFAULT_RATE;
+  return Math.min(1, Math.max(0.25, rate));
+}
+
 export async function synthesizeGoogleMp3(
   text: string,
   config = getGoogleTtsConfig(),
+  speakingRate = TTS_DEFAULT_RATE,
 ): Promise<GoogleTtsResult> {
   if (!config) {
     return {
@@ -68,8 +76,8 @@ export async function synthesizeGoogleMp3(
         },
         audioConfig: {
           audioEncoding: 'MP3',
-          // Slightly slow for clearer rehab listening (1.0 = normal).
-          speakingRate: 0.7,
+          // 1.0 = normal. Callers can ask for a slower clip.
+          speakingRate: clampSpeakingRate(speakingRate),
         },
       }),
     });

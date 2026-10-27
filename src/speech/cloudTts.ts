@@ -57,19 +57,27 @@ export function clearTtsStatusCache(): void {
  * Request Latvian MP3 for exact `text` (not the whole page).
  * Uses a short in-memory cache for repeated listens in the same session.
  */
-export async function fetchCloudSpeech(text: string): Promise<Blob> {
+export async function fetchCloudSpeech(
+  text: string,
+  speakingRate?: number,
+): Promise<Blob> {
   const prepared = prepareSpeakableText(text);
   if (!prepared) {
     throw new Error('Tukšs teksts.');
   }
 
-  const cached = audioCache.get(prepared);
+  const cacheKey =
+    speakingRate == null ? prepared : `${speakingRate}|${prepared}`;
+  const cached = audioCache.get(cacheKey);
   if (cached) return cached;
 
   const res = await fetch('/api/tts', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ text: prepared }),
+    body: JSON.stringify({
+      text: prepared,
+      ...(speakingRate == null ? {} : { speakingRate }),
+    }),
   });
 
   if (!res.ok) {
@@ -93,6 +101,6 @@ export async function fetchCloudSpeech(text: string): Promise<Blob> {
     const first = audioCache.keys().next().value;
     if (first != null) audioCache.delete(first);
   }
-  audioCache.set(prepared, blob);
+  audioCache.set(cacheKey, blob);
   return blob;
 }

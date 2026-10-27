@@ -99,6 +99,8 @@ export type MemoryNotScorableReason =
 export interface MemoryAnswer {
   freeResponseRaw?: string | string[] | Record<string, string>;
   recognitionOpened: boolean;
+  /** The person asked to see the correct answer. */
+  viewedAnswer?: boolean;
   recognitionSelection?: string | string[] | Record<string, string>;
   freeScore?: MemoryScore | null;
   recognitionScore?: MemoryScore | null;
@@ -115,6 +117,10 @@ export interface MemoryDraft {
   facts: Record<string, string>;
   factIndex: number;
   recognitionOpen: boolean;
+  /** Correct answer is uncovered for a digit or list task. */
+  answerVisible: boolean;
+  /** Fact questions whose correct answer was uncovered. */
+  revealedFactKeys: string[];
   singleIndex: number | null;
   multiIndices: number[];
   factIndices: Record<string, number | null>;
@@ -164,6 +170,8 @@ export function emptyMemoryDraft(): MemoryDraft {
     facts: {},
     factIndex: 0,
     recognitionOpen: false,
+    answerVisible: false,
+    revealedFactKeys: [],
     singleIndex: null,
     multiIndices: [],
     factIndices: {},

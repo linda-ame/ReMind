@@ -3,6 +3,8 @@ import {
   getGoogleTtsConfig,
   GOOGLE_LV_VOICE,
   synthesizeGoogleMp3,
+  clampSpeakingRate,
+  TTS_DEFAULT_RATE,
 } from '../server/googleTts.js';
 
 /**
@@ -31,12 +33,17 @@ export default async function handler(
 
   const body = typeof req.body === 'string' ? safeJson(req.body) : req.body;
   const text = typeof body?.text === 'string' ? body.text : '';
+  const speakingRate = clampSpeakingRate(
+    body && typeof body === 'object' && 'speakingRate' in body
+      ? (body as { speakingRate?: unknown }).speakingRate
+      : TTS_DEFAULT_RATE,
+  );
   if (!text.trim()) {
     res.status(400).json({ error: 'Trūkst teksta (text).' });
     return;
   }
 
-  const result = await synthesizeGoogleMp3(text);
+  const result = await synthesizeGoogleMp3(text, undefined, speakingRate);
   if (result.ok) {
     res.setHeader('Content-Type', result.contentType);
     res.status(200).send(result.audio);

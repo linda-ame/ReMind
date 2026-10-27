@@ -7,6 +7,7 @@ import {
   getAllMemorySessions,
   saveMemorySession,
 } from '../repositories/IndexedDBProgressRepository';
+import { uploadMemorySession } from '../repositories/memoryCloud';
 import {
   emptyMemoryDraft,
   type MemoryMode,
@@ -23,7 +24,6 @@ import { scoreMemoryDraft, type MemorySubmitKind } from '../utils/memoryScore';
 import { loadMemoryVisualFirst } from '../utils/memoryVisual';
 import { MemoryAnswerStep } from './memory/MemoryAnswerStep';
 import { MemoryDistractorStep } from './memory/MemoryDistractorStep';
-import { MemoryResultStep } from './memory/MemoryResultStep';
 import { MemoryStudyStep } from './memory/MemoryStudyStep';
 
 interface Props {
@@ -35,6 +35,25 @@ const MODE_LABEL: Record<MemoryMode, string> = {
   immediate: 'Atceries uzreiz',
   delayed: 'Atceries pēc brīža',
 };
+
+async function persistNext(
+  mode: MemoryMode,
+  visualFirst: boolean,
+  finished: MemorySession,
+): Promise<MemorySession | null> {
+  await saveMemorySession(finished);
+  void uploadMemorySession(finished);
+  const history = await getAllMemorySessions();
+  const created = createMemorySession(mode, history);
+  if (!created) return null;
+  if (visualFirst) {
+    created.visualOpen = true;
+    created.visualHelpShown = true;
+    created.visualHelpViews = 1;
+  }
+  await saveMemorySession(created);
+  return created;
+}
 
 function beginDelayed(session: MemorySession): MemorySession {
   const delayedStartedAt = new Date().toISOString();
@@ -112,6 +131,25 @@ export function MemoryScreen({ mode, onHome }: Props) {
         }
         await saveMemorySession(created);
         if (cancel) return;
+        sessionRef.current = created;
+        setSession(created);
+        setReady(true);
+        return;
+      }
+      if (open.phase === 'result') {
+        const finished = touchSession({
+          ...open,
+          phase: 'complete',
+          completedAt: open.completedAt ?? new Date().toISOString(),
+          draft: emptyMemoryDraft(),
+        });
+        const created = await persistNext(mode, visualFirst, finished);
+        if (cancel) return;
+        if (!created) {
+          setEmpty(true);
+          setReady(true);
+          return;
+        }
         sessionRef.current = created;
         setSession(created);
         setReady(true);
@@ -282,16 +320,26 @@ export function MemoryScreen({ mode, onHome }: Props) {
         current.mode === 'delayed' &&
         (current.firstResponseCued || scored.recognitionOpened);
       if (current.mode === 'immediate') {
-        commit(
-          touchSession({
-            ...current,
-            phase: 'result',
-            immediate: scored,
-            firstResponseCued: cued,
-            draft: emptyMemoryDraft(),
-          }),
-          true,
-        );
+        const finished = touchSession({
+          ...current,
+          phase: 'complete',
+          completedAt: new Date().toISOString(),
+          immediate: scored,
+          firstResponseCued: cued,
+          draft: emptyMemoryDraft(),
+        });
+        sessionRef.current = finished;
+        setSession(finished);
+        void persistNext(mode, visualFirst, finished).then((created) => {
+          if (!created) {
+            sessionRef.current = finished;
+            setSession(null);
+            setEmpty(true);
+            return;
+          }
+          sessionRef.current = created;
+          setSession(created);
+        });
         return;
       }
       const distractorTaskIds = pickDistractorIds(task, 3);
@@ -308,15 +356,25 @@ export function MemoryScreen({ mode, onHome }: Props) {
       commit(nextPhase === 'delayed_response' ? beginDelayed(base) : base, true);
       return;
     }
-    commit(
-      touchSession({
-        ...current,
-        phase: 'result',
-        delayed: scored,
-        draft: emptyMemoryDraft(),
-      }),
-      true,
-    );
+    const finished = touchSession({
+      ...current,
+      phase: 'complete',
+      completedAt: new Date().toISOString(),
+      delayed: scored,
+      draft: emptyMemoryDraft(),
+    });
+    sessionRef.current = finished;
+    setSession(finished);
+    void persistNext(mode, visualFirst, finished).then((created) => {
+      if (!created) {
+        sessionRef.current = finished;
+        setSession(null);
+        setEmpty(true);
+        return;
+      }
+      sessionRef.current = created;
+      setSession(created);
+    });
   };
 
   return (
@@ -324,9 +382,7 @@ export function MemoryScreen({ mode, onHome }: Props) {
       {session.phase === 'study' ? (
         <MemoryStudyStep
           task={task}
-          playCount={session.ttsPlayCount}
           visualOpen={session.visualOpen}
-          visualFirst={visualFirst}
           onPlayed={() => {
             const current = sessionRef.current;
             if (!current) return;
@@ -353,7 +409,6 @@ export function MemoryScreen({ mode, onHome }: Props) {
           onReady={() => {
             const current = sessionRef.current;
             if (!current) return;
-            stopSpeaking();
             commit(
               touchSession({
                 ...current,
@@ -374,6 +429,10 @@ export function MemoryScreen({ mode, onHome }: Props) {
           key={`${session.sessionId}-${session.phase}`}
           task={task}
           draft={session.draft}
+          allowReveal={
+            !(session.mode === 'delayed' && session.phase === 'immediate_response')
+          }
+          recallCue={session.phase === 'delayed_response'}
           onDraft={(recipe) => {
             const current = sessionRef.current;
             if (!current) return;
@@ -447,43 +506,7 @@ export function MemoryScreen({ mode, onHome }: Props) {
         </div>
       ) : null}
 
-      {session.phase === 'result' ? (
-        <MemoryResultStep
-          task={task}
-          session={session}
-          onNext={() => {
-            const finished = touchSession({
-              ...session,
-              phase: 'complete',
-              completedAt: new Date().toISOString(),
-              draft: emptyMemoryDraft(),
-            });
-            void (async () => {
-              await saveMemorySession(finished);
-              const history = await getAllMemorySessions();
-              const created = createMemorySession(mode, history);
-              if (!created) {
-                sessionRef.current = finished;
-                setSession(null);
-                setEmpty(true);
-                return;
-              }
-              if (visualFirst) {
-                created.visualOpen = true;
-                created.visualHelpShown = true;
-                created.visualHelpViews = 1;
-              }
-              await saveMemorySession(created);
-              sessionRef.current = created;
-              setSession(created);
-            })();
-          }}
-        />
-      ) : null}
+      {session.phase === 'complete' ? <p className="lead">Ielādē…</p> : null}
     </Layout>
   );
-}
-
-function stopSpeaking() {
-  window.speechSynthesis?.cancel();
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from '../../components/Button';
-import { getTaskById } from '../../data/loadTasks';
+import { getTaskById, TASK_TYPE_LABELS } from '../../data/loadTasks';
 import { createAttempt } from '../../utils/attempts';
 import { taskHasAdvanceReady } from '../../utils/taskAdvance';
 import type { DistractorSnapshot } from '../../types/memory';
@@ -67,7 +67,7 @@ export function MemoryDistractorStep({
 
   return (
     <div className="memory-flow">
-      <h1 className="memory-heading">Īss uzdevums</h1>
+      <h1 className="memory-heading">{TASK_TYPE_LABELS[task.type]}</h1>
       <div className="task-view">
         {task.type === 'odd_one_out' ? (
           <OddOneOutTaskView task={task} attempt={attempt} onUpdate={onUpdate} />

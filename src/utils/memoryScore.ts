@@ -88,14 +88,112 @@ function scoreMulti(
   };
 }
 
+const SPOKEN_DIGITS: Record<string, string> = {
+  nulle: '0',
+  viens: '1',
+  vienu: '1',
+  divi: '2',
+  divus: '2',
+  trīs: '3',
+  tris: '3',
+  četri: '4',
+  cetri: '4',
+  četrus: '4',
+  cetrus: '4',
+  pieci: '5',
+  piecus: '5',
+  seši: '6',
+  sesi: '6',
+  sešus: '6',
+  sesus: '6',
+  septiņi: '7',
+  septini: '7',
+  septiņus: '7',
+  septinus: '7',
+  astoņi: '8',
+  astoni: '8',
+  astoņus: '8',
+  astonus: '8',
+  deviņi: '9',
+  devini: '9',
+  deviņus: '9',
+  devinus: '9',
+};
+
+/** "7294", "7 2 9 4", or "septiņi divi deviņi četri" → single digits in order. */
+export function parseDigitEntry(raw: string): string[] {
+  const out: string[] = [];
+  const parts = raw
+    .toLowerCase()
+    .split(/[^\p{L}\p{N}]+/u)
+    .filter(Boolean);
+  for (const part of parts) {
+    if (/^\d+$/.test(part)) {
+      for (const ch of part) out.push(ch);
+    } else if (SPOKEN_DIGITS[part]) {
+      out.push(SPOKEN_DIGITS[part]);
+    }
+  }
+  return out;
+}
+
+/**
+ * One typed or spoken line into list items.
+ * Commas and "un" split items. A phrase can still match a multi-word item.
+ */
+export function parseListEntry(raw: string, correctTokens: string[]): string[] {
+  const trimmed = raw.trim();
+  if (!trimmed) return [];
+  if (correctTokens.every((token) => /^\d+$/.test(token))) {
+    const nums = trimmed.match(/\d+/g);
+    if (nums && nums.length > 0) return nums;
+  }
+  const parts = trimmed
+    .split(/\s*(?:,|;|\n|\bun\b)\s*/i)
+    .map((part) => part.trim())
+    .filter(Boolean);
+  if (parts.length > 1) return parts;
+
+  const blob = normText(trimmed);
+  const matched: string[] = [];
+  let rest = blob;
+  const ordered = [...correctTokens].sort(
+    (a, b) => normText(b).length - normText(a).length,
+  );
+  for (const token of ordered) {
+    const key = normText(token);
+    if (!key || !rest.includes(key)) continue;
+    matched.push(token);
+    rest = rest.replace(key, ' ');
+  }
+  const leftovers = rest
+    .split(/[^\p{L}\p{N}]+/u)
+    .map((part) => part.trim())
+    .filter((part) => part.length > 1);
+  if (matched.length > 0) return [...matched, ...leftovers];
+  return parts;
+}
+
+function enteredDigits(draft: MemoryDraft): string[] {
+  const fromText = parseDigitEntry(draft.pendingItem);
+  return fromText.length > 0 ? fromText : draft.digits;
+}
+
 function hasFreeContent(task: MemoryRecallTask, draft: MemoryDraft): boolean {
-  if (task.answer.kind === 'ordered_digits') return draft.digits.length > 0;
+  if (task.answer.kind === 'ordered_digits') return enteredDigits(draft).length > 0;
   if (task.answer.kind === 'unordered_list') {
-    return draft.items.some((item) => item.trim() !== '');
+    return (
+      draft.items.some((item) => item.trim() !== '') ||
+      parseListEntry(draft.pendingItem, task.answer.correctTokens).length > 0
+    );
   }
   return task.answer.fields.some((field) =>
     (draft.facts[field.key] ?? '').trim() !== '',
   );
+}
+
+function lookedUp(draft: MemoryDraft): boolean {
+  return draft.answerVisible || (draft.revealedFactKeys?.length ?? 0) > 0;
 }
 
 function recognitionUsed(draft: MemoryDraft): boolean {
@@ -107,8 +205,8 @@ function recognitionUsed(draft: MemoryDraft): boolean {
 /**
  * Score a finished response.
  * Free recall and recognition stay separate.
- * An empty Tālāk is spoken and not auto-scored.
- * Neatceros with an empty answer is 0.
+ * An empty Enter is spoken and not auto-scored.
+ * Looking at the answer, or Neatceros, with an empty answer is 0.
  * Unmatched free-text facts are left unscored (not marked wrong).
  */
 export function scoreMemoryDraft(
@@ -120,25 +218,29 @@ export function scoreMemoryDraft(
   const recognitionOpened = draft.recognitionOpen || recognitionUsed(draft);
   const answer: MemoryAnswer = {
     recognitionOpened,
+    viewedAnswer: lookedUp(draft),
     answeredAt,
   };
 
   if (task.answer.kind === 'ordered_digits') {
-    answer.freeResponseRaw = draft.digits.join('');
-    if (draft.digits.length === 0 && kind === 'submit' && !recognitionUsed(draft)) {
+    const digits = enteredDigits(draft);
+    answer.freeResponseRaw = digits.join('');
+    if (
+      digits.length === 0 &&
+      kind === 'submit' &&
+      !recognitionUsed(draft) &&
+      !lookedUp(draft)
+    ) {
       answer.freeScore = null;
       answer.notScorableReason = 'spoken_untranscribed';
-    } else if (draft.digits.length === 0 && kind === 'forgot') {
+    } else if (digits.length === 0 && (kind === 'forgot' || lookedUp(draft))) {
       answer.freeScore = {
         correct: 0,
         total: task.answer.correctTokens.length,
         exact: false,
       };
-    } else if (draft.digits.length > 0) {
-      answer.freeScore = scorePositions(
-        draft.digits,
-        task.answer.correctTokens,
-      );
+    } else if (digits.length > 0) {
+      answer.freeScore = scorePositions(digits, task.answer.correctTokens);
     }
     if (draft.singleIndex != null) {
       const options = task.answer.recognition.options;
@@ -150,18 +252,23 @@ export function scoreMemoryDraft(
   }
 
   if (task.answer.kind === 'unordered_list') {
-    const pending = draft.pendingItem.trim();
-    const items = [...draft.items.map((item) => item.trim()), pending].filter(
-      Boolean,
-    );
+    const items = [
+      ...draft.items.map((item) => item.trim()).filter(Boolean),
+      ...parseListEntry(draft.pendingItem, task.answer.correctTokens),
+    ];
     answer.freeResponseRaw = items;
     const numeric = task.answer.freeInput === 'numeric_list';
     const norm = (value: string) =>
       numeric ? value.replace(/\s+/g, '') : normText(value);
-    if (items.length === 0 && kind === 'submit' && !recognitionUsed(draft)) {
+    if (
+      items.length === 0 &&
+      kind === 'submit' &&
+      !recognitionUsed(draft) &&
+      !lookedUp(draft)
+    ) {
       answer.freeScore = null;
       answer.notScorableReason = 'spoken_untranscribed';
-    } else if (items.length === 0 && kind === 'forgot') {
+    } else if (items.length === 0 && (kind === 'forgot' || lookedUp(draft))) {
       answer.freeScore = {
         correct: 0,
         total: task.answer.correctTokens.length,
@@ -203,10 +310,15 @@ export function scoreMemoryDraft(
   answer.freeResponseRaw = facts;
 
   const nothingTyped = !hasFreeContent(task, draft);
-  if (nothingTyped && kind === 'submit' && !recognitionUsed(draft)) {
+  if (
+    nothingTyped &&
+    kind === 'submit' &&
+    !recognitionUsed(draft) &&
+    !lookedUp(draft)
+  ) {
     answer.freeScore = null;
     answer.notScorableReason = 'spoken_untranscribed';
-  } else if (nothingTyped && kind === 'forgot') {
+  } else if (nothingTyped && (kind === 'forgot' || lookedUp(draft))) {
     answer.freeScore = {
       correct: 0,
       total: task.answer.fields.length,

@@ -1,154 +1,81 @@
-import { useEffect, useRef, useState } from 'react';
 import { Button } from '../../components/Button';
-import {
-  pickLatvianVoice,
-  speakLatvianSegments,
-  stopLatvianSpeech,
-} from '../../speech/lvTts';
-import type { MemoryCategory, MemoryRecallTask } from '../../types/memory';
+import { ListenButton } from '../../components/ListenButton';
+import type { MemoryRecallTask } from '../../types/memory';
 
 interface Props {
   task: MemoryRecallTask;
-  playCount: number;
   visualOpen: boolean;
-  visualFirst: boolean;
   onPlayed: () => void;
   onVisual: (open: boolean) => void;
   onReady: () => void;
 }
 
-function heading(category: MemoryCategory): string {
-  switch (category) {
-    case 'digits':
-      return 'Noklausies ciparus';
-    case 'numbers':
-      return 'Noklausies skaitļus';
-    case 'words':
-      return 'Noklausies vārdus';
-    case 'shopping':
-      return 'Noklausies iepirkumus';
-    case 'appointment':
-      return 'Noklausies tikšanos';
-  }
+/** Cloud voice, list only — the instruction stays on screen. */
+function speakable(task: MemoryRecallTask): string {
+  const segments = task.stimulus.ttsSegments
+    .map((segment) => segment.trim())
+    .filter(Boolean);
+  if (segments.length === 0) return task.stimulus.visualText;
+  const short = task.category === 'digits' || task.category === 'numbers';
+  return segments.join(short ? ', ' : '. ');
+}
+
+function EyeIcon({ open }: { open: boolean }) {
+  return (
+    <svg
+      className="listen-btn-icon"
+      viewBox="0 0 24 24"
+      width="1.35em"
+      height="1.35em"
+      aria-hidden="true"
+      focusable="false"
+    >
+      {open ? (
+        <path
+          fill="currentColor"
+          d="M12 6.5c4.7 0 8.6 3.1 10 7.5-1.4 4.4-5.3 7.5-10 7.5S3.4 18.4 2 14c1.4-4.4 5.3-7.5 10-7.5zm0 2c-3.5 0-6.5 2.2-7.7 5.5C5.5 17.3 8.5 19.5 12 19.5s6.5-2.2 7.7-5.5C18.5 10.7 15.5 8.5 12 8.5zm0 1.8a3.7 3.7 0 1 1 0 7.4 3.7 3.7 0 0 1 0-7.4z"
+        />
+      ) : (
+        <path
+          fill="currentColor"
+          d="M3.3 2.5 2 3.8l3.2 3.2C3.4 8.4 2.2 10.1 1.5 12c1.6 4.6 6 8 10.5 8 1.8 0 3.5-.5 5-1.3l3.2 3.2 1.3-1.3L3.3 2.5zM12 18c-3.4 0-6.6-2.3-8-6 .6-1.6 1.6-3 2.8-4.1l2.1 2.1A3.7 3.7 0 0 0 12 16.2c.4 0 .8-.1 1.2-.2l1.6 1.6c-.9.3-1.8.4-2.8.4zm7.2-2.1-1.5-1.5c.8-.9 1.4-2 1.8-3.2C18.1 8.3 15.2 6 12 6c-.6 0-1.1.1-1.7.2L8.7 4.6C9.7 4.2 10.8 4 12 4c4.5 0 8.9 3.4 10.5 8-.7 2-1.8 3.7-3.3 5z"
+        />
+      )}
+    </svg>
+  );
 }
 
 export function MemoryStudyStep({
   task,
-  playCount,
   visualOpen,
-  visualFirst,
   onPlayed,
   onVisual,
   onReady,
 }: Props) {
-  const [voiceReady, setVoiceReady] = useState(false);
-  const [hasLatvian, setHasLatvian] = useState(false);
-  const [speaking, setSpeaking] = useState(false);
-  const [speechError, setSpeechError] = useState<string | null>(null);
-  const generation = useRef<{ cancelled: boolean }>({ cancelled: true });
-  const revealed = useRef(false);
-
-  useEffect(() => {
-    const synth = window.speechSynthesis;
-    if (!synth) {
-      setVoiceReady(true);
-      setHasLatvian(false);
-      return;
-    }
-    const load = () => {
-      setHasLatvian(pickLatvianVoice(synth.getVoices()) != null);
-      setVoiceReady(true);
-    };
-    load();
-    synth.addEventListener('voiceschanged', load);
-    return () => {
-      synth.removeEventListener('voiceschanged', load);
-      generation.current.cancelled = true;
-      stopLatvianSpeech();
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!voiceReady || revealed.current) return;
-    if (visualFirst || !hasLatvian) {
-      revealed.current = true;
-      if (!visualOpen) onVisual(true);
-    }
-  }, [voiceReady, hasLatvian, visualFirst, visualOpen, onVisual]);
-
-  const stop = () => {
-    generation.current.cancelled = true;
-    stopLatvianSpeech();
-    setSpeaking(false);
-  };
-
-  const play = () => {
-    if (!hasLatvian) return;
-    if (speaking) {
-      stop();
-      return;
-    }
-    const token = { cancelled: false };
-    generation.current = token;
-    setSpeechError(null);
-    onPlayed();
-    setSpeaking(true);
-    void speakLatvianSegments(task.stimulus.ttsSegments, token).then((ok) => {
-      if (token.cancelled) return;
-      setSpeaking(false);
-      if (!ok) {
-        setSpeechError(
-          'Neizdevās atskaņot latviešu balsi. Tekstu var apskatīt.',
-        );
-        if (!visualOpen) onVisual(true);
-      }
-    });
-  };
-
-  const showText = visualOpen;
-  const listenLabel = speaking
-    ? 'Apturēt'
-    : playCount > 0
-      ? 'Noklausīties vēlreiz'
-      : 'Noklausīties';
-
   return (
     <div className="memory-flow">
-      <h1 className="memory-heading">{heading(task.category)}</h1>
       <p className="memory-instruction">{task.instruction}</p>
 
-      {showText ? (
+      {visualOpen ? (
         <p className="memory-stimulus">{task.stimulus.visualText}</p>
-      ) : (
-        <p className="memory-instruction">
-          {voiceReady
-            ? 'Teksts ir paslēpts. Varat noklausīties vai apskatīt.'
-            : 'Sagatavo…'}
-        </p>
-      )}
+      ) : null}
 
-      {voiceReady && !hasLatvian ? (
-        <p className="memory-note" role="status">
-          Latviešu balss šajā ierīcē nav pieejama. Teksts ir redzams.
-        </p>
-      ) : null}
-      {speechError ? (
-        <p className="memory-note" role="alert">
-          {speechError}
-        </p>
-      ) : null}
+      <div className="listen-row">
+        <ListenButton
+          text={speakable(task)}
+          label="Atskaņot"
+          ariaLabel="Atskaņot sarakstu"
+          speakingRate={0.5}
+          onStart={onPlayed}
+        />
+      </div>
 
       <div className="memory-actions">
-        {hasLatvian ? (
-          <Button variant="secondary" onClick={play}>
-            {listenLabel}
-          </Button>
-        ) : null}
-        <Button
-          variant="secondary"
-          onClick={() => onVisual(!showText)}
-        >
-          {showText ? 'Paslēpt' : 'Apskatīt'}
+        <Button variant="secondary" onClick={() => onVisual(!visualOpen)}>
+          <span className="listen-btn-inner">
+            <EyeIcon open={visualOpen} />
+            <span>{visualOpen ? 'Paslēpt' : 'Apskatīt'}</span>
+          </span>
         </Button>
         <Button variant="primary" onClick={onReady}>
           Esmu gatavs

@@ -17,6 +17,10 @@ interface ListenButtonProps {
   compact?: boolean;
   /** Hide the error banner (use when many compact buttons share a row). */
   hideError?: boolean;
+  /** Called when the user starts playback (not when they stop it). */
+  onStart?: () => void;
+  /** 1 is normal. Omit to keep the usual rehab pace. */
+  speakingRate?: number;
 }
 
 function SpeakerIcon() {
@@ -64,6 +68,8 @@ export function ListenButton({
   fullWidth = true,
   compact = false,
   hideError = false,
+  onStart,
+  speakingRate,
 }: ListenButtonProps) {
   const {
     supported,
@@ -109,7 +115,10 @@ export function ListenButton({
           e.stopPropagation();
           clearError();
           if (busy) stop();
-          else toggle(text);
+          else {
+            onStart?.();
+            toggle(text, speakingRate);
+          }
         }}
       >
         <span className="listen-btn-inner">
