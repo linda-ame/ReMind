@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnswerField } from '../../components/AnswerField';
 import { Button } from '../../components/Button';
 import type { MemoryDraft, MemoryRecallTask } from '../../types/memory';
@@ -296,6 +296,13 @@ function RecognitionChoices({
   const [wrong, setWrong] = useState<number[]>([]);
   const [solved, setSolved] = useState(false);
   const chimed = useRef(false);
+  const optionKey = options.join('\n');
+  const correctKey = correct.join(',');
+  useEffect(() => {
+    setWrong([]);
+    setSolved(false);
+    chimed.current = false;
+  }, [optionKey, correctKey]);
   const wrongSet = new Set(wrong);
 
   const pick = (index: number) => {
@@ -307,7 +314,6 @@ function RecognitionChoices({
         current.includes(index) ? current : [...current, index],
       );
       playWrongBuzz();
-      if (!selected.includes(index)) onToggle(index);
       return;
     }
 
