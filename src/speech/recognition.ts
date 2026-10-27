@@ -73,6 +73,11 @@ export function isMicrophonePermissionError(code: string | null): boolean {
   return code === 'not-allowed' || code === 'service-not-allowed';
 }
 
+export function isIosDevice(): boolean {
+  if (typeof navigator === 'undefined') return false;
+  return /iPhone|iPad|iPod/.test(navigator.userAgent);
+}
+
 /** `unknown` when the browser has no microphone entry in the Permissions API (Safari). */
 export async function queryMicrophonePermission(): Promise<MicrophonePermissionState> {
   if (typeof navigator === 'undefined' || !navigator.permissions?.query) {
