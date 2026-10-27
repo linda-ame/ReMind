@@ -181,7 +181,13 @@ export function AnswerField({
     dictation.clearError();
     // start() has to run inside this tap. Waiting for the permission check
     // first makes iOS Safari ignore the microphone even when it is Allow.
-    if (microphoneGrantedInPage() || knownPerm === 'granted') {
+    // iPhone rejects start() unless it happens in this tap, and its permission
+    // query stays "denied" after Microphone is already Allow.
+    if (
+      isIosDevice() ||
+      microphoneGrantedInPage() ||
+      knownPerm === 'granted'
+    ) {
       dictation.start();
       return;
     }
@@ -332,14 +338,14 @@ export function AnswerField({
           >
             <h2 id={micTitleId} className="mic-permission-title">
               {micDialog === 'speech'
-                ? 'Vajag runas atpazīšanu'
+                ? 'Safari nedrīkst mikrofonu'
                 : micDialog === 'blocked'
                   ? 'Mikrofons ir bloķēts'
                   : 'Mikrofons'}
             </h2>
             <p className="mic-permission-text">
               {micDialog === 'speech'
-                ? 'Settings → Privacy & Security → Speech Recognition. Ieslēdz Safari, pārlādē lapu un nospied vēlreiz.'
+                ? 'Settings → Privacy & Security → Microphone. Ieslēdz Safari. Pēc tam aizver Safari pavisam un atver lapu no jauna.'
                 : micDialog === 'blocked'
                   ? 'Atļaujas logs vairs neatveras. Ierīces iestatījumos atļaujiet mikrofonu šai lapai un nospiediet vēlreiz.'
                   : micDialog === 'asking'
