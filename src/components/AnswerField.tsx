@@ -2,13 +2,11 @@ import { useEffect, useId, useRef, useState, type KeyboardEvent, type PointerEve
 import { useSpeechDictation } from '../hooks/useSpeechDictation';
 import {
   clearMicrophoneGrantedInPage,
-  hasMicrophonePrompt,
   isIosDevice,
   isMicrophonePermissionError,
   markMicrophoneGrantedInPage,
   microphoneGrantedInPage,
   queryMicrophonePermission,
-  requestMicrophoneFromGesture,
   type MicrophonePermissionState,
 } from '../speech/recognition';
 import type { AnswerInputFeedback } from '../utils/answers';
@@ -104,7 +102,6 @@ export function AnswerField({
   const [knownPerm, setKnownPerm] = useState<MicrophonePermissionState | null>(
     null,
   );
-  const [micFail, setMicFail] = useState<string | null>(null);
 
   useEffect(() => {
     let cancel = false;
@@ -138,10 +135,6 @@ export function AnswerField({
   useEffect(() => {
     if (!isMicrophonePermissionError(dictation.errorCode)) return;
     clearMicrophoneGrantedInPage();
-    if (isIosDevice() && hasMicrophonePrompt() && dictation.errorCode === 'not-allowed') {
-      setMicDialog('again');
-      return;
-    }
     setMicDialog(isIosDevice() ? 'speech' : 'blocked');
   }, [dictation.errorCode]);
 
@@ -183,24 +176,9 @@ export function AnswerField({
     }
     dictation.clearError();
     if (isIosDevice()) {
-      if (microphoneGrantedInPage() || hasMicrophonePrompt()) {
-        dictation.start();
-        return;
-      }
-      setMicDialog('asking');
-      // getUserMedia has to start inside this tap, or iOS never shows
-      // "Safari Would Like to Access the Microphone" and Safari stays off
-      // the privacy list.
-      void requestMicrophoneFromGesture().then((result) => {
-        if (!result.ok) {
-          setMicFail(result.reason);
-          setMicDialog('speech');
-          return;
-        }
-        // The Allow tap consumes the gesture, so recognition must start
-        // on the next tap or iOS rejects it.
-        setMicDialog('again');
-      });
+      // Only speech recognition may take the microphone. A separate
+      // getUserMedia prompt leaves iOS unable to start dictation afterwards.
+      dictation.start();
       return;
     }
     // start() has to run inside this tap. Waiting for the permission check
@@ -356,7 +334,7 @@ export function AnswerField({
               {micDialog === 'again'
                 ? 'Mikrofons ir atļauts'
                 : micDialog === 'speech'
-                  ? 'Safari vēl neprasa mikrofonu'
+                  ? 'Ierunāšana neizdevās'
                   : micDialog === 'blocked'
                     ? 'Mikrofons ir bloķēts'
                     : 'Mikrofons'}
@@ -365,7 +343,7 @@ export function AnswerField({
               {micDialog === 'again'
                 ? 'Nospiediet Ierunāt vēlreiz un runājiet.'
                 : micDialog === 'speech'
-                  ? `Settings → Apps → Safari → ritini līdz apakšai → Microphone → Ask. Pēc tam aizver Safari pavisam un atver lapu no jauna.${micFail ? ` (${micFail})` : ''}`
+                  ? `Aizver Safari pavisam, atver lapu no jauna un nospied Ierunāt vienu reizi.${dictation.errorCode ? ` (${dictation.errorCode})` : ''}`
                   : micDialog === 'blocked'
                   ? 'Atļaujas logs vairs neatveras. Ierīces iestatījumos atļaujiet mikrofonu šai lapai un nospiediet vēlreiz.'
                   : micDialog === 'asking'
