@@ -197,7 +197,9 @@ export function AnswerField({
           setMicDialog('speech');
           return;
         }
-        dictation.start();
+        // The Allow tap consumes the gesture, so recognition must start
+        // on the next tap or iOS rejects it.
+        setMicDialog('again');
       });
       return;
     }
