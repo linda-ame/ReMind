@@ -12,11 +12,16 @@ export interface ProgressRepository {
   getAttemptsForTask(taskId: string): Promise<TaskAttempt[]>;
   saveAttempt(attempt: TaskAttempt): Promise<void>;
   /**
-   * Keep only this attempt for its taskId+contentVersion
-   * (drops empty ghost rows that would otherwise look “newer”).
+   * Keep only this current attempt for its taskId+contentVersion.
+   * Drops empty ghost rows. Archived history is left in place.
    */
   replaceAttemptsForTaskVersion(attempt: TaskAttempt): Promise<void>;
-  /** Remove all attempts for the given task IDs (e.g. reset one lesson). */
+  /**
+   * Hide current attempts for these tasks and keep them as history.
+   * The learner starts again with empty tasks.
+   */
+  archiveAttemptsForTasks(taskIds: string[], archivedAt: string): Promise<void>;
+  /** Permanently remove attempts for the given task IDs. */
   deleteAttemptsForTasks(taskIds: string[]): Promise<void>;
 
   exportProgress(): Promise<ProgressSnapshot>;

@@ -1,3 +1,4 @@
+import type { MemoryMode, MemorySession } from '../types/memory';
 import type { ProgressRepository } from './ProgressRepository';
 import {
   PROGRESS_SCHEMA_VERSION,
@@ -8,9 +9,10 @@ import {
 } from '../types/progress';
 
 const DB_NAME = 'remind-progress';
-const DB_VERSION = 1;
+const DB_VERSION = 3;
 const ATTEMPTS_STORE = 'attempts';
 const SETTINGS_STORE = 'settings';
+const MEMORY_STORE = 'memorySessions';
 const SETTINGS_KEY = 'ui';
 
 /** Reuse one connection — open/close per write races under rapid lesson navigation. */
@@ -46,6 +48,13 @@ function openDb(): Promise<IDBDatabase> {
       }
       if (!db.objectStoreNames.contains(SETTINGS_STORE)) {
         db.createObjectStore(SETTINGS_STORE);
+      }
+      if (!db.objectStoreNames.contains(MEMORY_STORE)) {
+        const memory = db.createObjectStore(MEMORY_STORE, {
+          keyPath: 'sessionId',
+        });
+        memory.createIndex('mode', 'mode', { unique: false });
+        memory.createIndex('taskId', 'taskId', { unique: false });
       }
     };
   });
@@ -107,7 +116,19 @@ export class IndexedDBProgressRepository implements ProgressRepository {
   async saveAttempt(attempt: TaskAttempt): Promise<void> {
     const db = await openDb();
     const tx = db.transaction(ATTEMPTS_STORE, 'readwrite');
-    tx.objectStore(ATTEMPTS_STORE).put(attempt);
+    const store = tx.objectStore(ATTEMPTS_STORE);
+    const existing = await idbRequest<TaskAttempt | undefined>(
+      store.get(attempt.id),
+    );
+    // A reset can land while an older write is still in flight.
+    if (existing?.archivedAt) {
+      await txDone(tx);
+      return;
+    }
+    store.put({
+      ...attempt,
+      activeMs: Math.max(existing?.activeMs ?? 0, attempt.activeMs ?? 0),
+    });
     await txDone(tx);
   }
 
@@ -121,13 +142,38 @@ export class IndexedDBProgressRepository implements ProgressRepository {
     );
     for (const row of existing) {
       if (
+        !row.archivedAt &&
         row.contentVersion === attempt.contentVersion &&
         row.id !== attempt.id
       ) {
         store.delete(row.id);
       }
     }
-    store.put(attempt);
+    const current = existing.find((row) => row.id === attempt.id);
+    if (!current?.archivedAt) {
+      store.put({
+        ...attempt,
+        activeMs: Math.max(current?.activeMs ?? 0, attempt.activeMs ?? 0),
+      });
+    }
+    await txDone(tx);
+  }
+
+  async archiveAttemptsForTasks(
+    taskIds: string[],
+    archivedAt: string,
+  ): Promise<void> {
+    if (taskIds.length === 0) return;
+    const idSet = new Set(taskIds);
+    const db = await openDb();
+    const tx = db.transaction(ATTEMPTS_STORE, 'readwrite');
+    const store = tx.objectStore(ATTEMPTS_STORE);
+    const all = await idbRequest<TaskAttempt[]>(store.getAll());
+    for (const attempt of all) {
+      if (idSet.has(attempt.taskId) && !attempt.archivedAt) {
+        store.put({ ...attempt, archivedAt });
+      }
+    }
     await txDone(tx);
   }
 
@@ -156,6 +202,7 @@ export class IndexedDBProgressRepository implements ProgressRepository {
       exportedAt: new Date().toISOString(),
       attempts,
       settings,
+      memorySessions: await getAllMemorySessions(),
     };
   }
 
@@ -187,6 +234,9 @@ export class IndexedDBProgressRepository implements ProgressRepository {
     }
 
     await txDone(tx);
+    if (snapshot.memorySessions) {
+      await importMemorySessions(snapshot.memorySessions, mode);
+    }
   }
 
   async clearAll(): Promise<void> {
@@ -196,6 +246,58 @@ export class IndexedDBProgressRepository implements ProgressRepository {
     tx.objectStore(SETTINGS_STORE).clear();
     await txDone(tx);
   }
+}
+
+export async function getAllMemorySessions(): Promise<MemorySession[]> {
+  const db = await openDb();
+  if (!db.objectStoreNames.contains(MEMORY_STORE)) return [];
+  const tx = db.transaction(MEMORY_STORE, 'readonly');
+  const sessions = await idbRequest<MemorySession[]>(
+    tx.objectStore(MEMORY_STORE).getAll(),
+  );
+  await txDone(tx);
+  return sessions;
+}
+
+export async function saveMemorySession(session: MemorySession): Promise<void> {
+  const db = await openDb();
+  const tx = db.transaction(MEMORY_STORE, 'readwrite');
+  tx.objectStore(MEMORY_STORE).put(session);
+  await txDone(tx);
+}
+
+export async function deleteMemorySession(sessionId: string): Promise<void> {
+  const db = await openDb();
+  const tx = db.transaction(MEMORY_STORE, 'readwrite');
+  tx.objectStore(MEMORY_STORE).delete(sessionId);
+  await txDone(tx);
+}
+
+export async function deleteMemorySessionsForMode(
+  mode: MemoryMode,
+): Promise<void> {
+  const db = await openDb();
+  const tx = db.transaction(MEMORY_STORE, 'readwrite');
+  const store = tx.objectStore(MEMORY_STORE);
+  const all = await idbRequest<MemorySession[]>(store.getAll());
+  for (const session of all) {
+    if (session.mode === mode) store.delete(session.sessionId);
+  }
+  await txDone(tx);
+}
+
+/** Missing list leaves existing sessions untouched (older exports). */
+export async function importMemorySessions(
+  sessions: MemorySession[] | undefined,
+  mode: 'merge' | 'replace',
+): Promise<void> {
+  if (!sessions) return;
+  const db = await openDb();
+  const tx = db.transaction(MEMORY_STORE, 'readwrite');
+  const store = tx.objectStore(MEMORY_STORE);
+  if (mode === 'replace') store.clear();
+  for (const session of sessions) store.put(session);
+  await txDone(tx);
 }
 
 /** Local guest store — always available; cloud sync uses Supabase when signed in. */

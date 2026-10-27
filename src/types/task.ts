@@ -197,8 +197,9 @@ export interface SentenceCreationTask extends BaseTask {
 }
 
 /**
- * Name one association with a brand. `exampleAssociations` are illustrations,
- * not an exclusive answer key — other words can also fit.
+ * Name one association. `exampleAssociations` are illustrations, not an
+ * exclusive answer key. Brands use an open association. Two-part names show
+ * the first word in `brand` and the usual second word as the example.
  */
 export interface BrandAssociationTask extends BaseTask {
   type: 'brand_association';

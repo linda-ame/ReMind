@@ -91,12 +91,13 @@ export function batchProgress(
     } else if (!tasksById) {
       // Fallback without task metadata (legacy call sites).
       const completed = attempts.some(
-        (a) => a.taskId === id && a.status === 'completed',
+        (a) =>
+          !a.archivedAt && a.taskId === id && a.status === 'completed',
       );
       if (completed) {
         done += 1;
         anyProgress = true;
-      } else if (attempts.some((a) => a.taskId === id)) {
+      } else if (attempts.some((a) => !a.archivedAt && a.taskId === id)) {
         anyProgress = true;
       }
     }

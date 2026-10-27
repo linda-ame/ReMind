@@ -1,3 +1,5 @@
+import type { MemorySession } from './memory';
+
 /** Progress export/import schema version. */
 export const PROGRESS_SCHEMA_VERSION = 1;
 
@@ -34,6 +36,16 @@ export interface TaskAttempt {
   usedHint: boolean;
   viewedAnswers: boolean;
   selfAssessment: SelfAssessment | null;
+  /**
+   * Set when the learner starts this task over. The row stays in storage
+   * for later review and is ignored by current progress.
+   */
+  archivedAt?: string | null;
+  /**
+   * Milliseconds the task was on screen while the tab was visible.
+   * Not shown in the UI.
+   */
+  activeMs?: number;
   /** Present for reading_comprehension tasks. */
   reading?: ReadingComprehensionProgress;
 }
@@ -131,4 +143,9 @@ export interface ProgressSnapshot {
   exportedAt: string;
   attempts: TaskAttempt[];
   settings: UiSettings;
+  /**
+   * Memory-training sessions. Kept on the device export only —
+   * not uploaded with cloud task attempts.
+   */
+  memorySessions?: MemorySession[];
 }

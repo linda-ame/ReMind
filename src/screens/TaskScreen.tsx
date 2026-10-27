@@ -6,7 +6,7 @@ import {
   getTasksByType,
 } from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
-import { progressRepository } from '../repositories/IndexedDBProgressRepository';
+import { useTaskActiveTime } from '../hooks/useTaskActiveTime';
 import {
   completeAttempt,
   countCompletedInSet,
@@ -63,13 +63,30 @@ export function TaskScreen({
   onBack,
   onHome,
 }: TaskScreenProps) {
-  const { attempts, saveAttempt, skipTaskToday } = useApp();
+  const { attempts, saveAttempt, skipTaskToday, getAttemptsForTask } = useApp();
   const task = getTaskById(taskId);
   const [attempt, setAttempt] = useState<TaskAttempt | null>(null);
   const attemptRef = useRef<TaskAttempt | null>(null);
   /** Blocks late child patches while complete+navigate is in flight. */
   const finishingRef = useRef(false);
   const isView = mode === 'view';
+
+  const flushActiveTime = (id: string, activeMs: number) => {
+    const current = attemptRef.current;
+    if (isView || !current || current.id !== id) return;
+    if (current.status === 'viewed') return;
+    if ((current.activeMs ?? 0) === activeMs) return;
+    const next = { ...current, activeMs };
+    attemptRef.current = next;
+    void saveAttempt(next);
+  };
+
+  const stampActiveTime = useTaskActiveTime(
+    attempt?.id ?? null,
+    attempt?.activeMs ?? 0,
+    !isView && attempt != null,
+    flushActiveTime,
+  );
 
   const setAttemptBoth = (next: TaskAttempt) => {
     attemptRef.current = next;
@@ -90,10 +107,11 @@ export function TaskScreen({
     }
 
     (async () => {
-      // Read IDB directly — React `attempts` can lag one navigation behind.
-      const fromDb = await progressRepository.getAttemptsForTask(task.id);
+      // Active store, not only React state — it can lag one navigation behind.
+      // Archived rows stay stored but are not resumed.
+      const fromStore = await getAttemptsForTask(task.id);
       if (cancelled) return;
-      const pool = fromDb.length > 0 ? fromDb : attempts;
+      const pool = fromStore.length > 0 ? fromStore : attempts;
       const previous = latestAttemptForTask(
         pool,
         task.id,
@@ -116,7 +134,7 @@ export function TaskScreen({
     };
     // Only re-init when the task changes; attempts is read at that moment.
     // eslint-disable-next-line react-hooks/exhaustive-deps -- intentional
-  }, [taskId, task, saveAttempt, isView, fresh]);
+  }, [taskId, task, saveAttempt, isView, fresh, getAttemptsForTask]);
 
   const sectionLayout =
     batchType != null && batchIndex == null
@@ -194,7 +212,7 @@ export function TaskScreen({
     if (base.status === 'completed') return;
     // Merge onto the latest parent snapshot so a stale child copy cannot
     // wipe rating / answer.
-    const merged: TaskAttempt = {
+    const merged: TaskAttempt = stampActiveTime({
       ...base,
       ...next,
       id: base.id,
@@ -212,7 +230,7 @@ export function TaskScreen({
       usedHint: Boolean(next.usedHint || base.usedHint),
       status: next.status ?? base.status,
       reading: next.reading ?? base.reading,
-    };
+    });
     // Re-check: finishAndGoNext may have completed mid-function.
     if (finishingRef.current || attemptRef.current?.status === 'completed') {
       return;
@@ -265,7 +283,7 @@ export function TaskScreen({
     if (finishingRef.current) return;
     finishingRef.current = true;
     const base = attemptRef.current ?? attempt;
-    const done = completeAttempt(base, null);
+    const done = completeAttempt(stampActiveTime(base), null);
     setAttemptBoth(done);
     try {
       await saveAttempt(done);
@@ -279,11 +297,11 @@ export function TaskScreen({
     if (isView || finishingRef.current) return;
     const base = attemptRef.current ?? attempt;
     if (base.status === 'completed') return;
-    const next: TaskAttempt = {
+    const next: TaskAttempt = stampActiveTime({
       ...base,
       selfAssessment: assessment,
       status: 'attempted',
-    };
+    });
     setAttemptBoth(next);
     void saveAttempt(next);
   };
@@ -301,7 +319,7 @@ export function TaskScreen({
       assessment !== undefined
         ? assessment
         : (base.selfAssessment ?? 'skipped');
-    const done = completeAttempt(base, finalAssessment);
+    const done = completeAttempt(stampActiveTime(base), finalAssessment);
     setAttemptBoth(done);
     try {
       await saveAttempt(done);
@@ -451,9 +469,10 @@ export function TaskScreen({
           task={task}
           attempt={attempt}
           onUpdate={(next) => {
-            setAttemptBoth(next);
+            const stamped = isView ? next : stampActiveTime(next);
+            setAttemptBoth(stamped);
             if (isView) return;
-            return saveAttempt(next);
+            return saveAttempt(stamped);
           }}
           onFinished={() => {
             if (isView) {

@@ -37,7 +37,7 @@ export function ProgressScreen({
   const startHardRedo = async (ids: string[], label: string) => {
     if (ids.length === 0) return;
     const ok = window.confirm(
-      `Atkārtot ${label} (${ids.length})?\n\nUzdevumi būs tukši — iepriekšējās atbildes šiem uzdevumiem tiks dzēstas.`,
+      `Atkārtot ${label} (${ids.length})?\n\nUzdevumi būs tukši.`,
     );
     if (!ok) return;
     await clearProgressForTasks(ids);

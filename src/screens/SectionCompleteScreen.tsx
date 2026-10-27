@@ -125,7 +125,7 @@ export function SectionCompleteScreen({
                 Pildīt šodien izlaistos ({skippedCount})
               </Button>
               <p className="section-complete-prompt">
-                Vai dzēst progresu šajā filtrā un sākt no jauna?
+                Vai sākt šo filtru no jauna ar tukšiem uzdevumiem?
               </p>
               <Button variant="secondary" onClick={() => void startOver()}>
                 Atkārtot

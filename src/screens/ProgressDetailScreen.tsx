@@ -97,7 +97,7 @@ export function ProgressDetailScreen({
     const ids = filtered.map((t) => t.id);
     if (ids.length === 0) return;
     const ok = window.confirm(
-      `Atkārtot izvēlētos (${ids.length})?\n\nUzdevumi būs tukši — iepriekšējās atbildes šiem uzdevumiem tiks dzēstas. Tie ies viens pēc otra.`,
+      `Atkārtot izvēlētos (${ids.length})?\n\nUzdevumi būs tukši. Tie ies viens pēc otra.`,
     );
     if (!ok) return;
     await clearProgressForTasks(ids);

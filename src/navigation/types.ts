@@ -55,4 +55,8 @@ export type Screen =
       queue: string[];
       batchIndex?: number;
       batchType?: Task['type'];
+    }
+  | {
+      name: 'memory';
+      mode: 'immediate' | 'delayed';
     };

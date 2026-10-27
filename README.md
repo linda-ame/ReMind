@@ -19,7 +19,7 @@ npm run dev
 ### Supabase (konts + sync)
 
 1. Izveido projektu [supabase.com](https://supabase.com).
-2. SQL Editorā izpildi `supabase/migrations/001_initial.sql`.
+2. SQL Editorā izpildi `supabase/migrations/` failus pēc kārtas (`001`, `002`, `003`).
 3. Auth → Providers → Email: MVP laikā vari izslēgt “Confirm email”.
 4. Project Settings → API: ielīmē URL un **anon** atslēgu `.env.local`:
 

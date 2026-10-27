@@ -1,0 +1,5101 @@
+{
+  "schemaVersion": 2,
+  "title": "ReMind — Atmiņas treniņš P01 (uzreiz / pēc brīža)",
+  "tasks": [
+    {
+      "id": "mr-p01-dig-001",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "3   ·   8   ·   5",
+        "ttsSegments": [
+          "3",
+          "8",
+          "5"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "3",
+          "8",
+          "5"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "835",
+            "388",
+            "583",
+            "385"
+          ],
+          "correctIndex": 3
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-002",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "7   ·   2   ·   9",
+        "ttsSegments": [
+          "7",
+          "2",
+          "9"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "7",
+          "2",
+          "9"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "722",
+            "927",
+            "279",
+            "729"
+          ],
+          "correctIndex": 3
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-003",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "4   ·   1   ·   6",
+        "ttsSegments": [
+          "4",
+          "1",
+          "6"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "4",
+          "1",
+          "6"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "146",
+            "614",
+            "416",
+            "419"
+          ],
+          "correctIndex": 2
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-004",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "8   ·   6   ·   2",
+        "ttsSegments": [
+          "8",
+          "6",
+          "2"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "8",
+          "6",
+          "2"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "862",
+            "865",
+            "682",
+            "268"
+          ],
+          "correctIndex": 0
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-005",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "9   ·   5   ·   0",
+        "ttsSegments": [
+          "9",
+          "5",
+          "0"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "9",
+          "5",
+          "0"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "059",
+            "953",
+            "950",
+            "590"
+          ],
+          "correctIndex": 2
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-006",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "2   ·   7   ·   4   ·   9",
+        "ttsSegments": [
+          "2",
+          "7",
+          "4",
+          "9"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "2",
+          "7",
+          "4",
+          "9"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "2749",
+            "2742",
+            "2479",
+            "9472"
+          ],
+          "correctIndex": 0
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-007",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "6   ·   1   ·   3   ·   8",
+        "ttsSegments": [
+          "6",
+          "1",
+          "3",
+          "8"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "6",
+          "1",
+          "3",
+          "8"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "6138",
+            "8316",
+            "6318",
+            "6131"
+          ],
+          "correctIndex": 0
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-008",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "4   ·   8   ·   2   ·   7",
+        "ttsSegments": [
+          "4",
+          "8",
+          "2",
+          "7"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "4",
+          "8",
+          "2",
+          "7"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "4827",
+            "4820",
+            "4287",
+            "7284"
+          ],
+          "correctIndex": 0
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-009",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "7   ·   0   ·   5   ·   3",
+        "ttsSegments": [
+          "7",
+          "0",
+          "5",
+          "3"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "7",
+          "0",
+          "5",
+          "3"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "7053",
+            "3507",
+            "7056",
+            "7503"
+          ],
+          "correctIndex": 0
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-010",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "9   ·   3   ·   1   ·   6",
+        "ttsSegments": [
+          "9",
+          "3",
+          "1",
+          "6"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "9",
+          "3",
+          "1",
+          "6"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "6139",
+            "9316",
+            "9319",
+            "9136"
+          ],
+          "correctIndex": 1
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-011",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "5   ·   2   ·   7   ·   1   ·   8",
+        "ttsSegments": [
+          "5",
+          "2",
+          "7",
+          "1",
+          "8"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "5",
+          "2",
+          "7",
+          "1",
+          "8"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "52711",
+            "57218",
+            "52718",
+            "81725"
+          ],
+          "correctIndex": 2
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-012",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "8   ·   4   ·   0   ·   2   ·   9",
+        "ttsSegments": [
+          "8",
+          "4",
+          "0",
+          "2",
+          "9"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "8",
+          "4",
+          "0",
+          "2",
+          "9"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "84022",
+            "84029",
+            "80429",
+            "92048"
+          ],
+          "correctIndex": 1
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-013",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "1   ·   6   ·   3   ·   7   ·   4",
+        "ttsSegments": [
+          "1",
+          "6",
+          "3",
+          "7",
+          "4"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "1",
+          "6",
+          "3",
+          "7",
+          "4"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "16377",
+            "13674",
+            "47361",
+            "16374"
+          ],
+          "correctIndex": 3
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-014",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "9   ·   7   ·   2   ·   5   ·   0",
+        "ttsSegments": [
+          "9",
+          "7",
+          "2",
+          "5",
+          "0"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "9",
+          "7",
+          "2",
+          "5",
+          "0"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "92750",
+            "97253",
+            "97250",
+            "05279"
+          ],
+          "correctIndex": 2
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-015",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "3   ·   8   ·   6   ·   1   ·   4",
+        "ttsSegments": [
+          "3",
+          "8",
+          "6",
+          "1",
+          "4"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "3",
+          "8",
+          "6",
+          "1",
+          "4"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "38617",
+            "36814",
+            "38614",
+            "41683"
+          ],
+          "correctIndex": 2
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-016",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "6   ·   4   ·   5   ·   8   ·   2",
+        "ttsSegments": [
+          "6",
+          "4",
+          "5",
+          "8",
+          "2"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "6",
+          "4",
+          "5",
+          "8",
+          "2"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "65482",
+            "64582",
+            "28546",
+            "64585"
+          ],
+          "correctIndex": 1
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-017",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "2   ·   7   ·   4   ·   9   ·   1   ·   6",
+        "ttsSegments": [
+          "2",
+          "7",
+          "4",
+          "9",
+          "1",
+          "6"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "2",
+          "7",
+          "4",
+          "9",
+          "1",
+          "6"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "619472",
+            "279416",
+            "274919",
+            "274916"
+          ],
+          "correctIndex": 3
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-018",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "8   ·   3   ·   0   ·   5   ·   1   ·   7",
+        "ttsSegments": [
+          "8",
+          "3",
+          "0",
+          "5",
+          "1",
+          "7"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "8",
+          "3",
+          "0",
+          "5",
+          "1",
+          "7"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "830510",
+            "715038",
+            "830517",
+            "835017"
+          ],
+          "correctIndex": 2
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-019",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "4   ·   9   ·   2   ·   6   ·   8   ·   1",
+        "ttsSegments": [
+          "4",
+          "9",
+          "2",
+          "6",
+          "8",
+          "1"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "4",
+          "9",
+          "2",
+          "6",
+          "8",
+          "1"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "496281",
+            "186294",
+            "492684",
+            "492681"
+          ],
+          "correctIndex": 3
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-020",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "7   ·   5   ·   8   ·   2   ·   0   ·   4",
+        "ttsSegments": [
+          "7",
+          "5",
+          "8",
+          "2",
+          "0",
+          "4"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "7",
+          "5",
+          "8",
+          "2",
+          "0",
+          "4"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "752804",
+            "758204",
+            "402857",
+            "758207"
+          ],
+          "correctIndex": 1
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-021",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "6   ·   2   ·   3   ·   7   ·   9   ·   5",
+        "ttsSegments": [
+          "6",
+          "2",
+          "3",
+          "7",
+          "9",
+          "5"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "6",
+          "2",
+          "3",
+          "7",
+          "9",
+          "5"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "627395",
+            "623798",
+            "623795",
+            "597326"
+          ],
+          "correctIndex": 2
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-022",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "1   ·   8   ·   4   ·   0   ·   6   ·   3",
+        "ttsSegments": [
+          "1",
+          "8",
+          "4",
+          "0",
+          "6",
+          "3"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "1",
+          "8",
+          "4",
+          "0",
+          "6",
+          "3"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "184063",
+            "180463",
+            "360481",
+            "184066"
+          ],
+          "correctIndex": 0
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-023",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "9   ·   0   ·   7   ·   4   ·   2   ·   5",
+        "ttsSegments": [
+          "9",
+          "0",
+          "7",
+          "4",
+          "2",
+          "5"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "9",
+          "0",
+          "7",
+          "4",
+          "2",
+          "5"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "907425",
+            "904725",
+            "907428",
+            "524709"
+          ],
+          "correctIndex": 0
+        }
+      }
+    },
+    {
+      "id": "mr-p01-dig-024",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "digits",
+      "instruction": "Iegaumē ciparus tādā pašā secībā.",
+      "stimulus": {
+        "visualText": "3   ·   6   ·   1   ·   8   ·   4   ·   0",
+        "ttsSegments": [
+          "3",
+          "6",
+          "1",
+          "8",
+          "4",
+          "0"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "ordered_digits",
+        "correctTokens": [
+          "3",
+          "6",
+          "1",
+          "8",
+          "4",
+          "0"
+        ],
+        "freeInput": "digit_keypad",
+        "recognition": {
+          "type": "single_select",
+          "options": [
+            "368140",
+            "361843",
+            "361840",
+            "048163"
+          ],
+          "correctIndex": 2
+        }
+      }
+    },
+    {
+      "id": "mr-p01-num-001",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "numbers",
+      "instruction": "Iegaumē skaitļus. Atceroties secība nav svarīga.",
+      "stimulus": {
+        "visualText": "12  •  47",
+        "ttsSegments": [
+          "12",
+          "47"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "12",
+          "47"
+        ],
+        "freeInput": "numeric_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "13",
+            "22",
+            "12",
+            "47",
+            "11"
+          ],
+          "correctIndices": [
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-num-002",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "numbers",
+      "instruction": "Iegaumē skaitļus. Atceroties secība nav svarīga.",
+      "stimulus": {
+        "visualText": "23  •  68",
+        "ttsSegments": [
+          "23",
+          "68"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "23",
+          "68"
+        ],
+        "freeInput": "numeric_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "22",
+            "23",
+            "68",
+            "33",
+            "24"
+          ],
+          "correctIndices": [
+            1,
+            2
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-num-003",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "numbers",
+      "instruction": "Iegaumē skaitļus. Atceroties secība nav svarīga.",
+      "stimulus": {
+        "visualText": "14  •  39  •  72",
+        "ttsSegments": [
+          "14",
+          "39",
+          "72"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "14",
+          "39",
+          "72"
+        ],
+        "freeInput": "numeric_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "15",
+            "39",
+            "13",
+            "24",
+            "72",
+            "14"
+          ],
+          "correctIndices": [
+            1,
+            4,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-num-004",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "numbers",
+      "instruction": "Iegaumē skaitļus. Atceroties secība nav svarīga.",
+      "stimulus": {
+        "visualText": "26  •  53  •  81",
+        "ttsSegments": [
+          "26",
+          "53",
+          "81"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "26",
+          "53",
+          "81"
+        ],
+        "freeInput": "numeric_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "53",
+            "25",
+            "26",
+            "36",
+            "81",
+            "27"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-num-005",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "numbers",
+      "instruction": "Iegaumē skaitļus. Atceroties secība nav svarīga.",
+      "stimulus": {
+        "visualText": "17  •  42  •  68",
+        "ttsSegments": [
+          "17",
+          "42",
+          "68"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "17",
+          "42",
+          "68"
+        ],
+        "freeInput": "numeric_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "68",
+            "18",
+            "17",
+            "27",
+            "42",
+            "16"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-num-006",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "numbers",
+      "instruction": "Iegaumē skaitļus. Atceroties secība nav svarīga.",
+      "stimulus": {
+        "visualText": "31  •  56  •  94  •  27",
+        "ttsSegments": [
+          "31",
+          "56",
+          "94",
+          "27"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "31",
+          "56",
+          "94",
+          "27"
+        ],
+        "freeInput": "numeric_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "30",
+            "94",
+            "31",
+            "21",
+            "32",
+            "56",
+            "41",
+            "27"
+          ],
+          "correctIndices": [
+            1,
+            2,
+            5,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-num-007",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "numbers",
+      "instruction": "Iegaumē skaitļus. Atceroties secība nav svarīga.",
+      "stimulus": {
+        "visualText": "18  •  63  •  45  •  92",
+        "ttsSegments": [
+          "18",
+          "63",
+          "45",
+          "92"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "18",
+          "63",
+          "45",
+          "92"
+        ],
+        "freeInput": "numeric_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "28",
+            "64",
+            "92",
+            "19",
+            "45",
+            "18",
+            "17",
+            "63"
+          ],
+          "correctIndices": [
+            2,
+            4,
+            5,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-num-008",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "numbers",
+      "instruction": "Iegaumē skaitļus. Atceroties secība nav svarīga.",
+      "stimulus": {
+        "visualText": "28  •  71  •  36  •  54",
+        "ttsSegments": [
+          "28",
+          "71",
+          "36",
+          "54"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "28",
+          "71",
+          "36",
+          "54"
+        ],
+        "freeInput": "numeric_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "54",
+            "27",
+            "29",
+            "36",
+            "71",
+            "28",
+            "18",
+            "38"
+          ],
+          "correctIndices": [
+            0,
+            3,
+            4,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-001",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "spogulis\nābols\nčemodāns",
+        "ttsSegments": [
+          "spogulis",
+          "ābols",
+          "čemodāns"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "spogulis",
+          "ābols",
+          "čemodāns"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "termoss",
+            "ābols",
+            "roze",
+            "spogulis",
+            "čemodāns",
+            "paklājs"
+          ],
+          "correctIndices": [
+            1,
+            3,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-002",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "pulkstenis\nupe\nkarote",
+        "ttsSegments": [
+          "pulkstenis",
+          "upe",
+          "karote"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "pulkstenis",
+          "upe",
+          "karote"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "pudele",
+            "gliemezis",
+            "pulkstenis",
+            "krūze",
+            "upe",
+            "karote"
+          ],
+          "correctIndices": [
+            2,
+            4,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-003",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "mētelis\ntelefons\ntulpe",
+        "ttsSegments": [
+          "mētelis",
+          "telefons",
+          "tulpe"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "mētelis",
+          "telefons",
+          "tulpe"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "mētelis",
+            "lāde",
+            "sniegpārsla",
+            "telefons",
+            "zibens",
+            "tulpe"
+          ],
+          "correctIndices": [
+            0,
+            3,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-004",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "tramvajs\nsvece\nzīmulis",
+        "ttsSegments": [
+          "tramvajs",
+          "svece",
+          "zīmulis"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "tramvajs",
+          "svece",
+          "zīmulis"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "tramvajs",
+            "ezis",
+            "svece",
+            "taka",
+            "zīmulis",
+            "svečturis"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-005",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "kafija\nkalns\natslēga",
+        "ttsSegments": [
+          "kafija",
+          "kalns",
+          "atslēga"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "kafija",
+          "kalns",
+          "atslēga"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "kafija",
+            "čells",
+            "kalns",
+            "atslēga",
+            "printeris",
+            "roze"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-006",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "sēne\nžurnāls\nķemme",
+        "ttsSegments": [
+          "sēne",
+          "žurnāls",
+          "ķemme"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "sēne",
+          "žurnāls",
+          "ķemme"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "buru laiva",
+            "žurnāls",
+            "lejkanna",
+            "ķemme",
+            "sēne",
+            "telefons"
+          ],
+          "correctIndices": [
+            1,
+            3,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-007",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "lidmašīna\ndakšiņa\nlācis\nlogs",
+        "ttsSegments": [
+          "lidmašīna",
+          "dakšiņa",
+          "lācis",
+          "logs"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "lidmašīna",
+          "dakšiņa",
+          "lācis",
+          "logs"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "logs",
+            "citronis",
+            "lidmašīna",
+            "gliemezis",
+            "dakšiņa",
+            "lācis",
+            "lāpsta",
+            "zīmulis"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            4,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-008",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "ezers\ntaka\nspilvens\ncitronis",
+        "ttsSegments": [
+          "ezers",
+          "taka",
+          "spilvens",
+          "citronis"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "ezers",
+          "taka",
+          "spilvens",
+          "citronis"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "citronis",
+            "čells",
+            "lietussargs",
+            "ezers",
+            "taka",
+            "spilvens",
+            "mētelis",
+            "zemene"
+          ],
+          "correctIndices": [
+            0,
+            3,
+            4,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-009",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "vilciens\nroze\npaklājs\ntermometrs",
+        "ttsSegments": [
+          "vilciens",
+          "roze",
+          "paklājs",
+          "termometrs"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "vilciens",
+          "roze",
+          "paklājs",
+          "termometrs"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "vilciens",
+            "termometrs",
+            "spogulis",
+            "žirafe",
+            "paklājs",
+            "atvilktne",
+            "tramvajs",
+            "roze"
+          ],
+          "correctIndices": [
+            0,
+            1,
+            4,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-010",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "velosipēds\nspogulis\npudele\nezis",
+        "ttsSegments": [
+          "velosipēds",
+          "spogulis",
+          "pudele",
+          "ezis"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "velosipēds",
+          "spogulis",
+          "pudele",
+          "ezis"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "spogulis",
+            "spilvens",
+            "ezis",
+            "ķemme",
+            "ķirsis",
+            "avīze",
+            "pudele",
+            "velosipēds"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            6,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-011",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "lietussargs\nķirsis\nradio\nkalendārs",
+        "ttsSegments": [
+          "lietussargs",
+          "ķirsis",
+          "radio",
+          "kalendārs"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "lietussargs",
+          "ķirsis",
+          "radio",
+          "kalendārs"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "kalendārs",
+            "ķirsis",
+            "radio",
+            "citronis",
+            "lietussargs",
+            "vilciens",
+            "kumode",
+            "vijole"
+          ],
+          "correctIndices": [
+            0,
+            1,
+            2,
+            4
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-012",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "upe\nkrekls\nšķēres\nbumbieris",
+        "ttsSegments": [
+          "upe",
+          "krekls",
+          "šķēres",
+          "bumbieris"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "upe",
+          "krekls",
+          "šķēres",
+          "bumbieris"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "čells",
+            "dakšiņa",
+            "krekls",
+            "upe",
+            "bumbieris",
+            "sēne",
+            "šķēres",
+            "autobuss"
+          ],
+          "correctIndices": [
+            2,
+            3,
+            4,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-013",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "mākoņi\nportfelis\nsūklis\nvijole",
+        "ttsSegments": [
+          "mākoņi",
+          "portfelis",
+          "sūklis",
+          "vijole"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "mākoņi",
+          "portfelis",
+          "sūklis",
+          "vijole"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "vijole",
+            "sniegpārsla",
+            "sūklis",
+            "lidmašīna",
+            "mākoņi",
+            "portfelis",
+            "zibens",
+            "skatuve"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            4,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-014",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "lampa\nkartupeļi\nbiļete\nžirafe",
+        "ttsSegments": [
+          "lampa",
+          "kartupeļi",
+          "biļete",
+          "žirafe"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "lampa",
+          "kartupeļi",
+          "biļete",
+          "žirafe"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "pastkarte",
+            "kartupeļi",
+            "žirafe",
+            "lietussargs",
+            "pudele",
+            "lampa",
+            "biļete",
+            "pulkstenis"
+          ],
+          "correctIndices": [
+            1,
+            2,
+            5,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-015",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "skapis\nkamera\npulkstenis\neglīte\nmedus",
+        "ttsSegments": [
+          "skapis",
+          "kamera",
+          "pulkstenis",
+          "eglīte",
+          "medus"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "skapis",
+          "kamera",
+          "pulkstenis",
+          "eglīte",
+          "medus"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "piekabe",
+            "medus",
+            "kamera",
+            "vilciens",
+            "skapis",
+            "autobuss",
+            "termoss",
+            "eglīte",
+            "pulkstenis",
+            "sūklis"
+          ],
+          "correctIndices": [
+            1,
+            2,
+            4,
+            7,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-016",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "tilts\nkumode\nsniegpārsla\ntējkanna\navīze",
+        "ttsSegments": [
+          "tilts",
+          "kumode",
+          "sniegpārsla",
+          "tējkanna",
+          "avīze"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "tilts",
+          "kumode",
+          "sniegpārsla",
+          "tējkanna",
+          "avīze"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "tējkanna",
+            "tulpe",
+            "kumode",
+            "avīze",
+            "tilts",
+            "sniegpārsla",
+            "akmens",
+            "svece",
+            "velosipēds",
+            "skrūvgriezis"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-017",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "atvilktne\nzemene\nmotocikls\ncepure\nzieds",
+        "ttsSegments": [
+          "atvilktne",
+          "zemene",
+          "motocikls",
+          "cepure",
+          "zieds"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "atvilktne",
+          "zemene",
+          "motocikls",
+          "cepure",
+          "zieds"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "baterija",
+            "zieds",
+            "kalns",
+            "zemene",
+            "atvilktne",
+            "rēķins",
+            "pīlādzis",
+            "motocikls",
+            "cepure",
+            "svece"
+          ],
+          "correctIndices": [
+            1,
+            3,
+            4,
+            7,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-018",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "čells\ngaldauts\ntramvajs\nķirbis\nlāpsta",
+        "ttsSegments": [
+          "čells",
+          "galdauts",
+          "tramvajs",
+          "ķirbis",
+          "lāpsta"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "čells",
+          "galdauts",
+          "tramvajs",
+          "ķirbis",
+          "lāpsta"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "telefons",
+            "svece",
+            "lāpsta",
+            "ķirbis",
+            "tramvajs",
+            "kaktuss",
+            "krūze",
+            "čells",
+            "sniegavīrs",
+            "galdauts"
+          ],
+          "correctIndices": [
+            2,
+            3,
+            4,
+            7,
+            9
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-019",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "gliemezis\nprinteris\nmandarīns\ncepums\ndūrainis",
+        "ttsSegments": [
+          "gliemezis",
+          "printeris",
+          "mandarīns",
+          "cepums",
+          "dūrainis"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "gliemezis",
+          "printeris",
+          "mandarīns",
+          "cepums",
+          "dūrainis"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "atvilktne",
+            "mandarīns",
+            "cepums",
+            "dūrainis",
+            "avīze",
+            "termoss",
+            "kompass",
+            "gliemezis",
+            "printeris",
+            "ezers"
+          ],
+          "correctIndices": [
+            1,
+            2,
+            3,
+            7,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-020",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "tālrunis\npiekabe\nsvečturis\nakmens\nsaulespuķe",
+        "ttsSegments": [
+          "tālrunis",
+          "piekabe",
+          "svečturis",
+          "akmens",
+          "saulespuķe"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "tālrunis",
+          "piekabe",
+          "svečturis",
+          "akmens",
+          "saulespuķe"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "tramvajs",
+            "piekabe",
+            "cepums",
+            "radio",
+            "akmens",
+            "tālrunis",
+            "ķemme",
+            "telefons",
+            "svečturis",
+            "saulespuķe"
+          ],
+          "correctIndices": [
+            1,
+            4,
+            5,
+            8,
+            9
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-021",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "kaktuss\ntermoss\nvāze\nautobuss\nzābaks\nburu laiva",
+        "ttsSegments": [
+          "kaktuss",
+          "termoss",
+          "vāze",
+          "autobuss",
+          "zābaks",
+          "buru laiva"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "kaktuss",
+          "termoss",
+          "vāze",
+          "autobuss",
+          "zābaks",
+          "buru laiva"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "autobuss",
+            "bumbieris",
+            "zābaks",
+            "buru laiva",
+            "klavieres",
+            "cepure",
+            "mētelis",
+            "biļete",
+            "tējkanna",
+            "termoss",
+            "kaktuss",
+            "vāze"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            3,
+            9,
+            10,
+            11
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-022",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "rēķins\npīlādzis\nbaterija\nvējjaka\nskatuve\nlejkanna",
+        "ttsSegments": [
+          "rēķins",
+          "pīlādzis",
+          "baterija",
+          "vējjaka",
+          "skatuve",
+          "lejkanna"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "rēķins",
+          "pīlādzis",
+          "baterija",
+          "vējjaka",
+          "skatuve",
+          "lejkanna"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "baterija",
+            "tulpe",
+            "lejkanna",
+            "pīlādzis",
+            "skrūvgriezis",
+            "sēne",
+            "zīmulis",
+            "vējjaka",
+            "sēta",
+            "rēķins",
+            "skatuve",
+            "ezers"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            3,
+            7,
+            9,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-023",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "vārdnīca\nskrūvgriezis\nsniegavīrs\nkrūze\npulkstenis\nklavieres",
+        "ttsSegments": [
+          "vārdnīca",
+          "skrūvgriezis",
+          "sniegavīrs",
+          "krūze",
+          "pulkstenis",
+          "klavieres"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "vārdnīca",
+          "skrūvgriezis",
+          "sniegavīrs",
+          "krūze",
+          "pulkstenis",
+          "klavieres"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "krūze",
+            "vārdnīca",
+            "telefons",
+            "zīmulis",
+            "sniegavīrs",
+            "krekls",
+            "sūklis",
+            "pulkstenis",
+            "vāze",
+            "klavieres",
+            "skrūvgriezis",
+            "vijole"
+          ],
+          "correctIndices": [
+            0,
+            1,
+            4,
+            7,
+            9,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-wrd-024",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "words",
+      "instruction": "Iegaumē vārdus. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "pastkarte\nkompass\nsēta\nzibens\nlāde\ngurķis",
+        "ttsSegments": [
+          "pastkarte",
+          "kompass",
+          "sēta",
+          "zibens",
+          "lāde",
+          "gurķis"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "pastkarte",
+          "kompass",
+          "sēta",
+          "zibens",
+          "lāde",
+          "gurķis"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "sniegpārsla",
+            "zibens",
+            "ezis",
+            "sēta",
+            "pastkarte",
+            "lācis",
+            "vārdnīca",
+            "printeris",
+            "vijole",
+            "lāde",
+            "kompass",
+            "gurķis"
+          ],
+          "correctIndices": [
+            1,
+            3,
+            4,
+            9,
+            10,
+            11
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-001",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nmaize\npiens\nsiers",
+        "ttsSegments": [
+          "maize",
+          "piens",
+          "siers"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "maize",
+          "piens",
+          "siers"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "graudu maize",
+            "banāni",
+            "maize",
+            "piens",
+            "miltu paka",
+            "siers"
+          ],
+          "correctIndices": [
+            2,
+            3,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-002",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nkafija\nbaterijas\ngurķi",
+        "ttsSegments": [
+          "kafija",
+          "baterijas",
+          "gurķi"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "kafija",
+          "baterijas",
+          "gurķi"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "ūdens",
+            "baterijas",
+            "kafija",
+            "gurķi",
+            "burkāni",
+            "zobu birste"
+          ],
+          "correctIndices": [
+            1,
+            2,
+            3
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-003",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nsviests\nrīsi\napelsīni",
+        "ttsSegments": [
+          "sviests",
+          "rīsi",
+          "apelsīni"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "sviests",
+          "rīsi",
+          "apelsīni"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "rīsi",
+            "banāni",
+            "cukurs",
+            "apelsīni",
+            "saldēti zirnīši",
+            "sviests"
+          ],
+          "correctIndices": [
+            0,
+            3,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-004",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\ntēja\nolas\nšampūns",
+        "ttsSegments": [
+          "tēja",
+          "olas",
+          "šampūns"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "tēja",
+          "olas",
+          "šampūns"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "saldēti zirnīši",
+            "tēja",
+            "banāni",
+            "sāls",
+            "olas",
+            "šampūns"
+          ],
+          "correctIndices": [
+            1,
+            4,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-005",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nmakaroni\nburkāni\nsulas paka",
+        "ttsSegments": [
+          "makaroni",
+          "burkāni",
+          "sulas paka"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "makaroni",
+          "burkāni",
+          "sulas paka"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "sulas paka",
+            "zobu pasta",
+            "burkāni",
+            "saldēti zirnīši",
+            "kafija",
+            "makaroni"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-006",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 1,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\njogurts\nsāls\nsalvetes",
+        "ttsSegments": [
+          "jogurts",
+          "sāls",
+          "salvetes"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "jogurts",
+          "sāls",
+          "salvetes"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "skābais krējums",
+            "putraimi",
+            "jogurts",
+            "salvetes",
+            "zobu pasta",
+            "sāls"
+          ],
+          "correctIndices": [
+            2,
+            3,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-007",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\ntomāti\nkefīrs\nziepes\nbanāni",
+        "ttsSegments": [
+          "tomāti",
+          "kefīrs",
+          "ziepes",
+          "banāni"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "tomāti",
+          "kefīrs",
+          "ziepes",
+          "banāni"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "veļas pulveris",
+            "apelsīni",
+            "sieriņš",
+            "zobu birste",
+            "kefīrs",
+            "banāni",
+            "tomāti",
+            "ziepes"
+          ],
+          "correctIndices": [
+            4,
+            5,
+            6,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-008",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nkartupeļi\nkrējums\nzobu pasta\nauzu pārslas",
+        "ttsSegments": [
+          "kartupeļi",
+          "krējums",
+          "zobu pasta",
+          "auzu pārslas"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "kartupeļi",
+          "krējums",
+          "zobu pasta",
+          "auzu pārslas"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "ziepes",
+            "sviests",
+            "piens",
+            "zobu pasta",
+            "krējums",
+            "auzu pārslas",
+            "kartupeļi",
+            "eļļa"
+          ],
+          "correctIndices": [
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-009",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\ncukurs\ncitroni\npapīra dvieļi\nsiers",
+        "ttsSegments": [
+          "cukurs",
+          "citroni",
+          "papīra dvieļi",
+          "siers"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "cukurs",
+          "citroni",
+          "papīra dvieļi",
+          "siers"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "papīra dvieļi",
+            "salvetes",
+            "citroni",
+            "piens",
+            "gurķis",
+            "siers",
+            "baterijas",
+            "cukurs"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            5,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-010",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nmaize\nāboli\nūdens\nveļas pulveris",
+        "ttsSegments": [
+          "maize",
+          "āboli",
+          "ūdens",
+          "veļas pulveris"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "maize",
+          "āboli",
+          "ūdens",
+          "veļas pulveris"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "olīveļļa",
+            "atkritumu maisi",
+            "ziepes",
+            "ūdens",
+            "veļas pulveris",
+            "āboli",
+            "maize",
+            "jogurts"
+          ],
+          "correctIndices": [
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-011",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nbiezpiens\nolas\nmiltu paka\ngurķi",
+        "ttsSegments": [
+          "biezpiens",
+          "olas",
+          "miltu paka",
+          "gurķi"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "biezpiens",
+          "olas",
+          "miltu paka",
+          "gurķi"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "graudu maize",
+            "cukurs",
+            "miltu paka",
+            "olas",
+            "gurķi",
+            "krējums",
+            "saldēti zirnīši",
+            "biezpiens"
+          ],
+          "correctIndices": [
+            2,
+            3,
+            4,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-012",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\npiens\nkafija\nplūmes\nsāls",
+        "ttsSegments": [
+          "piens",
+          "kafija",
+          "plūmes",
+          "sāls"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "piens",
+          "kafija",
+          "plūmes",
+          "sāls"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "kafija",
+            "zobu pasta",
+            "sāls",
+            "plūmes",
+            "veļas pulveris",
+            "piens",
+            "papīra dvieļi",
+            "eļļa"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            3,
+            5
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-013",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nmaize\nzobu pasta\nrīsi\nsviests\nvīnogas",
+        "ttsSegments": [
+          "maize",
+          "zobu pasta",
+          "rīsi",
+          "sviests",
+          "vīnogas"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "maize",
+          "zobu pasta",
+          "rīsi",
+          "sviests",
+          "vīnogas"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "rīsi",
+            "vīnogas",
+            "tomāti",
+            "apelsīni",
+            "cukurs",
+            "sviests",
+            "zobu pasta",
+            "piens",
+            "baterijas",
+            "maize"
+          ],
+          "correctIndices": [
+            0,
+            1,
+            5,
+            6,
+            9
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-014",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\napelsīni\ntomāti\nbaterijas\neļļa\nsiers",
+        "ttsSegments": [
+          "apelsīni",
+          "tomāti",
+          "baterijas",
+          "eļļa",
+          "siers"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "apelsīni",
+          "tomāti",
+          "baterijas",
+          "eļļa",
+          "siers"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "apelsīni",
+            "citroni",
+            "eļļa",
+            "piens",
+            "tomāti",
+            "baterijas",
+            "banāni",
+            "siers",
+            "kefīrs",
+            "auzu pārslas"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            4,
+            5,
+            7
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-015",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nkefīrs\nauzu pārslas\nsalvetes\nburkāni\nolas",
+        "ttsSegments": [
+          "kefīrs",
+          "auzu pārslas",
+          "salvetes",
+          "burkāni",
+          "olas"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "kefīrs",
+          "auzu pārslas",
+          "salvetes",
+          "burkāni",
+          "olas"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "auzu pārslas",
+            "sieriņš",
+            "salvetes",
+            "veļas pulveris",
+            "biezpiens",
+            "kefīrs",
+            "konservētas pupiņas",
+            "olas",
+            "burkāni",
+            "āboli"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            5,
+            7,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-016",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\ntēja\nkartupeļi\natkritumu maisi\ncitrons\nmaize",
+        "ttsSegments": [
+          "tēja",
+          "kartupeļi",
+          "atkritumu maisi",
+          "citrons",
+          "maize"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "tēja",
+          "kartupeļi",
+          "atkritumu maisi",
+          "citrons",
+          "maize"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "kartupeļi",
+            "skābais krējums",
+            "maize",
+            "banāni",
+            "atkritumu maisi",
+            "citrons",
+            "tēja",
+            "baterijas",
+            "citroni",
+            "cukurs"
+          ],
+          "correctIndices": [
+            0,
+            2,
+            4,
+            5,
+            6
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-017",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nsaldēti zirnīši\njogurts\nrīsi\nšampūns\nsviests",
+        "ttsSegments": [
+          "saldēti zirnīši",
+          "jogurts",
+          "rīsi",
+          "šampūns",
+          "sviests"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "saldēti zirnīši",
+          "jogurts",
+          "rīsi",
+          "šampūns",
+          "sviests"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "ūdens",
+            "biezpiens",
+            "rīsi",
+            "saldēti zirnīši",
+            "tomāti",
+            "jogurts",
+            "sēnes",
+            "sviests",
+            "šampūns",
+            "siers"
+          ],
+          "correctIndices": [
+            2,
+            3,
+            5,
+            7,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-018",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nkonservētas pupiņas\npapīra dvieļi\nbanāni\nsāls\npiens",
+        "ttsSegments": [
+          "konservētas pupiņas",
+          "papīra dvieļi",
+          "banāni",
+          "sāls",
+          "piens"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "konservētas pupiņas",
+          "papīra dvieļi",
+          "banāni",
+          "sāls",
+          "piens"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "citroni",
+            "piens",
+            "papīra dvieļi",
+            "šampūns",
+            "konservētas pupiņas",
+            "sāls",
+            "tēja",
+            "citrons",
+            "tomāti",
+            "banāni"
+          ],
+          "correctIndices": [
+            1,
+            2,
+            4,
+            5,
+            9
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-019",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nolīveļļa\ngraudu maize\nsieriņš\ngurķis\nziepes",
+        "ttsSegments": [
+          "olīveļļa",
+          "graudu maize",
+          "sieriņš",
+          "gurķis",
+          "ziepes"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "olīveļļa",
+          "graudu maize",
+          "sieriņš",
+          "gurķis",
+          "ziepes"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "plūmes",
+            "graudu maize",
+            "rīsi",
+            "jogurts",
+            "ziepes",
+            "sviests",
+            "olīveļļa",
+            "gurķis",
+            "zobu birste",
+            "sieriņš"
+          ],
+          "correctIndices": [
+            1,
+            4,
+            6,
+            7,
+            9
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-020",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nputraimi\nbiezpiens\nkafija\nburkāni\nūdens",
+        "ttsSegments": [
+          "putraimi",
+          "biezpiens",
+          "kafija",
+          "burkāni",
+          "ūdens"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "putraimi",
+          "biezpiens",
+          "kafija",
+          "burkāni",
+          "ūdens"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "skābais krējums",
+            "kafija",
+            "graudu maize",
+            "sulas paka",
+            "ūdens",
+            "putraimi",
+            "olas",
+            "biezpiens",
+            "burkāni",
+            "kefīrs"
+          ],
+          "correctIndices": [
+            1,
+            4,
+            5,
+            7,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-021",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nsēnes\nrīsi\nolas\nzobu birste\nāboli\npiens",
+        "ttsSegments": [
+          "sēnes",
+          "rīsi",
+          "olas",
+          "zobu birste",
+          "āboli",
+          "piens"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "sēnes",
+          "rīsi",
+          "olas",
+          "zobu birste",
+          "āboli",
+          "piens"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "burkāni",
+            "sāls",
+            "baterijas",
+            "zobu birste",
+            "sēnes",
+            "sviests",
+            "olas",
+            "rīsi",
+            "piens",
+            "apelsīni",
+            "skābais krējums",
+            "āboli"
+          ],
+          "correctIndices": [
+            3,
+            4,
+            6,
+            7,
+            8,
+            11
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-022",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nmakaroni\nsiers\ntomāti\ncitroni\nsalvetes\ntēja",
+        "ttsSegments": [
+          "makaroni",
+          "siers",
+          "tomāti",
+          "citroni",
+          "salvetes",
+          "tēja"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "makaroni",
+          "siers",
+          "tomāti",
+          "citroni",
+          "salvetes",
+          "tēja"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "salvetes",
+            "citroni",
+            "tēja",
+            "siers",
+            "eļļa",
+            "cukurs",
+            "olas",
+            "tomāti",
+            "makaroni",
+            "šampūns",
+            "auzu pārslas",
+            "āboli"
+          ],
+          "correctIndices": [
+            0,
+            1,
+            2,
+            3,
+            7,
+            8
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-023",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nsviests\nkefīrs\nvīnogas\nsāls\npapīra dvieļi\ncukurs",
+        "ttsSegments": [
+          "sviests",
+          "kefīrs",
+          "vīnogas",
+          "sāls",
+          "papīra dvieļi",
+          "cukurs"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "sviests",
+          "kefīrs",
+          "vīnogas",
+          "sāls",
+          "papīra dvieļi",
+          "cukurs"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "citrons",
+            "putraimi",
+            "kefīrs",
+            "sāls",
+            "vīnogas",
+            "sulas paka",
+            "veļas pulveris",
+            "sviests",
+            "zobu pasta",
+            "cukurs",
+            "papīra dvieļi",
+            "tēja"
+          ],
+          "correctIndices": [
+            2,
+            3,
+            4,
+            7,
+            9,
+            10
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-shop-024",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "shopping",
+      "instruction": "Iegaumē iepirkumu sarakstu. Secība nav svarīga.",
+      "stimulus": {
+        "visualText": "Iepirkumu saraksts:\nkartupeļi\nsulas paka\nbaterijas\nskābais krējums\nauzu pārslas\nbanāni",
+        "ttsSegments": [
+          "kartupeļi",
+          "sulas paka",
+          "baterijas",
+          "skābais krējums",
+          "auzu pārslas",
+          "banāni"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "unordered_list",
+        "correctTokens": [
+          "kartupeļi",
+          "sulas paka",
+          "baterijas",
+          "skābais krējums",
+          "auzu pārslas",
+          "banāni"
+        ],
+        "freeInput": "word_list",
+        "recognition": {
+          "type": "multi_select",
+          "options": [
+            "baterijas",
+            "putraimi",
+            "zobu birste",
+            "kartupeļi",
+            "maize",
+            "skābais krējums",
+            "banāni",
+            "biezpiens",
+            "sulas paka",
+            "auzu pārslas",
+            "miltu paka",
+            "burkāni"
+          ],
+          "correctIndices": [
+            0,
+            3,
+            5,
+            6,
+            8,
+            9
+          ]
+        }
+      }
+    },
+    {
+      "id": "mr-p01-appt-001",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nPirmdien, plkst. 09:00\npie zobārsta",
+        "ttsSegments": [
+          "Pirmdien pulksten 09:00",
+          "pie zobārsta"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Pirmdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Otrdien",
+                "Svētdien",
+                "Pirmdien",
+                "Sestdien"
+              ],
+              "correctIndex": 2
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "09:00"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "09:00",
+                "08:45",
+                "16:30",
+                "11:45"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "pie zobārsta"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "bibliotēkā",
+                "pie ergoterapeita",
+                "pasta nodaļā",
+                "pie zobārsta"
+              ],
+              "correctIndex": 3
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-002",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nOtrdien, plkst. 14:30\npie friziera",
+        "ttsSegments": [
+          "Otrdien pulksten 14:30",
+          "pie friziera"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Otrdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Pirmdien",
+                "Otrdien",
+                "Ceturtdien",
+                "Piektdien"
+              ],
+              "correctIndex": 1
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "14:30"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "17:30",
+                "12:30",
+                "14:30",
+                "09:30"
+              ],
+              "correctIndex": 2
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "pie friziera"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "pie friziera",
+                "pie fizioterapeita",
+                "muzejā",
+                "bankā"
+              ],
+              "correctIndex": 0
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-003",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nTrešdien, plkst. 11:15\nbibliotēkā",
+        "ttsSegments": [
+          "Trešdien pulksten 11:15",
+          "bibliotēkā"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Trešdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Svētdien",
+                "Trešdien",
+                "Ceturtdien",
+                "Pirmdien"
+              ],
+              "correctIndex": 1
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "11:15"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "12:00",
+                "09:00",
+                "11:15",
+                "10:30"
+              ],
+              "correctIndex": 2
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "bibliotēkā"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "pie fizioterapeita",
+                "autoservisā",
+                "bibliotēkā",
+                "pie friziera"
+              ],
+              "correctIndex": 2
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-004",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nCeturtdien, plkst. 16:00\nautoservisā",
+        "ttsSegments": [
+          "Ceturtdien pulksten 16:00",
+          "autoservisā"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Ceturtdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Ceturtdien",
+                "Trešdien",
+                "Svētdien",
+                "Otrdien"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "16:00"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "16:00",
+                "10:30",
+                "15:45",
+                "16:45"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "autoservisā"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "pie ģimenes ārsta",
+                "pasta nodaļā",
+                "autoservisā",
+                "pie ergoterapeita"
+              ],
+              "correctIndex": 2
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-005",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nPiektdien, plkst. 10:30\nbankā",
+        "ttsSegments": [
+          "Piektdien pulksten 10:30",
+          "bankā"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Piektdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Otrdien",
+                "Sestdien",
+                "Piektdien",
+                "Svētdien"
+              ],
+              "correctIndex": 2
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "10:30"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "10:30",
+                "14:15",
+                "16:30",
+                "11:15"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "bankā"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "bankā",
+                "pie zobārsta",
+                "pie optometrista",
+                "pasta nodaļā"
+              ],
+              "correctIndex": 0
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-006",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nSestdien, plkst. 13:00\nsporta centrā",
+        "ttsSegments": [
+          "Sestdien pulksten 13:00",
+          "sporta centrā"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Sestdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Svētdien",
+                "Otrdien",
+                "Trešdien",
+                "Sestdien"
+              ],
+              "correctIndex": 3
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "13:00"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "13:00",
+                "09:30",
+                "08:30",
+                "10:30"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "sporta centrā"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "pie optometrista",
+                "bankā",
+                "sporta centrā",
+                "pie ergoterapeita"
+              ],
+              "correctIndex": 2
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-007",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nOtrdien, plkst. 08:45\npie ģimenes ārsta",
+        "ttsSegments": [
+          "Otrdien pulksten 08:45",
+          "pie ģimenes ārsta"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Otrdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Otrdien",
+                "Ceturtdien",
+                "Piektdien",
+                "Trešdien"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "08:45"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "08:45",
+                "09:00",
+                "18:00",
+                "17:30"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "pie ģimenes ārsta"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "muzejā",
+                "pie friziera",
+                "pie ģimenes ārsta",
+                "bankā"
+              ],
+              "correctIndex": 2
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-008",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nTrešdien, plkst. 15:20\npie optometrista",
+        "ttsSegments": [
+          "Trešdien pulksten 15:20",
+          "pie optometrista"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Trešdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Trešdien",
+                "Sestdien",
+                "Pirmdien",
+                "Ceturtdien"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "15:20"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "12:15",
+                "17:15",
+                "13:00",
+                "15:20"
+              ],
+              "correctIndex": 3
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "pie optometrista"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "pie fizioterapeita",
+                "autoservisā",
+                "pie optometrista",
+                "pie friziera"
+              ],
+              "correctIndex": 2
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-009",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nCeturtdien, plkst. 12:15\npasta nodaļā",
+        "ttsSegments": [
+          "Ceturtdien pulksten 12:15",
+          "pasta nodaļā"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Ceturtdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Svētdien",
+                "Otrdien",
+                "Piektdien",
+                "Ceturtdien"
+              ],
+              "correctIndex": 3
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "12:15"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "09:00",
+                "08:30",
+                "09:15",
+                "12:15"
+              ],
+              "correctIndex": 3
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "pasta nodaļā"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "pie ergoterapeita",
+                "pie friziera",
+                "pasta nodaļā",
+                "bankā"
+              ],
+              "correctIndex": 2
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-010",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nPiektdien, plkst. 17:30\nkultūras centrā",
+        "ttsSegments": [
+          "Piektdien pulksten 17:30",
+          "kultūras centrā"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Piektdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Pirmdien",
+                "Svētdien",
+                "Piektdien",
+                "Sestdien"
+              ],
+              "correctIndex": 2
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "17:30"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "17:30",
+                "10:15",
+                "16:30",
+                "14:15"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "kultūras centrā"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "kultūras centrā",
+                "bankā",
+                "pie friziera",
+                "pie optometrista"
+              ],
+              "correctIndex": 0
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-011",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nPirmdien, plkst. 10:15\npie fizioterapeita",
+        "ttsSegments": [
+          "Pirmdien pulksten 10:15",
+          "pie fizioterapeita"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Pirmdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Pirmdien",
+                "Sestdien",
+                "Otrdien",
+                "Svētdien"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "10:15"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "11:15",
+                "16:00",
+                "12:00",
+                "10:15"
+              ],
+              "correctIndex": 3
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "pie fizioterapeita"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "pie fizioterapeita",
+                "kultūras centrā",
+                "pie zobārsta",
+                "sporta centrā"
+              ],
+              "correctIndex": 0
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-012",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nOtrdien, plkst. 16:45\nbibliotēkā",
+        "ttsSegments": [
+          "Otrdien pulksten 16:45",
+          "bibliotēkā"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Otrdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Trešdien",
+                "Svētdien",
+                "Piektdien",
+                "Otrdien"
+              ],
+              "correctIndex": 3
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "16:45"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "13:00",
+                "09:30",
+                "16:45",
+                "17:15"
+              ],
+              "correctIndex": 2
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "bibliotēkā"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "bibliotēkā",
+                "pasta nodaļā",
+                "sporta centrā",
+                "pie ģimenes ārsta"
+              ],
+              "correctIndex": 0
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-013",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nTrešdien, plkst. 09:30\nautoservisā",
+        "ttsSegments": [
+          "Trešdien pulksten 09:30",
+          "autoservisā"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Trešdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Ceturtdien",
+                "Sestdien",
+                "Svētdien",
+                "Trešdien"
+              ],
+              "correctIndex": 3
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "09:30"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "14:00",
+                "09:30",
+                "17:30",
+                "17:15"
+              ],
+              "correctIndex": 1
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "autoservisā"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "pie ergoterapeita",
+                "bibliotēkā",
+                "pie fizioterapeita",
+                "autoservisā"
+              ],
+              "correctIndex": 3
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-014",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nCeturtdien, plkst. 14:15\npie zobārsta",
+        "ttsSegments": [
+          "Ceturtdien pulksten 14:15",
+          "pie zobārsta"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Ceturtdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Sestdien",
+                "Svētdien",
+                "Ceturtdien",
+                "Piektdien"
+              ],
+              "correctIndex": 2
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "14:15"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "17:30",
+                "15:45",
+                "16:00",
+                "14:15"
+              ],
+              "correctIndex": 3
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "pie zobārsta"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "pie optometrista",
+                "pie ergoterapeita",
+                "pie zobārsta",
+                "pie fizioterapeita"
+              ],
+              "correctIndex": 2
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-015",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nPiektdien, plkst. 11:45\npie ergoterapeita",
+        "ttsSegments": [
+          "Piektdien pulksten 11:45",
+          "pie ergoterapeita"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Piektdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Otrdien",
+                "Piektdien",
+                "Pirmdien",
+                "Sestdien"
+              ],
+              "correctIndex": 1
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "11:45"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "09:15",
+                "16:00",
+                "11:45",
+                "13:20"
+              ],
+              "correctIndex": 2
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "pie ergoterapeita"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "pie ergoterapeita",
+                "autoservisā",
+                "pie friziera",
+                "muzejā"
+              ],
+              "correctIndex": 0
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-016",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 4,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nSestdien, plkst. 12:30\nmuzejā",
+        "ttsSegments": [
+          "Sestdien pulksten 12:30",
+          "muzejā"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Sestdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Sestdien",
+                "Svētdien",
+                "Otrdien",
+                "Trešdien"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "12:30"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "13:20",
+                "09:30",
+                "12:30",
+                "10:15"
+              ],
+              "correctIndex": 2
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "muzejā"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "bibliotēkā",
+                "pasta nodaļā",
+                "muzejā",
+                "pie fizioterapeita"
+              ],
+              "correctIndex": 2
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-017",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nPirmdien, plkst. 15:45\npasta nodaļā",
+        "ttsSegments": [
+          "Pirmdien pulksten 15:45",
+          "pasta nodaļā"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Pirmdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Trešdien",
+                "Piektdien",
+                "Pirmdien",
+                "Svētdien"
+              ],
+              "correctIndex": 2
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "15:45"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "09:15",
+                "15:45",
+                "12:00",
+                "11:45"
+              ],
+              "correctIndex": 1
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "pasta nodaļā"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "pasta nodaļā",
+                "kultūras centrā",
+                "pie optometrista",
+                "autoservisā"
+              ],
+              "correctIndex": 0
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-018",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nOtrdien, plkst. 13:20\npie friziera",
+        "ttsSegments": [
+          "Otrdien pulksten 13:20",
+          "pie friziera"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Otrdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Otrdien",
+                "Trešdien",
+                "Pirmdien",
+                "Sestdien"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "13:20"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "17:30",
+                "13:20",
+                "18:00",
+                "11:15"
+              ],
+              "correctIndex": 1
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "pie friziera"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "kultūras centrā",
+                "pie zobārsta",
+                "pie friziera",
+                "muzejā"
+              ],
+              "correctIndex": 2
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-019",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nTrešdien, plkst. 17:15\nsporta centrā",
+        "ttsSegments": [
+          "Trešdien pulksten 17:15",
+          "sporta centrā"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Trešdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Trešdien",
+                "Ceturtdien",
+                "Piektdien",
+                "Sestdien"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "17:15"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "17:15",
+                "12:30",
+                "16:45",
+                "13:20"
+              ],
+              "correctIndex": 0
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "sporta centrā"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "sporta centrā",
+                "kultūras centrā",
+                "pie fizioterapeita",
+                "autoservisā"
+              ],
+              "correctIndex": 0
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    },
+    {
+      "id": "mr-p01-appt-020",
+      "type": "memory_recall",
+      "contentVersion": 1,
+      "difficulty": 5,
+      "category": "appointment",
+      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "stimulus": {
+        "visualText": "Tikšanās / pieraksts\nCeturtdien, plkst. 08:30\npie ģimenes ārsta",
+        "ttsSegments": [
+          "Ceturtdien pulksten 08:30",
+          "pie ģimenes ārsta"
+        ],
+        "locale": "lv-LV"
+      },
+      "answer": {
+        "kind": "facts",
+        "fields": [
+          {
+            "key": "day",
+            "prompt": "Kurā dienā?",
+            "acceptedAnswers": [
+              "Ceturtdien"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "Sestdien",
+                "Pirmdien",
+                "Ceturtdien",
+                "Otrdien"
+              ],
+              "correctIndex": 2
+            }
+          },
+          {
+            "key": "time",
+            "prompt": "Cikos?",
+            "acceptedAnswers": [
+              "08:30"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "14:30",
+                "14:15",
+                "16:30",
+                "08:30"
+              ],
+              "correctIndex": 3
+            }
+          },
+          {
+            "key": "place",
+            "prompt": "Kur bija paredzēts doties?",
+            "acceptedAnswers": [
+              "pie ģimenes ārsta"
+            ],
+            "recognition": {
+              "type": "single_select",
+              "options": [
+                "bibliotēkā",
+                "pie friziera",
+                "pie ergoterapeita",
+                "pie ģimenes ārsta"
+              ],
+              "correctIndex": 3
+            }
+          }
+        ],
+        "freeInput": "fact_fields"
+      }
+    }
+  ]
+}

@@ -15,8 +15,16 @@ import {
   saveDifficultyLevels,
   toggleDifficultyLevel,
 } from '../utils/difficulty';
+import { getMemoryTasks } from '../data/loadMemory';
 import type { Screen } from '../navigation/types';
+import type { MemoryMode } from '../types/memory';
 import type { DifficultyLevel, Task } from '../types/task';
+import {
+  countMemoryByDifficulty,
+  filterMemoryByDifficulty,
+  loadMemoryDifficulty,
+  saveMemoryDifficulty,
+} from '../utils/memoryDifficulty';
 
 interface Props {
   onNavigate: (screen: Screen) => void;
@@ -40,7 +48,15 @@ export function CustomizeContentScreen({
   focusType,
 }: Props) {
   const [byType, setByType] = useState<LevelsByType>(loadAllLevels);
+  const [memoryLevels, setMemoryLevels] = useState<
+    Record<MemoryMode, DifficultyLevel[]>
+  >({
+    immediate: loadMemoryDifficulty('immediate'),
+    delayed: loadMemoryDifficulty('delayed'),
+  });
   const [hint, setHint] = useState<string | null>(null);
+  const memoryTasks = getMemoryTasks();
+  const memoryCounts = countMemoryByDifficulty();
 
   useEffect(() => {
     if (!focusType) return;
@@ -138,6 +154,71 @@ export function CustomizeContentScreen({
                       >
                         <span className="customize-level-num">{level}</span>
                         <span className="customize-level-count">{count}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </section>
+            );
+          })}
+
+          {(
+            [
+              ['immediate', 'Atceries uzreiz'],
+              ['delayed', 'Atceries pēc brīža'],
+            ] as const
+          ).map(([mode, label]) => {
+            const levels = memoryLevels[mode];
+            const selected = new Set(levels);
+            const filtered = filterMemoryByDifficulty(memoryTasks, levels);
+            return (
+              <section
+                key={mode}
+                className="customize-section"
+                aria-labelledby={`customize-memory-${mode}`}
+              >
+                <h2
+                  id={`customize-memory-${mode}`}
+                  className="customize-section-title"
+                >
+                  {label}
+                </h2>
+                <p className="customize-section-meta">
+                  {formatDifficultyLevelsLabel(levels)} · {filtered.length} no{' '}
+                  {memoryTasks.length}
+                </p>
+                <div
+                  className="customize-level-row"
+                  role="group"
+                  aria-label={`${label}: grūtības līmeņi`}
+                >
+                  {ALL_DIFFICULTY_LEVELS.map((level) => {
+                    const on = selected.has(level);
+                    return (
+                      <button
+                        key={level}
+                        type="button"
+                        className={
+                          on
+                            ? 'customize-level-btn customize-level-btn-on'
+                            : 'customize-level-btn'
+                        }
+                        aria-pressed={on}
+                        onClick={() => {
+                          const next = toggleDifficultyLevel(levels, level);
+                          if (!next) {
+                            setHint('Izvēlieties vismaz vienu līmeni');
+                            return;
+                          }
+                          saveMemoryDifficulty(mode, next);
+                          setMemoryLevels((prev) => ({ ...prev, [mode]: next }));
+                          setHint(null);
+                        }}
+                      >
+                        <span className="customize-level-num">{level}</span>
+                        <span className="customize-level-count">
+                          {memoryCounts[level]}
+                        </span>
                       </button>
                     );
                   })}

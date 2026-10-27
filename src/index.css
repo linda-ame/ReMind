@@ -3593,3 +3593,186 @@ html.keyboard-open .hint-answers:not(:has(*)) {
   min-height: 0;
   padding: 0;
 }
+
+.home-type-memory_immediate {
+  background: #d9efe8;
+  border-color: #1f7a68;
+}
+
+.home-type-memory_delayed {
+  background: #f7e7d4;
+  border-color: #b86a2d;
+}
+
+.app-shell.high-contrast .home-type-memory_immediate,
+.app-shell.high-contrast .home-type-memory_delayed {
+  background: #fff;
+  border-color: #000;
+  color: #000;
+}
+
+.memory-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  width: 100%;
+  text-align: var(--app-text-align);
+}
+
+.memory-flow .btn {
+  min-height: max(64px, var(--btn-min-h));
+  font-size: 1.15em;
+}
+
+.memory-heading {
+  margin: 0;
+  font-size: clamp(28px, 4.2vw, 40px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.memory-subhead {
+  margin: 0.4rem 0 0;
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
+}
+
+.memory-instruction,
+.memory-note,
+.memory-meta {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.35;
+}
+
+.memory-score {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.memory-stimulus {
+  margin: 0;
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 800;
+  line-height: 1.35;
+  white-space: pre-wrap;
+}
+
+.memory-stimulus-entry {
+  min-height: 1.35em;
+}
+
+.memory-actions,
+.memory-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+.memory-keypad {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.memory-key,
+.memory-choice,
+.memory-input,
+.memory-item,
+.memory-item-remove {
+  min-height: 64px;
+  border-radius: var(--radius);
+  border: 3px solid #1a4d45;
+  background: #fff;
+  color: #111;
+  font: inherit;
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+}
+
+.memory-key {
+  padding: 0.4rem;
+}
+
+.memory-key-wide {
+  grid-column: span 2;
+}
+
+.memory-add-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.memory-input {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  text-align: var(--app-text-align);
+}
+
+.memory-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.memory-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  padding: 0.45rem 0.7rem;
+  text-align: left;
+}
+
+.memory-item-remove {
+  flex: 0 0 auto;
+  min-width: 7rem;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.7em;
+}
+
+.memory-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: 100%;
+}
+
+.memory-choice {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  text-align: left;
+}
+
+.memory-choice-on,
+.memory-key:active {
+  background: #d9efe8;
+}
+
+.memory-meta {
+  padding-left: 1.2rem;
+}
+
+.app-shell.high-contrast .memory-key,
+.app-shell.high-contrast .memory-choice,
+.app-shell.high-contrast .memory-input,
+.app-shell.high-contrast .memory-item,
+.app-shell.high-contrast .memory-item-remove {
+  border-color: #000;
+  background: #fff;
+  color: #000;
+}
+
+.app-shell.high-contrast .memory-choice-on {
+  background: #000;
+  color: #fff;
+}

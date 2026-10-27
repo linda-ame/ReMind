@@ -8,9 +8,27 @@ export function attemptFreshness(a: TaskAttempt): number {
   return statusRank * 1e15 + time;
 }
 
-/** Pick the better of two attempts with the same id (or competing locals). */
+function earlierArchive(
+  a: string | null | undefined,
+  b: string | null | undefined,
+): string | null {
+  if (a && b) return a < b ? a : b;
+  return a ?? b ?? null;
+}
+
+/**
+ * Pick the better of two attempts with the same id.
+ * Once either copy is archived, the row stays archived.
+ * On-screen time keeps the larger value.
+ */
 export function pickRicherAttempt(a: TaskAttempt, b: TaskAttempt): TaskAttempt {
-  return attemptFreshness(a) >= attemptFreshness(b) ? a : b;
+  const winner: TaskAttempt =
+    attemptFreshness(a) >= attemptFreshness(b) ? { ...a } : { ...b };
+  const archivedAt = earlierArchive(a.archivedAt, b.archivedAt);
+  if (archivedAt) winner.archivedAt = archivedAt;
+  const activeMs = Math.max(a.activeMs ?? 0, b.activeMs ?? 0);
+  if (activeMs > 0) winner.activeMs = activeMs;
+  return winner;
 }
 
 /**

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "title": "ReMind — Asociācijas: Latvijā pazīstami zīmoli, 1. komplekts",
+  "title": "ReMind — Asociācijas: pazīstami zīmoli un nosaukumi",
   "tasks": [
     {
       "id": "as-brand-p01-001",
@@ -521,6 +521,841 @@
         "skūšanās",
         "skuvekļa asmeņi"
       ]
+    },
+    {
+      "id": "as-brand-p01-041",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Instagram",
+      "exampleAssociations": [
+        "foto",
+        "konts",
+        "sociālais tīkls"
+      ]
+    },
+    {
+      "id": "as-brand-p01-042",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Facebook",
+      "exampleAssociations": [
+        "sociālais tīkls",
+        "profils",
+        "draugi"
+      ]
+    },
+    {
+      "id": "as-brand-p01-043",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "YouTube",
+      "exampleAssociations": [
+        "video",
+        "filmas",
+        "kanāls"
+      ]
+    },
+    {
+      "id": "as-brand-p01-044",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "WhatsApp",
+      "exampleAssociations": [
+        "ziņas",
+        "čats",
+        "zvani"
+      ]
+    },
+    {
+      "id": "as-brand-p01-045",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Google",
+      "exampleAssociations": [
+        "meklēšana",
+        "internets",
+        "karte"
+      ]
+    },
+    {
+      "id": "as-brand-p01-046",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Netflix",
+      "exampleAssociations": [
+        "filmas",
+        "seriāli",
+        "televīzija"
+      ]
+    },
+    {
+      "id": "as-brand-p01-047",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Spotify",
+      "exampleAssociations": [
+        "mūzika",
+        "dziesmas",
+        "klausīšanās"
+      ]
+    },
+    {
+      "id": "as-brand-p01-048",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "TikTok",
+      "exampleAssociations": [
+        "īsie video",
+        "dejas",
+        "sociālais tīkls"
+      ]
+    },
+    {
+      "id": "as-brand-p01-049",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Coca-Cola",
+      "exampleAssociations": [
+        "kola",
+        "gāzēts dzēriens",
+        "dzēriens"
+      ]
+    },
+    {
+      "id": "as-brand-p01-050",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "McDonald's",
+      "exampleAssociations": [
+        "hamburgers",
+        "frī kartupeļi",
+        "ātrā ēdināšana"
+      ]
+    },
+    {
+      "id": "as-brand-p01-051",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "KFC",
+      "exampleAssociations": [
+        "vista",
+        "vistas gaļa",
+        "ātrā ēdināšana"
+      ]
+    },
+    {
+      "id": "as-brand-p01-052",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Nutella",
+      "exampleAssociations": [
+        "šokolādes krēms",
+        "rieksti",
+        "maize"
+      ]
+    },
+    {
+      "id": "as-brand-p01-053",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Milka",
+      "exampleAssociations": [
+        "šokolāde",
+        "saldumi",
+        "govs"
+      ]
+    },
+    {
+      "id": "as-brand-p01-054",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Kinder",
+      "exampleAssociations": [
+        "šokolāde",
+        "ola",
+        "saldumi"
+      ]
+    },
+    {
+      "id": "as-brand-p01-055",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Nescafé",
+      "exampleAssociations": [
+        "kafija",
+        "šķīstošā kafija",
+        "dzēriens"
+      ]
+    },
+    {
+      "id": "as-brand-p01-056",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "H&M",
+      "exampleAssociations": [
+        "drēbes",
+        "apģērbs",
+        "veikals"
+      ]
+    },
+    {
+      "id": "as-brand-p01-057",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Zara",
+      "exampleAssociations": [
+        "drēbes",
+        "apģērbs",
+        "mode"
+      ]
+    },
+    {
+      "id": "as-brand-p01-058",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Volkswagen",
+      "exampleAssociations": [
+        "auto",
+        "automašīna",
+        "braukšana"
+      ]
+    },
+    {
+      "id": "as-brand-p01-059",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "BMW",
+      "exampleAssociations": [
+        "auto",
+        "automašīna",
+        "luksusa auto"
+      ]
+    },
+    {
+      "id": "as-brand-p01-060",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Xiaomi",
+      "exampleAssociations": [
+        "telefons",
+        "elektronika",
+        "lādētājs"
+      ]
+    },
+    {
+      "id": "as-brand-p01-061",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "PlayStation",
+      "exampleAssociations": [
+        "spēles",
+        "konsole",
+        "datorspēles"
+      ]
+    },
+    {
+      "id": "as-brand-p01-062",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "AliExpress",
+      "exampleAssociations": [
+        "interneta veikals",
+        "pasūtījums",
+        "Ķīna"
+      ]
+    },
+    {
+      "id": "as-brand-p01-063",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Pampers",
+      "exampleAssociations": [
+        "autiņbiksītes",
+        "bērns",
+        "zīdainis"
+      ]
+    },
+    {
+      "id": "as-brand-p01-064",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Lido",
+      "exampleAssociations": [
+        "restorāns",
+        "latviešu ēdiens",
+        "karbonāde"
+      ]
+    },
+    {
+      "id": "as-brand-p01-065",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Hesburger",
+      "exampleAssociations": [
+        "hamburgers",
+        "ķiploku mērce",
+        "ātrā ēdināšana"
+      ]
+    },
+    {
+      "id": "as-brand-p01-066",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Narvesen",
+      "exampleAssociations": [
+        "kiosks",
+        "prese",
+        "kafija"
+      ]
+    },
+    {
+      "id": "as-brand-p01-067",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Baltais",
+      "exampleAssociations": [
+        "piens",
+        "kefīrs",
+        "piena produkti"
+      ]
+    },
+    {
+      "id": "as-brand-p01-068",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Skrīveru saldumi",
+      "exampleAssociations": [
+        "gotiņa",
+        "konfektes",
+        "saldumi"
+      ]
+    },
+    {
+      "id": "as-brand-p01-069",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Staburadze",
+      "exampleAssociations": [
+        "maize",
+        "kūka",
+        "bulciņa"
+      ]
+    },
+    {
+      "id": "as-brand-p01-070",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "ss.com",
+      "exampleAssociations": [
+        "sludinājumi",
+        "auto",
+        "dzīvoklis"
+      ]
+    },
+    {
+      "id": "as-brand-p01-071",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Draugiem.lv",
+      "exampleAssociations": [
+        "sociālais tīkls",
+        "profils",
+        "foto"
+      ]
+    },
+    {
+      "id": "as-brand-p01-072",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Inbox.lv",
+      "exampleAssociations": [
+        "e-pasts",
+        "vēstule",
+        "pastkastīte"
+      ]
+    },
+    {
+      "id": "as-brand-p01-073",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Citadele",
+      "exampleAssociations": [
+        "banka",
+        "bankas karte",
+        "maksājumi"
+      ]
+    },
+    {
+      "id": "as-brand-p01-074",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Elektrum",
+      "exampleAssociations": [
+        "elektrība",
+        "rēķins",
+        "enerģija"
+      ]
+    },
+    {
+      "id": "as-brand-p01-075",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Rīgas satiksme",
+      "exampleAssociations": [
+        "autobuss",
+        "tramvajs",
+        "e-talons"
+      ]
+    },
+    {
+      "id": "as-brand-p01-076",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Kurši",
+      "exampleAssociations": [
+        "būvmateriāli",
+        "remonts",
+        "instrumenti"
+      ]
+    },
+    {
+      "id": "as-brand-p01-077",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Venden",
+      "exampleAssociations": [
+        "ūdens",
+        "dzeramais ūdens",
+        "ūdens balons"
+      ]
+    },
+    {
+      "id": "as-brand-p01-078",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Mēness aptieka",
+      "exampleAssociations": [
+        "aptieka",
+        "zāles",
+        "vitamīni"
+      ]
+    },
+    {
+      "id": "as-brand-p01-079",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Elkor",
+      "exampleAssociations": [
+        "elektronika",
+        "sadzīves tehnika",
+        "televizors"
+      ]
+    },
+    {
+      "id": "as-brand-p01-080",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Nosauc vienu lietu, kas tev saistās ar šo zīmolu.",
+      "brand": "Lux Express",
+      "exampleAssociations": [
+        "autobuss",
+        "biļete",
+        "ceļojums"
+      ]
+    },
+    {
+      "id": "as-name-p01-001",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Atlantijas …",
+      "exampleAssociations": ["okeāns"]
+    },
+    {
+      "id": "as-name-p01-002",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Klusais …",
+      "exampleAssociations": ["okeāns"]
+    },
+    {
+      "id": "as-name-p01-003",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Indijas …",
+      "exampleAssociations": ["okeāns"]
+    },
+    {
+      "id": "as-name-p01-004",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Baltijas …",
+      "exampleAssociations": ["jūra"]
+    },
+    {
+      "id": "as-name-p01-005",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Melnā …",
+      "exampleAssociations": ["jūra"]
+    },
+    {
+      "id": "as-name-p01-006",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Sarkanā …",
+      "exampleAssociations": ["jūra"]
+    },
+    {
+      "id": "as-name-p01-007",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Nāves …",
+      "exampleAssociations": ["jūra"]
+    },
+    {
+      "id": "as-name-p01-008",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Karību …",
+      "exampleAssociations": ["jūra"]
+    },
+    {
+      "id": "as-name-p01-009",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Kaspijas …",
+      "exampleAssociations": ["jūra"]
+    },
+    {
+      "id": "as-name-p01-010",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Kanāriju …",
+      "exampleAssociations": ["salas"]
+    },
+    {
+      "id": "as-name-p01-011",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Havaju …",
+      "exampleAssociations": ["salas"]
+    },
+    {
+      "id": "as-name-p01-012",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Maldīvu …",
+      "exampleAssociations": ["salas"]
+    },
+    {
+      "id": "as-name-p01-013",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Baleāru …",
+      "exampleAssociations": ["salas"]
+    },
+    {
+      "id": "as-name-p01-014",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Galapagu …",
+      "exampleAssociations": ["salas"]
+    },
+    {
+      "id": "as-name-p01-015",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Nīlas …",
+      "exampleAssociations": ["upe"]
+    },
+    {
+      "id": "as-name-p01-016",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Amazones …",
+      "exampleAssociations": ["upe"]
+    },
+    {
+      "id": "as-name-p01-017",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Daugavas …",
+      "exampleAssociations": ["upe"]
+    },
+    {
+      "id": "as-name-p01-018",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Gaujas …",
+      "exampleAssociations": ["upe"]
+    },
+    {
+      "id": "as-name-p01-019",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Volgas …",
+      "exampleAssociations": ["upe"]
+    },
+    {
+      "id": "as-name-p01-020",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Donavas …",
+      "exampleAssociations": ["upe"]
+    },
+    {
+      "id": "as-name-p01-021",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Sahāras …",
+      "exampleAssociations": ["tuksnesis"]
+    },
+    {
+      "id": "as-name-p01-022",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Alpu …",
+      "exampleAssociations": ["kalni"]
+    },
+    {
+      "id": "as-name-p01-023",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Himalaju …",
+      "exampleAssociations": ["kalni"]
+    },
+    {
+      "id": "as-name-p01-024",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Baikāla …",
+      "exampleAssociations": ["ezers"]
+    },
+    {
+      "id": "as-name-p01-025",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Niagāras …",
+      "exampleAssociations": ["ūdenskritums"]
+    },
+    {
+      "id": "as-name-p01-026",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Somu …",
+      "exampleAssociations": ["līcis"]
+    },
+    {
+      "id": "as-name-p01-027",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Kuršu …",
+      "exampleAssociations": ["kāpas"]
+    },
+    {
+      "id": "as-name-p01-028",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Panamas …",
+      "exampleAssociations": ["kanāls"]
+    },
+    {
+      "id": "as-name-p01-029",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Ventas …",
+      "exampleAssociations": ["rumba"]
+    },
+    {
+      "id": "as-name-p01-030",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 3,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Krimas …",
+      "exampleAssociations": ["pussala"]
+    },
+    {
+      "id": "as-name-p01-031",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Eifeļa …",
+      "exampleAssociations": ["tornis"]
+    },
+    {
+      "id": "as-name-p01-032",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Pizas …",
+      "exampleAssociations": ["tornis"]
+    },
+    {
+      "id": "as-name-p01-033",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Brīvības …",
+      "exampleAssociations": ["piemineklis"]
+    },
+    {
+      "id": "as-name-p01-034",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Rundāles …",
+      "exampleAssociations": ["pils"]
+    },
+    {
+      "id": "as-name-p01-035",
+      "type": "brand_association",
+      "contentVersion": 1,
+      "difficulty": 2,
+      "instruction": "Pabeidz šo pazīstamo nosaukumu.",
+      "brand": "Ķīnas …",
+      "exampleAssociations": ["mūris"]
     }
   ]
 }

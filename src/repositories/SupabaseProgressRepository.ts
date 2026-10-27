@@ -27,6 +27,8 @@ interface AttemptRow {
   used_hint: boolean;
   viewed_answers: boolean;
   self_assessment: SelfAssessment | null;
+  archived_at: string | null;
+  active_ms: number | null;
   reading: ReadingComprehensionProgress | null;
 }
 
@@ -50,7 +52,11 @@ function rowToAttempt(row: AttemptRow): TaskAttempt {
     usedHint: row.used_hint,
     viewedAnswers: row.viewed_answers,
     selfAssessment: row.self_assessment,
+    activeMs: row.active_ms ?? 0,
   };
+  if (row.archived_at) {
+    attempt.archivedAt = row.archived_at;
+  }
   if (row.reading) {
     attempt.reading = row.reading;
   }
@@ -70,6 +76,8 @@ function attemptToRow(userId: string, attempt: TaskAttempt): AttemptRow {
     used_hint: attempt.usedHint,
     viewed_answers: attempt.viewedAnswers,
     self_assessment: attempt.selfAssessment,
+    archived_at: attempt.archivedAt ?? null,
+    active_ms: Math.max(0, Math.round(attempt.activeMs ?? 0)),
     reading: attempt.reading ?? null,
   };
 }
@@ -159,6 +167,7 @@ export class SupabaseProgressRepository implements ProgressRepository {
     const toDelete = existing
       .filter(
         (row) =>
+          !row.archivedAt &&
           row.contentVersion === attempt.contentVersion &&
           row.id !== attempt.id,
       )
@@ -174,6 +183,20 @@ export class SupabaseProgressRepository implements ProgressRepository {
     }
 
     await this.saveAttempt(attempt);
+  }
+
+  async archiveAttemptsForTasks(
+    taskIds: string[],
+    archivedAt: string,
+  ): Promise<void> {
+    if (taskIds.length === 0) return;
+    const { error } = await this.client
+      .from('task_attempts')
+      .update({ archived_at: archivedAt, updated_at: archivedAt })
+      .eq('user_id', this.userId)
+      .in('task_id', taskIds)
+      .is('archived_at', null);
+    throwIfError(error, 'Neizdevās arhivēt progresu');
   }
 
   async deleteAttemptsForTasks(taskIds: string[]): Promise<void> {

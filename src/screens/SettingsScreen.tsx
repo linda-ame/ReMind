@@ -1,4 +1,8 @@
 import { useEffect, useState } from 'react';
+import {
+  loadMemoryVisualFirst,
+  saveMemoryVisualFirst,
+} from '../utils/memoryVisual';
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
 import { useApp } from '../context/AppContext';
@@ -24,6 +28,9 @@ export function SettingsScreen({ onNavigate, onHome }: SettingsScreenProps) {
   const { settings, updateSettings, cloudSync } = useApp();
   const { user, configured } = useAuth();
   const [savedMsg, setSavedMsg] = useState<string | null>(null);
+  const [memoryVisualFirst, setMemoryVisualFirst] = useState(
+    loadMemoryVisualFirst,
+  );
 
   useEffect(() => {
     if (!savedMsg) return;
@@ -205,6 +212,28 @@ export function SettingsScreen({ onNavigate, onHome }: SettingsScreenProps) {
             </Button>
           ))}
         </div>
+      </div>
+
+      <div className="settings-block">
+        <p className="settings-label">Atmiņas uzdevumi</p>
+        <p className="muted settings-explain">
+          Ja ieslēgts, iegaumēšanas laikā teksts ir redzams uzreiz. Ja izslēgts
+          un ierīcē ir latviešu balss, teksts paliek paslēpts, līdz nospiežat
+          Apskatīt.
+        </p>
+        <Button
+          variant={memoryVisualFirst ? 'primary' : 'secondary'}
+          onClick={() => {
+            const next = !memoryVisualFirst;
+            saveMemoryVisualFirst(next);
+            setMemoryVisualFirst(next);
+            setSavedMsg('Saglabāts');
+          }}
+        >
+          {memoryVisualFirst
+            ? 'Rādīt tekstu uzreiz: ieslēgts'
+            : 'Rādīt tekstu uzreiz: izslēgts'}
+        </Button>
       </div>
 
       <div className="settings-block">

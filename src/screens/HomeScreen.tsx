@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
 import {
@@ -14,8 +14,11 @@ import {
   filterTasksByDifficulty,
   loadDifficultyLevels,
 } from '../utils/difficulty';
+import { deleteMemorySessionsForMode } from '../repositories/IndexedDBProgressRepository';
 import { sectionPracticeScreen } from '../utils/sectionPractice';
+import { memoryModeCounts } from '../utils/memoryQueue';
 import type { Screen } from '../navigation/types';
+import type { MemoryMode } from '../types/memory';
 import type { Task } from '../types/task';
 
 interface HomeScreenProps {
@@ -29,6 +32,26 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
   const [resetConfirmType, setResetConfirmType] = useState<Task['type'] | null>(
     null,
   );
+  const [resetMemory, setResetMemory] = useState<MemoryMode | null>(null);
+  const [memoryCounts, setMemoryCounts] = useState<
+    Record<MemoryMode, { done: number; total: number }>
+  >({
+    immediate: { done: 0, total: 0 },
+    delayed: { done: 0, total: 0 },
+  });
+
+  const refreshMemory = () => {
+    void Promise.all([
+      memoryModeCounts('immediate'),
+      memoryModeCounts('delayed'),
+    ]).then(([immediate, delayed]) => {
+      setMemoryCounts({ immediate, delayed });
+    });
+  };
+
+  useEffect(() => {
+    refreshMemory();
+  }, []);
 
   const openType = (type: Task['type']) => {
     setResetConfirmType(null);
@@ -110,9 +133,9 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
                       Sākt «{label}» no jauna?
                     </p>
                     <p className="muted home-reset-confirm-text">
-                      Tiks dzēsts šīs sadaļas progress ({sectionDone} no{' '}
-                      {ofType.length}). Uzdevumi atkal tiks piedāvāti
-                      nejaušā secībā.
+                      Šī sadaļa sāksies no jauna ({sectionDone} no{' '}
+                      {ofType.length} jau izpildīti). Uzdevumi būs tukši un
+                      atkal tiks piedāvāti nejaušā secībā.
                     </p>
                     <div className="home-reset-confirm-actions">
                       <Button
@@ -124,6 +147,77 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
                       <Button
                         variant="neutral"
                         onClick={() => setResetConfirmType(null)}
+                      >
+                        Atcelt
+                      </Button>
+                    </div>
+                  </div>
+                ) : null}
+              </div>
+            );
+          })}
+
+          {(
+            [
+              ['immediate', 'Atceries uzreiz'],
+              ['delayed', 'Atceries pēc brīža'],
+            ] as const
+          ).map(([mode, name], offset) => {
+            const counts = memoryCounts[mode];
+            const label = `${homeSections.length + offset + 1}. ${name}`;
+            const confirming = resetMemory === mode;
+            const canReset = counts.done > 0;
+            return (
+              <div key={mode} className="home-type-block">
+                <div className="home-type-row">
+                  <Button
+                    variant="secondary"
+                    className={`home-type-btn home-type-memory_${mode}`}
+                    onClick={() => {
+                      setResetConfirmType(null);
+                      setResetMemory(null);
+                      onNavigate({ name: 'memory', mode });
+                    }}
+                  >
+                    {label} ({counts.done}/{counts.total})
+                  </Button>
+                  <button
+                    type="button"
+                    className="home-reset-btn"
+                    disabled={!canReset}
+                    aria-label={`Sākt no jauna: ${label}`}
+                    title="Sākt no jauna"
+                    onClick={() =>
+                      setResetMemory((prev) => (prev === mode ? null : mode))
+                    }
+                  >
+                    ↺
+                  </button>
+                </div>
+                {confirming ? (
+                  <div className="home-reset-confirm" role="region">
+                    <p className="home-reset-confirm-title">
+                      Sākt «{label}» no jauna?
+                    </p>
+                    <p className="muted home-reset-confirm-text">
+                      Tiks dzēsts šī režīma progress ({counts.done} no{' '}
+                      {counts.total}).
+                    </p>
+                    <div className="home-reset-confirm-actions">
+                      <Button
+                        variant="danger"
+                        onClick={() => {
+                          void deleteMemorySessionsForMode(mode).then(() => {
+                            setResetMemory(null);
+                            refreshMemory();
+                          });
+                        }}
+                      >
+                        Jā, sākt no jauna
+                      </Button>
+                      <Button
+                        variant="neutral"
+                        onClick={() => setResetMemory(null)}
                       >
                         Atcelt
                       </Button>

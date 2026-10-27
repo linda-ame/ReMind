@@ -56,7 +56,7 @@ export function LessonReviewScreen({
 
   const retake = async () => {
     const ok = window.confirm(
-      `Pildīt ${title} no jauna?\n\nIepriekšējās atbildes un pašvērtējums tiks dzēsti.`,
+      `Pildīt ${title} no jauna?\n\nUzdevumi būs tukši.`,
     );
     if (!ok) return;
     await clearProgressForTasks(batch.taskIds);

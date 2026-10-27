@@ -15,6 +15,7 @@ import { LessonReviewScreen } from './screens/LessonReviewScreen';
 import { LessonSummaryScreen } from './screens/LessonSummaryScreen';
 import { SectionCompleteScreen } from './screens/SectionCompleteScreen';
 import { CustomizeContentScreen } from './screens/CustomizeContentScreen';
+import { MemoryScreen } from './screens/MemoryScreen';
 import { useKeyboardViewport } from './hooks/useKeyboardViewport';
 import { loadDifficultyLevels } from './utils/difficulty';
 
@@ -280,6 +281,14 @@ function AppRouter() {
             screen.difficultyLevels ?? loadDifficultyLevels(screen.type)
           }
           onNavigate={navigate}
+          onHome={goHome}
+        />
+      );
+    case 'memory':
+      return (
+        <MemoryScreen
+          key={screen.mode}
+          mode={screen.mode}
           onHome={goHome}
         />
       );

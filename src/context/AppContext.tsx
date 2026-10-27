@@ -8,7 +8,11 @@ import {
   type ReactNode,
 } from 'react';
 import { useAuth } from './AuthContext';
-import { indexedDBProgressRepository } from '../repositories/IndexedDBProgressRepository';
+import {
+  getAllMemorySessions,
+  importMemorySessions,
+  indexedDBProgressRepository,
+} from '../repositories/IndexedDBProgressRepository';
 import type { ProgressRepository } from '../repositories/ProgressRepository';
 import { SupabaseProgressRepository } from '../repositories/SupabaseProgressRepository';
 import { syncLocalToCloud } from '../repositories/syncLocalToCloud';
@@ -19,6 +23,7 @@ import {
   type TaskAttempt,
   type UiSettings,
 } from '../types/progress';
+import { currentAttempts } from '../utils/attempts';
 import {
   loadTaskSkips,
   saveTaskSkips,
@@ -41,6 +46,8 @@ interface AppContextValue {
   refreshAttempts: () => Promise<void>;
   /** Mark task skipped for today — does not complete the attempt. */
   skipTaskToday: (taskId: string) => void;
+  /** Read attempts from the active store, including archived history. */
+  getAttemptsForTask: (taskId: string) => Promise<TaskAttempt[]>;
   /** Clear progress for specific tasks (e.g. one lesson). */
   clearProgressForTasks: (taskIds: string[]) => Promise<void>;
   exportProgress: () => Promise<ProgressSnapshot>;
@@ -74,6 +81,8 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const latestByIdRef = useRef(new Map<string, TaskAttempt>());
   /** Serialize IDB writes per attempt id. */
   const chainByIdRef = useRef(new Map<string, Promise<void>>());
+  /** Attempt ids sealed by “start over” — late writes must not revive them. */
+  const retiredAttemptIdsRef = useRef(new Set<string>());
   const repoRef = useRef<ProgressRepository>(indexedDBProgressRepository);
 
   useEffect(() => {
@@ -86,6 +95,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
       setSyncError(null);
       latestByIdRef.current.clear();
       chainByIdRef.current.clear();
+      retiredAttemptIdsRef.current.clear();
       setTaskSkips(loadTaskSkips());
 
       try {
@@ -106,7 +116,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         ]);
         if (cancelled) return;
         setSettings(s);
-        setAttempts(a);
+        setAttempts(currentAttempts(a));
       } catch (err) {
         if (cancelled) return;
         console.error(err);
@@ -124,7 +134,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         ]);
         if (cancelled) return;
         setSettings(s);
-        setAttempts(a);
+        setAttempts(currentAttempts(a));
       } finally {
         if (!cancelled) setReady(true);
       }
@@ -145,6 +155,9 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const saveAttempt = useCallback((attempt: TaskAttempt) => {
+    if (retiredAttemptIdsRef.current.has(attempt.id)) {
+      return Promise.resolve();
+    }
     const prevLatest = latestByIdRef.current.get(attempt.id);
     // Never let a late keystroke/patch downgrade a completed attempt.
     if (prevLatest?.status === 'completed' && attempt.status !== 'completed') {
@@ -157,15 +170,18 @@ export function AppProvider({ children }: { children: ReactNode }) {
     const nextChain = prevChain
       .catch(() => undefined)
       .then(async () => {
+        if (retiredAttemptIdsRef.current.has(attempt.id)) return;
         const toWrite = latestByIdRef.current.get(attempt.id);
-        if (!toWrite) return;
+        if (!toWrite || retiredAttemptIdsRef.current.has(toWrite.id)) return;
         if (toWrite.status === 'completed') {
-          // One completed row per task version — drop empty ghost attempts.
+          // One current row per task version — drop empty ghosts, keep history.
           await repoRef.current.replaceAttemptsForTaskVersion(toWrite);
+          if (retiredAttemptIdsRef.current.has(toWrite.id)) return;
           setAttempts((list) => {
             const withoutGhosts = list.filter(
               (a) =>
                 !(
+                  !a.archivedAt &&
                   a.taskId === toWrite.taskId &&
                   a.contentVersion === toWrite.contentVersion &&
                   a.id !== toWrite.id
@@ -175,6 +191,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
           });
         } else {
           await repoRef.current.saveAttempt(toWrite);
+          if (retiredAttemptIdsRef.current.has(toWrite.id)) return;
           setAttempts((list) => applyAttemptToList(list, toWrite));
         }
       });
@@ -190,8 +207,13 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const refreshAttempts = useCallback(async () => {
-    setAttempts(await repoRef.current.getAllAttempts());
+    setAttempts(currentAttempts(await repoRef.current.getAllAttempts()));
   }, []);
+
+  const getAttemptsForTask = useCallback(
+    (taskId: string) => repoRef.current.getAttemptsForTask(taskId),
+    [],
+  );
 
   const skipTaskToday = useCallback((taskId: string) => {
     setTaskSkips((prev) => {
@@ -202,10 +224,22 @@ export function AppProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const clearProgressForTasks = useCallback(async (taskIds: string[]) => {
-    await repoRef.current.deleteAttemptsForTasks(taskIds);
+    const idSet = new Set(taskIds);
+    for (const [id, attempt] of latestByIdRef.current) {
+      if (idSet.has(attempt.taskId)) retiredAttemptIdsRef.current.add(id);
+    }
+    const archivedAt = new Date().toISOString();
+    // Local copy first so a later sign-in still uploads the history.
+    await indexedDBProgressRepository.archiveAttemptsForTasks(
+      taskIds,
+      archivedAt,
+    );
+    if (repoRef.current !== indexedDBProgressRepository) {
+      await repoRef.current.archiveAttemptsForTasks(taskIds, archivedAt);
+    }
     for (const id of [...latestByIdRef.current.keys()]) {
-      const a = latestByIdRef.current.get(id);
-      if (a && taskIds.includes(a.taskId)) {
+      const attempt = latestByIdRef.current.get(id);
+      if (attempt && idSet.has(attempt.taskId)) {
         latestByIdRef.current.delete(id);
         chainByIdRef.current.delete(id);
       }
@@ -215,25 +249,32 @@ export function AppProvider({ children }: { children: ReactNode }) {
       saveTaskSkips(next);
       return next;
     });
-    setAttempts(await repoRef.current.getAllAttempts());
+    setAttempts(currentAttempts(await repoRef.current.getAllAttempts()));
   }, []);
 
-  const exportProgress = useCallback(
-    () => repoRef.current.exportProgress(),
-    [],
-  );
+  const exportProgress = useCallback(async () => {
+    const snapshot = await repoRef.current.exportProgress();
+    if (!snapshot.memorySessions) {
+      snapshot.memorySessions = await getAllMemorySessions();
+    }
+    return snapshot;
+  }, []);
 
   const importProgress = useCallback(
     async (snapshot: ProgressSnapshot, mode: 'merge' | 'replace') => {
       await repoRef.current.importProgress(snapshot, mode);
+      if (repoRef.current !== indexedDBProgressRepository) {
+        await importMemorySessions(snapshot.memorySessions, mode);
+      }
       const [s, a] = await Promise.all([
         repoRef.current.getSettings(),
         repoRef.current.getAllAttempts(),
       ]);
       setSettings(s);
-      setAttempts(a);
+      setAttempts(currentAttempts(a));
       latestByIdRef.current.clear();
       chainByIdRef.current.clear();
+      retiredAttemptIdsRef.current.clear();
     },
     [],
   );
@@ -251,6 +292,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         saveAttempt,
         refreshAttempts,
         skipTaskToday,
+        getAttemptsForTask,
         clearProgressForTasks,
         exportProgress,
         importProgress,
