@@ -5,6 +5,7 @@ import { useApp } from '../context/AppContext';
 import { useAuth } from '../context/AuthContext';
 import type { Screen } from '../navigation/types';
 import {
+  clampContentScale,
   CONTENT_SCALE_MAX,
   CONTENT_SCALE_MIN,
   CONTENT_SCALE_OPTIONS,
@@ -21,10 +22,8 @@ interface SettingsScreenProps {
 
 export function SettingsScreen({ onNavigate, onHome }: SettingsScreenProps) {
   const { settings, updateSettings, cloudSync } = useApp();
-  const { user, configured, signOut } = useAuth();
+  const { user, configured } = useAuth();
   const [savedMsg, setSavedMsg] = useState<string | null>(null);
-  const [accountMsg, setAccountMsg] = useState<string | null>(null);
-  const [signingOut, setSigningOut] = useState(false);
 
   useEffect(() => {
     if (!savedMsg) return;
@@ -41,18 +40,15 @@ export function SettingsScreen({ onNavigate, onHome }: SettingsScreenProps) {
   };
 
   const percent = Math.round(settings.contentScale * 100);
+  const atMin = settings.contentScale <= CONTENT_SCALE_MIN + 0.001;
+  const atMax = settings.contentScale >= CONTENT_SCALE_MAX - 0.001;
 
-  const handleSignOut = async () => {
-    setAccountMsg(null);
-    setSigningOut(true);
-    try {
-      await signOut();
-      setAccountMsg('Izrakstīts. Progress šajā ierīcē paliek lokāli.');
-    } catch (err) {
-      setAccountMsg(err instanceof Error ? err.message : 'Neizdevās izrakstīties.');
-    } finally {
-      setSigningOut(false);
-    }
+  const nudgeScale = (direction: -1 | 1) => {
+    const next = clampContentScale(
+      settings.contentScale + direction * CONTENT_SCALE_STEP,
+    );
+    if (Math.abs(next - settings.contentScale) < 0.001) return;
+    void change({ contentScale: next });
   };
 
   return (
@@ -68,50 +64,22 @@ export function SettingsScreen({ onNavigate, onHome }: SettingsScreenProps) {
         </p>
       ) : null}
 
-      <div className="settings-block">
-        <p className="settings-label">Konts</p>
-        {user ? (
-          <>
-            <p className="muted settings-explain account-copy">{user.email}</p>
-            <p className="muted settings-explain account-copy">
-              Progress tiek sinhronizēts ar mākonī. Vārdu, e-pastu un paroli
-              varat mainīt sadaļā Konts.
-            </p>
-            <Button
-              variant="secondary"
-              onClick={() => onNavigate({ name: 'auth' })}
-            >
-              Atvērt kontu
-            </Button>
-            <Button
-              variant="danger"
-              disabled={signingOut}
-              onClick={() => void handleSignOut()}
-            >
-              {signingOut ? 'Izrakstās…' : 'Izrakstīties'}
-            </Button>
-          </>
-        ) : (
-          <>
-            <p className="muted settings-explain">
-              {configured
-                ? 'Bez konta progress paliek tikai šajā ierīcē. Izveidojiet kontu, lai saglabātu mākonī.'
-                : 'Konts nav konfigurēts (trūkst Supabase atslēgu). Progress joprojām darbojas lokāli.'}
-            </p>
-            <Button
-              variant="secondary"
-              onClick={() => onNavigate({ name: 'auth' })}
-            >
-              Ielogoties / reģistrēties
-            </Button>
-          </>
-        )}
-        {accountMsg ? (
-          <p className="settings-saved" role="status">
-            {accountMsg}
+      {user ? null : (
+        <div className="settings-block">
+          <p className="settings-label">Konts</p>
+          <p className="muted settings-explain">
+            {configured
+              ? 'Bez konta progress paliek tikai šajā ierīcē. Izveidojiet kontu, lai saglabātu mākonī.'
+              : 'Konts nav konfigurēts (trūkst Supabase atslēgu). Progress joprojām darbojas lokāli.'}
           </p>
-        ) : null}
-      </div>
+          <Button
+            variant="secondary"
+            onClick={() => onNavigate({ name: 'auth' })}
+          >
+            Ielogoties / reģistrēties
+          </Button>
+        </div>
+      )}
 
       <div className="settings-block">
         <p className="settings-label">Satura izmērs</p>
@@ -173,9 +141,31 @@ export function SettingsScreen({ onNavigate, onHome }: SettingsScreenProps) {
               A
             </span>
           </div>
-          <p className="scale-slider-value" aria-live="polite">
-            {percent}%
-          </p>
+          <div className="scale-stepper" role="group" aria-label="Burtu izmērs">
+            <Button
+              variant="secondary"
+              fullWidth={false}
+              className="scale-step-btn"
+              aria-label="Samazināt par 5 procentiem"
+              disabled={atMin}
+              onClick={() => nudgeScale(-1)}
+            >
+              −
+            </Button>
+            <p className="scale-slider-value" aria-live="polite">
+              {percent}%
+            </p>
+            <Button
+              variant="secondary"
+              fullWidth={false}
+              className="scale-step-btn"
+              aria-label="Palielināt par 5 procentiem"
+              disabled={atMax}
+              onClick={() => nudgeScale(1)}
+            >
+              +
+            </Button>
+          </div>
         </div>
 
         <p className="preview-text" aria-live="polite">
