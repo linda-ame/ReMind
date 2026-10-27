@@ -2,11 +2,13 @@ import { useEffect, useId, useRef, useState, type KeyboardEvent, type PointerEve
 import { useSpeechDictation } from '../hooks/useSpeechDictation';
 import {
   clearMicrophoneGrantedInPage,
-  isMicrophonePermissionError,
+  hasMicrophonePrompt,
   isIosDevice,
+  isMicrophonePermissionError,
   markMicrophoneGrantedInPage,
   microphoneGrantedInPage,
   queryMicrophonePermission,
+  requestMicrophoneFromGesture,
   type MicrophonePermissionState,
 } from '../speech/recognition';
 import type { AnswerInputFeedback } from '../utils/answers';
@@ -95,7 +97,7 @@ export function AnswerField({
   const [keyboardOpen, setKeyboardOpen] = useState(false);
   /** In-app step before the browser/OS microphone prompt. */
   const [micDialog, setMicDialog] = useState<
-    null | 'ask' | 'asking' | 'blocked' | 'speech'
+    null | 'ask' | 'asking' | 'again' | 'blocked' | 'speech'
   >(null);
   const allowMicRef = useRef<HTMLButtonElement>(null);
   const micTitleId = useId();
@@ -135,8 +137,10 @@ export function AnswerField({
   useEffect(() => {
     if (!isMicrophonePermissionError(dictation.errorCode)) return;
     clearMicrophoneGrantedInPage();
-    // iPhone keeps a second switch, Speech Recognition. Microphone Allow
-    // alone still comes back as not-allowed.
+    if (isIosDevice() && hasMicrophonePrompt() && dictation.errorCode === 'not-allowed') {
+      setMicDialog('again');
+      return;
+    }
     setMicDialog(isIosDevice() ? 'speech' : 'blocked');
   }, [dictation.errorCode]);
 
@@ -167,9 +171,7 @@ export function AnswerField({
 
   const allowMicrophone = () => {
     dictation.clearError();
-    setMicDialog('asking');
-    // Same click opens the system prompt. Speech recognition requests the
-    // microphone itself; a separate getUserMedia call would steal the gesture.
+    if (micDialog !== 'again') setMicDialog('asking');
     dictation.start();
   };
 
@@ -179,21 +181,31 @@ export function AnswerField({
       return;
     }
     dictation.clearError();
+    if (isIosDevice()) {
+      if (microphoneGrantedInPage() || hasMicrophonePrompt()) {
+        dictation.start();
+        return;
+      }
+      setMicDialog('asking');
+      // getUserMedia has to start inside this tap, or iOS never shows
+      // "Safari Would Like to Access the Microphone" and Safari stays off
+      // the privacy list.
+      void requestMicrophoneFromGesture().then((ok) => {
+        if (!ok) {
+          setMicDialog('speech');
+          return;
+        }
+        dictation.start();
+      });
+      return;
+    }
     // start() has to run inside this tap. Waiting for the permission check
     // first makes iOS Safari ignore the microphone even when it is Allow.
-    // iPhone rejects start() unless it happens in this tap, and its permission
-    // query stays "denied" after Microphone is already Allow.
-    if (
-      isIosDevice() ||
-      microphoneGrantedInPage() ||
-      knownPerm === 'granted'
-    ) {
+    if (microphoneGrantedInPage() || knownPerm === 'granted') {
       dictation.start();
       return;
     }
-    // iPhone's permission query stays "denied" after Microphone is set to
-    // Allow. The tap on Atļaut mikrofonu is what actually starts listening.
-    if (knownPerm === 'denied' && !isIosDevice()) {
+    if (knownPerm === 'denied') {
       clearMicrophoneGrantedInPage();
       setMicDialog('blocked');
       return;
@@ -337,16 +349,20 @@ export function AnswerField({
             onClick={(event) => event.stopPropagation()}
           >
             <h2 id={micTitleId} className="mic-permission-title">
-              {micDialog === 'speech'
-                ? 'Safari nedrīkst mikrofonu'
-                : micDialog === 'blocked'
-                  ? 'Mikrofons ir bloķēts'
-                  : 'Mikrofons'}
+              {micDialog === 'again'
+                ? 'Mikrofons ir atļauts'
+                : micDialog === 'speech'
+                  ? 'Safari vēl neprasa mikrofonu'
+                  : micDialog === 'blocked'
+                    ? 'Mikrofons ir bloķēts'
+                    : 'Mikrofons'}
             </h2>
             <p className="mic-permission-text">
-              {micDialog === 'speech'
-                ? 'Settings → Privacy & Security → Microphone. Ieslēdz Safari. Pēc tam aizver Safari pavisam un atver lapu no jauna.'
-                : micDialog === 'blocked'
+              {micDialog === 'again'
+                ? 'Nospiediet Ierunāt vēlreiz un runājiet.'
+                : micDialog === 'speech'
+                  ? 'Lapas izvēlnē Microphone pārslēdz uz Ask. Aizver Safari pavisam, atver lapu no jauna un nospied Ierunāt. Tad iPhone logā izvēlies Allow.'
+                  : micDialog === 'blocked'
                   ? 'Atļaujas logs vairs neatveras. Ierīces iestatījumos atļaujiet mikrofonu šai lapai un nospiediet vēlreiz.'
                   : micDialog === 'asking'
                     ? 'Atveras atļaujas logs. Nospiediet Atļaut.'
@@ -359,12 +375,14 @@ export function AnswerField({
                 disabled={micDialog === 'asking'}
                 onClick={allowMicrophone}
               >
-                {micDialog === 'blocked' || micDialog === 'speech'
-                  ? 'Mēģināt vēlreiz'
-                  : 'Atļaut mikrofonu'}
+                {micDialog === 'again'
+                  ? 'Ierunāt'
+                  : micDialog === 'blocked' || micDialog === 'speech'
+                    ? 'Mēģināt vēlreiz'
+                    : 'Atļaut mikrofonu'}
               </Button>
               <Button variant="neutral" onClick={closeMicDialog}>
-                {micDialog === 'blocked' || micDialog === 'speech'
+                {micDialog === 'blocked' || micDialog === 'speech' || micDialog === 'again'
                   ? 'Aizvērt'
                   : 'Atcelt'}
               </Button>
