@@ -8,6 +8,7 @@ import {
   type MemorySession,
 } from '../types/memory';
 import { memoryPool } from './memoryDifficulty';
+import { loadTaskSkips } from './taskSkips';
 
 function shuffle<T>(items: T[]): T[] {
   const copy = [...items];
@@ -44,8 +45,10 @@ export function pickMemoryTask(
   const pool = memoryPool(mode);
   if (pool.length === 0) return null;
   const done = completedIds(mode, history);
-  const unfinished = pool.filter((task) => !done.has(task.id));
-  const prefer = unfinished.length > 0 ? unfinished : pool;
+  const skipped = new Set(loadTaskSkips().map((skip) => skip.taskId));
+  const open = pool.filter((task) => !done.has(task.id) && !skipped.has(task.id));
+  const later = pool.filter((task) => !skipped.has(task.id));
+  const prefer = open.length > 0 ? open : later.length > 0 ? later : pool;
 
   const recent = history
     .filter((session) => session.mode === mode)

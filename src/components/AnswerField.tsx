@@ -1,4 +1,4 @@
-import { useEffect, useRef, type KeyboardEvent, type RefObject } from 'react';
+import { useEffect, useRef, useState, type KeyboardEvent, type PointerEvent as ReactPointerEvent, type RefObject } from 'react';
 import { useSpeechDictation } from '../hooks/useSpeechDictation';
 import type { AnswerInputFeedback } from '../utils/answers';
 import { Button } from './Button';
@@ -8,9 +8,9 @@ interface AnswerFieldProps {
   value: string;
   onChange: (value: string) => void;
   /**
-   * Enter key, or final speech dictation result.
-   * Use to reveal answers / give feedback. Value is the submitted text.
-   * Enter always confirms and closes the keyboard, including in a wrapping box.
+   * Keyboard Enter, the green Enter button while the keyboard is open,
+   * or a final speech dictation result.
+   * Use to check the answer / finish the task. Value is the submitted text.
    */
   onSubmit?: (value: string) => void;
   placeholder?: string;
@@ -82,7 +82,21 @@ export function AnswerField({
     if (autoFocus && !readOnly) inputRef.current?.focus();
   }, [autoFocus, readOnly, inputRef]);
 
+  const [fieldFocused, setFieldFocused] = useState(false);
+  const [keyboardOpen, setKeyboardOpen] = useState(false);
+
+  useEffect(() => {
+    const root = document.documentElement;
+    const sync = () => setKeyboardOpen(root.classList.contains('keyboard-open'));
+    sync();
+    const observer = new MutationObserver(sync);
+    observer.observe(root, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
+
   const { listening, stop } = dictation;
+  const showEnter =
+    keyboardOpen && fieldFocused && !listening && !readOnly;
   // Stop listening if the field becomes read-only mid-session
   useEffect(() => {
     if (readOnly && listening) stop();
@@ -138,6 +152,8 @@ export function AnswerField({
             readOnly={readOnly}
             aria-readonly={readOnly || undefined}
             lang="lv"
+            onFocus={() => setFieldFocused(true)}
+            onBlur={() => setFieldFocused(false)}
             onChange={(e) => onFieldChange(e.target.value)}
             onKeyDown={onFieldKeyDown}
           />
@@ -156,26 +172,40 @@ export function AnswerField({
             enterKeyHint="done"
             readOnly={readOnly}
             aria-readonly={readOnly || undefined}
+            onFocus={() => setFieldFocused(true)}
+            onBlur={() => setFieldFocused(false)}
             onChange={(e) => onFieldChange(e.target.value)}
             onKeyDown={onFieldKeyDown}
           />
         )}
 
-        {dictation.supported ? (
+        {dictation.supported || showEnter ? (
           <Button
             variant={dictation.listening ? 'danger' : 'help'}
             fullWidth={false}
             className={`answer-dictate-btn${dictation.listening ? ' is-listening' : ''}`}
             aria-pressed={dictation.listening}
             aria-label={
-              dictation.listening ? 'Apturēt ierunāšanu' : 'Ierunāt atbildi'
+              dictation.listening
+                ? 'Apturēt ierunāšanu'
+                : showEnter
+                  ? 'Enter'
+                  : 'Ierunāt atbildi'
             }
+            onPointerDown={(event: ReactPointerEvent<HTMLButtonElement>) => {
+              // Keep the field focused so the keyboard stays open until submit.
+              if (showEnter) event.preventDefault();
+            }}
             onClick={() => {
+              if (showEnter) {
+                finish(valueRef.current);
+                return;
+              }
               dictation.clearError();
               dictation.toggle();
             }}
           >
-            {dictation.listening ? 'Apturēt' : 'Ierunāt'}
+            {dictation.listening ? 'Apturēt' : showEnter ? 'Enter' : 'Ierunāt'}
           </Button>
         ) : null}
       </div>

@@ -3643,11 +3643,12 @@
       "contentVersion": 1,
       "difficulty": 2,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nPirmdien, plkst. 09:00\npie zobārsta",
+        "visualText": "Pirmdien\nplkst. 09:00\npie zobārsta",
         "ttsSegments": [
-          "Pirmdien pulksten 09:00",
+          "Pirmdien",
+          "pulksten 09:00",
           "pie zobārsta"
         ],
         "locale": "lv-LV"
@@ -3657,7 +3658,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Pirmdien"
             ],
@@ -3691,7 +3692,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "pie zobārsta"
             ],
@@ -3716,11 +3717,12 @@
       "contentVersion": 1,
       "difficulty": 2,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nOtrdien, plkst. 14:30\npie friziera",
+        "visualText": "Otrdien\nplkst. 14:30\npie friziera",
         "ttsSegments": [
-          "Otrdien pulksten 14:30",
+          "Otrdien",
+          "pulksten 14:30",
           "pie friziera"
         ],
         "locale": "lv-LV"
@@ -3730,7 +3732,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Otrdien"
             ],
@@ -3764,7 +3766,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "pie friziera"
             ],
@@ -3789,11 +3791,12 @@
       "contentVersion": 1,
       "difficulty": 2,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nTrešdien, plkst. 11:15\nbibliotēkā",
+        "visualText": "Trešdien\nplkst. 11:15\nbibliotēkā",
         "ttsSegments": [
-          "Trešdien pulksten 11:15",
+          "Trešdien",
+          "pulksten 11:15",
           "bibliotēkā"
         ],
         "locale": "lv-LV"
@@ -3803,7 +3806,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Trešdien"
             ],
@@ -3837,7 +3840,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "bibliotēkā"
             ],
@@ -3862,11 +3865,12 @@
       "contentVersion": 1,
       "difficulty": 2,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nCeturtdien, plkst. 16:00\nautoservisā",
+        "visualText": "Ceturtdien\nplkst. 16:00\nautoservisā",
         "ttsSegments": [
-          "Ceturtdien pulksten 16:00",
+          "Ceturtdien",
+          "pulksten 16:00",
           "autoservisā"
         ],
         "locale": "lv-LV"
@@ -3876,7 +3880,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Ceturtdien"
             ],
@@ -3910,7 +3914,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "autoservisā"
             ],
@@ -3935,11 +3939,12 @@
       "contentVersion": 1,
       "difficulty": 2,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nPiektdien, plkst. 10:30\nbankā",
+        "visualText": "Piektdien\nplkst. 10:30\nbankā",
         "ttsSegments": [
-          "Piektdien pulksten 10:30",
+          "Piektdien",
+          "pulksten 10:30",
           "bankā"
         ],
         "locale": "lv-LV"
@@ -3949,7 +3954,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Piektdien"
             ],
@@ -3983,7 +3988,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "bankā"
             ],
@@ -4008,11 +4013,12 @@
       "contentVersion": 1,
       "difficulty": 3,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nSestdien, plkst. 13:00\nsporta centrā",
+        "visualText": "Sestdien\nplkst. 13:00\nsporta centrā",
         "ttsSegments": [
-          "Sestdien pulksten 13:00",
+          "Sestdien",
+          "pulksten 13:00",
           "sporta centrā"
         ],
         "locale": "lv-LV"
@@ -4022,7 +4028,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Sestdien"
             ],
@@ -4056,7 +4062,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "sporta centrā"
             ],
@@ -4081,11 +4087,12 @@
       "contentVersion": 1,
       "difficulty": 3,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nOtrdien, plkst. 08:45\npie ģimenes ārsta",
+        "visualText": "Otrdien\nplkst. 08:45\npie ģimenes ārsta",
         "ttsSegments": [
-          "Otrdien pulksten 08:45",
+          "Otrdien",
+          "pulksten 08:45",
           "pie ģimenes ārsta"
         ],
         "locale": "lv-LV"
@@ -4095,7 +4102,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Otrdien"
             ],
@@ -4129,7 +4136,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "pie ģimenes ārsta"
             ],
@@ -4154,11 +4161,12 @@
       "contentVersion": 1,
       "difficulty": 3,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nTrešdien, plkst. 15:20\npie optometrista",
+        "visualText": "Trešdien\nplkst. 15:20\npie optometrista",
         "ttsSegments": [
-          "Trešdien pulksten 15:20",
+          "Trešdien",
+          "pulksten 15:20",
           "pie optometrista"
         ],
         "locale": "lv-LV"
@@ -4168,7 +4176,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Trešdien"
             ],
@@ -4202,7 +4210,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "pie optometrista"
             ],
@@ -4227,11 +4235,12 @@
       "contentVersion": 1,
       "difficulty": 3,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nCeturtdien, plkst. 12:15\npasta nodaļā",
+        "visualText": "Ceturtdien\nplkst. 12:15\npasta nodaļā",
         "ttsSegments": [
-          "Ceturtdien pulksten 12:15",
+          "Ceturtdien",
+          "pulksten 12:15",
           "pasta nodaļā"
         ],
         "locale": "lv-LV"
@@ -4241,7 +4250,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Ceturtdien"
             ],
@@ -4275,7 +4284,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "pasta nodaļā"
             ],
@@ -4300,11 +4309,12 @@
       "contentVersion": 1,
       "difficulty": 3,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nPiektdien, plkst. 17:30\nkultūras centrā",
+        "visualText": "Piektdien\nplkst. 17:30\nkultūras centrā",
         "ttsSegments": [
-          "Piektdien pulksten 17:30",
+          "Piektdien",
+          "pulksten 17:30",
           "kultūras centrā"
         ],
         "locale": "lv-LV"
@@ -4314,7 +4324,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Piektdien"
             ],
@@ -4348,7 +4358,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "kultūras centrā"
             ],
@@ -4373,11 +4383,12 @@
       "contentVersion": 1,
       "difficulty": 3,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nPirmdien, plkst. 10:15\npie fizioterapeita",
+        "visualText": "Pirmdien\nplkst. 10:15\npie fizioterapeita",
         "ttsSegments": [
-          "Pirmdien pulksten 10:15",
+          "Pirmdien",
+          "pulksten 10:15",
           "pie fizioterapeita"
         ],
         "locale": "lv-LV"
@@ -4387,7 +4398,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Pirmdien"
             ],
@@ -4421,7 +4432,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "pie fizioterapeita"
             ],
@@ -4446,11 +4457,12 @@
       "contentVersion": 1,
       "difficulty": 4,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nOtrdien, plkst. 16:45\nbibliotēkā",
+        "visualText": "Otrdien\nplkst. 16:45\nbibliotēkā",
         "ttsSegments": [
-          "Otrdien pulksten 16:45",
+          "Otrdien",
+          "pulksten 16:45",
           "bibliotēkā"
         ],
         "locale": "lv-LV"
@@ -4460,7 +4472,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Otrdien"
             ],
@@ -4494,7 +4506,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "bibliotēkā"
             ],
@@ -4519,11 +4531,12 @@
       "contentVersion": 1,
       "difficulty": 4,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nTrešdien, plkst. 09:30\nautoservisā",
+        "visualText": "Trešdien\nplkst. 09:30\nautoservisā",
         "ttsSegments": [
-          "Trešdien pulksten 09:30",
+          "Trešdien",
+          "pulksten 09:30",
           "autoservisā"
         ],
         "locale": "lv-LV"
@@ -4533,7 +4546,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Trešdien"
             ],
@@ -4567,7 +4580,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "autoservisā"
             ],
@@ -4592,11 +4605,12 @@
       "contentVersion": 1,
       "difficulty": 4,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nCeturtdien, plkst. 14:15\npie zobārsta",
+        "visualText": "Ceturtdien\nplkst. 14:15\npie zobārsta",
         "ttsSegments": [
-          "Ceturtdien pulksten 14:15",
+          "Ceturtdien",
+          "pulksten 14:15",
           "pie zobārsta"
         ],
         "locale": "lv-LV"
@@ -4606,7 +4620,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Ceturtdien"
             ],
@@ -4640,7 +4654,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "pie zobārsta"
             ],
@@ -4665,11 +4679,12 @@
       "contentVersion": 1,
       "difficulty": 4,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nPiektdien, plkst. 11:45\npie ergoterapeita",
+        "visualText": "Piektdien\nplkst. 11:45\npie ergoterapeita",
         "ttsSegments": [
-          "Piektdien pulksten 11:45",
+          "Piektdien",
+          "pulksten 11:45",
           "pie ergoterapeita"
         ],
         "locale": "lv-LV"
@@ -4679,7 +4694,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Piektdien"
             ],
@@ -4713,7 +4728,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "pie ergoterapeita"
             ],
@@ -4738,11 +4753,12 @@
       "contentVersion": 1,
       "difficulty": 4,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nSestdien, plkst. 12:30\nmuzejā",
+        "visualText": "Sestdien\nplkst. 12:30\nmuzejā",
         "ttsSegments": [
-          "Sestdien pulksten 12:30",
+          "Sestdien",
+          "pulksten 12:30",
           "muzejā"
         ],
         "locale": "lv-LV"
@@ -4752,7 +4768,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Sestdien"
             ],
@@ -4786,7 +4802,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "muzejā"
             ],
@@ -4811,11 +4827,12 @@
       "contentVersion": 1,
       "difficulty": 5,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nPirmdien, plkst. 15:45\npasta nodaļā",
+        "visualText": "Pirmdien\nplkst. 15:45\npasta nodaļā",
         "ttsSegments": [
-          "Pirmdien pulksten 15:45",
+          "Pirmdien",
+          "pulksten 15:45",
           "pasta nodaļā"
         ],
         "locale": "lv-LV"
@@ -4825,7 +4842,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Pirmdien"
             ],
@@ -4859,7 +4876,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "pasta nodaļā"
             ],
@@ -4884,11 +4901,12 @@
       "contentVersion": 1,
       "difficulty": 5,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nOtrdien, plkst. 13:20\npie friziera",
+        "visualText": "Otrdien\nplkst. 13:20\npie friziera",
         "ttsSegments": [
-          "Otrdien pulksten 13:20",
+          "Otrdien",
+          "pulksten 13:20",
           "pie friziera"
         ],
         "locale": "lv-LV"
@@ -4898,7 +4916,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Otrdien"
             ],
@@ -4932,7 +4950,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "pie friziera"
             ],
@@ -4957,11 +4975,12 @@
       "contentVersion": 1,
       "difficulty": 5,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nTrešdien, plkst. 17:15\nsporta centrā",
+        "visualText": "Trešdien\nplkst. 17:15\nsporta centrā",
         "ttsSegments": [
-          "Trešdien pulksten 17:15",
+          "Trešdien",
+          "pulksten 17:15",
           "sporta centrā"
         ],
         "locale": "lv-LV"
@@ -4971,7 +4990,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Trešdien"
             ],
@@ -5005,7 +5024,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "sporta centrā"
             ],
@@ -5030,11 +5049,12 @@
       "contentVersion": 1,
       "difficulty": 5,
       "category": "appointment",
-      "instruction": "Iegaumē dienu, laiku un vietu.",
+      "instruction": "Iegaumē, kad, cikos un kur.",
       "stimulus": {
-        "visualText": "Tikšanās / pieraksts\nCeturtdien, plkst. 08:30\npie ģimenes ārsta",
+        "visualText": "Ceturtdien\nplkst. 08:30\npie ģimenes ārsta",
         "ttsSegments": [
-          "Ceturtdien pulksten 08:30",
+          "Ceturtdien",
+          "pulksten 08:30",
           "pie ģimenes ārsta"
         ],
         "locale": "lv-LV"
@@ -5044,7 +5064,7 @@
         "fields": [
           {
             "key": "day",
-            "prompt": "Kurā dienā?",
+            "prompt": "Kad?",
             "acceptedAnswers": [
               "Ceturtdien"
             ],
@@ -5078,7 +5098,7 @@
           },
           {
             "key": "place",
-            "prompt": "Kur bija paredzēts doties?",
+            "prompt": "Kur?",
             "acceptedAnswers": [
               "pie ģimenes ārsta"
             ],

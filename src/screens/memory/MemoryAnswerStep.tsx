@@ -1,6 +1,8 @@
+import { useRef, useState } from 'react';
 import { AnswerField } from '../../components/AnswerField';
 import { Button } from '../../components/Button';
 import type { MemoryDraft, MemoryRecallTask } from '../../types/memory';
+import { playCorrectChime, playWrongBuzz } from '../../utils/answerFeedback';
 import type { MemorySubmitKind } from '../../utils/memoryScore';
 
 interface Props {
@@ -12,6 +14,7 @@ interface Props {
   recallCue?: boolean;
   onDraft: (recipe: (draft: MemoryDraft) => MemoryDraft) => void;
   onSubmit: (kind: MemorySubmitKind) => void;
+  onSkip: () => void;
 }
 
 export function MemoryAnswerStep({
@@ -21,6 +24,7 @@ export function MemoryAnswerStep({
   recallCue = false,
   onDraft,
   onSubmit,
+  onSkip,
 }: Props) {
   const openRecognition = () => {
     onDraft((current) =>
@@ -29,16 +33,6 @@ export function MemoryAnswerStep({
   };
 
   const confirm = () => {
-    if (task.answer.kind === 'facts') {
-      const last = task.answer.fields.length - 1;
-      if (draft.factIndex < last) {
-        onDraft((current) => ({
-          ...current,
-          factIndex: current.factIndex + 1,
-        }));
-        return;
-      }
-    }
     onSubmit('submit');
   };
 
@@ -47,19 +41,19 @@ export function MemoryAnswerStep({
       if (task.answer.kind !== 'facts') {
         return current.answerVisible ? current : { ...current, answerVisible: true };
       }
-      const field = task.answer.fields[current.factIndex];
-      if (!field) return current;
-      const keys = current.revealedFactKeys ?? [];
-      if (keys.includes(field.key)) return current;
-      return { ...current, revealedFactKeys: [...keys, field.key] };
+      const keys = task.answer.fields.map((field) => field.key);
+      const already = current.revealedFactKeys ?? [];
+      if (keys.every((key) => already.includes(key))) return current;
+      return { ...current, revealedFactKeys: keys };
     });
   };
 
   const revealed = answerIsVisible(task, draft);
+  const showCue = recallCue || task.category === 'appointment';
 
   return (
-    <div className="memory-flow">
-      {recallCue ? (
+    <div className="memory-flow memory-flow-screen">
+      {showCue ? (
         <p className="memory-instruction">{delayedPrompt(task)}</p>
       ) : null}
       {task.answer.kind === 'ordered_digits' ||
@@ -73,13 +67,7 @@ export function MemoryAnswerStep({
       ) : null}
 
       {task.answer.kind === 'facts' ? (
-        <FactFields
-          task={task}
-          draft={draft}
-          revealed={revealed}
-          onDraft={onDraft}
-          onConfirm={confirm}
-        />
+        <FactFields task={task} draft={draft} onDraft={onDraft} onConfirm={confirm} />
       ) : null}
 
       {draft.recognitionOpen ? (
@@ -89,6 +77,15 @@ export function MemoryAnswerStep({
           revealed={revealed}
           onDraft={onDraft}
         />
+      ) : task.answer.kind === 'facts' ? (
+        <div className="memory-actions">
+          <Button variant="primary" onClick={confirm}>
+            Tālāk
+          </Button>
+          <Button variant="secondary" onClick={openRecognition}>
+            Parādīt variantus
+          </Button>
+        </div>
       ) : (
         <Button variant="secondary" onClick={openRecognition}>
           Parādīt variantus
@@ -113,6 +110,9 @@ export function MemoryAnswerStep({
           </Button>
         </div>
       ) : null}
+      <Button variant="neutral" className="task-skip-btn memory-skip" onClick={onSkip}>
+        Izlaist
+      </Button>
     </div>
   );
 }
@@ -147,57 +147,45 @@ function RecallField({
 function FactFields({
   task,
   draft,
-  revealed,
   onDraft,
   onConfirm,
 }: {
   task: MemoryRecallTask;
   draft: MemoryDraft;
-  revealed: boolean;
   onDraft: (recipe: (draft: MemoryDraft) => MemoryDraft) => void;
   onConfirm: () => void;
 }) {
   if (task.answer.kind !== 'facts') return null;
   const fields = task.answer.fields;
-  const index = Math.min(draft.factIndex, fields.length - 1);
-  const field = fields[index];
-  if (!field) return null;
-  const value = draft.facts[field.key] ?? '';
+  const revealedKeys = new Set(draft.revealedFactKeys ?? []);
 
   return (
     <div className="memory-entry">
-      <p className="memory-note">
-        {index + 1} no {fields.length}
-      </p>
-      <AnswerField
-        key={field.key}
-        id={`memory-fact-${field.key}`}
-        label={field.prompt}
-        value={value}
-        placeholder="Ierakstiet vai ierunājiet atbildi…"
-        autoFocus
-        readOnly={revealed}
-        onChange={(next) =>
-          onDraft((current) => ({
-            ...current,
-            facts: { ...current.facts, [field.key]: next },
-          }))
-        }
-        onSubmit={onConfirm}
-      />
-      {index > 0 ? (
-        <Button
-          variant="secondary"
-          onClick={() =>
+      {fields.map((field, index) => (
+        <AnswerField
+          key={field.key}
+          id={`memory-fact-${field.key}`}
+          label={field.prompt}
+          value={draft.facts[field.key] ?? ''}
+          placeholder="Ierakstiet vai ierunājiet atbildi…"
+          autoFocus={index === 0}
+          readOnly={revealedKeys.has(field.key)}
+          onChange={(next) =>
             onDraft((current) => ({
               ...current,
-              factIndex: Math.max(0, current.factIndex - 1),
+              facts: { ...current.facts, [field.key]: next },
             }))
           }
-        >
-          Iepriekšējais
-        </Button>
-      ) : null}
+          onSubmit={() => {
+            const next = fields[index + 1];
+            if (!next) {
+              onConfirm();
+              return;
+            }
+            document.getElementById(`memory-fact-${next.key}`)?.focus();
+          }}
+        />
+      ))}
     </div>
   );
 }
@@ -214,27 +202,37 @@ function RecognitionPanel({
   onDraft: (recipe: (draft: MemoryDraft) => MemoryDraft) => void;
 }) {
   if (task.answer.kind === 'facts') {
-    const fields = task.answer.fields;
-    const index = Math.min(draft.factIndex, fields.length - 1);
-    const field = fields[index];
-    if (!field) return null;
-    const picked = draft.factIndices[field.key];
+    const revealedKeys = new Set(draft.revealedFactKeys ?? []);
     return (
-      <RecognitionChoices
-        options={field.recognition.options}
-        selected={picked == null ? [] : [picked]}
-        correct={[field.recognition.correctIndex]}
-        multiple={false}
-        revealed={revealed}
-        onToggle={(optionIndex) => {
-          if (revealed) return;
-          onDraft((current) => ({
-            ...current,
-            recognitionOpen: true,
-            factIndices: { ...current.factIndices, [field.key]: optionIndex },
-          }));
-        }}
-      />
+      <div className="memory-entry">
+        {task.answer.fields.map((field) => {
+          const picked = draft.factIndices[field.key];
+          const fieldRevealed = revealedKeys.has(field.key);
+          return (
+            <div key={field.key} className="memory-entry">
+              <p className="memory-note">{field.prompt}</p>
+              <RecognitionChoices
+                options={field.recognition.options}
+                selected={picked == null ? [] : [picked]}
+                correct={[field.recognition.correctIndex]}
+                multiple={false}
+                revealed={fieldRevealed}
+                onToggle={(optionIndex) => {
+                  if (fieldRevealed) return;
+                  onDraft((current) => ({
+                    ...current,
+                    recognitionOpen: true,
+                    factIndices: {
+                      ...current.factIndices,
+                      [field.key]: optionIndex,
+                    },
+                  }));
+                }}
+              />
+            </div>
+          );
+        })}
+      </div>
     );
   }
 
@@ -295,6 +293,35 @@ function RecognitionChoices({
   onToggle: (index: number) => void;
 }) {
   const correctSet = new Set(correct);
+  const [wrong, setWrong] = useState<number[]>([]);
+  const [solved, setSolved] = useState(false);
+  const chimed = useRef(false);
+  const wrongSet = new Set(wrong);
+
+  const pick = (index: number) => {
+    if (revealed || solved || wrongSet.has(index)) return;
+    if (correctSet.has(index) && selected.includes(index)) return;
+
+    if (!correctSet.has(index)) {
+      setWrong((current) =>
+        current.includes(index) ? current : [...current, index],
+      );
+      playWrongBuzz();
+      if (!selected.includes(index)) onToggle(index);
+      return;
+    }
+
+    if (!selected.includes(index)) onToggle(index);
+    const next = new Set(selected);
+    next.add(index);
+    const complete = [...correctSet].every((item) => next.has(item));
+    if (complete && !chimed.current) {
+      chimed.current = true;
+      setSolved(true);
+      playCorrectChime();
+    }
+  };
+
   return (
     <div
       className="memory-choices"
@@ -303,11 +330,14 @@ function RecognitionChoices({
     >
       {options.map((option, index) => {
         const on = selected.includes(index);
-        const showCorrect = revealed && correctSet.has(index);
+        const isWrong = wrongSet.has(index) || (on && !correctSet.has(index));
+        const isCorrect =
+          (on && correctSet.has(index)) || (revealed && correctSet.has(index));
         const className = [
           'memory-choice',
-          on ? 'memory-choice-on' : '',
-          showCorrect ? 'memory-choice-correct' : '',
+          on && !isWrong && !isCorrect ? 'memory-choice-on' : '',
+          isCorrect ? 'memory-choice-correct' : '',
+          isWrong ? 'memory-choice-wrong' : '',
         ]
           .filter(Boolean)
           .join(' ');
@@ -316,9 +346,9 @@ function RecognitionChoices({
             key={`${option}-${index}`}
             type="button"
             className={className}
-            aria-pressed={on}
-            disabled={revealed}
-            onClick={() => onToggle(index)}
+            aria-pressed={on || isWrong}
+            disabled={revealed || solved || isWrong || (isCorrect && on)}
+            onClick={() => pick(index)}
           >
             {option}
           </button>
@@ -339,24 +369,25 @@ function delayedPrompt(task: MemoryRecallTask): string {
     case 'shopping':
       return 'Atceries iepirkumus. Secība nav svarīga.';
     case 'appointment':
-      return 'Atceries dienu, laiku un vietu.';
+      return 'Atkārto: kad, cikos un kur.';
   }
 }
 
 function answerIsVisible(task: MemoryRecallTask, draft: MemoryDraft): boolean {
   if (task.answer.kind !== 'facts') return draft.answerVisible === true;
-  const field = task.answer.fields[draft.factIndex];
-  if (!field) return false;
-  return (draft.revealedFactKeys ?? []).includes(field.key);
+  const keys = draft.revealedFactKeys ?? [];
+  return task.answer.fields.every((field) => keys.includes(field.key));
 }
 
-function correctLine(task: MemoryRecallTask, draft: MemoryDraft): string {
+function correctLine(task: MemoryRecallTask, _draft: MemoryDraft): string {
   if (task.answer.kind === 'ordered_digits') {
     return task.answer.correctTokens.join('  ·  ');
   }
   if (task.answer.kind === 'unordered_list') {
     return task.answer.correctTokens.join(', ');
   }
-  const field = task.answer.fields[draft.factIndex];
-  return field?.acceptedAnswers[0] ?? '';
+  return task.answer.fields
+    .map((field) => field.acceptedAnswers[0] ?? '')
+    .filter(Boolean)
+    .join('\n');
 }

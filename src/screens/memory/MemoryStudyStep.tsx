@@ -8,6 +8,7 @@ interface Props {
   onPlayed: () => void;
   onVisual: (open: boolean) => void;
   onReady: () => void;
+  onSkip: () => void;
 }
 
 /** Cloud voice, list only — the instruction stays on screen. */
@@ -51,9 +52,10 @@ export function MemoryStudyStep({
   onPlayed,
   onVisual,
   onReady,
+  onSkip,
 }: Props) {
   return (
-    <div className="memory-flow">
+    <div className="memory-flow memory-flow-screen">
       <p className="memory-instruction">{task.instruction}</p>
 
       {visualOpen ? (
@@ -81,6 +83,9 @@ export function MemoryStudyStep({
           Esmu gatavs
         </Button>
       </div>
+      <Button variant="neutral" className="task-skip-btn memory-skip" onClick={onSkip}>
+        Izlaist
+      </Button>
     </div>
   );
 }

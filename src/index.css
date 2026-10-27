@@ -3619,6 +3619,38 @@ html.keyboard-open .hint-answers:not(:has(*)) {
   text-align: var(--app-text-align);
 }
 
+.memory-flow-screen {
+  min-height: calc(
+    100dvh - var(--app-chrome-offset) - (2 * var(--space))
+  );
+  box-sizing: border-box;
+  padding-bottom: calc(0.35rem + env(safe-area-inset-bottom, 0px));
+}
+
+.content-middle > .memory-flow-screen,
+.content-bottom > .memory-flow-screen,
+.content-top > .memory-flow-screen {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.memory-flow .memory-skip.btn {
+  margin-top: auto;
+  width: 100%;
+  min-height: var(--btn-min-h);
+  font-size: 1em;
+  font-weight: 700;
+}
+
+html.keyboard-open .memory-flow-screen {
+  min-height: 0;
+  padding-bottom: 0;
+}
+
+html.keyboard-open .memory-skip {
+  display: none;
+}
+
 .memory-flow .btn {
   min-height: max(64px, var(--btn-min-h));
   font-size: 1.15em;
@@ -3670,6 +3702,11 @@ html.keyboard-open .hint-answers:not(:has(*)) {
   flex-direction: column;
   gap: 0.7rem;
   width: 100%;
+}
+
+.memory-entry .field-label {
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 800;
 }
 
 .memory-keypad {
@@ -3763,6 +3800,12 @@ html.keyboard-open .hint-answers:not(:has(*)) {
   box-shadow: inset 0 0 0 3px #1a4d45;
 }
 
+.memory-choice-wrong {
+  background: #f8d0d0;
+  border-color: #a32020;
+  color: #6d1212;
+}
+
 .memory-choice:disabled {
   opacity: 1;
 }
@@ -3782,7 +3825,8 @@ html.keyboard-open .hint-answers:not(:has(*)) {
 }
 
 .app-shell.high-contrast .memory-choice-on,
-.app-shell.high-contrast .memory-choice-correct {
+.app-shell.high-contrast .memory-choice-correct,
+.app-shell.high-contrast .memory-choice-wrong {
   background: #000;
   color: #fff;
 }

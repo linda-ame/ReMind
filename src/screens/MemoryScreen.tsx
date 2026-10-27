@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useApp } from '../context/AppContext';
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
 import { getMemoryTaskById } from '../data/loadMemory';
@@ -78,8 +79,10 @@ function beginDelayed(session: MemorySession): MemorySession {
 }
 
 export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
+  const { skipTaskToday } = useApp();
   const sectionType: MenuSection =
     mode === 'immediate' ? 'memory_immediate' : 'memory_delayed';
+  const skipping = useRef(false);
   const [session, setSession] = useState<MemorySession | null>(null);
   const [resume, setResume] = useState<MemorySession | null>(null);
   const [ready, setReady] = useState(false);
@@ -382,6 +385,50 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
     });
   };
 
+  const skipCurrent = () => {
+    if (skipping.current) return;
+    const current = sessionRef.current;
+    if (!current) return;
+    if (
+      current.phase !== 'study' &&
+      current.phase !== 'immediate_response' &&
+      current.phase !== 'delayed_response'
+    ) {
+      return;
+    }
+    skipping.current = true;
+    if (timer.current != null) {
+      window.clearTimeout(timer.current);
+      timer.current = null;
+    }
+    sessionRef.current = null;
+    skipTaskToday(current.taskId);
+    void (async () => {
+      try {
+        await deleteMemorySession(current.sessionId);
+        const history = await getAllMemorySessions();
+        const created = createMemorySession(mode, history);
+        if (!created) {
+          setSession(null);
+          setEmpty(true);
+          return;
+        }
+        if (visualFirst) {
+          created.visualOpen = true;
+          created.visualHelpShown = true;
+          created.visualHelpViews = 1;
+        }
+        await saveMemorySession(created);
+        sessionRef.current = created;
+        setResume(null);
+        setEmpty(false);
+        setSession(created);
+      } finally {
+        skipping.current = false;
+      }
+    })();
+  };
+
   return (
     <Layout onHome={onHome} sectionType={sectionType} onNavigate={onNavigate}>
       {session.phase === 'study' ? (
@@ -425,6 +472,7 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
               true,
             );
           }}
+          onSkip={skipCurrent}
         />
       ) : null}
 
@@ -455,6 +503,7 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
             );
           }}
           onSubmit={submitAnswer}
+          onSkip={skipCurrent}
         />
       ) : null}
 
