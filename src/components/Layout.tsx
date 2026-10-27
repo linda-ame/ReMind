@@ -137,6 +137,9 @@ export function Layout({
               >
                 <span aria-hidden="true">R</span>
               </button>
+              <p className="section-switch-title">
+                {menuSectionLabel(sectionType)}
+              </p>
               <div className="section-switch">
                 <button
                   type="button"
@@ -149,9 +152,6 @@ export function Layout({
                 >
                   <span aria-hidden="true">←</span>
                 </button>
-                <p className="section-switch-title">
-                  {menuSectionLabel(sectionType)}
-                </p>
                 <button
                   type="button"
                   className="section-switch-btn"

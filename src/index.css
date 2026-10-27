@@ -204,11 +204,10 @@ input:focus-visible {
 
 .app-header-section {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   width: 100%;
-  /* Keep the back arrow clear of the R mark so the two taps don’t collide. */
-  column-gap: 0.85rem;
+  column-gap: 0.45rem;
   padding-left: 0.45rem;
   padding-right: 0.35rem;
 }
@@ -259,7 +258,8 @@ input:focus-visible {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 0.1rem;
+  /* Separate the two arrows so a tap does not land on both. */
+  gap: 1.15rem;
   min-width: 0;
 }
 
@@ -299,14 +299,13 @@ input:focus-visible {
 }
 
 .section-switch-title {
-  flex: 0 1 auto;
   min-width: 0;
   margin: 0;
   font-size: 0.92em;
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: 0.01em;
-  text-align: center;
+  text-align: left;
   text-wrap: balance;
   color: var(--chrome-fg);
 }
@@ -3261,10 +3260,15 @@ input:focus-visible {
 
 /*
   Mobile keyboard: the shell fills only the visible area above the keys.
-  Task content sits on that bottom edge (no centering gap, no 1/40 under the
-  field). A leading spacer shrinks away when the question is taller than the
-  visible area, so the question can still be scrolled with the keyboard open.
+  A leading spacer pushes the question + field onto that bottom edge, so the
+  field meets the keyboard (the “1/40” line under it is hidden). The field
+  sticks there while the question scrolls.
 */
+html.keyboard-open,
+html.keyboard-open body {
+  overflow: hidden;
+}
+
 html.keyboard-open .app-shell {
   position: fixed;
   top: var(--vv-offset, 0px);
@@ -3279,12 +3283,14 @@ html.keyboard-open .app-shell {
 html.keyboard-open .app-main {
   scroll-padding: 0;
   overscroll-behavior: none;
-  touch-action: pan-y;
+  overflow-anchor: none;
+  /* Drag-scroll is handled in JS so the keyboard stays open. */
+  touch-action: none;
 }
 
 html.keyboard-open .app-main:has(.answer-field)::before {
   content: '';
-  flex: 1 0 0px;
+  flex: 1 1 0px;
   min-height: 0;
 }
 
@@ -3292,8 +3298,13 @@ html.keyboard-open .app-main:has(.answer-field) .app-main-body {
   min-height: 0;
   flex: 0 0 auto;
   margin-top: 0;
-  padding-bottom: 0.3rem;
+  padding-bottom: 0;
   justify-content: flex-start;
+}
+
+html.keyboard-open .task-view,
+html.keyboard-open .rc-view {
+  padding-bottom: 0;
 }
 
 html.keyboard-open .app-main:has(.answer-field) .content-middle > *,
@@ -3303,8 +3314,9 @@ html.keyboard-open .app-main:has(.answer-field) .content-top > * {
   margin-bottom: 0;
 }
 
-html.keyboard-open .task-advance-root {
+html.keyboard-open .app-main:has(.answer-field) .task-advance-root {
   min-height: 0;
+  flex: 0 0 auto;
   padding-bottom: 0;
 }
 
@@ -3313,7 +3325,8 @@ html.keyboard-open .task-advance-body > * {
   margin-bottom: 0;
 }
 
-html.keyboard-open .task-advance-after {
+html.keyboard-open .task-advance-after,
+html.keyboard-open .task-advance-progress {
   display: none;
 }
 
@@ -3325,17 +3338,35 @@ html.keyboard-open .task-advance-fab {
   display: none;
 }
 
-html.keyboard-open .answer-field {
+html.keyboard-open .app-main:has(.answer-field) .answer-field {
+  position: sticky;
+  bottom: 0;
+  z-index: 3;
+  margin-top: 0.35rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  background: var(--bg);
+  touch-action: manipulation;
+}
+
+html.keyboard-open .answer-field .text-input {
   margin-bottom: 0;
 }
 
-html.keyboard-open .answer-field-input {
+html.keyboard-open .text-input-answer:focus {
+  outline-offset: 0;
+}
+
+html.keyboard-open .answer-field-input,
+html.keyboard-open .answer-dictate-btn {
   scroll-margin: 0;
+  touch-action: manipulation;
 }
 
 html.keyboard-open .answer-dictate-status:empty,
-html.keyboard-open .hint-answers:empty {
+html.keyboard-open .hint-answers:not(:has(*)) {
   display: none;
   margin: 0;
   min-height: 0;
+  padding: 0;
 }
