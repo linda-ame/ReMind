@@ -40,7 +40,8 @@ function parseSlots(
 
 /**
  * Free sentence building. The example is optional and never replaces what
- * the learner typed. Tālāk is available even with an empty answer.
+ * the learner typed. Tālāk appears after Enter or finished dictation, once
+ * there is text. Until then the task offers Izlaist.
  */
 export function SentenceCreationTaskView({
   task,
@@ -61,7 +62,9 @@ export function SentenceCreationTaskView({
   const [text, setText] = useState(() =>
     fixed ? '' : (attempt.enteredAnswer ?? ''),
   );
-  const [exampleOpen, setExampleOpen] = useState(attempt.viewedAnswers);
+  const [exampleOpen, setExampleOpen] = useState(
+    attempt.usedHint || attempt.viewedAnswers,
+  );
   const slotsRef = useRef(slots);
   const textRef = useRef(text);
   slotsRef.current = slots;
@@ -77,6 +80,17 @@ export function SentenceCreationTaskView({
 
   const showExample = () => {
     setExampleOpen(true);
+    patch({ usedHint: true, status: 'attempted' });
+  };
+
+  const confirmAnswer = () => {
+    if (readOnly) return;
+    const hasText = fixed
+      ? slotsRef.current.some(
+          (word, index) => index !== fixedPosition && word.trim().length > 0,
+        )
+      : textRef.current.trim().length > 0;
+    if (!hasText) return;
     patch({ viewedAnswers: true, status: 'attempted' });
   };
 
@@ -112,6 +126,7 @@ export function SentenceCreationTaskView({
                     readOnly={readOnly}
                     ariaLabel={`${index + 1}. vārds`}
                     placeholder="Vārds"
+                    onSubmit={confirmAnswer}
                     onChange={(nextValue) => {
                       if (readOnly) return;
                       const next = slotsRef.current.slice();
@@ -145,6 +160,7 @@ export function SentenceCreationTaskView({
             readOnly={readOnly}
             ariaLabel="Jūsu teikums"
             placeholder="Ierakstiet vai ierunājiet teikumu…"
+            onSubmit={confirmAnswer}
             onChange={(nextValue) => {
               if (readOnly) return;
               textRef.current = nextValue;

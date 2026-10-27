@@ -10,7 +10,7 @@ interface AnswerFieldProps {
   /**
    * Enter key, or final speech dictation result.
    * Use to reveal answers / give feedback. Value is the submitted text.
-   * A multiline field keeps Enter as a new line and submits only from dictation.
+   * Enter always confirms and closes the keyboard, including in a wrapping box.
    */
   onSubmit?: (value: string) => void;
   placeholder?: string;
@@ -22,7 +22,7 @@ interface AnswerFieldProps {
   inputRef?: RefObject<HTMLInputElement | null>;
   /** Soft field tint after submit; omit / null keeps white. */
   feedback?: AnswerInputFeedback | null;
-  /** Sentence box. Enter inserts a line; Ierunāt still fills the text. */
+  /** Tall wrapping box. Enter still confirms; the text wraps on its own. */
   multiline?: boolean;
   rows?: number;
   className?: string;
@@ -52,6 +52,7 @@ export function AnswerField({
 }: AnswerFieldProps) {
   const localInputRef = useRef<HTMLInputElement>(null);
   const inputRef = externalInputRef ?? localInputRef;
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const valueRef = useRef(value);
   valueRef.current = value;
   const onSubmitRef = useRef(onSubmit);
@@ -60,6 +61,7 @@ export function AnswerField({
   const finish = (text: string) => {
     if (readOnly) return;
     inputRef.current?.blur();
+    textareaRef.current?.blur();
     onSubmitRef.current?.(text);
   };
 
@@ -102,8 +104,10 @@ export function AnswerField({
     onChange(next);
   };
 
-  const onFieldKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
-    if (e.key !== 'Enter' || multiline) return;
+  const onFieldKeyDown = (
+    e: KeyboardEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    if (e.key !== 'Enter') return;
     e.preventDefault();
     if (dictation.listening) dictation.stop();
     finish(valueRef.current);
@@ -120,6 +124,7 @@ export function AnswerField({
       <div className="answer-field-row">
         {multiline ? (
           <textarea
+            ref={textareaRef}
             id={id}
             className={fieldClass}
             value={value}
@@ -129,10 +134,12 @@ export function AnswerField({
             autoComplete="off"
             autoCorrect="off"
             spellCheck={false}
+            enterKeyHint="done"
             readOnly={readOnly}
             aria-readonly={readOnly || undefined}
             lang="lv"
             onChange={(e) => onFieldChange(e.target.value)}
+            onKeyDown={onFieldKeyDown}
           />
         ) : (
           <input

@@ -24,10 +24,12 @@ export function taskHasAdvanceReady(
   attempt: TaskAttempt,
 ): boolean {
   if (task.type === 'word_reading') return true;
-  if (task.type === 'sentence_creation') return true;
-  if (task.type === 'brand_association') return true;
   if (task.type === 'reading_comprehension') return false;
-  if (task.type === 'spelling_check') {
+  if (
+    task.type === 'spelling_check' ||
+    task.type === 'sentence_creation' ||
+    task.type === 'brand_association'
+  ) {
     return attempt.viewedAnswers || attempt.status === 'completed';
   }
 

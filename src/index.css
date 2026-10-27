@@ -1696,6 +1696,21 @@ input:focus-visible {
   border-color: #3d8f72;
 }
 
+.home-type-sentence_creation {
+  background: #fff4cc;
+  border-color: #c4922a;
+}
+
+.home-type-spelling_check {
+  background: #fde4ee;
+  border-color: #b14d78;
+}
+
+.home-type-brand_association {
+  background: #e7e6f8;
+  border-color: #5d57a6;
+}
+
 .home-nav-progress {
   background: linear-gradient(180deg, #2a8bb8 0%, var(--sky) 100%);
   border-color: #0d4a6b;
@@ -3025,7 +3040,9 @@ input:focus-visible {
 
 .sentence-free-input {
   min-height: 7.5rem;
-  resize: vertical;
+  resize: none;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
 }
 
 .brand-instruction {

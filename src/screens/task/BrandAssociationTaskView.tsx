@@ -15,9 +15,9 @@ interface Props {
 }
 
 /**
- * One brand, one association. The field is optional (the answer may be spoken).
- * Enter or the end of dictation reveals the example associations. They are
- * illustrations, not a grade.
+ * One brand, one association. Enter or the end of dictation reveals the
+ * examples and unlocks Tālāk. Until an answer is confirmed, the task offers
+ * Izlaist. The examples are illustrations, not a grade.
  */
 export function BrandAssociationTaskView({
   task,
@@ -27,7 +27,9 @@ export function BrandAssociationTaskView({
 }: Props) {
   const examples = task.exampleAssociations.filter((item) => item.trim());
   const [answer, setAnswer] = useState(attempt.enteredAnswer ?? '');
-  const [shown, setShown] = useState(readOnly || attempt.viewedAnswers);
+  const [shown, setShown] = useState(
+    readOnly || attempt.viewedAnswers || attempt.usedHint,
+  );
   const answerRef = useRef(answer);
   answerRef.current = answer;
 
@@ -43,6 +45,11 @@ export function BrandAssociationTaskView({
     patch({ status: 'attempted' }, value);
   };
 
+  const showExamples = () => {
+    setShown(true);
+    patch({ usedHint: true, status: 'attempted' });
+  };
+
   const reveal = (text: string) => {
     if (readOnly) {
       setShown(true);
@@ -50,9 +57,10 @@ export function BrandAssociationTaskView({
     }
     answerRef.current = text;
     setAnswer(text);
+    if (!text.trim()) return;
     setShown(true);
     patch(
-      { viewedAnswers: true, status: 'attempted' },
+      { viewedAnswers: true, usedHint: true, status: 'attempted' },
       text,
     );
   };
@@ -93,7 +101,7 @@ export function BrandAssociationTaskView({
           </ul>
         </div>
       ) : (
-        <Button variant="secondary" onClick={() => reveal(answerRef.current)}>
+        <Button variant="secondary" onClick={showExamples}>
           Parādīt piemēru
         </Button>
       )}
