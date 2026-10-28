@@ -14,9 +14,52 @@ function shuffleTasks(tasks: Task[]): Task[] {
   return ids.map((id) => byId.get(id)!);
 }
 
+type SentenceCreationMode = 'fixed' | 'keywords';
+
 /**
- * Mix the two “Veido teikumu” modes so a session does not show more than
- * two tasks of the same mode in a row, while both modes still have tasks.
+ * Order the two modes so either one can come first, they keep alternating,
+ * and the extra tasks of the larger pool are folded in as occasional pairs
+ * (never more than two in a row, while that is possible).
+ */
+function sentenceCreationModeOrder(
+  nFixed: number,
+  nKeywords: number,
+): SentenceCreationMode[] {
+  const start: SentenceCreationMode = Math.random() < 0.5 ? 'fixed' : 'keywords';
+  const majority: SentenceCreationMode =
+    nKeywords >= nFixed ? 'keywords' : 'fixed';
+  const minorityCount = Math.min(nFixed, nKeywords);
+  const extra = Math.abs(nKeywords - nFixed);
+  const doubleAt = new Set(
+    shuffleIds(Array.from({ length: minorityCount }, (_, i) => String(i)))
+      .slice(0, Math.min(extra, minorityCount))
+      .map(Number),
+  );
+
+  const pattern: SentenceCreationMode[] = [];
+  const push = (mode: SentenceCreationMode, count: number) => {
+    for (let i = 0; i < count; i++) pattern.push(mode);
+  };
+  const other: SentenceCreationMode = start === 'fixed' ? 'keywords' : 'fixed';
+
+  for (let i = 0; i < minorityCount; i++) {
+    const startCount =
+      majority === start && doubleAt.has(i) ? SENTENCE_CREATION_MAX_RUN : 1;
+    const otherCount =
+      majority === other && doubleAt.has(i) ? SENTENCE_CREATION_MAX_RUN : 1;
+    push(start, startCount);
+    push(other, otherCount);
+  }
+
+  const overflow = extra - minorityCount;
+  if (overflow > 0) push(majority, overflow);
+  return pattern;
+}
+
+/**
+ * Mix the two “Veido teikumu” modes. Either mode can open the session,
+ * and the same mode does not appear more than twice in a row while both
+ * still have tasks.
  */
 export function interleaveSentenceCreation(tasks: Task[]): Task[] {
   const fixed = shuffleTasks(
@@ -32,27 +75,10 @@ export function interleaveSentenceCreation(tasks: Task[]): Task[] {
   );
   if (fixed.length === 0 || keywords.length === 0) return shuffleTasks(tasks);
 
-  const out: Task[] = [];
-  let runMode: 'fixed' | 'keywords' | null = null;
-  let run = 0;
-  while (fixed.length > 0 && keywords.length > 0) {
-    let takeFixed = fixed.length >= keywords.length;
-    if (runMode === 'fixed' && run >= SENTENCE_CREATION_MAX_RUN) takeFixed = false;
-    if (runMode === 'keywords' && run >= SENTENCE_CREATION_MAX_RUN) {
-      takeFixed = true;
-    }
-    const next = (takeFixed ? fixed : keywords).shift();
-    if (!next) break;
-    const mode: 'fixed' | 'keywords' = takeFixed ? 'fixed' : 'keywords';
-    if (mode === runMode) run += 1;
-    else {
-      runMode = mode;
-      run = 1;
-    }
-    out.push(next);
-  }
-  out.push(...fixed, ...keywords);
-  return out;
+  const pools: Record<SentenceCreationMode, Task[]> = { fixed, keywords };
+  return sentenceCreationModeOrder(fixed.length, keywords.length).map(
+    (mode) => pools[mode].shift()!,
+  );
 }
 
 /** Fisher–Yates shuffle (copy). */
