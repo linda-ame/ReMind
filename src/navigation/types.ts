@@ -68,4 +68,7 @@ export type Screen =
       mode: 'immediate' | 'delayed';
     }
   /** Generated matching game. Not a task-pack section. */
-  | { name: 'memory_pairs' };
+  | { name: 'memory_pairs' }
+  /** Generated pattern memory. Not a task-pack section. */
+  | { name: 'memory_pattern' }
+  | { name: 'memory_pattern_progress' };

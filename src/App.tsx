@@ -21,13 +21,21 @@ import { SectionCompleteScreen } from './screens/SectionCompleteScreen';
 import { CustomizeContentScreen } from './screens/CustomizeContentScreen';
 import { MemoryScreen } from './screens/MemoryScreen';
 import { MemoryPairsGame } from './screens/memoryPairs/MemoryPairsGame';
+import { MemoryPatternGame } from './screens/memoryPattern/MemoryPatternGame';
+import { MemoryPatternProgress } from './screens/memoryPattern/MemoryPatternProgress';
 import { useKeyboardViewport } from './hooks/useKeyboardViewport';
 import { loadDifficultyLevels } from './utils/difficulty';
 
 /** Home → section practice, including the “all done” screen for that section. */
 function isHomeSectionScreen(screen: Screen): boolean {
   if (screen.name === 'section_complete') return true;
-  if (screen.name === 'memory' || screen.name === 'memory_pairs') return true;
+  if (
+    screen.name === 'memory' ||
+    screen.name === 'memory_pairs' ||
+    screen.name === 'memory_pattern'
+  ) {
+    return true;
+  }
   return (
     screen.name === 'task' &&
     screen.batchType != null &&
@@ -76,6 +84,15 @@ function popToMatching(stack: Screen[], next: Screen): Screen[] | null {
       return stack.slice(0, i + 1);
     }
     if (next.name === 'memory_pairs' && cur.name === 'memory_pairs') {
+      return stack.slice(0, i + 1);
+    }
+    if (next.name === 'memory_pattern' && cur.name === 'memory_pattern') {
+      return stack.slice(0, i + 1);
+    }
+    if (
+      next.name === 'memory_pattern_progress' &&
+      cur.name === 'memory_pattern_progress'
+    ) {
       return stack.slice(0, i + 1);
     }
     if (next.name === 'created_work' && cur.name === 'created_work') {
@@ -331,6 +348,10 @@ function AppRouter() {
       );
     case 'memory_pairs':
       return <MemoryPairsGame onNavigate={navigate} onHome={goHome} />;
+    case 'memory_pattern':
+      return <MemoryPatternGame onNavigate={navigate} onHome={goHome} />;
+    case 'memory_pattern_progress':
+      return <MemoryPatternProgress onHome={goHome} />;
   }
 }
 

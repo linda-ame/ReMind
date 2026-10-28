@@ -1,0 +1,379 @@
+/* Atceries rūtiņu rakstu — large cells, high contrast, no motion. */
+
+.home-type-memory_pattern {
+  background: #e7eef8;
+  border-color: #1d3f73;
+}
+
+.app-shell.high-contrast .home-type-memory_pattern {
+  background: #fff;
+  border-color: #000;
+}
+
+.app-shell:has(.pattern-screen) .btn {
+  min-height: max(64px, var(--btn-min-h));
+  font-weight: 700;
+}
+
+.pattern-screen {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+  padding-bottom: 0.35rem;
+}
+
+.pattern-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.55rem;
+}
+
+.pattern-head .pattern-meta {
+  flex: 1 1 auto;
+  min-width: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.pattern-settings-link {
+  flex: 0 1 auto;
+  min-height: 44px;
+  max-width: 46%;
+  margin: 0;
+  padding: 0.3rem 0.7rem;
+  border: 2px solid color-mix(in srgb, var(--accent) 40%, #889);
+  border-radius: 10px;
+  background: #fff;
+  color: #122033;
+  font-size: 0.78em;
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+}
+
+.pattern-title {
+  margin: 0;
+  font-size: calc(1.45 * var(--fit-font) * var(--content-scale));
+  font-weight: 800;
+  line-height: 1.15;
+  text-align: var(--app-text-align);
+  color: #122033;
+}
+
+.pattern-meta,
+.pattern-instruction,
+.pattern-note,
+.pattern-score {
+  margin: 0;
+  text-align: var(--app-text-align);
+  font-size: calc(1.12 * var(--fit-font) * var(--content-scale));
+  font-weight: 700;
+  line-height: 1.3;
+  color: #122033;
+}
+
+.pattern-instruction {
+  min-height: 2.6em;
+}
+
+.pattern-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.pattern-field-title {
+  margin: 0.35rem 0 0.15rem;
+  font-size: calc(1.15 * var(--fit-font) * var(--content-scale));
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: var(--app-text-align);
+  color: #122033;
+}
+
+.pattern-level-row,
+.pattern-filter-row {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.pattern-filter-levels {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.pattern-filter-row-grids {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pattern-level-btn {
+  width: 100%;
+  font-size: 1.35em;
+  font-weight: 800;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+.pattern-choice {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+/* Settings keep the start button on screen. The choices scroll above it. */
+.app-shell:has(.pattern-setup) .app-main,
+.app-shell:has(.pattern-setup) .app-main-body {
+  overflow: hidden;
+}
+
+.app-shell:has(.pattern-setup) .app-main-body {
+  height: 100%;
+  min-height: 0;
+}
+
+.content-middle > .pattern-setup,
+.content-top > .pattern-setup,
+.content-bottom > .pattern-setup {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.pattern-setup-scroll {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pattern-setup-actions {
+  flex-shrink: 0;
+  padding-top: 0.55rem;
+}
+
+.content-middle > .pattern-play,
+.content-top > .pattern-play,
+.content-bottom > .pattern-play {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.pattern-play {
+  padding-bottom: 0.75rem;
+}
+
+.pattern-grid-wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pattern-grid {
+  display: grid;
+  gap: 12px;
+  width: max-content;
+  max-width: 100%;
+}
+
+.pattern-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 12px;
+  border: 3px solid #1a2e28;
+  background: #f4f7fb;
+  color: #10243f;
+  box-shadow: none;
+  container-type: size;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.pattern-cell-filled {
+  background: #10243f;
+  border-color: #10243f;
+  color: #ffffff;
+}
+
+.pattern-cell-correct {
+  background: #1b7f3a;
+  border-color: #145c2a;
+  color: #ffffff;
+}
+
+.pattern-cell-missed {
+  background: #10243f;
+  border-color: #10243f;
+  color: #ffffff;
+}
+
+.pattern-cell-extra {
+  background: #c62828;
+  border-color: #8e1c1c;
+  color: #ffffff;
+}
+
+.pattern-cell:focus-visible {
+  outline: 4px solid var(--focus-ring);
+  outline-offset: 3px;
+}
+
+.pattern-mark {
+  font-size: 48cqmin;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.pattern-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: calc(1.05 * var(--fit-font) * var(--content-scale));
+  font-weight: 800;
+  color: #122033;
+}
+
+.pattern-legend li {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.pattern-swatch {
+  flex: 0 0 auto;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 6px;
+  border: 2px solid #161616;
+}
+
+.pattern-swatch-correct {
+  background: #1b7f3a;
+  border-color: #145c2a;
+}
+
+.pattern-swatch-extra {
+  background: #c62828;
+  border-color: #8e1c1c;
+}
+
+.pattern-swatch-missed {
+  background: #10243f;
+  border-color: #10243f;
+}
+
+.pattern-results {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.pattern-confirm p {
+  margin: 0 0 0.45rem;
+  text-align: center;
+  font-size: calc(1.08 * var(--fit-font) * var(--content-scale));
+  font-weight: 700;
+}
+
+.pattern-live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.pattern-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pattern-stat-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0.75rem 0.85rem;
+  border: 3px solid #1d3f73;
+  border-radius: 14px;
+  background: #f4f7fb;
+}
+
+.pattern-stat-card p {
+  margin: 0;
+  font-size: calc(1.05 * var(--fit-font) * var(--content-scale));
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.app-shell.high-contrast .pattern-settings-link {
+  background: #fff;
+  color: #000;
+  border-color: #000;
+}
+
+.app-shell.high-contrast .pattern-title,
+.app-shell.high-contrast .pattern-meta,
+.app-shell.high-contrast .pattern-instruction,
+.app-shell.high-contrast .pattern-note,
+.app-shell.high-contrast .pattern-score,
+.app-shell.high-contrast .pattern-field-title,
+.app-shell.high-contrast .pattern-legend,
+.app-shell.high-contrast .pattern-stat-card p {
+  color: #000;
+}
+
+.app-shell.high-contrast .pattern-cell {
+  background: #fff;
+  color: #000;
+  border-color: #000;
+}
+
+.app-shell.high-contrast .pattern-cell-filled,
+.app-shell.high-contrast .pattern-cell-correct,
+.app-shell.high-contrast .pattern-cell-missed,
+.app-shell.high-contrast .pattern-swatch-correct,
+.app-shell.high-contrast .pattern-swatch-missed {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+}
+
+.app-shell.high-contrast .pattern-cell-correct {
+  outline: 4px solid #000;
+  outline-offset: -10px;
+}
+
+.app-shell.high-contrast .pattern-cell-extra,
+.app-shell.high-contrast .pattern-swatch-extra {
+  background: #fff;
+  color: #000;
+  border-color: #000;
+}
+
+.app-shell.high-contrast .pattern-stat-card {
+  background: #fff;
+  border-color: #000;
+}
+
+@media (orientation: landscape) {
+  .pattern-screen {
+    gap: 0.55rem;
+  }
+}

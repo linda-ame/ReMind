@@ -158,7 +158,17 @@ export function ProgressScreen({
             </button>
           );
         })}
-      </div>
+      <button
+            type="button"
+            className="progress-section-card home-type-memory_pattern"
+            onClick={() => onNavigate({ name: 'memory_pattern_progress' })}
+          >
+            <span className="progress-section-title">Atceries rūtiņu rakstu</span>
+            <span className="progress-section-done">
+              Pabeigtās spēles pēc režģa un līmeņa
+            </span>
+          </button>
+        </div>
 
       <div className="stack progress-global-actions">
         {allHardIds.length > 0 ? (

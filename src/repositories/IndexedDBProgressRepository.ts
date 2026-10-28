@@ -9,19 +9,80 @@ import {
 } from '../types/progress';
 
 const DB_NAME = 'remind-progress';
-const DB_VERSION = 3;
+const DB_VERSION = 5;
 const ATTEMPTS_STORE = 'attempts';
 const SETTINGS_STORE = 'settings';
 const MEMORY_STORE = 'memorySessions';
+/** Pattern-memory games. Separate from task attempts and memory sessions. */
+export const MEMORY_PATTERN_GAMES_STORE = 'memoryPatternGames';
+/** Chosen grid, difficulty, and recent pattern keys. */
+export const MEMORY_PATTERN_STATE_STORE = 'memoryPatternState';
 const SETTINGS_KEY = 'ui';
 
 /** Reuse one connection — open/close per write races under rapid lesson navigation. */
 let dbPromise: Promise<IDBDatabase> | null = null;
 
+export function openProgressDb(): Promise<IDBDatabase> {
+  return openDb();
+}
+
+/** Test helper. Closes the shared connection so the database can be deleted. */
+export async function resetProgressDbConnection(): Promise<void> {
+  if (!dbPromise) return;
+  try {
+    const db = await dbPromise;
+    db.close();
+  } catch {
+    // The connection may already be closing.
+  }
+  dbPromise = null;
+}
+
+function patternStoresReady(db: IDBDatabase): boolean {
+  return (
+    db.objectStoreNames.contains(MEMORY_PATTERN_GAMES_STORE) &&
+    db.objectStoreNames.contains(MEMORY_PATTERN_STATE_STORE)
+  );
+}
+
+function ensureStores(db: IDBDatabase): void {
+  if (!db.objectStoreNames.contains(ATTEMPTS_STORE)) {
+    const store = db.createObjectStore(ATTEMPTS_STORE, { keyPath: 'id' });
+    store.createIndex('taskId', 'taskId', { unique: false });
+    store.createIndex('completedAt', 'completedAt', { unique: false });
+  }
+  if (!db.objectStoreNames.contains(SETTINGS_STORE)) {
+    db.createObjectStore(SETTINGS_STORE);
+  }
+  if (!db.objectStoreNames.contains(MEMORY_STORE)) {
+    const memory = db.createObjectStore(MEMORY_STORE, {
+      keyPath: 'sessionId',
+    });
+    memory.createIndex('mode', 'mode', { unique: false });
+    memory.createIndex('taskId', 'taskId', { unique: false });
+  }
+  if (!db.objectStoreNames.contains(MEMORY_PATTERN_GAMES_STORE)) {
+    db.createObjectStore(MEMORY_PATTERN_GAMES_STORE, { keyPath: 'id' });
+  }
+  if (!db.objectStoreNames.contains(MEMORY_PATTERN_STATE_STORE)) {
+    db.createObjectStore(MEMORY_PATTERN_STATE_STORE, { keyPath: 'id' });
+  }
+}
+
 function openDb(): Promise<IDBDatabase> {
   if (dbPromise) return dbPromise;
-  dbPromise = new Promise((resolve, reject) => {
-    const request = indexedDB.open(DB_NAME, DB_VERSION);
+  dbPromise = connect(DB_VERSION, true);
+  return dbPromise;
+}
+
+/**
+ * A database already at this version can still lack the pattern stores if an
+ * earlier open committed the version before those stores existed. One higher
+ * version runs the upgrade again and creates only what is missing.
+ */
+function connect(version: number, heal: boolean): Promise<IDBDatabase> {
+  return new Promise((resolve, reject) => {
+    const request = indexedDB.open(DB_NAME, version);
 
     request.onerror = () => {
       dbPromise = null;
@@ -36,29 +97,21 @@ function openDb(): Promise<IDBDatabase> {
         db.close();
         dbPromise = null;
       };
-      resolve(db);
+      if (!heal || patternStoresReady(db)) {
+        resolve(db);
+        return;
+      }
+      const nextVersion = db.version + 1;
+      db.close();
+      const healed = connect(nextVersion, false);
+      dbPromise = healed;
+      healed.then(resolve, reject);
     };
 
     request.onupgradeneeded = () => {
-      const db = request.result;
-      if (!db.objectStoreNames.contains(ATTEMPTS_STORE)) {
-        const store = db.createObjectStore(ATTEMPTS_STORE, { keyPath: 'id' });
-        store.createIndex('taskId', 'taskId', { unique: false });
-        store.createIndex('completedAt', 'completedAt', { unique: false });
-      }
-      if (!db.objectStoreNames.contains(SETTINGS_STORE)) {
-        db.createObjectStore(SETTINGS_STORE);
-      }
-      if (!db.objectStoreNames.contains(MEMORY_STORE)) {
-        const memory = db.createObjectStore(MEMORY_STORE, {
-          keyPath: 'sessionId',
-        });
-        memory.createIndex('mode', 'mode', { unique: false });
-        memory.createIndex('taskId', 'taskId', { unique: false });
-      }
+      ensureStores(request.result);
     };
   });
-  return dbPromise;
 }
 
 function idbRequest<T>(request: IDBRequest<T>): Promise<T> {
