@@ -16,7 +16,8 @@ export type MenuSection =
   | 'memory_immediate'
   | 'memory_delayed'
   | 'memory_pairs'
-  | 'memory_pattern';
+  | 'memory_pattern'
+  | 'memory_positions';
 
 const MEMORY_MENU: { id: MenuSection; label: string }[] = [
   { id: 'memory_immediate', label: 'Atceries uzreiz' },
@@ -27,6 +28,7 @@ const MEMORY_MENU: { id: MenuSection; label: string }[] = [
 const GAME_MENU: { id: MenuSection; label: string }[] = [
   { id: 'memory_pairs', label: 'Atrodi pārus' },
   { id: 'memory_pattern', label: 'Atceries rūtiņu rakstu' },
+  { id: 'memory_positions', label: 'Atceries figūru vietas' },
 ];
 
 /** Home menu type. Multi-blank completion shares Teikumu papildināšana. */
@@ -48,7 +50,12 @@ const EXTRA_MENU = [...MEMORY_MENU, ...GAME_MENU];
 
 function isExtraSection(
   section: MenuSection,
-): section is 'memory_immediate' | 'memory_delayed' | 'memory_pairs' | 'memory_pattern' {
+): section is
+  | 'memory_immediate'
+  | 'memory_delayed'
+  | 'memory_pairs'
+  | 'memory_pattern'
+  | 'memory_positions' {
   return EXTRA_MENU.some((item) => item.id === section);
 }
 
@@ -89,6 +96,7 @@ export function menuSectionScreen(
   if (section === 'memory_delayed') return { name: 'memory', mode: 'delayed' };
   if (section === 'memory_pairs') return { name: 'memory_pairs' };
   if (section === 'memory_pattern') return { name: 'memory_pattern' };
+  if (section === 'memory_positions') return { name: 'memory_positions' };
   return sectionPracticeScreen(section, attempts, taskSkips);
 }
 

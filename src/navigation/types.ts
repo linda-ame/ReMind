@@ -71,4 +71,7 @@ export type Screen =
   | { name: 'memory_pairs' }
   /** Generated pattern memory. Not a task-pack section. */
   | { name: 'memory_pattern' }
-  | { name: 'memory_pattern_progress' };
+  | { name: 'memory_pattern_progress' }
+  /** Generated figure-position memory. Not a task-pack section. */
+  | { name: 'memory_positions' }
+  | { name: 'memory_positions_progress' };

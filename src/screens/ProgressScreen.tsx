@@ -168,6 +168,16 @@ export function ProgressScreen({
               Pabeigtās spēles pēc režģa un līmeņa
             </span>
           </button>
+          <button
+            type="button"
+            className="progress-section-card home-type-memory_positions"
+            onClick={() => onNavigate({ name: 'memory_positions_progress' })}
+          >
+            <span className="progress-section-title">Atceries figūru vietas</span>
+            <span className="progress-section-done">
+              Pabeigtās spēles pēc režģa, līmeņa un figūru veida
+            </span>
+          </button>
         </div>
 
       <div className="stack progress-global-actions">

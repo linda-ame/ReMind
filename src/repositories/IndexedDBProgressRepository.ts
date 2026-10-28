@@ -9,7 +9,7 @@ import {
 } from '../types/progress';
 
 const DB_NAME = 'remind-progress';
-const DB_VERSION = 5;
+const DB_VERSION = 6;
 const ATTEMPTS_STORE = 'attempts';
 const SETTINGS_STORE = 'settings';
 const MEMORY_STORE = 'memorySessions';
@@ -17,6 +17,10 @@ const MEMORY_STORE = 'memorySessions';
 export const MEMORY_PATTERN_GAMES_STORE = 'memoryPatternGames';
 /** Chosen grid, difficulty, and recent pattern keys. */
 export const MEMORY_PATTERN_STATE_STORE = 'memoryPatternState';
+/** Figure-position games. Separate from task attempts and the other games. */
+export const MEMORY_POSITIONS_GAMES_STORE = 'memoryPositionsGames';
+/** Chosen grid, difficulty, symbol kind, and recent deals. */
+export const MEMORY_POSITIONS_STATE_STORE = 'memoryPositionsState';
 const SETTINGS_KEY = 'ui';
 
 /** Reuse one connection — open/close per write races under rapid lesson navigation. */
@@ -41,7 +45,9 @@ export async function resetProgressDbConnection(): Promise<void> {
 function patternStoresReady(db: IDBDatabase): boolean {
   return (
     db.objectStoreNames.contains(MEMORY_PATTERN_GAMES_STORE) &&
-    db.objectStoreNames.contains(MEMORY_PATTERN_STATE_STORE)
+    db.objectStoreNames.contains(MEMORY_PATTERN_STATE_STORE) &&
+    db.objectStoreNames.contains(MEMORY_POSITIONS_GAMES_STORE) &&
+    db.objectStoreNames.contains(MEMORY_POSITIONS_STATE_STORE)
   );
 }
 
@@ -67,6 +73,12 @@ function ensureStores(db: IDBDatabase): void {
   if (!db.objectStoreNames.contains(MEMORY_PATTERN_STATE_STORE)) {
     db.createObjectStore(MEMORY_PATTERN_STATE_STORE, { keyPath: 'id' });
   }
+  if (!db.objectStoreNames.contains(MEMORY_POSITIONS_GAMES_STORE)) {
+    db.createObjectStore(MEMORY_POSITIONS_GAMES_STORE, { keyPath: 'id' });
+  }
+  if (!db.objectStoreNames.contains(MEMORY_POSITIONS_STATE_STORE)) {
+    db.createObjectStore(MEMORY_POSITIONS_STATE_STORE, { keyPath: 'id' });
+  }
 }
 
 function openDb(): Promise<IDBDatabase> {
@@ -76,8 +88,8 @@ function openDb(): Promise<IDBDatabase> {
 }
 
 /**
- * A database already at this version can still lack the pattern stores if an
- * earlier open committed the version before those stores existed. One higher
+ * A database already at this version can still lack a game store if an
+ * earlier open committed the version before that store existed. One higher
  * version runs the upgrade again and creates only what is missing.
  */
 function connect(version: number, heal: boolean): Promise<IDBDatabase> {

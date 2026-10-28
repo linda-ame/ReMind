@@ -251,6 +251,20 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
               {menuSectionLabel('memory_pattern')}
             </Button>
           </div>
+
+          <div className="home-type-block">
+            <Button
+              variant="secondary"
+              className="home-type-btn home-type-memory_positions"
+              onClick={() => {
+                setResetConfirmType(null);
+                setResetMemory(null);
+                onNavigate({ name: 'memory_positions' });
+              }}
+            >
+              {menuSectionLabel('memory_positions')}
+            </Button>
+          </div>
         </div>
 
         <div className="home-tools" role="navigation" aria-label="Rīki">
