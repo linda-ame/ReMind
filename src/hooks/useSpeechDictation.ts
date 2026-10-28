@@ -1,7 +1,12 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import {
+  startCloudDictation,
+  type CloudDictationSession,
+} from '../speech/cloudDictation';
+import {
   dictationErrorMessage,
   getSpeechRecognitionCtor,
+  isIosDevice,
   isSpeechDictationSupported,
   normalizeDictationTranscript,
   type SpeechRecognitionLike,
@@ -29,19 +34,26 @@ export interface UseSpeechDictationResult {
 }
 
 /**
- * Browser speech-to-text (Web Speech API) for short answer dictation.
- * Best support: Chromium. Safari varies. Firefox often unsupported.
+ * Short-answer dictation.
+ * Chrome and Android use the browser's own speech recognition.
+ * iPhone and iPad cannot dictate Latvian that way, so they record
+ * the microphone and fill the field from /api/stt while the person speaks.
  */
 export function useSpeechDictation(
   options: UseSpeechDictationOptions,
 ): UseSpeechDictationResult {
   const { lang = 'lv-LV', onInterim, onResult, enabled = true } = options;
-  const [supported] = useState(() => isSpeechDictationSupported());
+  const [supported] = useState(
+    () =>
+      isSpeechDictationSupported() ||
+      (isIosDevice() && !!navigator.mediaDevices?.getUserMedia),
+  );
   const [listening, setListening] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [errorCode, setErrorCode] = useState<string | null>(null);
 
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
+  const cloudRef = useRef<CloudDictationSession | null>(null);
   const onInterimRef = useRef(onInterim);
   const onResultRef = useRef(onResult);
 
@@ -51,6 +63,12 @@ export function useSpeechDictation(
   }, [onInterim, onResult]);
 
   const stop = useCallback(() => {
+    const cloud = cloudRef.current;
+    if (cloud) {
+      cloudRef.current = null;
+      cloud.finish();
+      return;
+    }
     const rec = recognitionRef.current;
     if (!rec) {
       setListening(false);
@@ -67,6 +85,37 @@ export function useSpeechDictation(
     if (!enabled || !supported) return;
     setError(null);
     setErrorCode(null);
+
+    if (isIosDevice()) {
+      if (cloudRef.current) {
+        cloudRef.current.abort();
+        cloudRef.current = null;
+      }
+      if (!navigator.mediaDevices?.getUserMedia) {
+        setError('Mikrofons nav pieejams.');
+        setListening(false);
+        return;
+      }
+      setListening(true);
+      cloudRef.current = startCloudDictation({
+        onInterim: (text) => {
+          const normalized = normalizeDictationTranscript(text);
+          if (normalized) onInterimRef.current?.(normalized);
+        },
+        onResult: (text) => {
+          cloudRef.current = null;
+          setListening(false);
+          const normalized = normalizeDictationTranscript(text);
+          if (normalized) onResultRef.current(normalized);
+        },
+        onError: (message) => {
+          cloudRef.current = null;
+          setListening(false);
+          setError(message);
+        },
+      });
+      return;
+    }
 
     const Ctor = getSpeechRecognitionCtor();
     if (!Ctor) return;
@@ -149,6 +198,8 @@ export function useSpeechDictation(
 
   useEffect(() => {
     return () => {
+      cloudRef.current?.abort();
+      cloudRef.current = null;
       const rec = recognitionRef.current;
       if (!rec) return;
       try {

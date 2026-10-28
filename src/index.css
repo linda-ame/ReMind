@@ -3887,6 +3887,13 @@ html.keyboard-open .memory-skip {
   box-shadow: inset 0 0 0 3px #1a4d45;
 }
 
+.memory-choices-solved .memory-choice-correct {
+  background: #1a4d45;
+  border-color: #1a4d45;
+  color: #fff;
+  box-shadow: none;
+}
+
 .memory-choice-wrong {
   background: #f8d0d0;
   border-color: #a32020;
@@ -3916,4 +3923,11 @@ html.keyboard-open .memory-skip {
 .app-shell.high-contrast .memory-choice-wrong {
   background: #000;
   color: #fff;
+}
+
+.app-shell.high-contrast .memory-choices-solved .memory-choice-correct {
+  background: #000;
+  color: #fff;
+  border-color: #000;
+  box-shadow: none;
 }

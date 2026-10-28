@@ -1,4 +1,5 @@
 import react from '@vitejs/plugin-react';
+import { Buffer } from 'node:buffer';
 import fs from 'node:fs';
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import path from 'node:path';
@@ -29,6 +30,49 @@ function remindBuildIdPlugin(): Plugin {
       );
     },
   };
+}
+
+async function handleDevStt(req: IncomingMessage, res: ServerResponse) {
+  if (req.method !== 'POST') {
+    res.statusCode = 405;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({ error: 'Atļauts tikai POST.' }));
+    return;
+  }
+
+  try {
+    const { recognizeLatvianPcm } = await import('./server/googleStt.js');
+    const raw = await readRequestBody(req);
+    let audio = '';
+    let sampleRate = 16_000;
+    try {
+      const body = JSON.parse(raw) as { audio?: unknown; sampleRate?: unknown };
+      audio = typeof body.audio === 'string' ? body.audio : '';
+      if (typeof body.sampleRate === 'number') sampleRate = body.sampleRate;
+    } catch {
+      res.statusCode = 400;
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify({ error: 'Nederīgs JSON.' }));
+      return;
+    }
+    if (!audio) {
+      res.statusCode = 400;
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify({ error: 'Trūkst ieraksta (audio).' }));
+      return;
+    }
+    const result = await recognizeLatvianPcm(Buffer.from(audio, 'base64'), sampleRate);
+    res.statusCode = result.ok ? 200 : result.status;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(
+      JSON.stringify(result.ok ? { text: result.text } : { error: result.error }),
+    );
+  } catch (err) {
+    console.error('[stt]', err);
+    res.statusCode = 500;
+    res.setHeader('Content-Type', 'application/json');
+    res.end(JSON.stringify({ error: 'Iekšēja runas atpazīšanas kļūda.' }));
+  }
 }
 
 function readRequestBody(req: IncomingMessage): Promise<string> {
@@ -73,6 +117,10 @@ export default defineConfig(({ mode }) => {
               next: (err?: unknown) => void,
             ) => {
               const path = req.url?.split('?')[0];
+              if (path === '/api/stt') {
+                await handleDevStt(req, res);
+                return;
+              }
               if (path !== '/api/tts') {
                 next();
                 return;

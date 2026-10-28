@@ -63,22 +63,6 @@ export function MemoryAnswerStep({
     else playWrongBuzz();
   };
 
-  const reveal = () => {
-    const next: MemoryDraft =
-      task.answer.kind !== 'facts'
-        ? draft.answerVisible
-          ? draft
-          : { ...draft, answerVisible: true }
-        : (() => {
-            const keys = task.answer.fields.map((field) => field.key);
-            const already = draft.revealedFactKeys ?? [];
-            if (keys.every((key) => already.includes(key))) return draft;
-            return { ...draft, revealedFactKeys: keys };
-          })();
-    if (next !== draft) onDraft(() => next);
-    record(next);
-  };
-
   const revealed = answerIsVisible(task, draft);
   const showCue = recallCue || task.category === 'appointment';
 
@@ -129,9 +113,11 @@ export function MemoryAnswerStep({
           <Button variant="primary" onClick={confirm}>
             Tālāk
           </Button>
-          <Button variant="secondary" onClick={openRecognition}>
-            Parādīt variantus
-          </Button>
+          {showKey ? null : (
+            <Button variant="secondary" onClick={openRecognition}>
+              Parādīt variantus
+            </Button>
+          )}
         </div>
       ) : (
         <div className="memory-actions">
@@ -140,19 +126,16 @@ export function MemoryAnswerStep({
               Tālāk
             </Button>
           ) : null}
-          <Button variant="secondary" onClick={openRecognition}>
-            Parādīt variantus
-          </Button>
+          {showKey ? null : (
+            <Button variant="secondary" onClick={openRecognition}>
+              Parādīt variantus
+            </Button>
+          )}
         </div>
       )}
 
       {draft.recognitionOpen ? (
         <div className="memory-actions">
-          {allowReveal && !revealed ? (
-            <Button variant="secondary" onClick={reveal}>
-              Parādīt atbildi
-            </Button>
-          ) : null}
           <Button variant="primary" onClick={confirm}>
             Tālāk
           </Button>
@@ -288,6 +271,9 @@ function RecognitionPanel({
   if (task.answer.kind === 'facts') {
     const fields = task.answer.fields;
     const revealedKeys = new Set(draft.revealedFactKeys ?? []);
+    const allChosen = fields.every(
+      (field) => draft.factIndices[field.key] === field.recognition.correctIndex,
+    );
     return (
       <div className="memory-entry">
         {fields.map((field) => {
@@ -302,6 +288,7 @@ function RecognitionPanel({
                 correct={[field.recognition.correctIndex]}
                 multiple={false}
                 revealed={fieldRevealed}
+                celebrate={allChosen}
                 onToggle={(optionIndex) => {
                   if (fieldRevealed) return;
                   const factIndices = {
@@ -383,6 +370,7 @@ function RecognitionChoices({
   revealed,
   onToggle,
   onSolved,
+  celebrate,
 }: {
   options: string[];
   selected: number[];
@@ -391,6 +379,8 @@ function RecognitionChoices({
   revealed: boolean;
   onToggle: (index: number) => void;
   onSolved?: (selected: number[]) => void;
+  /** When set, the inverted finish waits for the whole group. */
+  celebrate?: boolean;
 }) {
   const correctSet = new Set(correct);
   const [wrong, setWrong] = useState<number[]>([]);
@@ -429,9 +419,13 @@ function RecognitionChoices({
     }
   };
 
+  const highlighted = celebrate ?? solved;
+
   return (
     <div
-      className="memory-choices"
+      className={['memory-choices', highlighted ? 'memory-choices-solved' : '']
+        .filter(Boolean)
+        .join(' ')}
       role={multiple ? 'group' : 'radiogroup'}
       aria-label="Atbilžu varianti"
     >

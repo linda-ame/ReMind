@@ -176,8 +176,8 @@ export function AnswerField({
     }
     dictation.clearError();
     if (isIosDevice()) {
-      // Only speech recognition may take the microphone. A separate
-      // getUserMedia prompt leaves iOS unable to start dictation afterwards.
+      // iPhone records and fills the field from the cloud while speaking.
+      // The microphone request has to start inside this tap.
       dictation.start();
       return;
     }

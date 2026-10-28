@@ -75,7 +75,9 @@ export function isMicrophonePermissionError(code: string | null): boolean {
 
 export function isIosDevice(): boolean {
   if (typeof navigator === 'undefined') return false;
-  return /iPhone|iPad|iPod/.test(navigator.userAgent);
+  if (/iPhone|iPad|iPod/.test(navigator.userAgent)) return true;
+  // iPadOS can report itself as a Mac. Touch points tell those iPads apart.
+  return navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1;
 }
 
 let micPromptAccepted = false;
