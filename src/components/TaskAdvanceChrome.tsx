@@ -25,8 +25,8 @@ const SWIPE_MAX_DY = 56;
 
 /**
  * Task body + progress + Izlaist (until ready) + fixed yellow → when ready.
- * Ready state usually adds a right gutter so content clears the tall side FAB;
- * word reading uses a compact top-right → and no gutter (see CSS :has).
+ * The arrow overlaps only its own button. Content is not narrowed down the
+ * full height. Word reading uses a compact top-right → (see CSS :has).
  * Swipe right→left advances only when canAdvance.
  */
 export function TaskAdvanceChrome({
