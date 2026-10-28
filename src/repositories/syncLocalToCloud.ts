@@ -36,13 +36,15 @@ export async function syncLocalToCloud(
     cloudSettings.contentScale === DEFAULT_UI_SETTINGS.contentScale &&
     cloudSettings.textAlign === DEFAULT_UI_SETTINGS.textAlign &&
     cloudSettings.textPosition === DEFAULT_UI_SETTINGS.textPosition &&
-    cloudSettings.highContrast === DEFAULT_UI_SETTINGS.highContrast;
+    cloudSettings.highContrast === DEFAULT_UI_SETTINGS.highContrast &&
+    cloudSettings.homeView === DEFAULT_UI_SETTINGS.homeView;
 
   const localDiffers =
     localSettings.contentScale !== cloudSettings.contentScale ||
     localSettings.textAlign !== cloudSettings.textAlign ||
     localSettings.textPosition !== cloudSettings.textPosition ||
-    localSettings.highContrast !== cloudSettings.highContrast;
+    localSettings.highContrast !== cloudSettings.highContrast ||
+    localSettings.homeView !== cloudSettings.homeView;
 
   if (cloudIsDefault && localDiffers) {
     await cloud.saveSettings(localSettings);

@@ -38,6 +38,7 @@ interface SettingsRow {
   text_align: TextAlign;
   text_position: TextPosition;
   high_contrast: boolean;
+  home_view?: string | null;
 }
 
 function rowToAttempt(row: AttemptRow): TaskAttempt {
@@ -88,6 +89,17 @@ function throwIfError(error: { message: string } | null, fallback: string): void
   }
 }
 
+function isMissingHomeViewColumn(error: { message: string } | null): boolean {
+  return (error?.message ?? '').includes('home_view');
+}
+
+let homeViewColumnAvailable = true;
+
+/** False when this account database does not have the home_view column yet. */
+export function isHomeViewColumnAvailable(): boolean {
+  return homeViewColumnAvailable;
+}
+
 export class SupabaseProgressRepository implements ProgressRepository {
   private readonly client: SupabaseClient;
   private readonly userId: string;
@@ -98,13 +110,23 @@ export class SupabaseProgressRepository implements ProgressRepository {
   }
 
   async getSettings(): Promise<UiSettings> {
-    const { data, error } = await this.client
+    homeViewColumnAvailable = true;
+    let { data, error } = await this.client
       .from('user_settings')
       .select(
-        'user_id, content_scale, text_align, text_position, high_contrast',
+        'user_id, content_scale, text_align, text_position, high_contrast, home_view',
       )
       .eq('user_id', this.userId)
       .maybeSingle();
+
+    if (isMissingHomeViewColumn(error)) {
+      homeViewColumnAvailable = false;
+      ({ data, error } = await this.client
+        .from('user_settings')
+        .select('user_id, content_scale, text_align, text_position, high_contrast')
+        .eq('user_id', this.userId)
+        .maybeSingle());
+    }
 
     throwIfError(error, 'Neizdevās ielādēt iestatījumus');
     if (!data) return DEFAULT_UI_SETTINGS;
@@ -115,19 +137,33 @@ export class SupabaseProgressRepository implements ProgressRepository {
       textAlign: row.text_align,
       textPosition: row.text_position,
       highContrast: row.high_contrast,
+      homeView: row.home_view === 'text' ? 'text' : 'icons',
     });
   }
 
   async saveSettings(settings: UiSettings): Promise<void> {
     const normalized = normalizeUiSettings(settings);
-    const { error } = await this.client.from('user_settings').upsert({
+    const row = {
       user_id: this.userId,
       content_scale: normalized.contentScale,
       text_align: normalized.textAlign,
       text_position: normalized.textPosition,
       high_contrast: normalized.highContrast,
+      home_view: normalized.homeView,
       updated_at: new Date().toISOString(),
-    });
+    };
+    let { error } = await this.client.from('user_settings').upsert(row);
+    if (isMissingHomeViewColumn(error)) {
+      homeViewColumnAvailable = false;
+      ({ error } = await this.client.from('user_settings').upsert({
+        user_id: row.user_id,
+        content_scale: row.content_scale,
+        text_align: row.text_align,
+        text_position: row.text_position,
+        high_contrast: row.high_contrast,
+        updated_at: row.updated_at,
+      }));
+    }
     throwIfError(error, 'Neizdevās saglabāt iestatījumus');
   }
 

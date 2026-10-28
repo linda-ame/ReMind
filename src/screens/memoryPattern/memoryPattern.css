@@ -1,8 +1,8 @@
 /* Atceries rūtiņu rakstu — large cells, high contrast, no motion. */
 
 .home-type-memory_pattern {
-  background: #e7eef8;
-  border-color: #1d3f73;
+  background: #f3e8f8;
+  border-color: #6d3a86;
 }
 
 .app-shell.high-contrast .home-type-memory_pattern {

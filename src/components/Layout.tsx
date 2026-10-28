@@ -10,6 +10,7 @@ import {
 } from 'react';
 import { useApp } from '../context/AppContext';
 import type { Screen } from '../navigation/types';
+import type { HomeView } from '../types/progress';
 import {
   adjacentMenuSection,
   menuSectionLabel,
@@ -28,6 +29,9 @@ interface LayoutProps {
    */
   sectionType?: MenuSection;
   onNavigate?: (screen: Screen) => void;
+  /** Home only. Puts Teksts / Ikonas on either side of the title. */
+  homeView?: HomeView;
+  onHomeViewChange?: (view: HomeView) => void;
 }
 
 export function Layout({
@@ -36,6 +40,8 @@ export function Layout({
   onHome,
   sectionType,
   onNavigate,
+  homeView,
+  onHomeViewChange,
 }: LayoutProps) {
   const { settings, attempts, taskSkips } = useApp();
   /** Avoid double-fire when Android synthesizes click after pointerup. */
@@ -125,7 +131,13 @@ export function Layout({
     >
       <div className="app-chrome" ref={chromeRef}>
         <header
-          className={sectionType ? 'app-header app-header-section' : 'app-header'}
+          className={
+            sectionType
+              ? 'app-header app-header-section'
+              : onHomeViewChange
+                ? 'app-header app-header-home'
+                : 'app-header'
+          }
         >
           {sectionType ? (
             <>
@@ -175,7 +187,29 @@ export function Layout({
               ReMind
             </button>
           ) : (
-            <h1 className="brand-static">ReMind</h1>
+            <>
+              {onHomeViewChange ? (
+                <button
+                  type="button"
+                  className="home-view-side"
+                  aria-pressed={homeView === 'text'}
+                  onClick={() => onHomeViewChange('text')}
+                >
+                  Teksts
+                </button>
+              ) : null}
+              <h1 className="brand-static">ReMind</h1>
+              {onHomeViewChange ? (
+                <button
+                  type="button"
+                  className="home-view-side home-view-side-end"
+                  aria-pressed={homeView === 'icons'}
+                  onClick={() => onHomeViewChange('icons')}
+                >
+                  Ikonas
+                </button>
+              ) : null}
+            </>
           )}
         </header>
       </div>

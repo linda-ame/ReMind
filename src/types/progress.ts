@@ -64,11 +64,15 @@ export const CONTENT_SCALE_MIN = 0.7;
 export const CONTENT_SCALE_MAX = 2;
 export const CONTENT_SCALE_STEP = 0.05;
 
+/** Home screen: icons first, unless the person has chosen the text list. */
+export type HomeView = 'text' | 'icons';
+
 export interface UiSettings {
   contentScale: ContentScale;
   textAlign: TextAlign;
   textPosition: TextPosition;
   highContrast: boolean;
+  homeView: HomeView;
   /** @deprecated Migrated to contentScale on load. */
   fontSizePx?: number;
 }
@@ -78,6 +82,7 @@ export const DEFAULT_UI_SETTINGS: UiSettings = {
   textAlign: 'center',
   textPosition: 'middle',
   highContrast: false,
+  homeView: 'icons',
 };
 
 export const CONTENT_SCALE_OPTIONS: {
@@ -135,6 +140,7 @@ export function normalizeUiSettings(
     textAlign: merged.textAlign,
     textPosition: merged.textPosition,
     highContrast: merged.highContrast,
+    homeView: stored?.homeView === 'text' ? 'text' : 'icons',
   };
 }
 

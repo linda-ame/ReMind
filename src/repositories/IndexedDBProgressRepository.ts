@@ -22,6 +22,16 @@ export const MEMORY_POSITIONS_GAMES_STORE = 'memoryPositionsGames';
 /** Chosen grid, difficulty, symbol kind, and recent deals. */
 export const MEMORY_POSITIONS_STATE_STORE = 'memoryPositionsState';
 const SETTINGS_KEY = 'ui';
+const LEGACY_HOME_VIEW_KEY = 'remind-home-view';
+
+function readLegacyHomeView(): 'text' | 'icons' | null {
+  try {
+    const raw = localStorage.getItem(LEGACY_HOME_VIEW_KEY);
+    return raw === 'text' || raw === 'icons' ? raw : null;
+  } catch {
+    return null;
+  }
+}
 
 /** Reuse one connection — open/close per write races under rapid lesson navigation. */
 let dbPromise: Promise<IDBDatabase> | null = null;
@@ -149,7 +159,23 @@ export class IndexedDBProgressRepository implements ProgressRepository {
       tx.objectStore(SETTINGS_STORE).get(SETTINGS_KEY),
     );
     await txDone(tx);
-    return normalizeUiSettings(stored);
+    const legacy = readLegacyHomeView();
+    const normalized = normalizeUiSettings(
+      stored == null || stored.homeView == null
+        ? { ...stored, homeView: legacy ?? 'icons' }
+        : stored,
+    );
+    if (legacy) {
+      try {
+        localStorage.removeItem(LEGACY_HOME_VIEW_KEY);
+      } catch {
+        /* The saved settings still win on the next open. */
+      }
+      if (stored == null || stored.homeView == null) {
+        await this.saveSettings(normalized);
+      }
+    }
+    return normalized;
   }
 
   async saveSettings(settings: UiSettings): Promise<void> {

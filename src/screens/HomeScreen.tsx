@@ -12,6 +12,8 @@ import { MANS_PROGRESS_ENABLED } from '../config/features';
 import { completedCurrentTaskIds } from '../utils/attempts';
 import { filterSectionTasks } from '../utils/difficulty';
 import { deleteMemorySessionsForMode } from '../repositories/IndexedDBProgressRepository';
+import { SECTION_ICON } from '../home/sectionIcons';
+import type { HomeView } from '../types/progress';
 import { menuSectionLabel, sectionPracticeScreen } from '../utils/sectionPractice';
 import { memoryModeCounts } from '../utils/memoryQueue';
 import type { Screen } from '../navigation/types';
@@ -23,13 +25,15 @@ interface HomeScreenProps {
 }
 
 export function HomeScreen({ onNavigate }: HomeScreenProps) {
-  const { attempts, taskSkips, syncError, clearProgressForTasks } = useApp();
+  const { attempts, taskSkips, syncError, clearProgressForTasks, settings, updateSettings } =
+    useApp();
   const { user } = useAuth();
   /** Which section is awaiting reset confirmation (inline, not a browser dialog). */
   const [resetConfirmType, setResetConfirmType] = useState<Task['type'] | null>(
     null,
   );
   const [resetMemory, setResetMemory] = useState<MemoryMode | null>(null);
+  const homeView = settings.homeView;
   const [memoryCounts, setMemoryCounts] = useState<
     Record<MemoryMode, { done: number; total: number }>
   >({
@@ -66,8 +70,49 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
     return ofType.length > 0 ? [{ type, ofType }] : [];
   });
 
+  const chooseView = (next: HomeView) => {
+    setResetConfirmType(null);
+    setResetMemory(null);
+    if (next === homeView) return;
+    void updateSettings({ homeView: next });
+  };
+
+  const iconCards = [
+    ...homeSections.map(({ type }, index) => ({
+      key: type,
+      label: `${index + 1}. ${TASK_TYPE_LABELS[type]}`,
+      className: `home-type-${type}`,
+      icon: SECTION_ICON[type],
+      onOpen: () => openType(type),
+    })),
+    ...(['immediate', 'delayed'] as const).map((mode, offset) => ({
+      key: mode,
+      label: `${homeSections.length + offset + 1}. ${
+        mode === 'immediate' ? 'Atceries uzreiz' : 'Atceries pēc brīža'
+      }`,
+      className: `home-type-memory_${mode}`,
+      icon: SECTION_ICON[mode === 'immediate' ? 'memory_immediate' : 'memory_delayed'],
+      onOpen: () => {
+        setResetConfirmType(null);
+        setResetMemory(null);
+        onNavigate({ name: 'memory', mode });
+      },
+    })),
+    ...(['memory_pairs', 'memory_pattern', 'memory_positions'] as const).map((section) => ({
+      key: section,
+      label: menuSectionLabel(section),
+      className: `home-type-${section}`,
+      icon: SECTION_ICON[section],
+      onOpen: () => {
+        setResetConfirmType(null);
+        setResetMemory(null);
+        onNavigate({ name: section });
+      },
+    })),
+  ];
+
   return (
-    <Layout>
+    <Layout homeView={homeView} onHomeViewChange={chooseView}>
       <div className="home-menu">
         {syncError ? (
           <p className="auth-error home-sync-msg" role="alert">
@@ -87,6 +132,23 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
           </div>
         ) : null}
 
+        {homeView === 'icons' ? (
+          <div className="home-icon-grid">
+            {iconCards.map((card) => (
+              <button
+                key={card.key}
+                type="button"
+                className={`home-icon-card ${card.className}`}
+                aria-label={card.label}
+                onClick={card.onOpen}
+              >
+                <img src={card.icon} alt="" width={96} height={96} />
+              </button>
+            ))}
+          </div>
+        ) : null}
+
+        {homeView === 'text' ? (
         <div className="stack home-tasks">
           {homeSections.map(({ type, ofType }, index) => {
             const pool = filterSectionTasks(ofType, type);
@@ -266,6 +328,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
             </Button>
           </div>
         </div>
+        ) : null}
 
         <div className="home-tools" role="navigation" aria-label="Rīki">
           <Button

@@ -14,7 +14,10 @@ import {
   indexedDBProgressRepository,
 } from '../repositories/IndexedDBProgressRepository';
 import type { ProgressRepository } from '../repositories/ProgressRepository';
-import { SupabaseProgressRepository } from '../repositories/SupabaseProgressRepository';
+import {
+  isHomeViewColumnAvailable,
+  SupabaseProgressRepository,
+} from '../repositories/SupabaseProgressRepository';
 import { syncLocalToCloud } from '../repositories/syncLocalToCloud';
 import {
   DEFAULT_UI_SETTINGS,
@@ -110,11 +113,16 @@ export function AppProvider({ children }: { children: ReactNode }) {
           setCloudSync(false);
         }
 
-        const [s, a] = await Promise.all([
+        const [loaded, a] = await Promise.all([
           repoRef.current.getSettings(),
           repoRef.current.getAllAttempts(),
         ]);
         if (cancelled) return;
+        let s = loaded;
+        if (user && !isHomeViewColumnAvailable()) {
+          const local = await indexedDBProgressRepository.getSettings();
+          s = { ...s, homeView: local.homeView };
+        }
         setSettings(s);
         setAttempts(currentAttempts(a));
       } catch (err) {
@@ -151,7 +159,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
       next = normalizeUiSettings({ ...prev, ...partial });
       return next;
     });
-    await repoRef.current.saveSettings(next);
+    await indexedDBProgressRepository.saveSettings(next);
+    if (repoRef.current !== indexedDBProgressRepository) {
+      await repoRef.current.saveSettings(next);
+    }
   }, []);
 
   const saveAttempt = useCallback((attempt: TaskAttempt) => {
