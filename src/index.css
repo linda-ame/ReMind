@@ -4231,9 +4231,12 @@ html.keyboard-open .memory-skip {
   box-shadow: none;
 }
 
-/* Atrodi vārdu — large cells; scroll instead of shrinking below a readable size. */
+/* Atrodi vārdu — cells shrink so a 4×4 grid always fits the screen width. */
 .task-view-word-grid {
-  --word-grid-cell: max(100px, calc(3.4 * var(--fit-font) * var(--content-scale)));
+  --word-grid-gap: 8px;
+  --word-grid-cell-max: max(100px, calc(3.4 * var(--fit-font) * var(--content-scale)));
+  width: 100%;
+  min-width: 0;
 }
 
 .word-grid-head {
@@ -4270,31 +4273,41 @@ html.keyboard-open .memory-skip {
 }
 
 .word-grid-scroll {
-  overflow: auto;
+  overflow: hidden;
   max-width: 100%;
+  min-width: 0;
   margin: 0.7rem auto 0.45rem;
   padding: 2px;
 }
 
 .word-grid {
+  --word-grid-size: 4;
   display: grid;
-  gap: 8px;
-  width: max-content;
+  gap: var(--word-grid-gap);
+  width: 100%;
+  max-width: calc(
+    var(--word-grid-size) * var(--word-grid-cell-max) +
+      (var(--word-grid-size) - 1) * var(--word-grid-gap)
+  );
   margin: 0 auto;
+  grid-template-columns: repeat(var(--word-grid-size), minmax(0, 1fr));
 }
 
 .word-grid-cell {
   position: relative;
+  container-type: size;
   box-sizing: border-box;
-  width: var(--word-grid-cell);
-  height: var(--word-grid-cell);
-  padding: max(32px, calc(1.25 * var(--fit-font) * var(--content-scale))) 6px 8px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  min-width: 0;
+  padding: 0;
   border: 2px solid #4a6273;
   border-radius: 14px;
   background: #fff;
   color: #122f40;
   font-weight: 700;
-  font-size: max(36px, calc(1.45 * var(--fit-font) * var(--content-scale)));
+  font-size: 1rem;
   line-height: 1;
   display: flex;
   align-items: center;
@@ -4330,19 +4343,25 @@ html.keyboard-open .memory-skip {
 }
 
 .word-grid-letter {
-  display: block;
+  position: absolute;
+  inset: 20% 4% 6%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52cqmin;
+  line-height: 1;
 }
 
 .word-grid-num {
   position: absolute;
-  top: 4px;
-  right: 6px;
+  top: 6%;
+  right: 6%;
   min-width: 1.35em;
   padding: 0 0.2em;
   border-radius: 999px;
   background: #145c4a;
   color: #fff;
-  font-size: max(18px, calc(0.75 * var(--fit-font) * var(--content-scale)));
+  font-size: 22cqmin;
   font-weight: 700;
   line-height: 1.25;
   text-align: center;

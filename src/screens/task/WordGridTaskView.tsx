@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, type CSSProperties } from 'react';
 import { Button } from '../../components/Button';
 import { ListenButton } from '../../components/ListenButton';
 import { playCorrectChime } from '../../utils/answerFeedback';
@@ -212,9 +212,7 @@ export function WordGridTaskView({
           className="word-grid"
           role="group"
           aria-label={`Burtu režģis, ${task.wordLength} burti`}
-          style={{
-            gridTemplateColumns: `repeat(${task.gridSize}, var(--word-grid-cell))`,
-          }}
+          style={{ '--word-grid-size': task.gridSize } as CSSProperties}
         >
           {task.letters.map((letter, index) => {
             const step = grid.path.indexOf(index);
