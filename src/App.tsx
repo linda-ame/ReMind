@@ -197,6 +197,7 @@ function AppRouter() {
       return (
         <CustomizeContentScreen
           focusType={screen.focusType}
+          focusMemory={screen.focusMemory}
           onNavigate={navigate}
           onHome={goHome}
         />

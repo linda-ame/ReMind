@@ -18,9 +18,12 @@ import {
 import { pickDistractorIds } from '../utils/memoryDistractors';
 import {
   createMemorySession,
+  memoryPoolStatus,
   MEMORY_TARGET_DELAY_SECONDS,
   touchSession,
 } from '../utils/memoryQueue';
+import { memoryPool, loadMemoryDifficulty } from '../utils/memoryDifficulty';
+import { formatDifficultyLevelsLabel } from '../utils/difficulty';
 import {
   memoryResponseReady,
   scoreMemoryDraft,
@@ -63,13 +66,17 @@ function beginDelayed(session: MemorySession): MemorySession {
 }
 
 export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
-  const { skipTaskToday } = useApp();
+  const { skipTaskToday, clearProgressForTasks } = useApp();
   const sectionType: MenuSection =
     mode === 'immediate' ? 'memory_immediate' : 'memory_delayed';
   const skipping = useRef(false);
   const [session, setSession] = useState<MemorySession | null>(null);
   const [ready, setReady] = useState(false);
   const [empty, setEmpty] = useState(false);
+  const [finished, setFinished] = useState<{
+    total: number;
+    skipped: number;
+  } | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const sessionRef = useRef<MemorySession | null>(null);
   /** This recall step already has a checked answer. */
@@ -113,7 +120,14 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
       );
       const created = createMemorySession(mode, history);
       if (!created) {
-        setEmpty(true);
+        const status = memoryPoolStatus(mode, history);
+        setSession(null);
+        setEmpty(status.total === 0);
+        setFinished(
+          status.total === 0
+            ? null
+            : { total: status.total, skipped: status.skipped },
+        );
         setReady(true);
         return;
       }
@@ -127,6 +141,7 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
       sessionRef.current = created;
       setSession(created);
       setEmpty(false);
+      setFinished(null);
       setReady(true);
     })();
     return () => {
@@ -134,13 +149,22 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
     };
   }, [mode, visualFirst]);
 
-  const showSession = (created: MemorySession | null) => {
+  const showSession = (
+    created: MemorySession | null,
+    history: MemorySession[] = [],
+  ) => {
     stepReadyRef.current = false;
     savedRef.current = null;
     if (!created) {
+      const status = memoryPoolStatus(mode, history);
       sessionRef.current = null;
       setSession(null);
-      setEmpty(true);
+      setEmpty(status.total === 0);
+      setFinished(
+        status.total === 0
+          ? null
+          : { total: status.total, skipped: status.skipped },
+      );
       return;
     }
     if (visualFirst) {
@@ -150,6 +174,7 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
     }
     sessionRef.current = created;
     setEmpty(false);
+    setFinished(null);
     setSession(created);
   };
 
@@ -158,7 +183,26 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
       await deleteMemorySession(drop.sessionId);
     }
     const history = await getAllMemorySessions();
-    showSession(createMemorySession(mode, history));
+    showSession(createMemorySession(mode, history), history);
+  };
+
+  const repeatFilter = async () => {
+    const ids = memoryPool(mode).map((task) => task.id);
+    const idSet = new Set(ids);
+    const history = await getAllMemorySessions();
+    for (const item of history) {
+      if (item.mode === mode && idSet.has(item.taskId)) {
+        await deleteMemorySession(item.sessionId);
+      }
+    }
+    await clearProgressForTasks(ids);
+    const next = await getAllMemorySessions();
+    showSession(createMemorySession(mode, next), next);
+  };
+
+  const practiceSkipped = async () => {
+    const history = await getAllMemorySessions();
+    showSession(createMemorySession(mode, history, 'skipped'), history);
   };
 
   if (loadError) {
@@ -181,6 +225,76 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
     return (
       <Layout onHome={onHome} sectionType={sectionType} onNavigate={onNavigate}>
         <p className="lead">Ielādē…</p>
+      </Layout>
+    );
+  }
+
+  if (finished) {
+    const levelLabel = formatDifficultyLevelsLabel(loadMemoryDifficulty(mode));
+    const label = MODE_LABEL[mode];
+    return (
+      <Layout onHome={onHome} sectionType={sectionType} onNavigate={onNavigate}>
+        <div className="section-complete">
+          {finished.skipped > 0 ? (
+            <>
+              <h1 className="section-complete-title">
+                Jūs esat izpildījuši visus pieejamos uzdevumus
+              </h1>
+              <p className="section-complete-sub">
+                «{label}» · {levelLabel}. Šodien izlaisti {finished.skipped}{' '}
+                — tie rīt atkal būs pieejami. Varat arī izpildīt tos tagad.
+              </p>
+              <div className="stack section-complete-actions">
+                <Button variant="primary" onClick={() => void practiceSkipped()}>
+                  Pildīt šodien izlaistos ({finished.skipped})
+                </Button>
+                <p className="section-complete-prompt">
+                  Vai sākt šo filtru no jauna ar tukšiem uzdevumiem?
+                </p>
+                <Button variant="secondary" onClick={() => void repeatFilter()}>
+                  Atkārtot
+                </Button>
+                <Button
+                  variant="secondary"
+                  onClick={() =>
+                    onNavigate({ name: 'customize_content', focusMemory: mode })
+                  }
+                >
+                  Pielāgot saturu
+                </Button>
+                <Button variant="neutral" onClick={onHome}>
+                  Uz sākumu
+                </Button>
+              </div>
+            </>
+          ) : (
+            <>
+              <h1 className="section-complete-title">
+                Šajā filtrā jaunu uzdevumu nav
+              </h1>
+              <p className="section-complete-sub">
+                «{label}» · {levelLabel} — visi {finished.total} uzdevumi
+                izpildīti.
+              </p>
+              <div className="stack section-complete-actions">
+                <Button variant="primary" onClick={() => void repeatFilter()}>
+                  Atkārtot
+                </Button>
+                <Button
+                  variant="secondary"
+                  onClick={() =>
+                    onNavigate({ name: 'customize_content', focusMemory: mode })
+                  }
+                >
+                  Pielāgot saturu
+                </Button>
+                <Button variant="neutral" onClick={onHome}>
+                  Uz sākumu
+                </Button>
+              </div>
+            </>
+          )}
+        </div>
       </Layout>
     );
   }
@@ -316,7 +430,7 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
       void (async () => {
         await saveMemorySession(saved);
         const history = await getAllMemorySessions();
-        showSession(createMemorySession(mode, history));
+        showSession(createMemorySession(mode, history), history);
       })();
       return;
     }
@@ -364,7 +478,7 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
       try {
         await deleteMemorySession(current.sessionId);
         const history = await getAllMemorySessions();
-        showSession(createMemorySession(mode, history));
+        showSession(createMemorySession(mode, history), history);
       } finally {
         skipping.current = false;
       }

@@ -31,6 +31,7 @@ interface Props {
   onHome: () => void;
   /** Optional: scroll/focus this section first. */
   focusType?: Task['type'];
+  focusMemory?: MemoryMode;
 }
 
 type LevelsByType = Record<Task['type'], DifficultyLevel[]>;
@@ -46,6 +47,7 @@ function loadAllLevels(): LevelsByType {
 export function CustomizeContentScreen({
   onHome,
   focusType,
+  focusMemory,
 }: Props) {
   const [byType, setByType] = useState<LevelsByType>(loadAllLevels);
   const [memoryLevels, setMemoryLevels] = useState<
@@ -59,10 +61,15 @@ export function CustomizeContentScreen({
   const memoryCounts = countMemoryByDifficulty();
 
   useEffect(() => {
-    if (!focusType) return;
-    const el = document.getElementById(`customize-${focusType}`);
+    const id = focusMemory
+      ? `customize-memory-${focusMemory}`
+      : focusType
+        ? `customize-${focusType}`
+        : null;
+    if (!id) return;
+    const el = document.getElementById(id);
     el?.scrollIntoView({ block: 'center', behavior: 'smooth' });
-  }, [focusType]);
+  }, [focusType, focusMemory]);
 
   const sections = useMemo(
     () =>

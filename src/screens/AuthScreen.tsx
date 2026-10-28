@@ -1,4 +1,10 @@
-import { useEffect, useRef, useState, type FormEvent } from 'react';
+import {
+  useEffect,
+  useRef,
+  useState,
+  type FormEvent,
+  type ReactNode,
+} from 'react';
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
 import { useAuth } from '../context/AuthContext';
@@ -10,6 +16,47 @@ interface AuthScreenProps {
 }
 
 type Mode = 'login' | 'register' | 'forgot' | 'new_password';
+type AccountSection = 'name' | 'email' | 'password';
+
+function AccountFold({
+  label,
+  value,
+  open,
+  controlsId,
+  disabled,
+  onToggle,
+  children,
+}: {
+  label: string;
+  value: string;
+  open: boolean;
+  controlsId: string;
+  disabled: boolean;
+  onToggle: () => void;
+  children: ReactNode;
+}) {
+  return (
+    <div className={`account-fold${open ? ' is-open' : ''}`}>
+      <button
+        type="button"
+        className="account-fold-summary"
+        aria-expanded={open}
+        aria-controls={open ? controlsId : undefined}
+        disabled={disabled}
+        onClick={onToggle}
+      >
+        <span className="account-fold-label">{label}</span>
+        <span className="account-fold-value">{value}</span>
+        <span className="account-fold-chevron" aria-hidden="true" />
+      </button>
+      {open ? (
+        <div id={controlsId} className="account-fold-body">
+          {children}
+        </div>
+      ) : null}
+    </div>
+  );
+}
 
 export function AuthScreen({ onHome }: AuthScreenProps) {
   const {
@@ -45,6 +92,7 @@ export function AuthScreen({ onHome }: AuthScreenProps) {
   const [accountBusy, setAccountBusy] = useState<string | null>(null);
   const [accountError, setAccountError] = useState<string | null>(null);
   const [accountInfo, setAccountInfo] = useState<string | null>(null);
+  const [openSection, setOpenSection] = useState<AccountSection | null>(null);
 
   useEffect(() => {
     if (passwordRecovery) setMode('new_password');
@@ -67,6 +115,23 @@ export function AuthScreen({ onHome }: AuthScreenProps) {
     setNameDraft(displayName);
     setEmailDraft(user.email ?? '');
   }, [user, displayName]);
+
+  useEffect(() => {
+    if (!openSection) return;
+    const fieldId =
+      openSection === 'name'
+        ? 'account-name'
+        : openSection === 'email'
+          ? 'account-email'
+          : 'account-password';
+    document.getElementById(fieldId)?.focus();
+  }, [openSection]);
+
+  const toggleSection = (section: AccountSection) => {
+    setOpenSection((current) => (current === section ? null : section));
+    setAccountError(null);
+    setAccountInfo(null);
+  };
 
   const switchMode = (next: Mode) => {
     setMode(next);
@@ -172,6 +237,7 @@ export function AuthScreen({ onHome }: AuthScreenProps) {
     try {
       await action();
       setAccountInfo(success);
+      setOpenSection(null);
     } catch (err) {
       setAccountError(err instanceof Error ? err.message : 'Neizdevās.');
     } finally {
@@ -265,104 +331,114 @@ export function AuthScreen({ onHome }: AuthScreenProps) {
       <Layout onHome={onHome}>
         <div className="account-panel stack">
           <p className="lead account-copy">Konts</p>
-          <p className="account-copy account-email">{user.email}</p>
           <p className="muted account-copy">
             Progress tiek saglabāts mākonī un ir pieejams citā ierīcē.
           </p>
 
-          <div className="account-block">
-            <label className="settings-label account-copy" htmlFor="account-name">
-              {displayName ? 'Vārds' : 'Pievienot vārdu'}
-            </label>
-            {!displayName ? (
-              <p className="muted account-copy account-hint">
-                Vārds palīdz atpazīt kontu. Varat to iestatīt tagad.
-              </p>
-            ) : null}
-            <input
-              id="account-name"
-              className="text-input"
-              type="text"
-              autoComplete="name"
-              value={nameDraft}
-              onChange={(e) => setNameDraft(e.target.value)}
+          <div className="account-folds">
+            <AccountFold
+              label="Vārds"
+              value={displayName.trim() || 'Nav norādīts'}
+              open={openSection === 'name'}
+              controlsId="account-name-panel"
               disabled={busyNow}
-              maxLength={80}
-            />
-            <Button
-              variant="secondary"
-              disabled={busyNow}
-              onClick={saveName}
+              onToggle={() => toggleSection('name')}
             >
-              {accountBusy === 'name' ? 'Gaidiet…' : 'Saglabāt vārdu'}
-            </Button>
-          </div>
+              {!displayName ? (
+                <p className="muted account-copy account-hint">
+                  Vārds palīdz atpazīt kontu. Varat to iestatīt tagad.
+                </p>
+              ) : null}
+              <input
+                id="account-name"
+                className="text-input"
+                type="text"
+                autoComplete="name"
+                aria-label="Vārds"
+                value={nameDraft}
+                onChange={(e) => setNameDraft(e.target.value)}
+                disabled={busyNow}
+                maxLength={80}
+              />
+              <Button variant="secondary" disabled={busyNow} onClick={saveName}>
+                {accountBusy === 'name' ? 'Gaidiet…' : 'Saglabāt vārdu'}
+              </Button>
+            </AccountFold>
 
-          <div className="account-block">
-            <p className="settings-label account-copy">Nomainīt e-pastu</p>
-            <label className="settings-label account-copy" htmlFor="account-email">
-              Jaunais e-pasts
-            </label>
-            <input
-              id="account-email"
-              className="text-input"
-              type="email"
-              autoComplete="email"
-              inputMode="email"
-              value={emailDraft}
-              onChange={(e) => setEmailDraft(e.target.value)}
+            <AccountFold
+              label="E-pasts"
+              value={user.email || 'Nav norādīts'}
+              open={openSection === 'email'}
+              controlsId="account-email-panel"
               disabled={busyNow}
-            />
-            <Button
-              variant="secondary"
-              disabled={busyNow}
-              onClick={saveEmail}
+              onToggle={() => toggleSection('email')}
             >
-              {accountBusy === 'email' ? 'Gaidiet…' : 'Nomainīt e-pastu'}
-            </Button>
-          </div>
+              <label className="settings-label account-copy" htmlFor="account-email">
+                Jaunais e-pasts
+              </label>
+              <input
+                id="account-email"
+                className="text-input"
+                type="email"
+                autoComplete="email"
+                inputMode="email"
+                value={emailDraft}
+                onChange={(e) => setEmailDraft(e.target.value)}
+                disabled={busyNow}
+              />
+              <Button variant="secondary" disabled={busyNow} onClick={saveEmail}>
+                {accountBusy === 'email' ? 'Gaidiet…' : 'Nomainīt e-pastu'}
+              </Button>
+            </AccountFold>
 
-          <div className="account-block">
-            <p className="settings-label account-copy">Nomainīt paroli</p>
-            <label
-              className="settings-label account-copy"
-              htmlFor="account-password"
-            >
-              Jaunā parole
-            </label>
-            <input
-              id="account-password"
-              className="text-input"
-              type="password"
-              autoComplete="new-password"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
+            <AccountFold
+              label="Parole"
+              value="••••••••"
+              open={openSection === 'password'}
+              controlsId="account-password-panel"
               disabled={busyNow}
-              minLength={6}
-            />
-            <label
-              className="settings-label account-copy"
-              htmlFor="account-password-confirm"
+              onToggle={() => toggleSection('password')}
             >
-              Atkārtojiet paroli
-            </label>
-            <input
-              id="account-password-confirm"
-              className="text-input"
-              type="password"
-              autoComplete="new-password"
-              value={newPasswordConfirm}
-              onChange={(e) => setNewPasswordConfirm(e.target.value)}
-              disabled={busyNow}
-              minLength={6}
-            />
-            <Button
-              variant="secondary"
-              disabled={busyNow}
-              onClick={savePassword}
-            >
-              {accountBusy === 'password' ? 'Gaidiet…' : 'Nomainīt paroli'}
-            </Button>
+              <label
+                className="settings-label account-copy"
+                htmlFor="account-password"
+              >
+                Jaunā parole
+              </label>
+              <input
+                id="account-password"
+                className="text-input"
+                type="password"
+                autoComplete="new-password"
+                value={newPassword}
+                onChange={(e) => setNewPassword(e.target.value)}
+                disabled={busyNow}
+                minLength={6}
+              />
+              <label
+                className="settings-label account-copy"
+                htmlFor="account-password-confirm"
+              >
+                Atkārtojiet paroli
+              </label>
+              <input
+                id="account-password-confirm"
+                className="text-input"
+                type="password"
+                autoComplete="new-password"
+                value={newPasswordConfirm}
+                onChange={(e) => setNewPasswordConfirm(e.target.value)}
+                disabled={busyNow}
+                minLength={6}
+              />
+              <Button
+                variant="secondary"
+                disabled={busyNow}
+                onClick={savePassword}
+              >
+                {accountBusy === 'password' ? 'Gaidiet…' : 'Nomainīt paroli'}
+              </Button>
+            </AccountFold>
           </div>
 
           {accountError ? (

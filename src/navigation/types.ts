@@ -13,7 +13,11 @@ export type Screen =
   /** @deprecated Lesson lists removed — kept for legacy navigation. */
   | { name: 'batch_list'; type: Task['type'] }
   /** Per-section difficulty levels (1–5 multi-select). */
-  | { name: 'customize_content'; focusType?: Task['type'] }
+  | {
+      name: 'customize_content';
+      focusType?: Task['type'];
+      focusMemory?: 'immediate' | 'delayed';
+    }
   | {
       name: 'lesson_review';
       type: Task['type'];

@@ -3431,33 +3431,119 @@ input:focus-visible {
   gap: 0.85rem;
 }
 
-.account-email {
-  margin: 0;
-  font-size: 1.05em;
-  word-break: break-word;
-}
-
 .account-hint {
   margin: 0 0 0.45rem;
 }
 
-.account-block {
+.account-folds {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.55rem;
   width: 100%;
-  padding: 0.85rem 0.75rem;
+}
+
+.account-fold {
+  width: 100%;
   border: 2px solid color-mix(in srgb, var(--accent) 28%, transparent);
   border-radius: var(--radius);
   background: color-mix(in srgb, var(--accent-soft) 45%, #fff);
 }
 
-.app-shell.high-contrast .account-block {
+.account-fold.is-open {
+  border-color: color-mix(in srgb, var(--accent) 55%, transparent);
+}
+
+.account-fold-summary {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.12rem;
+  width: 100%;
+  min-height: var(--btn-min-h);
+  margin: 0;
+  padding: 0.65rem 2.4rem;
+  border: 0;
+  border-radius: calc(var(--radius) - 2px);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: center;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.account-fold-summary:focus-visible {
+  outline: 3px solid var(--accent-deep);
+  outline-offset: -3px;
+}
+
+.account-fold-summary:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.account-fold-label {
+  font-size: 0.82em;
+  color: var(--accent-deep);
+}
+
+.account-fold-value {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 800;
+}
+
+.account-fold-chevron {
+  position: absolute;
+  right: 1.05rem;
+  top: 50%;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-top: -0.38rem;
+  border-right: 2.5px solid currentColor;
+  border-bottom: 2.5px solid currentColor;
+  transform: rotate(45deg);
+}
+
+.account-fold.is-open .account-fold-chevron {
+  margin-top: -0.12rem;
+  transform: rotate(-135deg);
+}
+
+.account-fold-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.75rem 0.85rem 0.85rem;
+  border-top: 2px solid color-mix(in srgb, var(--accent) 18%, transparent);
+}
+
+.app-shell.high-contrast .account-fold-body {
+  border-top-color: #000;
+}
+
+.app-shell.high-contrast .account-fold {
   border-color: #000;
   background: #fff;
 }
 
-.account-block .text-input {
+.app-shell.high-contrast .account-fold-label {
+  color: #000;
+}
+
+.app-shell.high-contrast .account-fold-summary:focus-visible {
+  outline-color: #000;
+}
+
+.account-fold-body .text-input {
   width: 100%;
   box-sizing: border-box;
   margin-bottom: 0.25rem;
@@ -3639,6 +3725,17 @@ html.keyboard-open .app-main:has(.answer-field) .answer-field:focus-within {
   padding-bottom: 0;
   background: var(--bg);
   touch-action: manipulation;
+}
+
+/* Memory recall stays under the heading. Other sections still meet the keyboard. */
+html.keyboard-open .app-main:has(.memory-flow .answer-field)::before {
+  content: none;
+  display: none;
+}
+
+html.keyboard-open .app-main:has(.memory-flow) .answer-field:focus-within {
+  position: static;
+  bottom: auto;
 }
 
 html.keyboard-open .answer-field .text-input {

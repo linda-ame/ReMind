@@ -34,21 +34,45 @@ function completedIds(mode: MemoryMode, history: MemorySession[]): Set<string> {
   return ids;
 }
 
+export type MemoryDrawSource = 'open' | 'skipped';
+
+/** How many tasks in the current difficulty pool are still unfinished. */
+export function memoryPoolStatus(
+  mode: MemoryMode,
+  history: MemorySession[],
+): { total: number; open: number; skipped: number } {
+  const pool = memoryPool(mode);
+  const done = completedIds(mode, history);
+  const skipped = new Set(loadTaskSkips().map((skip) => skip.taskId));
+  let open = 0;
+  let skippedCount = 0;
+  for (const task of pool) {
+    if (done.has(task.id)) continue;
+    if (skipped.has(task.id)) skippedCount += 1;
+    else open += 1;
+  }
+  return { total: pool.length, open, skipped: skippedCount };
+}
+
 /**
  * Prefer unfinished tasks in this mode. Avoid a third task of the same
- * category in a row. Repeats are allowed once everything in the pool is done.
+ * category in a row. Finished tasks stay out until the section is reset.
  */
 export function pickMemoryTask(
   mode: MemoryMode,
   history: MemorySession[],
+  source: MemoryDrawSource = 'open',
 ): MemoryRecallTask | null {
   const pool = memoryPool(mode);
   if (pool.length === 0) return null;
   const done = completedIds(mode, history);
   const skipped = new Set(loadTaskSkips().map((skip) => skip.taskId));
-  const open = pool.filter((task) => !done.has(task.id) && !skipped.has(task.id));
-  const later = pool.filter((task) => !skipped.has(task.id));
-  const prefer = open.length > 0 ? open : later.length > 0 ? later : pool;
+  const prefer = pool.filter((task) => {
+    if (done.has(task.id)) return false;
+    const isSkipped = skipped.has(task.id);
+    return source === 'skipped' ? isSkipped : !isSkipped;
+  });
+  if (prefer.length === 0) return null;
 
   const recent = history
     .filter((session) => session.mode === mode)
@@ -67,8 +91,9 @@ export function pickMemoryTask(
 export function createMemorySession(
   mode: MemoryMode,
   history: MemorySession[],
+  source: MemoryDrawSource = 'open',
 ): MemorySession | null {
-  const task = pickMemoryTask(mode, history);
+  const task = pickMemoryTask(mode, history, source);
   if (!task) return null;
   const now = new Date().toISOString();
   return {

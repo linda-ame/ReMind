@@ -104,6 +104,7 @@ export function useKeyboardViewport(): void {
       if (!vv || userAdjusted || gesture) return;
       const input = focusedField();
       if (!input?.closest('.answer-field')) return;
+      if (input.closest('.memory-flow')) return;
       const scroller = input.closest('.app-main');
       const shell = input.closest('.app-shell');
       if (!(scroller instanceof HTMLElement) || !(shell instanceof HTMLElement)) return;
