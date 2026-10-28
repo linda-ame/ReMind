@@ -55,7 +55,8 @@ function formatBuiltSentence(
 
 /**
  * Tap words to build a sentence; tap again to remove (no separate undo).
- * Listen plays the built sentence. Pārbaudīt (model) appears when all words
+ * Each word has a listen control on the right; the built sentence can be
+ * heard once words are chosen. Pārbaudīt (model) appears when all words
  * are placed. Tālāk unlocks only then (see taskHasAdvanceReady).
  */
 export function SentenceOrderTaskView({
@@ -159,25 +160,39 @@ export function SentenceOrderTaskView({
           const position = positionByIndex.get(index);
           const isUsed = position != null;
           return (
-            <Button
-              key={`${index}-${word}`}
-              variant={isUsed ? 'selected' : 'secondary'}
-              className={isUsed ? 'sentence-order-word-used' : undefined}
-              aria-pressed={isUsed}
-              aria-label={
-                isUsed
-                  ? `${word}, ${position}. vietā — piespiediet, lai noņemtu`
-                  : word
-              }
-              onClick={() => toggleWord(index)}
-            >
-              <span className="sentence-order-word-label">{word}</span>
-              {isUsed ? (
-                <span className="sentence-order-badge" aria-hidden="true">
-                  {position}
-                </span>
-              ) : null}
-            </Button>
+            <div key={`${index}-${word}`} className="sentence-order-word-row">
+              <Button
+                variant={isUsed ? 'selected' : 'secondary'}
+                className={[
+                  'sentence-order-word-btn',
+                  isUsed ? 'sentence-order-word-used' : '',
+                ]
+                  .filter(Boolean)
+                  .join(' ')}
+                aria-pressed={isUsed}
+                aria-label={
+                  isUsed
+                    ? `${word}, ${position}. vietā — piespiediet, lai noņemtu`
+                    : word
+                }
+                onClick={() => toggleWord(index)}
+              >
+                <span className="sentence-order-word-label">{word}</span>
+                {isUsed ? (
+                  <span className="sentence-order-badge" aria-hidden="true">
+                    {position}
+                  </span>
+                ) : null}
+              </Button>
+              <ListenButton
+                text={word}
+                compact
+                hideError={index > 0}
+                fullWidth={false}
+                ariaLabel={`Klausīties: ${word}`}
+                className="sentence-order-listen"
+              />
+            </div>
           );
         })}
       </div>

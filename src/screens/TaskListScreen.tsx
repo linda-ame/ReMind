@@ -137,5 +137,7 @@ function taskShortLabel(task: Task): string {
       return task.shownWord;
     case 'brand_association':
       return task.brand;
+    case 'word_grid':
+      return `${task.wordLength} burti`;
   }
 }

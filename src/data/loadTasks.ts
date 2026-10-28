@@ -23,6 +23,7 @@ import rawLogopedaP03 from './logopeda_P03_130.json';
 import rawDefinitionGuessP04 from './definition_guess_P04_50.json';
 import rawP05 from './p05_visi.json';
 import rawP06 from './p06_asociacijas.json';
+import rawWordGrid from './word_grid_P01_160.json';
 import difficultyByIdRaw from './metadata/remind_difficulty_by_id.json';
 import questionDifficultyByIdRaw from './metadata/remind_reading_question_difficulty_by_id.json';
 
@@ -45,6 +46,7 @@ const logopedaP03 = rawLogopedaP03 as TaskPack;
 const definitionGuessP04 = rawDefinitionGuessP04 as TaskPack;
 const p05 = rawP05 as TaskPack;
 const p06 = rawP06 as TaskPack;
+const wordGrid = rawWordGrid as TaskPack;
 
 const difficultyById = difficultyByIdRaw as Record<string, number>;
 const questionDifficultyById = questionDifficultyByIdRaw as Record<
@@ -95,6 +97,7 @@ const rawTasks: Task[] = [
   ...definitionGuessP04.tasks,
   ...p05.tasks,
   ...p06.tasks,
+  ...wordGrid.tasks,
 ];
 
 const tasksWithDifficulty = rawTasks.map(withDifficulty);
@@ -109,7 +112,7 @@ if (import.meta.env.DEV) {
   }
 }
 
-/** Merged pack: existing packs + P01–P06. Keep old IDs intact. */
+/** Merged pack: existing packs + P01–P08. Keep old IDs intact. */
 const pack: TaskPack = {
   schemaVersion: Math.max(
     v1.schemaVersion,
@@ -131,6 +134,7 @@ const pack: TaskPack = {
     definitionGuessP04.schemaVersion,
     p05.schemaVersion,
     p06.schemaVersion,
+    wordGrid.schemaVersion,
   ),
   title: v1.title,
   tasks: tasksWithDifficulty,
@@ -154,6 +158,7 @@ export const TASK_TYPE_ORDER: Task['type'][] = [
   'sentence_creation',
   'spelling_check',
   'brand_association',
+  'word_grid',
 ];
 
 export const TASK_TYPE_LABELS: Record<Task['type'], string> = {
@@ -171,6 +176,7 @@ export const TASK_TYPE_LABELS: Record<Task['type'], string> = {
   sentence_creation: 'Veido teikumu',
   spelling_check: 'Pārbaudi pareizrakstību',
   brand_association: 'Asociācijas',
+  word_grid: 'Atrodi vārdu',
 };
 
 /** Lesson vs single-task unit label for list / done / review screens. */

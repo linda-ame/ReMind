@@ -6,7 +6,7 @@ import {
 import type { Screen } from '../navigation/types';
 import type { TaskAttempt } from '../types/progress';
 import type { Task } from '../types/task';
-import { filterTasksByDifficulty, loadDifficultyLevels } from './difficulty';
+import { filterSectionTasks } from './difficulty';
 import { buildRandomPracticeQueue } from './randomQueue';
 import type { TaskSkip } from './taskSkips';
 
@@ -85,8 +85,7 @@ export function sectionPracticeScreen(
   const key = menuSectionType(type);
   const ofType = getTasksByType(key);
   if (ofType.length === 0) return { name: 'home' };
-  const levels = loadDifficultyLevels(key);
-  const pool = filterTasksByDifficulty(ofType, levels);
+  const pool = filterSectionTasks(ofType, key);
   const queue = buildRandomPracticeQueue(pool, attempts, taskSkips);
   if (queue.length === 0) {
     return { name: 'section_complete', type: key };

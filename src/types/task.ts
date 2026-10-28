@@ -15,7 +15,8 @@ export type TaskType =
   | 'sentence_image_match'
   | 'sentence_creation'
   | 'spelling_check'
-  | 'brand_association';
+  | 'brand_association'
+  | 'word_grid';
 
 /** Reading question: answer stated in text vs inferred. */
 export type ReadingQuestionType = 'direct' | 'inference';
@@ -215,6 +216,28 @@ export interface SpellingCheckTask extends BaseTask {
   correctWord: string;
 }
 
+/**
+ * Find one word on a 3×3 or 4×4 letter grid.
+ * The start cell is fixed. Moves are orthogonal only; cells are not reused.
+ * `targetWord` and `solutionPath` are for checking — not shown before the answer.
+ */
+export interface WordGridTask extends BaseTask {
+  type: 'word_grid';
+  gridSize: 3 | 4;
+  /** Row-major uppercase letters, length gridSize². Latvian diacritics kept. */
+  letters: string[];
+  /** 0-based index of the first letter. Always selected as step 1. */
+  startIndex: number;
+  wordLength: number;
+  /** Intended word. Other real Latvian words may also fit the grid. */
+  targetWord: string;
+  /** Intended cell order. Not shown in the UI. */
+  solutionPath: number[];
+  hint: string;
+  movement: 'orthogonal';
+  reuseCell: false;
+}
+
 /** One sentence; pick the matching image among four options. */
 export interface SentenceImageMatchTask extends BaseTask {
   type: 'sentence_image_match';
@@ -242,7 +265,8 @@ export type Task =
   | SentenceImageMatchTask
   | SentenceCreationTask
   | SpellingCheckTask
-  | BrandAssociationTask;
+  | BrandAssociationTask
+  | WordGridTask;
 
 export interface TaskPack {
   schemaVersion: number;

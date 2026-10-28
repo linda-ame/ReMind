@@ -127,14 +127,6 @@ export function OddOneOutTaskView({
 
           return (
             <div key={`${index}-${option}`} className="odd-one-option-row">
-              <ListenButton
-                text={option}
-                compact
-                hideError={index > 0}
-                fullWidth={false}
-                ariaLabel={`Klausīties: ${option}`}
-                className="odd-one-listen"
-              />
               <Button
                 variant={optionVariant(index)}
                 className={[
@@ -161,6 +153,14 @@ export function OddOneOutTaskView({
                 ) : null}
                 <span className="choice-option-label">{option}</span>
               </Button>
+              <ListenButton
+                text={option}
+                compact
+                hideError={index > 0}
+                fullWidth={false}
+                ariaLabel={`Klausīties: ${option}`}
+                className="odd-one-listen"
+              />
             </div>
           );
         })}

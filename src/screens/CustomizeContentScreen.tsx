@@ -12,7 +12,9 @@ import {
   filterTasksByDifficulty,
   formatDifficultyLevelsLabel,
   loadDifficultyLevels,
+  loadWordGridOnly3x3,
   saveDifficultyLevels,
+  saveWordGridOnly3x3,
   toggleDifficultyLevel,
 } from '../utils/difficulty';
 import { getMemoryTasks } from '../data/loadMemory';
@@ -57,6 +59,7 @@ export function CustomizeContentScreen({
     delayed: loadMemoryDifficulty('delayed'),
   });
   const [hint, setHint] = useState<string | null>(null);
+  const [wordGridOnly3x3, setWordGridOnly3x3] = useState(loadWordGridOnly3x3);
   const memoryTasks = getMemoryTasks();
   const memoryCounts = countMemoryByDifficulty();
 
@@ -114,8 +117,14 @@ export function CustomizeContentScreen({
           {sections.map(({ type, ofType }) => {
             const levels = byType[type] ?? ALL_DIFFICULTY_LEVELS;
             const selected = new Set(levels);
-            const byLevel = countTasksByDifficultyLevel(ofType);
-            const filtered = filterTasksByDifficulty(ofType, levels);
+            const sized =
+              type === 'word_grid' && wordGridOnly3x3
+                ? ofType.filter(
+                    (task) => task.type === 'word_grid' && task.gridSize === 3,
+                  )
+                : ofType;
+            const byLevel = countTasksByDifficultyLevel(sized);
+            const filtered = filterTasksByDifficulty(sized, levels);
             const label = TASK_TYPE_LABELS[type];
             const highlight = focusType === type;
 
@@ -165,6 +174,27 @@ export function CustomizeContentScreen({
                     );
                   })}
                 </div>
+                {type === 'word_grid' ? (
+                  <div className="word-grid-size-limit">
+                    <Button
+                      variant={wordGridOnly3x3 ? 'selected' : 'secondary'}
+                      aria-pressed={wordGridOnly3x3}
+                      onClick={() => {
+                        const next = !wordGridOnly3x3;
+                        saveWordGridOnly3x3(next);
+                        setWordGridOnly3x3(next);
+                        setHint(null);
+                      }}
+                    >
+                      Tikai 3×3 režģi
+                    </Button>
+                    <p className="customize-section-meta">
+                      {wordGridOnly3x3
+                        ? '4×4 režģi šobrīd nav piedāvāti.'
+                        : '3×3 un 4×4 ir kopā, pēc izvēlētā līmeņa.'}
+                    </p>
+                  </div>
+                ) : null}
               </section>
             );
           })}

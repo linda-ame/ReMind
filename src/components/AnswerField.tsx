@@ -31,6 +31,11 @@ interface AnswerFieldProps {
   inputRef?: RefObject<HTMLInputElement | null>;
   /** Soft field tint after submit; omit / null keeps white. */
   feedback?: AnswerInputFeedback | null;
+  /**
+   * When false, Pārbaudīt looks quiet until the answer is complete.
+   * Enter and the button still run, so the task can show why it waited.
+   */
+  submitReady?: boolean;
   /** Tall wrapping box. Enter still confirms; the text wraps on its own. */
   multiline?: boolean;
   rows?: number;
@@ -54,6 +59,7 @@ export function AnswerField({
   autoFocus = false,
   inputRef: externalInputRef,
   feedback = null,
+  submitReady = true,
   multiline = false,
   rows = 4,
   className = '',
@@ -125,6 +131,7 @@ export function AnswerField({
   const { listening, stop } = dictation;
   const showEnter =
     keyboardOpen && fieldFocused && !listening && !readOnly;
+  const waiting = showEnter && !submitReady;
 
   useEffect(() => {
     if (!dictation.listening) return;
@@ -246,8 +253,8 @@ export function AnswerField({
             autoCorrect="off"
             spellCheck={false}
             enterKeyHint="done"
-            readOnly={readOnly}
-            aria-readonly={readOnly || undefined}
+            readOnly={readOnly || dictation.listening}
+            aria-readonly={readOnly || dictation.listening || undefined}
             lang="lv"
             onFocus={() => setFieldFocused(true)}
             onBlur={() => setFieldFocused(false)}
@@ -267,8 +274,8 @@ export function AnswerField({
             autoCorrect="off"
             spellCheck={false}
             enterKeyHint="done"
-            readOnly={readOnly}
-            aria-readonly={readOnly || undefined}
+            readOnly={readOnly || dictation.listening}
+            aria-readonly={readOnly || dictation.listening || undefined}
             onFocus={() => setFieldFocused(true)}
             onBlur={() => setFieldFocused(false)}
             onChange={(e) => onFieldChange(e.target.value)}
@@ -280,7 +287,8 @@ export function AnswerField({
           <Button
             variant={dictation.listening ? 'danger' : 'help'}
             fullWidth={false}
-            className={`answer-dictate-btn${dictation.listening ? ' is-listening' : ''}`}
+            className={`answer-dictate-btn${dictation.listening ? ' is-listening' : ''}${waiting ? ' is-idle' : ''}`}
+            aria-disabled={waiting || undefined}
             aria-pressed={dictation.listening}
             aria-label={
               dictation.listening

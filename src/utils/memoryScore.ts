@@ -214,7 +214,7 @@ function freeRecallCount(task: MemoryRecallTask, draft: MemoryDraft): number {
   ).length;
 }
 
-function freeRecallComplete(task: MemoryRecallTask, draft: MemoryDraft): boolean {
+export function freeRecallComplete(task: MemoryRecallTask, draft: MemoryDraft): boolean {
   const expected = expectedFreeCount(task);
   return expected > 0 && freeRecallCount(task, draft) >= expected;
 }

@@ -81,6 +81,9 @@ export function taskHasAdvanceReady(
     }
   }
 
+  // Word grid: a partial path is not enough. Success sets viewedAnswers above.
+  if (task.type === 'word_grid') return false;
+
   // Sentence–image match: only the correct image unlocks (wrong picks stay searchable).
   if (task.type === 'sentence_image_match') {
     try {

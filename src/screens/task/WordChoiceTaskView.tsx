@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { Button } from '../../components/Button';
+import { ListenButton } from '../../components/ListenButton';
 import { buildAttemptUpdate } from '../../utils/buildAttemptUpdate';
 import {
   playCorrectChime,
@@ -155,40 +156,54 @@ export function WordChoiceTaskView({
         {task.prompt}
       </p>
 
+      <div className="listen-row">
+        <ListenButton text={task.prompt} ariaLabel="Klausīties jautājumu" />
+      </div>
+
       <div className="stack choice-stack">
-        {task.options.map((option) => {
+        {task.options.map((option, index) => {
           const isWrong = wrongPicked.has(option);
           const isConfirmed = confirmedCorrect.has(option);
           const showWrongMark = isWrong;
           const showCheck = isConfirmed;
 
           return (
-            <Button
-              key={option}
-              variant={optionVariant(option)}
-              className={
-                showWrongMark || showCheck
-                  ? 'choice-option-with-mark'
-                  : undefined
-              }
-              aria-disabled={
-                readOnly || solved || isWrong || isConfirmed || undefined
-              }
-              onClick={() => toggleOption(option)}
-              aria-pressed={isWrong || isConfirmed}
-            >
-              {showCheck ? (
-                <span className="choice-feedback-mark" aria-hidden="true">
-                  ✓
-                </span>
-              ) : null}
-              {showWrongMark ? (
-                <span className="choice-feedback-mark" aria-hidden="true">
-                  ✗
-                </span>
-              ) : null}
-              <span className="choice-option-label">{option}</span>
-            </Button>
+            <div key={`${index}-${option}`} className="word-choice-option-row">
+              <Button
+                variant={optionVariant(option)}
+                className={[
+                  'word-choice-option-btn',
+                  showWrongMark || showCheck ? 'choice-option-with-mark' : '',
+                ]
+                  .filter(Boolean)
+                  .join(' ')}
+                aria-disabled={
+                  readOnly || solved || isWrong || isConfirmed || undefined
+                }
+                onClick={() => toggleOption(option)}
+                aria-pressed={isWrong || isConfirmed}
+              >
+                {showCheck ? (
+                  <span className="choice-feedback-mark" aria-hidden="true">
+                    ✓
+                  </span>
+                ) : null}
+                {showWrongMark ? (
+                  <span className="choice-feedback-mark" aria-hidden="true">
+                    ✗
+                  </span>
+                ) : null}
+                <span className="choice-option-label">{option}</span>
+              </Button>
+              <ListenButton
+                text={option}
+                compact
+                hideError={index > 0}
+                fullWidth={false}
+                ariaLabel={`Klausīties: ${option}`}
+                className="word-choice-listen"
+              />
+            </div>
           );
         })}
       </div>

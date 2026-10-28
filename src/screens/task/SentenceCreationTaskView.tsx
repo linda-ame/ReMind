@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { AnswerField } from '../../components/AnswerField';
 import { Button } from '../../components/Button';
 import { ListenButton } from '../../components/ListenButton';
@@ -72,6 +72,13 @@ export function SentenceCreationTaskView({
   slotsRef.current = slots;
   textRef.current = text;
 
+  const allIncluded = fixed
+    ? slots.every(
+        (word, index) => index === fixedPosition || word.trim().length > 0,
+      )
+    : (task.keywords ?? []).length > 0 &&
+      (task.keywords ?? []).every((word) => keywordUsedInText(word, text));
+
   const enteredNow = () =>
     fixed ? JSON.stringify(slotsRef.current) : textRef.current;
 
@@ -79,6 +86,24 @@ export function SentenceCreationTaskView({
     if (readOnly) return;
     onUpdate(buildAttemptUpdate(attempt, partial, enteredNow()));
   };
+  const unlockedRef = useRef(attempt.viewedAnswers);
+  const patchRef = useRef(patch);
+  patchRef.current = patch;
+
+  useEffect(() => {
+    if (readOnly || !allIncluded || unlockedRef.current) return;
+    unlockedRef.current = true;
+    setExampleOpen(true);
+    setMissingWords(false);
+    if (fixed) {
+      for (let index = 0; index < SLOT_COUNT; index += 1) {
+        document.getElementById(`sentence-slot-${task.id}-${index}`)?.blur();
+      }
+    } else {
+      document.getElementById(`sentence-free-${task.id}`)?.blur();
+    }
+    patchRef.current({ viewedAnswers: true, status: 'attempted' });
+  }, [allIncluded, fixed, readOnly, task.id]);
 
   const showExample = () => {
     setExampleOpen(true);
@@ -87,22 +112,19 @@ export function SentenceCreationTaskView({
 
   const confirmAnswer = () => {
     if (readOnly) return;
-    const hasText = fixed
+    const included = fixed
       ? slotsRef.current.every(
           (word, index) => index === fixedPosition || word.trim().length > 0,
         )
-      : textRef.current.trim().length > 0;
-    if (!hasText) return;
-    if (!fixed) {
-      const missing = (task.keywords ?? []).some(
-        (word) => !keywordUsedInText(word, textRef.current),
-      );
-      if (missing) {
-        setMissingWords(true);
-        return;
-      }
+      : (task.keywords ?? []).every((word) =>
+          keywordUsedInText(word, textRef.current),
+        );
+    if (!included) {
+      setMissingWords(true);
+      return;
     }
     setMissingWords(false);
+    setExampleOpen(true);
     patch({ viewedAnswers: true, status: 'attempted' });
   };
 
@@ -138,6 +160,7 @@ export function SentenceCreationTaskView({
                     readOnly={readOnly}
                     ariaLabel={`${index + 1}. vārds`}
                     placeholder="Vārds"
+                    submitReady={allIncluded}
                     onSubmit={confirmAnswer}
                     onChange={(nextValue) => {
                       if (readOnly) return;
@@ -180,6 +203,7 @@ export function SentenceCreationTaskView({
             readOnly={readOnly}
             ariaLabel="Jūsu teikums"
             placeholder="Ierakstiet vai ierunājiet teikumu…"
+            submitReady={allIncluded}
             onSubmit={confirmAnswer}
             onChange={(nextValue) => {
               if (readOnly) return;
@@ -196,17 +220,20 @@ export function SentenceCreationTaskView({
               patch({ status: 'attempted' });
             }}
           />
-          {missingWords ? (
-            <p className="keyword-missing" role="status">
-              Teikumā vēl jāiesaista visi vārdi.
-            </p>
-          ) : null}
         </>
       )}
 
+      {missingWords && !allIncluded ? (
+        <p className="keyword-missing" role="status">
+          {fixed
+            ? 'Teikumā vēl jāieraksta visi vārdi.'
+            : 'Teikumā vēl jāiesaista visi vārdi.'}
+        </p>
+      ) : null}
+
       <ListenButton text={listenText} ariaLabel="Klausīties" label="Klausīties" />
 
-      {exampleOpen ? (
+      {exampleOpen || allIncluded ? (
         <p className="task-example" role="status" lang="lv">
           Piemērs: {task.modelSentence}
         </p>

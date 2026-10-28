@@ -1,6 +1,7 @@
 import { SELF_ASSESSMENT_ENABLED } from '../config/features';
 import type { TaskAttempt } from '../types/progress';
 import type { Task } from '../types/task';
+import { lettersToWord, parseWordGridAnswer, wordsMatch } from './wordGrid';
 
 /** Human-readable prompt / stem for a task (summary & review). */
 export function taskPromptText(task: Task): string {
@@ -43,6 +44,8 @@ export function taskPromptText(task: Task): string {
       return task.shownWord;
     case 'brand_association':
       return task.brand;
+    case 'word_grid':
+      return `${task.wordLength} burti`;
   }
 }
 
@@ -85,6 +88,8 @@ export function expectedAnswerLabels(task: Task): string[] {
       return [task.correctWord];
     case 'brand_association':
       return [...task.exampleAssociations];
+    case 'word_grid':
+      return [task.targetWord];
   }
 }
 
@@ -178,6 +183,13 @@ export function enteredAnswerLabels(
       /* plain text */
     }
     return [raw];
+  }
+
+  if (task.type === 'word_grid') {
+    const data = parseWordGridAnswer(raw);
+    if (!data || data.path.length <= 1) return [];
+    const built = lettersToWord(task.letters, data.path);
+    return built ? [built] : [];
   }
 
   if (task.type === 'spelling_check') {
@@ -341,6 +353,7 @@ export function answersBoxLabel(
   type: Task['type'] | 'reading_question',
   answerCount = 1,
 ): string {
+  if (type === 'word_grid') return 'Iecerētais vārds';
   if (taskUsesPossibleAnswerLabel(type)) {
     return answerCount <= 1 ? 'Iespējamā atbilde' : 'Iespējamās atbildes';
   }
@@ -539,6 +552,12 @@ export function isAnswerCorrect(
     case 'sentence_creation':
     case 'brand_association':
       return null;
+
+    case 'word_grid': {
+      const data = parseWordGridAnswer(raw);
+      if (!data || data.path.length < task.wordLength) return null;
+      return wordsMatch(lettersToWord(task.letters, data.path), task.targetWord);
+    }
 
     case 'spelling_check': {
       if (!attempt.viewedAnswers) return null;

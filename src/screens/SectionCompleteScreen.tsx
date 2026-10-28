@@ -6,7 +6,7 @@ import {
 } from '../data/loadTasks';
 import { useApp } from '../context/AppContext';
 import {
-  filterTasksByDifficulty,
+  filterSectionTasks,
   formatDifficultyLevelsLabel,
   loadDifficultyLevels,
 } from '../utils/difficulty';
@@ -34,7 +34,7 @@ export function SectionCompleteScreen({
   const label = TASK_TYPE_LABELS[type];
   const levels = levelsProp ?? loadDifficultyLevels(type);
   const ofType = getTasksByType(type);
-  const pool = filterTasksByDifficulty(ofType, levels);
+  const pool = filterSectionTasks(ofType, type, levels);
   const total = pool.length;
   const levelLabel = formatDifficultyLevelsLabel(levels);
 

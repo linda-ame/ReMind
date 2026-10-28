@@ -10,10 +10,7 @@ import { useApp } from '../context/AppContext';
 import { useAuth } from '../context/AuthContext';
 import { MANS_PROGRESS_ENABLED } from '../config/features';
 import { completedCurrentTaskIds } from '../utils/attempts';
-import {
-  filterTasksByDifficulty,
-  loadDifficultyLevels,
-} from '../utils/difficulty';
+import { filterSectionTasks } from '../utils/difficulty';
 import { deleteMemorySessionsForMode } from '../repositories/IndexedDBProgressRepository';
 import { sectionPracticeScreen } from '../utils/sectionPractice';
 import { memoryModeCounts } from '../utils/memoryQueue';
@@ -92,8 +89,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
 
         <div className="stack home-tasks">
           {homeSections.map(({ type, ofType }, index) => {
-            const levels = loadDifficultyLevels(type);
-            const pool = filterTasksByDifficulty(ofType, levels);
+            const pool = filterSectionTasks(ofType, type);
             const completedInPool = completedCurrentTaskIds(pool, attempts);
             const done = pool.filter((t) => completedInPool.has(t.id)).length;
             const sectionDone = completedCurrentTaskIds(ofType, attempts).size;

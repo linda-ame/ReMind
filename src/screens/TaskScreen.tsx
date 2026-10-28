@@ -18,7 +18,7 @@ import {
 } from '../utils/attempts';
 import { taskHasAdvanceReady } from '../utils/taskAdvance';
 import {
-  filterTasksByDifficulty,
+  filterSectionTasks,
   loadDifficultyLevels,
 } from '../utils/difficulty';
 import { SELF_ASSESSMENT_ENABLED } from '../config/features';
@@ -39,6 +39,7 @@ import { SentenceImageMatchTaskView } from './task/SentenceImageMatchTaskView';
 import { SentenceCreationTaskView } from './task/SentenceCreationTaskView';
 import { SpellingCheckTaskView } from './task/SpellingCheckTaskView';
 import { BrandAssociationTaskView } from './task/BrandAssociationTaskView';
+import { WordGridTaskView } from './task/WordGridTaskView';
 
 interface TaskScreenProps {
   taskId: string;
@@ -119,9 +120,14 @@ export function TaskScreen({
         task.id,
         task.contentVersion,
       );
-      // A check saves a completed row. Anything unfinished is not restored,
-      // so the task opens empty.
-      if (previous?.status === 'completed') {
+      // A check saves a completed row. Unfinished tasks open empty,
+      // except Atrodi vārdu, where a started grid (and its hint) is restored.
+      const resumeWordGrid =
+        previous != null &&
+        task.type === 'word_grid' &&
+        previous.status === 'attempted' &&
+        previous.enteredAnswer != null;
+      if (previous && (previous.status === 'completed' || resumeWordGrid)) {
         setAttemptBoth(previous);
         return;
       }
@@ -176,6 +182,7 @@ export function TaskScreen({
   const isSentenceCreation = task.type === 'sentence_creation';
   const isSpellingCheck = task.type === 'spelling_check';
   const isBrandAssociation = task.type === 'brand_association';
+  const isWordGrid = task.type === 'word_grid';
   /** Same as existing choice / reading sections — no footer self-assessment. */
   const skipSelfAssessment =
     !SELF_ASSESSMENT_ENABLED ||
@@ -185,7 +192,8 @@ export function TaskScreen({
     isReading ||
     isSentenceCreation ||
     isSpellingCheck ||
-    isBrandAssociation;
+    isBrandAssociation ||
+    isWordGrid;
   const ratedAssessment =
     SELF_ASSESSMENT_ENABLED &&
     attempt.selfAssessment != null &&
@@ -245,7 +253,12 @@ export function TaskScreen({
       return;
     }
     setAttemptBoth(merged);
-    if (merged.status === 'completed') void saveAttempt(merged);
+    if (
+      merged.status === 'completed' ||
+      (task.type === 'word_grid' && merged.status === 'attempted')
+    ) {
+      void saveAttempt(merged);
+    }
   };
 
   /** Home → section: random remaining tasks (no lesson batches). */
@@ -368,8 +381,9 @@ export function TaskScreen({
   /** Selected difficulty pool (same filter as home), not the whole section. */
   const sectionTasks =
     isSectionPractice && batchType
-      ? filterTasksByDifficulty(
+      ? filterSectionTasks(
           getTasksByType(batchType),
+          batchType,
           loadDifficultyLevels(batchType),
         )
       : null;
@@ -512,6 +526,22 @@ export function TaskScreen({
     return (
       <Layout onHome={onHome} {...sectionLayout}>
         {wrapTask(<WordReadingTaskView task={task} />)}
+      </Layout>
+    );
+  }
+
+  if (isWordGrid && task.type === 'word_grid') {
+    return (
+      <Layout onHome={onHome} {...sectionLayout}>
+        {wrapTask(
+          <WordGridTaskView
+            key={task.id}
+            task={task}
+            attempt={attempt}
+            onUpdate={onUpdate}
+            readOnly={isView}
+          />,
+        )}
       </Layout>
     );
   }

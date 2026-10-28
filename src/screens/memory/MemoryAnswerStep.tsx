@@ -4,7 +4,11 @@ import { Button } from '../../components/Button';
 import type { MemoryDraft, MemoryRecallTask } from '../../types/memory';
 import type { AnswerInputFeedback } from '../../utils/answers';
 import { playCorrectChime, playWrongBuzz } from '../../utils/answerFeedback';
-import { fieldMatches, scoreMemoryDraft } from '../../utils/memoryScore';
+import {
+  fieldMatches,
+  freeRecallComplete,
+  scoreMemoryDraft,
+} from '../../utils/memoryScore';
 
 interface Props {
   task: MemoryRecallTask;
@@ -38,6 +42,7 @@ export function MemoryAnswerStep({
 
   const [checked, setChecked] = useState(false);
   const [showKey, setShowKey] = useState(false);
+  const [shortEntry, setShortEntry] = useState(false);
 
   const record = (nextDraft: MemoryDraft) => {
     const accepted = onRecord(nextDraft);
@@ -55,6 +60,11 @@ export function MemoryAnswerStep({
   };
 
   const checkAnswer = (nextDraft: MemoryDraft) => {
+    if (!freeRecallComplete(task, nextDraft)) {
+      setShortEntry(true);
+      return;
+    }
+    setShortEntry(false);
     if (!record(nextDraft)) return;
     setChecked(true);
     const scored = scoreMemoryDraft(task, nextDraft, 'submit');
@@ -65,6 +75,10 @@ export function MemoryAnswerStep({
 
   const revealed = answerIsVisible(task, draft);
   const showCue = recallCue || task.category === 'appointment';
+
+  useEffect(() => {
+    if (freeRecallComplete(task, draft)) setShortEntry(false);
+  }, [task, draft]);
 
   return (
     <div className="memory-flow memory-flow-screen">
@@ -91,7 +105,14 @@ export function MemoryAnswerStep({
           readOnly={showKey}
           onDraft={onDraft}
           onCheck={checkAnswer}
+          onShort={() => setShortEntry(true)}
         />
+      ) : null}
+
+      {shortEntry && !showKey ? (
+        <p className="keyword-missing" role="status">
+          {shortEntryMessage(task)}
+        </p>
       ) : null}
 
       {showKey ? (
@@ -148,6 +169,12 @@ export function MemoryAnswerStep({
   );
 }
 
+function shortEntryMessage(task: MemoryRecallTask): string {
+  if (task.answer.kind === 'ordered_digits') return 'Jāievada visi cipari.';
+  if (task.answer.kind === 'facts') return 'Jāaizpilda visi lauki.';
+  return 'Jāievada visi vārdi.';
+}
+
 function recallTone(
   task: MemoryRecallTask,
   draft: MemoryDraft,
@@ -180,8 +207,8 @@ function RecallField({
       ariaLabel="Atbilde"
       value={draft.pendingItem}
       placeholder="Ierakstiet vai ierunājiet atbildi…"
-      autoFocus
       readOnly={readOnly}
+      submitReady={freeRecallComplete(task, draft)}
       feedback={recallTone(task, draft, checked)}
       onChange={(value) =>
         onDraft((current) => ({ ...current, pendingItem: value }))
@@ -211,6 +238,7 @@ function FactFields({
   readOnly,
   onDraft,
   onCheck,
+  onShort,
 }: {
   task: MemoryRecallTask;
   draft: MemoryDraft;
@@ -218,6 +246,7 @@ function FactFields({
   readOnly: boolean;
   onDraft: (recipe: (draft: MemoryDraft) => MemoryDraft) => void;
   onCheck: (draft: MemoryDraft) => void;
+  onShort: () => void;
 }) {
   if (task.answer.kind !== 'facts') return null;
   const fields = task.answer.fields;
@@ -232,6 +261,9 @@ function FactFields({
           label={field.prompt}
           value={draft.facts[field.key] ?? ''}
           placeholder="Ierakstiet vai ierunājiet atbildi…"
+          submitReady={fields.every(
+            (item) => (draft.facts[item.key] ?? '').trim() !== '',
+          )}
           readOnly={readOnly || revealedKeys.has(field.key)}
           feedback={factTone(task, draft, field.key, checked)}
           onChange={(next) =>
@@ -247,7 +279,11 @@ function FactFields({
             const filled = fields.every(
               (item) => (facts[item.key] ?? '').trim() !== '',
             );
-            if (filled) onCheck(nextDraft);
+            if (!filled) {
+              onShort();
+              return;
+            }
+            onCheck(nextDraft);
           }}
         />
       ))}

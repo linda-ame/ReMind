@@ -49,6 +49,44 @@ export function filterTasksByDifficulty(
   return tasks.filter((t) => taskMatchesDifficultyLevels(t, levels));
 }
 
+const WORD_GRID_ONLY_3_KEY = 'remind.wordGrid.only3x3';
+
+/** Admin limit: offer only 3×3 grids in Atrodi vārdu. Default is 3×3 and 4×4 together. */
+export function loadWordGridOnly3x3(): boolean {
+  try {
+    return localStorage.getItem(WORD_GRID_ONLY_3_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+
+export function saveWordGridOnly3x3(only3x3: boolean): void {
+  try {
+    if (only3x3) localStorage.setItem(WORD_GRID_ONLY_3_KEY, '1');
+    else localStorage.removeItem(WORD_GRID_ONLY_3_KEY);
+  } catch {
+    /* ignore */
+  }
+}
+
+export function applyWordGridSizeLimit(
+  tasks: Task[],
+  type: Task['type'],
+): Task[] {
+  if (type !== 'word_grid' || !loadWordGridOnly3x3()) return tasks;
+  return tasks.filter((task) => task.type === 'word_grid' && task.gridSize === 3);
+}
+
+/** Difficulty filter plus the optional 3×3-only limit for Atrodi vārdu. */
+export function filterSectionTasks(
+  tasks: Task[],
+  type: Task['type'],
+  levels?: readonly DifficultyLevel[],
+): Task[] {
+  const selected = levels ?? loadDifficultyLevels(type);
+  return filterTasksByDifficulty(applyWordGridSizeLimit(tasks, type), selected);
+}
+
 /** Count tasks per difficulty level (missing difficulty ignored). */
 export function countTasksByDifficultyLevel(
   tasks: Task[],
