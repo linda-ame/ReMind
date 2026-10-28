@@ -17,7 +17,7 @@ interface AnswerFieldProps {
   value: string;
   onChange: (value: string) => void;
   /**
-   * Keyboard Enter, the green Pārbaudīt button while the keyboard is open,
+   * Keyboard Enter, or the green Pārbaudīt button while the field is focused.
    * or a final speech dictation result.
    * Checks the answer and stays on the task. Value is the submitted text.
    */
@@ -98,7 +98,6 @@ export function AnswerField({
   }, [autoFocus, readOnly, inputRef]);
 
   const [fieldFocused, setFieldFocused] = useState(false);
-  const [keyboardOpen, setKeyboardOpen] = useState(false);
   /** In-app step before the browser/OS microphone prompt. */
   const [micDialog, setMicDialog] = useState<
     null | 'ask' | 'asking' | 'again' | 'blocked' | 'speech'
@@ -119,18 +118,10 @@ export function AnswerField({
     };
   }, []);
 
-  useEffect(() => {
-    const root = document.documentElement;
-    const sync = () => setKeyboardOpen(root.classList.contains('keyboard-open'));
-    sync();
-    const observer = new MutationObserver(sync);
-    observer.observe(root, { attributes: true, attributeFilter: ['class'] });
-    return () => observer.disconnect();
-  }, []);
-
   const { listening, stop } = dictation;
-  const showEnter =
-    keyboardOpen && fieldFocused && !listening && !readOnly;
+  // Phone: the keyboard opens on focus. Desktop has no on-screen keyboard,
+  // so the caret in the field is the same moment — Ierunāt becomes Pārbaudīt.
+  const showEnter = fieldFocused && !listening && !readOnly;
   const waiting = showEnter && !submitReady;
 
   useEffect(() => {

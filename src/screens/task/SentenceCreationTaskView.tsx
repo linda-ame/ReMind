@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { AnswerField } from '../../components/AnswerField';
 import { Button } from '../../components/Button';
 import { ListenButton } from '../../components/ListenButton';
@@ -40,9 +40,9 @@ function parseSlots(
 }
 
 /**
- * Free sentence building. The example is optional and never replaces what
- * the learner typed. Tālāk appears after Enter or finished dictation, once
- * there is text. Until then the task offers Izlaist.
+ * Free sentence building. The field starts empty, with Ierunāt beside it.
+ * Once the keyboard is open that button is Pārbaudīt, and it stays quiet
+ * until every given word is in the sentence. Pressing it then shows Tālāk.
  */
 export function SentenceCreationTaskView({
   task,
@@ -86,24 +86,6 @@ export function SentenceCreationTaskView({
     if (readOnly) return;
     onUpdate(buildAttemptUpdate(attempt, partial, enteredNow()));
   };
-  const unlockedRef = useRef(attempt.viewedAnswers);
-  const patchRef = useRef(patch);
-  patchRef.current = patch;
-
-  useEffect(() => {
-    if (readOnly || !allIncluded || unlockedRef.current) return;
-    unlockedRef.current = true;
-    setExampleOpen(true);
-    setMissingWords(false);
-    if (fixed) {
-      for (let index = 0; index < SLOT_COUNT; index += 1) {
-        document.getElementById(`sentence-slot-${task.id}-${index}`)?.blur();
-      }
-    } else {
-      document.getElementById(`sentence-free-${task.id}`)?.blur();
-    }
-    patchRef.current({ viewedAnswers: true, status: 'attempted' });
-  }, [allIncluded, fixed, readOnly, task.id]);
 
   const showExample = () => {
     setExampleOpen(true);
