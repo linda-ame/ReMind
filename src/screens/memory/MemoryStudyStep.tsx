@@ -4,6 +4,8 @@ import type { MemoryRecallTask } from '../../types/memory';
 
 interface Props {
   task: MemoryRecallTask;
+  /** Section 15 asks again after a short pause. */
+  laterRecall?: boolean;
   visualOpen: boolean;
   onPlayed: () => void;
   onVisual: (open: boolean) => void;
@@ -48,6 +50,7 @@ function EyeIcon({ open }: { open: boolean }) {
 
 export function MemoryStudyStep({
   task,
+  laterRecall = false,
   visualOpen,
   onPlayed,
   onVisual,
@@ -56,6 +59,11 @@ export function MemoryStudyStep({
 }: Props) {
   return (
     <div className="memory-flow memory-flow-screen">
+      {laterRecall ? (
+        <p className="memory-notice">
+          Atceries tagad un pēc brīža.
+        </p>
+      ) : null}
       <p className="memory-instruction">{task.instruction}</p>
 
       {visualOpen ? (

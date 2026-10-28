@@ -3630,7 +3630,7 @@ html.keyboard-open .task-advance-fab {
   display: none;
 }
 
-html.keyboard-open .app-main:has(.answer-field) .answer-field {
+html.keyboard-open .app-main:has(.answer-field) .answer-field:focus-within {
   position: sticky;
   bottom: 0;
   z-index: 3;
@@ -3736,6 +3736,24 @@ html.keyboard-open .memory-skip {
   margin: 0.4rem 0 0;
   font-size: clamp(22px, 3vw, 32px);
   font-weight: 800;
+}
+
+.memory-notice {
+  margin: 0;
+  padding: 0.7rem 0.85rem;
+  border: 2px solid #b86a2d;
+  border-radius: var(--radius);
+  background: #f7e7d4;
+  color: #111;
+  font-size: clamp(20px, 2.8vw, 28px);
+  line-height: 1.35;
+  font-weight: 700;
+}
+
+.app-shell.high-contrast .memory-notice {
+  background: #fff;
+  border-color: #000;
+  color: #000;
 }
 
 .memory-instruction,

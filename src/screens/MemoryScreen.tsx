@@ -376,6 +376,7 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
       {session.phase === 'study' ? (
         <MemoryStudyStep
           task={task}
+          laterRecall={mode === 'delayed'}
           visualOpen={session.visualOpen}
           onPlayed={() => {
             const current = sessionRef.current;

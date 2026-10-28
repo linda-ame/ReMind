@@ -192,6 +192,33 @@ function hasFreeContent(task: MemoryRecallTask, draft: MemoryDraft): boolean {
   );
 }
 
+function expectedFreeCount(task: MemoryRecallTask): number {
+  if (task.answer.kind === 'facts') return task.answer.fields.length;
+  return task.answer.correctTokens.length;
+}
+
+/** How many separate answers are in the free-text field. */
+function freeRecallCount(task: MemoryRecallTask, draft: MemoryDraft): number {
+  if (task.answer.kind === 'ordered_digits') return enteredDigits(draft).length;
+  if (task.answer.kind === 'unordered_list') {
+    const parsed = parseListEntry(draft.pendingItem, task.answer.correctTokens).length;
+    const stored = draft.items.filter((item) => item.trim() !== '').length;
+    const spaced = draft.pendingItem
+      .trim()
+      .split(/[\s,;]+/u)
+      .filter((part) => part.length > 0 && part.toLowerCase() !== 'un').length;
+    return Math.max(parsed, stored, spaced);
+  }
+  return task.answer.fields.filter(
+    (field) => (draft.facts[field.key] ?? '').trim() !== '',
+  ).length;
+}
+
+function freeRecallComplete(task: MemoryRecallTask, draft: MemoryDraft): boolean {
+  const expected = expectedFreeCount(task);
+  return expected > 0 && freeRecallCount(task, draft) >= expected;
+}
+
 function lookedUp(draft: MemoryDraft): boolean {
   return draft.answerVisible || (draft.revealedFactKeys?.length ?? 0) > 0;
 }
@@ -204,7 +231,7 @@ export function memoryResponseReady(
   if (lookedUp(draft)) return true;
   if (task.answer.kind === 'ordered_digits') {
     if (draft.singleIndex === task.answer.recognition.correctIndex) return true;
-    return enteredDigits(draft).length > 0;
+    return freeRecallComplete(task, draft);
   }
   if (task.answer.kind === 'unordered_list') {
     const correct = task.answer.recognition.correctIndices;
@@ -214,7 +241,7 @@ export function memoryResponseReady(
     ) {
       return true;
     }
-    return hasFreeContent(task, draft);
+    return freeRecallComplete(task, draft);
   }
   const fields = task.answer.fields;
   if (
@@ -225,7 +252,7 @@ export function memoryResponseReady(
   ) {
     return true;
   }
-  return fields.every((field) => (draft.facts[field.key] ?? '').trim() !== '');
+  return freeRecallComplete(task, draft);
 }
 
 function recognitionUsed(draft: MemoryDraft): boolean {

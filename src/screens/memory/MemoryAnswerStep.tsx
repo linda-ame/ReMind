@@ -36,15 +36,26 @@ export function MemoryAnswerStep({
     );
   };
 
+  const [checked, setChecked] = useState(false);
+  const [showKey, setShowKey] = useState(false);
+
+  const record = (nextDraft: MemoryDraft) => {
+    const accepted = onRecord(nextDraft);
+    if (accepted && allowReveal) setShowKey(true);
+    return accepted;
+  };
+
   const confirm = () => {
-    if (!onRecord(draft)) return;
+    if (!record(draft)) return;
+    if (allowReveal && !showKey) {
+      setShowKey(true);
+      return;
+    }
     onAdvance();
   };
 
-  const [checked, setChecked] = useState(false);
-
   const checkAnswer = (nextDraft: MemoryDraft) => {
-    onRecord(nextDraft);
+    if (!record(nextDraft)) return;
     setChecked(true);
     const scored = scoreMemoryDraft(task, nextDraft, 'submit');
     if (!scored.freeScore) return;
@@ -65,7 +76,7 @@ export function MemoryAnswerStep({
             return { ...draft, revealedFactKeys: keys };
           })();
     if (next !== draft) onDraft(() => next);
-    onRecord(next);
+    record(next);
   };
 
   const revealed = answerIsVisible(task, draft);
@@ -81,7 +92,7 @@ export function MemoryAnswerStep({
         <RecallField
           task={task}
           draft={draft}
-          readOnly={revealed}
+          readOnly={revealed || showKey}
           checked={checked}
           onDraft={onDraft}
           onCheck={checkAnswer}
@@ -93,18 +104,25 @@ export function MemoryAnswerStep({
           task={task}
           draft={draft}
           checked={checked}
+          readOnly={showKey}
           onDraft={onDraft}
           onCheck={checkAnswer}
         />
+      ) : null}
+
+      {showKey ? (
+        <p className="answers-inline" role="status">
+          {formatMemoryAnswers(task)}
+        </p>
       ) : null}
 
       {draft.recognitionOpen ? (
         <RecognitionPanel
           task={task}
           draft={draft}
-          revealed={revealed}
+          revealed={revealed || showKey}
           onDraft={onDraft}
-          onRecord={onRecord}
+          onRecord={record}
         />
       ) : task.answer.kind === 'facts' ? (
         <div className="memory-actions">
@@ -127,12 +145,6 @@ export function MemoryAnswerStep({
           </Button>
         </div>
       )}
-
-      {draft.recognitionOpen && revealed ? (
-        <p className="memory-stimulus" role="status">
-          {correctLine(task, draft)}
-        </p>
-      ) : null}
 
       {draft.recognitionOpen ? (
         <div className="memory-actions">
@@ -213,12 +225,14 @@ function FactFields({
   task,
   draft,
   checked,
+  readOnly,
   onDraft,
   onCheck,
 }: {
   task: MemoryRecallTask;
   draft: MemoryDraft;
   checked: boolean;
+  readOnly: boolean;
   onDraft: (recipe: (draft: MemoryDraft) => MemoryDraft) => void;
   onCheck: (draft: MemoryDraft) => void;
 }) {
@@ -228,15 +242,14 @@ function FactFields({
 
   return (
     <div className="memory-entry">
-      {fields.map((field, index) => (
+      {fields.map((field) => (
         <AnswerField
           key={field.key}
           id={`memory-fact-${field.key}`}
           label={field.prompt}
           value={draft.facts[field.key] ?? ''}
           placeholder="Ierakstiet vai ierunājiet atbildi…"
-          autoFocus={index === 0}
-          readOnly={revealedKeys.has(field.key)}
+          readOnly={readOnly || revealedKeys.has(field.key)}
           feedback={factTone(task, draft, field.key, checked)}
           onChange={(next) =>
             onDraft((current) => ({
@@ -245,16 +258,13 @@ function FactFields({
             }))
           }
           onSubmit={(text) => {
-            const nextDraft: MemoryDraft = {
-              ...draft,
-              facts: { ...draft.facts, [field.key]: text },
-            };
-            const next = fields[index + 1];
-            if (!next) {
-              onCheck(nextDraft);
-              return;
-            }
-            document.getElementById(`memory-fact-${next.key}`)?.focus();
+            const facts = { ...draft.facts, [field.key]: text };
+            const nextDraft: MemoryDraft = { ...draft, facts };
+            onDraft(() => nextDraft);
+            const filled = fields.every(
+              (item) => (facts[item.key] ?? '').trim() !== '',
+            );
+            if (filled) onCheck(nextDraft);
           }}
         />
       ))}
@@ -476,15 +486,22 @@ function answerIsVisible(task: MemoryRecallTask, draft: MemoryDraft): boolean {
   return task.answer.fields.every((field) => keys.includes(field.key));
 }
 
-function correctLine(task: MemoryRecallTask, _draft: MemoryDraft): string {
+function formatMemoryAnswers(task: MemoryRecallTask): string {
   if (task.answer.kind === 'ordered_digits') {
-    return task.answer.correctTokens.join('  ·  ');
+    return `Atbilde: ${task.answer.correctTokens.join(' · ')}`;
   }
   if (task.answer.kind === 'unordered_list') {
-    return task.answer.correctTokens.join(', ');
+    const quoted = task.answer.correctTokens.map((item) => `"${item}"`).join(', ');
+    return task.answer.correctTokens.length <= 1
+      ? `Atbilde: ${quoted}`
+      : `Atbildes: ${quoted}`;
   }
-  return task.answer.fields
-    .map((field) => field.acceptedAnswers[0] ?? '')
-    .filter(Boolean)
-    .join('\n');
+  const parts = task.answer.fields
+    .map((field) => {
+      const value = field.acceptedAnswers[0] ?? '';
+      const label = field.prompt.replace(/\?$/, '');
+      return value ? `${label}: "${value}"` : '';
+    })
+    .filter(Boolean);
+  return parts.length <= 1 ? `Atbilde: ${parts[0] ?? ''}` : `Atbildes: ${parts.join(', ')}`;
 }
