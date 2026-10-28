@@ -7,8 +7,14 @@ import {
 } from 'react';
 import { Layout } from '../components/Layout';
 import { Button } from '../components/Button';
+import { useApp } from '../context/AppContext';
 import { useAuth } from '../context/AuthContext';
 import type { Screen } from '../navigation/types';
+import {
+  createdAssociations,
+  createdSentences,
+  lvCountLabel,
+} from '../utils/createdWork';
 
 interface AuthScreenProps {
   onNavigate: (screen: Screen) => void;
@@ -16,7 +22,18 @@ interface AuthScreenProps {
 }
 
 type Mode = 'login' | 'register' | 'forgot' | 'new_password';
-type AccountSection = 'name' | 'email' | 'password';
+type AccountSection =
+  | 'name'
+  | 'email'
+  | 'password'
+  | 'sentences'
+  | 'associations';
+
+function formatCreatedWhen(iso: string): string | null {
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) return null;
+  return date.toLocaleDateString('lv-LV', { day: 'numeric', month: 'short' });
+}
 
 function AccountFold({
   label,
@@ -24,6 +41,7 @@ function AccountFold({
   open,
   controlsId,
   disabled,
+  className,
   onToggle,
   children,
 }: {
@@ -32,11 +50,14 @@ function AccountFold({
   open: boolean;
   controlsId: string;
   disabled: boolean;
+  className?: string;
   onToggle: () => void;
   children: ReactNode;
 }) {
   return (
-    <div className={`account-fold${open ? ' is-open' : ''}`}>
+    <div
+      className={`account-fold${open ? ' is-open' : ''}${className ? ` ${className}` : ''}`}
+    >
       <button
         type="button"
         className="account-fold-summary"
@@ -72,6 +93,7 @@ export function AuthScreen({ onHome }: AuthScreenProps) {
     updateDisplayName,
     updateEmail,
   } = useAuth();
+  const { attempts } = useApp();
   const openedAsGuestRef = useRef(!user);
   const [mode, setMode] = useState<Mode>(
     passwordRecovery ? 'new_password' : 'login',
@@ -117,7 +139,13 @@ export function AuthScreen({ onHome }: AuthScreenProps) {
   }, [user, displayName]);
 
   useEffect(() => {
-    if (!openSection) return;
+    if (
+      openSection !== 'name' &&
+      openSection !== 'email' &&
+      openSection !== 'password'
+    ) {
+      return;
+    }
     const fieldId =
       openSection === 'name'
         ? 'account-name'
@@ -327,6 +355,8 @@ export function AuthScreen({ onHome }: AuthScreenProps) {
     mode !== 'new_password'
   ) {
     const busyNow = accountBusy !== null;
+    const sentences = createdSentences(attempts);
+    const associations = createdAssociations(attempts);
     return (
       <Layout onHome={onHome}>
         <div className="account-panel stack">
@@ -439,6 +469,93 @@ export function AuthScreen({ onHome }: AuthScreenProps) {
                 {accountBusy === 'password' ? 'Gaidiet…' : 'Nomainīt paroli'}
               </Button>
             </AccountFold>
+          </div>
+
+          <div className="account-progress">
+            <p className="account-progress-title">Progress</p>
+            <div className="account-folds">
+              <AccountFold
+                label="Veido teikumu"
+                value={lvCountLabel(
+                  sentences.length,
+                  'teikums',
+                  'teikumi',
+                  'teikumu',
+                )}
+                open={openSection === 'sentences'}
+                controlsId="account-sentences-panel"
+                disabled={busyNow}
+                className="account-fold-sentences"
+                onToggle={() => toggleSection('sentences')}
+              >
+                {sentences.length === 0 ? (
+                  <p className="muted account-copy account-hint">
+                    Vēl nav izveidotu teikumu.
+                  </p>
+                ) : (
+                  <ul className="account-created-list">
+                    {sentences.map((item) => {
+                      const when = formatCreatedWhen(item.at);
+                      return (
+                        <li key={item.taskId} className="account-created-item">
+                          <p className="account-created-text" lang="lv">
+                            {item.sentence}
+                          </p>
+                          {item.cue || when ? (
+                            <p className="account-created-meta">
+                              {item.cue ? <span>{item.cue}</span> : null}
+                              {when ? <span>{when}</span> : null}
+                            </p>
+                          ) : null}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </AccountFold>
+
+              <AccountFold
+                label="Asociācijas"
+                value={lvCountLabel(
+                  associations.length,
+                  'asociācija',
+                  'asociācijas',
+                  'asociāciju',
+                )}
+                open={openSection === 'associations'}
+                controlsId="account-associations-panel"
+                disabled={busyNow}
+                className="account-fold-associations"
+                onToggle={() => toggleSection('associations')}
+              >
+                {associations.length === 0 ? (
+                  <p className="muted account-copy account-hint">
+                    Vēl nav izveidotu asociāciju.
+                  </p>
+                ) : (
+                  <ul className="account-created-list">
+                    {associations.map((item) => {
+                      const when = formatCreatedWhen(item.at);
+                      return (
+                        <li key={item.taskId} className="account-created-item">
+                          <p className="account-created-cue" lang="lv">
+                            {item.brand}
+                          </p>
+                          <p className="account-created-text" lang="lv">
+                            {item.association}
+                          </p>
+                          {when ? (
+                            <p className="account-created-meta">
+                              <span>{when}</span>
+                            </p>
+                          ) : null}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </AccountFold>
+            </div>
           </div>
 
           {accountError ? (

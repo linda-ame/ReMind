@@ -3572,6 +3572,96 @@ input:focus-visible {
   letter-spacing: 0.03em;
 }
 
+.account-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  width: 100%;
+  margin-top: 0.35rem;
+}
+
+.account-progress-title {
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-align: center;
+}
+
+.account-fold-sentences {
+  background: #fff4cc;
+  border-color: #c4922a;
+}
+
+.account-fold-associations {
+  background: #e7e6f8;
+  border-color: #5d57a6;
+}
+
+.account-fold-sentences .account-fold-label {
+  color: #7a5a12;
+}
+
+.account-fold-associations .account-fold-label {
+  color: #3d3880;
+}
+
+.account-created-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.account-created-item {
+  margin: 0;
+  padding: 0.65rem 0.75rem;
+  border-radius: calc(var(--radius) - 2px);
+  background: #fff;
+  text-align: center;
+}
+
+.account-created-text {
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.account-created-cue {
+  margin: 0 0 0.2rem;
+  font-weight: 800;
+  color: var(--accent-deep);
+}
+
+.account-created-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 0.75rem;
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.82em;
+  font-weight: 700;
+}
+
+.app-shell.high-contrast .account-fold-sentences,
+.app-shell.high-contrast .account-fold-associations {
+  background: #fff;
+  border-color: #000;
+}
+
+.app-shell.high-contrast .account-fold-sentences .account-fold-label,
+.app-shell.high-contrast .account-fold-associations .account-fold-label,
+.app-shell.high-contrast .account-created-cue {
+  color: #000;
+}
+
+.app-shell.high-contrast .account-created-item {
+  border: 2px solid #000;
+}
+
 .auth-form {
   margin-top: 0.75rem;
   text-align: var(--app-text-align);
