@@ -12,12 +12,20 @@ import {
 import type { AnswerInputFeedback } from '../utils/answers';
 import { Button } from './Button';
 
+/** Phone keyboard Accept blurs the field and does not send Enter. */
+function keyboardDismissSubmits(): boolean {
+  if (typeof window === 'undefined') return false;
+  if (isIosDevice()) return true;
+  return window.matchMedia('(hover: none) and (pointer: coarse)').matches;
+}
+
 interface AnswerFieldProps {
   id: string;
   value: string;
   onChange: (value: string) => void;
   /**
-   * Keyboard Enter, or the green Pārbaudīt button while the field is focused.
+   * Keyboard Enter, the phone keyboard’s accept checkmark (it only blurs),
+   * the green Pārbaudīt button while the field is focused,
    * or a final speech dictation result.
    * Checks the answer and stays on the task. Value is the submitted text.
    */
@@ -73,12 +81,35 @@ export function AnswerField({
   const onSubmitRef = useRef(onSubmit);
   onSubmitRef.current = onSubmit;
 
+  const finishingRef = useRef(false);
+  const dismissTimerRef = useRef(0);
+  const pagePointerAtRef = useRef(0);
+
   const finish = (text: string) => {
-    if (readOnly) return;
+    if (readOnly || finishingRef.current) return;
+    finishingRef.current = true;
+    window.clearTimeout(dismissTimerRef.current);
     inputRef.current?.blur();
     textareaRef.current?.blur();
     onSubmitRef.current?.(text);
+    // Cover a late blur from this same submit, so it is not checked twice.
+    window.setTimeout(() => {
+      finishingRef.current = false;
+    }, 300);
   };
+
+  useEffect(() => {
+    const markPagePointer = () => {
+      pagePointerAtRef.current = performance.now();
+    };
+    document.addEventListener('pointerdown', markPagePointer, true);
+    document.addEventListener('touchstart', markPagePointer, true);
+    return () => {
+      document.removeEventListener('pointerdown', markPagePointer, true);
+      document.removeEventListener('touchstart', markPagePointer, true);
+      window.clearTimeout(dismissTimerRef.current);
+    };
+  }, []);
 
   const dictation = useSpeechDictation({
     lang: 'lv-LV',
@@ -98,6 +129,39 @@ export function AnswerField({
   }, [autoFocus, readOnly, inputRef]);
 
   const [fieldFocused, setFieldFocused] = useState(false);
+
+  const onFieldFocus = () => {
+    window.clearTimeout(dismissTimerRef.current);
+    setFieldFocused(true);
+  };
+
+  /**
+   * The bar between the page and the keys (up / down / check) closes the
+   * keyboard by blurring. It does not send Enter, so the answer was never
+   * checked. A tap on the page also blurs — that one leaves a pointer event
+   * and must not submit. The arrows move to another field; wait briefly so
+   * that focus can land before treating the blur as Accept.
+   */
+  const onFieldBlur = () => {
+    setFieldFocused(false);
+    if (readOnly || finishingRef.current) return;
+    if (!keyboardDismissSubmits()) return;
+    // A tap on the page (Klausīties, another button) also blurs the field.
+    if (performance.now() - pagePointerAtRef.current < 500) return;
+
+    window.clearTimeout(dismissTimerRef.current);
+    dismissTimerRef.current = window.setTimeout(() => {
+      const active = document.activeElement;
+      if (
+        active instanceof HTMLInputElement ||
+        active instanceof HTMLTextAreaElement ||
+        active instanceof HTMLSelectElement
+      ) {
+        return;
+      }
+      finish(valueRef.current);
+    }, 120);
+  };
   /** In-app step before the browser/OS microphone prompt. */
   const [micDialog, setMicDialog] = useState<
     null | 'ask' | 'asking' | 'again' | 'blocked' | 'speech'
@@ -247,8 +311,8 @@ export function AnswerField({
             readOnly={readOnly || dictation.listening}
             aria-readonly={readOnly || dictation.listening || undefined}
             lang="lv"
-            onFocus={() => setFieldFocused(true)}
-            onBlur={() => setFieldFocused(false)}
+            onFocus={onFieldFocus}
+            onBlur={onFieldBlur}
             onChange={(e) => onFieldChange(e.target.value)}
             onKeyDown={onFieldKeyDown}
           />
@@ -267,8 +331,8 @@ export function AnswerField({
             enterKeyHint="done"
             readOnly={readOnly || dictation.listening}
             aria-readonly={readOnly || dictation.listening || undefined}
-            onFocus={() => setFieldFocused(true)}
-            onBlur={() => setFieldFocused(false)}
+            onFocus={onFieldFocus}
+            onBlur={onFieldBlur}
             onChange={(e) => onFieldChange(e.target.value)}
             onKeyDown={onFieldKeyDown}
           />
