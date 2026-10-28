@@ -23,6 +23,12 @@ function attemptTime(attempt: TaskAttempt): string {
   return attempt.completedAt ?? attempt.startedAt;
 }
 
+/** Confirmed work counts, even if Tālāk has not marked the row completed. */
+function isCreatedAttempt(attempt: TaskAttempt | null): attempt is TaskAttempt {
+  if (!attempt) return false;
+  return attempt.status === 'completed' || attempt.viewedAnswers;
+}
+
 function sentenceCue(task: SentenceCreationTask): string {
   if (task.mode === 'include_keywords') {
     const words = (task.keywords ?? []).map((word) => word.trim()).filter(Boolean);
@@ -32,7 +38,7 @@ function sentenceCue(task: SentenceCreationTask): string {
   return word ? `Dots vārds: ${word}` : '';
 }
 
-/** Completed sentences from the current run, newest first. */
+/** Confirmed sentences from the current run, newest first. */
 export function createdSentences(attempts: TaskAttempt[]): CreatedSentence[] {
   const items: CreatedSentence[] = [];
   for (const task of getTasksByType('sentence_creation')) {
@@ -42,7 +48,7 @@ export function createdSentences(attempts: TaskAttempt[]): CreatedSentence[] {
       task.id,
       task.contentVersion,
     );
-    if (!attempt || attempt.status !== 'completed') continue;
+    if (!isCreatedAttempt(attempt)) continue;
     const sentence = enteredAnswerLabels(task, attempt)[0]?.trim() ?? '';
     if (!sentence) continue;
     items.push({
@@ -56,7 +62,7 @@ export function createdSentences(attempts: TaskAttempt[]): CreatedSentence[] {
   return items;
 }
 
-/** Completed associations from the current run, newest first. */
+/** Confirmed associations from the current run, newest first. */
 export function createdAssociations(
   attempts: TaskAttempt[],
 ): CreatedAssociation[] {
@@ -68,7 +74,7 @@ export function createdAssociations(
       task.id,
       task.contentVersion,
     );
-    if (!attempt || attempt.status !== 'completed') continue;
+    if (!isCreatedAttempt(attempt)) continue;
     const association = attempt.enteredAnswer?.trim() ?? '';
     if (!association) continue;
     items.push({

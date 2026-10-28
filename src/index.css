@@ -3572,19 +3572,63 @@ input:focus-visible {
   letter-spacing: 0.03em;
 }
 
-.account-progress {
+button.account-fold {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
-  width: 100%;
-  margin-top: 0.35rem;
-}
-
-.account-progress-title {
-  margin: 0;
-  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+  gap: 0.12rem;
+  min-height: var(--btn-min-h);
+  padding: 0.7rem 1.1rem;
+  font: inherit;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-align: center;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+button.account-fold:focus-visible {
+  outline: 3px solid var(--accent-deep);
+  outline-offset: 2px;
+}
+
+button.account-progress-entry {
+  position: relative;
+  background: linear-gradient(180deg, #2a8bb8 0%, #1a6f9c 100%);
+  border-color: #0d4a6b;
+  color: #fff;
+}
+
+button.account-progress-entry .account-fold-label {
+  color: #e7f5fb;
+}
+
+button.account-progress-entry .account-progress-chevron {
+  margin-top: -0.28rem;
+  border-color: #fff;
+  transform: rotate(-45deg);
+}
+
+button.account-progress-entry:focus-visible {
+  outline-color: #0d4a6b;
+}
+
+.app-shell.high-contrast button.account-fold.account-progress-entry {
+  background: var(--sky);
+  border-color: #000;
+  border-width: 3px;
+  color: #fff;
+}
+
+.app-shell.high-contrast button.account-progress-entry .account-fold-label,
+.app-shell.high-contrast button.account-progress-entry .account-progress-chevron {
+  color: #fff;
+  border-color: #fff;
+}
+
+.app-shell.high-contrast button.account-progress-entry:focus-visible {
+  outline-color: #000;
 }
 
 .account-fold-sentences {
@@ -3617,6 +3661,7 @@ input:focus-visible {
 .account-created-item {
   margin: 0;
   padding: 0.65rem 0.75rem;
+  border: 2px solid color-mix(in srgb, var(--accent) 22%, #ccd);
   border-radius: calc(var(--radius) - 2px);
   background: #fff;
   text-align: center;

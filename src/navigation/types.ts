@@ -7,6 +7,9 @@ export type Screen =
   | { name: 'home' }
   | { name: 'settings' }
   | { name: 'auth' }
+  /** Created sentences and associations, opened from the account. */
+  | { name: 'created_work' }
+  | { name: 'created_work_list'; section: 'sentences' | 'associations' }
   | { name: 'progress' }
   | { name: 'progress_detail'; type: Task['type'] }
   | { name: 'task_list'; filter?: 'all' | 'difficult'; type?: Task['type'] }

@@ -5,6 +5,10 @@ import type { Screen } from './navigation/types';
 import { HomeScreen } from './screens/HomeScreen';
 import { SettingsScreen } from './screens/SettingsScreen';
 import { AuthScreen } from './screens/AuthScreen';
+import {
+  CreatedWorkListScreen,
+  CreatedWorkScreen,
+} from './screens/CreatedWorkScreen';
 import { ProgressScreen } from './screens/ProgressScreen';
 import { ProgressDetailScreen } from './screens/ProgressDetailScreen';
 import { TaskListScreen } from './screens/TaskListScreen';
@@ -67,6 +71,16 @@ function popToMatching(stack: Screen[], next: Screen): Screen[] | null {
       return stack.slice(0, i + 1);
     }
     if (next.name === 'auth' && cur.name === 'auth') {
+      return stack.slice(0, i + 1);
+    }
+    if (next.name === 'created_work' && cur.name === 'created_work') {
+      return stack.slice(0, i + 1);
+    }
+    if (
+      next.name === 'created_work_list' &&
+      cur.name === 'created_work_list' &&
+      cur.section === next.section
+    ) {
       return stack.slice(0, i + 1);
     }
     if (
@@ -188,6 +202,22 @@ function AppRouter() {
     case 'auth':
       return (
         <AuthScreen onNavigate={navigate} onHome={goHome} />
+      );
+    case 'created_work':
+      return (
+        <CreatedWorkScreen
+          onNavigate={navigate}
+          onBack={goBack}
+          onHome={goHome}
+        />
+      );
+    case 'created_work_list':
+      return (
+        <CreatedWorkListScreen
+          section={screen.section}
+          onBack={goBack}
+          onHome={goHome}
+        />
       );
     case 'settings':
       return (
