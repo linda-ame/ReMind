@@ -11,17 +11,20 @@ import {
 import { uploadMemorySession } from '../repositories/memoryCloud';
 import {
   emptyMemoryDraft,
+  type MemoryDraft,
   type MemoryMode,
   type MemorySession,
 } from '../types/memory';
 import { pickDistractorIds } from '../utils/memoryDistractors';
 import {
   createMemorySession,
-  MEMORY_INTERRUPT_MS,
   MEMORY_TARGET_DELAY_SECONDS,
   touchSession,
 } from '../utils/memoryQueue';
-import { scoreMemoryDraft, type MemorySubmitKind } from '../utils/memoryScore';
+import {
+  memoryResponseReady,
+  scoreMemoryDraft,
+} from '../utils/memoryScore';
 import { loadMemoryVisualFirst } from '../utils/memoryVisual';
 import type { Screen } from '../navigation/types';
 import type { MenuSection } from '../utils/sectionPractice';
@@ -39,25 +42,6 @@ const MODE_LABEL: Record<MemoryMode, string> = {
   immediate: 'Atceries uzreiz',
   delayed: 'Atceries pēc brīža',
 };
-
-async function persistNext(
-  mode: MemoryMode,
-  visualFirst: boolean,
-  finished: MemorySession,
-): Promise<MemorySession | null> {
-  await saveMemorySession(finished);
-  void uploadMemorySession(finished);
-  const history = await getAllMemorySessions();
-  const created = createMemorySession(mode, history);
-  if (!created) return null;
-  if (visualFirst) {
-    created.visualOpen = true;
-    created.visualHelpShown = true;
-    created.visualHelpViews = 1;
-  }
-  await saveMemorySession(created);
-  return created;
-}
 
 function beginDelayed(session: MemorySession): MemorySession {
   const delayedStartedAt = new Date().toISOString();
@@ -84,23 +68,19 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
     mode === 'immediate' ? 'memory_immediate' : 'memory_delayed';
   const skipping = useRef(false);
   const [session, setSession] = useState<MemorySession | null>(null);
-  const [resume, setResume] = useState<MemorySession | null>(null);
   const [ready, setReady] = useState(false);
   const [empty, setEmpty] = useState(false);
   const [loadError, setLoadError] = useState<string | null>(null);
   const sessionRef = useRef<MemorySession | null>(null);
-  const timer = useRef<number | null>(null);
+  /** This recall step already has a checked answer. */
+  const stepReadyRef = useRef(false);
+  /** Saved only when the whole memory task is finished. */
+  const savedRef = useRef<MemorySession | null>(null);
   const visualFirst = loadMemoryVisualFirst();
 
-  const commit = (next: MemorySession, immediate = false) => {
+  const commit = (next: MemorySession) => {
     sessionRef.current = next;
     setSession(next);
-    if (timer.current != null) window.clearTimeout(timer.current);
-    const write = () => {
-      void saveMemorySession(next);
-    };
-    if (immediate) write();
-    else timer.current = window.setTimeout(write, 160);
   };
 
   useEffect(() => {
@@ -118,76 +98,49 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
         return;
       }
       if (cancel) return;
-      const opens = all
-        .filter((item) => item.mode === mode && item.phase !== 'complete')
-        .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
-      for (const extra of opens.slice(1)) {
-        await deleteMemorySession(extra.sessionId);
+      const unfinished = all.filter(
+        (item) =>
+          item.mode === mode &&
+          item.phase !== 'complete' &&
+          item.phase !== 'result',
+      );
+      for (const item of unfinished) {
+        await deleteMemorySession(item.sessionId);
       }
-      const open = opens[0];
-      if (!open) {
-        const created = createMemorySession(mode, all);
-        if (!created) {
-          setEmpty(true);
-          setReady(true);
-          return;
-        }
-        if (visualFirst) {
-          created.visualOpen = true;
-          created.visualHelpShown = true;
-          created.visualHelpViews = 1;
-        }
-        await saveMemorySession(created);
-        if (cancel) return;
-        sessionRef.current = created;
-        setSession(created);
+      if (cancel) return;
+      const history = all.filter(
+        (item) => !unfinished.some((drop) => drop.sessionId === item.sessionId),
+      );
+      const created = createMemorySession(mode, history);
+      if (!created) {
+        setEmpty(true);
         setReady(true);
         return;
       }
-      if (open.phase === 'result') {
-        const finished = touchSession({
-          ...open,
-          phase: 'complete',
-          completedAt: open.completedAt ?? new Date().toISOString(),
-          draft: emptyMemoryDraft(),
-        });
-        const created = await persistNext(mode, visualFirst, finished);
-        if (cancel) return;
-        if (!created) {
-          setEmpty(true);
-          setReady(true);
-          return;
-        }
-        sessionRef.current = created;
-        setSession(created);
-        setReady(true);
-        return;
+      if (visualFirst) {
+        created.visualOpen = true;
+        created.visualHelpShown = true;
+        created.visualHelpViews = 1;
       }
-      const gap = Date.now() - new Date(open.updatedAt).getTime();
-      if (gap > MEMORY_INTERRUPT_MS) {
-        setResume(open);
-        setReady(true);
-        return;
-      }
-      sessionRef.current = open;
-      setSession(open);
+      stepReadyRef.current = false;
+      savedRef.current = null;
+      sessionRef.current = created;
+      setSession(created);
+      setEmpty(false);
       setReady(true);
     })();
     return () => {
       cancel = true;
-      if (timer.current != null) window.clearTimeout(timer.current);
-      if (sessionRef.current) void saveMemorySession(sessionRef.current);
     };
   }, [mode, visualFirst]);
 
-  const startFresh = async (drop?: MemorySession) => {
-    if (drop) await deleteMemorySession(drop.sessionId);
-    const history = await getAllMemorySessions();
-    const created = createMemorySession(mode, history);
+  const showSession = (created: MemorySession | null) => {
+    stepReadyRef.current = false;
+    savedRef.current = null;
     if (!created) {
-      setEmpty(true);
+      sessionRef.current = null;
       setSession(null);
-      setResume(null);
+      setEmpty(true);
       return;
     }
     if (visualFirst) {
@@ -195,11 +148,17 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
       created.visualHelpShown = true;
       created.visualHelpViews = 1;
     }
-    await saveMemorySession(created);
     sessionRef.current = created;
-    setResume(null);
     setEmpty(false);
     setSession(created);
+  };
+
+  const startFresh = async (drop?: MemorySession) => {
+    if (drop && savedRef.current?.sessionId !== drop.sessionId) {
+      await deleteMemorySession(drop.sessionId);
+    }
+    const history = await getAllMemorySessions();
+    showSession(createMemorySession(mode, history));
   };
 
   if (loadError) {
@@ -222,34 +181,6 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
     return (
       <Layout onHome={onHome} sectionType={sectionType} onNavigate={onNavigate}>
         <p className="lead">Ielādē…</p>
-      </Layout>
-    );
-  }
-
-  if (resume) {
-    return (
-      <Layout onHome={onHome} sectionType={sectionType} onNavigate={onNavigate}>
-        <div className="memory-flow">
-          <h1 className="memory-heading">{MODE_LABEL[mode]}</h1>
-          <p className="memory-instruction">
-            Iepriekšējā reize bija pārtraukta. Varat turpināt vai sākt no jauna.
-          </p>
-          <div className="memory-actions">
-            <Button
-              variant="primary"
-              onClick={() => {
-                const next = touchSession({ ...resume, interrupted: true });
-                setResume(null);
-                commit(next, true);
-              }}
-            >
-              Turpināt
-            </Button>
-            <Button variant="secondary" onClick={() => void startFresh(resume)}>
-              Sākt no jauna
-            </Button>
-          </div>
-        </div>
       </Layout>
     );
   }
@@ -301,7 +232,7 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
       current.phase === 'distractor_1' &&
       current.distractorTaskIds[1]
     ) {
-      commit(touchSession({ ...current, phase: 'distractor_2' }), true);
+      commit(touchSession({ ...current, phase: 'distractor_2' }));
       return;
     }
     if (
@@ -313,76 +244,101 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
         : Date.now();
       const elapsed = (Date.now() - hidden) / 1000;
       if (elapsed < MEMORY_TARGET_DELAY_SECONDS) {
-        commit(touchSession({ ...current, phase: 'extra_offer' }), true);
+        commit(touchSession({ ...current, phase: 'extra_offer' }));
         return;
       }
     }
-    commit(beginDelayed(current), true);
+    commit(beginDelayed(current));
   };
 
-  const submitAnswer = (kind: MemorySubmitKind) => {
-    const current = sessionRef.current ?? session;
-    const scored = scoreMemoryDraft(task, current.draft, kind);
-    if (current.phase === 'immediate_response') {
-      const cued =
-        current.mode === 'delayed' &&
-        (current.firstResponseCued || scored.recognitionOpened);
-      if (current.mode === 'immediate') {
-        const finished = touchSession({
-          ...current,
-          phase: 'complete',
-          completedAt: new Date().toISOString(),
-          immediate: scored,
-          firstResponseCued: cued,
-          draft: emptyMemoryDraft(),
-        });
-        sessionRef.current = finished;
-        setSession(finished);
-        void persistNext(mode, visualFirst, finished).then((created) => {
-          if (!created) {
-            sessionRef.current = finished;
-            setSession(null);
-            setEmpty(true);
-            return;
-          }
-          sessionRef.current = created;
-          setSession(created);
-        });
-        return;
-      }
-      const distractorTaskIds = pickDistractorIds(task, 3);
-      const nextPhase =
-        distractorTaskIds.length > 0 ? 'distractor_1' : 'delayed_response';
-      const base = touchSession({
+  const recordResponse = (draft: MemoryDraft): boolean => {
+    if (stepReadyRef.current) return true;
+    const current = sessionRef.current;
+    if (!current) return false;
+    if (
+      current.phase !== 'immediate_response' &&
+      current.phase !== 'delayed_response'
+    ) {
+      return false;
+    }
+    const live = getMemoryTaskById(current.taskId);
+    if (!live || live.contentVersion !== current.taskContentVersion) return false;
+    if (!memoryResponseReady(live, draft)) return false;
+    stepReadyRef.current = true;
+    const scored = scoreMemoryDraft(live, draft, 'submit');
+    const cued =
+      current.mode === 'delayed' &&
+      (current.firstResponseCued || scored.recognitionOpened);
+    const finishing =
+      current.mode === 'immediate' || current.phase === 'delayed_response';
+    if (!finishing) {
+      const next = touchSession({
         ...current,
-        phase: nextPhase,
+        draft,
         immediate: scored,
         firstResponseCued: cued,
-        distractorTaskIds,
-        draft: emptyMemoryDraft(),
       });
-      commit(nextPhase === 'delayed_response' ? beginDelayed(base) : base, true);
-      return;
+      sessionRef.current = next;
+      setSession(next);
+      return true;
     }
     const finished = touchSession({
       ...current,
       phase: 'complete',
       completedAt: new Date().toISOString(),
-      delayed: scored,
+      immediate:
+        current.phase === 'immediate_response' ? scored : current.immediate,
+      delayed: current.phase === 'delayed_response' ? scored : current.delayed,
+      firstResponseCued: current.firstResponseCued || cued,
       draft: emptyMemoryDraft(),
     });
-    sessionRef.current = finished;
-    setSession(finished);
-    void persistNext(mode, visualFirst, finished).then((created) => {
-      if (!created) {
-        sessionRef.current = finished;
-        setSession(null);
-        setEmpty(true);
-        return;
-      }
-      sessionRef.current = created;
-      setSession(created);
+    savedRef.current = finished;
+    void saveMemorySession(finished);
+    void uploadMemorySession(finished);
+    const shown = touchSession({
+      ...current,
+      draft,
+      immediate: finished.immediate,
+      delayed: finished.delayed,
+      firstResponseCued: finished.firstResponseCued,
     });
+    sessionRef.current = shown;
+    setSession(shown);
+    return true;
+  };
+
+  const advanceAfterAnswer = () => {
+    if (!stepReadyRef.current) return;
+    const saved = savedRef.current;
+    if (saved) {
+      stepReadyRef.current = false;
+      savedRef.current = null;
+      void (async () => {
+        await saveMemorySession(saved);
+        const history = await getAllMemorySessions();
+        showSession(createMemorySession(mode, history));
+      })();
+      return;
+    }
+    const current = sessionRef.current;
+    if (!current) return;
+    stepReadyRef.current = false;
+    const live = getMemoryTaskById(current.taskId);
+    const distractorTaskIds =
+      current.distractorTaskIds.length > 0
+        ? current.distractorTaskIds
+        : live
+          ? pickDistractorIds(live, 3)
+          : [];
+    const nextPhase =
+      distractorTaskIds.length > 0 ? 'distractor_1' : 'delayed_response';
+    const base = touchSession({
+      ...current,
+      phase: nextPhase,
+      distractorTaskIds,
+      draft: emptyMemoryDraft(),
+    });
+    commit(nextPhase === 'delayed_response' ? beginDelayed(base) : base);
   };
 
   const skipCurrent = () => {
@@ -396,33 +352,19 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
     ) {
       return;
     }
-    skipping.current = true;
-    if (timer.current != null) {
-      window.clearTimeout(timer.current);
-      timer.current = null;
+    if (savedRef.current) {
+      advanceAfterAnswer();
+      return;
     }
+    skipping.current = true;
     sessionRef.current = null;
+    stepReadyRef.current = false;
     skipTaskToday(current.taskId);
     void (async () => {
       try {
         await deleteMemorySession(current.sessionId);
         const history = await getAllMemorySessions();
-        const created = createMemorySession(mode, history);
-        if (!created) {
-          setSession(null);
-          setEmpty(true);
-          return;
-        }
-        if (visualFirst) {
-          created.visualOpen = true;
-          created.visualHelpShown = true;
-          created.visualHelpViews = 1;
-        }
-        await saveMemorySession(created);
-        sessionRef.current = created;
-        setResume(null);
-        setEmpty(false);
-        setSession(created);
+        showSession(createMemorySession(mode, history));
       } finally {
         skipping.current = false;
       }
@@ -469,7 +411,6 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
                 stimulusHiddenAt: new Date().toISOString(),
                 draft: emptyMemoryDraft(),
               }),
-              true,
             );
           }}
           onSkip={skipCurrent}
@@ -502,7 +443,8 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
               }),
             );
           }}
-          onSubmit={submitAnswer}
+          onRecord={recordResponse}
+          onAdvance={advanceAfterAnswer}
           onSkip={skipCurrent}
         />
       ) : null}
@@ -542,17 +484,14 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
             <Button
               variant="primary"
               onClick={() =>
-                commit(
-                  touchSession({ ...session, phase: 'extra_distractor' }),
-                  true,
-                )
+                commit(touchSession({ ...session, phase: 'extra_distractor' }))
               }
             >
               Tālāk
             </Button>
             <Button
               variant="secondary"
-              onClick={() => commit(beginDelayed(session), true)}
+              onClick={() => commit(beginDelayed(session))}
             >
               Atcerēties tagad
             </Button>

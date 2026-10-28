@@ -116,7 +116,7 @@ function AntonymWordView({
   };
 
   const onSubmitAnswer = (text: string) => {
-    if (readOnly) return;
+    if (readOnly || !text.trim()) return;
     answerRef.current = text;
     setAnswer(text);
     setAnswerChecked(true);
@@ -211,7 +211,7 @@ function AntonymSentenceView({
   };
 
   const onSubmitAnswer = (text: string) => {
-    if (readOnly) return;
+    if (readOnly || !text.trim()) return;
     answerRef.current = text;
     setAnswer(text);
     setAnswerChecked(true);

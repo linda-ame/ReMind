@@ -4,11 +4,7 @@ import { Button } from '../../components/Button';
 import type { MemoryDraft, MemoryRecallTask } from '../../types/memory';
 import type { AnswerInputFeedback } from '../../utils/answers';
 import { playCorrectChime, playWrongBuzz } from '../../utils/answerFeedback';
-import {
-  fieldMatches,
-  scoreMemoryDraft,
-  type MemorySubmitKind,
-} from '../../utils/memoryScore';
+import { fieldMatches, scoreMemoryDraft } from '../../utils/memoryScore';
 
 interface Props {
   task: MemoryRecallTask;
@@ -18,7 +14,9 @@ interface Props {
   /** After the pause, say what to recall without showing the list. */
   recallCue?: boolean;
   onDraft: (recipe: (draft: MemoryDraft) => MemoryDraft) => void;
-  onSubmit: (kind: MemorySubmitKind) => void;
+  /** Records a finished recall step. Returns false when the answer is still empty. */
+  onRecord: (draft: MemoryDraft) => boolean;
+  onAdvance: () => void;
   onSkip: () => void;
 }
 
@@ -28,7 +26,8 @@ export function MemoryAnswerStep({
   allowReveal,
   recallCue = false,
   onDraft,
-  onSubmit,
+  onRecord,
+  onAdvance,
   onSkip,
 }: Props) {
   const openRecognition = () => {
@@ -38,12 +37,14 @@ export function MemoryAnswerStep({
   };
 
   const confirm = () => {
-    onSubmit('submit');
+    if (!onRecord(draft)) return;
+    onAdvance();
   };
 
   const [checked, setChecked] = useState(false);
 
   const checkAnswer = (nextDraft: MemoryDraft) => {
+    onRecord(nextDraft);
     setChecked(true);
     const scored = scoreMemoryDraft(task, nextDraft, 'submit');
     if (!scored.freeScore) return;
@@ -52,15 +53,19 @@ export function MemoryAnswerStep({
   };
 
   const reveal = () => {
-    onDraft((current) => {
-      if (task.answer.kind !== 'facts') {
-        return current.answerVisible ? current : { ...current, answerVisible: true };
-      }
-      const keys = task.answer.fields.map((field) => field.key);
-      const already = current.revealedFactKeys ?? [];
-      if (keys.every((key) => already.includes(key))) return current;
-      return { ...current, revealedFactKeys: keys };
-    });
+    const next: MemoryDraft =
+      task.answer.kind !== 'facts'
+        ? draft.answerVisible
+          ? draft
+          : { ...draft, answerVisible: true }
+        : (() => {
+            const keys = task.answer.fields.map((field) => field.key);
+            const already = draft.revealedFactKeys ?? [];
+            if (keys.every((key) => already.includes(key))) return draft;
+            return { ...draft, revealedFactKeys: keys };
+          })();
+    if (next !== draft) onDraft(() => next);
+    onRecord(next);
   };
 
   const revealed = answerIsVisible(task, draft);
@@ -99,6 +104,7 @@ export function MemoryAnswerStep({
           draft={draft}
           revealed={revealed}
           onDraft={onDraft}
+          onRecord={onRecord}
         />
       ) : task.answer.kind === 'facts' ? (
         <div className="memory-actions">
@@ -261,17 +267,20 @@ function RecognitionPanel({
   draft,
   revealed,
   onDraft,
+  onRecord,
 }: {
   task: MemoryRecallTask;
   draft: MemoryDraft;
   revealed: boolean;
   onDraft: (recipe: (draft: MemoryDraft) => MemoryDraft) => void;
+  onRecord: (draft: MemoryDraft) => boolean;
 }) {
   if (task.answer.kind === 'facts') {
+    const fields = task.answer.fields;
     const revealedKeys = new Set(draft.revealedFactKeys ?? []);
     return (
       <div className="memory-entry">
-        {task.answer.fields.map((field) => {
+        {fields.map((field) => {
           const picked = draft.factIndices[field.key];
           const fieldRevealed = revealedKeys.has(field.key);
           return (
@@ -285,14 +294,17 @@ function RecognitionPanel({
                 revealed={fieldRevealed}
                 onToggle={(optionIndex) => {
                   if (fieldRevealed) return;
-                  onDraft((current) => ({
-                    ...current,
-                    recognitionOpen: true,
-                    factIndices: {
-                      ...current.factIndices,
-                      [field.key]: optionIndex,
-                    },
-                  }));
+                  const factIndices = {
+                    ...draft.factIndices,
+                    [field.key]: optionIndex,
+                  };
+                  const next = { ...draft, recognitionOpen: true, factIndices };
+                  onDraft(() => next);
+                  const all = fields.every(
+                    (item) =>
+                      factIndices[item.key] === item.recognition.correctIndex,
+                  );
+                  if (all) onRecord(next);
                 }}
               />
             </div>
@@ -318,6 +330,13 @@ function RecognitionPanel({
             singleIndex: index,
           }));
         }}
+        onSolved={(selected) => {
+          onRecord({
+            ...draft,
+            recognitionOpen: true,
+            singleIndex: selected[0] ?? null,
+          });
+        }}
       />
     );
   }
@@ -339,6 +358,9 @@ function RecognitionPanel({
           return { ...current, recognitionOpen: true, multiIndices };
         });
       }}
+      onSolved={(selected) => {
+        onRecord({ ...draft, recognitionOpen: true, multiIndices: selected });
+      }}
     />
   );
 }
@@ -350,6 +372,7 @@ function RecognitionChoices({
   multiple,
   revealed,
   onToggle,
+  onSolved,
 }: {
   options: string[];
   selected: number[];
@@ -357,6 +380,7 @@ function RecognitionChoices({
   multiple: boolean;
   revealed: boolean;
   onToggle: (index: number) => void;
+  onSolved?: (selected: number[]) => void;
 }) {
   const correctSet = new Set(correct);
   const [wrong, setWrong] = useState<number[]>([]);
@@ -391,6 +415,7 @@ function RecognitionChoices({
       chimed.current = true;
       setSolved(true);
       playCorrectChime();
+      onSolved?.([...next]);
     }
   };
 

@@ -88,8 +88,8 @@ export function SentenceCreationTaskView({
   const confirmAnswer = () => {
     if (readOnly) return;
     const hasText = fixed
-      ? slotsRef.current.some(
-          (word, index) => index !== fixedPosition && word.trim().length > 0,
+      ? slotsRef.current.every(
+          (word, index) => index === fixedPosition || word.trim().length > 0,
         )
       : textRef.current.trim().length > 0;
     if (!hasText) return;

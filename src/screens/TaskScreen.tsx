@@ -11,6 +11,7 @@ import {
   completeAttempt,
   countCompletedInSet,
   createAttempt,
+  isTaskCompletedCurrent,
   latestAttemptForTask,
   SELF_ASSESSMENT_LABELS,
   SELF_ASSESSMENT_SYMBOLS,
@@ -74,10 +75,11 @@ export function TaskScreen({
   const flushActiveTime = (id: string, activeMs: number) => {
     const current = attemptRef.current;
     if (isView || !current || current.id !== id) return;
-    if (current.status === 'viewed') return;
     if ((current.activeMs ?? 0) === activeMs) return;
     const next = { ...current, activeMs };
     attemptRef.current = next;
+    // Time on an unfinished task is not stored.
+    if (next.status !== 'completed') return;
     void saveAttempt(next);
   };
 
@@ -117,15 +119,12 @@ export function TaskScreen({
         task.id,
         task.contentVersion,
       );
-      if (previous) {
+      // A check saves a completed row. Anything unfinished is not restored,
+      // so the task opens empty.
+      if (previous?.status === 'completed') {
         setAttemptBoth(previous);
         return;
       }
-      if (isView) {
-        setAttemptBoth(createAttempt(task));
-        return;
-      }
-      // In-memory only until first edit / complete — avoids empty IDB ghosts.
       setAttemptBoth(createAttempt(task));
     })();
 
@@ -212,7 +211,7 @@ export function TaskScreen({
     if (base.status === 'completed') return;
     // Merge onto the latest parent snapshot so a stale child copy cannot
     // wipe rating / answer.
-    const merged: TaskAttempt = stampActiveTime({
+    let merged: TaskAttempt = stampActiveTime({
       ...base,
       ...next,
       id: base.id,
@@ -231,12 +230,22 @@ export function TaskScreen({
       status: next.status ?? base.status,
       reading: next.reading ?? base.reading,
     });
+    // The answer check finishes the task. Word reading has no check —
+    // Tālāk still completes it. Reading finishes on the last question.
+    if (
+      task.type !== 'word_reading' &&
+      task.type !== 'reading_comprehension' &&
+      merged.viewedAnswers &&
+      merged.status !== 'completed'
+    ) {
+      merged = completeAttempt(merged, merged.selfAssessment);
+    }
     // Re-check: finishAndGoNext may have completed mid-function.
     if (finishingRef.current || attemptRef.current?.status === 'completed') {
       return;
     }
     setAttemptBoth(merged);
-    void saveAttempt(merged);
+    if (merged.status === 'completed') void saveAttempt(merged);
   };
 
   /** Home → section: random remaining tasks (no lesson batches). */
@@ -303,7 +312,7 @@ export function TaskScreen({
       status: 'attempted',
     });
     setAttemptBoth(next);
-    void saveAttempt(next);
+    if (next.status === 'completed') void saveAttempt(next);
   };
 
   /** Complete with current (or given) rating, then advance. */
@@ -372,10 +381,20 @@ export function TaskScreen({
         new Map(sectionTasks.map((t) => [t.id, t])),
       )
     : 0;
+  const currentAlreadyInCount =
+    sectionTasks?.some((t) => t.id === task.id) &&
+    isTaskCompletedCurrent(attempts, task);
+  /** This visit counts in the numerator before the store catches up. */
+  const shownDone =
+    alreadyCompleted && !currentAlreadyInCount
+      ? Math.min(sectionDone + 1, sectionTotal)
+      : alreadyCompleted
+        ? sectionDone
+        : Math.min(sectionDone + 1, sectionTotal);
   /** Progress within the chosen difficulty set (current counts once completed). */
   const queueProgressLabel =
     !isReading && sectionTasks && sectionTotal > 0
-      ? `${alreadyCompleted ? sectionDone : Math.min(sectionDone + 1, sectionTotal)} / ${sectionTotal}`
+      ? `${shownDone} / ${sectionTotal}`
       : queue.length > 0 && idx >= 0 && !isReading
         ? `${idx + 1}. no ${queue.length}`
         : null;
@@ -469,9 +488,10 @@ export function TaskScreen({
           task={task}
           attempt={attempt}
           onUpdate={(next) => {
+            const alreadySaved = attemptRef.current?.status === 'completed';
             const stamped = isView ? next : stampActiveTime(next);
             setAttemptBoth(stamped);
-            if (isView) return;
+            if (isView || alreadySaved || stamped.status !== 'completed') return;
             return saveAttempt(stamped);
           }}
           onFinished={() => {

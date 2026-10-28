@@ -51,7 +51,7 @@ export function ImageWordTaskView({
   };
 
   const onSubmitAnswer = (text: string) => {
-    if (readOnly) return;
+    if (readOnly || !text.trim()) return;
     answerRef.current = text;
     setAnswer(text);
     setAnswerChecked(true);

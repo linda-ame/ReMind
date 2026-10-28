@@ -196,6 +196,38 @@ function lookedUp(draft: MemoryDraft): boolean {
   return draft.answerVisible || (draft.revealedFactKeys?.length ?? 0) > 0;
 }
 
+/** The recall step is finished: a real answer, every correct choice, or the key. */
+export function memoryResponseReady(
+  task: MemoryRecallTask,
+  draft: MemoryDraft,
+): boolean {
+  if (lookedUp(draft)) return true;
+  if (task.answer.kind === 'ordered_digits') {
+    if (draft.singleIndex === task.answer.recognition.correctIndex) return true;
+    return enteredDigits(draft).length > 0;
+  }
+  if (task.answer.kind === 'unordered_list') {
+    const correct = task.answer.recognition.correctIndices;
+    if (
+      correct.length > 0 &&
+      correct.every((index) => draft.multiIndices.includes(index))
+    ) {
+      return true;
+    }
+    return hasFreeContent(task, draft);
+  }
+  const fields = task.answer.fields;
+  if (
+    fields.length > 0 &&
+    fields.every(
+      (field) => draft.factIndices[field.key] === field.recognition.correctIndex,
+    )
+  ) {
+    return true;
+  }
+  return fields.every((field) => (draft.facts[field.key] ?? '').trim() !== '');
+}
+
 function recognitionUsed(draft: MemoryDraft): boolean {
   if (draft.singleIndex != null) return true;
   if (draft.multiIndices.length > 0) return true;

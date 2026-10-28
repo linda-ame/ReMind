@@ -10,6 +10,7 @@ import {
   textMatchesAccepted,
 } from '../../utils/answers';
 import {
+  completeAttempt,
   SELF_ASSESSMENT_LABELS,
   SELF_ASSESSMENT_SYMBOLS,
 } from '../../utils/attempts';
@@ -370,15 +371,38 @@ export function ReadingComprehensionTaskView({
           }}
           onSubmit={(text) => {
             if (readOnly) return;
-            // Unlock Tālāk only after Enter / finished dictation (not while typing).
+            // Enter checks this question. The last one finishes the whole task.
             if (!showAnswer) {
               setShowAnswer(true);
             }
-            patchQuestion(qIndex, {
-              viewedAnswers: true,
-              enteredAnswer: text,
-              status: 'attempted',
-            });
+            const now = new Date().toISOString();
+            const current = ensureReading(attempt, task);
+            const isLast = qIndex >= task.questions.length - 1;
+            const questions = current.questions.map((q, i) =>
+              i === qIndex
+                ? {
+                    ...q,
+                    viewedAnswers: true,
+                    enteredAnswer: text,
+                    status: isLast ? ('completed' as const) : q.status,
+                    completedAt: isLast ? now : q.completedAt,
+                  }
+                : q,
+            );
+            const withAnswer: TaskAttempt = {
+              ...attempt,
+              status: attempt.status === 'completed' ? 'completed' : 'attempted',
+              reading: {
+                phase: 'questions',
+                questionIndex: qIndex,
+                questions,
+              },
+            };
+            void persist(
+              isLast
+                ? completeAttempt(withAnswer, withAnswer.selfAssessment)
+                : withAnswer,
+            );
             if (
               question.answers.length > 0 &&
               !chimedRef.current &&

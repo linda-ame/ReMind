@@ -67,16 +67,8 @@ export function taskHasAdvanceReady(
     return selected.every((opt) => correct.has(opt));
   }
 
-  // Sentence order: unlock only when every word is placed (or model shown).
-  if (task.type === 'sentence_order') {
-    try {
-      const parsed: unknown = JSON.parse(s);
-      if (!Array.isArray(parsed)) return false;
-      return parsed.length >= task.words.length;
-    } catch {
-      return false;
-    }
-  }
+  // Sentence order: Pārbaudīt sets viewedAnswers. Placing the words is not enough.
+  if (task.type === 'sentence_order') return false;
 
   // Odd one out: only the correct index unlocks (wrong picks stay searchable).
   if (task.type === 'odd_one_out') {
