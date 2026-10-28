@@ -12,7 +12,7 @@ import { MANS_PROGRESS_ENABLED } from '../config/features';
 import { completedCurrentTaskIds } from '../utils/attempts';
 import { filterSectionTasks } from '../utils/difficulty';
 import { deleteMemorySessionsForMode } from '../repositories/IndexedDBProgressRepository';
-import { sectionPracticeScreen } from '../utils/sectionPractice';
+import { menuSectionLabel, sectionPracticeScreen } from '../utils/sectionPractice';
 import { memoryModeCounts } from '../utils/memoryQueue';
 import type { Screen } from '../navigation/types';
 import type { MemoryMode } from '../types/memory';
@@ -223,6 +223,21 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
               </div>
             );
           })}
+
+          <div className="home-type-block">
+            <Button
+              variant="secondary"
+              className="home-type-btn home-type-memory_pairs"
+              onClick={() => {
+                setResetConfirmType(null);
+                setResetMemory(null);
+                onNavigate({ name: 'memory_pairs' });
+              }}
+            >
+              {menuSectionLabel('memory_pairs')}
+            </Button>
+          </div>
+
         </div>
 
         <div className="home-tools" role="navigation" aria-label="Rīki">

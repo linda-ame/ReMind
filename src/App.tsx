@@ -20,12 +20,14 @@ import { LessonSummaryScreen } from './screens/LessonSummaryScreen';
 import { SectionCompleteScreen } from './screens/SectionCompleteScreen';
 import { CustomizeContentScreen } from './screens/CustomizeContentScreen';
 import { MemoryScreen } from './screens/MemoryScreen';
+import { MemoryPairsGame } from './screens/memoryPairs/MemoryPairsGame';
 import { useKeyboardViewport } from './hooks/useKeyboardViewport';
 import { loadDifficultyLevels } from './utils/difficulty';
 
 /** Home → section practice, including the “all done” screen for that section. */
 function isHomeSectionScreen(screen: Screen): boolean {
   if (screen.name === 'section_complete') return true;
+  if (screen.name === 'memory' || screen.name === 'memory_pairs') return true;
   return (
     screen.name === 'task' &&
     screen.batchType != null &&
@@ -71,6 +73,9 @@ function popToMatching(stack: Screen[], next: Screen): Screen[] | null {
       return stack.slice(0, i + 1);
     }
     if (next.name === 'auth' && cur.name === 'auth') {
+      return stack.slice(0, i + 1);
+    }
+    if (next.name === 'memory_pairs' && cur.name === 'memory_pairs') {
       return stack.slice(0, i + 1);
     }
     if (next.name === 'created_work' && cur.name === 'created_work') {
@@ -324,6 +329,8 @@ function AppRouter() {
           onHome={goHome}
         />
       );
+    case 'memory_pairs':
+      return <MemoryPairsGame onNavigate={navigate} onHome={goHome} />;
   }
 }
 

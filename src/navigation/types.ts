@@ -66,4 +66,6 @@ export type Screen =
   | {
       name: 'memory';
       mode: 'immediate' | 'delayed';
-    };
+    }
+  /** Generated matching game. Not a task-pack section. */
+  | { name: 'memory_pairs' };

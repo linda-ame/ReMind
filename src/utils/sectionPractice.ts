@@ -10,15 +10,21 @@ import { filterSectionTasks } from './difficulty';
 import { buildRandomPracticeQueue } from './randomQueue';
 import type { TaskSkip } from './taskSkips';
 
-/** Home section in menu order, including the two memory practices. */
+/** Home section in menu order, including memory practice and generated games. */
 export type MenuSection =
   | Task['type']
   | 'memory_immediate'
-  | 'memory_delayed';
+  | 'memory_delayed'
+  | 'memory_pairs';
 
 const MEMORY_MENU: { id: MenuSection; label: string }[] = [
   { id: 'memory_immediate', label: 'Atceries uzreiz' },
   { id: 'memory_delayed', label: 'Atceries pēc brīža' },
+];
+
+/** Generated games. Later games join this list so the header arrows stay in order. */
+const GAME_MENU: { id: MenuSection; label: string }[] = [
+  { id: 'memory_pairs', label: 'Atrodi pārus' },
 ];
 
 /** Home menu type. Multi-blank completion shares Teikumu papildināšana. */
@@ -29,25 +35,31 @@ export function menuSectionType(type: Task['type']): Task['type'] {
 /** Sections that appear on the home screen, in menu order. */
 export function menuSections(): MenuSection[] {
   const tasks = TASK_TYPE_ORDER.filter((type) => getTasksByType(type).length > 0);
-  return [...tasks, ...MEMORY_MENU.map((item) => item.id)];
+  return [
+    ...tasks,
+    ...MEMORY_MENU.map((item) => item.id),
+    ...GAME_MENU.map((item) => item.id),
+  ];
 }
 
-function isMemorySection(
+const EXTRA_MENU = [...MEMORY_MENU, ...GAME_MENU];
+
+function isExtraSection(
   section: MenuSection,
-): section is 'memory_immediate' | 'memory_delayed' {
-  return section === 'memory_immediate' || section === 'memory_delayed';
+): section is 'memory_immediate' | 'memory_delayed' | 'memory_pairs' {
+  return EXTRA_MENU.some((item) => item.id === section);
 }
 
 function menuSectionName(section: MenuSection): string {
-  if (isMemorySection(section)) {
-    return MEMORY_MENU.find((item) => item.id === section)?.label ?? section;
+  if (isExtraSection(section)) {
+    return EXTRA_MENU.find((item) => item.id === section)?.label ?? section;
   }
   return TASK_TYPE_LABELS[menuSectionType(section)];
 }
 
 /** “1. Vārdu lasīšana” — name only, no done/total count. */
 export function menuSectionLabel(section: MenuSection): string {
-  const key = isMemorySection(section) ? section : menuSectionType(section);
+  const key = isExtraSection(section) ? section : menuSectionType(section);
   const sections = menuSections();
   const index = sections.indexOf(key);
   const name = menuSectionName(key);
@@ -59,7 +71,7 @@ export function adjacentMenuSection(
   dir: -1 | 1,
 ): MenuSection | null {
   const sections = menuSections();
-  const key = isMemorySection(section) ? section : menuSectionType(section);
+  const key = isExtraSection(section) ? section : menuSectionType(section);
   const index = sections.indexOf(key);
   if (index < 0) return null;
   return sections[index + dir] ?? null;
@@ -73,6 +85,7 @@ export function menuSectionScreen(
 ): Screen {
   if (section === 'memory_immediate') return { name: 'memory', mode: 'immediate' };
   if (section === 'memory_delayed') return { name: 'memory', mode: 'delayed' };
+  if (section === 'memory_pairs') return { name: 'memory_pairs' };
   return sectionPracticeScreen(section, attempts, taskSkips);
 }
 
