@@ -540,6 +540,7 @@ export function TaskScreen({
             attempt={attempt}
             onUpdate={onUpdate}
             readOnly={isView}
+            showRule={idx === 0}
           />,
         )}
       </Layout>

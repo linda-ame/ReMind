@@ -4191,6 +4191,11 @@ html.keyboard-open .memory-skip {
   margin-bottom: 0.45rem;
 }
 
+.word-grid-actions .hint-box,
+.word-grid-actions .answers-inline {
+  margin-top: 0;
+}
+
 .word-grid-size-limit {
   margin-top: 0.75rem;
 }

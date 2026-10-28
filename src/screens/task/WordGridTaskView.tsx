@@ -20,6 +20,8 @@ interface Props {
   attempt: TaskAttempt;
   onUpdate: (attempt: TaskAttempt) => void;
   readOnly?: boolean;
+  /** Rule text only on the first task of a freshly opened section. */
+  showRule?: boolean;
 }
 
 const RULE =
@@ -71,6 +73,7 @@ export function WordGridTaskView({
   attempt,
   onUpdate,
   readOnly = false,
+  showRule = false,
 }: Props) {
   const [grid, setGrid] = useState(() => readInitial(task, attempt));
   const gridRef = useRef(grid);
@@ -192,15 +195,17 @@ export function WordGridTaskView({
         <h2 className="word-grid-title">Atrodi vārdu</h2>
         <p className="word-grid-count">{task.wordLength} burti</p>
       </div>
-      <div className="word-grid-rule-row">
-        <ListenButton
-          text={spoken}
-          compact
-          fullWidth={false}
-          ariaLabel="Klausīties norādi"
-        />
-        <p className="instruction">{RULE}</p>
-      </div>
+      {showRule ? (
+        <div className="word-grid-rule-row">
+          <ListenButton
+            text={spoken}
+            compact
+            fullWidth={false}
+            ariaLabel="Klausīties norādi"
+          />
+          <p className="instruction">{RULE}</p>
+        </div>
+      ) : null}
 
       <div className="word-grid-scroll">
         <div
@@ -271,6 +276,11 @@ export function WordGridTaskView({
         <Button variant="help" onClick={openHint} disabled={hintOpen}>
           Mājiens
         </Button>
+        {hintOpen ? (
+          <p className="hint-box" role="status">
+            Mājiens: {task.hint}
+          </p>
+        ) : null}
         <Button
           variant="secondary"
           onClick={openSolution}
@@ -278,18 +288,12 @@ export function WordGridTaskView({
         >
           Iecerētais vārds
         </Button>
+        {grid.solutionViewed ? (
+          <p className="answers-inline" role="status" lang="lv">
+            Iecerētais vārds: {task.targetWord}
+          </p>
+        ) : null}
       </div>
-
-      {hintOpen ? (
-        <p className="hint-box" role="status">
-          Mājiens: {task.hint}
-        </p>
-      ) : null}
-      {grid.solutionViewed ? (
-        <p className="answers-inline" role="status" lang="lv">
-          Iecerētais vārds: {task.targetWord}
-        </p>
-      ) : null}
     </div>
   );
 }
