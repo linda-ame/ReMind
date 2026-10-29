@@ -28,6 +28,8 @@ export function pickRicherAttempt(a: TaskAttempt, b: TaskAttempt): TaskAttempt {
   if (archivedAt) winner.archivedAt = archivedAt;
   const activeMs = Math.max(a.activeMs ?? 0, b.activeMs ?? 0);
   if (activeMs > 0) winner.activeMs = activeMs;
+  const wrongTries = Math.max(a.wrongTries ?? 0, b.wrongTries ?? 0);
+  if (wrongTries > 0) winner.wrongTries = wrongTries;
   return winner;
 }
 

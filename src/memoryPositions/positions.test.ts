@@ -149,6 +149,20 @@ describe('figure placement', () => {
     expect(cells.some((cell) => cell.label.includes('pareizi'))).toBe(false);
   });
 
+  it('counts a place, a move, and a removal, and ignores a blocked cell', () => {
+    let game = beginRecall(study());
+    const [first, second] = game.trayOrder;
+    game = placeSymbol(selectSymbol(game, first!), first!, 0);
+    expect(game.placementChanges).toBe(1);
+    game = placeSymbol(selectSymbol(game, first!), first!, 2);
+    expect(game.placementChanges).toBe(2);
+    const removed = tapCell(game, 2).game;
+    expect(removed.placementChanges).toBe(3);
+    const placed = placeSymbol(selectSymbol(removed, first!), first!, 0);
+    const blocked = placeSymbol(selectSymbol(placed, second!), second!, 0);
+    expect(blocked.placementChanges).toBe(placed.placementChanges);
+  });
+
   it('places every figure on one grid and refuses a second copy', () => {
     let game = beginRecall(study());
     const [first, second] = game.trayOrder;

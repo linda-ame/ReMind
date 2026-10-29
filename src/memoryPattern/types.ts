@@ -55,6 +55,8 @@ export interface MemoryPatternGame {
   extraCount: number | null;
   exact: boolean | null;
   startedAt: string;
+  /** When the study picture was closed. Null until „Esmu iegaumējis”. */
+  studiedAt: string | null;
   completedAt: string | null;
   status: MemoryPatternStatus;
 }

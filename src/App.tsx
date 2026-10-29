@@ -11,6 +11,10 @@ import {
 } from './screens/CreatedWorkScreen';
 import { ProgressScreen } from './screens/ProgressScreen';
 import { ProgressDetailScreen } from './screens/ProgressDetailScreen';
+import {
+  ProgressRecordScreen,
+  ProgressRecordsScreen,
+} from './screens/ProgressRecordsScreen';
 import { TaskListScreen } from './screens/TaskListScreen';
 import { BatchListScreen } from './screens/BatchListScreen';
 import { TaskScreen } from './screens/TaskScreen';
@@ -210,6 +214,11 @@ function AppRouter() {
       ) {
         return [...s.slice(0, -1), next];
       }
+      // ←/→ between progress records stays on one entry, so Atpakaļ
+      // returns to the section list.
+      if (top?.name === 'progress_record' && next.name === 'progress_record') {
+        return [...s.slice(0, -1), next];
+      }
       // ←/→ between sections replaces the current one instead of stacking.
       if (top && isHomeSectionScreen(top) && isHomeSectionScreen(next)) {
         let i = s.length;
@@ -269,6 +278,23 @@ function AppRouter() {
     case 'progress':
       return (
         <ProgressScreen onNavigate={navigate} onHome={goHome} />
+      );
+    case 'progress_records':
+      return (
+        <ProgressRecordsScreen
+          onNavigate={navigate}
+          onBack={goBack}
+          onHome={goHome}
+        />
+      );
+    case 'progress_record':
+      return (
+        <ProgressRecordScreen
+          section={screen.section}
+          onNavigate={navigate}
+          onBack={goBack}
+          onHome={goHome}
+        />
       );
     case 'progress_detail':
       return (

@@ -3,7 +3,9 @@ import {
   MEMORY_POSITIONS_STATE_STORE,
   openProgressDb,
 } from '../repositories/IndexedDBProgressRepository';
+import { positionsSummary } from '../games/summary';
 import { isShapeId } from '../memoryPairs/types';
+import { uploadGameSummary } from '../repositories/gameSummaryCloud';
 import { abandonGame, createGameFromSettings } from './gameplay';
 import {
   dealKey,
@@ -74,6 +76,7 @@ export function saveMemoryPositionsGame(game: MemoryPositionsGame): Promise<void
     const tx = db.transaction(MEMORY_POSITIONS_GAMES_STORE, 'readwrite');
     tx.objectStore(MEMORY_POSITIONS_GAMES_STORE).put(game);
     await txDone(tx);
+    uploadGameSummary(positionsSummary(game));
   });
 }
 
@@ -269,6 +272,11 @@ function parseGame(value: unknown): MemoryPositionsGame | null {
     totalCount: solution.length,
     exact: typeof game.exact === 'boolean' ? game.exact : null,
     usedHelp: game.usedHelp === true,
+    studiedAt: typeof game.studiedAt === 'string' ? game.studiedAt : null,
+    placementChanges:
+      typeof game.placementChanges === 'number' && game.placementChanges >= 0
+        ? Math.floor(game.placementChanges)
+        : 0,
     completedAt: typeof game.completedAt === 'string' ? game.completedAt : null,
     generatorVersion:
       typeof game.generatorVersion === 'number' ? game.generatorVersion : 1,

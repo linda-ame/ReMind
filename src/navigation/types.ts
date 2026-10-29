@@ -12,6 +12,18 @@ export type Screen =
   | { name: 'created_work_list'; section: 'sentences' | 'associations' }
   | { name: 'progress' }
   | { name: 'progress_detail'; type: Task['type'] }
+  /** Saved task and game records, opened from the account. */
+  | { name: 'progress_records' }
+  | {
+      name: 'progress_record';
+      section:
+        | Task['type']
+        | 'memory_immediate'
+        | 'memory_delayed'
+        | 'memory_pairs'
+        | 'memory_pattern'
+        | 'memory_positions';
+    }
   | { name: 'task_list'; filter?: 'all' | 'difficult'; type?: Task['type'] }
   /** @deprecated Lesson lists removed — kept for legacy navigation. */
   | { name: 'batch_list'; type: Task['type'] }

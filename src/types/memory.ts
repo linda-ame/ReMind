@@ -104,6 +104,8 @@ export interface MemoryAnswer {
   recognitionSelection?: string | string[] | Record<string, string>;
   freeScore?: MemoryScore | null;
   recognitionScore?: MemoryScore | null;
+  /** Wrong option taps before the right ones, when choices were used. */
+  recognitionMisses?: number;
   notScorableReason?: MemoryNotScorableReason;
   answeredAt: string;
 }
@@ -117,6 +119,8 @@ export interface MemoryDraft {
   facts: Record<string, string>;
   factIndex: number;
   recognitionOpen: boolean;
+  /** Wrong option taps in this recall, before the right ones. */
+  recognitionMisses?: number;
   /** Correct answer is uncovered for a digit or list task. */
   answerVisible: boolean;
   /** Fact questions whose correct answer was uncovered. */
@@ -170,6 +174,7 @@ export function emptyMemoryDraft(): MemoryDraft {
     facts: {},
     factIndex: 0,
     recognitionOpen: false,
+    recognitionMisses: 0,
     answerVisible: false,
     revealedFactKeys: [],
     singleIndex: null,

@@ -1,4 +1,5 @@
 import type { MemoryMode, MemorySession } from '../types/memory';
+import { detailForAttempt } from '../tasks/taskRecord';
 import type { ProgressRepository } from './ProgressRepository';
 import {
   PROGRESS_SCHEMA_VERSION,
@@ -151,6 +152,18 @@ function txDone(tx: IDBTransaction): Promise<void> {
   });
 }
 
+function storedAttempt(
+  attempt: TaskAttempt,
+  existing: TaskAttempt | undefined,
+): TaskAttempt {
+  const next: TaskAttempt = {
+    ...attempt,
+    activeMs: Math.max(existing?.activeMs ?? 0, attempt.activeMs ?? 0),
+    wrongTries: Math.max(existing?.wrongTries ?? 0, attempt.wrongTries ?? 0),
+  };
+  return { ...next, detail: detailForAttempt(next) };
+}
+
 export class IndexedDBProgressRepository implements ProgressRepository {
   async getSettings(): Promise<UiSettings> {
     const db = await openDb();
@@ -216,10 +229,7 @@ export class IndexedDBProgressRepository implements ProgressRepository {
       await txDone(tx);
       return;
     }
-    store.put({
-      ...attempt,
-      activeMs: Math.max(existing?.activeMs ?? 0, attempt.activeMs ?? 0),
-    });
+    store.put(storedAttempt(attempt, existing));
     await txDone(tx);
   }
 
@@ -242,10 +252,7 @@ export class IndexedDBProgressRepository implements ProgressRepository {
     }
     const current = existing.find((row) => row.id === attempt.id);
     if (!current?.archivedAt) {
-      store.put({
-        ...attempt,
-        activeMs: Math.max(current?.activeMs ?? 0, attempt.activeMs ?? 0),
-      });
+      store.put(storedAttempt(attempt, current));
     }
     await txDone(tx);
   }

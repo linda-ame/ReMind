@@ -1,5 +1,6 @@
 import type { SupabaseClient } from '@supabase/supabase-js';
 import { getSupabase } from '../lib/supabase';
+import { detailForAttempt } from '../tasks/taskRecord';
 import type { ProgressRepository } from './ProgressRepository';
 import {
   DEFAULT_UI_SETTINGS,
@@ -29,7 +30,9 @@ interface AttemptRow {
   self_assessment: SelfAssessment | null;
   archived_at: string | null;
   active_ms: number | null;
+  wrong_tries: number | null;
   reading: ReadingComprehensionProgress | null;
+  detail: unknown;
 }
 
 interface SettingsRow {
@@ -54,6 +57,8 @@ function rowToAttempt(row: AttemptRow): TaskAttempt {
     viewedAnswers: row.viewed_answers,
     selfAssessment: row.self_assessment,
     activeMs: row.active_ms ?? 0,
+    wrongTries: row.wrong_tries ?? 0,
+    detail: row.detail ?? null,
   };
   if (row.archived_at) {
     attempt.archivedAt = row.archived_at;
@@ -79,8 +84,22 @@ function attemptToRow(userId: string, attempt: TaskAttempt): AttemptRow {
     self_assessment: attempt.selfAssessment,
     archived_at: attempt.archivedAt ?? null,
     active_ms: Math.max(0, Math.round(attempt.activeMs ?? 0)),
+    wrong_tries: Math.max(0, Math.round(attempt.wrongTries ?? 0)),
     reading: attempt.reading ?? null,
+    detail: detailForAttempt(attempt),
   };
+}
+
+let detailColumnsAvailable = true;
+
+function isMissingDetailColumn(error: { message: string } | null): boolean {
+  const message = error?.message ?? '';
+  return message.includes('detail') || message.includes('wrong_tries');
+}
+
+function withoutDetailColumns(row: AttemptRow): Omit<AttemptRow, 'detail' | 'wrong_tries'> {
+  const { detail: _detail, wrong_tries: _wrongTries, ...rest } = row;
+  return rest;
 }
 
 function throwIfError(error: { message: string } | null, fallback: string): void {
@@ -189,13 +208,12 @@ export class SupabaseProgressRepository implements ProgressRepository {
   }
 
   async saveAttempt(attempt: TaskAttempt): Promise<void> {
-    const { error } = await this.client
-      .from('task_attempts')
-      .upsert({
+    await this.upsertRows([
+      {
         ...attemptToRow(this.userId, attempt),
         updated_at: new Date().toISOString(),
-      });
-    throwIfError(error, 'Neizdevās saglabāt mēģinājumu');
+      },
+    ], 'Neizdevās saglabāt mēģinājumu');
   }
 
   async replaceAttemptsForTaskVersion(attempt: TaskAttempt): Promise<void> {
@@ -281,8 +299,7 @@ export class SupabaseProgressRepository implements ProgressRepository {
         ...attemptToRow(this.userId, a),
         updated_at: new Date().toISOString(),
       }));
-      const { error } = await this.client.from('task_attempts').upsert(rows);
-      throwIfError(error, 'Neizdevās importēt mēģinājumus');
+      await this.upsertRows(rows, 'Neizdevās importēt mēģinājumus');
     }
 
     if (snapshot.settings) {
@@ -306,7 +323,25 @@ export class SupabaseProgressRepository implements ProgressRepository {
       ...attemptToRow(this.userId, a),
       updated_at: new Date().toISOString(),
     }));
-    const { error } = await this.client.from('task_attempts').upsert(rows);
-    throwIfError(error, 'Neizdevās sinhronizēt progresu');
+    await this.upsertRows(rows, 'Neizdevās sinhronizēt progresu');
+  }
+
+  private async upsertRows(
+    rows: Array<AttemptRow & { updated_at: string }>,
+    fallback: string,
+  ): Promise<void> {
+    const payload = detailColumnsAvailable
+      ? rows
+      : rows.map(withoutDetailColumns);
+    const { error } = await this.client.from('task_attempts').upsert(payload);
+    if (error && detailColumnsAvailable && isMissingDetailColumn(error)) {
+      detailColumnsAvailable = false;
+      const retry = await this.client
+        .from('task_attempts')
+        .upsert(rows.map(withoutDetailColumns));
+      throwIfError(retry.error, fallback);
+      return;
+    }
+    throwIfError(error, fallback);
   }
 }

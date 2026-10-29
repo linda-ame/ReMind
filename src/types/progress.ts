@@ -46,8 +46,12 @@ export interface TaskAttempt {
    * Not shown in the UI.
    */
   activeMs?: number;
+  /** Wrong picks before the correct one, for tasks that allow another try. */
+  wrongTries?: number;
   /** Present for reading_comprehension tasks. */
   reading?: ReadingComprehensionProgress;
+  /** Cloud snapshot of what was shown and answered. Built when the attempt is saved. */
+  detail?: unknown;
 }
 
 export type TextAlign = 'left' | 'center' | 'right';

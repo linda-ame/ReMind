@@ -68,6 +68,7 @@ export function OddOneOutTaskView({
     startedSolved ? (initialPick ?? task.correctIndex) : null,
   );
   const selectedRef = useRef(selected);
+  const wrongTriesRef = useRef(attempt.wrongTries ?? 0);
   const [solved, setSolved] = useState(startedSolved);
 
   const patch = (partial: Partial<TaskAttempt>) => {
@@ -91,6 +92,7 @@ export function OddOneOutTaskView({
         enteredAnswer: JSON.stringify(index),
         viewedAnswers: true,
         status: 'attempted',
+        wrongTries: wrongTriesRef.current,
       });
       playCorrectChime();
       return;
@@ -101,10 +103,11 @@ export function OddOneOutTaskView({
     setWrongIndices(nextWrong);
     selectedRef.current = index;
     setSelected(index);
-    // Persist last try; do not unlock Tālāk (viewedAnswers stays false).
+    wrongTriesRef.current += 1;
     patch({
       enteredAnswer: JSON.stringify(index),
       status: 'attempted',
+      wrongTries: wrongTriesRef.current,
     });
     playWrongBuzz();
   };

@@ -119,6 +119,19 @@ describe('play and scoring', () => {
     };
   }
 
+  it('records when the study picture was closed', () => {
+    const game = createMemoryPatternGame(
+      { grid: '2x3', difficulty: 1 },
+      [0, 3],
+      '2026-04-01T00:00:00.000Z',
+    );
+    const recalled = beginRecall(game, '2026-04-01T00:00:12.000Z');
+    expect(recalled.studiedAt).toBe('2026-04-01T00:00:12.000Z');
+    expect(submitAnswer(recalled, '2026-04-01T00:00:20.000Z').studiedAt).toBe(
+      '2026-04-01T00:00:12.000Z',
+    );
+  });
+
   it('keeps the same pattern through a phase', () => {
     const game = createMemoryPatternGame({ grid: '2x3', difficulty: 1 }, [0, 3]);
     const recalled = beginRecall(game);

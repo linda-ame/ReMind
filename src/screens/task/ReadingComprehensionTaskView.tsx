@@ -282,6 +282,7 @@ export function ReadingComprehensionTaskView({
         onAdvance={startQuestions}
         onSkip={onSkip}
         advanceLabel="Sākt jautājumus"
+        advanceMode="button"
       >
         <div className="task-view rc-view">
           <p className="instruction">{task.instruction}</p>

@@ -1,6 +1,15 @@
+import {
+  pairsResultSummary,
+  patternSummary,
+  positionsSummary,
+} from '../games/summary';
+import { listMemoryPairsResults } from '../memoryPairs/repository';
+import { listMemoryPatternGames } from '../memoryPattern/repository';
+import { listMemoryPositionsGames } from '../memoryPositions/repository';
 import type { ProgressRepository } from './ProgressRepository';
 import { SupabaseProgressRepository } from './SupabaseProgressRepository';
 import { mergeAttemptsForSync } from './attemptMerge';
+import { uploadGameSummaries } from './gameSummaryCloud';
 import { DEFAULT_UI_SETTINGS } from '../types/progress';
 
 /**
@@ -49,4 +58,25 @@ export async function syncLocalToCloud(
   if (cloudIsDefault && localDiffers) {
     await cloud.saveSettings(localSettings);
   }
+
+  const [pairs, patterns, positions] = await Promise.all([
+    listMemoryPairsResults(),
+    listMemoryPatternGames(),
+    listMemoryPositionsGames(),
+  ]);
+  const summaries = [
+    ...pairs.flatMap((result) => {
+      const summary = pairsResultSummary(result);
+      return summary ? [summary] : [];
+    }),
+    ...patterns.flatMap((game) => {
+      const summary = patternSummary(game);
+      return summary ? [summary] : [];
+    }),
+    ...positions.flatMap((game) => {
+      const summary = positionsSummary(game);
+      return summary ? [summary] : [];
+    }),
+  ];
+  await uploadGameSummaries(summaries);
 }

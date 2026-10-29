@@ -94,11 +94,15 @@ export interface MemoryPositionsGame {
   phase: MemoryPositionsPhase;
   status: MemoryPositionsStatus;
   startedAt: string;
+  /** When the study picture was closed. Null until „Esmu iegaumējis”. */
+  studiedAt: string | null;
   completedAt: string | null;
   correctCount: number | null;
   totalCount: number;
   exact: boolean | null;
   usedHelp: boolean;
+  /** How many times a figure was placed, moved, or removed. */
+  placementChanges: number;
 }
 
 export const CATEGORY_LABEL: Record<MemoryPositionsCategorySetting, string> = {

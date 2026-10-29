@@ -379,7 +379,13 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
     if (!live || live.contentVersion !== current.taskContentVersion) return false;
     if (!memoryResponseReady(live, draft)) return false;
     stepReadyRef.current = true;
-    const scored = scoreMemoryDraft(live, draft, 'submit');
+    const scored = {
+      ...scoreMemoryDraft(live, draft, 'submit'),
+      recognitionMisses: Math.max(
+        draft.recognitionMisses ?? 0,
+        current.draft.recognitionMisses ?? 0,
+      ),
+    };
     const cued =
       current.mode === 'delayed' &&
       (current.firstResponseCued || scored.recognitionOpened);
@@ -538,9 +544,6 @@ export function MemoryScreen({ mode, onNavigate, onHome }: Props) {
           key={`${session.sessionId}-${session.phase}`}
           task={task}
           draft={session.draft}
-          allowReveal={
-            !(session.mode === 'delayed' && session.phase === 'immediate_response')
-          }
           recallCue={session.phase === 'delayed_response'}
           onDraft={(recipe) => {
             const current = sessionRef.current;

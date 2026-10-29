@@ -73,6 +73,7 @@ export function SentenceImageMatchTaskView({
   );
   const selectedRef = useRef(selected);
   const [solved, setSolved] = useState(startedSolved);
+  const wrongTriesRef = useRef(attempt.wrongTries ?? 0);
   const [enlargeIndex, setEnlargeIndex] = useState<number | null>(null);
 
   useEffect(() => {
@@ -111,6 +112,7 @@ export function SentenceImageMatchTaskView({
         enteredAnswer: JSON.stringify(index),
         viewedAnswers: true,
         status: 'attempted',
+        wrongTries: wrongTriesRef.current,
       });
       playCorrectChime();
       return;
@@ -121,9 +123,11 @@ export function SentenceImageMatchTaskView({
     setWrongIndices(nextWrong);
     selectedRef.current = index;
     setSelected(index);
+    wrongTriesRef.current += 1;
     patch({
       enteredAnswer: JSON.stringify(index),
       status: 'attempted',
+      wrongTries: wrongTriesRef.current,
     });
     playWrongBuzz();
   };

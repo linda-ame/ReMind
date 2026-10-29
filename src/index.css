@@ -3334,12 +3334,39 @@ input:focus-visible {
 
 .rc-passage {
   margin: 0.75rem 0 1.25rem;
-  padding: 0.85rem 0.5rem;
+  padding: 0.85rem 0.15rem;
   font-size: calc(1.2 * var(--fit-font) * var(--content-scale));
   font-weight: 600;
   line-height: 1.45;
-  text-align: var(--app-text-align);
+  text-align: left;
   white-space: pre-wrap;
+}
+
+.task-advance-root:has(.task-advance-block) .task-advance-after {
+  max-width: none;
+}
+
+.task-advance-block {
+  width: 100%;
+  min-height: 4.75rem;
+  margin-top: 0.15rem;
+  border: 3px solid #5c5340;
+  border-radius: 1rem;
+  background: #f3e4a8;
+  color: #3d3420;
+  font-size: 1.25em;
+  font-weight: 800;
+}
+
+.task-advance-block:active {
+  transform: scale(0.98);
+}
+
+.app-shell.high-contrast .task-advance-block {
+  background: #fff;
+  color: #000;
+  border-color: #000;
+  border-width: 4px;
 }
 
 .rc-question {
@@ -3770,6 +3797,117 @@ button.account-progress-entry:focus-visible {
 
 .app-shell.high-contrast .account-created-item {
   border: 2px solid #000;
+}
+
+.record-section-list,
+.record-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  width: 100%;
+}
+
+.record-section-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  min-height: var(--btn-min-h);
+  padding: 0.7rem 0.9rem;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: var(--radius);
+  color: #111;
+  font: inherit;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-align: left;
+  cursor: pointer;
+}
+
+.record-section-count {
+  flex: none;
+  min-width: 1.6rem;
+  font-weight: 800;
+  text-align: right;
+}
+
+.record-card {
+  margin: 0;
+  padding: 0.75rem 0.8rem;
+  border: 2px solid color-mix(in srgb, var(--accent) 22%, #ccd);
+  border-radius: var(--radius);
+  background: #fff;
+}
+
+.record-card-title {
+  margin: 0 0 0.45rem;
+  font-size: 1.05em;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.record-visit + .record-visit {
+  margin-top: 0.65rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid color-mix(in srgb, var(--accent) 18%, #ccd);
+}
+
+.record-when {
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+  font-size: 0.85em;
+  font-weight: 800;
+  text-align: center;
+}
+
+.record-lines {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  margin: 0;
+}
+
+.record-line {
+  display: grid;
+  grid-template-columns: 7.2rem minmax(0, 1fr);
+  gap: 0.35rem 0.6rem;
+  align-items: baseline;
+}
+
+.record-line dt {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78em;
+  font-weight: 800;
+}
+
+.record-line dd {
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.record-mark {
+  background: #fff3b0;
+  color: inherit;
+  font-weight: 800;
+  padding: 0 0.12em;
+  border-radius: 0.15em;
+}
+
+.app-shell.high-contrast .record-section-btn,
+.app-shell.high-contrast .record-card {
+  background: #fff;
+  border: 3px solid #000;
+  color: #000;
+}
+
+.app-shell.high-contrast .record-mark {
+  background: #000;
+  color: #fff;
 }
 
 .auth-form {

@@ -3,6 +3,8 @@ import {
   MEMORY_PATTERN_STATE_STORE,
   openProgressDb,
 } from '../repositories/IndexedDBProgressRepository';
+import { patternSummary } from '../games/summary';
+import { uploadGameSummary } from '../repositories/gameSummaryCloud';
 import { abandonGame, createGameFromSettings } from './gameplay';
 import {
   DEFAULT_MEMORY_PATTERN_SETTINGS,
@@ -66,6 +68,7 @@ export function saveMemoryPatternGame(game: MemoryPatternGame): Promise<void> {
     const tx = db.transaction(MEMORY_PATTERN_GAMES_STORE, 'readwrite');
     tx.objectStore(MEMORY_PATTERN_GAMES_STORE).put(game);
     await txDone(tx);
+    uploadGameSummary(patternSummary(game));
   });
 }
 
@@ -238,6 +241,7 @@ function parseGame(value: unknown): MemoryPatternGame | null {
     missedCount: nullableCount(game.missedCount),
     extraCount: nullableCount(game.extraCount),
     exact: typeof game.exact === 'boolean' ? game.exact : null,
+    studiedAt: typeof game.studiedAt === 'string' ? game.studiedAt : null,
     completedAt: typeof game.completedAt === 'string' ? game.completedAt : null,
     generatorVersion:
       typeof game.generatorVersion === 'number' ? game.generatorVersion : 1,

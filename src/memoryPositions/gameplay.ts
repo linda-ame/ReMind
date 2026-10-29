@@ -66,11 +66,13 @@ export function createMemoryPositionsGame(
     phase: 'memorize',
     status: 'in_progress',
     startedAt: now,
+    studiedAt: null,
     completedAt: null,
     correctCount: null,
     totalCount: deal.solution.length,
     exact: null,
     usedHelp: false,
+    placementChanges: 0,
   };
 }
 
@@ -126,9 +128,18 @@ function validCell(game: MemoryPositionsGame, cell: number): boolean {
   return Number.isInteger(cell) && cell >= 0 && cell < game.rows * game.cols;
 }
 
-export function beginRecall(game: MemoryPositionsGame): MemoryPositionsGame {
+export function beginRecall(
+  game: MemoryPositionsGame,
+  now = new Date().toISOString(),
+): MemoryPositionsGame {
   if (game.phase !== 'memorize' || game.status !== 'in_progress') return game;
-  return { ...game, phase: 'recall', placements: [], selectedSymbolId: null };
+  return {
+    ...game,
+    phase: 'recall',
+    placements: [],
+    selectedSymbolId: null,
+    studiedAt: game.studiedAt ?? now,
+  };
 }
 
 export function selectSymbol(
@@ -142,6 +153,21 @@ export function selectSymbol(
     ...game,
     selectedSymbolId: game.selectedSymbolId === symbolId ? null : symbolId,
   };
+}
+
+function placementsKey(items: readonly SymbolPlacement[]): string {
+  return items
+    .map((item) => `${item.symbolId}@${item.cell}`)
+    .sort()
+    .join('|');
+}
+
+function countMove(
+  before: MemoryPositionsGame,
+  after: MemoryPositionsGame,
+): MemoryPositionsGame {
+  if (placementsKey(before.placements) === placementsKey(after.placements)) return after;
+  return { ...after, placementChanges: (before.placementChanges ?? 0) + 1 };
 }
 
 /** Places into an empty cell. An occupied cell is left untouched. */
@@ -158,7 +184,7 @@ export function placeSymbol(
     (item) => item.symbolId !== symbolId && item.cell !== cell,
   );
   placements.push({ symbolId, cell });
-  return { ...game, placements, selectedSymbolId: null };
+  return countMove(game, { ...game, placements, selectedSymbolId: null });
 }
 
 /** Puts the chosen figure in the cell and returns the previous one to the tray. */
@@ -175,14 +201,14 @@ export function swapSymbols(
     (item) => item.symbolId !== symbolId && item.symbolId !== occupant.symbolId,
   );
   placements.push({ symbolId, cell });
-  return { ...game, placements, selectedSymbolId: null };
+  return countMove(game, { ...game, placements, selectedSymbolId: null });
 }
 
 export function removeAtCell(game: MemoryPositionsGame, cell: number): MemoryPositionsGame {
   if (!canEdit(game)) return game;
   const placements = game.placements.filter((item) => item.cell !== cell);
   if (placements.length === game.placements.length) return game;
-  return { ...game, placements };
+  return countMove(game, { ...game, placements });
 }
 
 export function tapCell(

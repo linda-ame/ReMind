@@ -13,8 +13,6 @@ import {
 interface Props {
   task: MemoryRecallTask;
   draft: MemoryDraft;
-  /** Hidden on the first answer of a delayed task, so the later recall stays fair. */
-  allowReveal: boolean;
   /** After the pause, say what to recall without showing the list. */
   recallCue?: boolean;
   onDraft: (recipe: (draft: MemoryDraft) => MemoryDraft) => void;
@@ -27,7 +25,6 @@ interface Props {
 export function MemoryAnswerStep({
   task,
   draft,
-  allowReveal,
   recallCue = false,
   onDraft,
   onRecord,
@@ -46,13 +43,13 @@ export function MemoryAnswerStep({
 
   const record = (nextDraft: MemoryDraft) => {
     const accepted = onRecord(nextDraft);
-    if (accepted && allowReveal) setShowKey(true);
+    if (accepted) setShowKey(true);
     return accepted;
   };
 
   const confirm = () => {
     if (!record(draft)) return;
-    if (allowReveal && !showKey) {
+    if (!showKey) {
       setShowKey(true);
       return;
     }
@@ -325,6 +322,12 @@ function RecognitionPanel({
                 multiple={false}
                 revealed={fieldRevealed}
                 celebrate={allChosen}
+                onMiss={() =>
+                  onDraft((current) => ({
+                    ...current,
+                    recognitionMisses: (current.recognitionMisses ?? 0) + 1,
+                  }))
+                }
                 onToggle={(optionIndex) => {
                   if (fieldRevealed) return;
                   const factIndices = {
@@ -355,6 +358,12 @@ function RecognitionPanel({
         correct={[task.answer.recognition.correctIndex]}
         multiple={false}
         revealed={revealed}
+        onMiss={() =>
+          onDraft((current) => ({
+            ...current,
+            recognitionMisses: (current.recognitionMisses ?? 0) + 1,
+          }))
+        }
         onToggle={(index) => {
           if (revealed) return;
           onDraft((current) => ({
@@ -381,6 +390,12 @@ function RecognitionPanel({
       correct={task.answer.recognition.correctIndices}
       multiple
       revealed={revealed}
+      onMiss={() =>
+        onDraft((current) => ({
+          ...current,
+          recognitionMisses: (current.recognitionMisses ?? 0) + 1,
+        }))
+      }
       onToggle={(index) => {
         if (revealed) return;
         onDraft((current) => {
@@ -406,6 +421,7 @@ function RecognitionChoices({
   revealed,
   onToggle,
   onSolved,
+  onMiss,
   celebrate,
 }: {
   options: string[];
@@ -415,6 +431,7 @@ function RecognitionChoices({
   revealed: boolean;
   onToggle: (index: number) => void;
   onSolved?: (selected: number[]) => void;
+  onMiss?: () => void;
   /** When set, the inverted finish waits for the whole group. */
   celebrate?: boolean;
 }) {
@@ -439,6 +456,7 @@ function RecognitionChoices({
       setWrong((current) =>
         current.includes(index) ? current : [...current, index],
       );
+      onMiss?.();
       playWrongBuzz();
       return;
     }

@@ -1,3 +1,5 @@
+import { pairsGameSummary } from '../games/summary';
+import { uploadGameSummary } from '../repositories/gameSummaryCloud';
 import { classifyMemoryPairsDifficulty } from './difficulty';
 import { dealMemoryPairsGame, layoutKeyFromCards, symbolSetKeyFromCards } from './generate';
 import {
@@ -209,6 +211,7 @@ function resultFromGame(game: MemoryPairsGame): MemoryPairsResult {
     classifiedDifficulty: classified,
     pairsFound: Math.floor(game.matchedInstanceIds.length / 2),
     attempts: game.attempts,
+    mismatches: game.mismatches,
     status: game.status,
     completedAt: game.completedAt,
     createdAt: game.createdAt,
@@ -257,6 +260,7 @@ function parseImportedResult(value: unknown): MemoryPairsResult | null {
     classifiedDifficulty: classified,
     pairsFound: row.pairsFound,
     attempts: row.attempts,
+    mismatches: typeof row.mismatches === 'number' ? row.mismatches : null,
     status: row.status,
     completedAt: typeof row.completedAt === 'string' ? row.completedAt : null,
     createdAt: row.createdAt,
@@ -369,6 +373,7 @@ async function writeGame(game: MemoryPairsGame, rememberDeal: boolean): Promise<
   const existing = await idbRequest<unknown>(results.get(game.id));
   results.put(mergeResult(existing, game));
   await txDone(tx);
+  uploadGameSummary(pairsGameSummary(game));
 }
 
 export async function persistNewGame(game: MemoryPairsGame): Promise<void> {

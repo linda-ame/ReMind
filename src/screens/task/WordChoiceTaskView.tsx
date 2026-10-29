@@ -86,6 +86,7 @@ export function WordChoiceTaskView({
   });
   const [solved, setSolved] = useState(startedSolved);
   const confirmedRef = useRef(confirmedCorrect);
+  const wrongTriesRef = useRef(attempt.wrongTries ?? 0);
 
   /** One correct answer → exclusive single-select; two+ → multi-select. */
   const singleSelect = correctOptions.size === 1;
@@ -110,8 +111,9 @@ export function WordChoiceTaskView({
       const nextWrong = new Set(wrongPicked);
       nextWrong.add(option);
       setWrongPicked(nextWrong);
+      wrongTriesRef.current += 1;
+      patch({ wrongTries: wrongTriesRef.current }, confirmedRef.current);
       playWrongBuzz();
-      // Do not change enteredAnswer / viewedAnswers — keep searching.
       return;
     }
 
@@ -127,6 +129,7 @@ export function WordChoiceTaskView({
           enteredAnswer: serializeSelected(nextConfirmed),
           viewedAnswers: true,
           status: 'attempted',
+          wrongTries: wrongTriesRef.current,
         },
         nextConfirmed,
       );

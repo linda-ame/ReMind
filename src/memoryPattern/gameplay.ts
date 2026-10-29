@@ -62,6 +62,7 @@ export function createMemoryPatternGame(
     extraCount: null,
     exact: null,
     startedAt: now,
+    studiedAt: null,
     completedAt: null,
     status: 'in_progress',
   };
@@ -95,9 +96,17 @@ export function toggleCell(game: MemoryPatternGame, index: number): MemoryPatter
   };
 }
 
-export function beginRecall(game: MemoryPatternGame): MemoryPatternGame {
+export function beginRecall(
+  game: MemoryPatternGame,
+  now = new Date().toISOString(),
+): MemoryPatternGame {
   if (game.phase !== 'memorize' || game.status !== 'in_progress') return game;
-  return { ...game, phase: 'recall', selected: [] };
+  return {
+    ...game,
+    phase: 'recall',
+    selected: [],
+    studiedAt: game.studiedAt ?? now,
+  };
 }
 
 export function submitAnswer(

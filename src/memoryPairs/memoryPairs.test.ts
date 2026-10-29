@@ -267,6 +267,7 @@ describe('memory pairs storage', () => {
       classifiedDifficulty: 2,
       pairsFound: 6,
       attempts: 7,
+      mismatches: null,
       status: 'complete',
       completedAt: '2026-03-01T00:00:00.000Z',
       createdAt: '2026-03-01T00:00:00.000Z',

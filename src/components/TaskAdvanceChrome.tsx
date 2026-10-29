@@ -16,6 +16,11 @@ interface Props {
    */
   onSkip?: () => void;
   advanceLabel?: string;
+  /**
+   * `fab` is the side arrow. `button` is a large control under the task,
+   * so it does not cover the text.
+   */
+  advanceMode?: 'fab' | 'button';
   /** Optional progress text below the task. */
   progressLabel?: string | null;
 }
@@ -35,6 +40,7 @@ export function TaskAdvanceChrome({
   onAdvance,
   onSkip,
   advanceLabel = 'Tālāk',
+  advanceMode = 'fab',
   progressLabel,
 }: Props) {
   const startRef = useRef<{ x: number; y: number } | null>(null);
@@ -90,9 +96,14 @@ export function TaskAdvanceChrome({
             Izlaist
           </Button>
         ) : null}
+        {canAdvance && advanceMode === 'button' ? (
+          <Button className="task-advance-block" onClick={handleAdvance}>
+            {advanceLabel}
+          </Button>
+        ) : null}
       </div>
 
-      {canAdvance ? (
+      {canAdvance && advanceMode === 'fab' ? (
         <button
           type="button"
           className="task-advance-fab"

@@ -51,6 +51,8 @@ interface AppContextValue {
   skipTaskToday: (taskId: string) => void;
   /** Read attempts from the active store, including archived history. */
   getAttemptsForTask: (taskId: string) => Promise<TaskAttempt[]>;
+  /** Every saved attempt, including earlier repeats. */
+  loadAllAttempts: () => Promise<TaskAttempt[]>;
   /** Clear progress for specific tasks (e.g. one lesson). */
   clearProgressForTasks: (taskIds: string[]) => Promise<void>;
   exportProgress: () => Promise<ProgressSnapshot>;
@@ -226,6 +228,11 @@ export function AppProvider({ children }: { children: ReactNode }) {
     [],
   );
 
+  const loadAllAttempts = useCallback(
+    () => repoRef.current.getAllAttempts(),
+    [],
+  );
+
   const skipTaskToday = useCallback((taskId: string) => {
     setTaskSkips((prev) => {
       const next = withTaskSkippedToday(prev, taskId);
@@ -304,6 +311,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
         refreshAttempts,
         skipTaskToday,
         getAttemptsForTask,
+        loadAllAttempts,
         clearProgressForTasks,
         exportProgress,
         importProgress,

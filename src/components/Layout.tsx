@@ -29,6 +29,11 @@ interface LayoutProps {
    */
   sectionType?: MenuSection;
   onNavigate?: (screen: Screen) => void;
+  /**
+   * Header ←/→. Defaults to opening that section’s practice.
+   * Progress records pass their own opener so the arrows stay in progress.
+   */
+  onOpenSection?: (section: MenuSection) => void;
   /** Home only. Puts Teksts / Ikonas on either side of the title. */
   homeView?: HomeView;
   onHomeViewChange?: (view: HomeView) => void;
@@ -40,6 +45,7 @@ export function Layout({
   onHome,
   sectionType,
   onNavigate,
+  onOpenSection,
   homeView,
   onHomeViewChange,
 }: LayoutProps) {
@@ -114,6 +120,10 @@ export function Layout({
   const nextSection = sectionType ? adjacentMenuSection(sectionType, 1) : null;
 
   const openSection = (section: MenuSection) => {
+    if (onOpenSection) {
+      onOpenSection(section);
+      return;
+    }
     if (!onNavigate) return;
     onNavigate(menuSectionScreen(section, attempts, taskSkips));
   };

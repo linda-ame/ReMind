@@ -113,6 +113,8 @@ export interface MemoryPairsResult {
   classifiedDifficulty: MemoryPairsDifficulty;
   pairsFound: number;
   attempts: number;
+  /** Null on boards saved before mismatches were kept in the result. */
+  mismatches: number | null;
   status: 'in_progress' | 'complete';
   completedAt: string | null;
   createdAt: string;

@@ -444,9 +444,8 @@ export function AuthScreen({ onNavigate, onHome }: AuthScreenProps) {
               type="button"
               className="account-fold account-progress-entry"
               disabled={busyNow}
-              onClick={() => onNavigate({ name: 'created_work' })}
+              onClick={() => onNavigate({ name: 'progress_records' })}
             >
-              <span className="account-fold-label">Teikumi un asociācijas</span>
               <span className="account-fold-value">Progress</span>
               <span
                 className="account-fold-chevron account-progress-chevron"
