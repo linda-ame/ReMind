@@ -354,7 +354,7 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
             className="home-nav-btn home-nav-settings"
             onClick={() => onNavigate({ name: 'settings' })}
           >
-            Iestatījumi
+            Ekrāna iestatījumi
           </Button>
 
           {user ? (

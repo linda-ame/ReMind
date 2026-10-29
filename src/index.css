@@ -2908,6 +2908,20 @@ input:focus-visible {
   text-align: var(--app-text-align);
 }
 
+.settings-screen-title {
+  margin: 0 0 0.45rem;
+  font-size: calc(1.45 * var(--fit-font) * var(--content-scale));
+  font-weight: 800;
+  line-height: 1.2;
+  color: #1a2e28;
+  letter-spacing: -0.01em;
+  text-align: var(--app-text-align);
+}
+
+.app-shell.high-contrast .settings-screen-title {
+  color: #000;
+}
+
 .settings-hint {
   margin-top: 0;
 }

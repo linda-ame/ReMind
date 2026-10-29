@@ -60,6 +60,7 @@ export function SettingsScreen({ onNavigate, onHome }: SettingsScreenProps) {
 
   return (
     <Layout onHome={onHome}>
+      <h1 className="settings-screen-title">Ekrāna iestatījumi</h1>
       <p className="muted settings-hint">
         {cloudSync
           ? 'Izmaiņas saglabājas mākonī (un ir pieejamas citā ierīcē).'
