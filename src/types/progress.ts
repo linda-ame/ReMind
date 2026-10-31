@@ -68,7 +68,7 @@ export const CONTENT_SCALE_MIN = 0.7;
 export const CONTENT_SCALE_MAX = 2;
 export const CONTENT_SCALE_STEP = 0.05;
 
-/** Home screen: icons first, unless the person has chosen the text list. */
+/** Home screen: text list first, unless the person has chosen icons. */
 export type HomeView = 'text' | 'icons';
 
 export interface UiSettings {
@@ -86,7 +86,7 @@ export const DEFAULT_UI_SETTINGS: UiSettings = {
   textAlign: 'center',
   textPosition: 'middle',
   highContrast: false,
-  homeView: 'icons',
+  homeView: 'text',
 };
 
 export const CONTENT_SCALE_OPTIONS: {
@@ -144,7 +144,7 @@ export function normalizeUiSettings(
     textAlign: merged.textAlign,
     textPosition: merged.textPosition,
     highContrast: merged.highContrast,
-    homeView: stored?.homeView === 'text' ? 'text' : 'icons',
+    homeView: stored?.homeView === 'icons' ? 'icons' : 'text',
   };
 }
 

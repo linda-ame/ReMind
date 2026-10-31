@@ -139,10 +139,10 @@ export function HomeScreen({ onNavigate }: HomeScreenProps) {
                 key={card.key}
                 type="button"
                 className={`home-icon-card ${card.className}`}
-                aria-label={card.label}
                 onClick={card.onOpen}
               >
                 <img src={card.icon} alt="" width={96} height={96} />
+                <span className="home-icon-name">{card.label}</span>
               </button>
             ))}
           </div>

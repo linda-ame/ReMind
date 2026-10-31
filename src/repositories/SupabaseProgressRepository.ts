@@ -156,7 +156,7 @@ export class SupabaseProgressRepository implements ProgressRepository {
       textAlign: row.text_align,
       textPosition: row.text_position,
       highContrast: row.high_contrast,
-      homeView: row.home_view === 'text' ? 'text' : 'icons',
+      homeView: row.home_view === 'icons' ? 'icons' : 'text',
     });
   }
 

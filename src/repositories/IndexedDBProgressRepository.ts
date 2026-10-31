@@ -175,7 +175,7 @@ export class IndexedDBProgressRepository implements ProgressRepository {
     const legacy = readLegacyHomeView();
     const normalized = normalizeUiSettings(
       stored == null || stored.homeView == null
-        ? { ...stored, homeView: legacy ?? 'icons' }
+        ? { ...stored, homeView: legacy ?? 'text' }
         : stored,
     );
     if (legacy) {

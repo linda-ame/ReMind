@@ -1386,29 +1386,44 @@ input:focus-visible {
 
 .home-icon-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.55rem;
   width: 100%;
+  align-items: stretch;
 }
 
 .home-icon-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  aspect-ratio: 1;
+  justify-content: flex-start;
+  gap: 0.28rem;
+  height: 100%;
   min-height: 0;
-  padding: 0.4rem;
+  padding: 0.45rem 0.28rem 0.4rem;
   border-style: solid;
   border-width: 3px;
   border-radius: var(--radius);
   cursor: pointer;
+  color: #111111;
+  text-align: center;
 }
 
 .home-icon-card img {
-  width: 78%;
-  height: 78%;
+  width: 74%;
+  height: auto;
+  aspect-ratio: 1;
   object-fit: contain;
   display: block;
+  flex: 0 0 auto;
+}
+
+.home-icon-name {
+  width: 100%;
+  font-size: calc(0.82 * var(--fit-font) * var(--content-scale));
+  font-weight: 800;
+  line-height: 1.15;
+  overflow-wrap: break-word;
 }
 
 .home-icon-card:focus-visible {
@@ -1418,6 +1433,7 @@ input:focus-visible {
 
 .app-shell.high-contrast .home-icon-card {
   border-color: #000;
+  color: #000;
 }
 
 .home-auth-banner {
